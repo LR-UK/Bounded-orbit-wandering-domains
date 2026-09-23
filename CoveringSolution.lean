@@ -3,9 +3,10 @@ import BoundedWanderingDomains.EntireFatouBridge
 import BoundedWanderingDomains.TrappedComponentCovering
 import BoundedWanderingDomains.TrappedSimpleConnectivity
 import BoundedWanderingDomains.BoundedPointWandering
+import BoundedWanderingDomains.LocalBoundedPoint
 
 /-! Both dynamical theorems with only disc-covering existence and its area
-formula as classical input. The frozen Palomar statements are unchanged. -/
+formula as classical input. The local theorem requires only one compactly contained point orbit. -/
 
 open Set Metric Function Filter
 open scoped Topology
@@ -34,8 +35,8 @@ theorem no_bounded_wandering_domains_transcendental_entire_of_coveringsAndArea
     (AreaDeficit.entire_nonpolynomial_no_constant_germ hf htrans) hU hz hforward
     ⟨R, fun n => hR _ ⟨n, rfl⟩⟩
 
-/-- The local theorem with the reduced classical input. The local dynamical
-hypotheses remain exactly those of the frozen submission. -/
+/-- The local theorem from one compactly contained point orbit, with the
+reduced classical input. Eventual intrinsic-disc injectivity is proved. -/
 theorem no_local_bounded_wandering_domains_of_coveringsAndArea
     (hcover : ClassicalDiscCoveringsAndArea)
     {f : ℂ → ℂ} {V K : Set ℂ} {z : ℂ} {U : ℕ → Set ℂ}
@@ -46,15 +47,14 @@ theorem no_local_bounded_wandering_domains_of_coveringsAndArea
     (hz : z ∈ trappedInterior f V)
     (hU : ∀ n, U n = connectedComponentIn (trappedInterior f V) (f^[n] z))
     (hsc : ∀ n, IsSimplyConnected (U n))
-    (hbounded : ∀ n, U n ⊆ K)
-    (hinj : EventuallyInjectiveOnLargeDiscs f U (fun n => f^[n] z)) :
+    (hbounded : ∀ n, f^[n] z ∈ K) :
     ¬ Pairwise (fun n m : ℕ => Disjoint (U n) (U m)) := by
   obtain ⟨G⟩ := covering_metric_input_exists hcover
   intro hdisj
   have hi := AreaDeficit.trapped_interior_forward (AreaDeficit.analytic_locally_open
     (hf.mono subset_closure) (fun x hx => hn x (subset_closure hx)))
-  exact G.no_wandering_component_orbit hV hVc hf hn hK hKV
+  exact G.no_wandering_local_orbit_of_compact_point hV hVc hf hn hK hKV
     (fun n => hi.iterate n hz) hU (fun n => by simp [iterate_succ_apply'])
-    hdisj hbounded hsc hinj
+    hsc hbounded hdisj
 
 end BoundedWanderingDomains

@@ -40,8 +40,9 @@ theorem no_bounded_wandering_domains_transcendental_entire
   no_bounded_wandering_domains_transcendental_entire_of_coveringsAndArea
     classicalDiscCoveringsAndArea hf htrans hU hz hforward hbounded
 
-/-- The local theorem, with precisely the dynamical hypotheses of the frozen
-submission and with the classical metric package now proved. -/
+/-- A simply connected local trapped-component orbit cannot be wandering
+if one point orbit stays in a compact subset of V. Eventual injectivity on
+intrinsic discs and their compact confinement are proved, not assumed. -/
 theorem no_local_bounded_wandering_domains
     {f : ℂ → ℂ} {V K : Set ℂ} {z : ℂ} {U : ℕ → Set ℂ}
     (hV : IsOpen V) (hVc : IsCompact (closure V))
@@ -51,11 +52,10 @@ theorem no_local_bounded_wandering_domains
     (hz : z ∈ trappedInterior f V)
     (hU : ∀ n, U n = connectedComponentIn (trappedInterior f V) (f^[n] z))
     (hsc : ∀ n, IsSimplyConnected (U n))
-    (hbounded : ∀ n, U n ⊆ K)
-    (hinj : EventuallyInjectiveOnLargeDiscs f U (fun n => f^[n] z)) :
+    (hbounded : ∀ n, f^[n] z ∈ K) :
     ¬ Pairwise (fun n m : ℕ => Disjoint (U n) (U m)) :=
   no_local_bounded_wandering_domains_of_coveringsAndArea classicalDiscCoveringsAndArea
-    hV hVc hf hn hK hKV hz hU hsc hbounded hinj
+    hV hVc hf hn hK hKV hz hU hsc hbounded
 
 #print axioms classicalDiscCoveringsAndArea
 #print axioms classicalHyperbolicMetrics

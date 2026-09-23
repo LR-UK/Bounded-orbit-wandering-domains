@@ -97,7 +97,7 @@ for package in manifest["packages"]:
         assert (ROOT / package["dir"]).resolve().is_relative_to(ROOT), package
 
 report = {
-    "result": "passed", "project_version": "1.0.0",
+    "result": "passed", "project_version": "1.1.0",
     "lean": (ROOT / "lean-toolchain").read_text().strip(),
     "mathlib": mathlib,
     "curvature": -1, "area_normalisation": "divide by 2*pi",

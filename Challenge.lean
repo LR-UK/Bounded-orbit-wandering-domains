@@ -15,22 +15,28 @@ import Mathlib.Topology.Connected.LocallyConnected
 This Challenge is independent of the proof development. Its imports are
 Mathlib only. The two deliberate theorem holes are supplied by Solution.
 
+The classical hyperbolic metric facts are proved in the Solution development,
+including disc-covering existence and the total-area formula. Neither theorem
+assumes a metric-existence, covering-existence or area-formula hypothesis.
+
 Two results are stated:
-1. For a locally defined analytic map, an orbit of simply connected
-   components of the maximal trapped open set cannot be both compactly
-   contained and wandering, under eventual injectivity on large discs.
+1. For a locally defined analytic map, a simply connected trapped-component
+   orbit containing one point whose forward orbit stays in a compact subset
+   of V cannot be wandering. The whole components need not lie in that compact
+   set. No univalence or eventual-injectivity hypothesis is imposed.
 2. For a transcendental entire map, a Fatou component containing one point
    with bounded forward orbit cannot be wandering. No boundedness of whole
    components, simple connectivity or injectivity is assumed in this theorem.
 
-In (2), boundedness is precisely boundedness of the set {f^[n](z) : n ∈ ℕ}.
-Simple connectivity and eventual disc injectivity are explicit hypotheses
-only in (1); the proof of (2) derives the corresponding properties for
-auxiliary trapped components and their intrinsic discs.
+Simple connectivity remains a hypothesis only in (1), as in the local result
+of the paper. The local statement here concerns plane-valued maps analytic
+near a compact plane closure(V); the paper's general spherical/meromorphic
+setting and positive-area-set result are outside this submission.
 
-The intrinsic discs use a normalized Riemann coordinate. Their definition
-is independent of that coordinate (proved in the Solution development).
-The starting time may depend on the disc radius.
+Eventual injectivity on each fixed intrinsic disc is derived in both proofs.
+The local proof thickens the compact point-orbit set inside V and proves that
+these discs eventually lie in that thickening. Neither step assumes compact
+containment of the whole components.
 
 Mathlib supplies differentiability, analyticity, iteration, connected
 components, simple connectivity, boundedness, measures and convergence.
@@ -41,7 +47,7 @@ those same declarations in the Solution. No value of f at infinity is used.
 
 Mathematical direction: Lasse Rempe. AI-assisted formalisation: OpenAI
 ChatGPT/Codex. The proof dependencies retain their separate attribution.
-This is a substantive development, not a wrapper around a previously
+This is the substantive development, not a wrapper around a previously
 registered theorem. Global derived-singular-set statements are not claimed.
 -/
 
@@ -87,13 +93,6 @@ in V. The values of the total function outside V play no role. -/
 def trappedInterior (f : ℂ → ℂ) (V : Set ℂ) : Set ℂ :=
   interior {z | ∀ n : ℕ, f^[n] z ∈ V}
 
-/-- Eventually injective on each fixed intrinsic disc about the orbit
-point. The radius parameter r is in (0,1) in a normalized Riemann chart;
-the corresponding curvature −1 radius is 2 artanh r. N may depend on r. -/
-def EventuallyInjectiveOnLargeDiscs (f : ℂ → ℂ) (U : ℕ → Set ℂ) (z : ℕ → ℂ) : Prop :=
-  ∀ r : ℝ, 0 < r → r < 1 → ∃ N : ℕ, ∀ n ≥ N, ∃ u : ℂ → ℂ,
-    DifferentiableOn ℂ u (U n) ∧ BijOn u (U n) (ball 0 1) ∧ u (z n) = 0 ∧
-      InjOn f (U n ∩ u ⁻¹' ball 0 r)
 
 end BoundedWanderingDomains
 
@@ -101,9 +100,9 @@ end BoundedWanderingDomains
 namespace BoundedWanderingDomains
 
 /-- LOCAL THEOREM. Analyticity is needed only near closure(V). The U_n are
-the components of the maximal trapped open set through f^[n](z).
-A compact K inside V contains the entire component orbit. Under eventual disc injectivity, these components cannot
-be pairwise disjoint. -/
+simply connected components of the maximal trapped open set through f^[n](z).
+Only the points f^[n](z) must lie in a fixed compact K inside V. The component
+orbit cannot be pairwise disjoint; no injectivity hypothesis is required. -/
 theorem no_local_bounded_wandering_domains
     {f : ℂ → ℂ} {V K : Set ℂ} {z : ℂ} {U : ℕ → Set ℂ}
     (hV : IsOpen V) (hVc : IsCompact (closure V))
@@ -113,8 +112,7 @@ theorem no_local_bounded_wandering_domains
     (hz : z ∈ trappedInterior f V)
     (hU : ∀ n, U n = connectedComponentIn (trappedInterior f V) (f^[n] z))
     (hsc : ∀ n, IsSimplyConnected (U n))
-    (hbounded : ∀ n, U n ⊆ K)
-    (hinj : EventuallyInjectiveOnLargeDiscs f U (fun n => f^[n] z)) :
+    (hbounded : ∀ n, f^[n] z ∈ K) :
     ¬ Pairwise (fun n m : ℕ => Disjoint (U n) (U m)) := by
   sorry
 

@@ -6,3 +6,5 @@ import RiemannDynamics.BoundedWanderingSolution
 #print axioms BoundedWanderingDomains.Unconditional.classicalHyperbolicMetrics
 #print axioms BoundedWanderingDomains.Unconditional.no_bounded_wandering_domains_transcendental_entire
 #print axioms BoundedWanderingDomains.Unconditional.no_local_bounded_wandering_domains
+
+#print axioms AreaDeficit.FinitePunctureMetricInput.no_wandering_local_orbit_of_compact_point

@@ -17,7 +17,7 @@ private partial def canonicalExpr : Lean.Expr → Lean.Expr
 open Lean Elab Command in
 run_cmd do
   let env ← getEnv
-  let definitions : List Name := [`ComplexDynamics.IsNormalSequenceOn, `ComplexDynamics.RiemannSphere, `ComplexDynamics.riemannSphereUniformSpace, `ComplexDynamics.sphericalIterate, `ComplexDynamics.fatouSet, `ComplexDynamics.IsFatouComponent, `BoundedWanderingDomains.trappedInterior, `BoundedWanderingDomains.EventuallyInjectiveOnLargeDiscs]
+  let definitions : List Name := [`ComplexDynamics.IsNormalSequenceOn, `ComplexDynamics.RiemannSphere, `ComplexDynamics.riemannSphereUniformSpace, `ComplexDynamics.sphericalIterate, `ComplexDynamics.fatouSet, `ComplexDynamics.IsFatouComponent, `BoundedWanderingDomains.trappedInterior]
   let theorems : List Name := [`BoundedWanderingDomains.no_local_bounded_wandering_domains, `BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire]
   for name in definitions ++ theorems do
     let some ci := env.find? name | throwError "Missing declaration {name}"

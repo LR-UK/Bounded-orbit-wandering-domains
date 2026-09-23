@@ -1,0 +1,19 @@
+{
+  "result": "passed",
+  "project_version": "1.1.0",
+  "base_archive": "bounded-wandering-palomar-unconditional-2026-09-23.zip",
+  "base_archive_sha256": "d692d38c09e883c5a72d29b59e60c70df3c4603e8a54933e57b7aedb88a46394",
+  "entire_theorem_type_unchanged": true,
+  "retained_definition_types_and_bodies_unchanged": true,
+  "local_theorem_type_changed": true,
+  "changed_or_added_main_lean_sources": [
+    "BoundedWanderingDomains/LocalBoundedPoint.lean",
+    "Challenge.lean",
+    "CoveringSolution.lean",
+    "RiemannDynamics/BoundedWanderingSolution.lean",
+    "Solution.lean"
+  ],
+  "unchanged_dependency_and_licence_files": 1005,
+  "toolchain_unchanged": true,
+  "dependency_manifest_unchanged": true
+}

@@ -12,8 +12,7 @@
     "ComplexDynamics.sphericalIterate",
     "ComplexDynamics.fatouSet",
     "ComplexDynamics.IsFatouComponent",
-    "BoundedWanderingDomains.trappedInterior",
-    "BoundedWanderingDomains.EventuallyInjectiveOnLargeDiscs"
+    "BoundedWanderingDomains.trappedInterior"
   ],
   "permitted_axioms": [
     "propext",

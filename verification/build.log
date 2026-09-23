@@ -1,4 +1,4 @@
-ℹ [3484/3554] Replayed BoundedWanderingDomains.AreaDeficitCore
+ℹ [3484/3512] Replayed BoundedWanderingDomains.AreaDeficitCore
 info: BoundedWanderingDomains/AreaDeficitCore.lean:221:0: 'AreaDeficitCore.curvature_sign' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: BoundedWanderingDomains/AreaDeficitCore.lean:222:0: 'AreaDeficitCore.primitive_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: BoundedWanderingDomains/AreaDeficitCore.lean:223:0: 'AreaDeficitCore.slope_scaled_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -145,20 +145,24 @@ info: BoundedWanderingDomains/TrappedComponentCovering.lean:142:0: 'AreaDeficit.
 info: BoundedWanderingDomains/TrappedComponentCovering.lean:143:0: 'AreaDeficit.closure_component_preimage_trapped' depends on axioms: [propext, Classical.choice, Quot.sound]
 ℹ [3786/3838] Replayed BoundedWanderingDomains.TrappedFilling
 info: BoundedWanderingDomains/TrappedFilling.lean:24:0: 'AreaDeficit.bounded_region_subset_trapped_interior' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [4007/4054] Replayed BoundedWanderingDomains.TrappedSimpleConnectivity
+ℹ [4007/4127] Replayed BoundedWanderingDomains.TrappedSimpleConnectivity
 info: BoundedWanderingDomains/TrappedSimpleConnectivity.lean:70:0: 'AreaDeficit.trapped_closed_disc_no_bounded_complement' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: BoundedWanderingDomains/TrappedSimpleConnectivity.lean:71:0: 'AreaDeficit.bounded_fatou_orbit_simplyConnected' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [4011/4054] Replayed BoundedWanderingDomains.BoundedPointWandering
+ℹ [4011/4127] Replayed BoundedWanderingDomains.BoundedPointWandering
 info: BoundedWanderingDomains/BoundedPointWandering.lean:130:0: 'AreaDeficit.FinitePunctureMetricInput.no_wandering_fatou_orbit_of_bounded_point' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
-ℹ [4051/4054] Replayed BoundedWanderingDomains.CoveringTotalArea
+ℹ [4051/4127] Replayed BoundedWanderingDomains.CoveringTotalArea
 info: BoundedWanderingDomains/CoveringTotalArea.lean:59:0: 'AreaDeficit.IsHolomorphicDiscCovering.total_area' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [4179/4186] Replayed RiemannDynamics.Uniformization.PuncturedPlaneCovering
+ℹ [4179/4187] Replayed RiemannDynamics.Uniformization.PuncturedPlaneCovering
 info: RiemannDynamics/Uniformization/PuncturedPlaneCovering.lean:35:0: 'RiemannDynamics.exists_disc_covering_finitely_punctured_plane' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
-ℹ [4181/4186] Replayed RiemannDynamics.BoundedWanderingSolution
+ℹ [4180/4187] Replayed BoundedWanderingDomains.LocalBoundedPoint
+info: BoundedWanderingDomains/LocalBoundedPoint.lean:108:0: 'AreaDeficit.FinitePunctureMetricInput.no_wandering_local_orbit_of_compact_point' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [4182/4187] Replayed RiemannDynamics.BoundedWanderingSolution
 info: RiemannDynamics/BoundedWanderingSolution.lean:60:0: 'BoundedWanderingDomains.Unconditional.classicalDiscCoveringsAndArea' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
@@ -171,12 +175,12 @@ info: RiemannDynamics/BoundedWanderingSolution.lean:62:0: 'BoundedWanderingDomai
 info: RiemannDynamics/BoundedWanderingSolution.lean:63:0: 'BoundedWanderingDomains.Unconditional.no_local_bounded_wandering_domains' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
-⚠ [4182/4186] Replayed Challenge
-warning: Challenge.lean:111:8: declaration uses `sorry`
-warning: Challenge.lean:131:8: declaration uses `sorry`
-ℹ [4185/4186] Replayed Solution
+⚠ [4183/4187] Replayed Challenge
+warning: Challenge.lean:106:8: declaration uses `sorry`
+warning: Challenge.lean:125:8: declaration uses `sorry`
+ℹ [4186/4187] Replayed Solution
 info: Solution.lean:42:0: 'BoundedWanderingDomains.no_local_bounded_wandering_domains' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: Solution.lean:43:0: 'BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
-Build completed successfully (4186 jobs).
+Build completed successfully (4187 jobs).

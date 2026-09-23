@@ -1,6 +1,7 @@
 {
   "result": "passed",
   "verifier_commit": "e48a86d0495356b5131a92c9406aa6e27cf99e56",
+  "config_sha256": "146e39a312fee18350a37ea33f14a436df5756b6ef76a19b6ada9ff013f53be7",
   "config": {
     "challenge_module": "Challenge",
     "solution_module": "Solution",
@@ -15,8 +16,7 @@
       "ComplexDynamics.sphericalIterate",
       "ComplexDynamics.fatouSet",
       "ComplexDynamics.IsFatouComponent",
-      "BoundedWanderingDomains.trappedInterior",
-      "BoundedWanderingDomains.EventuallyInjectiveOnLargeDiscs"
+      "BoundedWanderingDomains.trappedInterior"
     ],
     "permitted_axioms": [
       "propext",

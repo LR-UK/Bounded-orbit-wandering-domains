@@ -2,9 +2,12 @@
 
 We prove that transcendental entire functions do not have bounded-orbit wandering domains.
 
-This answers a major open question in the field. The proof builds upon Zihao Ye's new proof of Sullivan's No Wandering Domains theorem, and was obtained with assistance by generative AI. We also formalise a stronger theorem, which shows that locally defined holomorphic functions do not have orbits of simply connected wandering domains on which the iterates are univalent.
+This answers a major open question in the field. The proof builds upon Zihao Ye's new proof of Sullivan's No Wandering Domains theorem, and was obtained with assistance by generative AI. We also formalise a stronger theorem, which shows that locally defined holomorphic functions do not have orbits of simply connected wandering domains.
 
 This is an unconditional formalisation, prepared with the use of Generative AI for submission to Palomar. In order to achieve an unconditional formalisation, a number of classical results had to be newly (auto-)formalised, including results concerning the hyperbolic metric for a finitely punctured sphere, and its area.  
+
+The accompanying [paper (PDF)](paper/Absence_of_bounded_orbit_wandering_domains-1.pdf)
+contains the mathematical statements and proofs.
 
 Both public results are in [Solution.lean](Solution.lean). Their independent
 statements are in [Challenge.lean](Challenge.lean), using only Mathlib imports. The statements of the challenge theorems have been checked by the authors.

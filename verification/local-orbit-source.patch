@@ -1,0 +1,284 @@
+--- /dev/null
++++ b/BoundedWanderingDomains/LocalBoundedPoint.lean
+@@ -0,0 +1,108 @@
++/-
++Copyright (c) 2026 Lasse Rempe. All rights reserved.
++Released under Apache 2.0 licence; see LICENSE.
++-/
++import BoundedWanderingDomains.LocalDiscInjectivity
++import BoundedWanderingDomains.EventualCompactDiscs
++import Mathlib.Topology.MetricSpace.Thickening
++
++/-!
++# The local theorem from one compactly contained point orbit
++
++Only the marked orbit lies in the compact set K. For a hypothetical wandering
++orbit, fixed intrinsic discs shrink about their marked points. A fixed compact
++thickening of K inside V therefore contains each such disc eventually. The
++local power-coordinate argument proves eventual injectivity on those discs;
++neither property is an additional hypothesis of the theorem.
++-/
++
++open Set Metric Function Filter
++open scoped Topology
++
++namespace AreaDeficit.FinitePunctureMetricInput
++
++/-- A simply connected wandering trapped-component orbit cannot contain a
++point orbit in a compact subset of V. The whole components need not stay in
++that compact set, and eventual intrinsic-disc injectivity is derived. -/
++theorem no_wandering_local_orbit_of_compact_point (G : FinitePunctureMetricInput)
++    {f : ℂ → ℂ} {V K : Set ℂ} (hV : IsOpen V)
++    (hVc : IsCompact (closure V)) (hf : AnalyticOnNhd ℂ f (closure V))
++    (hn : ∀ x ∈ closure V, ¬EventuallyConst f (𝓝 x))
++    (hK : IsCompact K) (hKV : K ⊆ V)
++    {U : ℕ → Set ℂ} {z : ℕ → ℂ}
++    (hz : ∀ n, z n ∈ interior (trappedSet f V))
++    (hU : ∀ n, U n = connectedComponentIn (interior (trappedSet f V)) (z n))
++    (hnext : ∀ n, f (z n) = z (n + 1))
++    (hsc : ∀ n, IsSimplyConnected (U n))
++    (hzK : ∀ n, z n ∈ K)
++    (hdis : Pairwise (fun n m => Disjoint (U n) (U m))) : False := by
++  classical
++  have hfV := hf.mono (subset_closure : V ⊆ closure V)
++  have hnV := fun x hx => hn x (subset_closure hx)
++  have hUo : ∀ n, IsOpen (U n) := fun n => by
++    rw [hU n]
++    exact isOpen_interior.connectedComponentIn
++  have hzU : ∀ n, z n ∈ U n := fun n => by
++    rw [hU n]
++    exact mem_connectedComponentIn (hz n)
++  have hUT : ∀ n, U n ⊆ interior (trappedSet f V) := fun n => by
++    rw [hU n]
++    exact connectedComponentIn_subset _ _
++  have hUV : ∀ n, U n ⊆ V :=
++    fun n => (hUT n).trans (interior_subset.trans (trappedSet_subset f V))
++  have hTF := trapped_interior_forward (analytic_locally_open hfV hnV)
++  have hfm : ∀ n, MapsTo f (U n) (U (n + 1)) := by
++    intro n
++    rw [hU n, hU (n + 1), ← hnext n]
++    exact ((hfV.continuousOn.mono
++      (interior_subset.trans (trappedSet_subset f V))).mapsTo_connectedComponentIn
++      (hz n)).mono_right (connectedComponentIn_mono _ hTF.image_subset)
++  obtain ⟨R, hR, hVR⟩ := hVc.isBounded.exists_pos_norm_le
++  have hUb : ∀ n x, x ∈ U n → ‖x‖ ≤ R :=
++    fun n x hx => hVR x (subset_closure (hUV n hx))
++  let a : ℂ := ((R + 1 : ℝ) : ℂ)
++  let b : ℂ := ((R + 2 : ℝ) : ℂ)
++  have ha : a ∉ V := by
++    intro hx
++    have h := hVR _ (subset_closure hx)
++    dsimp [a] at h
++    rw [Complex.norm_real, Real.norm_eq_abs, abs_of_pos (by linarith)] at h
++    linarith
++  have hb : b ∉ V := by
++    intro hx
++    have h := hVR _ (subset_closure hx)
++    dsimp [b] at h
++    rw [Complex.norm_real, Real.norm_eq_abs, abs_of_pos (by linarith)] at h
++    linarith
++  have hab : a ≠ b := by
++    intro he
++    have h := Complex.ofReal_injective he
++    linarith
++  have hUne : ∀ n, U n ≠ univ := by
++    intro n he
++    exact ha (hUV n (he ▸ mem_univ a))
++  choose u hu hub hu0 using fun n =>
++    Complex.exists_bijOn_unitBall_map_eq_zero (hUo n) (hsc n) (hUne n) (hzU n)
++  obtain ⟨δ, hδ, hδV⟩ := hK.exists_cthickening_subset_open hV hKV
++  let L : Set ℂ := cthickening δ K
++  have hL : IsCompact L := hK.cthickening
++  have hcompact : ∀ r : ℝ, 0 < r → r < 1 → ∃ N : ℕ,
++      ∀ n ≥ N, chartDisc (u n) (U n) r ⊆ L := by
++    intro r hr hr1
++    apply eventually_atTop.mp
++    filter_upwards [disjoint_bounded_chart_discs_shrink
++      hUo hu hub hzU hu0 hUb hdis hr.le hr1 hδ] with n hn x hx
++    exact mem_cthickening_of_dist_le x (z n) δ K (hzK n) (hn x hx).le
++  have hinj : ∀ r : ℝ, 0 < r → r < 1 → ∃ N : ℕ,
++      ∀ n ≥ N, InjOn f (chartDisc (u n) (U n) r) := by
++    intro r hr hr1
++    exact eventually_atTop.mp (eventually_injOn_shrinking_chart_discs
++      hK (hfV.mono hKV) (fun x hx => hnV x (hKV hx))
++      hUo hsc hu hub hzU hzK hu0 hUb hdis hfm
++      (fun n => hfV.continuousOn.mono (hUV n)) hr.le hr1)
++  exact G.no_wandering_chart_orbit_with_eventual_compact_discs
++    hV hVc hf hn hL hδV hab ha hb hz hU hnext hdis hu hub hu0 hcompact hinj
++
++end AreaDeficit.FinitePunctureMetricInput
++
++#print axioms AreaDeficit.FinitePunctureMetricInput.no_wandering_local_orbit_of_compact_point
+--- a/Challenge.lean
++++ b/Challenge.lean
+@@ -20,21 +20,23 @@
+ assumes a metric-existence, covering-existence or area-formula hypothesis.
+ 
+ Two results are stated:
+-1. For a locally defined analytic map, an orbit of simply connected
+-   components of the maximal trapped open set cannot be both compactly
+-   contained and wandering, under eventual injectivity on large discs.
++1. For a locally defined analytic map, a simply connected trapped-component
++   orbit containing one point whose forward orbit stays in a compact subset
++   of V cannot be wandering. The whole components need not lie in that compact
++   set. No univalence or eventual-injectivity hypothesis is imposed.
+ 2. For a transcendental entire map, a Fatou component containing one point
+    with bounded forward orbit cannot be wandering. No boundedness of whole
+    components, simple connectivity or injectivity is assumed in this theorem.
+ 
+-In (2), boundedness is precisely boundedness of the set {f^[n](z) : n ∈ ℕ}.
+-Simple connectivity and eventual disc injectivity are explicit hypotheses
+-only in (1); the proof of (2) derives the corresponding properties for
+-auxiliary trapped components and their intrinsic discs.
++Simple connectivity remains a hypothesis only in (1), as in the local result
++of the paper. The local statement here concerns plane-valued maps analytic
++near a compact plane closure(V); the paper's general spherical/meromorphic
++setting and positive-area-set result are outside this submission.
+ 
+-The intrinsic discs use a normalized Riemann coordinate. Their definition
+-is independent of that coordinate (proved in the Solution development).
+-The starting time may depend on the disc radius.
++Eventual injectivity on each fixed intrinsic disc is derived in both proofs.
++The local proof thickens the compact point-orbit set inside V and proves that
++these discs eventually lie in that thickening. Neither step assumes compact
++containment of the whole components.
+ 
+ Mathlib supplies differentiability, analyticity, iteration, connected
+ components, simple connectivity, boundedness, measures and convergence.
+@@ -91,13 +93,6 @@
+ def trappedInterior (f : ℂ → ℂ) (V : Set ℂ) : Set ℂ :=
+   interior {z | ∀ n : ℕ, f^[n] z ∈ V}
+ 
+-/-- Eventually injective on each fixed intrinsic disc about the orbit
+-point. The radius parameter r is in (0,1) in a normalized Riemann chart;
+-the corresponding curvature −1 radius is 2 artanh r. N may depend on r. -/
+-def EventuallyInjectiveOnLargeDiscs (f : ℂ → ℂ) (U : ℕ → Set ℂ) (z : ℕ → ℂ) : Prop :=
+-  ∀ r : ℝ, 0 < r → r < 1 → ∃ N : ℕ, ∀ n ≥ N, ∃ u : ℂ → ℂ,
+-    DifferentiableOn ℂ u (U n) ∧ BijOn u (U n) (ball 0 1) ∧ u (z n) = 0 ∧
+-      InjOn f (U n ∩ u ⁻¹' ball 0 r)
+ 
+ end BoundedWanderingDomains
+ 
+@@ -105,9 +100,9 @@
+ namespace BoundedWanderingDomains
+ 
+ /-- LOCAL THEOREM. Analyticity is needed only near closure(V). The U_n are
+-the components of the maximal trapped open set through f^[n](z).
+-A compact K inside V contains the entire component orbit. Under eventual disc injectivity, these components cannot
+-be pairwise disjoint. -/
++simply connected components of the maximal trapped open set through f^[n](z).
++Only the points f^[n](z) must lie in a fixed compact K inside V. The component
++orbit cannot be pairwise disjoint; no injectivity hypothesis is required. -/
+ theorem no_local_bounded_wandering_domains
+     {f : ℂ → ℂ} {V K : Set ℂ} {z : ℂ} {U : ℕ → Set ℂ}
+     (hV : IsOpen V) (hVc : IsCompact (closure V))
+@@ -117,8 +112,7 @@
+     (hz : z ∈ trappedInterior f V)
+     (hU : ∀ n, U n = connectedComponentIn (trappedInterior f V) (f^[n] z))
+     (hsc : ∀ n, IsSimplyConnected (U n))
+-    (hbounded : ∀ n, U n ⊆ K)
+-    (hinj : EventuallyInjectiveOnLargeDiscs f U (fun n => f^[n] z)) :
++    (hbounded : ∀ n, f^[n] z ∈ K) :
+     ¬ Pairwise (fun n m : ℕ => Disjoint (U n) (U m)) := by
+   sorry
+ 
+--- a/CoveringSolution.lean
++++ b/CoveringSolution.lean
+@@ -3,9 +3,10 @@
+ import BoundedWanderingDomains.TrappedComponentCovering
+ import BoundedWanderingDomains.TrappedSimpleConnectivity
+ import BoundedWanderingDomains.BoundedPointWandering
++import BoundedWanderingDomains.LocalBoundedPoint
+ 
+ /-! Both dynamical theorems with only disc-covering existence and its area
+-formula as classical input. The frozen Palomar statements are unchanged. -/
++formula as classical input. The local theorem requires only one compactly contained point orbit. -/
+ 
+ open Set Metric Function Filter
+ open scoped Topology
+@@ -34,8 +35,8 @@
+     (AreaDeficit.entire_nonpolynomial_no_constant_germ hf htrans) hU hz hforward
+     ⟨R, fun n => hR _ ⟨n, rfl⟩⟩
+ 
+-/-- The local theorem with the reduced classical input. The local dynamical
+-hypotheses remain exactly those of the frozen submission. -/
++/-- The local theorem from one compactly contained point orbit, with the
++reduced classical input. Eventual intrinsic-disc injectivity is proved. -/
+ theorem no_local_bounded_wandering_domains_of_coveringsAndArea
+     (hcover : ClassicalDiscCoveringsAndArea)
+     {f : ℂ → ℂ} {V K : Set ℂ} {z : ℂ} {U : ℕ → Set ℂ}
+@@ -46,15 +47,14 @@
+     (hz : z ∈ trappedInterior f V)
+     (hU : ∀ n, U n = connectedComponentIn (trappedInterior f V) (f^[n] z))
+     (hsc : ∀ n, IsSimplyConnected (U n))
+-    (hbounded : ∀ n, U n ⊆ K)
+-    (hinj : EventuallyInjectiveOnLargeDiscs f U (fun n => f^[n] z)) :
++    (hbounded : ∀ n, f^[n] z ∈ K) :
+     ¬ Pairwise (fun n m : ℕ => Disjoint (U n) (U m)) := by
+   obtain ⟨G⟩ := covering_metric_input_exists hcover
+   intro hdisj
+   have hi := AreaDeficit.trapped_interior_forward (AreaDeficit.analytic_locally_open
+     (hf.mono subset_closure) (fun x hx => hn x (subset_closure hx)))
+-  exact G.no_wandering_component_orbit hV hVc hf hn hK hKV
++  exact G.no_wandering_local_orbit_of_compact_point hV hVc hf hn hK hKV
+     (fun n => hi.iterate n hz) hU (fun n => by simp [iterate_succ_apply'])
+-    hdisj hbounded hsc hinj
++    hsc hbounded hdisj
+ 
+ end BoundedWanderingDomains
+--- a/RiemannDynamics/BoundedWanderingSolution.lean
++++ b/RiemannDynamics/BoundedWanderingSolution.lean
+@@ -40,8 +40,9 @@
+   no_bounded_wandering_domains_transcendental_entire_of_coveringsAndArea
+     classicalDiscCoveringsAndArea hf htrans hU hz hforward hbounded
+ 
+-/-- The local theorem, with precisely the dynamical hypotheses of the frozen
+-submission and with the classical metric package now proved. -/
++/-- A simply connected local trapped-component orbit cannot be wandering
++if one point orbit stays in a compact subset of V. Eventual injectivity on
++intrinsic discs and their compact confinement are proved, not assumed. -/
+ theorem no_local_bounded_wandering_domains
+     {f : ℂ → ℂ} {V K : Set ℂ} {z : ℂ} {U : ℕ → Set ℂ}
+     (hV : IsOpen V) (hVc : IsCompact (closure V))
+@@ -51,11 +52,10 @@
+     (hz : z ∈ trappedInterior f V)
+     (hU : ∀ n, U n = connectedComponentIn (trappedInterior f V) (f^[n] z))
+     (hsc : ∀ n, IsSimplyConnected (U n))
+-    (hbounded : ∀ n, U n ⊆ K)
+-    (hinj : EventuallyInjectiveOnLargeDiscs f U (fun n => f^[n] z)) :
++    (hbounded : ∀ n, f^[n] z ∈ K) :
+     ¬ Pairwise (fun n m : ℕ => Disjoint (U n) (U m)) :=
+   no_local_bounded_wandering_domains_of_coveringsAndArea classicalDiscCoveringsAndArea
+-    hV hVc hf hn hK hKV hz hU hsc hbounded hinj
++    hV hVc hf hn hK hKV hz hU hsc hbounded
+ 
+ #print axioms classicalDiscCoveringsAndArea
+ #print axioms classicalHyperbolicMetrics
+--- a/Solution.lean
++++ b/Solution.lean
+@@ -22,8 +22,9 @@
+   Unconditional.no_bounded_wandering_domains_transcendental_entire
+     hf htrans hU hz hforward hbounded
+ 
+-/-- The local theorem, with precisely the dynamical hypotheses of the frozen
+-submission and with the classical metric package now proved. -/
++/-- A simply connected local trapped-component orbit cannot be wandering
++if one point orbit stays in a compact subset of V. Eventual injectivity on
++intrinsic discs and their compact confinement are proved, not assumed. -/
+ theorem no_local_bounded_wandering_domains
+     {f : ℂ → ℂ} {V K : Set ℂ} {z : ℂ} {U : ℕ → Set ℂ}
+     (hV : IsOpen V) (hVc : IsCompact (closure V))
+@@ -33,11 +34,10 @@
+     (hz : z ∈ trappedInterior f V)
+     (hU : ∀ n, U n = connectedComponentIn (trappedInterior f V) (f^[n] z))
+     (hsc : ∀ n, IsSimplyConnected (U n))
+-    (hbounded : ∀ n, U n ⊆ K)
+-    (hinj : EventuallyInjectiveOnLargeDiscs f U (fun n => f^[n] z)) :
++    (hbounded : ∀ n, f^[n] z ∈ K) :
+     ¬ Pairwise (fun n m : ℕ => Disjoint (U n) (U m)) :=
+   Unconditional.no_local_bounded_wandering_domains
+-    hV hVc hf hn hK hKV hz hU hsc hbounded hinj
++    hV hVc hf hn hK hKV hz hU hsc hbounded
+ 
+ #print axioms no_local_bounded_wandering_domains
+ #print axioms no_bounded_wandering_domains_transcendental_entire

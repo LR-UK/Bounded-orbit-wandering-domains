@@ -14,3 +14,6 @@
 'BoundedWanderingDomains.Unconditional.no_local_bounded_wandering_domains' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
+'AreaDeficit.FinitePunctureMetricInput.no_wandering_local_orbit_of_compact_point' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

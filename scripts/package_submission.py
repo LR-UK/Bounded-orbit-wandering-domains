@@ -32,7 +32,7 @@ manifest = {p.relative_to(root).as_posix(): hashlib.sha256(p.read_bytes()).hexdi
 (root / "verification/package-sources.json").write_text(json.dumps(manifest, indent=2) + "\n")
 files = [p for p in files if p.name != "package-sources.json"]
 files.append(root / "verification/package-sources.json")
-archive = root.parent / "bounded-wandering-palomar-unconditional-2026-09-23.zip"
+archive = root.parent / "bounded-wandering-palomar-local-orbit-v1.1.0.zip"
 with zipfile.ZipFile(archive, "w", zipfile.ZIP_DEFLATED) as z:
     for path in files:
         z.write(path, Path(root.name) / path.relative_to(root))

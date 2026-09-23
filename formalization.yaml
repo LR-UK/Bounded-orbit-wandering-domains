@@ -8,7 +8,7 @@ project:
     The proof builds upon Zihao Ye's new proof of Sullivan's No Wandering Domains theorem, and
     was obtained with assistance by generative AI. 
     We also formalise a stronger theorem, which shows that locally defined holomorphic functions
-    do not have orbits of simply connected wandering domains on which the iterates are univalent.
+    do not have orbits of simply connected wandering domains.
     The formalisation includes a number of classical results that were
     implemented as auxiliary results, including results concerning the hyperbolic metric
     for a finitely punctured sphere, and its area.
@@ -30,7 +30,7 @@ classification:
   - 30D05
   - 30F45
 sources:
-- title: 'Bounded-orbit wandering domains: working proof and manuscript'
+- title: 'Absence of bounded-orbit wandering domains'
   type: original-proof
   relationship: other
   authors:
@@ -42,8 +42,8 @@ sources:
     role: Mathematical direction, proof discussion, theorem scope and normalisation
   - name: OpenAI ChatGPT/Codex
     role: AI-assisted Lean proof construction, compatibility work and verification
-  location: Working manuscript and formalisation, September 2026
-  note: The manuscript is being drafted separately by the authors. The precise formalised claims are the
+  location: "https://github.com/LR-UK/Bounded-orbit-wandering-domains/tree/main/paper/Absence_of_bounded_orbit_wandering_domains-1.pdf"
+  note: The manuscript was drafted separately by the authors. The precise formalised claims are the
     two declarations in Challenge.lean; their local dynamical hypotheses are explicit. No independent
     human review or registry acceptance is claimed.
 - title: A new proof of no-wandering domain theorems without quasiconformal techniques
