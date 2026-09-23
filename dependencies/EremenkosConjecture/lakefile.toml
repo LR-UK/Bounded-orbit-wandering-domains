@@ -17,8 +17,3 @@ name = "EremenkosConjecture"
 name = "schoenflies"
 path = "vendor/schoenflies"
 
-[[lean_lib]]
-name = "Challenge"
-
-[[lean_lib]]
-name = "Solution"
