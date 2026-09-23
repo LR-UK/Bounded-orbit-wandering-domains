@@ -15,10 +15,6 @@ import Mathlib.Topology.Connected.LocallyConnected
 This Challenge is independent of the proof development. Its imports are
 Mathlib only. The two deliberate theorem holes are supplied by Solution.
 
-The classical hyperbolic metric facts are proved in the Solution development,
-including disc-covering existence and the total-area formula. Neither theorem
-assumes a metric-existence, covering-existence or area-formula hypothesis.
-
 Two results are stated:
 1. For a locally defined analytic map, an orbit of simply connected
    components of the maximal trapped open set cannot be both compactly
@@ -45,7 +41,7 @@ those same declarations in the Solution. No value of f at infinity is used.
 
 Mathematical direction: Lasse Rempe. AI-assisted formalisation: OpenAI
 ChatGPT/Codex. The proof dependencies retain their separate attribution.
-This is the substantive development, not a wrapper around a previously
+This is a substantive development, not a wrapper around a previously
 registered theorem. Global derived-singular-set statements are not claimed.
 -/
 

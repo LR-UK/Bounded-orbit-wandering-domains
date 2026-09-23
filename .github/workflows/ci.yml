@@ -36,7 +36,7 @@ jobs:
       - name: Official Comparator and independent kernels
         run: |
           set -o pipefail
-          ./scripts/verify-comparator.sh 2>&1 | tee verification/comparator-ci.log
+          bash scripts/verify-comparator.sh 2>&1 | tee verification/comparator-ci.log
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         if: always()
         with:

@@ -2,16 +2,22 @@
 version: v0.4
 project:
   name: Absence of bounded-orbit wandering domains
-  description: We prove that a transcendental entire function has no wandering Fatou component containing
-    a point with bounded forward orbit. Only the orbit of one point is required to be bounded. We also
-    prove a local theorem for simply connected trapped components compactly contained in an analytic neighbourhood,
-    under eventual injectivity on each fixed intrinsic disc. The proof uses hyperbolic area comparisons.
-    Disc-covering existence, the curvature minus one metric and its total-area formula are formalised,
-    so no classical metric hypothesis remains.
+  description: >-
+    We prove that transcendental entire functions do not have bounded-orbit wandering domains.
+    This answers a major open question in the field.
+    The proof builds upon Zihao Ye's new proof of Sullivan's No Wandering Domains theorem, and
+    was obtained with assistance by generative AI. 
+    We also formalise a stronger theorem, which shows that locally defined holomorphic functions
+    do not have orbits of simply connected wandering domains on which the iterates are univalent.
+    The formalisation includes a number of classical results that were
+    implemented as auxiliary results, including results concerning the hyperbolic metric
+    for a finitely punctured sphere, and its area.
   authors:
   - Nikolai Prochorov
   - Lasse Rempe
   - James Waterman
+  # Included third-party code retains its own licences; see THIRD_PARTY_NOTICES.md
+  # and the bundled licence texts. This field records the project licence.
   license: Apache-2.0
   responsible_maintainers:
   - Lasse Rempe

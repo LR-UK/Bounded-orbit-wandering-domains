@@ -1,14 +1,13 @@
-# Absence of bounded-orbit wandering domains
+# No bounded-orbit wandering domains
 
-This is the unconditional formalisation prepared for Palomar, version 1.0.0,
-23 September 2026. It proves that a transcendental entire function cannot have
-a wandering Fatou component containing a point with bounded forward orbit.
-**Only one point orbit is required to be bounded.**
+We prove that transcendental entire functions do not have bounded-orbit wandering domains.
 
-The former classical hyperbolic metric hypothesis has been discharged by
-formalised disc-covering existence and the total-area formula. Both public
-results are in [Solution.lean](Solution.lean). Their independent statements
-are in [Challenge.lean](Challenge.lean), using only Mathlib imports.
+This answers a major open question in the field. The proof builds upon Zihao Ye's new proof of Sullivan's No Wandering Domains theorem, and was obtained with assistance by generative AI. We also formalise a stronger theorem, which shows that locally defined holomorphic functions do not have orbits of simply connected wandering domains on which the iterates are univalent.
+
+This is an unconditional formalisation, prepared with the use of Generative AI for submission to Palomar. In order to achieve an unconditional formalisation, a number of classical results had to be newly (auto-)formalised, including results concerning the hyperbolic metric for a finitely punctured sphere, and its area.  
+
+Both public results are in [Solution.lean](Solution.lean). Their independent
+statements are in [Challenge.lean](Challenge.lean), using only Mathlib imports. The statements of the challenge theorems have been checked by the authors.
 
 ## Exact statements
 
@@ -22,13 +21,10 @@ are in [Challenge.lean](Challenge.lean), using only Mathlib imports.
    injectivity on each fixed intrinsic disc. Such a component orbit cannot
    be pairwise disjoint. These dynamical hypotheses remain explicit.
 
-Curvature is −1; area is divided by 2π. For each chart radius 0 < r < 1 the
-starting time for injectivity may depend on r. The intrinsic radius is
-2 artanh(r). The derived-singular-set statement is outside this submission.
 
-Fatou normality uses subsequential locally uniform convergence of sphere-valued
-iterates into the one-point compactification of ℂ. Transcendental entire means
-complex differentiability everywhere and inequality to every complex polynomial.
+The definition of the Fatou set, using normality, uses subsequential locally uniform convergence of sphere-valued iterates into the one-point compactification of ℂ. 
+Transcendental entire means complex differentiability everywhere and inequality to every complex polynomial.
+
 The eight short supporting definitions are included in the comparison.
 
 ## Build and verification
@@ -74,6 +70,19 @@ Third-party proofs retain their own authorship and licences; see
 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and `formalization.yaml`.
 The manuscript is being prepared separately. No independent human review or
 Palomar acceptance is claimed.
+
+## Licences
+
+The original project development is distributed under the Apache License,
+Version 2.0; see the complete text in [LICENSE](LICENSE).
+The `project.license` value in `formalization.yaml` is `Apache-2.0`.
+
+Included third-party source retains its own copyright, authorship and licence
+notices. [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) identifies the sources,
+adaptations and bundled licence texts. In particular, the Palomar metadata
+validator retains its [MIT licence](verification/palomar-contract/LICENSE).
+Keep these licence files, source notices and adaptation records with any
+redistribution of the included source.
 
 ## Submission
 
