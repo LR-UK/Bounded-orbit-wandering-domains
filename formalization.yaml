@@ -1,0 +1,169 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "Conditional absence of bounded wandering component orbits"
+  description: >-
+    A Lean formalisation of a local hyperbolic-area argument and its application
+    to bounded orbits of Fatou components of transcendental entire functions.
+    Both theorems explicitly assume the classical finite-puncture metric facts,
+    simple connectivity, and eventual injectivity on every fixed intrinsic disc.
+    The entire-function statement uses actual Fatou components and a single
+    bound on their union. This repository contains the substantive proof development.
+  authors: ["Nikolai Prochorov", "Lasse Rempe", "James Waterman"]
+  license: "Apache-2.0"
+  responsible_maintainers: ["Lasse Rempe"]
+
+classification:
+  arxiv: ["math.DS", "math.CV"]
+  msc2020: ["37F10", "30D05", "30F45"]
+
+sources:
+  - title: "Local hyperbolic-area argument for compactly contained wandering component orbits"
+    type: "conversation and working proof"
+    relationship: "formalizes"
+    contributors:
+      - name: "Lasse Rempe"
+        role: "Mathematical direction, conjectures, proof discussion and normalisation"
+      - name: "OpenAI ChatGPT/Codex"
+        role: "AI-assisted proof development and Lean implementation"
+    location: "Working discussion and formalisation, September 2026"
+    note: >-
+      The associated paper is co-authored by Nikolai Prochorov, Lasse Rempe
+      and James Waterman.
+      The precise conditional statements are recorded independently in Challenge.lean.
+      This is a development of the working argument, not a claim that the unrestricted
+      bounded-orbit wandering-domain problem has been resolved. No independent
+      human review or priority claim is recorded.
+  - title: "A new proof of no-wandering domain theorems without quasiconformal techniques"
+    authors: ["Zihao Ye"]
+    id: "https://arxiv.org/abs/2609.23834v1"
+    type: "preprint"
+    relationship: "background"
+    note: >-
+      Motivation for the use of hyperbolic area in the initial discussion.
+      The compared results are the subsequent local conditional statements;
+      this submission does not claim to formalise all of Ye's assertions.
+  - title: "Absence of wandering domains for some real entire functions with bounded singular sets"
+    authors: ["Helena Mihaljević-Brandt", "Lasse Rempe-Gillen"]
+    id: "https://doi.org/10.1007/s00208-013-0936-z"
+    type: "journal article"
+    relationship: "background"
+    note: "Proposition 3.4 records the hyperbolic-density comparison discussed in the working proof."
+  - title: "Quotients of hyperbolic metrics"
+    authors: ["David Minda"]
+    id: "https://doi.org/10.1007/s40315-017-0195-1"
+    type: "journal article"
+    relationship: "background"
+    note: "Background for comparison of hyperbolic metrics; not a trusted axiom."
+
+related_formalizations:
+  - title: "Mathlib"
+    id: "https://github.com/leanprover-community/mathlib4/tree/5ed2965256430c3649e86755f9576b54eca72435"
+    relationship: "builds-on"
+    note: "Pinned foundation and the only non-core direct Challenge imports."
+  - title: "FunctionTheory and its attributed Tau Ceti and Ray sources"
+    id: "dependencies/FunctionTheory"
+    relationship: "builds-on"
+    note: >-
+      Supplied source snapshot, retained as a contained path dependency with its
+      own licences and provenance manifests. Used for normal families, holomorphic
+      inverse maps and related analytic foundations.
+  - title: "ComplexDynamics"
+    id: "dependencies/ComplexDynamics"
+    relationship: "builds-on"
+    note: >-
+      Supplied source snapshot; actual Fatou normality and component definitions.
+      The short Challenge definitions reproduce the same declarations.
+  - title: "Riemann mapping theorem development"
+    authors: ["Yury Kudryashov"]
+    id: "https://github.com/urkud/mathlib4/tree/d43061d911b1aeae0788591da437a3b115098962"
+    relationship: "adapts"
+    note: "RiemannMappingFull.lean and UnitDiscShift.lean; see THIRD_PARTY_NOTICES.md."
+
+status:
+  scope: >-
+    Two conditional absence results are proved: local trapped components compactly
+    contained in an analytic neighbourhood, and genuine Fatou-component orbits of
+    a transcendental entire function with a uniformly bounded union. Both retain
+    simple connectivity and eventual injectivity on each fixed intrinsic disc;
+    the starting time may depend on the radius. ClassicalHyperbolicMetrics is an
+    explicit theorem hypothesis. All area-deficit, limiting-density and dynamical
+    deductions are proved. No derived-singular-set theorem, unrestricted bounded
+    wandering-domain theorem, or pointwise-bounded-orbit theorem is claimed.
+    Challenge.lean has two intentional proof holes and is not imported by Solution.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Classical.choice", "Quot.sound"]
+  main_results:
+    - declaration: "BoundedWanderingDomains.no_local_bounded_wandering_domains"
+      file: "Solution.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+    - declaration: "BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire"
+      file: "Solution.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+
+automation:
+  methods:
+    - method: "manual"
+      models: []
+      framework: "Mathematical discussion"
+      tool_setup: "Human choice of targets, hypotheses, proof suggestions and curvature -1 convention"
+    - method: "agent"
+      models: ["OpenAI ChatGPT/Codex (exact model versions not recorded for every turn)"]
+      framework: "OpenAI Codex with Lean 4 and Mathlib"
+      tool_setup: "AI-assisted proof construction, repository reuse, compilation and declaration audit"
+  cost:
+    wall_time: "Multiple interactive sessions; not tracked"
+    spend_usd: "not tracked"
+    hardware: "API assistant and Linux Lean checker"
+  prompting_notes: >-
+    The user requested completion of the conditional local dynamical theorem,
+    followed by an independent, readable Palomar Challenge using Mathlib definitions
+    preferentially and Tau Ceti when applicable.
+  spend_usd: "not tracked"
+  notes: >-
+    Lasse Rempe provided mathematical direction. AI assistance produced and checked
+    the formal development and submission files. Library contributions are credited
+    separately; a successful kernel check is not independent mathematical review.
+
+fidelity:
+  divergences: >-
+    The finite-puncture metrics are assumed to exist with explicitly listed
+    curvature -1 properties, rather than constructed from universal coverings.
+    Area is divided by 2*pi, so a plane with m punctures has mass m-1.
+    Local functions are total functions on C required analytic only near closure(V).
+    Orbit components lie in one compact K contained in V. The entire result assumes
+    boundedness of the union of the components, not just of individual point orbits.
+    Simple connectivity and radius-dependent eventual injectivity remain hypotheses.
+    No assertion removing these assumptions is represented by the theorem names.
+
+review:
+  status: "self-assessed"
+  reviewers: []
+  notes: >-
+    Local Lean compilation and standard-axiom checks are recorded in VERIFICATION.md.
+    The local declaration audit compares exported elaborated types and definition
+    bodies from the two separate environments. It is not Palomar Comparator or
+    NanoDa. No public submission, external Comparator run, registry acceptance or
+    independent human review is claimed.
+
+alignment:
+  namespace: "BoundedWanderingDomains"
+  statements:
+    - source: "Working local theorem with eventual intrinsic-disc injectivity"
+      lean: "BoundedWanderingDomains.no_local_bounded_wandering_domains"
+      module: "Solution"
+      status: "proved"
+      note: "Analyticity only near closure(V); compactly contained trapped-component orbit."
+    - source: "Entire Fatou-component consequence with a uniformly bounded union"
+      lean: "BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire"
+      module: "Solution"
+      status: "proved"
+      note: "The bridge to local trapped components is proved in EntireFatouBridge.lean."
+
+acknowledgements: >-
+  Mathlib contributors; Tau Ceti and Ray contributors; Yury Kudryashov;
+  the attributed FunctionTheory and ComplexDynamics sources. See the included notices.

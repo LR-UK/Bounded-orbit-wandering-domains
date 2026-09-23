@@ -1,0 +1,5 @@
+'BoundedWanderingDomains.no_local_bounded_wandering_domains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'AreaDeficit.fatou_orbit_eq_trapped_components' depends on axioms: [propext, Classical.choice, Quot.sound]

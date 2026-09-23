@@ -1,0 +1,31 @@
+{
+  "repository": "https://github.com/girving/ray",
+  "commit": "753f7131cf96f4651294de4398368abf136c34de",
+  "source": "Ray/Manifold/RiemannSphere.lean",
+  "excerpt": "Beginning through the IsManifold instance, inclusive",
+  "local": "FunctionTheory/RiemannSphere/Basic.lean",
+  "upstreamToolchain": "leanprover/lean4:v4.33.0",
+  "upstreamSha256": "6af42b6a32c43f809da65404127d0f86d31167ea459b3153e0fc3d66f91d4fc9",
+  "adaptedSha256": "cddefa32e272f4c317b4ddd7954379db86c94403d55565f3f78bd48ac1178a1e",
+  "abbreviationSource": "Ray/Manifold/Defs.lean: OneDimension.I",
+  "adaptations": [
+    "Keep only the two-chart atlas and topological prerequisites, with Mathlib imports.",
+    "Use Mathlib reciprocal limits in place of Ray.Misc.Cobounded equivalents.",
+    "Supply the positive-norm cobounded helper from Mathlib.",
+    "Copy OneDimension.I in a noncomputable declaration, as in its original noncomputable section.",
+    "Add FunctionTheory.riemannSphere_isManifold as an audit-facing instance witness."
+  ],
+  "statementChanges": "None to the retained upstream public definitions or theorems.",
+  "coordinateAdaptation": {
+    "local": "FunctionTheory/RiemannSphere/Coordinates.lean",
+    "adaptedSha256": "64931895fc24e5c893fa2e55e873b67c00185744f43a117144b16d1103f1c481",
+    "reused": [
+      "mAnalytic_coe",
+      "mAnalyticAt_toComplex",
+      "mAnalyticAt_toComplex'",
+      "mAnalytic_inv"
+    ],
+    "adaptations": "Use Mathlib ContMDiff chart criterion and ContDiff directly instead of Ray analytic-chart helper lemmas.",
+    "additionalProjectDevelopment": "Spherical translation and the biholomorphic coordinate omitting an arbitrary finite point."
+  }
+}

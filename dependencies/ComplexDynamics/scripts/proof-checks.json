@@ -1,0 +1,10 @@
+{
+  "targets": [
+    "ComplexDynamics"
+  ],
+  "sources": [
+    "ComplexDynamics.lean",
+    "ComplexDynamics"
+  ],
+  "audit": "scripts/Audit.lean"
+}

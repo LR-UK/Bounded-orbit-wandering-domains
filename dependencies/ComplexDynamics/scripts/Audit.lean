@@ -1,0 +1,50 @@
+import ComplexDynamics
+
+#print axioms ComplexDynamics.mem_bungeeSet_of_subsequences
+#print axioms ComplexDynamics.mem_juliaSet_of_escape_subsequence_of_closure_trappedSet
+#print axioms ComplexDynamics.trappedSet_subset_boundedOrbitSet
+
+#print axioms ComplexDynamics.IsNormalSequenceOn.mono
+#print axioms ComplexDynamics.isNormalSequenceOn_of_tendstoLocallyUniformly
+#print axioms ComplexDynamics.isOpen_fatouSet
+#print axioms ComplexDynamics.isClosed_juliaSet
+#print axioms ComplexDynamics.EscapesUniformlyOn.subset_escapingSet
+#print axioms ComplexDynamics.disjoint_boundedOrbitSet_escapingSet
+#print axioms ComplexDynamics.EscapesUniformlyOn.tendstoUniformlyOn_sphericalIterate
+#print axioms ComplexDynamics.EscapesUniformlyOn.interior_subset_fatouSet
+#print axioms ComplexDynamics.mem_juliaSet_of_escape_of_closure_trappedSet
+#print axioms ComplexDynamics.mem_trappedSet_of_iterate_mem
+#print axioms ComplexDynamics.connectedComponentIn_interior_eq_fatou
+#print axioms ComplexDynamics.inter_juliaSet_eq_frontier
+#print axioms ComplexDynamics.differentiableOn_iterate_of_mapsTo
+#print axioms ComplexDynamics.isOpen_iterateDomain
+#print axioms ComplexDynamics.eventuallyEq_iterate_of_orbit
+#print axioms ComplexDynamics.wandering_of_uniformEscape_of_trappedBoundary
+#print axioms ComplexDynamics.iterate_scaleConjugate
+#print axioms ComplexDynamics.IsTranscendentalEntire.scaleConjugate
+#print axioms ComplexDynamics.EscapesUniformlyOn.scaleConjugate
+#print axioms ComplexDynamics.maximumModulus_eq_sphere
+#print axioms ComplexDynamics.maximumModulus_le_of_uniform_error
+#print axioms ComplexDynamics.mem_fastEscapingSetAtRadius_of_radius_sequence
+#print axioms ComplexDynamics.maximumModulus_scaleConjugate
+#print axioms ComplexDynamics.mapsTo_scale_fastEscapingSetAtRadius
+#print axioms ComplexDynamics.isTranscendentalEntire_of_escape_and_bounded_values
+#print axioms ComplexDynamics.isTranscendentalEntire_exp
+#print axioms ComplexDynamics.exists_transcendentalEntire_near_polynomial
+#print axioms ComplexDynamics.isNormalSequenceOn_spherical_of_bounded_on_ball
+#print axioms ComplexDynamics.mem_fatouSet_of_iterate_mem_bounded_invariant
+
+#print axioms ComplexDynamics.pathComponentIn_eq_of_no_exit
+#print axioms ComplexDynamics.pathComponentIn_eq_inter_of_no_exit
+#print axioms ComplexDynamics.not_curve_to_infinity_of_bounded_pathComponent
+
+-- Public statement gallery.
+#print axioms ComplexDynamics.MainTheorems.uniform_escape_gives_fatou_interior
+#print axioms ComplexDynamics.MainTheorems.escape_and_trapping_give_julia
+#print axioms ComplexDynamics.MainTheorems.wandering_criterion
+#print axioms ComplexDynamics.MainTheorems.maximum_modulus_on_circle
+#print axioms ComplexDynamics.normalSequence_conjugate
+#print axioms ComplexDynamics.mem_escapingSet_conjugate_iff
+#print axioms ComplexDynamics.mem_boundedOrbitSet_conjugate_iff
+#print axioms ComplexDynamics.mem_bungeeSet_conjugate_iff
+#print axioms ComplexDynamics.mem_juliaSet_conjugate_iff

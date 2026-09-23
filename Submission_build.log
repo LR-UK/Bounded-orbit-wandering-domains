@@ -1,0 +1,84 @@
+ℹ [3568/3640] Replayed AreaDeficitCore
+info: AreaDeficitCore.lean:221:0: 'AreaDeficitCore.curvature_sign' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficitCore.lean:222:0: 'AreaDeficitCore.primitive_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficitCore.lean:223:0: 'AreaDeficitCore.slope_scaled_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficitCore.lean:224:0: 'AreaDeficitCore.smooth_cutoff_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficitCore.lean:225:0: 'AreaDeficitCore.fatou_uniform_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficitCore.lean:226:0: 'AreaDeficitCore.positive_part_area_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3584/3640] Replayed ConformalLaplacian
+info: ConformalLaplacian.lean:113:0: 'AreaDeficit.pullback_density_curvature' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3599/3640] Replayed FinitePunctureMetricInput
+info: FinitePunctureMetricInput.lean:144:0: 'AreaDeficit.FinitePunctureMetricInput.density_mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FinitePunctureMetricInput.lean:145:0: 'AreaDeficit.FinitePunctureMetricInput.insertion_area_cost' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3616/3640] Replayed HolomorphicLifting
+warning: HolomorphicLifting.lean:53:43: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [3689/3736] Replayed FunctionTheory.Conformal.BlochLocalImage
+warning: FunctionTheory/Conformal/BlochLocalImage.lean:38:22: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: FunctionTheory/Conformal/BlochLocalImage.lean:38:41: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: FunctionTheory/Conformal/BlochLocalImage.lean:86:24: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: FunctionTheory/Conformal/BlochLocalImage.lean:86:45: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ℹ [3726/3736] Replayed LocalMetricComparison
+info: LocalMetricComparison.lean:138:0: 'AreaDeficit.FinitePunctureMetricInput.compact_log_comparison' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [3729/3736] Replayed LocalIntegratedDeficit
+info: LocalIntegratedDeficit.lean:147:0: 'AreaDeficit.FinitePunctureMetricInput.local_integrated_deficit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LocalIntegratedDeficit.lean:148:0: 'AreaDeficit.FinitePunctureMetricInput.local_area_advance' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LocalIntegratedDeficit.lean:149:0: 'AreaDeficit.FinitePunctureMetricInput.local_cancellation_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [3731/3736] Replayed LocalDynamicalAreaBound
+info: LocalDynamicalAreaBound.lean:52:0: 'AreaDeficit.FinitePunctureMetricInput.local_dynamical_area_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [3733/3736] Replayed LocalPunctureSequence
+info: LocalPunctureSequence.lean:98:0: 'AreaDeficit.exists_local_puncture_sequence' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3743/3782] Replayed DiscSchwarzPick
+info: DiscSchwarzPick.lean:57:0: 'AreaDeficit.disc_schwarz_centre' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3744/3782] Replayed InteriorDensityLimit
+info: InteriorDensityLimit.lean:119:0: 'AreaDeficit.FinitePunctureMetricInput.density_limit_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3768/3782] Replayed ChartAreaLimit
+info: ChartAreaLimit.lean:99:0: 'AreaDeficit.FinitePunctureMetricInput.chart_area_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ChartAreaLimit.lean:100:0: 'AreaDeficit.chart_disc_area' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3773/3782] Replayed ChartDiscs
+info: ChartDiscs.lean:88:0: 'AreaDeficit.mapsTo_chartDisc' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3774/3782] Replayed ConditionalWanderingDomains
+info: ConditionalWanderingDomains.lean:172:0: 'AreaDeficit.FinitePunctureMetricInput.no_wandering_chart_orbit_with_anchors' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: ConditionalWanderingDomains.lean:173:0: 'AreaDeficit.FinitePunctureMetricInput.no_wandering_component_orbit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [3776/3782] Replayed ComplexDynamics.BoundedNormality
+warning: ComplexDynamics/BoundedNormality.lean:26:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [3777/3782] Built SubmissionDefinitions (15s)
+⚠ [3778/3782] Built Challenge (15s)
+warning: Challenge.lean:132:8: declaration uses `sorry`
+warning: Challenge.lean:152:8: declaration uses `sorry`
+ℹ [3780/3782] Built EntireFatouBridge (16s)
+info: EntireFatouBridge.lean:74:0: 'AreaDeficit.fatou_orbit_eq_trapped_components' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3781/3782] Built Solution (17s)
+info: Solution.lean:73:0: 'BoundedWanderingDomains.no_local_bounded_wandering_domains' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Solution.lean:74:0: 'BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Build completed successfully (3782 jobs).

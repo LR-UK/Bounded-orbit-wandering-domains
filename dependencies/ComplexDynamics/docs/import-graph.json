@@ -1,0 +1,1027 @@
+{
+  "description": "Direct Lean imports, not minimal theorem dependencies. Own source only; external imports retained as labelled leaves.",
+  "generator": "scripts/update-map.py",
+  "modules": [
+    {
+      "module": "ComplexDynamics",
+      "path": "ComplexDynamics.lean",
+      "title": "ComplexDynamics",
+      "imports": [
+        "ComplexDynamics.Basic",
+        "ComplexDynamics.UniformEscape",
+        "ComplexDynamics.Trapping",
+        "ComplexDynamics.FatouComponents",
+        "ComplexDynamics.Iteration",
+        "ComplexDynamics.Wandering",
+        "ComplexDynamics.Scaling",
+        "ComplexDynamics.FastEscape",
+        "ComplexDynamics.FastEscapeScaling",
+        "ComplexDynamics.Transcendence",
+        "ComplexDynamics.TranscendentalApproximation",
+        "ComplexDynamics.BoundedNormality",
+        "ComplexDynamics.PathComponents",
+        "ComplexDynamics.CurvesToInfinity",
+        "ComplexDynamics.MainTheorems",
+        "ComplexDynamics.Bungee",
+        "ComplexDynamics.Conjugacy"
+      ],
+      "declarations": []
+    },
+    {
+      "module": "ComplexDynamics.Basic",
+      "path": "ComplexDynamics/Basic.lean",
+      "title": "Basic",
+      "imports": [
+        "ComplexDynamics.Normality",
+        "Mathlib.Analysis.Complex.CauchyIntegral",
+        "Mathlib.Analysis.Normed.Group.Bounded",
+        "Mathlib.Topology.UniformSpace.Uniformizable",
+        "Mathlib.Topology.Compactification.OnePoint.Basic",
+        "Mathlib.Topology.Connected.LocallyConnected"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "IsEntire",
+          "line": 21
+        },
+        {
+          "kind": "def",
+          "name": "IsTranscendentalEntire",
+          "line": 24
+        },
+        {
+          "kind": "def",
+          "name": "escapingSet",
+          "line": 28
+        },
+        {
+          "kind": "def",
+          "name": "boundedOrbitSet",
+          "line": 32
+        },
+        {
+          "kind": "def",
+          "name": "EscapesUniformlyOn",
+          "line": 36
+        },
+        {
+          "kind": "abbrev",
+          "name": "RiemannSphere",
+          "line": 40
+        },
+        {
+          "kind": "def",
+          "name": "sphericalIterate",
+          "line": 45
+        },
+        {
+          "kind": "def",
+          "name": "fatouSet",
+          "line": 49
+        },
+        {
+          "kind": "def",
+          "name": "juliaSet",
+          "line": 52
+        },
+        {
+          "kind": "def",
+          "name": "IsFatouComponent",
+          "line": 54
+        },
+        {
+          "kind": "def",
+          "name": "IsWanderingDomain",
+          "line": 59
+        },
+        {
+          "kind": "theorem",
+          "name": "isOpen_fatouSet",
+          "line": 64
+        },
+        {
+          "kind": "theorem",
+          "name": "isClosed_juliaSet",
+          "line": 69
+        },
+        {
+          "kind": "theorem",
+          "name": "mem_fatouSet_iff_exists_ball",
+          "line": 72
+        },
+        {
+          "kind": "theorem",
+          "name": "EscapesUniformlyOn.mono",
+          "line": 82
+        },
+        {
+          "kind": "theorem",
+          "name": "EscapesUniformlyOn.subset_escapingSet",
+          "line": 87
+        },
+        {
+          "kind": "theorem",
+          "name": "disjoint_boundedOrbitSet_escapingSet",
+          "line": 92
+        }
+      ]
+    },
+    {
+      "module": "ComplexDynamics.BoundedNormality",
+      "path": "ComplexDynamics/BoundedNormality.lean",
+      "title": "Normality of bounded holomorphic sequences on smaller disks",
+      "imports": [
+        "ComplexDynamics.Basic",
+        "Mathlib.Analysis.Complex.Schwarz",
+        "Mathlib.Topology.ContinuousMap.Bounded.ArzelaAscoli",
+        "Mathlib.Topology.Sequences",
+        "Mathlib.Topology.UniformSpace.HeineCantor"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "isNormalSequenceOn_spherical_of_equicontinuous",
+          "line": 19
+        },
+        {
+          "kind": "theorem",
+          "name": "isNormalSequenceOn_spherical_of_bounded_on_ball",
+          "line": 49
+        },
+        {
+          "kind": "theorem",
+          "name": "isNormalSequenceOn_spherical_of_eventually_bounded_on_ball",
+          "line": 94
+        },
+        {
+          "kind": "theorem",
+          "name": "mem_fatouSet_of_iterate_mem_bounded_invariant",
+          "line": 109
+        }
+      ]
+    },
+    {
+      "module": "ComplexDynamics.Bungee",
+      "path": "ComplexDynamics/Bungee.lean",
+      "title": "Bungee orbits and a Julia criterion from escaping subsequences -/",
+      "imports": [
+        "ComplexDynamics.Trapping"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "bungeeSet",
+          "line": 11
+        },
+        {
+          "kind": "theorem",
+          "name": "mem_bungeeSet_iff",
+          "line": 13
+        },
+        {
+          "kind": "theorem",
+          "name": "mem_bungeeSet_of_subsequences",
+          "line": 18
+        },
+        {
+          "kind": "theorem",
+          "name": "mem_juliaSet_of_escape_subsequence_of_closure_trappedSet",
+          "line": 35
+        },
+        {
+          "kind": "theorem",
+          "name": "trappedSet_subset_boundedOrbitSet",
+          "line": 70
+        }
+      ]
+    },
+    {
+      "module": "ComplexDynamics.Conjugacy",
+      "path": "ComplexDynamics/Conjugacy.lean",
+      "title": "Dynamical sets under a homeomorphism of the plane -/",
+      "imports": [
+        "ComplexDynamics.Bungee",
+        "Mathlib.Topology.MetricSpace.Bounded",
+        "Mathlib.Topology.UniformSpace.HeineCantor"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "conjugate",
+          "line": 12
+        },
+        {
+          "kind": "theorem",
+          "name": "iterate_conjugate",
+          "line": 14
+        },
+        {
+          "kind": "theorem",
+          "name": "conjugate_symm",
+          "line": 22
+        },
+        {
+          "kind": "theorem",
+          "name": "mapsTo_escapingSet_conjugate",
+          "line": 27
+        },
+        {
+          "kind": "theorem",
+          "name": "mem_escapingSet_conjugate_iff",
+          "line": 37
+        },
+        {
+          "kind": "theorem",
+          "name": "mapsTo_boundedOrbitSet_conjugate",
+          "line": 44
+        },
+        {
+          "kind": "theorem",
+          "name": "mem_boundedOrbitSet_conjugate_iff",
+          "line": 52
+        },
+        {
+          "kind": "theorem",
+          "name": "mem_bungeeSet_conjugate_iff",
+          "line": 59
+        },
+        {
+          "kind": "theorem",
+          "name": "normalSequence_conjugate",
+          "line": 63
+        },
+        {
+          "kind": "theorem",
+          "name": "mapsTo_fatouSet_conjugate",
+          "line": 82
+        },
+        {
+          "kind": "theorem",
+          "name": "mem_fatouSet_conjugate_iff",
+          "line": 87
+        },
+        {
+          "kind": "theorem",
+          "name": "mem_juliaSet_conjugate_iff",
+          "line": 94
+        },
+        {
+          "kind": "theorem",
+          "name": "image_escapingSet_conjugate",
+          "line": 107
+        },
+        {
+          "kind": "theorem",
+          "name": "image_bungeeSet_conjugate",
+          "line": 111
+        },
+        {
+          "kind": "theorem",
+          "name": "image_juliaSet_conjugate",
+          "line": 115
+        }
+      ]
+    },
+    {
+      "module": "ComplexDynamics.CurvesToInfinity",
+      "path": "ComplexDynamics/CurvesToInfinity.lean",
+      "title": "CurvesToInfinity",
+      "imports": [
+        "ComplexDynamics.PathComponents"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "not_curve_to_infinity_of_bounded_pathComponent",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "module": "ComplexDynamics.FastEscape",
+      "path": "ComplexDynamics/FastEscape.lean",
+      "title": "Maximum modulus and fast escape",
+      "imports": [
+        "ComplexDynamics.Basic",
+        "Mathlib.Analysis.Complex.AbsMax"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "maximumModulus",
+          "line": 18
+        },
+        {
+          "kind": "theorem",
+          "name": "norm_le_maximumModulus",
+          "line": 21
+        },
+        {
+          "kind": "theorem",
+          "name": "maximumModulus_le",
+          "line": 25
+        },
+        {
+          "kind": "theorem",
+          "name": "maximumModulus_nonneg",
+          "line": 31
+        },
+        {
+          "kind": "theorem",
+          "name": "maximumModulus_mono",
+          "line": 35
+        },
+        {
+          "kind": "theorem",
+          "name": "maximumModulus_eq_sphere",
+          "line": 39
+        },
+        {
+          "kind": "theorem",
+          "name": "maximumModulus_le_of_uniform_error",
+          "line": 57
+        },
+        {
+          "kind": "def",
+          "name": "fastEscapingSetAtRadius",
+          "line": 68
+        },
+        {
+          "kind": "def",
+          "name": "fastEscapingSet",
+          "line": 72
+        },
+        {
+          "kind": "theorem",
+          "name": "maximumModulus_iterate_le",
+          "line": 75
+        },
+        {
+          "kind": "theorem",
+          "name": "mem_fastEscapingSetAtRadius_of_radius_sequence",
+          "line": 86
+        }
+      ]
+    },
+    {
+      "module": "ComplexDynamics.FastEscapeScaling",
+      "path": "ComplexDynamics/FastEscapeScaling.lean",
+      "title": "Scaling of maximum modulus and fast escape -/",
+      "imports": [
+        "ComplexDynamics.FastEscape",
+        "ComplexDynamics.Scaling"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "maximumModulus_scaleConjugate",
+          "line": 10
+        },
+        {
+          "kind": "theorem",
+          "name": "maximumModulus_iterate_nonneg",
+          "line": 39
+        },
+        {
+          "kind": "theorem",
+          "name": "iterate_maximumModulus_scaleConjugate",
+          "line": 47
+        },
+        {
+          "kind": "theorem",
+          "name": "mapsTo_scale_fastEscapingSetAtRadius",
+          "line": 57
+        }
+      ]
+    },
+    {
+      "module": "ComplexDynamics.FatouComponents",
+      "path": "ComplexDynamics/FatouComponents.lean",
+      "title": "FatouComponents",
+      "imports": [
+        "ComplexDynamics.Trapping"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "connectedComponentIn_interior_eq_fatou",
+          "line": 9
+        },
+        {
+          "kind": "theorem",
+          "name": "isFatouComponent_connectedComponentIn_interior",
+          "line": 30
+        },
+        {
+          "kind": "theorem",
+          "name": "inter_juliaSet_eq_frontier",
+          "line": 37
+        }
+      ]
+    },
+    {
+      "module": "ComplexDynamics.Iteration",
+      "path": "ComplexDynamics/Iteration.lean",
+      "title": "Iteration",
+      "imports": [
+        "ComplexDynamics.Basic"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "differentiableOn_iterate_of_mapsTo",
+          "line": 10
+        },
+        {
+          "kind": "theorem",
+          "name": "continuousOn_iterate_of_mapsTo",
+          "line": 19
+        },
+        {
+          "kind": "def",
+          "name": "iterateDomain",
+          "line": 29
+        },
+        {
+          "kind": "theorem",
+          "name": "mem_iterateDomain_iff",
+          "line": 33
+        },
+        {
+          "kind": "theorem",
+          "name": "isOpen_iterateDomain",
+          "line": 49
+        },
+        {
+          "kind": "theorem",
+          "name": "mapsTo_iterateDomain",
+          "line": 56
+        },
+        {
+          "kind": "theorem",
+          "name": "iterate_eqOn_of_mapsTo",
+          "line": 60
+        },
+        {
+          "kind": "theorem",
+          "name": "eventuallyEq_iterate_of_orbit",
+          "line": 72
+        }
+      ]
+    },
+    {
+      "module": "ComplexDynamics.MainTheorems",
+      "path": "ComplexDynamics/MainTheorems.lean",
+      "title": "Main statements for mathematical review",
+      "imports": [
+        "ComplexDynamics.Wandering",
+        "ComplexDynamics.BoundedNormality",
+        "ComplexDynamics.FastEscape",
+        "ComplexDynamics.TranscendentalApproximation",
+        "ComplexDynamics.CurvesToInfinity"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "uniform_escape_gives_fatou_interior",
+          "line": 24
+        },
+        {
+          "kind": "theorem",
+          "name": "escape_and_trapping_give_julia",
+          "line": 29
+        },
+        {
+          "kind": "theorem",
+          "name": "wandering_criterion",
+          "line": 36
+        },
+        {
+          "kind": "theorem",
+          "name": "maximum_modulus_on_circle",
+          "line": 46
+        }
+      ]
+    },
+    {
+      "module": "ComplexDynamics.Normality",
+      "path": "ComplexDynamics/Normality.lean",
+      "title": "Normality",
+      "imports": [
+        "Mathlib.Topology.UniformSpace.LocallyUniformConvergence"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "IsNormalSequenceOn",
+          "line": 15
+        },
+        {
+          "kind": "theorem",
+          "name": "IsNormalSequenceOn.mono",
+          "line": 21
+        },
+        {
+          "kind": "theorem",
+          "name": "isNormalSequenceOn_of_tendstoLocallyUniformly",
+          "line": 30
+        }
+      ]
+    },
+    {
+      "module": "ComplexDynamics.PathComponents",
+      "path": "ComplexDynamics/PathComponents.lean",
+      "title": "PathComponents",
+      "imports": [
+        "ComplexDynamics.FatouComponents",
+        "Mathlib.Topology.Connected.PathConnected"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "pathComponentIn_eq_of_no_exit",
+          "line": 10
+        },
+        {
+          "kind": "theorem",
+          "name": "pathComponentIn_eq_inter_of_no_exit",
+          "line": 19
+        }
+      ]
+    },
+    {
+      "module": "ComplexDynamics.Scaling",
+      "path": "ComplexDynamics/Scaling.lean",
+      "title": "Nonzero linear changes of coordinate -/",
+      "imports": [
+        "ComplexDynamics.Wandering",
+        "Mathlib.Topology.Algebra.GroupWithZero"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "scaleConjugate",
+          "line": 11
+        },
+        {
+          "kind": "theorem",
+          "name": "iterate_scaleConjugate_mul",
+          "line": 13
+        },
+        {
+          "kind": "theorem",
+          "name": "iterate_scaleConjugate",
+          "line": 21
+        },
+        {
+          "kind": "theorem",
+          "name": "IsEntire.scaleConjugate",
+          "line": 26
+        },
+        {
+          "kind": "theorem",
+          "name": "IsTranscendentalEntire.scaleConjugate",
+          "line": 30
+        },
+        {
+          "kind": "theorem",
+          "name": "EscapesUniformlyOn.scaleConjugate",
+          "line": 42
+        },
+        {
+          "kind": "theorem",
+          "name": "mapsTo_scale_trappedSet",
+          "line": 52
+        }
+      ]
+    },
+    {
+      "module": "ComplexDynamics.Transcendence",
+      "path": "ComplexDynamics/Transcendence.lean",
+      "title": "A criterion for transcendence using escaping and bounded values -/",
+      "imports": [
+        "ComplexDynamics.Basic",
+        "Mathlib.Topology.Algebra.Polynomial"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "isTranscendentalEntire_of_escape_and_bounded_values",
+          "line": 14
+        }
+      ]
+    },
+    {
+      "module": "ComplexDynamics.TranscendentalApproximation",
+      "path": "ComplexDynamics/TranscendentalApproximation.lean",
+      "title": "Transcendental entire perturbations of polynomials -/",
+      "imports": [
+        "ComplexDynamics.Transcendence",
+        "Mathlib.Analysis.Complex.Polynomial.Basic",
+        "Mathlib.Analysis.SpecialFunctions.ExpDeriv"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "isTranscendentalEntire_exp",
+          "line": 11
+        },
+        {
+          "kind": "theorem",
+          "name": "isTranscendentalEntire_polynomial_add_exp",
+          "line": 25
+        },
+        {
+          "kind": "theorem",
+          "name": "exists_transcendentalEntire_near_polynomial",
+          "line": 36
+        }
+      ]
+    },
+    {
+      "module": "ComplexDynamics.Trapping",
+      "path": "ComplexDynamics/Trapping.lean",
+      "title": "Trapping",
+      "imports": [
+        "ComplexDynamics.UniformEscape",
+        "Mathlib.Topology.UniformSpace.UniformApproximation"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "trappedSet",
+          "line": 10
+        },
+        {
+          "kind": "theorem",
+          "name": "mem_juliaSet_of_escape_of_closure_trappedSet",
+          "line": 15
+        },
+        {
+          "kind": "theorem",
+          "name": "mem_trappedSet_of_iterate_mem",
+          "line": 42
+        }
+      ]
+    },
+    {
+      "module": "ComplexDynamics.UniformEscape",
+      "path": "ComplexDynamics/UniformEscape.lean",
+      "title": "UniformEscape",
+      "imports": [
+        "ComplexDynamics.Basic"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "tendsto_coe_sphere_cobounded",
+          "line": 8
+        },
+        {
+          "kind": "theorem",
+          "name": "tendsto_sphericalIterate_of_mem_escapingSet",
+          "line": 14
+        },
+        {
+          "kind": "theorem",
+          "name": "EscapesUniformlyOn.tendstoUniformlyOn_sphericalIterate",
+          "line": 19
+        },
+        {
+          "kind": "theorem",
+          "name": "EscapesUniformlyOn.isNormalSequenceOn",
+          "line": 29
+        },
+        {
+          "kind": "theorem",
+          "name": "EscapesUniformlyOn.interior_subset_fatouSet",
+          "line": 36
+        }
+      ]
+    },
+    {
+      "module": "ComplexDynamics.Wandering",
+      "path": "ComplexDynamics/Wandering.lean",
+      "title": "Wandering components from uniform escape and trapped boundary points",
+      "imports": [
+        "ComplexDynamics.FatouComponents",
+        "ComplexDynamics.Iteration"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "EscapesUniformlyOn.image_iterate",
+          "line": 16
+        },
+        {
+          "kind": "theorem",
+          "name": "mapsTo_iterate_trappedSet",
+          "line": 24
+        },
+        {
+          "kind": "theorem",
+          "name": "wandering_of_uniformEscape_of_trappedBoundary",
+          "line": 30
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "ComplexDynamics.Basic",
+      "to": "ComplexDynamics",
+      "external": false
+    },
+    {
+      "from": "ComplexDynamics.UniformEscape",
+      "to": "ComplexDynamics",
+      "external": false
+    },
+    {
+      "from": "ComplexDynamics.Trapping",
+      "to": "ComplexDynamics",
+      "external": false
+    },
+    {
+      "from": "ComplexDynamics.FatouComponents",
+      "to": "ComplexDynamics",
+      "external": false
+    },
+    {
+      "from": "ComplexDynamics.Iteration",
+      "to": "ComplexDynamics",
+      "external": false
+    },
+    {
+      "from": "ComplexDynamics.Wandering",
+      "to": "ComplexDynamics",
+      "external": false
+    },
+    {
+      "from": "ComplexDynamics.Scaling",
+      "to": "ComplexDynamics",
+      "external": false
+    },
+    {
+      "from": "ComplexDynamics.FastEscape",
+      "to": "ComplexDynamics",
+      "external": false
+    },
+    {
+      "from": "ComplexDynamics.FastEscapeScaling",
+      "to": "ComplexDynamics",
+      "external": false
+    },
+    {
+      "from": "ComplexDynamics.Transcendence",
+      "to": "ComplexDynamics",
+      "external": false
+    },
+    {
+      "from": "ComplexDynamics.TranscendentalApproximation",
+      "to": "ComplexDynamics",
+      "external": false
+    },
+    {
+      "from": "ComplexDynamics.BoundedNormality",
+      "to": "ComplexDynamics",
+      "external": false
+    },
+    {
+      "from": "ComplexDynamics.PathComponents",
+      "to": "ComplexDynamics",
+      "external": false
+    },
+    {
+      "from": "ComplexDynamics.CurvesToInfinity",
+      "to": "ComplexDynamics",
+      "external": false
+    },
+    {
+      "from": "ComplexDynamics.MainTheorems",
+      "to": "ComplexDynamics",
+      "external": false
+    },
+    {
+      "from": "ComplexDynamics.Bungee",
+      "to": "ComplexDynamics",
+      "external": false
+    },
+    {
+      "from": "ComplexDynamics.Conjugacy",
+      "to": "ComplexDynamics",
+      "external": false
+    },
+    {
+      "from": "ComplexDynamics.Normality",
+      "to": "ComplexDynamics.Basic",
+      "external": false
+    },
+    {
+      "from": "Mathlib.Analysis.Complex.CauchyIntegral",
+      "to": "ComplexDynamics.Basic",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Analysis.Normed.Group.Bounded",
+      "to": "ComplexDynamics.Basic",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Topology.UniformSpace.Uniformizable",
+      "to": "ComplexDynamics.Basic",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Topology.Compactification.OnePoint.Basic",
+      "to": "ComplexDynamics.Basic",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Topology.Connected.LocallyConnected",
+      "to": "ComplexDynamics.Basic",
+      "external": true
+    },
+    {
+      "from": "ComplexDynamics.Basic",
+      "to": "ComplexDynamics.BoundedNormality",
+      "external": false
+    },
+    {
+      "from": "Mathlib.Analysis.Complex.Schwarz",
+      "to": "ComplexDynamics.BoundedNormality",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Topology.ContinuousMap.Bounded.ArzelaAscoli",
+      "to": "ComplexDynamics.BoundedNormality",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Topology.Sequences",
+      "to": "ComplexDynamics.BoundedNormality",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Topology.UniformSpace.HeineCantor",
+      "to": "ComplexDynamics.BoundedNormality",
+      "external": true
+    },
+    {
+      "from": "ComplexDynamics.Trapping",
+      "to": "ComplexDynamics.Bungee",
+      "external": false
+    },
+    {
+      "from": "ComplexDynamics.Bungee",
+      "to": "ComplexDynamics.Conjugacy",
+      "external": false
+    },
+    {
+      "from": "Mathlib.Topology.MetricSpace.Bounded",
+      "to": "ComplexDynamics.Conjugacy",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Topology.UniformSpace.HeineCantor",
+      "to": "ComplexDynamics.Conjugacy",
+      "external": true
+    },
+    {
+      "from": "ComplexDynamics.PathComponents",
+      "to": "ComplexDynamics.CurvesToInfinity",
+      "external": false
+    },
+    {
+      "from": "ComplexDynamics.Basic",
+      "to": "ComplexDynamics.FastEscape",
+      "external": false
+    },
+    {
+      "from": "Mathlib.Analysis.Complex.AbsMax",
+      "to": "ComplexDynamics.FastEscape",
+      "external": true
+    },
+    {
+      "from": "ComplexDynamics.FastEscape",
+      "to": "ComplexDynamics.FastEscapeScaling",
+      "external": false
+    },
+    {
+      "from": "ComplexDynamics.Scaling",
+      "to": "ComplexDynamics.FastEscapeScaling",
+      "external": false
+    },
+    {
+      "from": "ComplexDynamics.Trapping",
+      "to": "ComplexDynamics.FatouComponents",
+      "external": false
+    },
+    {
+      "from": "ComplexDynamics.Basic",
+      "to": "ComplexDynamics.Iteration",
+      "external": false
+    },
+    {
+      "from": "ComplexDynamics.Wandering",
+      "to": "ComplexDynamics.MainTheorems",
+      "external": false
+    },
+    {
+      "from": "ComplexDynamics.BoundedNormality",
+      "to": "ComplexDynamics.MainTheorems",
+      "external": false
+    },
+    {
+      "from": "ComplexDynamics.FastEscape",
+      "to": "ComplexDynamics.MainTheorems",
+      "external": false
+    },
+    {
+      "from": "ComplexDynamics.TranscendentalApproximation",
+      "to": "ComplexDynamics.MainTheorems",
+      "external": false
+    },
+    {
+      "from": "ComplexDynamics.CurvesToInfinity",
+      "to": "ComplexDynamics.MainTheorems",
+      "external": false
+    },
+    {
+      "from": "Mathlib.Topology.UniformSpace.LocallyUniformConvergence",
+      "to": "ComplexDynamics.Normality",
+      "external": true
+    },
+    {
+      "from": "ComplexDynamics.FatouComponents",
+      "to": "ComplexDynamics.PathComponents",
+      "external": false
+    },
+    {
+      "from": "Mathlib.Topology.Connected.PathConnected",
+      "to": "ComplexDynamics.PathComponents",
+      "external": true
+    },
+    {
+      "from": "ComplexDynamics.Wandering",
+      "to": "ComplexDynamics.Scaling",
+      "external": false
+    },
+    {
+      "from": "Mathlib.Topology.Algebra.GroupWithZero",
+      "to": "ComplexDynamics.Scaling",
+      "external": true
+    },
+    {
+      "from": "ComplexDynamics.Basic",
+      "to": "ComplexDynamics.Transcendence",
+      "external": false
+    },
+    {
+      "from": "Mathlib.Topology.Algebra.Polynomial",
+      "to": "ComplexDynamics.Transcendence",
+      "external": true
+    },
+    {
+      "from": "ComplexDynamics.Transcendence",
+      "to": "ComplexDynamics.TranscendentalApproximation",
+      "external": false
+    },
+    {
+      "from": "Mathlib.Analysis.Complex.Polynomial.Basic",
+      "to": "ComplexDynamics.TranscendentalApproximation",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Analysis.SpecialFunctions.ExpDeriv",
+      "to": "ComplexDynamics.TranscendentalApproximation",
+      "external": true
+    },
+    {
+      "from": "ComplexDynamics.UniformEscape",
+      "to": "ComplexDynamics.Trapping",
+      "external": false
+    },
+    {
+      "from": "Mathlib.Topology.UniformSpace.UniformApproximation",
+      "to": "ComplexDynamics.Trapping",
+      "external": true
+    },
+    {
+      "from": "ComplexDynamics.Basic",
+      "to": "ComplexDynamics.UniformEscape",
+      "external": false
+    },
+    {
+      "from": "ComplexDynamics.FatouComponents",
+      "to": "ComplexDynamics.Wandering",
+      "external": false
+    },
+    {
+      "from": "ComplexDynamics.Iteration",
+      "to": "ComplexDynamics.Wandering",
+      "external": false
+    }
+  ]
+}

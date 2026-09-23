@@ -1,0 +1,158 @@
+ℹ [3482/3510] Replayed AreaDeficitCore
+info: AreaDeficitCore.lean:221:0: 'AreaDeficitCore.curvature_sign' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficitCore.lean:222:0: 'AreaDeficitCore.primitive_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficitCore.lean:223:0: 'AreaDeficitCore.slope_scaled_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficitCore.lean:224:0: 'AreaDeficitCore.smooth_cutoff_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficitCore.lean:225:0: 'AreaDeficitCore.fatou_uniform_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficitCore.lean:226:0: 'AreaDeficitCore.positive_part_area_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3627/3673] Replayed HolomorphicLifting
+warning: HolomorphicLifting.lean:53:43: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [3718/3748] Replayed FunctionTheory.Conformal.BlochLocalImage
+warning: FunctionTheory/Conformal/BlochLocalImage.lean:38:22: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: FunctionTheory/Conformal/BlochLocalImage.lean:38:41: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: FunctionTheory/Conformal/BlochLocalImage.lean:86:24: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: FunctionTheory/Conformal/BlochLocalImage.lean:86:45: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ℹ [3755/3772] Built ChartDiscs (33s)
+info: ChartDiscs.lean:88:0: 'AreaDeficit.mapsTo_chartDisc' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [3756/3772] Built BarrierComponents (36s)
+✔ [3757/3772] Built CompactCutoff (36s)
+ℹ [3758/3772] Built LocalPunctureSequence (37s)
+info: LocalPunctureSequence.lean:98:0: 'AreaDeficit.exists_local_puncture_sequence' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3759/3772] Built DiscSchwarzPick (38s)
+info: DiscSchwarzPick.lean:57:0: 'AreaDeficit.disc_schwarz_centre' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3760/3772] Built FinitePunctureMetricInput (38s)
+info: FinitePunctureMetricInput.lean:144:0: 'AreaDeficit.FinitePunctureMetricInput.density_mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FinitePunctureMetricInput.lean:145:0: 'AreaDeficit.FinitePunctureMetricInput.insertion_area_cost' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3761/3772] Built ConformalLaplacian (39s)
+info: ConformalLaplacian.lean:113:0: 'AreaDeficit.pullback_density_curvature' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [3762/3772] Built PunctureDensityLimits (18s)
+ℹ [3763/3772] Built LocalMetricComparison (19s)
+info: LocalMetricComparison.lean:138:0: 'AreaDeficit.FinitePunctureMetricInput.compact_log_comparison' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+✔ [3764/3772] Built OmittedPairCompactness (16s)
+ℹ [3765/3772] Built LocalIntegratedDeficit (17s)
+info: LocalIntegratedDeficit.lean:147:0: 'AreaDeficit.FinitePunctureMetricInput.local_integrated_deficit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LocalIntegratedDeficit.lean:148:0: 'AreaDeficit.FinitePunctureMetricInput.local_area_advance' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LocalIntegratedDeficit.lean:149:0: 'AreaDeficit.FinitePunctureMetricInput.local_cancellation_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [3766/3772] Built LocalDynamicalAreaBound (17s)
+info: LocalDynamicalAreaBound.lean:52:0: 'AreaDeficit.FinitePunctureMetricInput.local_dynamical_area_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [3767/3772] Built ConditionalPositiveArea (18s)
+info: ConditionalPositiveArea.lean:124:0: 'AreaDeficit.FinitePunctureMetricInput.null_local_wandering_set_with_anchors' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: ConditionalPositiveArea.lean:125:0: 'AreaDeficit.FinitePunctureMetricInput.null_local_wandering_set' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [3768/3772] Built InteriorDensityLimit (20s)
+info: InteriorDensityLimit.lean:119:0: 'AreaDeficit.FinitePunctureMetricInput.density_limit_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3769/3772] Built ChartAreaLimit (14s)
+info: ChartAreaLimit.lean:99:0: 'AreaDeficit.FinitePunctureMetricInput.chart_area_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ChartAreaLimit.lean:100:0: 'AreaDeficit.chart_disc_area' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3770/3772] Built ConditionalWanderingDomains (14s)
+info: ConditionalWanderingDomains.lean:172:0: 'AreaDeficit.FinitePunctureMetricInput.no_wandering_chart_orbit_with_anchors' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: ConditionalWanderingDomains.lean:173:0: 'AreaDeficit.FinitePunctureMetricInput.no_wandering_component_orbit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [3771/3772] Built AreaDeficit (12s)
+info: AreaDeficit.lean:17:0: 'AreaDeficit.beta_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:18:0: 'AreaDeficit.green_laplacian' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:19:0: 'AreaDeficit.laplacian_comp' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:20:0: 'AreaDeficit.logBarrier_eventually_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:21:0: 'AreaDeficit.puncturedBeta_contDiffAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:22:0: 'AreaDeficit.positive_part_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:23:0: 'AreaDeficit.density_deficit_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:24:0: 'AreaDeficit.injOn_forwardOrbit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:25:0: 'AreaDeficit.finite_area_cancellation' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:26:0: 'AreaDeficit.null_wandering_set_of_density_data' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:27:0: 'AreaDeficit.finite_weighted_area_of_compact' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:28:0: 'AreaDeficit.no_unbounded_limiting_wandering_areas' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:29:0: 'AreaDeficit.analytic_localPunctures_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:30:0: 'AreaDeficit.analytic_trapped_inter_puncture_closure' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:31:0: 'AreaDeficit.area_advance_of_integrated_defect' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:32:0: 'AreaDeficit.wandering_area_bound_of_integrated_defect' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:33:0: 'AreaDeficit.null_wandering_set_of_integrated_defects' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:34:0: 'AreaDeficit.discDensity_curvature' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:35:0: 'AreaDeficit.disc_area_lintegral' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:36:0: 'AreaDeficit.disc_area_sqrt_nat' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:37:0: 'AreaDeficit.no_uniform_disc_area_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:38:0: 'AreaDeficit.covering_centre_restriction_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:39:0: 'AreaDeficit.density_deficit_on_set' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:40:0: 'AreaDeficit.holomorphic_change_of_variables' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:41:0: 'AreaDeficit.holomorphic_area_advance_of_density_deficit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:42:0: 'AreaDeficit.localBackwardExceptionalSet_countable' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:43:0: 'AreaDeficit.volume_sdiff_localBackwardExceptionalSet' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:44:0: 'AreaDeficit.localBackwardExceptionalSet_congr_on' depends on axioms: [propext, Quot.sound]
+info: AreaDeficit.lean:45:0: 'AreaDeficit.area_cost_on_set_of_total_cost' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:46:0: 'AreaDeficit.finite_local_critical_points' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:47:0: 'AreaDeficit.finite_local_critical_values' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:48:0: 'AreaDeficit.compact_analytic_covering' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:49:0: 'AreaDeficit.exists_local_disc_covering' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:50:0: 'AreaDeficit.exists_holomorphic_covering_lift' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:51:0: 'Complex.exists_bijOn_unitBall_map_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:52:0: 'Complex.eqOn_zero_or_forall_ne_zero_of_tendstoLocallyUniformlyOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: AreaDeficit.lean:53:0: 'Complex.eqOn_const_or_injOn_of_tendstoLocallyUniformlyOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:54:0: 'AreaDeficit.bounded_holomorphic_subsequence' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:55:0: 'AreaDeficit.nonconstant_limit_avoids_closure' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:56:0: 'AreaDeficit.limit_constant_at_omitted_closure' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:57:0: 'AreaDeficit.disjoint_bounded_images_shrink' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:58:0: 'FunctionTheory.exists_uniform_radius_of_compact_centres_omit_pair' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: AreaDeficit.lean:59:0: 'AreaDeficit.exists_uniform_local_lifting_radius' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:61:0: 'AreaDeficit.FinitePunctureMetricInput.density_mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:62:0: 'AreaDeficit.FinitePunctureMetricInput.insertion_area_cost' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:63:0: 'AreaDeficit.FinitePunctureMetricInput.density_tendsto_atTop' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:64:0: 'AreaDeficit.FinitePunctureMetricInput.density_limit_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:65:0: 'AreaDeficit.pullback_density_curvature' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:66:0: 'AreaDeficit.exists_compact_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:67:0: 'AreaDeficit.FinitePunctureMetricInput.compact_log_comparison' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: AreaDeficit.lean:68:0: 'AreaDeficit.FinitePunctureMetricInput.local_integrated_deficit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: AreaDeficit.lean:69:0: 'AreaDeficit.FinitePunctureMetricInput.local_area_advance' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:70:0: 'AreaDeficit.FinitePunctureMetricInput.local_cancellation_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: AreaDeficit.lean:71:0: 'AreaDeficit.exists_local_puncture_sequence' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:72:0: 'AreaDeficit.FinitePunctureMetricInput.null_local_wandering_set' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: AreaDeficit.lean:73:0: 'AreaDeficit.disc_schwarz_centre' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:74:0: 'AreaDeficit.barrier_component_eq_trapped_component' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:75:0: 'AreaDeficit.FinitePunctureMetricInput.chart_area_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:76:0: 'AreaDeficit.chart_disc_area' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:77:0: 'AreaDeficit.mapsTo_chartDisc' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:78:0: 'AreaDeficit.chartDisc_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AreaDeficit.lean:79:0: 'AreaDeficit.FinitePunctureMetricInput.local_dynamical_area_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: AreaDeficit.lean:80:0: 'AreaDeficit.FinitePunctureMetricInput.no_wandering_chart_orbit_with_anchors' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: AreaDeficit.lean:81:0: 'AreaDeficit.FinitePunctureMetricInput.no_wandering_component_orbit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Build completed successfully (3772 jobs).

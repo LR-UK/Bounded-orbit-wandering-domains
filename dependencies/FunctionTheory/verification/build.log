@@ -1,0 +1,347 @@
+⚠ [3260/3279] Replayed FunctionTheory.Conformal.ImaginaryBounds
+warning: FunctionTheory/Conformal/ImaginaryBounds.lean:22:19: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [3699/3737] Replayed FunctionTheory.RiemannSphere.Basic
+warning: FunctionTheory/RiemannSphere/Basic.lean:131:78: `if_true` has been deprecated: Use `ite_true` instead
+warning: FunctionTheory/RiemannSphere/Basic.lean:135:46: `if_false` has been deprecated: Use `ite_false` instead
+warning: FunctionTheory/RiemannSphere/Basic.lean:144:42: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: FunctionTheory/RiemannSphere/Basic.lean:145:15: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: FunctionTheory/RiemannSphere/Basic.lean:186:59: `if_true` has been deprecated: Use `ite_true` instead
+warning: FunctionTheory/RiemannSphere/Basic.lean:203:52: `if_false` has been deprecated: Use `ite_false` instead
+warning: FunctionTheory/RiemannSphere/Basic.lean:312:53: This simp argument is unused:
+  Homeomorph.homeomorph_mk_coe_symm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [extChartAt, invCoeOpenPartialHomeomorph, coeOpenPartialHomeomorph, invHomeomorph,
+    OpenPartialHomeomorph.extend, chartAt_inf, OpenPartialHomeomorph.symm_toPartialEquiv,
+    OpenPartialHomeomorph.trans_toPartialEquiv, modelWithCornersSelf_partialEquiv, PartialEquiv.trans_refl,
+    PartialEquiv.coe_trans_symm, OpenPartialHomeomorph.coe_toPartialEquiv_symm,
+    Homeomorph.toOpenPartialHomeomorph_symm_apply, invEquiv_symm, PartialEquiv.coe_trans, Equiv.toPartialEquiv_apply,
+    Function.comp_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FunctionTheory/RiemannSphere/Basic.lean:313:6: This simp argument is unused:
+  invEquiv_symm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [extChartAt, invCoeOpenPartialHomeomorph, coeOpenPartialHomeomorph, invHomeomorph,
+    OpenPartialHomeomorph.extend, chartAt_inf, OpenPartialHomeomorph.symm_toPartialEquiv,
+    OpenPartialHomeomorph.trans_toPartialEquiv, modelWithCornersSelf_partialEquiv, PartialEquiv.trans_refl,
+    PartialEquiv.coe_trans_symm, OpenPartialHomeomorph.coe_toPartialEquiv_symm,
+    Homeomorph.toOpenPartialHomeomorph_symm_apply, Homeomorph.homeomorph_mk_coe_symm, PartialEquiv.coe_trans,
+    Equiv.toPartialEquiv_apply, Function.comp_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FunctionTheory/RiemannSphere/Basic.lean:329:53: This simp argument is unused:
+  Homeomorph.homeomorph_mk_coe_symm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [extChartAt, invCoeOpenPartialHomeomorph, coeOpenPartialHomeomorph, invHomeomorph,
+    OpenPartialHomeomorph.extend, chartAt_inf, OpenPartialHomeomorph.symm_toPartialEquiv,
+    OpenPartialHomeomorph.trans_toPartialEquiv, modelWithCornersSelf_partialEquiv, PartialEquiv.trans_refl,
+    PartialEquiv.symm_source, PartialEquiv.trans_target, Homeomorph.toOpenPartialHomeomorph_target,
+    OpenPartialHomeomorph.coe_toPartialEquiv_symm, Homeomorph.toOpenPartialHomeomorph_symm_apply, invEquiv_symm,
+    PartialEquiv.trans_source, Equiv.toPartialEquiv_source, Equiv.toPartialEquiv_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FunctionTheory/RiemannSphere/Basic.lean:330:6: This simp argument is unused:
+  invEquiv_symm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [extChartAt, invCoeOpenPartialHomeomorph, coeOpenPartialHomeomorph, invHomeomorph,
+    OpenPartialHomeomorph.extend, chartAt_inf, OpenPartialHomeomorph.symm_toPartialEquiv,
+    OpenPartialHomeomorph.trans_toPartialEquiv, modelWithCornersSelf_partialEquiv, PartialEquiv.trans_refl,
+    PartialEquiv.symm_source, PartialEquiv.trans_target, Homeomorph.toOpenPartialHomeomorph_target,
+    OpenPartialHomeomorph.coe_toPartialEquiv_symm, Homeomorph.toOpenPartialHomeomorph_symm_apply,
+    Homeomorph.homeomorph_mk_coe_symm, PartialEquiv.trans_source, Equiv.toPartialEquiv_source,
+    Equiv.toPartialEquiv_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3700/3737] Replayed FunctionTheory.RiemannSphere.Coordinates
+warning: FunctionTheory/RiemannSphere/Coordinates.lean:45:30: This simp argument is unused:
+  toComplex_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [inv_inf, extChartAt_inf, ← coe_zero, extChartAt_coe, Function.comp_def, PartialEquiv.trans_apply,
+    Equiv.toPartialEquiv_apply, invEquiv_apply, coePartialEquiv_symm_apply, toComplex_coe, PartialEquiv.coe_trans_symm,
+    PartialEquiv.symm_symm, coePartialEquiv_apply, Equiv.toPartialEquiv_symm_apply, invEquiv_symm, inv_inv]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FunctionTheory/RiemannSphere/Coordinates.lean:50:17: This simp argument is unused:
+  extChartAt_coe
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [PartialEquiv.symm_symm, Function.comp_def, coePartialEquiv_apply, coePartialEquiv_symm_apply,
+    toComplex_coe, coe_zero, inv_zero', extChartAt_inf, PartialEquiv.trans_apply, coePartialEquiv_symm_apply,
+    invEquiv_apply, Equiv.toPartialEquiv_apply, inv_inv, toComplex_coe]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FunctionTheory/RiemannSphere/Coordinates.lean:50:33: This simp argument is unused:
+  PartialEquiv.symm_symm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [extChartAt_coe, Function.comp_def, coePartialEquiv_apply, coePartialEquiv_symm_apply,
+    toComplex_coe, coe_zero, inv_zero', extChartAt_inf, PartialEquiv.trans_apply, coePartialEquiv_symm_apply,
+    invEquiv_apply, Equiv.toPartialEquiv_apply, inv_inv, toComplex_coe]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FunctionTheory/RiemannSphere/Coordinates.lean:51:8: This simp argument is unused:
+  coePartialEquiv_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [extChartAt_coe, PartialEquiv.symm_symm, Function.comp_def, coePartialEquiv_symm_apply,
+    toComplex_coe, coe_zero, inv_zero', extChartAt_inf, PartialEquiv.trans_apply, coePartialEquiv_symm_apply,
+    invEquiv_apply, Equiv.toPartialEquiv_apply, inv_inv, toComplex_coe]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FunctionTheory/RiemannSphere/Coordinates.lean:51:59: This simp argument is unused:
+  toComplex_coe
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [extChartAt_coe, PartialEquiv.symm_symm, Function.comp_def, coePartialEquiv_apply,
+    coePartialEquiv_symm_apply, coe_zero, inv_zero', extChartAt_inf, PartialEquiv.trans_apply,
+    coePartialEquiv_symm_apply, invEquiv_apply, Equiv.toPartialEquiv_apply, inv_inv, toComplex_coe]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FunctionTheory/RiemannSphere/Coordinates.lean:54:17: This simp argument is unused:
+  toComplex_coe
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [extChartAt_coe, PartialEquiv.symm_symm, Function.comp_def, coePartialEquiv_apply,
+    coePartialEquiv_symm_apply, toComplex_coe, coe_zero, inv_zero', extChartAt_inf, PartialEquiv.trans_apply,
+    coePartialEquiv_symm_apply, invEquiv_apply, Equiv.toPartialEquiv_apply, inv_inv]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3831/3942] Replayed FunctionTheory.Conformal.StripBounds
+warning: FunctionTheory/Conformal/StripBounds.lean:47:4: Try `simp at hzK` instead of `simpa using hzK`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [3869/3942] Replayed FunctionTheory.Conformal.SlitTipInverseCoordinates
+warning: FunctionTheory/Conformal/SlitTipInverseCoordinates.lean:62:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [3871/3942] Replayed FunctionTheory.Conformal.TangentDiskGeometry
+warning: FunctionTheory/Conformal/TangentDiskGeometry.lean:35:40: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [3873/3942] Replayed FunctionTheory.Conformal.TangentJordanDomain
+warning: FunctionTheory/Conformal/TangentJordanDomain.lean:13:27: This simp argument is unused:
+  norm_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [dist_zero_right, hξ, abs_of_pos ht]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3876/3942] Replayed FunctionTheory.Conformal.TangentEnclosure
+warning: FunctionTheory/Conformal/TangentEnclosure.lean:18:37: Variable name `hc` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hc
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [3978/4065] Replayed FunctionTheory.Conformal.SmoothFiniteChain
+warning: FunctionTheory/Conformal/SmoothFiniteChain.lean:89:19: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: FunctionTheory/Conformal/SmoothFiniteChain.lean:93:19: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: FunctionTheory/Conformal/SmoothFiniteChain.lean:111:18: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+⚠ [3988/4065] Replayed FunctionTheory.Topology.DisjointPatch
+warning: FunctionTheory/Topology/DisjointPatch.lean:27:28: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: FunctionTheory/Topology/DisjointPatch.lean:33:8: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+⚠ [3993/4065] Replayed FunctionTheory.Meromorphic.ApproximationRepresentative
+warning: FunctionTheory/Meromorphic/ApproximationRepresentative.lean:50:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: FunctionTheory/Meromorphic/ApproximationRepresentative.lean:52:22: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: FunctionTheory/Meromorphic/ApproximationRepresentative.lean:55:22: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: FunctionTheory/Meromorphic/ApproximationRepresentative.lean:62:20: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: FunctionTheory/Meromorphic/ApproximationRepresentative.lean:65:21: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: FunctionTheory/Meromorphic/ApproximationRepresentative.lean:68:17: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [3998/4065] Replayed FunctionTheory.Meromorphic.Sphere
+warning: FunctionTheory/Meromorphic/Sphere.lean:40:37: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: FunctionTheory/Meromorphic/Sphere.lean:44:37: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [4006/4065] Replayed FunctionTheory.Conformal.FiniteBlaschke
+warning: FunctionTheory/Conformal/FiniteBlaschke.lean:45:2: Try `simp at h` instead of `simpa using h`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [4007/4065] Replayed FunctionTheory.Topology.HomeomorphicDisc
+warning: FunctionTheory/Topology/HomeomorphicDisc.lean:26:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [4012/4065] Replayed FunctionTheory.Conformal.InverseBranchContraction
+warning: FunctionTheory/Conformal/InverseBranchContraction.lean:17:21: Variable name `hU` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hU
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [4024/4065] Replayed FunctionTheory.Conformal.AffineTargetNoncontraction
+warning: FunctionTheory/Conformal/AffineTargetNoncontraction.lean:16:54: Variable name `hr` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hr
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [4031/4065] Replayed FunctionTheory.Analytic.IterateNoncritical
+warning: FunctionTheory/Analytic/IterateNoncritical.lean:19:12: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [4037/4065] Replayed FunctionTheory.Smooth.SmoothFiniteForwardExtension
+warning: FunctionTheory/Smooth/SmoothFiniteForwardExtension.lean:39:18: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: FunctionTheory/Smooth/SmoothFiniteForwardExtension.lean:42:36: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+⚠ [4042/4065] Replayed FunctionTheory.Conformal.BlaschkeMonomial
+warning: FunctionTheory/Conformal/BlaschkeMonomial.lean:35:2: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [4044/4065] Replayed FunctionTheory.Conformal.BlaschkeProper
+warning: FunctionTheory/Conformal/BlaschkeProper.lean:14:8: `continuousOn_iff_continuous_restrict` has been deprecated: Use `continuousOn_iff_continuous_domRestrict` instead
+warning: FunctionTheory/Conformal/BlaschkeProper.lean:26:4: `continuousOn_iff_continuous_restrict` has been deprecated: Use `continuousOn_iff_continuous_domRestrict` instead
+warning: FunctionTheory/Conformal/BlaschkeProper.lean:28:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [4046/4065] Replayed FunctionTheory.Conformal.BlochLocalImage
+warning: FunctionTheory/Conformal/BlochLocalImage.lean:38:22: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: FunctionTheory/Conformal/BlochLocalImage.lean:38:41: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: FunctionTheory/Conformal/BlochLocalImage.lean:86:24: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: FunctionTheory/Conformal/BlochLocalImage.lean:86:45: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [4109/4154] Replayed NoWanderingDomains.Sphere.MobiusAction
+warning: NoWanderingDomains/Sphere/MobiusAction.lean:71:36: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: NoWanderingDomains/Sphere/MobiusAction.lean:75:36: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: NoWanderingDomains/Sphere/MobiusAction.lean:96:62: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: NoWanderingDomains/Sphere/MobiusAction.lean:98:38: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: NoWanderingDomains/Sphere/MobiusAction.lean:146:34: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: NoWanderingDomains/Sphere/MobiusAction.lean:154:38: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: NoWanderingDomains/Sphere/MobiusAction.lean:168:40: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: NoWanderingDomains/Sphere/MobiusAction.lean:171:40: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: NoWanderingDomains/Sphere/MobiusAction.lean:184:36: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: NoWanderingDomains/Sphere/MobiusAction.lean:247:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: NoWanderingDomains/Sphere/MobiusAction.lean:268:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: NoWanderingDomains/Sphere/MobiusAction.lean:274:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: NoWanderingDomains/Sphere/MobiusAction.lean:285:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: NoWanderingDomains/Sphere/MobiusAction.lean:328:30: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: NoWanderingDomains/Sphere/MobiusAction.lean:339:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: NoWanderingDomains/Sphere/MobiusAction.lean:339:24: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: NoWanderingDomains/Sphere/MobiusAction.lean:339:73: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: NoWanderingDomains/Sphere/MobiusAction.lean:341:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: NoWanderingDomains/Sphere/MobiusAction.lean:341:26: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: NoWanderingDomains/Sphere/MobiusAction.lean:342:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: NoWanderingDomains/Sphere/MobiusAction.lean:342:26: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: NoWanderingDomains/Sphere/MobiusAction.lean:343:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: NoWanderingDomains/Sphere/MobiusAction.lean:348:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: NoWanderingDomains/Sphere/MobiusAction.lean:348:23: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: NoWanderingDomains/Sphere/MobiusAction.lean:348:70: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: NoWanderingDomains/Sphere/MobiusAction.lean:350:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: NoWanderingDomains/Sphere/MobiusAction.lean:350:25: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: NoWanderingDomains/Sphere/MobiusAction.lean:351:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: NoWanderingDomains/Sphere/MobiusAction.lean:351:25: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: NoWanderingDomains/Sphere/MobiusAction.lean:352:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: NoWanderingDomains/Sphere/MobiusAction.lean:361:32: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: NoWanderingDomains/Sphere/MobiusAction.lean:366:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: NoWanderingDomains/Sphere/MobiusAction.lean:366:23: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: NoWanderingDomains/Sphere/MobiusAction.lean:372:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: NoWanderingDomains/Sphere/MobiusAction.lean:372:23: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: NoWanderingDomains/Sphere/MobiusAction.lean:422:22: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: NoWanderingDomains/Sphere/MobiusAction.lean:426:27: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [4110/4154] Replayed NoWanderingDomains.Sphere.SphereHolomorphic
+warning: NoWanderingDomains/Sphere/SphereHolomorphic.lean:211:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: NoWanderingDomains/Sphere/SphereHolomorphic.lean:225:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [4111/4154] Replayed NoWanderingDomains.Sphere.InversionIsometry
+warning: NoWanderingDomains/Sphere/InversionIsometry.lean:35:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: NoWanderingDomains/Sphere/InversionIsometry.lean:40:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: NoWanderingDomains/Sphere/InversionIsometry.lean:40:22: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: NoWanderingDomains/Sphere/InversionIsometry.lean:47:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: NoWanderingDomains/Sphere/InversionIsometry.lean:47:21: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: NoWanderingDomains/Sphere/InversionIsometry.lean:55:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: NoWanderingDomains/Sphere/InversionIsometry.lean:55:21: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: NoWanderingDomains/Sphere/InversionIsometry.lean:67:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: NoWanderingDomains/Sphere/InversionIsometry.lean:71:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [4112/4154] Replayed NoWanderingDomains.NormalFamilies.Zalcman
+warning: NoWanderingDomains/NormalFamilies/Zalcman.lean:210:32: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: NoWanderingDomains/NormalFamilies/Zalcman.lean:214:32: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: NoWanderingDomains/NormalFamilies/Zalcman.lean:382:34: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: NoWanderingDomains/NormalFamilies/Zalcman.lean:389:34: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: NoWanderingDomains/NormalFamilies/Zalcman.lean:454:34: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: NoWanderingDomains/NormalFamilies/Zalcman.lean:860:36: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: NoWanderingDomains/NormalFamilies/Zalcman.lean:861:36: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: NoWanderingDomains/NormalFamilies/Zalcman.lean:864:72: `if_pos` has been deprecated: Use `ite_eq_left` instead
+⚠ [4115/4154] Replayed FunctionTheory.NormalFamilies.ZalcmanMontel
+warning: FunctionTheory/NormalFamilies/ZalcmanMontel.lean:35:55: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: FunctionTheory/NormalFamilies/ZalcmanMontel.lean:35:67: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [4116/4154] Replayed FunctionTheory.Conformal.AnalyticBoundaryContinuation
+warning: FunctionTheory/Conformal/AnalyticBoundaryContinuation.lean:99:19: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: FunctionTheory/Conformal/AnalyticBoundaryContinuation.lean:102:19: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: FunctionTheory/Conformal/AnalyticBoundaryContinuation.lean:103:54: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: FunctionTheory/Conformal/AnalyticBoundaryContinuation.lean:178:37: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [4117/4154] Replayed FunctionTheory.Conformal.RegularBoundaryContinuation
+warning: FunctionTheory/Conformal/RegularBoundaryContinuation.lean:58:13: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: FunctionTheory/Conformal/RegularBoundaryContinuation.lean:59:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: FunctionTheory/Conformal/RegularBoundaryContinuation.lean:60:39: `if_pos` has been deprecated: Use `ite_eq_left` instead
+⚠ [4119/4154] Replayed FunctionTheory.Conformal.RegularAnalyticArc
+warning: FunctionTheory/Conformal/RegularAnalyticArc.lean:145:37: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [4120/4154] Replayed FunctionTheory.Conformal.AnalyticCircleArc
+warning: FunctionTheory/Conformal/AnalyticCircleArc.lean:44:32: This simp argument is unused:
+  norm_div
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [A, normSq_eq_norm_sq, hpn, hzn, hr.ne']
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [4123/4154] Replayed FunctionTheory.Analytic.CountableFibres
+warning: FunctionTheory/Analytic/CountableFibres.lean:23:14: `Set.compl_setOf` has been deprecated: Use `Set.compl_ofPred` instead
+warning: FunctionTheory/Analytic/CountableFibres.lean:39:53: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [4131/4154] Replayed FunctionTheory.Conformal.ProperDiscBlaschke
+warning: FunctionTheory/Conformal/ProperDiscBlaschke.lean:125:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [4133/4154] Replayed FunctionTheory.Conformal.UnicriticalQuotient
+warning: FunctionTheory/Conformal/UnicriticalQuotient.lean:60:6: Unused tactic linter: `change meromorphicOrderAt ((id : ℂ → ℂ) * deriv f) 0 = (k : WithTop ℤ)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [4137/4154] Replayed FunctionTheory.Conformal.AnalyticHalfDiscBoundary
+warning: FunctionTheory/Conformal/AnalyticHalfDiscBoundary.lean:14:57: Variable name `hρ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hρ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [4146/4154] Replayed FunctionTheory.Conformal.SmoothUnivalentForward
+warning: FunctionTheory/Conformal/SmoothUnivalentForward.lean:56:30: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: FunctionTheory/Conformal/SmoothUnivalentForward.lean:58:30: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: FunctionTheory/Conformal/SmoothUnivalentForward.lean:60:30: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: FunctionTheory/Conformal/SmoothUnivalentForward.lean:62:30: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: FunctionTheory/Conformal/SmoothUnivalentForward.lean:72:18: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+⚠ [4152/4154] Built FunctionTheory.Conformal.HalfStripEndpoint (15s)
+warning: FunctionTheory/Conformal/HalfStripEndpoint.lean:27:19: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+✔ [4153/4154] Built FunctionTheory (16s)
+Build completed successfully (4154 jobs).

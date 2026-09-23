@@ -1,0 +1,56 @@
+{
+  "repository": "https://github.com/will1491/no-wandering-domains",
+  "commit": "0a6497b0cc9ed39a6a705bf013449635894b56d0",
+  "authors": "Will (Ziang) Li; accompanying paper by Ziang Li and Yusheng Luo",
+  "license": "Apache-2.0",
+  "files": [
+    {
+      "source": "NoWanderingDomains/Sphere/Basic.lean",
+      "destination": "NoWanderingDomains/Sphere/Basic.lean",
+      "sourceSha256": "c06225c69288976ed7757eedb699c7bf789c5e9d839f9da0bd3cad5b4301a26d",
+      "changes": "Declarations/proofs preserved; explicit Mathlib imports added."
+    },
+    {
+      "source": "NoWanderingDomains/Sphere/SphericalMetric.lean",
+      "destination": "NoWanderingDomains/Sphere/SphericalMetric.lean",
+      "sourceSha256": "8d8504617fdb7da163af6de2bab4a1e367a283c11380d14126d802afd1935e0c",
+      "changes": "Declarations/proofs preserved; explicit Mathlib imports added."
+    },
+    {
+      "source": "NoWanderingDomains/Sphere/MobiusAction.lean",
+      "destination": "NoWanderingDomains/Sphere/MobiusAction.lean",
+      "sourceSha256": "6bde882ada436a364a3df2d88134e952a089d57a6574f4d0c33472c90d7aca2c",
+      "changes": "Declarations/proofs preserved; explicit Mathlib imports added."
+    },
+    {
+      "source": "NoWanderingDomains/Sphere/SphereHolomorphic.lean",
+      "destination": "NoWanderingDomains/Sphere/SphereHolomorphic.lean",
+      "sourceSha256": "c07f60ac47a65ce613586afd3dca7de63506107496bf146ee92ffed197921139",
+      "changes": "Declarations/proofs preserved; explicit Mathlib imports added."
+    },
+    {
+      "source": "NoWanderingDomains/NormalFamilies/Basic.lean",
+      "destination": "NoWanderingDomains/NormalFamilies/Basic.lean",
+      "sourceSha256": "b2a09b698ef1f0168824048c80eb1787ad260f95e04cf0c12bef982cf724b561",
+      "changes": "Declarations/proofs preserved; explicit Mathlib imports added."
+    },
+    {
+      "source": "NoWanderingDomains/NormalFamilies/Spherical.lean",
+      "destination": "NoWanderingDomains/NormalFamilies/Spherical.lean",
+      "sourceSha256": "bbcdd92e81971a7a59250a4bea198b70548e11e8c9514f87f6429b4fbecf9a7e",
+      "changes": "Declarations/proofs preserved; explicit Mathlib imports added."
+    },
+    {
+      "source": "NoWanderingDomains/Dynamics/JuliaFatou/RepellingCycles.lean",
+      "destination": "NoWanderingDomains/Sphere/InversionIsometry.lean",
+      "declaration": "sphericalDist_inversionGL_smul",
+      "changes": "Isometry theorem extracted unchanged; unrelated rational-dynamics declarations omitted."
+    },
+    {
+      "source": "NoWanderingDomains/NormalFamilies/Zalcman.lean",
+      "destination": "NoWanderingDomains/NormalFamilies/Zalcman.lean",
+      "changes": "Strong Montel and RepellingCycles imports replaced by their actually used sphere/normality foundations and inversion isometry; declarations/proofs preserved."
+    }
+  ],
+  "verification": "Passed full-library build, source-integrity scan and 536 selected standard-axiom reports on 22 September 2026; see verification/summary.json."
+}

@@ -1,0 +1,45 @@
+✔ [2967/2992] Built ComplexDynamics.Normality (15s)
+✔ [2968/2992] Built Mathlib.Topology.Compactification.StoneCech (23s)
+✔ [2969/2992] Built Mathlib.Topology.ContinuousMap.Bounded.ArzelaAscoli (30s)
+✔ [2970/2992] Built Mathlib.Topology.Compactification.OnePoint.Basic (32s)
+✔ [2971/2992] Built Mathlib.Topology.UniformSpace.OfCompactT2 (40s)
+✔ [2972/2992] Built Mathlib.Topology.Separation.CompletelyRegular (47s)
+✔ [2973/2992] Built Mathlib.Topology.UniformSpace.Uniformizable (24s)
+✔ [2974/2992] Built ComplexDynamics.Basic (41s)
+✔ [2975/2992] Built ComplexDynamics.Transcendence (146s)
+✔ [2976/2992] Built ComplexDynamics.FastEscape (154s)
+⚠ [2977/2992] Built ComplexDynamics.BoundedNormality (156s)
+warning: ComplexDynamics/BoundedNormality.lean:26:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [2978/2992] Built ComplexDynamics.UniformEscape (162s)
+✔ [2979/2992] Built ComplexDynamics.Iteration (181s)
+⚠ [2980/2992] Built ComplexDynamics.TranscendentalApproximation (72s)
+warning: ComplexDynamics/TranscendentalApproximation.lean:23:2: Try `simp at H` instead of `simpa using H`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+✔ [2981/2992] Built ComplexDynamics.Trapping (56s)
+✔ [2982/2992] Built ComplexDynamics.FatouComponents (49s)
+✔ [2983/2992] Built ComplexDynamics.Bungee (51s)
+✔ [2984/2992] Built ComplexDynamics.Wandering (66s)
+✔ [2985/2992] Built ComplexDynamics.PathComponents (67s)
+⚠ [2986/2992] Built ComplexDynamics.Conjugacy (89s)
+warning: ComplexDynamics/Conjugacy.lean:25:78: This simp argument is unused:
+  H.apply_symm_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [conjugate, comp_apply, Homeomorph.symm_symm, H.symm_apply_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ComplexDynamics/Conjugacy.lean:35:27: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+✔ [2987/2992] Built ComplexDynamics.Scaling (58s)
+✔ [2988/2992] Built ComplexDynamics.CurvesToInfinity (73s)
+✔ [2989/2992] Built ComplexDynamics.FastEscapeScaling (50s)
+✔ [2990/2992] Built ComplexDynamics.MainTheorems (45s)
+✔ [2991/2992] Built ComplexDynamics (33s)
+Build completed successfully (2992 jobs).

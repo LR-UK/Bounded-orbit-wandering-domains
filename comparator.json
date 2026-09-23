@@ -1,0 +1,26 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "BoundedWanderingDomains.no_local_bounded_wandering_domains",
+    "BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire"
+  ],
+  "definition_names": [
+    "ComplexDynamics.IsNormalSequenceOn",
+    "ComplexDynamics.RiemannSphere",
+    "ComplexDynamics.riemannSphereUniformSpace",
+    "ComplexDynamics.sphericalIterate",
+    "ComplexDynamics.fatouSet",
+    "ComplexDynamics.IsFatouComponent",
+    "BoundedWanderingDomains.ClassicalHyperbolicMetrics",
+    "BoundedWanderingDomains.trappedInterior",
+    "BoundedWanderingDomains.EventuallyInjectiveOnLargeDiscs"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}
+

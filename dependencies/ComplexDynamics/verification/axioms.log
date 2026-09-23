@@ -1,0 +1,66 @@
+'ComplexDynamics.mem_bungeeSet_of_subsequences' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexDynamics.mem_juliaSet_of_escape_subsequence_of_closure_trappedSet' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexDynamics.trappedSet_subset_boundedOrbitSet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexDynamics.IsNormalSequenceOn.mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexDynamics.isNormalSequenceOn_of_tendstoLocallyUniformly' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexDynamics.isOpen_fatouSet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexDynamics.isClosed_juliaSet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexDynamics.EscapesUniformlyOn.subset_escapingSet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexDynamics.disjoint_boundedOrbitSet_escapingSet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexDynamics.EscapesUniformlyOn.tendstoUniformlyOn_sphericalIterate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexDynamics.EscapesUniformlyOn.interior_subset_fatouSet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexDynamics.mem_juliaSet_of_escape_of_closure_trappedSet' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexDynamics.mem_trappedSet_of_iterate_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexDynamics.connectedComponentIn_interior_eq_fatou' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexDynamics.inter_juliaSet_eq_frontier' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexDynamics.differentiableOn_iterate_of_mapsTo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexDynamics.isOpen_iterateDomain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexDynamics.eventuallyEq_iterate_of_orbit' depends on axioms: [propext, Quot.sound]
+'ComplexDynamics.wandering_of_uniformEscape_of_trappedBoundary' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexDynamics.iterate_scaleConjugate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexDynamics.IsTranscendentalEntire.scaleConjugate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexDynamics.EscapesUniformlyOn.scaleConjugate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexDynamics.maximumModulus_eq_sphere' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexDynamics.maximumModulus_le_of_uniform_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexDynamics.mem_fastEscapingSetAtRadius_of_radius_sequence' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexDynamics.maximumModulus_scaleConjugate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexDynamics.mapsTo_scale_fastEscapingSetAtRadius' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexDynamics.isTranscendentalEntire_of_escape_and_bounded_values' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexDynamics.isTranscendentalEntire_exp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexDynamics.exists_transcendentalEntire_near_polynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexDynamics.isNormalSequenceOn_spherical_of_bounded_on_ball' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexDynamics.mem_fatouSet_of_iterate_mem_bounded_invariant' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexDynamics.pathComponentIn_eq_of_no_exit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexDynamics.pathComponentIn_eq_inter_of_no_exit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexDynamics.not_curve_to_infinity_of_bounded_pathComponent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexDynamics.MainTheorems.uniform_escape_gives_fatou_interior' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexDynamics.MainTheorems.escape_and_trapping_give_julia' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexDynamics.MainTheorems.wandering_criterion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexDynamics.MainTheorems.maximum_modulus_on_circle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexDynamics.normalSequence_conjugate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexDynamics.mem_escapingSet_conjugate_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexDynamics.mem_boundedOrbitSet_conjugate_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexDynamics.mem_bungeeSet_conjugate_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexDynamics.mem_juliaSet_conjugate_iff' depends on axioms: [propext, Classical.choice, Quot.sound]

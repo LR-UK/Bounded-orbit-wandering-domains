@@ -1,0 +1,910 @@
+'FunctionTheory.schottky_centre_displacement' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_uniform_radius_of_two_omitted_values' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_uniform_radius_of_compact_centres' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_uniform_radius_of_compact_centres_omit_pair' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TauCeti.riemannMapping' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TauCeti.riemannMapping_normalized' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TauCeti.montel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TauCeti.hurwitz_injOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TauCeti.exists_differentiableOn_eqOn_conj_of_symmetric' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_normalized_riemann_kernel_subsequence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.locallyBoundedOn_of_im_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.mapsTo_unitBall_of_holomorphic_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.leftInvOn_of_locallyUniform_limits' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.invOn_of_locallyUniform_limits' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.locallyUniformOn_of_subsequence_limits' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.normalized_riemannMaps_tendsto_on_bounded_kernel' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_normalized_riemannMap_of_bounded_kernel' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.image_subset_interior_iInter_of_holomorphic_limit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.nonconstant_of_derivative_lower_bound_of_tendstoLocallyUniformlyOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.image_subset_kernel_of_derivative_lower_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.locallyUniformOn_reindex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.eventually_disjoint_image_of_tendstoUniformlyOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.eventually_disjoint_image_of_tendstoLocallyUniformlyOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.eventually_disjoint_direct_image_of_inverse_convergence' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_biholomorphic_kernel_subsequence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.normalized_inverse_derivative_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_riemannMap_on_domain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.IsHolomorphicFunctionOn.differentiableOn_extension' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.MainTheorems.riemann_mapping' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.MainTheorems.normalized_riemann_mapping' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.MainTheorems.riemann_mapping_on_domain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.MainTheorems.schwarz_reflection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.MainTheorems.montel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.MainTheorems.hurwitz_injectivity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.MainTheorems.bounded_kernel_convergence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_biholomorphic_kernel_subsequence_of_locallyBounded' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_normalized_riemann_kernel_subsequence_of_locallyBounded' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.normalized_riemannMaps_tendsto_on_kernel_of_locallyBounded' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.locallyBoundedOn_inverse_riemannMaps_of_im_lower_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.normalized_riemannMaps_tendsto_on_halfPlane_kernel' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_normalized_riemannMap_of_halfPlane_kernel' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.analyticAt_dslope' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.isBigO_mul_logDeriv_sub_one_at_simple_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.isBigO_log_quotient_sub_log_deriv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.tendsto_exp_neg_re_atTop' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.isBigO_comp_exp_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.stripEnd_logDeriv_estimate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.stripEnd_log_quotient_estimate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.MainTheorems.halfplane_kernel_convergence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.MainTheorems.reflected_strip_end_derivative_estimate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.isCompact_left_truncation_of_strip_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_norm_bounds_of_strip_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_derivative_bounds_of_strip_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_derivative_bounds_of_strip_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_derivative_bounds_of_strip_asymptotic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_holomorphic_reflection_across_imaginary_axis' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.deriv_eq_logDeriv_of_exp_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.stripEnd_derivative_estimate_of_exp_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.sub_eq_neg_log_quotient_of_exp_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.stripEnd_value_estimate_of_exp_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_uniform_neighbourhood_of_strip_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.uniformContinuousOn_of_strip_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.uniformContinuousOn_of_strip_translation_limit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.stripEnd_estimates_of_reflected_map' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.injOn_of_open_images_of_injOn_dense_preimage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.dense_re_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.injOn_of_imaginary_reflection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_conformal_reflection_at_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.deriv_positive_real_of_halfplane_map' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_positive_conformal_reflection_at_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.MainTheorems.conformal_schwarz_reflection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.MainTheorems.strip_end_asymptotics' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.eventually_abs_re_gt_of_inverse_closed_strip_convergence' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_continuous_extension_of_jordan_bijOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_boundary_normalized_disc_map' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_boundary_normalized_disc_map_on_domain' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.cayleyCoordinate_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.cayleyCoordinate_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.cayley_denominator_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.differentiableAt_cayleyCoordinate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.cayleyCoordinate_injOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.one_add_cayleyCoordinate_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.cayleyCoordinate_involution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.cayleyCoordinate_mem_closedBall' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.cayleyCoordinate_mem_ball' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.cayleyCoordinate_mem_sphere' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.cayley_denominator_ne_zero_of_mem_ball' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.re_cayleyCoordinate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.re_cayleyCoordinate_pos_of_mem_ball' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.bijOn_cayleyCoordinate_ball' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.re_eq_zero_of_mem_frontier_of_halfplane_neighbourhood' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_positive_reflection_of_disc_map_at_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_boundary_normalized_disc_map_with_positive_reflection' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_analytic_cayley_inverse_at_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_analytic_extension_of_cayley_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.isOpen_standardHorizontalStrip' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.re_exp_neg_pos_of_mem_strip' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.neg_log_mem_strip' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.neg_log_exp_neg_of_mem_strip' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exp_neg_neg_log_of_re_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.bijOn_exp_neg_strip' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.bijOn_neg_log_rightHalfPlane' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.differentiableOn_neg_log_rightHalfPlane' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.bijOn_discToHorizontalStrip' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.differentiableOn_discToHorizontalStrip' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.discToHorizontalStrip_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exp_neg_discToHorizontalStrip' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.zero_mem_frontier_of_halfplane_neighbourhood' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.isBounded_exponentialImage_of_re_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exponentialImage_agrees_with_halfplane_at_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.tendsto_re_atTop_of_strip_translation_asymptotic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_normalized_strip_map_of_jordan_exponential_image' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TauCeti.exists_continuousOn_closedBall_eqOn_of_isJordanCurve_frontier' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TauCeti.exists_continuousOn_closedBall_bijOn_ball_of_isJordanCurve_frontier' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TauCeti.eLpNorm_rpow_eq_lintegral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TauCeti.eLpNorm_le_of_ae_tendsto_ennreal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TauCeti.eLpNorm_le_eLpNorm_of_lintegral_rpow_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TauCeti.rpow_lintegral_le_measure_univ_rpow_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.MainTheorems.caratheodory_continuity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.MainTheorems.boundary_normalized_riemann_map' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.MainTheorems.normalized_strip_map' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_norm_bound_of_strip_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.isCompact_inter_preimage_of_bounded_displacement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.isProperMap_restrict_of_bounded_displacement' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.isProperMap_restrict_of_strip_translation_limit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.isClosed_image_of_strip_translation_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.isProperMap_restrict_of_strip_translation_asymptotic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.isSimplyConnected_of_compact_connected_subsets' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.isPreconnectedApproachAt_of_convex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.isPreconnectedApproachAt_of_relative_chart' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.isPreconnectedApproachAt_preimage_homeomorph' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TauCeti.injOn_closedBall_of_isPreconnected_image_approach' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.re_exp_neg_nonneg_of_mem_closedStrip' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.horizontalStripToDisc_mem_closedBall' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.horizontalStripToDisc_ne_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.continuousOn_horizontalStripToDisc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.horizontalStripToDisc_mem_ball' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.discToHorizontalStrip_horizontalStripToDisc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.continuousOn_logarithmic_strip_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TauCeti.vitali' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TauCeti.differentiableOn_circleSchwarzReflection_of_symmetric' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.ball_subset_image_of_close_to_identity_on_sphere' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.norm_ge_on_outer_annulus_of_close_to_identity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.eventually_norm_ge_on_outer_annulus' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.locallyUniform_of_vitali_with_holomorphic_limit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.norm_unit_circle_inversion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.norm_circleSchwarzReflection_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.reflected_maps_tendsto_of_inner_convergence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.locallyUniformOn_closedSide_of_reflected_convergence' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.locallyUniformOn_of_nat_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.univalent_boundary_convergence_on_symmetric_collar' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_symmetric_circle_collar' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_boundary_neighbourhood_convergence_of_shared_arc' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.univalent_convergence_on_closedDisk_away_from_exceptional_set' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_uniform_annulus_of_bounded_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.dist_image_right_semicircle_lt_of_length_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.nonpositive_side_subset_boundary_cap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.re_discToHorizontalStrip_le_log_of_mem_left_cap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.leftward_strip_bound_of_separating_barrier' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.continuous_rightCircularCut' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.rightCircularCut_neg_of_re_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.rightCircularCut_pos_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_right_semicircle_of_rightCircularCut_eq_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.leftward_bound_of_short_semicircle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_gate_size_for_uniform_leftward_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.eventually_close_on_radial_segment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_outer_radius_for_radial_kernel_control' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.uniform_left_escape_of_shrinking_attachment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.uniform_left_escape_affine' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.dist_image_circle_arc_lt_of_length_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_boundary_cap_containing_short_circular_arc' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_boundary_cap_for_circular_approach' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_boundary_limit_of_circular_approach' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.circleMap_mem_slitPlane_of_angle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.circular_approach_of_local_slit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_boundary_limit_at_slit_tip' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.invertedExterior_eq_insert_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.isOpen_invertedExterior' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.zero_mem_closure_inv_exterior' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.isConnected_invertedExterior' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.not_isBounded_inv_image_of_zero_mem_closure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_boundary_limit_at_reflected_slit_tip' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_boundary_cap_at_straight_side' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_boundary_limit_at_straight_side' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.riemannSphere_isManifold' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RiemannSphere.continuous_inv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RiemannSphere.extChartAt_inf' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_boundary_limit_at_straight_side_in_coordinates' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RiemannSphere.mAnalytic_coe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RiemannSphere.mAnalytic_inv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RiemannSphere.mAnalytic_translation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RiemannSphere.omittedPointParam_target' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RiemannSphere.mAnalytic_omittedPointParam' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RiemannSphere.mAnalyticAt_omittedPointParam_symm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.mem_closure_right_half_ball' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_continuous_extension_at_straight_side' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_boundary_limit_at_slit_bank' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.sq_mem_slitPlane_of_re_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.injOn_sq_right_halfplane' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_riemannMap_on_sphere_domain_of_omitted_point' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_riemannMap_on_sphere_domain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.MainTheorems.spherical_riemann_mapping' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.re_squared_slit_bank_coordinate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_continuous_extension_on_unwrapped_slit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_reflection_of_half_disk_map_to_circle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_analytic_inverse_extension_at_slit_tip' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_inverse_boundary_limit_at_slit_tip' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_inverse_boundary_limit_at_reflected_slit_tip' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_corresponding_boundary_limits_at_reflected_slit_tip' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_continuous_injective_extension_at_boundary_point' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.tangent_closedBall_subset_insert_ball' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.tangency_point_mem_sphere' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.zero_mem_tangent_ball' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.isJordanCurve_image_tangent_sphere' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_jordan_curves_through_reflected_slit_tip' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.image_zero_notMem_image_tangent_sphere' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.tangent_ball_subset_unitDisk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.tangent_disk_image_is_bounded_jordan_domain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.invertedExterior_mem_nhds_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.zero_mem_interior_invertedExterior' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.isClosed_invertedExterior_of_isOpen' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.isCompact_invertedExterior_of_isOpen' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.frontier_invertedExterior_of_bounded_open' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.tangent_enclosures_eventually_subset_neighbourhood' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.tangent_disk_gives_compact_jordan_enclosure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_disk_map_with_positive_cayley_coordinate_at_straight_boundary' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_normalized_strip_map_of_straight_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.open_set_avoids_vertical_line_of_singleton_intersection' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.preconnected_subset_right_of_avoiding_vertical_line' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.kernel_component_right_of_shrinking_gate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_uniform_boundary_cap_at_straight_side' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.dist_boundary_limit_le_of_boundary_cap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.boundary_limits_tendsto_of_common_straight_side' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.bijOn_neg_log_exponentialImage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.boundary_values_tendsto_at_common_strip_end' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.locallyUniform_div_boundary_values' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_positive_cayley_coordinate_of_disk_map_at_straight_boundary' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.bijOn_div_unit_disk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_strip_end_normalization_of_disk_map' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.zero_mem_closure_exponentialImage_of_straight_tail' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.IsRightEndRiemannMapOn.eqOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_rightEndRiemannMapOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.IsRightEndRiemannMapOn.strip_end_estimates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.rightEndRiemannMaps_tendsto_on_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.IsRightEndRiemannMapOn.conj_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.IsRightEndRiemannMapOn.tendsto_real_atTop' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.rightEndRiemannMap_halfstrip_left_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.locallyUniformOn_continuous_postcomposition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.locallyUniform_discToHorizontalStrip' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_uniform_scale_on_compact_of_locallyUniform' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_scaled_map_with_compact_control_and_left_escape' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.uniformContinuousOn_inverse_of_strip_translation_limit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.analyticOnNhd_dslope' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_polynomial_analytic_remainder_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_polynomial_analytic_remainder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.iteratedDeriv_eq_of_sub_eq_pow_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.iteratedDeriv_eq_of_sub_eq_vanishingPolynomial_mul' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.tendsto_norm_atTop_of_injective_zeros' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.tendsto_norm_atTop_of_injective_critical_points' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.IsHolomorphicFunctionOn.comp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.pullbackChart_step' depends on axioms: [propext, Quot.sound]
+'FunctionTheory.pullbackChart_associated_eq_id' depends on axioms: [propext, Quot.sound]
+'FunctionTheory.pullbackChart_prescribed_step' depends on axioms: [Quot.sound]
+'FunctionTheory.pullbackChart_tail_step' depends on axioms: [propext, Quot.sound]
+'FunctionTheory.pullbackChart_holomorphic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_polynomial_clearing_singularities' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_rational_analytic_remainder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.IsMeromorphicFunctionOn.meromorphicOn_extension' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.isMeromorphicFunctionOn_restrict' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.isMeromorphicFunctionOn_iff_extension' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.finite_critical_points_of_locally_nonconstant' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_preimage_of_circle_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_stable_local_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.compact_preimage_density_of_approximation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.isOpenMap_restrict_iff_locally_nonconstant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.IsHolomorphicFunctionOn.isOpenMap_iff_locally_nonconstant' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.continuousOn_finiteComposition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_uniform_continuity_collar' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.finiteComposition_approximation_on_compact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.compact_preimage_density_on_domain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.finiteComposition_approximation_on_domains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_local_power_coordinate_of_order' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_local_power_coordinate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_local_conformal_correction_of_equal_order' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.injOn_of_close_to_id' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.mapsTo_of_close_to_id' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_injective_approximation_tolerance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_derivative_approximation_tolerance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.approximation_of_univalent_on_compact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_uniform_injective_radius' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_uniform_injective_radius_of_deriv_ne_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_conformal_correction_of_uniform_local_injectivity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_uniform_stable_local_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_uniform_injective_approximation_radius' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_conformal_correction_of_deriv_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_analytic_power_quotient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.norm_analytic_power_quotient_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_bounded_analytic_power_quotient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.le_analyticOrderAt_sub_of_equal_local_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_normalized_analytic_nth_root_at_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_controlled_analytic_nth_root' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_close_power_coordinate_of_close_unit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_power_coordinate_disk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_conformal_correction_on_power_coordinate_disk' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.locally_nonconstant_of_finite_critical_set' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.analyticOrderAt_sub_eq_of_deriv_order_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_analyticOnNhd_gluing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_glued_analytic_lift_of_injOn_overlaps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_pairwise_disjoint_closedBalls_of_finite' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.isOpen_diskRegularRegion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.closure_diskRegularRegion_subset' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.isCompact_closure_diskRegularRegion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.isCompact_diskOverlapCollars' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.diskOverlapCollars_subset' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.diskRegularRegion_union_halfBalls' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.diskRegularRegion_inter_halfBall_subset_collars' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_glued_conformal_lift_with_collar' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_correction_disk_at_locally_nonconstant' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_conformal_correction_of_finite_critical_set_order_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_conformal_correction_of_finite_critical_set' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_critical_control_neighborhood' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_conformal_correction_of_critical_control_on_closure_order_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_conformal_correction_of_critical_control_on_closure' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.analyticOrderAt_centered_postcomp_of_deriv_ne_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_uniform_inverse_tolerance_near_compact' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_backward_conformal_correction_tolerance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_finite_conformal_chain_order_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_finite_conformal_chain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_homeomorph_eq_add_of_lipschitz_lt_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_smooth_homeomorph_eq_add_of_lipschitz_lt_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_smooth_homeomorph_eq_add_of_derivative_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.norm_real_iteratedFDeriv_eq_complex_iteratedDeriv' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.norm_real_iteratedFDeriv_le_of_circle_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_uniform_real_derivative_bound_on_compact' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.contDiff_cutoff_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_uniform_cutoff_derivative_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_smooth_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_smooth_compact_extension' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_controlled_cutoff_diffeomorphism' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_controlled_smooth_extension' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_uniform_comp_derivative_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.enorm_iteratedFDeriv_le_finiteSmoothNormOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.norm_iteratedFDeriv_le_of_finiteSmoothNormOn_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.finiteSmoothNormOn_le_of_uniform_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.finiteSmoothNormOn_lt_of_uniform_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_holomorphic_smooth_extension_comp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_smooth_diffeomorphism_of_summable_displacements' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_smooth_diffeomorphism_of_increasing_derivative_control' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_finite_critical_neighborhood_chain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_smooth_extension_in_Cm_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_holomorphic_extension_comp_in_Cm_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_holomorphic_extension_on_domain_comp_in_Cm_norm' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_smooth_diffeomorphism_limit_of_close_sequence' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.hasFDerivAt_complex_tsum_of_real_control' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.deriv_eq_zero_iff_of_local_conjugacy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.locally_nonconstant_of_local_conjugacy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.critical_control_on_image_of_local_conjugacy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_smooth_finite_conformal_chain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_smooth_complex_diffeomorphism_limit_of_close_sequence' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_analytic_uniform_limit_of_summable_increments' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.tendsto_uniformlyOn_at_moving_points' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_smooth_complex_limit_of_geometric_Cm_steps' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.mem_closure_iUnion_tail_of_approximations' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.locally_nonconstant_comp_of_analyticAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.analyticAt_finiteComposition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.locally_nonconstant_finiteComposition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.finiteComposition_conjugacy_eventually' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.finiteOrbitDomain_zero' depends on axioms: [propext, Quot.sound]
+'FunctionTheory.finiteOrbitDomain_succ' depends on axioms: [propext, Quot.sound]
+'FunctionTheory.isOpen_finiteOrbitDomain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.mapsTo_finiteComposition' does not depend on any axioms
+'FunctionTheory.analyticOnNhd_finiteOrbitDomain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_finite_composition_preimage_stability' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.finiteComposition_eq_of_eqOn_along_orbit' depends on axioms: [propext, Quot.sound]
+'FunctionTheory.locallyFinite_of_uniform_norm_escape' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.uniform_norm_escape_cthickening' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_disjoint_closed_thickenings' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_disjoint_escaping_open_neighborhoods' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.disjointPatch_of_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.disjointPatch_of_notMem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.disjointPatch_eventuallyEq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.contDiff_disjointPatch' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.disjointPatch_homeomorph_leftInverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_disjoint_smooth_homeomorph' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_finite_subset_thickening_cover' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_boundary_barrier_neighborhood' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.iUnion_ne_univ_of_locallyFinite_disjoint_compacts' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_closedBall_disjoint_locallyFinite_compacts' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.isCompact_separatedExhaustion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.monotone_separatedExhaustion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.subset_separatedExhaustion_of_disjoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.earlier_subset_separatedExhaustion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.disjoint_separatedExhaustion_later' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.compact_eventually_subset_interior_separatedExhaustion' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.eventuallyEq_of_punctured_eq_of_continuousAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_meromorphic_approximation_representative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_meromorphic_limit_of_summable_analytic_errors' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.analyticOrderAt_eq_of_equal_jets' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.centered_local_degree_eq_of_equal_jets' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_jet_order_preserving_value_and_local_degree' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_function_with_germs_on_disjoint_compacts' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_meromorphic_gluing_on_disjoint_compacts' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_meromorphic_limit_on_compact_exhaustion' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.normal_meromorphic_representative_germ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_normal_meromorphic_representative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.meromorphicSphereValue_of_analytic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.meromorphicSphereValue_of_not_analytic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.continuous_meromorphicSphereValue' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.rational_limit_at_infinity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.rational_meromorphic_limit_at_infinity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.not_rational_meromorphic_of_two_sequences' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.not_rational_meromorphic_exp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.frontier_iUnion_subset_of_locallyFinite' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.preconnected_subset_member_of_locallyFinite_disjoint_closed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.blaschke_norm_difference' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.blaschke_denominator_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.norm_blaschkeFactor_lt_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.norm_blaschkeFactor_eq_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.FiniteBlaschkeProduct.analyticOnNhd_closedBall' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.FiniteBlaschkeProduct.norm_eval_sphere' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.FiniteBlaschkeProduct.eval_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.FiniteBlaschkeProduct.norm_eval_lt_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.FiniteBlaschkeProduct.mapsTo_closedBall' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.FiniteBlaschkeProduct.exists_open_holomorphic_neighborhood' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.FiniteBlaschkeProduct.image_ball' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.homeomorph_image_ball_geometry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_holomorphic_image_chart' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.blaschkeFactor_eq_unitDiscMoebius' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.FiniteBlaschkeProduct.coe_discMap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.FiniteBlaschkeProduct.surjective_discMap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_disjoint_escaping_discs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_stable_inverse_branch_on_compact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.not_isBounded_compl_iUnion_locallyFinite_disjoint_compacts' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_escaping_discs_avoiding_compact_family' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.inverse_branch_dist_le_of_deriv_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.inverse_branch_dist_le_of_one_le_deriv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.iterate_eq_of_finite_orbit_values' depends on axioms: [propext, Quot.sound]
+'FunctionTheory.analyticAt_iterate_of_finite_orbit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.centered_local_degree_comp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.iterate_value_and_local_degree_eq_of_finite_orbit_data' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.mapsTo_pullbackChain' depends on axioms: [propext, Quot.sound]
+'FunctionTheory.analyticOnNhd_pullbackChain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.iterate_pullbackChain_rightInv' depends on axioms: [propext, Quot.sound]
+'FunctionTheory.iterate_pullbackChain_mem' depends on axioms: [propext, Quot.sound]
+'FunctionTheory.dist_pullbackChain_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.return_iterate_eq_of_pullback_head' depends on axioms: [propext, Quot.sound]
+'FunctionTheory.exists_expanding_affine_ball_cover' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_stable_expanding_affine_channel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_two_disjoint_closed_subdiscs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.not_eventually_constant_at_orbit_point' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.mem_finiteOrbitMarks' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.finiteOrbitMarks_analytic_and_nonconstant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.finiteComposition_const_eq_iterate' depends on axioms: [propext, Quot.sound]
+'FunctionTheory.iterate_approximation_on_compact_with_domains' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_open_finite_orbit_neighborhood' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.analyticAt_of_holomorphic_right_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.iterate_pullbackChain_analytic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.iterate_germ_eq_of_regular_orbit_germs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.tendsto_iterates_of_neighborhood_uniform_limit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.iterate_pullbackChain_mem_branch_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.tendsto_iterates_of_closed_regular_domains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_affine_target_noncontraction_tolerance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_uniformly_convergent_subsequence_of_shrinking_images' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_holomorphic_image_chart_of_injOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.injOn_iterate_of_injOn_images' depends on axioms: [propext, Quot.sound]
+'FunctionTheory.exists_conformal_neighbourhood_of_compact_injective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.IsSmoothJordanCurve.isJordanCurve' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.IsSmoothJordanCurve.image' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.IsSmoothJordanCurve.of_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.isSmoothJordanCurve_image_sphere' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.image_frontier_of_compact_closure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.deriv_iterate_ne_zero_of_orbit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.image_finiteComposition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_conformal_finite_composition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.finiteComposition_forward_coordinate_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_univalent_finite_composition_tolerance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_univalent_forward_coordinates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_tolerance_forces_fixed_marks' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.fixes_marks_of_injective_conjugacy' does not depend on any axioms
+'FunctionTheory.exists_smooth_forward_coordinate_tolerance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_smooth_finite_forward_extensions' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.forward_coordinate_eventually_eq_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_smooth_forward_prefix_tolerance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.finiteComposition_monomials' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.monomialPrefixDegree_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.monomialPrefixDegree_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.elementaryRootRotation_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.elementaryRootRotation_ne_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.elementaryRootRotation_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.elementaryRootRotation_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.finiteComposition_monomials_rotation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.eventually_rotations_map_collar' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.eventually_rotation_identity_across_circle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.FiniteBlaschkeProduct.eval_monomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.FiniteBlaschkeProduct.monomial_eval_eq_zero_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.FiniteBlaschkeProduct.deriv_monomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.FiniteBlaschkeProduct.deriv_monomial_eq_zero_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.mapsTo_of_monomial_chart' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.map_centre_of_monomial_chart' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.eq_centre_iff_of_monomial_chart' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.deriv_eq_zero_iff_of_monomial_chart' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.FiniteBlaschkeProduct.continuous_discMap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.FiniteBlaschkeProduct.isProperMap_discMap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.FiniteBlaschkeProduct.isProperMap_of_disc_charts' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_bloch_selection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.bloch_local_image_of_derivative_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_bloch_disc_of_analytic_closedUnitDisc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_bloch_ball_subset_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.norm_deriv_le_of_no_image_ball' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_analytic_cosine_lift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.norm_cos_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.abs_im_le_norm_cos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_cosine_period_translate_norm_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_normalized_analytic_cosine_lift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_normalized_scaled_cosine_lift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.arcosh_add_one_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_nearby_integer_cosh' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_nearby_integer_cosine' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.no_ball_subset_double_cosine_lift_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.norm_cos_le_exp_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.norm_sub_le_of_no_image_ball' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.norm_le_schottkyMajorant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.norm_le_schottkyZeroOneMajorant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.norm_le_schottkyZeroOneMajorant_on_disc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_bounded_subsequence_or_inverse_on_disc' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NoWanderingDomains.sphericalDist_induces_topology' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NoWanderingDomains.sphericalDist_inversionGL_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NoWanderingDomains.differentiableAt_stereoEmbed_comp_coe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NoWanderingDomains.sphericalDeriv_eq_of_eventuallyEq_coe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NoWanderingDomains.sphericalDeriv_inversionGL_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NoWanderingDomains.sphericalDeriv_comp_affine' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NoWanderingDomains.SphereHolomorphicOn.comp_affine' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NoWanderingDomains.SphereHolomorphicOn.differentiableAt_stereoEmbed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NoWanderingDomains.SphereHolomorphicOn.continuousOn_sphericalDeriv' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NoWanderingDomains.sphericalDist_le_of_sphericalDeriv_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NoWanderingDomains.isNormal_of_sphericalDeriv_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NoWanderingDomains.exists_sphericalDeriv_gt_of_not_isNormalAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NoWanderingDomains.sphereHolomorphicOn_of_tendstoLocallyUniformlyOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NoWanderingDomains.tendsto_sphericalDeriv_of_tendstoLocallyUniformlyOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NoWanderingDomains.exists_zalcman_rescale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.eq_const_of_no_image_ball' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.eq_const_of_omits_one_neg_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_eq_const_of_two_omitted_values' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_finite_chart_convergence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.sphereHolomorphicOn_mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.spherical_hurwitz_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.tendstoLocallyUniformlyOn_sphere_inversion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.spherical_hurwitz_infty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.eventually_rescaled_ball_subset' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.isNormalAt_of_two_omitted_values' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_conformal_reflection_in_analytic_coordinate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_disc_continuation_of_half_disc_extension' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_disc_continuation_across_analytic_target_arc' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_regular_circle_point_of_injOn_cap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_analytic_gluing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_regular_disc_continuation_of_analytic_extension' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.re_eq_zero_of_boundary_coordinate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_disc_continuation_of_boundary_coordinate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_conformal_reflection_of_axis_avoidance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_conformal_reflection_in_analytic_coordinate_of_axis_avoidance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_disc_continuation_across_analytic_arc_of_axis_avoidance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_disc_continuation_of_regular_analytic_boundary_arc' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.hasRegularAnalyticArcAt_sphere' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.isPathConnected_ball_sdiff_countable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.isConnected_analyticAt_of_meromorphic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.countable_fibre_of_analyticOnNhd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.countable_preimage_of_analyticOnNhd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.eventually_rotation_identity_on_regular_domains' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.eventually_exists_regular_preimage_of_pole' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.eventually_deriv_ne_zero_of_meromorphicNFAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.finite_deriv_zeros_of_meromorphicNFOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.tendsto_norm_atTop_of_injective_meromorphic_critical_points' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_boundary_collar_of_isProperMap_disc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.finite_fibre_of_isProperMap_holomorphic_disc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.order_ne_top_of_isProperMap_holomorphic_disc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.finite_divisor_support_of_isProperMap_holomorphic_disc' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_zero_factorisation_of_isProperMap_holomorphic_disc' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.norm_le_of_disc_boundary_limsup' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.eq_unimodular_const_of_disc_boundary_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_boundary_collar_of_continuousOn_disc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.eq_unimodular_const_of_proper_disc_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_weighted_blaschke_of_isProperMap_holomorphic_disc' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_finiteBlaschkeProduct_of_isProperMap_holomorphic_disc' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.analyticAt_blaschkeFactor_of_norm_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.mul_logDeriv_blaschkeFactor_on_circle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.FiniteBlaschkeProduct.mul_logDeriv_on_circle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.FiniteBlaschkeProduct.re_mul_logDeriv_pos_on_circle' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.FiniteBlaschkeProduct.deriv_ne_zero_on_circle' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.re_pos_on_closedDisc_of_re_pos_on_circle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_analytic_quotient_by_mul_deriv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.FiniteBlaschkeProduct.zeros_eq_zero_of_unicritical' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.FiniteBlaschkeProduct.eval_eq_monomial_of_unicritical' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_monomial_of_isProperMap_unicritical_disc' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_monomial_in_unicritical_conformal_charts' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.image_closed_piece_subset_boundary_cap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_boundary_cap_of_short_arc_and_circle_clusters' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_arc_parameter_of_frontier_half_disc_image' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_boundary_cap_at_analytic_side' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_boundary_limit_at_analytic_side' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_continuous_extension_at_analytic_side' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_occupied_side_of_boundary_coordinate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_local_inverse_extension_at_analytic_side' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_disc_continuation_at_regular_analytic_boundary' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_smooth_forward_chain_tolerance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_compact_target_collar_for_finite_orbit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionTheory.exists_smooth_univalent_forward_corrections' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.analyticAt_homeomorph_symm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.analyticOnNhd_homeomorph_symm_image' depends on axioms: [propext, Classical.choice, Quot.sound]

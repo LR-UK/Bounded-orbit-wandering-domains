@@ -1,0 +1,12 @@
+{
+  "targets": [
+    "FunctionTheory"
+  ],
+  "sources": [
+    "FunctionTheory.lean",
+    "FunctionTheory",
+    "TauCeti",
+    "NoWanderingDomains"
+  ],
+  "audit": "scripts/Audit.lean"
+}

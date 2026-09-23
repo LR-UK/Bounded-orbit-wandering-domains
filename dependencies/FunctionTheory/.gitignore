@@ -1,0 +1,16 @@
+.lake/
+*.olean
+*.ilean
+*.trace
+__pycache__/
+*.pyc
+*.log
+!verification/*.log
+.DS_Store
+Thumbs.db
+.env
+.env.*
+
+# Local proof experiments; only Audit.lean is a release script.
+/scripts/*.lean
+!/scripts/Audit.lean
