@@ -3,3 +3,22 @@
  Classical.choice,
  Quot.sound]
 'AreaDeficit.fatou_orbit_eq_trapped_components' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.trapped_component_injOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.bounded_region_subset_trapped_interior' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.trapped_closed_disc_no_bounded_complement' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.bounded_fatou_orbit_simplyConnected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.isSimplyConnected_component_interior_of_noBoundedComplementComponents' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'AreaDeficit.FinitePunctureMetricInput.no_wandering_chart_orbit_with_eventual_compact_discs' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'AreaDeficit.disjoint_bounded_chart_discs_shrink' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.chart_discs_eventually_in_fixed_closedBall' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.bounded_point_mem_trapped_interior' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.trapped_ball_interior_eq_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.injOn_of_power_coordinate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.eventually_injOn_shrinking_chart_discs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.FinitePunctureMetricInput.no_wandering_fatou_orbit_of_bounded_point' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

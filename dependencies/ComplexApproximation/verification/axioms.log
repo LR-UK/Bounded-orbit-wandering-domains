@@ -1,0 +1,268 @@
+'Runge.exists_polynomial_separator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Runge.exists_polynomials_sum_simplePoles' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Runge.inv_sub_difference' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Runge.polePartial_remainder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Runge.norm_polePartial_error_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Runge.exists_polePartial_uniform_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Runge.polePartial_isRationalOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Runge.pole_shift_uniform_approximation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Runge.integral_uniform_rational_approximation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Runge.cauchyIntegral_uniform_rational_approximation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Runge.exists_extension_with_separated_defect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Runge.rectangleBoundary_dslope' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Runge.ringInverse_mem_rationalClosure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Runge.rectangleKernel_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Runge.rational_approximation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Runge.isClopen_goodPoles' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Runge.poleKernel_mem_of_large_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Runge.rationalClosure_le_of_polynomials_and_kernels' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Runge.all_poleKernels_mem_poleClosure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Runge.prescribed_poles_approximation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Runge.polynomial_approximation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Runge.rational_approximation_of_holomorphic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Runge.prescribed_poles_approximation_of_holomorphic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Runge.polynomial_approximation_of_holomorphic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Runge.rational_approximation_on_domain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Runge.prescribed_poles_approximation_on_domain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Runge.polynomial_approximation_on_domain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Runge.rational_approximation_on_compact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Runge.prescribed_poles_approximation_on_compact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Runge.polynomial_approximation_on_compact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.MainTheorems.rational_runge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.MainTheorems.prescribed_poles_runge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.MainTheorems.polynomial_runge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.MainTheorems.polynomial_runge_on_domain' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.isPreconnected_compl_union_disjoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.complement_component_meets_domain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.isConnected_compl_iff_domain_diff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.isConnected_compl_image_domain_homeomorph' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.MainTheorems.fullness_under_domain_homeomorphism' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.locallyIntegrable_cauchyKernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.contDiff_cauchyTransform' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.rectangleBoundary_inv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.cauchyPompeiu_square' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.cauchyPompeiu_compact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.cauchyRiemannDefect_solveCauchyRiemann' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.norm_solveCauchyRiemann_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.isClosed_fill' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.isConnected_compl_inter_closedBall' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.analyticOnNhd_correctedInterpolation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.exists_holomorphic_neighbourhood_extension' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.exists_entire_limit_of_eventually_holomorphic_corrections' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.arakelian_approximation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.arakelian_approximation_on_domain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.arakelian_approximation_on_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.MainTheorems.arakelian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.MainTheorems.cauchy_pompeiu_compact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.noBoundedComplementComponents_horizontalLift_union_closedBall' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.isArakelian_horizontalLift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.isArakelian_horizontalLift_union_closedBall' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.IsArakelian.image_homeomorph' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.IsArakelian.union_horizontal_background' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.isArakelian_bandAndHalfStrip' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.HalfStrip.hasDerivAt_map' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.HalfStrip.injOn_map' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.HalfStrip.real_axis_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.HalfStrip.derivative_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.HalfStrip.re_derivative_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.HalfStrip.tendsto_real_map_at_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.HalfStrip.exists_bilipschitz_extension' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.exists_bilipschitz_extension_of_small_error' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.exists_bilipschitz_extension_of_positive_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.arakelian_approximation_three_pieces' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.exists_holomorphic_gluing_three_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.arakelian_approximation_halfStrip_configuration' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.exists_frontier_tube_in_halfStripBand' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.HalfStrip.exists_compression' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.HalfStrip.exists_small_shift_far_left' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.HalfStrip.exists_bilipschitz_normalized_extension' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.HalfStrip.uniform_re_escape_normalizedMap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.exists_bilipschitz_extension_on_horizontalStrip' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TauCeti.riemannMapping' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TauCeti.riemannMapping_normalized' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TauCeti.montel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TauCeti.hurwitz_injOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TauCeti.exists_differentiableOn_eqOn_conj_of_symmetric' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.exists_riemannMap_on_domain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.eventually_disjoint_direct_image_of_inverse_convergence' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.image_subset_kernel_of_derivative_lower_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.invOn_of_locallyUniform_limits' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.exists_biholomorphic_kernel_subsequence' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.normalized_inverse_derivative_lower_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.exists_normalized_riemann_kernel_subsequence' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.normalized_riemannMaps_tendsto_on_bounded_kernel' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.exists_normalized_riemannMap_of_bounded_kernel' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.not_isBounded_component_of_affine_ray' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.isCompact_fill' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.isConnected_compl_fill' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.isConnected_fill' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.fill_subset_of_unbounded_preconnected_complement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.fill_subset_of_noBoundedComplementComponents' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.fill_preserves_channel_in_vertical_slab' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.interior_fill_gate_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.fill_subset_interior_of_noBoundedComplementComponents' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.fill_preserves_im_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.fill_preserves_re_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.noBoundedComplementComponents_of_starConvex' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.isArakelian_of_closed_starConvex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.IsArakelian.of_bounded_modification' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.isArakelian_fill_compact_union_starConvex' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.iInter_fill_eq_of_uniformly_bounded_holes' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.isConnected_of_unbounded_components_of_connected_subset' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.noBoundedComplementComponents_band_union_inner' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.isConnected_compl_of_straight_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.isArakelian_of_straight_band_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.isConnected_compl_image_openPartialHomeomorph' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.noBoundedComplementComponents_image_openPartialHomeomorph' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.IsArakelian.image_openPartialHomeomorph_of_eqOn_off_compact' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.HasHomeomorphicTailOn.mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.HasHomeomorphicTailOn.congr' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.HasHomeomorphicTailOn.homeomorph_comp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.HasHomeomorphicTailOn.isClosed_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.IsArakelian.image_openPartialHomeomorph_of_homeomorphic_tail' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.exists_homeomorph_on_straight_tail_of_derivative_limit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.hasHomeomorphicTailOn_of_strip_derivative_limit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.IsArakelian.image_conformal_of_strip_derivative_limit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Runge.prescribed_poles_approximation_with_interpolation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Runge.polynomial_approximation_with_interpolation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Runge.rational_approximation_with_interpolation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Runge.prescribed_poles_approximation_with_interpolation_on_domain' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Runge.polynomial_approximation_with_interpolation_on_domain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Runge.rational_approximation_with_interpolation_on_domain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Runge.meromorphic_prescribed_poles_approximation_with_interpolation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Runge.meromorphic_prescribed_poles_approximation_with_interpolation_on_domain' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Runge.meromorphic_approximation_with_analytic_increment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Runge.meromorphic_approximation_preserving_marked_local_degrees' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Runge.meromorphic_approximation_on_disjoint_compacts' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.isConnected_compl_of_polynomial_separation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.exists_full_compact_neighbourhood' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.isConnected_compl_union_disjoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.isConnected_compl_finite_disjoint_union' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.isConnected_compl_closure_interior' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.exists_open_full_compact_neighbourhood' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.noBoundedComplementComponents_of_full_compact_pieces' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.noBoundedComplementComponents_escaping_full_family' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.noBoundedComplementComponents_of_unbounded_connected_compl' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.isConnected_compl_of_noBounded_disjoint_union' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.not_isBounded_compl_locallyFinite_disjoint_compacts' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.full_members_of_full_locallyFinite_disjoint_compacts' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Runge.polynomial_approximation_preserving_marked_local_degrees' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Runge.polynomial_approximation_on_disjoint_compacts' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.mem_connectedComponentIn_compl_union_disjoint' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.exterior_subset_component_of_not_mem_fill' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.fill_union_disjoint_compacts' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.fill_eq_self_of_full_compact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.fill_union_finite_disjoint_full_family' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.exists_full_separating_exhaustion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ComplexApproximation.exists_disjoint_escaping_open_full_neighborhoods' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexApproximation.exists_full_boundary_barrier_neighborhood' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Runge.meromorphic_approximation_preserving_finite_returns' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Runge.polynomial_approximation_preserving_finite_returns' depends on axioms: [propext, Classical.choice, Quot.sound]

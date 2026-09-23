@@ -1,0 +1,885 @@
+✔ [3198/3359] Built Mathlib.Topology.Separation.Connected (13s)
+✔ [3210/3373] Built EremenkosConjecture.FinitePath (16s)
+✔ [3211/3373] Built Runge.Rational (16s)
+✔ [3212/3373] Built Mathlib.Combinatorics.Graph.Basic (20s)
+✔ [3213/3373] Built Runge.SmoothCutoff (22s)
+✔ [3214/3373] Built ComplexApproximation.Topology.Filling (22s)
+✔ [3215/3373] Built Schoenflies.Plane (27s)
+✔ [3216/3373] Built EremenkosConjecture.PlaneTopology (26s)
+✔ [3217/3373] Built ComplexApproximation.Topology.Nonseparation (27s)
+✔ [3218/3373] Built Runge.PoleShift (24s)
+✔ [3219/3373] Built Mathlib.Combinatorics.Graph.Subgraph (26s)
+✔ [3220/3373] Built Runge.UniformClosure (33s)
+✔ [3221/3373] Built Schoenflies.PolyPath (37s)
+✔ [3222/3373] Built Schoenflies.Line (38s)
+✔ [3223/3373] Built Runge.CauchyGreen (41s)
+⚠ [3224/3373] Built Schoenflies.Square (39s)
+warning: Schoenflies/Square.lean:119:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/Square.lean:126:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/Square.lean:133:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/Square.lean:143:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/Square.lean:170:56: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/Square.lean:181:54: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/Square.lean:226:45: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [3225/3373] Built Schoenflies.Accessible (40s)
+warning: Schoenflies/Accessible.lean:116:18: `Set.setOf_and` has been deprecated: Use `Set.ofPred_and` instead
+✔ [3226/3373] Built Schoenflies.SegmentCut (38s)
+✔ [3227/3373] Built Schoenflies.UniformBound (30s)
+✔ [3228/3373] Built Schoenflies.Topology (30s)
+✔ [3229/3373] Built Mathlib.Combinatorics.Graph.Maps (14s)
+⚠ [3230/3373] Built Schoenflies.Graph.Degree (18s)
+warning: Schoenflies/Graph/Degree.lean:234:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/Graph/Degree.lean:238:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/Graph/Degree.lean:245:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/Graph/Degree.lean:250:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/Graph/Degree.lean:267:32: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+✔ [3231/3373] Built Mathlib.Combinatorics.Graph.Delete (20s)
+⚠ [3232/3373] Built Schoenflies.Direction (37s)
+warning: Schoenflies/Direction.lean:180:21: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/Direction.lean:435:25: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/Direction.lean:445:25: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+✔ [3233/3373] Built Schoenflies.Curve (26s)
+✔ [3234/3373] Built ComplexApproximation.Topology.FilledContinua (33s)
+✔ [3235/3373] Built Runge.PoleTopology (29s)
+✔ [3236/3373] Built Runge.CauchyKernel (32s)
+✔ [3237/3373] Built Runge.UniformOperations (36s)
+✔ [3238/3373] Built Schoenflies.PolygonalCarrier (30s)
+✔ [3239/3373] Built Schoenflies.SegmentMeet (33s)
+⚠ [3240/3373] Built Schoenflies.Bounded (30s)
+warning: Schoenflies/Bounded.lean:41:41: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+✔ [3241/3373] Built Runge.RectangleKernel (37s)
+✔ [3242/3373] Built Schoenflies.Graph.Walk (18s)
+⚠ [3243/3373] Built Schoenflies.LocallyPolygonal (34s)
+warning: Schoenflies/LocallyPolygonal.lean:188:25: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/LocallyPolygonal.lean:249:26: `cond_false` has been deprecated: Use `Bool.cond_false` instead
+
+Note: The updated constant has a different type:
+  ∀ {α : Sort u} {a b : α}, (bif false then a else b) = b
+instead of
+  ∀ {α : Sort u_1} (a b : α), (bif false then a else b) = b
+warning: Schoenflies/LocallyPolygonal.lean:251:26: `cond_true` has been deprecated: Use `Bool.cond_true` instead
+
+Note: The updated constant has a different type:
+  ∀ {α : Sort u} {a b : α}, (bif true then a else b) = a
+instead of
+  ∀ {α : Sort u_1} (a b : α), (bif true then a else b) = a
+warning: Schoenflies/LocallyPolygonal.lean:257:24: `cond_false` has been deprecated: Use `Bool.cond_false` instead
+
+Note: The updated constant has a different type:
+  ∀ {α : Sort u} {a b : α}, (bif false then a else b) = b
+instead of
+  ∀ {α : Sort u_1} (a b : α), (bif false then a else b) = b
+warning: Schoenflies/LocallyPolygonal.lean:259:24: `cond_true` has been deprecated: Use `Bool.cond_true` instead
+
+Note: The updated constant has a different type:
+  ∀ {α : Sort u} {a b : α}, (bif true then a else b) = a
+instead of
+  ∀ {α : Sort u_1} (a b : α), (bif true then a else b) = a
+warning: Schoenflies/LocallyPolygonal.lean:349:31: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/LocallyPolygonal.lean:391:31: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+✔ [3244/3373] Built Schoenflies.SegmentOrder (34s)
+⚠ [3245/3373] Built Schoenflies.SquareMover (48s)
+warning: Schoenflies/SquareMover.lean:99:84: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/SquareMover.lean:102:2: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/SquareMover.lean:282:4: `if_true` has been deprecated: Use `ite_true` instead
+warning: Schoenflies/SquareMover.lean:588:42: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/SquareMover.lean:594:29: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/SquareMover.lean:606:37: `ContinuousOn.restrict` has been deprecated: Use `ContinuousOn.domRestrict` instead
+warning: Schoenflies/SquareMover.lean:607:42: `ContinuousOn.restrict` has been deprecated: Use `ContinuousOn.domRestrict` instead
+✔ [3246/3373] Built Schoenflies.Polygonal (28s)
+✔ [3247/3373] Built Schoenflies.Subarc (36s)
+⚠ [3248/3373] Built Schoenflies.Concatenate (37s)
+warning: Schoenflies/Concatenate.lean:87:2: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/Concatenate.lean:91:2: `if_neg` has been deprecated: Use `ite_eq_right` instead
+✔ [3249/3373] Built ComplexApproximation.Topology.FillingInterior (33s)
+✔ [3250/3373] Built Runge.PolesAtInfinity (32s)
+✔ [3251/3373] Built Schoenflies.Graph.Cycle (23s)
+⚠ [3252/3373] Built Schoenflies.Strip (56s)
+warning: Schoenflies/Strip.lean:210:28: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/Strip.lean:230:32: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/Strip.lean:278:19: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/Strip.lean:391:45: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/Strip.lean:410:45: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+✔ [3253/3373] Built Runge.IntegralTransforms (37s)
+✔ [3254/3373] Built Schoenflies.Graph.Drawing (34s)
+✔ [3255/3373] Built Runge.PoleAlgebra (41s)
+⚠ [3256/3373] Built Schoenflies.Graph.PathGraph (16s)
+warning: Schoenflies/Graph/PathGraph.lean:248:58: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/Graph/PathGraph.lean:261:6: `Graph.edgeSet_eq_setOf_exists_isLink` has been deprecated: Use `Graph.edgeSet_eq_setOfPred_exists_isLink` instead
+warning: Schoenflies/Graph/PathGraph.lean:262:33: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+✔ [3257/3373] Built Schoenflies.Graph.TwoConnected (21s)
+✔ [3258/3373] Built Schoenflies.Subdivide (32s)
+⚠ [3259/3373] Built Schoenflies.PolyLocal (34s)
+warning: Schoenflies/PolyLocal.lean:280:31: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/PolyLocal.lean:301:31: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [3260/3373] Built Schoenflies.ArcMonotone (32s)
+warning: Schoenflies/ArcMonotone.lean:89:16: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+✔ [3261/3373] Built Schoenflies.TwoArcs (30s)
+⚠ [3262/3373] Built Schoenflies.Graph.Tree (22s)
+warning: Schoenflies/Graph/Tree.lean:244:36: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/Graph/Tree.lean:252:34: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/Graph/Tree.lean:285:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Schoenflies/Graph/Tree.lean:291:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Schoenflies/Graph/Tree.lean:294:6: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [3263/3373] Built Schoenflies.ModelCurve (34s)
+warning: Schoenflies/ModelCurve.lean:170:25: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/ModelCurve.lean:376:25: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/ModelCurve.lean:423:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Schoenflies/ModelCurve.lean:424:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Schoenflies/ModelCurve.lean:429:46: `ContinuousOn.restrict` has been deprecated: Use `ContinuousOn.domRestrict` instead
+warning: Schoenflies/ModelCurve.lean:430:48: `ContinuousOn.restrict` has been deprecated: Use `ContinuousOn.domRestrict` instead
+✔ [3264/3373] Built Schoenflies.CrosscutCells (37s)
+✔ [3265/3373] Built Schoenflies.StripConnected (42s)
+✔ [3266/3373] Built Schoenflies.StripConstants (32s)
+✔ [3267/3373] Built Schoenflies.Graph.CycleJordan (30s)
+⚠ [3268/3373] Built Schoenflies.Graph.OuterFace (33s)
+warning: Schoenflies/Graph/OuterFace.lean:93:45: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+✔ [3269/3373] Built Schoenflies.Graph.VertexSquares (34s)
+✔ [3270/3373] Built Schoenflies.CrosscutAtMostTwo (57s)
+✔ [3271/3373] Built Schoenflies.Graph.Relabel (29s)
+✔ [3272/3373] Built Schoenflies.Graph.TwoPaths (19s)
+✔ [3273/3373] Built Runge.RationalGeneration (34s)
+✔ [3274/3373] Built Schoenflies.Graph.Component (21s)
+✔ [3275/3373] Built Schoenflies.Graph.Ear (21s)
+✔ [3276/3373] Built Schoenflies.CombinatorialInvariance (30s)
+✔ [3277/3373] Built Schoenflies.Overlay (28s)
+✔ [3278/3373] Built Schoenflies.Graph.RelativeEar (20s)
+✔ [3279/3373] Built Schoenflies.GeneralCrosscut (29s)
+✔ [3280/3373] Built Schoenflies.Graph.Redrawing (35s)
+✔ [3281/3373] Built Schoenflies.Graph.K33 (37s)
+⚠ [3282/3373] Built Schoenflies.Parity (45s)
+warning: Schoenflies/Parity.lean:380:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/Parity.lean:380:33: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:381:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/Parity.lean:384:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:384:54: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/Parity.lean:385:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/Parity.lean:386:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:386:54: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:387:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:389:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:389:50: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:390:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:391:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:391:50: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:392:6: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:693:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/Parity.lean:693:42: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/Parity.lean:694:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:694:50: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:696:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:697:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:698:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:698:50: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:704:14: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/Parity.lean:704:36: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:705:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:705:52: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/Parity.lean:707:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:708:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:709:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:710:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:712:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:712:52: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:713:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:713:50: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:720:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:720:54: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/Parity.lean:721:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/Parity.lean:721:34: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:723:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:724:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:725:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:726:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:730:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:730:54: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:731:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/Parity.lean:731:34: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/Parity.lean:733:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:733:54: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:734:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:735:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:737:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:737:50: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:738:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:738:48: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:885:9: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Parity.lean:1002:20: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/Parity.lean:1002:32: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [3283/3373] Built Schoenflies.OverlayGraph (25s)
+warning: Schoenflies/OverlayGraph.lean:91:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/OverlayGraph.lean:96:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/OverlayGraph.lean:250:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/OverlayGraph.lean:350:12: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [3284/3373] Built Schoenflies.StripLocal (48s)
+warning: Schoenflies/StripLocal.lean:291:8: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/StripLocal.lean:312:8: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+✔ [3285/3373] Built Schoenflies.FaceCycles (20s)
+✔ [3286/3373] Built Schoenflies.PolygonBridge (22s)
+⚠ [3287/3373] Built Schoenflies.GeneratedStructure (28s)
+warning: Schoenflies/GeneratedStructure.lean:378:61: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/GeneratedStructure.lean:385:59: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/GeneratedStructure.lean:408:56: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/GeneratedStructure.lean:1038:21: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/GeneratedStructure.lean:1041:21: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/GeneratedStructure.lean:1364:21: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/GeneratedStructure.lean:1367:21: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/GeneratedStructure.lean:1692:31: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/GeneratedStructure.lean:1696:33: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [3288/3373] Built Schoenflies.SimpleArc (23s)
+warning: Schoenflies/SimpleArc.lean:149:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/SimpleArc.lean:156:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/SimpleArc.lean:287:35: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/SimpleArc.lean:318:29: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+✔ [3289/3373] Built Runge.RationalApproximation (127s)
+⚠ [3290/3373] Built Schoenflies.SquareMesh (42s)
+warning: Schoenflies/SquareMesh.lean:113:22: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/SquareMesh.lean:278:38: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/SquareMesh.lean:280:31: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/SquareMesh.lean:292:40: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/SquareMesh.lean:294:40: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/SquareMesh.lean:296:30: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [3291/3373] Built Schoenflies.RefinementStars (28s)
+warning: Schoenflies/RefinementStars.lean:135:15: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+✔ [3292/3373] Built Schoenflies.PolygonalJordan (32s)
+✔ [3293/3373] Built Schoenflies.AccessibleJoin (28s)
+⚠ [3294/3373] Built Schoenflies.SkeletonLocal (30s)
+warning: Schoenflies/SkeletonLocal.lean:216:50: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/SkeletonLocal.lean:218:51: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/SkeletonLocal.lean:456:58: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [3295/3373] Built Schoenflies.ArcCollars (55s)
+warning: Schoenflies/ArcCollars.lean:1264:8: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/ArcCollars.lean:1289:8: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+✔ [3296/3373] Built Runge.PrescribedPoles (24s)
+⚠ [3297/3373] Built Schoenflies.ParitySplitting (19s)
+warning: Schoenflies/ParitySplitting.lean:125:20: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/ParitySplitting.lean:125:60: `if_neg` has been deprecated: Use `ite_eq_right` instead
+✔ [3298/3373] Built Runge.Holomorphic (19s)
+⚠ [3299/3373] Built Schoenflies.ArcComplementPrep (32s)
+warning: Schoenflies/ArcComplementPrep.lean:444:42: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/ArcComplementPrep.lean:468:28: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [3300/3373] Built Schoenflies.SquareMeshConnected (39s)
+warning: Schoenflies/SquareMeshConnected.lean:317:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/SquareMeshConnected.lean:364:21: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/SquareMeshConnected.lean:381:12: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/SquareMeshConnected.lean:665:86: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/SquareMeshConnected.lean:667:86: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/SquareMeshConnected.lean:740:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/SquareMeshConnected.lean:745:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/SquareMeshConnected.lean:745:27: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/SquareMeshConnected.lean:751:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/SquareMeshConnected.lean:751:27: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/SquareMeshConnected.lean:751:46: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/SquareMeshConnected.lean:758:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/SquareMeshConnected.lean:758:27: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/SquareMeshConnected.lean:758:46: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/SquareMeshConnected.lean:817:31: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/SquareMeshConnected.lean:822:6: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/SquareMeshConnected.lean:822:25: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/SquareMeshConnected.lean:827:6: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/SquareMeshConnected.lean:827:25: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/SquareMeshConnected.lean:827:44: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/SquareMeshConnected.lean:833:6: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/SquareMeshConnected.lean:833:25: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/SquareMeshConnected.lean:833:44: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [3301/3373] Built Schoenflies.SkeletonSectors (32s)
+warning: Schoenflies/SkeletonSectors.lean:181:21: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/SkeletonSectors.lean:187:21: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/SkeletonSectors.lean:193:21: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/SkeletonSectors.lean:203:21: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/SkeletonSectors.lean:271:21: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/SkeletonSectors.lean:281:21: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/SkeletonSectors.lean:404:21: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/SkeletonSectors.lean:449:21: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/SkeletonSectors.lean:464:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/SkeletonSectors.lean:561:14: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/SkeletonSectors.lean:562:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/SkeletonSectors.lean:983:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Schoenflies/SkeletonSectors.lean:984:34: `Set.restrict` has been deprecated: Use `Set.domRestrict` instead
+warning: Schoenflies/SkeletonSectors.lean:986:37: `ContinuousOn.restrict` has been deprecated: Use `ContinuousOn.domRestrict` instead
+warning: Schoenflies/SkeletonSectors.lean:987:51: `Set.range_restrict` has been deprecated: Use `Set.range_domRestrict` instead
+✔ [3302/3373] Built Schoenflies.PolygonalCrosscut (21s)
+✔ [3303/3373] Built Runge.PolynomialSeparation (19s)
+⚠ [3304/3373] Built Schoenflies.SquareMeshFixed (21s)
+warning: Schoenflies/SquareMeshFixed.lean:136:21: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/SquareMeshFixed.lean:243:48: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/SquareMeshFixed.lean:259:19: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/SquareMeshFixed.lean:261:19: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/SquareMeshFixed.lean:266:55: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/SquareMeshFixed.lean:267:55: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/SquareMeshFixed.lean:274:21: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/SquareMeshFixed.lean:376:19: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/SquareMeshFixed.lean:376:19: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/SquareMeshFixed.lean:384:19: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/SquareMeshFixed.lean:384:19: `if_neg` has been deprecated: Use `ite_eq_right` instead
+✔ [3305/3373] Built Schoenflies.AlternatingCrosscuts (16s)
+⚠ [3306/3373] Built Schoenflies.SkeletonAccess (23s)
+warning: Schoenflies/SkeletonAccess.lean:651:33: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/SkeletonAccess.lean:652:35: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+✔ [3307/3373] Built EremenkosConjecture.FullNeighbourhoods (20s)
+✔ [3308/3373] Built Schoenflies.LocalGrid (19s)
+⚠ [3309/3373] Built Schoenflies.Realization (34s)
+warning: Schoenflies/Realization.lean:879:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Schoenflies/Realization.lean:1087:58: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+warning: Schoenflies/Realization.lean:1090:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Schoenflies/Realization.lean:1097:80: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/Realization.lean:1101:24: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: Schoenflies/Realization.lean:1103:72: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/Realization.lean:1107:30: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+warning: Schoenflies/Realization.lean:1144:46: `if_neg` has been deprecated: Use `ite_eq_right` instead
+✔ [3310/3373] Built Schoenflies.Graph.K33Planar (19s)
+✔ [3311/3373] Built Schoenflies.FreshAccess (27s)
+✔ [3312/3373] Built Schoenflies.PrePolygonSep (21s)
+⚠ [3313/3373] Built Schoenflies.GridAttach (23s)
+warning: Schoenflies/GridAttach.lean:187:73: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/GridAttach.lean:349:76: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/GridAttach.lean:354:76: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [3314/3373] Built Schoenflies.FaceCyclesProof (24s)
+warning: Schoenflies/FaceCyclesProof.lean:843:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [3315/3373] Built Schoenflies.PolyArcRealize (30s)
+warning: Schoenflies/PolyArcRealize.lean:125:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/PolyArcRealize.lean:125:19: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/PolyArcRealize.lean:129:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/PolyArcRealize.lean:129:19: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/PolyArcRealize.lean:135:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/PolyArcRealize.lean:135:19: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/PolyArcRealize.lean:140:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/PolyArcRealize.lean:140:19: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/PolyArcRealize.lean:159:55: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/PolyArcRealize.lean:161:59: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/PolyArcRealize.lean:575:37: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: Schoenflies/PolyArcRealize.lean:576:50: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+warning: Schoenflies/PolyArcRealize.lean:582:8: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: Schoenflies/PolyArcRealize.lean:586:8: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+✔ [3316/3373] Built Schoenflies.Graph.K33Closed (29s)
+⚠ [3317/3373] Built Schoenflies.BoundaryCycles (14s)
+warning: Schoenflies/BoundaryCycles.lean:151:28: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+✔ [3318/3373] Built Schoenflies.MatchedArc (15s)
+⚠ [3319/3373] Built Schoenflies.PrePolygonArc (23s)
+warning: Schoenflies/PrePolygonArc.lean:626:17: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/PrePolygonArc.lean:632:17: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/PrePolygonArc.lean:691:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/PrePolygonArc.lean:691:22: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/PrePolygonArc.lean:694:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/PrePolygonArc.lean:694:22: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/PrePolygonArc.lean:696:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/PrePolygonArc.lean:696:22: `if_pos` has been deprecated: Use `ite_eq_left` instead
+✔ [3320/3373] Built Schoenflies.FaceCyclesLand (13s)
+⚠ [3321/3373] Built Schoenflies.Graph.K33Land (20s)
+warning: Schoenflies/Graph/K33Land.lean:157:22: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/Graph/K33Land.lean:160:22: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [3322/3373] Built Schoenflies.OuterChain (14s)
+warning: Schoenflies/OuterChain.lean:312:33: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/OuterChain.lean:318:33: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/OuterChain.lean:782:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [3323/3373] Built Schoenflies.JordanSeparates (20s)
+✔ [3324/3373] Built Schoenflies.CrosscutEncloses (14s)
+✔ [3325/3373] Built Schoenflies.CrosscutExists (15s)
+✔ [3326/3373] Built Schoenflies.OuterChainClosed (11s)
+ℹ [3327/3373] Built Schoenflies.Jordan (15s)
+info: Schoenflies/Jordan.lean:722:13: Try this:
+  [apply] rwa [inter_comm]
+info: Schoenflies/Jordan.lean:722:13: Try this:
+  [apply] rwa [inter_comm]
+info: Schoenflies/Jordan.lean:722:13: Try this:
+  [apply] rwa [inter_comm]
+⚠ [3328/3373] Built Schoenflies.Inversion (15s)
+warning: Schoenflies/Inversion.lean:175:47: `ContinuousOn.restrict` has been deprecated: Use `ContinuousOn.domRestrict` instead
+warning: Schoenflies/Inversion.lean:176:48: `ContinuousOn.restrict` has been deprecated: Use `ContinuousOn.domRestrict` instead
+⚠ [3329/3373] Built Schoenflies.ArcComplement (20s)
+warning: Schoenflies/ArcComplement.lean:157:4: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/ArcComplement.lean:456:37: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/ArcComplement.lean:456:37: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/ArcComplement.lean:528:39: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/ArcComplement.lean:717:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [3330/3373] Built Schoenflies.LimitMap (15s)
+warning: Schoenflies/LimitMap.lean:480:9: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: Schoenflies/LimitMap.lean:866:11: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+⚠ [3331/3373] Built Schoenflies.SquareCycle (20s)
+warning: Schoenflies/SquareCycle.lean:653:15: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/SquareCycle.lean:661:17: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/SquareCycle.lean:662:17: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/SquareCycle.lean:662:30: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/SquareCycle.lean:670:17: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/SquareCycle.lean:670:30: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/SquareCycle.lean:672:17: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/SquareCycle.lean:672:30: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/SquareCycle.lean:672:44: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/SquareCycle.lean:682:17: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/SquareCycle.lean:682:30: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/SquareCycle.lean:682:44: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/SquareCycle.lean:685:17: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/SquareCycle.lean:685:30: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/SquareCycle.lean:685:44: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [3332/3373] Built Schoenflies.InitialPair (41s)
+warning: Schoenflies/InitialPair.lean:169:27: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: Schoenflies/InitialPair.lean:170:27: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: Schoenflies/InitialPair.lean:173:15: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: Schoenflies/InitialPair.lean:173:27: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: Schoenflies/InitialPair.lean:178:15: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: Schoenflies/InitialPair.lean:178:27: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: Schoenflies/InitialPair.lean:1447:22: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/InitialPair.lean:1450:22: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/InitialPair.lean:1461:24: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/InitialPair.lean:1489:24: `if_neg` has been deprecated: Use `ite_eq_right` instead
+✔ [3333/3373] Built Schoenflies.JordanClosed (11s)
+⚠ [3334/3373] Built Schoenflies.SquareMeshClosed (19s)
+warning: Schoenflies/SquareMeshClosed.lean:219:57: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: Schoenflies/SquareMeshClosed.lean:748:17: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: Schoenflies/SquareMeshClosed.lean:837:15: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+⚠ [3335/3373] Built Schoenflies.Endgame (19s)
+warning: Schoenflies/Endgame.lean:115:42: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: Schoenflies/Endgame.lean:116:36: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: Schoenflies/Endgame.lean:117:36: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: Schoenflies/Endgame.lean:122:40: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: Schoenflies/Endgame.lean:129:40: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: Schoenflies/Endgame.lean:133:15: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: Schoenflies/Endgame.lean:133:27: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: Schoenflies/Endgame.lean:136:15: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: Schoenflies/Endgame.lean:136:27: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: Schoenflies/Endgame.lean:199:18: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/Endgame.lean:203:18: `if_neg` has been deprecated: Use `ite_eq_right` instead
+✔ [3336/3373] Built Schoenflies.Windows (19s)
+✔ [3337/3373] Built EremenkosConjecture.SquareChainNeighbourhood (19s)
+✔ [3338/3373] Built Schoenflies.BoundaryContinuity (21s)
+✔ [3339/3373] Built Schoenflies.CellulationInvariants (21s)
+⚠ [3340/3373] Built Schoenflies.InitialPairFixed (24s)
+warning: Schoenflies/InitialPairFixed.lean:310:53: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [3341/3373] Built EremenkosConjecture.JordanNeighbourhood (16s)
+warning: EremenkosConjecture/JordanNeighbourhood.lean:78:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [3342/3373] Built Schoenflies.BoundaryCyclesGenerated (20s)
+⚠ [3343/3373] Built Schoenflies.BoundaryContinuity2 (22s)
+warning: Schoenflies/BoundaryContinuity2.lean:497:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Schoenflies/BoundaryContinuity2.lean:524:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [3344/3373] Built Schoenflies.RealizeSplit (22s)
+warning: Schoenflies/RealizeSplit.lean:504:23: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/RealizeSplit.lean:508:23: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/RealizeSplit.lean:519:27: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/RealizeSplit.lean:524:27: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/RealizeSplit.lean:530:6: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/RealizeSplit.lean:536:6: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/RealizeSplit.lean:536:34: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/RealizeSplit.lean:549:6: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/RealizeSplit.lean:549:17: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/RealizeSplit.lean:549:28: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/RealizeSplit.lean:549:39: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/RealizeSplit.lean:560:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/RealizeSplit.lean:560:19: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/RealizeSplit.lean:560:30: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/RealizeSplit.lean:570:6: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/RealizeSplit.lean:570:17: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/RealizeSplit.lean:570:28: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/RealizeSplit.lean:570:39: `if_pos` has been deprecated: Use `ite_eq_left` instead
+⚠ [3345/3373] Built Schoenflies.RealizeSubdiv (23s)
+warning: Schoenflies/RealizeSubdiv.lean:312:35: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/RealizeSubdiv.lean:320:35: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/RealizeSubdiv.lean:461:2: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/RealizeSubdiv.lean:463:89: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/RealizeSubdiv.lean:472:85: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/RealizeSubdiv.lean:476:22: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/RealizeSubdiv.lean:476:48: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/RealizeSubdiv.lean:479:67: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/RealizeSubdiv.lean:479:78: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/RealizeSubdiv.lean:486:2: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/RealizeSubdiv.lean:490:19: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/RealizeSubdiv.lean:490:48: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/RealizeSubdiv.lean:494:19: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/RealizeSubdiv.lean:494:48: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/RealizeSubdiv.lean:494:74: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/RealizeSubdiv.lean:497:19: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/RealizeSubdiv.lean:497:59: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/RealizeSubdiv.lean:498:4: `if_neg` has been deprecated: Use `ite_eq_right` instead
+✔ [3346/3373] Built EremenkosConjecture.ComplexJordanNeighbourhood (17s)
+⚠ [3347/3373] Built Schoenflies.MatchedSplit (13s)
+warning: Schoenflies/MatchedSplit.lean:322:23: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/MatchedSplit.lean:330:26: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/MatchedSplit.lean:335:26: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/MatchedSplit.lean:348:18: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/MatchedSplit.lean:354:18: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/MatchedSplit.lean:365:21: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/MatchedSplit.lean:373:21: `if_neg` has been deprecated: Use `ite_eq_right` instead
+✔ [3348/3373] Built Schoenflies.RealizeSubdivHomeo (13s)
+✔ [3349/3373] Built EremenkosConjecture.NestedJordanNeighbourhoods (13s)
+⚠ [3350/3373] Built Schoenflies.FiniteTransfer (18s)
+warning: Schoenflies/FiniteTransfer.lean:738:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Schoenflies/FiniteTransfer.lean:756:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Schoenflies/FiniteTransfer.lean:1151:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Schoenflies/FiniteTransfer.lean:1386:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Schoenflies/FiniteTransfer.lean:1552:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [3351/3373] Built EremenkosConjecture.JordanDomains (13s)
+✔ [3352/3373] Built Schoenflies.InitialGenerated (15s)
+⚠ [3353/3373] Built Schoenflies.CommonSubdivision (16s)
+warning: Schoenflies/CommonSubdivision.lean:51:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Schoenflies/CommonSubdivision.lean:52:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Schoenflies/CommonSubdivision.lean:67:16: `Graph.edgeSet_eq_setOf_exists_isLink` has been deprecated: Use `Graph.edgeSet_eq_setOfPred_exists_isLink` instead
+warning: Schoenflies/CommonSubdivision.lean:74:16: `Graph.edgeSet_eq_setOf_exists_isLink` has been deprecated: Use `Graph.edgeSet_eq_setOfPred_exists_isLink` instead
+warning: Schoenflies/CommonSubdivision.lean:82:10: `Graph.edgeSet_eq_setOf_exists_isLink` has been deprecated: Use `Graph.edgeSet_eq_setOfPred_exists_isLink` instead
+warning: Schoenflies/CommonSubdivision.lean:88:10: `Graph.edgeSet_eq_setOf_exists_isLink` has been deprecated: Use `Graph.edgeSet_eq_setOfPred_exists_isLink` instead
+warning: Schoenflies/CommonSubdivision.lean:100:12: `Graph.edgeSet_eq_setOf_exists_isLink` has been deprecated: Use `Graph.edgeSet_eq_setOfPred_exists_isLink` instead
+warning: Schoenflies/CommonSubdivision.lean:100:12: `Graph.edgeSet_eq_setOf_exists_isLink` has been deprecated: Use `Graph.edgeSet_eq_setOfPred_exists_isLink` instead
+warning: Schoenflies/CommonSubdivision.lean:108:10: `Graph.edgeSet_eq_setOf_exists_isLink` has been deprecated: Use `Graph.edgeSet_eq_setOfPred_exists_isLink` instead
+warning: Schoenflies/CommonSubdivision.lean:108:10: `Graph.edgeSet_eq_setOf_exists_isLink` has been deprecated: Use `Graph.edgeSet_eq_setOfPred_exists_isLink` instead
+warning: Schoenflies/CommonSubdivision.lean:138:57: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/CommonSubdivision.lean:167:8: `Graph.edgeSet_eq_setOf_exists_isLink` has been deprecated: Use `Graph.edgeSet_eq_setOfPred_exists_isLink` instead
+warning: Schoenflies/CommonSubdivision.lean:188:14: `Graph.edgeSet_eq_setOf_exists_isLink` has been deprecated: Use `Graph.edgeSet_eq_setOfPred_exists_isLink` instead
+warning: Schoenflies/CommonSubdivision.lean:305:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Schoenflies/CommonSubdivision.lean:306:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Schoenflies/CommonSubdivision.lean:686:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Schoenflies/CommonSubdivision.lean:687:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Schoenflies/CommonSubdivision.lean:1086:46: `Set.setOf_eq_eq_singleton` has been deprecated: Use `Set.ofPred_eq_eq_singleton` instead
+warning: Schoenflies/CommonSubdivision.lean:1329:6: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [3354/3373] Built Schoenflies.FiniteTransferTarget (16s)
+warning: Schoenflies/FiniteTransferTarget.lean:564:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Schoenflies/FiniteTransferTarget.lean:1131:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Schoenflies/FiniteTransferTarget.lean:1132:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Schoenflies/FiniteTransferTarget.lean:1434:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Schoenflies/FiniteTransferTarget.lean:1444:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Schoenflies/FiniteTransferTarget.lean:1797:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [3355/3373] Built Schoenflies.StageTransition (12s)
+⚠ [3356/3373] Built Schoenflies.FiniteTransferTargetMesh (14s)
+warning: Schoenflies/FiniteTransferTargetMesh.lean:115:10: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: Schoenflies/FiniteTransferTargetMesh.lean:115:22: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: Schoenflies/FiniteTransferTargetMesh.lean:120:8: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+✔ [3357/3373] Built Schoenflies.InitialOuterCycle (14s)
+✔ [3358/3373] Built Schoenflies.StageTower (12s)
+⚠ [3359/3373] Built Schoenflies.TargetOverlay (16s)
+warning: Schoenflies/TargetOverlay.lean:87:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Schoenflies/TargetOverlay.lean:1027:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [3360/3373] Built Schoenflies.FreshDenseSelection (11s)
+warning: Schoenflies/FreshDenseSelection.lean:61:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Schoenflies/FreshDenseSelection.lean:62:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Schoenflies/FreshDenseSelection.lean:348:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [3361/3373] Built Schoenflies.QuantitativeStages (10s)
+⚠ [3362/3373] Built Schoenflies.SourceOverlay (13s)
+warning: Schoenflies/SourceOverlay.lean:317:21: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/SourceOverlay.lean:481:32: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/SourceOverlay.lean:671:15: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [3363/3373] Built Schoenflies.SourceAttachment (15s)
+warning: Schoenflies/SourceAttachment.lean:32:5: Ambiguous namespace `Graph`: it is interpreted as `_root_.Schoenflies.Graph` because this `open` occurs inside `namespace Schoenflies`, while `_root_.Graph` is silently not opened. Specify the namespace unambiguously, e.g. `_root_.Schoenflies.Graph`. The warning can sometimes also be addressed by moving the `open` outside of the surrounding `namespace`.
+
+Note: This linter can be disabled with `set_option linter.ambiguousOpen false`
+warning: Schoenflies/SourceAttachment.lean:315:21: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/SourceAttachment.lean:633:15: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/SourceAttachment.lean:1074:23: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [3364/3373] Built Schoenflies.OverlayExtension (10s)
+warning: Schoenflies/OverlayExtension.lean:25:5: Ambiguous namespace `Graph`: it is interpreted as `_root_.Schoenflies.Graph` because this `open` occurs inside `namespace Schoenflies`, while `_root_.Graph` is silently not opened. Specify the namespace unambiguously, e.g. `_root_.Schoenflies.Graph`. The warning can sometimes also be addressed by moving the `open` outside of the surrounding `namespace`.
+
+Note: This linter can be disabled with `set_option linter.ambiguousOpen false`
+⚠ [3365/3373] Built Schoenflies.SourceJoining (15s)
+warning: Schoenflies/SourceJoining.lean:27:5: Ambiguous namespace `Graph`: it is interpreted as `_root_.Schoenflies.Graph` because this `open` occurs inside `namespace Schoenflies`, while `_root_.Graph` is silently not opened. Specify the namespace unambiguously, e.g. `_root_.Schoenflies.Graph`. The warning can sometimes also be addressed by moving the `open` outside of the surrounding `namespace`.
+
+Note: This linter can be disabled with `set_option linter.ambiguousOpen false`
+warning: Schoenflies/SourceJoining.lean:95:16: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: Schoenflies/SourceJoining.lean:98:16: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/SourceJoining.lean:302:15: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Schoenflies/SourceJoining.lean:639:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Schoenflies/SourceJoining.lean:640:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [3366/3373] Built Schoenflies.QuantitativeForwardStages (12s)
+warning: Schoenflies/QuantitativeForwardStages.lean:37:32: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Schoenflies/QuantitativeForwardStages.lean:38:32: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [3367/3373] Built Schoenflies.QuantitativeRecursion (11s)
+warning: Schoenflies/QuantitativeRecursion.lean:194:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [3368/3373] Built Schoenflies.InteriorHomeomorphism (10s)
+⚠ [3369/3373] Built Schoenflies.BoundaryAnchors (13s)
+warning: Schoenflies/BoundaryAnchors.lean:122:12: `Graph.edgeSet_eq_setOf_exists_isLink` has been deprecated: Use `Graph.edgeSet_eq_setOfPred_exists_isLink` instead
+warning: Schoenflies/BoundaryAnchors.lean:249:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Schoenflies/BoundaryAnchors.lean:796:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [3370/3373] Built Schoenflies.JordanSchoenflies (10s)
+✔ [3371/3373] Built EremenkosConjecture.JordanSimplyConnected (12s)
+✔ [3372/3373] Built EremenkosConjecture.PlaneSimpleConnectivity (11s)
+✔ [3373/3373] Built EremenkosConjecture.FilledDomainComponents (11s)
+Build completed successfully (3373 jobs).

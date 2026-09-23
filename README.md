@@ -1,8 +1,22 @@
-# Conditional absence of bounded wandering component orbits
+# No bounded-orbit wandering domains
 
-Start with **Challenge.lean**: both results are stated independently in about
-170 lines with only Mathlib imports. **Solution.lean** and the accompanying
-modules contain the substantive formal development.
+We prove that transcendental entire functions do not have bounded-orbit wandering domains.
+
+This answers a major open question in the field. The proof builds upon Zihao Ye's new proof of Sullivan's No Wandering Domains theorem, and was obtained with assistance by generative AI, specifically ChatGPT 6 Astra. We also formalise a stronger theorem, which shows that locally defined holomorphic functions do not have wandering domains on which the iterates are univalent.
+
+The formalisations are conditional on classical statements concerning the hyperbolic metrics of finitely punctured spheres which are well-known, but not yet formalised. Hence the theorems contain the existence of hyperbolic metrics on the corresponding punctures spheres as a hypothesis.
+
+Start with **Challenge.lean**: both results are stated independently in about 180 lines with only Mathlib imports. **Solution.lean** and the accompanying modules contain the substantive formal development.
+
+## Project layout
+
+`Challenge.lean` and `Solution.lean` remain at the repository root.
+
+The 55 supporting proof modules are under `BoundedWanderingDomains/`; `BoundedWanderingDomains.lean` imports that supporting development.
+
+Supporting module paths have the prefix `BoundedWanderingDomains.`. Version 0.12 corrects the entire theorem to require only one bounded point orbit. Curvature remains −1.
+
+The archive contains the full source tree, including its dependencies.
 
 ## Exact scope
 
@@ -18,18 +32,22 @@ Area is divided by 2π.
    pairwise disjoint if they are simply connected, all lie in one compact K
    contained in V, and satisfy eventual injectivity on each fixed intrinsic disc.
 2. **Transcendental entire functions.** An orbit of actual Fatou components U_n
-   cannot be pairwise disjoint if their union is bounded, they are simply
-   connected, and the same eventual disc-injectivity condition holds.
+   cannot be pairwise disjoint if some z in U_0 has a bounded forward orbit:
+   `Bornology.IsBounded (Set.range (fun n : ℕ => (f^[n]) z))`.
+   No bound on the union of the components is assumed. Simple connectivity of
+   auxiliary trapped components and eventual injectivity on intrinsic discs
+   are derived in the proof.
 
 For every chart radius 0 < r < 1, there is a starting time N(r) after which f
 is injective on the radius-r normalised Riemann-chart disc around f^n(z).
 The curvature −1 intrinsic radius is 2 artanh(r). N may depend on r.
-The bound is uniform on the whole union of components, stronger than a
-separate bound on each point orbit.
+For the entire theorem these discs lie in auxiliary trapped components;
+their eventual compact containment suffices for the area argument.
 
-Simple connectivity and eventual disc injectivity remain hypotheses.
-The unrestricted bounded-orbit conjecture and the derived-singular-set
-statement are not claimed.
+Simple connectivity and eventual disc injectivity are hypotheses only in
+the local result.
+The bounded-point-orbit theorem is proved subject to the explicit classical
+metric hypothesis. The derived-singular-set statement is not included.
 
 ## Definitions and proof dependencies
 
@@ -45,11 +63,18 @@ ComplexDynamics definitions are reproduced in the independent Challenge.
 The Solution uses the supplied definitions. All nine public supporting
 definitions are compared, including the uniform-space instance.
 
-EntireFatouBridge.lean proves the identification of bounded Fatou-component
-orbits with local trapped-component orbits. This bridge is not assumed.
-Tau Ceti analytic foundations are reused through FunctionTheory where needed.
-Both supplied dependencies are included as real source directories, with
-licences and provenance. Challenge imports neither proof repository.
+`PointOrbitBridge.lean` obtains a bounded neighbourhood from the bounded
+point orbit using Schottky's estimate. `TrappedSimpleConnectivity.lean` and
+the supplied planar topology theorem provide simply connected trapped
+components inside the Fatou components. `LocalDiscInjectivity.lean` proves
+the local inverse-branch argument on shrinking intrinsic discs.
+`BoundedPointWandering.lean` joins these results to the uniform area
+contradiction in `EventualCompactDiscs.lean`.
+
+See `BOUNDED_POINT_PROOF.md` for the proof and its mapping to the Lean modules.
+All four supplied dependencies remain included as real source directories,
+with their licences and provenance. No new topology hypothesis or custom
+axiom is introduced. See `NEXT_STEPS.md` for remaining metric obligations.
 
 ## Build and verify
 
@@ -80,3 +105,11 @@ ChatGPT/Codex. The working argument was motivated by Zihao Ye's preprint
 and the hyperbolic-density comparisons discussed with the author.
 Precise sources and review limitations are in formalization.yaml.
 
+
+## Licences and reused proofs
+
+See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for the complete component
+index, source authors, pinned revisions, adaptation records and links to all
+included licences. Original upstream notices are retained. Run
+`python3 scripts/audit_attribution.py` to check the packaged attribution material.
+The packaging script also checks its presence and contents in the archive.

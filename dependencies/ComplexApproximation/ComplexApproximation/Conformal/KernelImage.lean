@@ -1,0 +1,16 @@
+import ComplexApproximation.Conformal.KernelSeparation
+import FunctionTheory.Conformal.KernelImage
+
+/-! # Compatibility imports for FunctionTheory
+
+The proofs now belong to the sibling FunctionTheory project. These aliases
+preserve the existing declarations and their mathematical statements.
+-/
+
+namespace ComplexApproximation
+
+alias image_subset_interior_iInter_of_holomorphic_limit := FunctionTheory.image_subset_interior_iInter_of_holomorphic_limit
+alias nonconstant_of_derivative_lower_bound_of_tendstoLocallyUniformlyOn := FunctionTheory.nonconstant_of_derivative_lower_bound_of_tendstoLocallyUniformlyOn
+alias image_subset_kernel_of_derivative_lower_bound := FunctionTheory.image_subset_kernel_of_derivative_lower_bound
+
+end ComplexApproximation

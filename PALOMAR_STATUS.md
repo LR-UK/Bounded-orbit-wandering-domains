@@ -1,4 +1,9 @@
-# Prepared Palomar submission
+# Prepared Palomar submission: bounded-point-orbit theorem
+
+The entire Challenge and Solution now assume boundedness only of the forward
+orbit of one point in the Fatou component. The bounded-union requirement has
+been removed with a proved bridge and local inverse-branch argument.
+The classical curvature −1 metric input remains the explicit hypothesis.
 
 This is a source package for review and publication, not an already submitted
 or registered Palomar entry.
@@ -21,8 +26,8 @@ Local build, source, axiom and declaration checks are described in
 VERIFICATION.md. Official Palomar Comparator/NanoDa and metadata-policy
 validation have not been run in this environment.
 
-For actual submission, publish these sources (including both contained
-dependencies) in a public GitHub repository and select its full immutable
+For actual submission, publish these sources (including all four contained
+dependencies and the vendored Schoenflies sources) in a public GitHub repository and select its full immutable
 40-character commit SHA. Use that repository and SHA with the root layout above.
 No repository URL, public commit or submission identifier has been invented.
 
@@ -30,4 +35,3 @@ Preparation follows the official instructions inspected on 22 September 2026:
 https://palomar-registry.org/how-to-submit
 and the configuration shape in:
 https://github.com/PalomarRegistry/PalomarTemplate
-

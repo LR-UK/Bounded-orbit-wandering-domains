@@ -1,0 +1,106 @@
+version: v0.4
+project:
+  name: "Escaping components of transcendental entire functions"
+  description: >-
+    Lean formalisation of selected results of Martí-Pete, Rempe and Waterman.
+    Every nonempty full compact continuum in the plane is a connected
+    component of the escaping set of a transcendental entire function
+    (Theorem 1.2). The ray construction of Theorem 7.1 supplies an escaping
+    point whose connected escaping component is a singleton, disproving
+    Eremenko's conjecture. The selected Section 3 consequence also gives
+    counterexamples to the strong curve-to-infinity conjecture starting in
+    the fast escaping set. The proof development includes additional Section
+    3 results and Section 4 scaffolding, but this comparison selects four
+    statements and does not claim a formalisation of the entire paper.
+  authors:
+    - Lasse Rempe
+  responsible_maintainers:
+    - name: Lasse Rempe
+      github: LR-UK
+  license: Apache-2.0
+classification:
+  arxiv: [math.DS, math.CV]
+sources:
+  - title: "Eremenko's conjecture, wandering Lakes of Wada, and maverick points"
+    authors: ["David Martí-Pete", "Lasse Rempe", "James Waterman"]
+    id: "doi:10.1090/jams/1049"
+    location: "https://doi.org/10.1090/jams/1049"
+    type: paper
+    relationship: formalizes
+    note: >-
+      Theorem 1.2, Theorem 7.1 and the Section 3 strong-conjecture consequence
+      are selected in comparator.json. Lasse Rempe directed the formalisation
+      and provided mathematical guidance; no endorsement or formal proof
+      review by the other paper authors is asserted.
+related_formalizations:
+  - id: "https://github.com/TauCetiProject/TauCeti"
+    relationship: builds-on
+    note: >-
+      FunctionTheory includes attributed Tau Ceti Riemann mapping,
+      Carathéodory and Schwarz reflection foundations. Exact source revisions
+      and the documented compatibility change are recorded there.
+  - id: "https://github.com/LR-UK/exp-chaotic"
+    relationship: adapts
+    note: "ComplexDynamics adapts its normality and sphere-valued dynamics definitions."
+status:
+  scope: >-
+    The four compared declarations are unconditional theorems. Sections 3
+    and 4 and Theorems 1.2 and 7.1 are proved in the wider library. Proposition
+    7.6, Section 5, the remaining paper results, the general continuous-data
+    Arakelian theorem and the strongest general Section 2 formulations are
+    not claimed. Proofs use the proved neighbourhood-holomorphic version of
+    Arakelian. See STATUS.md and docs/THEOREM12_PLAN.md.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: [propext, Classical.choice, Quot.sound]
+automation:
+  methods:
+    - method: agent
+      models: []
+      framework: OpenAI Codex
+      tool_setup: >-
+        Substantial automated Lean proof development, local compilation and
+        axiom auditing, with mathematical direction and corrections from
+        Lasse Rempe. Exact model identifiers were not reliably recorded.
+  notes: >-
+    Agent assistance is substantive, not limited to translation or editing.
+    Costs and a complete model-by-model effort history were not reconstructed.
+    Third-party proofs retain their original authorship and licences.
+review:
+  status: self-assessed
+  notes: >-
+    Local Lean builds, source-integrity scans, selected axiom audits and
+    agent statement review. The maintainer supplied mathematical guidance;
+    no independent line-by-line human review is claimed. Comparator, NanoDa,
+    hosted clean verification and Palomar editorial review have not been run.
+fidelity:
+  divergences: >-
+    Theorem 1.2 retains the exact connected-component conclusion and includes
+    singleton continua. IsConnected includes nonemptiness. Theorem 7.1 uses
+    endpoint zero. Functions f are total on the plane, appropriate for entire
+    dynamics. Curves are total functions on R whose continuity and image are
+    restricted to [0,infinity); values at negative times are irrelevant.
+    Fast escape uses the paper's positive-radius/Julia-disk convention.
+alignment:
+  namespace: EremenkosConjecture.Palomar
+  statements:
+    - source: "Theorem 1.2"
+      lean: EremenkosConjecture.Palomar.theorem_1_2
+      module: Solution
+      status: proved
+    - source: "Theorem 7.1"
+      lean: EremenkosConjecture.Palomar.theorem_7_1
+      module: Solution
+      status: proved
+    - source: "Failure of Eremenko's conjecture, consequence of Theorem 7.1"
+      lean: EremenkosConjecture.Palomar.eremenko_conjecture_false
+      module: Solution
+      status: proved
+    - source: "Section 3: strong-conjecture counterexamples with fast escape"
+      lean: EremenkosConjecture.Palomar.no_escaping_curve_to_infinity
+      module: Solution
+      status: proved
+acknowledgements: >-
+  Mathlib, Tau Ceti, the attributed Ray sphere atlas and Schoenflies sources,
+  and the sibling FunctionTheory, ComplexApproximation and ComplexDynamics
+  projects. See THIRD_PARTY_NOTICES.md and PROVENANCE.md for detailed credits.

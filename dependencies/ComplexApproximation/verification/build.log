@@ -1,0 +1,33 @@
+⚠ [3087/3125] Replayed ComplexApproximation.CauchyRectangle
+warning: ComplexApproximation/CauchyRectangle.lean:38:85: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3253/3304] Replayed ComplexApproximation.Topology.Arakelian
+warning: ComplexApproximation/Topology/Arakelian.lean:35:37: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ComplexApproximation/Topology/Arakelian.lean:43:36: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ComplexApproximation/Topology/Arakelian.lean:43:47: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ComplexApproximation/Topology/Arakelian.lean:51:37: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ComplexApproximation/Topology/Arakelian.lean:59:37: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ComplexApproximation/Topology/Arakelian.lean:65:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: ComplexApproximation/Topology/Arakelian.lean:66:37: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ComplexApproximation/Topology/Arakelian.lean:71:5: `Set.diff_subset_diff_right` has been deprecated: Use `Set.sdiff_subset_sdiff_right` instead
+warning: ComplexApproximation/Topology/Arakelian.lean:75:34: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [3423/3447] Replayed FunctionTheory.Conformal.StripBounds
+warning: FunctionTheory/Conformal/StripBounds.lean:47:4: Try `simp at hzK` instead of `simpa using hzK`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [3862/3889] Replayed ComplexApproximation.Topology.FullSeparatedExhaustion
+warning: ComplexApproximation/Topology/FullSeparatedExhaustion.lean:81:39: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [3872/3889] Replayed FunctionTheory.Meromorphic.ApproximationRepresentative
+warning: FunctionTheory/Meromorphic/ApproximationRepresentative.lean:50:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: FunctionTheory/Meromorphic/ApproximationRepresentative.lean:52:22: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: FunctionTheory/Meromorphic/ApproximationRepresentative.lean:55:22: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: FunctionTheory/Meromorphic/ApproximationRepresentative.lean:62:20: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: FunctionTheory/Meromorphic/ApproximationRepresentative.lean:65:21: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: FunctionTheory/Meromorphic/ApproximationRepresentative.lean:68:17: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [3876/3889] Replayed FunctionTheory.Topology.DisjointPatch
+warning: FunctionTheory/Topology/DisjointPatch.lean:27:28: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: FunctionTheory/Topology/DisjointPatch.lean:33:8: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+Build completed successfully (3889 jobs).

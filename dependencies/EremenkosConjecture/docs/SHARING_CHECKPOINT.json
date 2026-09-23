@@ -1,0 +1,72 @@
+{
+  "checkpoint": "2026-09-22-paused",
+  "recordedAtUTC": "2026-09-22T16:49:42.628039+00:00",
+  "status": "Paused at the maintainer request; finite univalent successor completed.",
+  "publication": "Not committed, uploaded or submitted by this session.",
+  "toolchain": "leanprover/lean4:v4.34.0",
+  "mathlib": "5ed2965256430c3649e86755f9576b54eca72435",
+  "allowedAxioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "siblingDependencies": "Relative local paths; use matching source snapshots.",
+  "projects": {
+    "FunctionTheory": {
+      "selectedAxiomReports": 604,
+      "checkedAtUTC": "2026-09-22T15:55:22.420696+00:00",
+      "proofSourceFiles": 386,
+      "proofSourceDigest": "92664fd6d90020df6ad90fb33e69a41397741b177d6afdc5b206234e019088a3",
+      "digestDefinition": "SHA-256 of sorted compact JSON sourceSha256 mapping in verification/summary.json",
+      "baselineLocalCommit": "501e102aede324c8666247bb92ac3f65faae1f70",
+      "baselineNote": "This is the prior local HEAD, not a commit of the new uncommitted checkpoint.",
+      "sourceHashesMatch": true
+    },
+    "ComplexApproximation": {
+      "selectedAxiomReports": 160,
+      "checkedAtUTC": "2026-09-22T16:40:24.708598+00:00",
+      "proofSourceFiles": 93,
+      "proofSourceDigest": "d0e3a85f688bb112df3fcd7aaa9e77c114f83122201670315e847c34e4d3a2c5",
+      "digestDefinition": "SHA-256 of sorted compact JSON sourceSha256 mapping in verification/summary.json",
+      "baselineLocalCommit": "fa7f682adb1ed7474029e6012794349f5b605cfd",
+      "baselineNote": "This is the prior local HEAD, not a commit of the new uncommitted checkpoint.",
+      "sourceHashesMatch": true
+    },
+    "ComplexDynamics": {
+      "selectedAxiomReports": 44,
+      "checkedAtUTC": "2026-09-17T02:08:49.729796+00:00",
+      "proofSourceFiles": 19,
+      "proofSourceDigest": "fbcf112bb20bca01d16959998f1202011997500aac288c96bcaa52cab008588f",
+      "digestDefinition": "SHA-256 of sorted compact JSON sourceSha256 mapping in verification/summary.json",
+      "baselineLocalCommit": "b45e5560a2d63e03c6a3aeb7a91d1a7357e2833b",
+      "baselineNote": "Unchanged local source and working tree.",
+      "sourceHashesMatch": true
+    },
+    "EremenkosConjecture": {
+      "selectedAxiomReports": 299,
+      "checkedAtUTC": "2026-09-22T16:47:30.937759+00:00",
+      "proofSourceFiles": 313,
+      "proofSourceDigest": "950c96809590d56c3dd426695fcb7bb2269c2257173338f6a0a79be3ad8d4e03",
+      "digestDefinition": "SHA-256 of sorted compact JSON sourceSha256 mapping in verification/summary.json",
+      "baselineLocalCommit": "c865b521b834b5526cf753bcd0b25af1098a9684",
+      "baselineNote": "This is the prior local HEAD, not a commit of the new uncommitted checkpoint.",
+      "sourceHashesMatch": true
+    },
+    "WanderingDynamics": {
+      "selectedAxiomReports": 433,
+      "checkedAtUTC": "2026-09-22T16:36:56.473242+00:00",
+      "proofSourceFiles": 162,
+      "proofSourceDigest": "905430ebb9d4b9e6b1b7439d5fec7945c7aade6813f505e7c3823e7a68ea1c53",
+      "digestDefinition": "SHA-256 of sorted compact JSON sourceSha256 mapping in verification/summary.json",
+      "baselineLocalCommit": null,
+      "baselineNote": "This is the prior local HEAD, not a commit of the new uncommitted checkpoint.",
+      "sourceHashesMatch": true
+    }
+  },
+  "unfinished": [
+    "Infinite univalent realisation and abstract triangle",
+    "Finite-tail dependence and stronger Jordan exhaustion",
+    "Remaining classifications and applications",
+    "Full-paper standalone Palomar submission"
+  ]
+}

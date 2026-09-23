@@ -1,0 +1,47 @@
+name: Verify Lean proofs
+on:
+  workflow_dispatch:
+    inputs:
+      function_theory_ref:
+        description: FunctionTheory commit or branch (commit preferred)
+        required: true
+        default: main
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+        with:
+          path: ComplexApproximation
+          persist-credentials: false
+      - name: Check private dependency access is configured
+        env:
+          DEPENDENCY_TOKEN: ${{ secrets.LEAN_DEPENDENCIES_TOKEN }}
+        run: |
+          if [ -z "$DEPENDENCY_TOKEN" ]; then
+            echo 'Configure LEAN_DEPENDENCIES_TOKEN with read access to FunctionTheory; see docs/GITHUB_VERIFICATION.md.'
+            exit 1
+          fi
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+        with:
+          repository: ${{ github.repository_owner }}/FunctionTheory
+          ref: ${{ inputs.function_theory_ref }}
+          path: FunctionTheory
+          token: ${{ secrets.LEAN_DEPENDENCIES_TOKEN }}
+          persist-credentials: false
+      - name: Record reviewed dependency revision
+        run: git -C FunctionTheory rev-parse HEAD
+      - uses: leanprover/lean-action@50fcf42d2e460296f1a34b402e990d1b24f8b596
+        with:
+          lake-package-directory: ComplexApproximation
+          auto-config: false
+          build: false
+          use-github-cache: false
+          use-mathlib-cache: true
+      - name: Build and audit
+        run: |
+          python3 FunctionTheory/scripts/verify.py
+          python3 ComplexApproximation/scripts/verify.py

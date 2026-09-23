@@ -1,0 +1,10 @@
+ℹ [3633/3634] Replayed BoundedWanderingDomains.ChartDiscs
+info: BoundedWanderingDomains/ChartDiscs.lean:88:0: 'AreaDeficit.mapsTo_chartDisc' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3634/3634] Built BoundedWanderingDomains.ShrinkingChartDiscs (13s)
+warning: BoundedWanderingDomains/ShrinkingChartDiscs.lean:20:13: Variable name `hr` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hr
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Build completed successfully (3634 jobs).

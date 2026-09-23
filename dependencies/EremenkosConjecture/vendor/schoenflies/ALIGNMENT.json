@@ -1,0 +1,777 @@
+{
+  "repository": "https://github.com/alonamaloh/schoenflies-lean",
+  "commit": "05a43d29cde026618777db3d4e4316204ccca237",
+  "normalization": "CRLF replaced by LF",
+  "modules": 128,
+  "identical": 125,
+  "files": [
+    {
+      "path": "Schoenflies/Accessible.lean",
+      "upstreamSha256": "a9b131ecde16129fe2abe765dd1860d194fd9222fab41735f72108da1bb4bfa0",
+      "localSha256": "a9b131ecde16129fe2abe765dd1860d194fd9222fab41735f72108da1bb4bfa0",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/AccessibleJoin.lean",
+      "upstreamSha256": "5a280eb40da8c839eff65aa9bc23aea44949fa181a0e4cbb2be567cc2e4871f7",
+      "localSha256": "5a280eb40da8c839eff65aa9bc23aea44949fa181a0e4cbb2be567cc2e4871f7",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/AlternatingCrosscuts.lean",
+      "upstreamSha256": "76a2030c7b1b125cef58de4729056869666dd4b37a40e1ee136d493b6385d42a",
+      "localSha256": "76a2030c7b1b125cef58de4729056869666dd4b37a40e1ee136d493b6385d42a",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/ArcCollars.lean",
+      "upstreamSha256": "0c16964faf27ca48bf331f70fcb7e6e3bf0c18331450a3f8b7852e4802ce3297",
+      "localSha256": "0c16964faf27ca48bf331f70fcb7e6e3bf0c18331450a3f8b7852e4802ce3297",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/ArcComplement.lean",
+      "upstreamSha256": "c1de694e5d318c5223e8b8778d24721a1e7b772dd570e4ab960635150f20d5a8",
+      "localSha256": "c1de694e5d318c5223e8b8778d24721a1e7b772dd570e4ab960635150f20d5a8",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/ArcComplementPrep.lean",
+      "upstreamSha256": "d67fd14615711d68950fa3d0051c7d53df0f9c339da05c27c137495da6e2d0e7",
+      "localSha256": "d67fd14615711d68950fa3d0051c7d53df0f9c339da05c27c137495da6e2d0e7",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/ArcMonotone.lean",
+      "upstreamSha256": "01f2f68150a3dcb558f9fb9f46d1621b21f8a5752d7bf0f3a01de523227e217b",
+      "localSha256": "01f2f68150a3dcb558f9fb9f46d1621b21f8a5752d7bf0f3a01de523227e217b",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/BoundaryAnchors.lean",
+      "upstreamSha256": "9d2bd75bb5f128fc5c44cb13b65d9c448709804f70bdf09f2a0502b59ad02366",
+      "localSha256": "9d2bd75bb5f128fc5c44cb13b65d9c448709804f70bdf09f2a0502b59ad02366",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/BoundaryContinuity.lean",
+      "upstreamSha256": "a4958df8b8a4822602a3fc667bb18430104b8696e69983809fdea0dddafe0358",
+      "localSha256": "a4958df8b8a4822602a3fc667bb18430104b8696e69983809fdea0dddafe0358",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/BoundaryContinuity2.lean",
+      "upstreamSha256": "f92980158cf6aeaba27a4a5c77a6c6e00f868a614331aae46eb404a7c9752e3d",
+      "localSha256": "f92980158cf6aeaba27a4a5c77a6c6e00f868a614331aae46eb404a7c9752e3d",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/BoundaryCycles.lean",
+      "upstreamSha256": "d723c46383ef795ba903e5113fa84e4896900349e88d40100ab3879a374faa43",
+      "localSha256": "d723c46383ef795ba903e5113fa84e4896900349e88d40100ab3879a374faa43",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/BoundaryCyclesGenerated.lean",
+      "upstreamSha256": "0844182010aa4e78401c804cf1033da5ccf3c6d80ca668067190a4ef075ee197",
+      "localSha256": "0844182010aa4e78401c804cf1033da5ccf3c6d80ca668067190a4ef075ee197",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/Bounded.lean",
+      "upstreamSha256": "eefb83941cf808e288c487ecd32ac4f322c6472d70c6f45cffbf4f861f8bb2e1",
+      "localSha256": "eefb83941cf808e288c487ecd32ac4f322c6472d70c6f45cffbf4f861f8bb2e1",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/CellulationInvariants.lean",
+      "upstreamSha256": "ab33cbd5309b0112be78961e513308e4ade758db1e78670d0c22691e49f25c81",
+      "localSha256": "ab33cbd5309b0112be78961e513308e4ade758db1e78670d0c22691e49f25c81",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/CombinatorialInvariance.lean",
+      "upstreamSha256": "d91a3612dd8dade159460bb6661441477f6f767ab511d552a5a401aa631f1f19",
+      "localSha256": "d91a3612dd8dade159460bb6661441477f6f767ab511d552a5a401aa631f1f19",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/CommonSubdivision.lean",
+      "upstreamSha256": "66f2b1f39a7a65c9af9576e13053a8d1bea35fd36235a28bd1381fe9aba65209",
+      "localSha256": "66f2b1f39a7a65c9af9576e13053a8d1bea35fd36235a28bd1381fe9aba65209",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/Concatenate.lean",
+      "upstreamSha256": "e3553ba8c9f41fe2908a69a86803c8d515af0e5f77150efaf0a723ba69945b77",
+      "localSha256": "e3553ba8c9f41fe2908a69a86803c8d515af0e5f77150efaf0a723ba69945b77",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/CrosscutAtMostTwo.lean",
+      "upstreamSha256": "e88b44d3521e1f26a0c25addf39c979183ed0e720f5437562143e8af20e3154a",
+      "localSha256": "e88b44d3521e1f26a0c25addf39c979183ed0e720f5437562143e8af20e3154a",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/CrosscutCells.lean",
+      "upstreamSha256": "2d78bbf21565f3ae3104c0a24b5999a77af6492939967e4534a6c508759ecf6c",
+      "localSha256": "2d78bbf21565f3ae3104c0a24b5999a77af6492939967e4534a6c508759ecf6c",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/CrosscutEncloses.lean",
+      "upstreamSha256": "63b0b8c62f4bd165974f922f3c8c15de4136fbf9f30153b875005388f7c580b4",
+      "localSha256": "63b0b8c62f4bd165974f922f3c8c15de4136fbf9f30153b875005388f7c580b4",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/CrosscutExists.lean",
+      "upstreamSha256": "5f414fe4f69b7e28cde7e28f70d8b8628dbcbdb5a486aca119913281b0e2911a",
+      "localSha256": "5f414fe4f69b7e28cde7e28f70d8b8628dbcbdb5a486aca119913281b0e2911a",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/Curve.lean",
+      "upstreamSha256": "1012c9dbd15677efe36dba37b040d7de3c765ab513eec0138c1af8514a3dd966",
+      "localSha256": "1012c9dbd15677efe36dba37b040d7de3c765ab513eec0138c1af8514a3dd966",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/Direction.lean",
+      "upstreamSha256": "1a0a4d0fc5be8f88c354fa7398c26fc0fa442f896f8b815aa0c3480c0da8e872",
+      "localSha256": "1a0a4d0fc5be8f88c354fa7398c26fc0fa442f896f8b815aa0c3480c0da8e872",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/Endgame.lean",
+      "upstreamSha256": "d59775eb6102cd763d5b9b71abb1be8f8210b5dba2469b14c7f40bdc6b52e814",
+      "localSha256": "1f0a2fe2f9a84bc29090cae446ca5e064c4b3a53b69742de54a54c6890a64367",
+      "identical": false
+    },
+    {
+      "path": "Schoenflies/FaceCycles.lean",
+      "upstreamSha256": "3b0c3bf001f02ac8c91e6474c19c71b0fae4cfab0a3009363da7abc985fae2c5",
+      "localSha256": "3b0c3bf001f02ac8c91e6474c19c71b0fae4cfab0a3009363da7abc985fae2c5",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/FaceCyclesLand.lean",
+      "upstreamSha256": "bd7a40af1eae566357f65535fa8f3cd0b3f8352d1599d33d3623ccf1f422a097",
+      "localSha256": "bd7a40af1eae566357f65535fa8f3cd0b3f8352d1599d33d3623ccf1f422a097",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/FaceCyclesProof.lean",
+      "upstreamSha256": "46902b10c30553fd56099fcc5e1f491391f2d9596631ddd4f2f4284ba5721a70",
+      "localSha256": "46902b10c30553fd56099fcc5e1f491391f2d9596631ddd4f2f4284ba5721a70",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/FiniteTransfer.lean",
+      "upstreamSha256": "d993eda998dca866814a82472788b907df9c7ff52b3dc00e94f523cb21445a4e",
+      "localSha256": "d993eda998dca866814a82472788b907df9c7ff52b3dc00e94f523cb21445a4e",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/FiniteTransferTarget.lean",
+      "upstreamSha256": "30d313438eb7644d35fe99aa4b83183808d12dcaf7748ef7ddcdcbf415e373bb",
+      "localSha256": "30d313438eb7644d35fe99aa4b83183808d12dcaf7748ef7ddcdcbf415e373bb",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/FiniteTransferTargetMesh.lean",
+      "upstreamSha256": "4ab94a2fd4276283722f52daf4d77133442d9edcc42ad949390ec21312c25048",
+      "localSha256": "4ab94a2fd4276283722f52daf4d77133442d9edcc42ad949390ec21312c25048",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/FreshAccess.lean",
+      "upstreamSha256": "b9f76dbd1e797efff58b6f6f651143be0e12031cfa237885ac18a8a43652413e",
+      "localSha256": "b9f76dbd1e797efff58b6f6f651143be0e12031cfa237885ac18a8a43652413e",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/FreshDenseSelection.lean",
+      "upstreamSha256": "d8b0901b5ddb6f83c35c94368bebe065c90e8bc8170b23a2f6bbeb23140bfccf",
+      "localSha256": "d8b0901b5ddb6f83c35c94368bebe065c90e8bc8170b23a2f6bbeb23140bfccf",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/GeneralCrosscut.lean",
+      "upstreamSha256": "46f809edaf539464e73dfa6895467e54bb553c5aaf843397142ac484ef4446e9",
+      "localSha256": "46f809edaf539464e73dfa6895467e54bb553c5aaf843397142ac484ef4446e9",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/GeneratedStructure.lean",
+      "upstreamSha256": "ef44eb227a7f82e5c02527947c4a95eb1c5ebc92c5b0d6809570f0139b0922b4",
+      "localSha256": "ef44eb227a7f82e5c02527947c4a95eb1c5ebc92c5b0d6809570f0139b0922b4",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/Graph/Component.lean",
+      "upstreamSha256": "faf45d7999899747d0ccf0057f2cc07235ea53656e5b9e2b012a518b7bda9de2",
+      "localSha256": "faf45d7999899747d0ccf0057f2cc07235ea53656e5b9e2b012a518b7bda9de2",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/Graph/Cycle.lean",
+      "upstreamSha256": "e285b38522fe21385178ff47a0c47228284b7daaf8a80654551821dc31be269b",
+      "localSha256": "e285b38522fe21385178ff47a0c47228284b7daaf8a80654551821dc31be269b",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/Graph/CycleJordan.lean",
+      "upstreamSha256": "9311150e8c6c247126106cfad7c5913f473aa9e957eed06462bc582afc0b1755",
+      "localSha256": "9311150e8c6c247126106cfad7c5913f473aa9e957eed06462bc582afc0b1755",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/Graph/Degree.lean",
+      "upstreamSha256": "d6df00066ff52b15b4d140b80848416856ca289b687dbdb512f0529212048a52",
+      "localSha256": "d6df00066ff52b15b4d140b80848416856ca289b687dbdb512f0529212048a52",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/Graph/Drawing.lean",
+      "upstreamSha256": "471a7a68dd9787e0f5ebaed4182841cdb0588c4d668218213c50dd8449a9e727",
+      "localSha256": "471a7a68dd9787e0f5ebaed4182841cdb0588c4d668218213c50dd8449a9e727",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/Graph/Ear.lean",
+      "upstreamSha256": "94f22b16d56f6f914a1d567fddaa4a5ee71cc77c47df52c650ad529d1a35f72a",
+      "localSha256": "94f22b16d56f6f914a1d567fddaa4a5ee71cc77c47df52c650ad529d1a35f72a",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/Graph/K33.lean",
+      "upstreamSha256": "4d3876924aa0a59d4bdf72f239b160cb96f0972181fbf580249144d65b523169",
+      "localSha256": "4d3876924aa0a59d4bdf72f239b160cb96f0972181fbf580249144d65b523169",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/Graph/K33Closed.lean",
+      "upstreamSha256": "0985231b92961325346079ac5f8668a3cbe6c4b81b12e94068b282c8bfffce53",
+      "localSha256": "0985231b92961325346079ac5f8668a3cbe6c4b81b12e94068b282c8bfffce53",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/Graph/K33Land.lean",
+      "upstreamSha256": "1118ffc1dfac6745857c382104f9945d84857c3622b27661a42a34a2586ee307",
+      "localSha256": "1118ffc1dfac6745857c382104f9945d84857c3622b27661a42a34a2586ee307",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/Graph/K33Planar.lean",
+      "upstreamSha256": "65c4562448c32f9fc5b86440d826025498f07ae61837a62615b9b86476bc315e",
+      "localSha256": "65c4562448c32f9fc5b86440d826025498f07ae61837a62615b9b86476bc315e",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/Graph/OuterFace.lean",
+      "upstreamSha256": "1da449c396297c2cd46c66ff8497cf76903e80b336d3ebf322871a7257769499",
+      "localSha256": "1da449c396297c2cd46c66ff8497cf76903e80b336d3ebf322871a7257769499",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/Graph/PathGraph.lean",
+      "upstreamSha256": "498c0654288f10a2ace3f064d3604fe40d2714c9b8b4c022819ac47594af9bc9",
+      "localSha256": "498c0654288f10a2ace3f064d3604fe40d2714c9b8b4c022819ac47594af9bc9",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/Graph/Redrawing.lean",
+      "upstreamSha256": "3686ccebb23eb7fe4f1879f32521e4a53b7295d942944a47fd7b51073153c7ef",
+      "localSha256": "3686ccebb23eb7fe4f1879f32521e4a53b7295d942944a47fd7b51073153c7ef",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/Graph/Relabel.lean",
+      "upstreamSha256": "1b0e5066b9b1ac4fc350a3d71c4b7b5c6dbfd71af95aca019cf3003d9cc7ac64",
+      "localSha256": "1b0e5066b9b1ac4fc350a3d71c4b7b5c6dbfd71af95aca019cf3003d9cc7ac64",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/Graph/RelativeEar.lean",
+      "upstreamSha256": "2f7c69be1cb2fd0b4ea571d9efcfde32801f1dff4f2d3d2acae398f4602bfc5f",
+      "localSha256": "2f7c69be1cb2fd0b4ea571d9efcfde32801f1dff4f2d3d2acae398f4602bfc5f",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/Graph/Tree.lean",
+      "upstreamSha256": "94b0c9b4bdf40e5e3dbeeb239dac4fd46089bc63fadc20214c9f3297a68a6c4c",
+      "localSha256": "94b0c9b4bdf40e5e3dbeeb239dac4fd46089bc63fadc20214c9f3297a68a6c4c",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/Graph/TwoConnected.lean",
+      "upstreamSha256": "1f05babe5c2ca5f441de751092bd6e816076ef1548d58e178cb465c12d78729c",
+      "localSha256": "1f05babe5c2ca5f441de751092bd6e816076ef1548d58e178cb465c12d78729c",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/Graph/TwoPaths.lean",
+      "upstreamSha256": "bac74a60329e9c02740f95d4a43f8f3bea5b29d2fc50005084059b67a5135d39",
+      "localSha256": "bac74a60329e9c02740f95d4a43f8f3bea5b29d2fc50005084059b67a5135d39",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/Graph/VertexSquares.lean",
+      "upstreamSha256": "9f3b0834b06c3cc090a247522d8975fb045d81c39756589790a7be25d758b899",
+      "localSha256": "9f3b0834b06c3cc090a247522d8975fb045d81c39756589790a7be25d758b899",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/Graph/Walk.lean",
+      "upstreamSha256": "dbd2b1d1b6de760cc78d5419bc37a9ea4f005d69fd919a0c717a6d39264a9c5e",
+      "localSha256": "dbd2b1d1b6de760cc78d5419bc37a9ea4f005d69fd919a0c717a6d39264a9c5e",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/GridAttach.lean",
+      "upstreamSha256": "daeffdd1fa5e16ef7ab204592e119154d97a2a300476e754b1bcb3bcdd6408ca",
+      "localSha256": "daeffdd1fa5e16ef7ab204592e119154d97a2a300476e754b1bcb3bcdd6408ca",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/InitialGenerated.lean",
+      "upstreamSha256": "3636a149ca68ff8dfa2bf41d49f9d7f05f3d0bea1baf7722c6ba840e70925008",
+      "localSha256": "3636a149ca68ff8dfa2bf41d49f9d7f05f3d0bea1baf7722c6ba840e70925008",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/InitialOuterCycle.lean",
+      "upstreamSha256": "075f30065f227e8347a8ba39fe9ed575ae9bc11ae4939a395836754e7da431f9",
+      "localSha256": "075f30065f227e8347a8ba39fe9ed575ae9bc11ae4939a395836754e7da431f9",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/InitialPair.lean",
+      "upstreamSha256": "e2eee2d80840c81fa0c1025ae5fda9de2ab9cda1eca707670524a28586a710a6",
+      "localSha256": "c807693dacfbe1abd2848480b7c2d0b5b879cd5eca3024b6cf03595c2468d679",
+      "identical": false
+    },
+    {
+      "path": "Schoenflies/InitialPairFixed.lean",
+      "upstreamSha256": "f805fb61c272be2ea6feb81b4d603071c787de24e5d0a6aa4c92c675aaaac6a6",
+      "localSha256": "f805fb61c272be2ea6feb81b4d603071c787de24e5d0a6aa4c92c675aaaac6a6",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/InteriorHomeomorphism.lean",
+      "upstreamSha256": "b946fe0a4bdae6b547547e985bf00e532100be753e7f84ada08fa93883d38c73",
+      "localSha256": "b946fe0a4bdae6b547547e985bf00e532100be753e7f84ada08fa93883d38c73",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/Inversion.lean",
+      "upstreamSha256": "9bf5bb6285ef92ef185773dfa01ae548071b7c0b24fe01c7d2c8dee949868a06",
+      "localSha256": "9bf5bb6285ef92ef185773dfa01ae548071b7c0b24fe01c7d2c8dee949868a06",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/Jordan.lean",
+      "upstreamSha256": "cb9d40c0571a02bcfc2588bf0aef6b354ab10199541ff9b09e2de3a89400fe98",
+      "localSha256": "cb9d40c0571a02bcfc2588bf0aef6b354ab10199541ff9b09e2de3a89400fe98",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/JordanClosed.lean",
+      "upstreamSha256": "1aa3cf9f19ae8b522096f475949383efedaef8a7fdf08bfbdfd951f865064f48",
+      "localSha256": "1aa3cf9f19ae8b522096f475949383efedaef8a7fdf08bfbdfd951f865064f48",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/JordanSchoenflies.lean",
+      "upstreamSha256": "cf3ff150a78245d9fe6acab5de1dfb6cff883768bfde39a3be9cf73fc8126ddb",
+      "localSha256": "cf3ff150a78245d9fe6acab5de1dfb6cff883768bfde39a3be9cf73fc8126ddb",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/JordanSeparates.lean",
+      "upstreamSha256": "96669ed703a9c65b518c0f150a3c5a21c8032dd89899590f3b9935c296bc37c1",
+      "localSha256": "96669ed703a9c65b518c0f150a3c5a21c8032dd89899590f3b9935c296bc37c1",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/LimitMap.lean",
+      "upstreamSha256": "7bd2650a8cf0e036a0e9e15f07a437dd5b69f222e2fa377c0039cf5e7bc15e6c",
+      "localSha256": "7bd2650a8cf0e036a0e9e15f07a437dd5b69f222e2fa377c0039cf5e7bc15e6c",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/Line.lean",
+      "upstreamSha256": "827551a4c6573c86325b0dc86b430e3915219abe5d5fb984cf4fbc9542d0bc6d",
+      "localSha256": "827551a4c6573c86325b0dc86b430e3915219abe5d5fb984cf4fbc9542d0bc6d",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/LocalGrid.lean",
+      "upstreamSha256": "7b26c82a930ca5b7b56382c948f2790a97222a584a23fd8125089f7d879e64ef",
+      "localSha256": "7b26c82a930ca5b7b56382c948f2790a97222a584a23fd8125089f7d879e64ef",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/LocallyPolygonal.lean",
+      "upstreamSha256": "c1e6a1a3ae843109be42a3e5716afc584a28635ae10f7ce0fc75c5995be33499",
+      "localSha256": "c1e6a1a3ae843109be42a3e5716afc584a28635ae10f7ce0fc75c5995be33499",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/MatchedArc.lean",
+      "upstreamSha256": "0a43e7257d562158e37dafd12c0c6b0699d0ace9b38f410c1b110c20c0eb974e",
+      "localSha256": "0a43e7257d562158e37dafd12c0c6b0699d0ace9b38f410c1b110c20c0eb974e",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/MatchedSplit.lean",
+      "upstreamSha256": "4d266c9718f585875e0cd9a1972280a1b6f90d692573bedbc2641d82ec92e096",
+      "localSha256": "4d266c9718f585875e0cd9a1972280a1b6f90d692573bedbc2641d82ec92e096",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/ModelCurve.lean",
+      "upstreamSha256": "075a680ec63d14b63ac19a129eb6a6eb906f50b8f42089ae8837e00a1087b16e",
+      "localSha256": "075a680ec63d14b63ac19a129eb6a6eb906f50b8f42089ae8837e00a1087b16e",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/OuterChain.lean",
+      "upstreamSha256": "f1cb42e16523faac1ee51bfa5a833c93329b5a612124732877e8132dae2ebeb2",
+      "localSha256": "f1cb42e16523faac1ee51bfa5a833c93329b5a612124732877e8132dae2ebeb2",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/OuterChainClosed.lean",
+      "upstreamSha256": "0b31d697e88b2be10d5e9499aeef5783bc805d0bd3bb7a20a3c6071cf1ae4689",
+      "localSha256": "0b31d697e88b2be10d5e9499aeef5783bc805d0bd3bb7a20a3c6071cf1ae4689",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/Overlay.lean",
+      "upstreamSha256": "f50c21fe18c2b6c60acb3861359257da68164a453cf9842b3899c1ad8f67ddbf",
+      "localSha256": "f50c21fe18c2b6c60acb3861359257da68164a453cf9842b3899c1ad8f67ddbf",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/OverlayExtension.lean",
+      "upstreamSha256": "1a1be8be46e23a1c69d8a05308f95ce9e6ab06ee0f39bc74b7f5479b8fb2bd4f",
+      "localSha256": "1a1be8be46e23a1c69d8a05308f95ce9e6ab06ee0f39bc74b7f5479b8fb2bd4f",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/OverlayGraph.lean",
+      "upstreamSha256": "72c8343d4d23156111db104ba87331ce44192938af86cc40dd835d807bb65eec",
+      "localSha256": "72c8343d4d23156111db104ba87331ce44192938af86cc40dd835d807bb65eec",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/Parity.lean",
+      "upstreamSha256": "9ae7ff915e8289aa774d3c245dea4595a40d89e26449a7d605301dba069a1351",
+      "localSha256": "9ae7ff915e8289aa774d3c245dea4595a40d89e26449a7d605301dba069a1351",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/ParitySplitting.lean",
+      "upstreamSha256": "4f9940ef3e2068f2f0eb10caa5137c7fb62ab281bacdaf1ff6b10266aae2e777",
+      "localSha256": "4f9940ef3e2068f2f0eb10caa5137c7fb62ab281bacdaf1ff6b10266aae2e777",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/Plane.lean",
+      "upstreamSha256": "c313e109f1ce99adcc4b1e7d551c0008f7887f448c496520c0a26a0315c8a0da",
+      "localSha256": "c313e109f1ce99adcc4b1e7d551c0008f7887f448c496520c0a26a0315c8a0da",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/PolyArcRealize.lean",
+      "upstreamSha256": "43e1ba25354cc20ac203566f97d2531c7f6414c0776ee506a11b0ca01752c8be",
+      "localSha256": "43e1ba25354cc20ac203566f97d2531c7f6414c0776ee506a11b0ca01752c8be",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/Polygonal.lean",
+      "upstreamSha256": "b1ee5d4f6e71b2bff548848be04e9f47a78373815aefb75670167a659926f541",
+      "localSha256": "b1ee5d4f6e71b2bff548848be04e9f47a78373815aefb75670167a659926f541",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/PolygonalCarrier.lean",
+      "upstreamSha256": "efce11826f4530941641578af77dbfe6349f99430c750ac525a1f6a06d7d52da",
+      "localSha256": "efce11826f4530941641578af77dbfe6349f99430c750ac525a1f6a06d7d52da",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/PolygonalCrosscut.lean",
+      "upstreamSha256": "f5c8392060c5a5fab7264210eb693870d71545aea2e31b9313ede3a8bc16d184",
+      "localSha256": "f5c8392060c5a5fab7264210eb693870d71545aea2e31b9313ede3a8bc16d184",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/PolygonalJordan.lean",
+      "upstreamSha256": "f05c159848a12cdc5cc3e46705b5fe3f2e313e0c421b75d6c28b443918be35f0",
+      "localSha256": "f05c159848a12cdc5cc3e46705b5fe3f2e313e0c421b75d6c28b443918be35f0",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/PolygonBridge.lean",
+      "upstreamSha256": "493a1096d134e2b07bc08206fdedce78c67f63788cca1c4bd12dfae7ca6b0455",
+      "localSha256": "493a1096d134e2b07bc08206fdedce78c67f63788cca1c4bd12dfae7ca6b0455",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/PolyLocal.lean",
+      "upstreamSha256": "003f7362a5898ca9da461ea34259022d8d7ceb66b49e9cd8453f0933ad5ae9b9",
+      "localSha256": "003f7362a5898ca9da461ea34259022d8d7ceb66b49e9cd8453f0933ad5ae9b9",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/PolyPath.lean",
+      "upstreamSha256": "0ccc8e266ea21bb6de49016efe80a968213b275093d42f5e65e0914a13b181cd",
+      "localSha256": "0ccc8e266ea21bb6de49016efe80a968213b275093d42f5e65e0914a13b181cd",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/PrePolygonArc.lean",
+      "upstreamSha256": "87e8437b0a1ec7b0d6719929465fa51c41ac356482901b12270dcc414abee752",
+      "localSha256": "87e8437b0a1ec7b0d6719929465fa51c41ac356482901b12270dcc414abee752",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/PrePolygonSep.lean",
+      "upstreamSha256": "871a3b34016b8d7de247608971fe762dc6e1327e0e0a5816a00424866a8213c0",
+      "localSha256": "871a3b34016b8d7de247608971fe762dc6e1327e0e0a5816a00424866a8213c0",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/QuantitativeForwardStages.lean",
+      "upstreamSha256": "06abcf556cf14fa115a27600cb14d4b17f3e3c1811d6671afe9afe49597719ec",
+      "localSha256": "06abcf556cf14fa115a27600cb14d4b17f3e3c1811d6671afe9afe49597719ec",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/QuantitativeRecursion.lean",
+      "upstreamSha256": "2f067044548f4eac74006367cafcd916eaf3539a38750c026ccd08a595d07e01",
+      "localSha256": "2f067044548f4eac74006367cafcd916eaf3539a38750c026ccd08a595d07e01",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/QuantitativeStages.lean",
+      "upstreamSha256": "6da7ec7779a709662e1ba670231d4383835f7f4f598bf66908977ab8691018d3",
+      "localSha256": "6da7ec7779a709662e1ba670231d4383835f7f4f598bf66908977ab8691018d3",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/Realization.lean",
+      "upstreamSha256": "db11512df754eaaaaccce32461b1552f4ac5650b4dab104c40c313b2ea3df944",
+      "localSha256": "db11512df754eaaaaccce32461b1552f4ac5650b4dab104c40c313b2ea3df944",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/RealizeSplit.lean",
+      "upstreamSha256": "c54c696116f135b23c35d6ae5352c008ac19c1bb66bc015f330b5bb1b4b2a92e",
+      "localSha256": "c54c696116f135b23c35d6ae5352c008ac19c1bb66bc015f330b5bb1b4b2a92e",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/RealizeSubdiv.lean",
+      "upstreamSha256": "3e6b546a6be914575da42d0787cde76623413cca5f8f7cc78a10a1732a4d6100",
+      "localSha256": "3e6b546a6be914575da42d0787cde76623413cca5f8f7cc78a10a1732a4d6100",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/RealizeSubdivHomeo.lean",
+      "upstreamSha256": "9ea0a6c68af50af2ba347098323d987c8869c5e7372fc4ca1bdf6bbe3d73d16f",
+      "localSha256": "9ea0a6c68af50af2ba347098323d987c8869c5e7372fc4ca1bdf6bbe3d73d16f",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/RefinementStars.lean",
+      "upstreamSha256": "491e27ebf5f5e165d42d3d99ff60c65d8262ed573aebcf37f628a38167e6ec63",
+      "localSha256": "491e27ebf5f5e165d42d3d99ff60c65d8262ed573aebcf37f628a38167e6ec63",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/SegmentCut.lean",
+      "upstreamSha256": "dff4ce54d75eaf877943abee157deb25d13c56c591b309304482899a301c2a4b",
+      "localSha256": "dff4ce54d75eaf877943abee157deb25d13c56c591b309304482899a301c2a4b",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/SegmentMeet.lean",
+      "upstreamSha256": "3e06022a7a83b53bcef668031e3f39c7887950533e8b9c045422abe25ff14fcc",
+      "localSha256": "3e06022a7a83b53bcef668031e3f39c7887950533e8b9c045422abe25ff14fcc",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/SegmentOrder.lean",
+      "upstreamSha256": "3ef1fb13ac15c0fbf6cbe1d398c7f5449de6d45c7cbf4abd2337903c0d7fc181",
+      "localSha256": "3ef1fb13ac15c0fbf6cbe1d398c7f5449de6d45c7cbf4abd2337903c0d7fc181",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/SimpleArc.lean",
+      "upstreamSha256": "447ad1c9811c950543a3707ef194cba607c8e93491bb7a68755d9124b201ce54",
+      "localSha256": "447ad1c9811c950543a3707ef194cba607c8e93491bb7a68755d9124b201ce54",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/SkeletonAccess.lean",
+      "upstreamSha256": "c8e2275706a77b415b21e61633a61af7604e408eeea259f3b2c6573b84f3fc6f",
+      "localSha256": "c8e2275706a77b415b21e61633a61af7604e408eeea259f3b2c6573b84f3fc6f",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/SkeletonLocal.lean",
+      "upstreamSha256": "817df7e84bf886d2efbccf74ad35d35002da38f726c0f6b1cab45cb6309f71f3",
+      "localSha256": "817df7e84bf886d2efbccf74ad35d35002da38f726c0f6b1cab45cb6309f71f3",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/SkeletonSectors.lean",
+      "upstreamSha256": "ce635fe449c8017aca5405393332f267440f1843069020c4c0050b6d87bf04a8",
+      "localSha256": "ce635fe449c8017aca5405393332f267440f1843069020c4c0050b6d87bf04a8",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/SourceAttachment.lean",
+      "upstreamSha256": "abb0417d36a6dcfd54b598da2dbdd1688b657cf1f4606b01741865407e656214",
+      "localSha256": "abb0417d36a6dcfd54b598da2dbdd1688b657cf1f4606b01741865407e656214",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/SourceJoining.lean",
+      "upstreamSha256": "75f49a7c4a847d7cf4e3f00126ae28930b704bcfcc31d57951093b3b7b181756",
+      "localSha256": "75f49a7c4a847d7cf4e3f00126ae28930b704bcfcc31d57951093b3b7b181756",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/SourceOverlay.lean",
+      "upstreamSha256": "d3f414283230e32be6e810b9d53ea093c160e709f69178babd0a155e80245d5d",
+      "localSha256": "d3f414283230e32be6e810b9d53ea093c160e709f69178babd0a155e80245d5d",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/Square.lean",
+      "upstreamSha256": "29a0129a6ae5f88ef6536d026f9f40a66330ae8c8c3e7d656a79b17347695a69",
+      "localSha256": "29a0129a6ae5f88ef6536d026f9f40a66330ae8c8c3e7d656a79b17347695a69",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/SquareCycle.lean",
+      "upstreamSha256": "3903ea1504204f444fcc783d31a063941a2645feb1d37aed341a158f1e3da2d6",
+      "localSha256": "3903ea1504204f444fcc783d31a063941a2645feb1d37aed341a158f1e3da2d6",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/SquareMesh.lean",
+      "upstreamSha256": "6c830b169f579cd7a1e170edac1079e3be793b0cd96c642327b8a6ba7e58b161",
+      "localSha256": "6c830b169f579cd7a1e170edac1079e3be793b0cd96c642327b8a6ba7e58b161",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/SquareMeshClosed.lean",
+      "upstreamSha256": "1ce1c3515d4826f8dbaf5ec0596068810899b5402051127f52ce9811bf152f50",
+      "localSha256": "1ce1c3515d4826f8dbaf5ec0596068810899b5402051127f52ce9811bf152f50",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/SquareMeshConnected.lean",
+      "upstreamSha256": "2715448dc13a21aadbc024b1f4ce2b36ebec46755bd7ff2c6f56396e5682c3a2",
+      "localSha256": "2715448dc13a21aadbc024b1f4ce2b36ebec46755bd7ff2c6f56396e5682c3a2",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/SquareMeshFixed.lean",
+      "upstreamSha256": "bc75465fafeb2131de883f0731129ea18402d0a185ffce0bf68ca893a2492918",
+      "localSha256": "bc75465fafeb2131de883f0731129ea18402d0a185ffce0bf68ca893a2492918",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/SquareMover.lean",
+      "upstreamSha256": "5c8133c6f80eb64741d715f7bcc9b58b1e85ce212b644831cde28c5897ab88ec",
+      "localSha256": "5c8133c6f80eb64741d715f7bcc9b58b1e85ce212b644831cde28c5897ab88ec",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/StageTower.lean",
+      "upstreamSha256": "b1843454e38ebc30813a88e74a365d5221818a6e52c8cb6da86bd0b8d448c393",
+      "localSha256": "b1843454e38ebc30813a88e74a365d5221818a6e52c8cb6da86bd0b8d448c393",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/StageTransition.lean",
+      "upstreamSha256": "85a0ff8b2239db8a501d91c5e0574e210edb78ca0ea02c84300289ec164e99f3",
+      "localSha256": "85a0ff8b2239db8a501d91c5e0574e210edb78ca0ea02c84300289ec164e99f3",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/Strip.lean",
+      "upstreamSha256": "ebffc5144cdbbf2f66d9ae0feff5a895e8e3d64e12c04f1c9db62466454b8783",
+      "localSha256": "ebffc5144cdbbf2f66d9ae0feff5a895e8e3d64e12c04f1c9db62466454b8783",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/StripConnected.lean",
+      "upstreamSha256": "4330d59d6999fc9aef47e73936c8837de78f40e285f4e46d90530a52703577e6",
+      "localSha256": "4330d59d6999fc9aef47e73936c8837de78f40e285f4e46d90530a52703577e6",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/StripConstants.lean",
+      "upstreamSha256": "cdc16d2994bb288297b7609d8a91a9332749ad0958ea3e07eb4d1cd4b2f9fad9",
+      "localSha256": "cdc16d2994bb288297b7609d8a91a9332749ad0958ea3e07eb4d1cd4b2f9fad9",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/StripLocal.lean",
+      "upstreamSha256": "e284e8e8cb89a714f8e5ba41b95ac4006433375c786ae19aedf5a5a061b3a79c",
+      "localSha256": "e284e8e8cb89a714f8e5ba41b95ac4006433375c786ae19aedf5a5a061b3a79c",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/Subarc.lean",
+      "upstreamSha256": "9b6ae2368330402c1a5432080c1fab67219ef67a7f476d47ff29f9391d5e4723",
+      "localSha256": "92d5cb3e0fed0f493df96b68d5f3c19bd3393e31125ae7f15763aa63eec72630",
+      "identical": false
+    },
+    {
+      "path": "Schoenflies/Subdivide.lean",
+      "upstreamSha256": "0ea322adbb73b9a37ef640ebb1ba7621cc301ad2d6a76ac3b1cdc21798cb9b80",
+      "localSha256": "0ea322adbb73b9a37ef640ebb1ba7621cc301ad2d6a76ac3b1cdc21798cb9b80",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/TargetOverlay.lean",
+      "upstreamSha256": "63a8faef32fefdd02d9937c871b0fa18a6ba540fcc4a82193714ea8d554b029f",
+      "localSha256": "63a8faef32fefdd02d9937c871b0fa18a6ba540fcc4a82193714ea8d554b029f",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/Topology.lean",
+      "upstreamSha256": "df4d2f7264825c34698d000928793fb6780eac2196656ad11099c6bbc4337df4",
+      "localSha256": "df4d2f7264825c34698d000928793fb6780eac2196656ad11099c6bbc4337df4",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/TwoArcs.lean",
+      "upstreamSha256": "4849857d6cfde02fc678607af8e4e0020ce97e6cda2973ca46c9363337057d4f",
+      "localSha256": "4849857d6cfde02fc678607af8e4e0020ce97e6cda2973ca46c9363337057d4f",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/UniformBound.lean",
+      "upstreamSha256": "ef5cfd476900bb4fd82672d5b57ea719e28b6c1953623cca48e33f625a82f64d",
+      "localSha256": "ef5cfd476900bb4fd82672d5b57ea719e28b6c1953623cca48e33f625a82f64d",
+      "identical": true
+    },
+    {
+      "path": "Schoenflies/Windows.lean",
+      "upstreamSha256": "cb38d1c7f04e49b0c506f9243ce83089d4081d3ea269253581f42d639ce4dcd7",
+      "localSha256": "cb38d1c7f04e49b0c506f9243ce83089d4081d3ea269253581f42d639ce4dcd7",
+      "identical": true
+    }
+  ]
+}

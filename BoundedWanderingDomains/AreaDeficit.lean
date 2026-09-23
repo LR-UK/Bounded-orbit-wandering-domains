@@ -1,0 +1,81 @@
+import BoundedWanderingDomains.DensityDeficit
+import BoundedWanderingDomains.AreaLimits
+import BoundedWanderingDomains.AreaTransport
+import BoundedWanderingDomains.LocalTrappedTopology
+import BoundedWanderingDomains.DiscArea
+import BoundedWanderingDomains.DiscRestriction
+import BoundedWanderingDomains.CompactDeficit
+import BoundedWanderingDomains.HolomorphicTransport
+import BoundedWanderingDomains.ExceptionalSets
+import BoundedWanderingDomains.TotalAreaCost
+import BoundedWanderingDomains.HolomorphicLifting
+import BoundedWanderingDomains.ShrinkingImages
+import BoundedWanderingDomains.UniformLocalLifting
+import BoundedWanderingDomains.ConditionalPositiveArea
+import BoundedWanderingDomains.ConditionalWanderingDomains
+
+#print axioms AreaDeficit.beta_hasDerivAt
+#print axioms AreaDeficit.green_laplacian
+#print axioms AreaDeficit.laplacian_comp
+#print axioms AreaDeficit.logBarrier_eventually_le
+#print axioms AreaDeficit.puncturedBeta_contDiffAt
+#print axioms AreaDeficit.positive_part_cutoff
+#print axioms AreaDeficit.density_deficit_cutoff
+#print axioms AreaDeficit.injOn_forwardOrbit
+#print axioms AreaDeficit.finite_area_cancellation
+#print axioms AreaDeficit.null_wandering_set_of_density_data
+#print axioms AreaDeficit.finite_weighted_area_of_compact
+#print axioms AreaDeficit.no_unbounded_limiting_wandering_areas
+#print axioms AreaDeficit.analytic_localPunctures_finite
+#print axioms AreaDeficit.analytic_trapped_inter_puncture_closure
+#print axioms AreaDeficit.area_advance_of_integrated_defect
+#print axioms AreaDeficit.wandering_area_bound_of_integrated_defect
+#print axioms AreaDeficit.null_wandering_set_of_integrated_defects
+#print axioms AreaDeficit.discDensity_curvature
+#print axioms AreaDeficit.disc_area_lintegral
+#print axioms AreaDeficit.disc_area_sqrt_nat
+#print axioms AreaDeficit.no_uniform_disc_area_bound
+#print axioms AreaDeficit.covering_centre_restriction_bound
+#print axioms AreaDeficit.density_deficit_on_set
+#print axioms AreaDeficit.holomorphic_change_of_variables
+#print axioms AreaDeficit.holomorphic_area_advance_of_density_deficit
+#print axioms AreaDeficit.localBackwardExceptionalSet_countable
+#print axioms AreaDeficit.volume_sdiff_localBackwardExceptionalSet
+#print axioms AreaDeficit.localBackwardExceptionalSet_congr_on
+#print axioms AreaDeficit.area_cost_on_set_of_total_cost
+#print axioms AreaDeficit.finite_local_critical_points
+#print axioms AreaDeficit.finite_local_critical_values
+#print axioms AreaDeficit.compact_analytic_covering
+#print axioms AreaDeficit.exists_local_disc_covering
+#print axioms AreaDeficit.exists_holomorphic_covering_lift
+#print axioms Complex.exists_bijOn_unitBall_map_eq_zero
+#print axioms Complex.eqOn_zero_or_forall_ne_zero_of_tendstoLocallyUniformlyOn
+#print axioms Complex.eqOn_const_or_injOn_of_tendstoLocallyUniformlyOn
+#print axioms AreaDeficit.bounded_holomorphic_subsequence
+#print axioms AreaDeficit.nonconstant_limit_avoids_closure
+#print axioms AreaDeficit.limit_constant_at_omitted_closure
+#print axioms AreaDeficit.disjoint_bounded_images_shrink
+#print axioms FunctionTheory.exists_uniform_radius_of_compact_centres_omit_pair
+#print axioms AreaDeficit.exists_uniform_local_lifting_radius
+
+#print axioms AreaDeficit.FinitePunctureMetricInput.density_mono
+#print axioms AreaDeficit.FinitePunctureMetricInput.insertion_area_cost
+#print axioms AreaDeficit.FinitePunctureMetricInput.density_tendsto_atTop
+#print axioms AreaDeficit.FinitePunctureMetricInput.density_limit_lower
+#print axioms AreaDeficit.pullback_density_curvature
+#print axioms AreaDeficit.exists_compact_cutoff
+#print axioms AreaDeficit.FinitePunctureMetricInput.compact_log_comparison
+#print axioms AreaDeficit.FinitePunctureMetricInput.local_integrated_deficit
+#print axioms AreaDeficit.FinitePunctureMetricInput.local_area_advance
+#print axioms AreaDeficit.FinitePunctureMetricInput.local_cancellation_bound
+#print axioms AreaDeficit.exists_local_puncture_sequence
+#print axioms AreaDeficit.FinitePunctureMetricInput.null_local_wandering_set
+#print axioms AreaDeficit.disc_schwarz_centre
+#print axioms AreaDeficit.barrier_component_eq_trapped_component
+#print axioms AreaDeficit.FinitePunctureMetricInput.chart_area_bound
+#print axioms AreaDeficit.chart_disc_area
+#print axioms AreaDeficit.mapsTo_chartDisc
+#print axioms AreaDeficit.chartDisc_eq
+#print axioms AreaDeficit.FinitePunctureMetricInput.local_dynamical_area_bound
+#print axioms AreaDeficit.FinitePunctureMetricInput.no_wandering_chart_orbit_with_anchors
+#print axioms AreaDeficit.FinitePunctureMetricInput.no_wandering_component_orbit

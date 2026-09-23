@@ -1,0 +1,555 @@
+'EremenkosConjecture.MainTheorems.theorem_1_2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.polynomial_approximation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.iterate_approximation_of_uniform_control' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.uniformControlOn_of_isCompact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.iterate_approximation_on_compact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.injOn_of_close_to_id' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_injective_approximation_tolerance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_derivative_approximation_tolerance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.approximation_of_univalent_on_compact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.approximate_univalent_iterates_on_compact' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.exists_entire_limit_of_locally_summable_corrections' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.limit_error_le_tsum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.isConnected_compl_of_polynomial_separation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.exists_full_compact_neighbourhood' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.exists_nested_full_compact_neighbourhoods' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.isConnected_compl_union_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.isConnected_compl_union_separated' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.exists_homeomorph_tolerance_near_id' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.exists_homeomorph_approximation_tolerance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.isConnected_compl_image_homeomorph' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.exists_pos_derivative_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.exists_ambient_conformal_approximation_tolerance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.approximate_ambient_conformal_iterates_on_compact' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.exists_holomorphic_gluing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.polynomial_approximation_two_pieces' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.exists_nested_full_compact_neighbourhoods_within' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.approximationStable_ambient_conformal_iterate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.UniformEscapeData.exists_reference_map' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.UniformEscapeData.exists_polynomial_extension' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.UniformEscapeData.stageProperty_stability_closed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.UniformEscapeData.exists_entire_all_stages' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.UniformEscapeData.exists_entire_uniform_escape_itinerary' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.frontier_subset_closure_union_nets' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.transcendental_of_targetDiscs_and_trapping' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.exists_uniformEscapeData' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.wandering_compactum_normalized' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.UniformWanderingWitness.scale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.exists_uniformWanderingWitness' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.wandering_compactum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.VariableConstruction.exists_polynomial_extension' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.VariableConstruction.exists_entireConstruction' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.VariableConstruction.EntireConstruction.maximum_step' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.VariableConstruction.EntireConstruction.transcendental' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.exists_fastWanderingWitness_normalized' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.FastWanderingWitness.scale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.fast_escaping_wandering_compactum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.isConnected_compl_union_disjoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.UniformEscapeData.prescribed_boundary_itinerary' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.exists_jordan_compact_neighbourhood' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.exists_nested_jordan_neighbourhoods_within' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.no_curve_through_alternating_openings' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.exists_pathBarrierData' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.fast_escaping_path_components_nontrivial' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.exists_full_continuum_singleton_pathComponent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.strong_eremenko_counterexamples' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.exists_supportedMove' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.LakeConfiguration.exists_all_waters_dense' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.exists_wadaConstruction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.WadaConstruction.frontier_domain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.exists_countably_many_lakes_of_wada' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.wandering_lakes_of_wada' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.fatou_components_common_boundary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.MainTheorems.theorem_3_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.MainTheorems.proposition_3_2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.MainTheorems.proposition_3_3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.MainTheorems.theorem_3_4' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.MainTheorems.no_escaping_curve_to_infinity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.MainTheorems.topological_lakes_of_wada' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.MainTheorems.theorem_1_4' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.Scaffolding.isArakelian_initialApproximationSet' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.Scaffolding.exists_initial_entire' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.norm_deriv_sub_le_of_close_on_ball' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.exists_preimage_of_close_to_id_on_closedBall' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.exists_conformal_chart_of_injOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.Scaffolding.lemma4_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.Scaffolding.exists_scaffolding_function' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.uniformControlOn_of_derivative_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.injective_approximation_of_target_tube' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.derivative_bounds_of_uniform_approximation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.exists_bilipschitz_approximation_tolerance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.HalfStrip.uniformControlOn_closedInset' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.noBoundedComplementComponents_of_full_compact_pieces' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.connectedComponentIn_eq_of_closed_barriers' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.connectedComponentIn_eq_singleton_of_closed_barriers' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.frontier_subset_closure_union_frontiers' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.RayConstructionData.conclusions' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.deriv_ne_zero_of_bilipschitz_extension' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.uniformControlOn_iterate_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.approximate_bilipschitz_iterates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.Scaffolding.exists_bilipschitz_inset_extension' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.Scaffolding.exists_iterated_strip_chart_with_ambient' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.Scaffolding.isArakelian_background' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.Scaffolding.disjoint_background_targetStrip' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.Scaffolding.abs_re_preimage_lt_half' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.Scaffolding.re_preimage_far_left' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.exists_initial_rayStage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.Scaffolding.exists_return_map' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.exists_rayReturnChannel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.RayStage.isArakelian_configuration' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.exists_rayReference' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.RayReference.iterate_eq_return' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.RayReference.exists_barrier_tolerance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.RayReference.exists_dynamical_tolerance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.exists_next_rayStage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.exists_rayEntireConstruction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.exists_rayConstructionData' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.theorem7_1_translated' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.eremenko_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.MainTheorems.eremenko_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.MainTheorems.theorem_7_1_translated' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.theorem7_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.MainTheorems.theorem_7_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.eremenko_conjecture_false' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.MainTheorems.eremenko_conjecture_false' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.ContinuumConstructionData.continuum_escapes' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.ContinuumConstructionData.remainder_bungee' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.ContinuumConstructionData.conclusions' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.transcendentalEntire_conjugate_affine' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.escapingComponent_affine_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.exists_escapingComponent_affine_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.exists_compact_normalization_at_rightmost_point' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.exists_full_continuum_in_disk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.exists_escapingComponent_of_affine_image' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.continuum_realization_of_normalized_disk_case' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.preconnected_subset_component_of_inter_nonempty' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.unbounded_connected_subset_cannot_meet_bounded_hole' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.bounded_hole_not_subset_of_component_ambient' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.isConnected_compl_of_component_hole_alternatives' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.ContinuumConstructionData.escapesUniformlyOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.ContinuumConstructionData.interior_subset_fatouSet' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.ContinuumConstructionData.frontier_union_ray_subset_juliaSet' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.ContinuumConstructionData.frontier_subset_juliaSet' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.ContinuumConstructionData.component_julia_escaping_bungee' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.uniformControlOn_of_strip_asymptotic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.tauCeti_isJordanCurve_of_schoenflies' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.IsComplexJordanCurve.tauCeti' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.JordanCompactNeighbourhood.tauCeti_frontier' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.exists_strip_map_with_uniform_control' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.eq_inside_frontier_of_bounded_domain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.interior_eq_inside_frontier_of_regular_compact' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.exists_homeomorph_inside_openSquare' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.isSimplyConnected_inside_jordanCurve' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.isSimplyConnected_bounded_jordan_domain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.JordanCompactNeighbourhood.simplyConnectedInterior' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Schoenflies.squareExtension' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schoenflies.jordan_schoenflies_of_homeomorph' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.unbounded_component_right_of_attached_ray' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.noBoundedComplementComponents_union_horizontalRay' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.closedBall_union_horizontalRay_eq_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.noBoundedComplementComponents_closedBall_union_horizontalRay' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.isArakelian_union_horizontalRay' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.full_connected_compact_ray_truncation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.exists_simplyConnected_neighbourhood_of_noBoundedComplementComponents' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.isSimplyConnected_of_noBoundedComplementComponents' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.isSimplyConnected_of_unbounded_preconnected_complement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.isSimplyConnected_of_jordan_exponential_image' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.exists_normalized_strip_map_of_jordan_tail' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.isPreconnectedApproachAt_inside_jordanCurve' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.isPreconnectedApproachAt_bounded_jordan_domain' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.injOn_closedBall_of_jordan_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.exists_homeomorph_extension_of_jordan_bijOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.Scaffolding.eventually_return_block_large_on_set' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.Scaffolding.eventually_return_map_real_part_gt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.interior_filled_attachment_gate_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.right_semicircle_subset_interior_filled_attachment' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.decoration_subset_interior_filled_attachment' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.ray_subset_interior_filled_attachment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.isSimplyConnected_component_interior_of_noBoundedComplementComponents' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.isSimplyConnected_component_interior_fill' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.noBoundedComplementComponents_between_set_and_attached_ray' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.full_continuum_with_attached_segment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.local_slit_at_attached_segment_tip' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.attachedSegment_ofReal_eq_image_Icc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.isSimplyConnected_invertedExterior_of_attached_segment' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.exists_normalized_exterior_map_of_attached_segment' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.mem_invertedExterior_attached_segment_of_re_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.local_slit_at_inverted_segment_tip' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.exists_exterior_map_with_slit_tip_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.exists_exterior_map_with_corresponding_slit_tip_limits' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.schoenflies_isJordanCurve_of_tauCeti' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.isComplexJordanCurve_of_tauCeti' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.isComplexJordanCurve_iff_tauCeti' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.compact_with_jordan_frontier_is_closed_jordan_region' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.complex_compact_with_jordan_frontier_regular' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.exists_jordan_enclosure_through_attached_segment_tip' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.mem_interior_closedHalfStrip_of_strict' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.convex_closedHalfStrip' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.isConnected_interior_closedHalfStrip' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.right_semicircle_mem_interior_closedHalfStrip' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.isConnected_attachmentCore' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.attachmentCore_subset_filledAttachmentDomain' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.filledAttachmentDomain_properties' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.filledAttachmentDomain_mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.exists_strip_map_with_uniform_control_of_straight_tail' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.strict_im_bound_of_open' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.filledAttachmentDomain_coordinate_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.straight_tail_subset_filledAttachmentDomain' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.isOpen_right_halfstrip' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.convex_right_halfstrip' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.filledAttachmentDomain_kernel_eq_right_halfstrip' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.filledAttachmentDomain_im_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.exists_convergent_right_end_maps_for_filled_attachments' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.exists_filled_attachment_maps_with_uniform_left_escape' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.exists_filled_attachment_map_with_simultaneous_control' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.exists_narrow_attachment_map_with_simultaneous_control' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.exists_uniform_tube_of_compact_union_horizontalRay' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.exists_closed_halfStrip_subset_of_uniform_tube' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.filledRayInset_properties' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.filledRayInset_tail_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.filledRayInset_subset_interior' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.filledRayInset_coordinate_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.exists_continuum_attachment_map' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.exists_filled_ray_inset' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.isArakelian_filledRayInset' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.exists_stage_subset_open_of_shrinking_straight_tails' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.iInter_filledRayInset_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.exists_nested_filled_ray_neighbourhoods' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.exists_filledRayInset_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.isConnected_compl_filledRayInset' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.interior_halfStrip_subset_filledRayInterior' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.filledRayInterior_properties' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.filledRayInterior_tail_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.filledRayInset_subset_interior_of_nested' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.isArakelian_filledRayBand_union_inner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.exists_image_homeomorph_tolerance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.exists_arakelian_image_tolerance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.Scaffolding.exists_return_map_with_homeomorphic_tail' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.exists_uniform_image_tube_of_uniform_inverse' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.uniformControlOn_of_uniformContinuousOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.uniformControlOn_iterate_image_of_local_chart' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.exists_localReference' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.LocalReference.exists_entire_approximation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.exists_bilipschitz_image_tolerance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.LocalReference.iterate_eq_old' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.LocalReference.iterate_eq_return' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.LocalReference.mapsTo_controlSet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.approximate_local_iterate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.exists_continuumNeighbourhoods' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.ContinuumNeighbourhoods.region_antitone' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.ContinuumNeighbourhoods.region_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.exists_zero_localIterateChart' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.exists_initial_continuumStage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.ContinuumNeighbourhoods.exists_later_region_subset_open' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.exists_localIterateChart_of_image_change' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.exists_localIterateChart_of_strip_asymptotic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.LocalIterateChart.precomp_homeomorph' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.LocalIterateChart.postcomp_homeomorph' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.exists_localIterateChart_on_source_of_image_change' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.Scaffolding.exists_return_map_with_local_charts' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.exists_continuumTargetMap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.ContinuumNeighbourhoods.openRegion_properties' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.ContinuumNeighbourhoods.region_connected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.ContinuumNeighbourhoods.region_subset_openRegion' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.ContinuumNeighbourhoods.openRegion_subset' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.ContinuumNeighbourhoods.core_subset_openRegion' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.ContinuumNeighbourhoods.exists_common_tail' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.ContinuumNeighbourhoods.region_tube_openRegion' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.ContinuumNeighbourhoods.frontier_tube_band' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.ContinuumNeighbourhoods.decoration_subset_interior' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.exists_continuumReturnChannel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.ContinuumStage.affine_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.ContinuumStage.mapsTo_region_target' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.ContinuumNeighbourhoods.band_union_inner_isArakelian' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.exists_continuumReference' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.ContinuumReference.isArakelian_controlSet' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.ContinuumReference.controlSet_subset_background' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.ContinuumReference.exists_entire_approximation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.ContinuumReference.inner_subset_old' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.ContinuumReference.iterate_eq_old' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.ContinuumReference.iterate_eq_return' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.ContinuumReference.mapsTo_controlSet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.ContinuumReference.iterate_holomorphic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.ContinuumReference.orbit_tubes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.ContinuumReference.target_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.ContinuumReference.barrier_iterate_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.ContinuumReference.barrier_uniformControl' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.ContinuumReference.exists_barrier_tolerance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.ContinuumReference.orbitProperty_of_close_iterates' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.ContinuumReference.iterate_charts' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.ContinuumReference.uniformControl_iterate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.ContinuumReference.exists_iterate_tolerance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.ContinuumNeighbourhoods.exists_frontier_sequence' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.ContinuumReference.exists_chart_tolerance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.ContinuumReference.exists_dynamical_tolerance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.ContinuumReference.exists_charts_tolerance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.ContinuumReference.exists_orbit_tube_tolerance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.ContinuumReference.exists_target_margin_tolerance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.exists_next_continuumStage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.exists_continuumChain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.exists_continuumEntireConstruction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.ContinuumEntireConstruction.depths_strictMono' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.ContinuumEntireConstruction.trapping' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.ContinuumEntireConstruction.constructionData' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.exists_continuumConstructionData_normalized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'EremenkosConjecture.theorem1_2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.Palomar.eremenko_conjecture_false' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.Palomar.theorem_1_2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.Palomar.theorem_7_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EremenkosConjecture.Palomar.no_escaping_curve_to_infinity' depends on axioms: [propext, Classical.choice, Quot.sound]

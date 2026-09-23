@@ -1,0 +1,14 @@
+{
+  "targets": [
+    "EremenkosConjecture",
+    "Challenge",
+    "Solution"
+  ],
+  "sources": [
+    "EremenkosConjecture.lean",
+    "EremenkosConjecture",
+    "vendor/schoenflies/Schoenflies",
+    "Solution.lean"
+  ],
+  "audit": "scripts/Audit.lean"
+}

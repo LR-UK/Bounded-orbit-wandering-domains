@@ -1,5 +1,8 @@
-import SubmissionDefinitions
-import EntireFatouBridge
+import BoundedWanderingDomains.SubmissionDefinitions
+import BoundedWanderingDomains.EntireFatouBridge
+import BoundedWanderingDomains.TrappedComponentCovering
+import BoundedWanderingDomains.TrappedSimpleConnectivity
+import BoundedWanderingDomains.BoundedPointWandering
 
 open Set Metric Function Filter MeasureTheory
 open scoped Topology ENNReal
@@ -34,9 +37,9 @@ theorem no_local_bounded_wandering_domains
     (fun n => hi.iterate n hz) hU (fun n => by simp [iterate_succ_apply'])
     hdisj hbounded hsc hinj
 
-/-- Entire-function version for an actual Fatou-component orbit.
-"Bounded" means a single bound on the union of all components.
-Simple connectivity and eventual intrinsic-disc injectivity are explicit. -/
+/-- Entire-function version with boundedness of the forward orbit of one
+point in the Fatou component. The auxiliary simple connectivity and local
+inverse-branch assertions are derived, not assumed. -/
 theorem no_bounded_wandering_domains_transcendental_entire
     (hmetric : ClassicalHyperbolicMetrics)
     {f : ℂ → ℂ} (hf : Differentiable ℂ f)
@@ -44,29 +47,13 @@ theorem no_bounded_wandering_domains_transcendental_entire
     {U : ℕ → Set ℂ} {z : ℂ}
     (hU : ∀ n, ComplexDynamics.IsFatouComponent f (U n))
     (hz : z ∈ U 0) (hforward : ∀ n, MapsTo f (U n) (U (n + 1)))
-    (hsc : ∀ n, IsSimplyConnected (U n))
-    (hbounded : Bornology.IsBounded (⋃ n, U n))
-    (hinj : EventuallyInjectiveOnLargeDiscs f U (fun n => f^[n] z)) :
+    (hbounded : Bornology.IsBounded (Set.range (fun n : ℕ => (f^[n]) z))) :
     ¬ Pairwise (fun n m : ℕ => Disjoint (U n) (U m)) := by
-  obtain ⟨R, hR, hbound⟩ := hbounded.exists_pos_norm_le
-  let K : Set ℂ := closedBall 0 R
-  let V : Set ℂ := ball 0 (R + 1)
-  have hUK : ∀ n, U n ⊆ K := by
-    intro n w hw
-    exact mem_closedBall_zero_iff.mpr (hbound w (mem_iUnion.mpr ⟨n, hw⟩))
-  have hKV : K ⊆ V := closedBall_subset_ball (by linarith)
-  have hn := AreaDeficit.entire_nonpolynomial_no_constant_germ hf htrans
-  obtain ⟨hzT, hUT⟩ := AreaDeficit.fatou_orbit_eq_trapped_components hf hn
-    isBounded_ball hU hforward (fun n => (hUK n).trans hKV) hz
-  have hVc : IsCompact (closure V) := by
-    dsimp [V]
-    rw [closure_ball (0 : ℂ) (by linarith : R + 1 ≠ 0)]
-    exact isCompact_closedBall _ _
-  exact no_local_bounded_wandering_domains hmetric isOpen_ball hVc
-    ((hf.differentiableOn.analyticOnNhd isOpen_univ).mono (subset_univ _))
-    (fun x _ => hn x) (isCompact_closedBall _ _) hKV
-    (by simpa only [Function.iterate_zero_apply, trappedInterior,
-      AreaDeficit.trappedSet] using hzT 0) hUT hsc hUK hinj
+  obtain ⟨G⟩ := metric_input_exists hmetric
+  obtain ⟨R, _, hR⟩ := hbounded.exists_pos_norm_le
+  exact G.no_wandering_fatou_orbit_of_bounded_point hf
+    (AreaDeficit.entire_nonpolynomial_no_constant_germ hf htrans) hU hz hforward
+    ⟨R, fun n => hR _ ⟨n, rfl⟩⟩
 
 end BoundedWanderingDomains
 

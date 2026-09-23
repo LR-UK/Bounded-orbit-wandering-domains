@@ -12,7 +12,7 @@ import Mathlib.Topology.Compactification.OnePoint.Basic
 import Mathlib.Topology.Connected.LocallyConnected
 
 /-!
-# Conditional absence of bounded wandering component orbits
+# Conditional absence of bounded-orbit wandering domains
 
 This Challenge is independent of the proof development. Its imports are
 Mathlib only. The two deliberate theorem holes are supplied by Solution.
@@ -26,14 +26,14 @@ Two results are stated:
 1. For a locally defined analytic map, an orbit of simply connected
    components of the maximal trapped open set cannot be both compactly
    contained and wandering, under eventual injectivity on large discs.
-2. For a transcendental entire map, the same exclusion holds for an
-   actual Fatou-component orbit satisfying the same disc-injectivity
-   and simple-connectivity hypotheses.
+2. For a transcendental entire map, a Fatou component containing one point
+   with bounded forward orbit cannot be wandering. No boundedness of whole
+   components, simple connectivity or injectivity is assumed in this theorem.
 
-In (2), bounded means that the union of the component orbit is bounded
-by a single Euclidean constant. Pointwise bounded orbits with unrelated
-bounds are not the statement here. Simple connectivity and eventual
-disc injectivity remain explicit in both results.
+In (2), boundedness is precisely boundedness of the set {f^[n](z) : n ∈ ℕ}.
+Simple connectivity and eventual disc injectivity are explicit hypotheses
+only in (1); the proof of (2) derives the corresponding properties for
+auxiliary trapped components and their intrinsic discs.
 
 The intrinsic discs use a normalized Riemann coordinate. Their definition
 is independent of that coordinate (proved in the Solution development).
@@ -90,7 +90,20 @@ end ComplexDynamics
 namespace BoundedWanderingDomains
 
 /-- The classical curvature −1 hyperbolic metric facts for finitely
-punctured planes. This is a proposition, not a global axiom. -/
+punctured planes. This is a proposition, not a global axiom.
+This property states that, on every finitely punctured plane with at least two punctures,
+there is a density ρ(P) which has the following properties:
+* positive on the complement of the punctures;
+* C^2 on the complement of the punctures;
+* has curvature -1 on the complement of the punctures;
+* the Schwarz-Pick lemma holds at 0 for maps from the unit disc to the finitely punctured plane;
+* at every point there is an extremal holomorphic disc attaining equality in
+  Schwarz-Pick, as supplied classically by a universal covering map;
+* the total hyperbolic area is 2π times (P.card - 1).
+
+The fifth clause below records only the extremal-disc property: it does not
+explicitly assert that the chosen map is a universal covering.
+The area integral is normalised by dividing by 2π. -/
 def ClassicalHyperbolicMetrics : Prop :=
   ∃ ρ : Finset ℂ → ℂ → ℝ,
     (∀ P : Finset ℂ, 2 ≤ P.card → ∀ z, z ∉ P → 0 < ρ P z) ∧
@@ -144,11 +157,12 @@ theorem no_local_bounded_wandering_domains
     ¬ Pairwise (fun n m : ℕ => Disjoint (U n) (U m)) := by
   sorry
 
-/-- ENTIRE THEOREM. Differentiable ℂ f and the non-polynomial hypothesis
-say that f is transcendental entire. The U_n are actual Fatou components
-forming a forward orbit; the union is bounded. Subject to the classical
-metrics, simple connectivity, and eventual disc injectivity, this orbit
-cannot be wandering. This does not assert the omission of these hypotheses. -/
+/-- ENTIRE THEOREM. A transcendental entire function cannot have a wandering
+Fatou component containing a point z with bounded forward orbit.
+The bounded set is only {f^[n](z) : n ∈ ℕ}; no bound on the union of
+Fatou components is assumed. Simple connectivity of auxiliary trapped
+components and eventual injectivity on intrinsic discs are proved.
+The only classical input is ClassicalHyperbolicMetrics, with curvature −1. -/
 theorem no_bounded_wandering_domains_transcendental_entire
     (hmetric : ClassicalHyperbolicMetrics)
     {f : ℂ → ℂ} (hf : Differentiable ℂ f)
@@ -156,9 +170,7 @@ theorem no_bounded_wandering_domains_transcendental_entire
     {U : ℕ → Set ℂ} {z : ℂ}
     (hU : ∀ n, ComplexDynamics.IsFatouComponent f (U n))
     (hz : z ∈ U 0) (hforward : ∀ n, MapsTo f (U n) (U (n + 1)))
-    (hsc : ∀ n, IsSimplyConnected (U n))
-    (hbounded : Bornology.IsBounded (⋃ n, U n))
-    (hinj : EventuallyInjectiveOnLargeDiscs f U (fun n => f^[n] z)) :
+    (hbounded : Bornology.IsBounded (Set.range (fun n : ℕ => (f^[n]) z))) :
     ¬ Pairwise (fun n m : ℕ => Disjoint (U n) (U m)) := by
   sorry
 

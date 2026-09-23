@@ -1,0 +1,16 @@
+import FunctionTheory.Conformal.KernelSeparation
+
+/-! # Compatibility imports for FunctionTheory
+
+The proofs now belong to the sibling FunctionTheory project. These aliases
+preserve the existing declarations and their mathematical statements.
+-/
+
+namespace ComplexApproximation
+
+alias locallyUniformOn_reindex := FunctionTheory.locallyUniformOn_reindex
+alias eventually_disjoint_image_of_tendstoUniformlyOn := FunctionTheory.eventually_disjoint_image_of_tendstoUniformlyOn
+alias eventually_disjoint_image_of_tendstoLocallyUniformlyOn := FunctionTheory.eventually_disjoint_image_of_tendstoLocallyUniformlyOn
+alias eventually_disjoint_direct_image_of_inverse_convergence := FunctionTheory.eventually_disjoint_direct_image_of_inverse_convergence
+
+end ComplexApproximation

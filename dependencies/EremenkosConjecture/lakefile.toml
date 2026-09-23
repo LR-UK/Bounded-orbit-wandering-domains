@@ -1,0 +1,24 @@
+name = "eremenkosConjecture"
+version = "0.1.0"
+defaultTargets = ["EremenkosConjecture"]
+
+[[require]]
+name = "complexApproximation"
+path = "../ComplexApproximation"
+
+[[require]]
+name = "complexDynamics"
+path = "../ComplexDynamics"
+
+[[lean_lib]]
+name = "EremenkosConjecture"
+
+[[require]]
+name = "schoenflies"
+path = "vendor/schoenflies"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

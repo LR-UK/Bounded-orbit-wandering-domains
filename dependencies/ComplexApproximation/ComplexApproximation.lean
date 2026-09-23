@@ -1,0 +1,51 @@
+import ComplexApproximation.Topology.FilledContinua
+import Runge
+import ComplexApproximation.MainTheorems
+import ComplexApproximation.Topology.Nonseparation
+import ComplexApproximation.Topology.HorizontalSets
+import ComplexApproximation.Topology.ArakelianHomeomorphism
+import ComplexApproximation.Topology.StripArakelian
+import ComplexApproximation.Topology.HalfStripBands
+import ComplexApproximation.HalfStripExtension
+import ComplexApproximation.HalfStripApproximation
+import ComplexApproximation.HalfStripMargins
+import ComplexApproximation.HalfStripTail
+import ComplexApproximation.HorizontalStripExtension
+import ComplexApproximation.Conformal.KernelConvergence
+
+import ComplexApproximation.Topology.FillingStraightChannels
+import ComplexApproximation.Topology.FillingInterior
+import ComplexApproximation.Topology.FillingCoordinateBounds
+
+import ComplexApproximation.Topology.ArakelianElementaryGeometry
+
+import ComplexApproximation.Topology.FillingDecreasingIntersection
+
+import ComplexApproximation.Topology.NestedBandNonseparation
+
+import ComplexApproximation.Topology.StraightTailComplement
+
+import ComplexApproximation.Topology.StraightBandArakelian
+
+import ComplexApproximation.Topology.LocalHomeomorphNonseparation
+
+import ComplexApproximation.Topology.HomeomorphicTail
+
+import ComplexApproximation.Topology.ConformalArakelian
+
+import ComplexApproximation.Topology.FullCompactSets
+import ComplexApproximation.Topology.EscapingFullFamily
+import ComplexApproximation.Topology.FullSubsetSeparation
+
+import ComplexApproximation.Topology.TwoPointNonseparation
+import ComplexApproximation.Topology.FullFamilyFilling
+import ComplexApproximation.Topology.FullSeparatedExhaustion
+import ComplexApproximation.Topology.FullNeighborhoodFamily
+
+/-!
+# Complex approximation theory
+
+The existing Runge imports and namespace remain available. The public statement
+gallery also exports neighbourhood-holomorphic Arakelian approximation and
+the smooth compact-support Cauchy–Pompeiu formula.
+-/

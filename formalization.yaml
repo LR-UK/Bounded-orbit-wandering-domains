@@ -2,14 +2,18 @@
 version: "v0.4"
 
 project:
-  name: "Conditional absence of bounded wandering component orbits"
+  name: "Conditional absence of bounded-orbit wandering domains"
   description: >-
-    A Lean formalisation of a local hyperbolic-area argument and its application
-    to bounded orbits of Fatou components of transcendental entire functions.
-    Both theorems explicitly assume the classical finite-puncture metric facts,
-    simple connectivity, and eventual injectivity on every fixed intrinsic disc.
-    The entire-function statement uses actual Fatou components and a single
-    bound on their union. This repository contains the substantive proof development.
+    We prove that transcendental entire functions do not have bounded-orbit wandering domains.
+    This answers a major open question in the field.
+    The proof builds upon Zihao Ye's new proof of Sullivan's No Wandering Domains theorem, and
+    was obtained with assistance by generative AI, specifically ChatGPT 6 Astra.
+    We also formalise a stronger theorem, which shows that locally defined holomorphic functions
+    do not have wandering domains on which the iterates are univalent.
+    The formalisations are conditional on classical statements concerning the hyperbolic metrics
+    of finitely punctured spheres which are well-known, but not yet formalised. Hence the theorems
+    contain the existence of hyperbolic metrics on the corresponding punctures spheres as a
+    hypothesis.
   authors: ["Nikolai Prochorov", "Lasse Rempe", "James Waterman"]
   license: "Apache-2.0"
   responsible_maintainers: ["Lasse Rempe"]
@@ -32,9 +36,9 @@ sources:
       The associated paper is co-authored by Nikolai Prochorov, Lasse Rempe
       and James Waterman.
       The precise conditional statements are recorded independently in Challenge.lean.
-      This is a development of the working argument, not a claim that the unrestricted
-      bounded-orbit wandering-domain problem has been resolved. No independent
-      human review or priority claim is recorded.
+      The bounded-point-orbit theorem is proved conditionally on the explicit
+      classical hyperbolic metric facts. No independent human review or
+      priority claim is recorded.
   - title: "A new proof of no-wandering domain theorems without quasiconformal techniques"
     authors: ["Zihao Ye"]
     id: "https://arxiv.org/abs/2609.23834v1"
@@ -75,22 +79,58 @@ related_formalizations:
     note: >-
       Supplied source snapshot; actual Fatou normality and component definitions.
       The short Challenge definitions reproduce the same declarations.
+  - title: "ComplexApproximation"
+    id: "dependencies/ComplexApproximation"
+    relationship: "builds-on"
+    note: "Supplied source snapshot; filled continua and planar topology."
+  - title: "EremenkosConjecture"
+    id: "dependencies/EremenkosConjecture"
+    relationship: "builds-on"
+    note: "Supplied source snapshot; simple connectivity of interior components from absence of bounded complementary components."
+  - title: "Schoenflies"
+    authors: ["Álvaro Begué"]
+    id: "https://github.com/alonamaloh/schoenflies-lean/tree/05a43d29cde026618777db3d4e4316204ccca237"
+    relationship: "builds-on"
+    note: "Attributed vendored topology dependency within EremenkosConjecture; see its PROVENANCE.md."
+  - title: "Selected Tau Ceti modules"
+    id: "https://github.com/TauCetiProject/TauCeti/tree/f441315d5d3c9ccc377a691d7a7da00613010718"
+    relationship: "builds-on"
+    note: "138 attributed modules within FunctionTheory; original source authors include the Tau Ceti contributors and Chris Birkbeck. Licence, alignment and compatibility records are retained."
+  - title: "Ray sphere atlas"
+    authors: ["Geoffrey Irving"]
+    id: "https://github.com/girving/ray/tree/753f7131cf96f4651294de4398368abf136c34de"
+    relationship: "adapts"
+    note: "Sphere-atlas and coordinate adaptations in FunctionTheory; licence, review copies and source manifest included."
+  - title: "Li–Luo Sullivan project: sphere and normal-family foundations"
+    authors: ["Will (Ziang) Li"]
+    id: "https://github.com/will1491/no-wandering-domains/tree/0a6497b0cc9ed39a6a705bf013449635894b56d0"
+    relationship: "builds-on"
+    note: "Eight attributed modules and the derived finite-chart convergence proof within FunctionTheory. Code author Will (Ziang) Li; associated paper by Ziang Li and Yusheng Luo. Licence and adaptation records included."
+  - title: "Inverse-boundary-cluster development, via Tau Ceti"
+    authors: ["D. Cureton"]
+    id: "https://github.com/deancureton/sphere-six-complex/tree/895c0a0"
+    relationship: "builds-on"
+    note: "Secondary source attribution retained in TauCeti/Analysis/Complex/Conformal/Inverse/BoundaryCluster.lean (Apache-2.0); not a separately vendored repository."
   - title: "Riemann mapping theorem development"
     authors: ["Yury Kudryashov"]
     id: "https://github.com/urkud/mathlib4/tree/d43061d911b1aeae0788591da437a3b115098962"
     relationship: "adapts"
-    note: "RiemannMappingFull.lean and UnitDiscShift.lean; see THIRD_PARTY_NOTICES.md."
+    note: "BoundedWanderingDomains/RiemannMappingFull.lean and BoundedWanderingDomains/UnitDiscShift.lean; see THIRD_PARTY_NOTICES.md."
 
 status:
   scope: >-
     Two conditional absence results are proved: local trapped components compactly
     contained in an analytic neighbourhood, and genuine Fatou-component orbits of
-    a transcendental entire function with a uniformly bounded union. Both retain
-    simple connectivity and eventual injectivity on each fixed intrinsic disc;
-    the starting time may depend on the radius. ClassicalHyperbolicMetrics is an
+    a transcendental entire function when one point in the initial component has
+    a bounded forward orbit. No boundedness of the union of Fatou components is
+    assumed in the entire theorem. Only the local theorem retains simple
+    connectivity and eventual injectivity on each fixed intrinsic disc as
+    hypotheses. The entire theorem constructs auxiliary trapped components,
+    derives their simple connectivity by maximum modulus and planar topology,
+    and proves eventual injectivity on shrinking discs using local power
+    coordinates and holomorphic root branches. ClassicalHyperbolicMetrics is an
     explicit theorem hypothesis. All area-deficit, limiting-density and dynamical
-    deductions are proved. No derived-singular-set theorem, unrestricted bounded
-    wandering-domain theorem, or pointwise-bounded-orbit theorem is claimed.
+    deductions are proved. The derived-singular-set theorem is not included.
     Challenge.lean has two intentional proof holes and is not imported by Solution.
   sorry_count: 0
   sorry_in_definitions: 0
@@ -135,9 +175,11 @@ fidelity:
     curvature -1 properties, rather than constructed from universal coverings.
     Area is divided by 2*pi, so a plane with m punctures has mass m-1.
     Local functions are total functions on C required analytic only near closure(V).
-    Orbit components lie in one compact K contained in V. The entire result assumes
-    boundedness of the union of the components, not just of individual point orbits.
-    Simple connectivity and radius-dependent eventual injectivity remain hypotheses.
+    The local theorem assumes its orbit components lie in one compact K contained
+    in V. The entire result assumes only one bounded point orbit; auxiliary
+    trapped components and shrinking discs are constructed in the proof.
+    Simple connectivity and radius-dependent eventual injectivity remain hypotheses
+    only in the local theorem. Both are derived for the entire theorem.
     No assertion removing these assumptions is represented by the theorem names.
 
 review:
@@ -158,12 +200,14 @@ alignment:
       module: "Solution"
       status: "proved"
       note: "Analyticity only near closure(V); compactly contained trapped-component orbit."
-    - source: "Entire Fatou-component consequence with a uniformly bounded union"
+    - source: "Absence of a wandering Fatou component containing a bounded point orbit"
       lean: "BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire"
       module: "Solution"
       status: "proved"
-      note: "The bridge to local trapped components is proved in EntireFatouBridge.lean."
+      note: "BoundedWanderingDomains/PointOrbitBridge.lean supplies Schottky confinement; TrappedSimpleConnectivity.lean supplies simple connectivity; LocalDiscInjectivity.lean proves the local inverse-branch step; BoundedPointWandering.lean assembles the theorem."
 
 acknowledgements: >-
-  Mathlib contributors; Tau Ceti and Ray contributors; Yury Kudryashov;
-  the attributed FunctionTheory and ComplexDynamics sources. See the included notices.
+  Mathlib contributors; the Tau Ceti contributors; Chris Birkbeck;
+  Yury Kudryashov; Geoffrey Irving; Will (Ziang) Li and Yusheng Luo;
+  D. Cureton; Álvaro Begué; the attributed FunctionTheory, ComplexDynamics, ComplexApproximation
+  and EremenkosConjecture sources. See the included notices.

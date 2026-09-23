@@ -1,0 +1,4604 @@
+{
+  "description": "Direct Lean imports, not minimal theorem dependencies. Own source only; external imports retained as labelled leaves.",
+  "generator": "scripts/update-map.py",
+  "modules": [
+    {
+      "module": "ComplexApproximation",
+      "path": "ComplexApproximation.lean",
+      "title": "Complex approximation theory",
+      "imports": [
+        "ComplexApproximation.Topology.FilledContinua",
+        "Runge",
+        "ComplexApproximation.MainTheorems",
+        "ComplexApproximation.Topology.Nonseparation",
+        "ComplexApproximation.Topology.HorizontalSets",
+        "ComplexApproximation.Topology.ArakelianHomeomorphism",
+        "ComplexApproximation.Topology.StripArakelian",
+        "ComplexApproximation.Topology.HalfStripBands",
+        "ComplexApproximation.HalfStripExtension",
+        "ComplexApproximation.HalfStripApproximation",
+        "ComplexApproximation.HalfStripMargins",
+        "ComplexApproximation.HalfStripTail",
+        "ComplexApproximation.HorizontalStripExtension",
+        "ComplexApproximation.Conformal.KernelConvergence",
+        "ComplexApproximation.Topology.FillingStraightChannels",
+        "ComplexApproximation.Topology.FillingInterior",
+        "ComplexApproximation.Topology.FillingCoordinateBounds",
+        "ComplexApproximation.Topology.ArakelianElementaryGeometry",
+        "ComplexApproximation.Topology.FillingDecreasingIntersection",
+        "ComplexApproximation.Topology.NestedBandNonseparation",
+        "ComplexApproximation.Topology.StraightTailComplement",
+        "ComplexApproximation.Topology.StraightBandArakelian",
+        "ComplexApproximation.Topology.LocalHomeomorphNonseparation",
+        "ComplexApproximation.Topology.HomeomorphicTail",
+        "ComplexApproximation.Topology.ConformalArakelian",
+        "ComplexApproximation.Topology.FullCompactSets",
+        "ComplexApproximation.Topology.EscapingFullFamily",
+        "ComplexApproximation.Topology.FullSubsetSeparation",
+        "ComplexApproximation.Topology.TwoPointNonseparation",
+        "ComplexApproximation.Topology.FullFamilyFilling",
+        "ComplexApproximation.Topology.FullSeparatedExhaustion",
+        "ComplexApproximation.Topology.FullNeighborhoodFamily"
+      ],
+      "declarations": []
+    },
+    {
+      "module": "ComplexApproximation.Arakelian",
+      "path": "ComplexApproximation/Arakelian.lean",
+      "title": "Neighbourhood-holomorphic Arakelian approximation",
+      "imports": [
+        "ComplexApproximation.ArakelianStep",
+        "ComplexApproximation.HolomorphicLimit",
+        "ComplexApproximation.Topology.Arakelian",
+        "Mathlib.Analysis.SpecificLimits.Normed"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "arakelian_approximation",
+          "line": 21
+        },
+        {
+          "kind": "theorem",
+          "name": "arakelian_approximation_of_holomorphic",
+          "line": 89
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.ArakelianGluing",
+      "path": "ComplexApproximation/ArakelianGluing.lean",
+      "title": "Simultaneous approximation on disjoint closed pieces -/",
+      "imports": [
+        "ComplexApproximation.Arakelian",
+        "Mathlib.Topology.Separation.Regular"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "exists_holomorphic_gluing_closed",
+          "line": 11
+        },
+        {
+          "kind": "theorem",
+          "name": "exists_holomorphic_gluing_three_closed",
+          "line": 46
+        },
+        {
+          "kind": "theorem",
+          "name": "arakelian_approximation_three_pieces",
+          "line": 65
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.ArakelianLocalDomain",
+      "path": "ComplexApproximation/ArakelianLocalDomain.lean",
+      "title": "Arakelian approximation for functions on their actual domain -/",
+      "imports": [
+        "ComplexApproximation.Arakelian",
+        "Runge.LocalDomain"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "arakelian_approximation_on_domain",
+          "line": 10
+        },
+        {
+          "kind": "theorem",
+          "name": "arakelian_approximation_on_closed",
+          "line": 21
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.ArakelianStep",
+      "path": "ComplexApproximation/ArakelianStep.lean",
+      "title": "The Rosay–Rudin extension step",
+      "imports": [
+        "ComplexApproximation.CorrectedInterpolation",
+        "ComplexApproximation.Topology.Filling",
+        "Runge.Holomorphic"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "exists_holomorphic_neighbourhood_extension",
+          "line": 20
+        },
+        {
+          "kind": "theorem",
+          "name": "exists_holomorphic_extension_of_bounded_difference",
+          "line": 128
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.BiLipschitzExtension",
+      "path": "ComplexApproximation/BiLipschitzExtension.lean",
+      "title": "Quantitative ambient extensions",
+      "imports": [
+        "ComplexApproximation.HalfStripProjection",
+        "Mathlib.Analysis.Calculus.InverseFunctionTheorem.FiniteDimensional",
+        "Mathlib.Analysis.Calculus.MeanValue",
+        "Mathlib.LinearAlgebra.Complex.FiniteDimensional"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "exists_bilipschitz_homeomorph_of_lipschitz_error",
+          "line": 18
+        },
+        {
+          "kind": "theorem",
+          "name": "exists_bilipschitz_extension_of_retraction",
+          "line": 48
+        },
+        {
+          "kind": "theorem",
+          "name": "exists_bilipschitz_extension_of_small_error",
+          "line": 66
+        },
+        {
+          "kind": "theorem",
+          "name": "exists_scalar_derivative_bound",
+          "line": 85
+        },
+        {
+          "kind": "theorem",
+          "name": "exists_bilipschitz_extension_of_positive_derivative",
+          "line": 103
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.CauchyPompeiu",
+      "path": "ComplexApproximation/CauchyPompeiu.lean",
+      "title": "Cauchy–Pompeiu from rectangular Green's theorem",
+      "imports": [
+        "ComplexApproximation.CauchyTransform",
+        "ComplexApproximation.CauchyRectangle",
+        "Runge.RationalApproximation"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "cauchyRiemannDefect_sub",
+          "line": 18
+        },
+        {
+          "kind": "theorem",
+          "name": "cauchyRiemannDefect_const_mul_conj",
+          "line": 26
+        },
+        {
+          "kind": "def",
+          "name": "antiholomorphicCoefficient",
+          "line": 36
+        },
+        {
+          "kind": "theorem",
+          "name": "differentiableAt_sub_antiholomorphic",
+          "line": 39
+        },
+        {
+          "kind": "theorem",
+          "name": "integrableOn_div_id",
+          "line": 53
+        },
+        {
+          "kind": "def",
+          "name": "squareIntegral",
+          "line": 60
+        },
+        {
+          "kind": "theorem",
+          "name": "squareIntegral_eq_setIntegral",
+          "line": 63
+        },
+        {
+          "kind": "theorem",
+          "name": "squareIntegral_eq_zero_of_odd",
+          "line": 85
+        },
+        {
+          "kind": "theorem",
+          "name": "rectangleBoundary_eq_zero_of_even",
+          "line": 107
+        },
+        {
+          "kind": "theorem",
+          "name": "squareIntegral_sub",
+          "line": 130
+        },
+        {
+          "kind": "theorem",
+          "name": "squareIntegral_const_mul",
+          "line": 139
+        },
+        {
+          "kind": "theorem",
+          "name": "continuousOn_div_id",
+          "line": 143
+        },
+        {
+          "kind": "theorem",
+          "name": "rectangleBoundary_sub_of_continuousOn_punctured",
+          "line": 147
+        },
+        {
+          "kind": "theorem",
+          "name": "rectangleBoundary_congr_on_punctured",
+          "line": 192
+        },
+        {
+          "kind": "theorem",
+          "name": "cauchyPompeiu_square",
+          "line": 207
+        },
+        {
+          "kind": "theorem",
+          "name": "rectangleBoundary_eq_zero_of_support",
+          "line": 265
+        },
+        {
+          "kind": "theorem",
+          "name": "integrable_defect_div_id",
+          "line": 279
+        },
+        {
+          "kind": "theorem",
+          "name": "integral_defect_div_id",
+          "line": 288
+        },
+        {
+          "kind": "theorem",
+          "name": "cauchyRiemannDefect_comp_sub_left",
+          "line": 318
+        },
+        {
+          "kind": "theorem",
+          "name": "cauchyTransform_defect",
+          "line": 329
+        },
+        {
+          "kind": "theorem",
+          "name": "cauchyRiemannDefect_cauchyTransform_eq",
+          "line": 343
+        },
+        {
+          "kind": "def",
+          "name": "solveCauchyRiemann",
+          "line": 349
+        },
+        {
+          "kind": "theorem",
+          "name": "contDiff_solveCauchyRiemann",
+          "line": 352
+        },
+        {
+          "kind": "theorem",
+          "name": "cauchyRiemannDefect_solveCauchyRiemann",
+          "line": 356
+        },
+        {
+          "kind": "theorem",
+          "name": "cauchyPompeiu_compact",
+          "line": 367
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.CauchyRectangle",
+      "path": "ComplexApproximation/CauchyRectangle.lean",
+      "title": "The Cauchy kernel integral around a square -/",
+      "imports": [
+        "Runge.RectangleKernel",
+        "Mathlib.Analysis.SpecialFunctions.Integrals.Basic"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "rectangleBoundary_inv",
+          "line": 11
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.CauchyRiemannGluing",
+      "path": "ComplexApproximation/CauchyRiemannGluing.lean",
+      "title": "Correcting a smooth holomorphic gluing",
+      "imports": [
+        "ComplexApproximation.CauchyTransformBounds"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "cauchyRiemannDefect_add",
+          "line": 15
+        },
+        {
+          "kind": "theorem",
+          "name": "cauchyRiemannDefect_mul_real",
+          "line": 22
+        },
+        {
+          "kind": "theorem",
+          "name": "differentiableAt_add_solveCauchyRiemann",
+          "line": 32
+        },
+        {
+          "kind": "theorem",
+          "name": "differentiableOn_add_solveCauchyRiemann",
+          "line": 42
+        },
+        {
+          "kind": "theorem",
+          "name": "cauchyRiemannDefect_interpolate",
+          "line": 51
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.CauchyTransform",
+      "path": "ComplexApproximation/CauchyTransform.lean",
+      "title": "The planar Cauchy transform",
+      "imports": [
+        "Runge.CauchyGreen",
+        "Mathlib.Analysis.Calculus.ContDiff.Convolution",
+        "Mathlib.Analysis.SpecialFunctions.Pow.Integral",
+        "Mathlib.Analysis.Complex.Conformal"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "cauchyKernel",
+          "line": 20
+        },
+        {
+          "kind": "theorem",
+          "name": "locallyIntegrable_cauchyKernel",
+          "line": 22
+        },
+        {
+          "kind": "def",
+          "name": "cauchyTransform",
+          "line": 31
+        },
+        {
+          "kind": "theorem",
+          "name": "cauchyTransform_eq_convolution",
+          "line": 34
+        },
+        {
+          "kind": "theorem",
+          "name": "contDiff_cauchyTransform",
+          "line": 37
+        },
+        {
+          "kind": "theorem",
+          "name": "integrable_cauchyTransform_integrand",
+          "line": 43
+        },
+        {
+          "kind": "theorem",
+          "name": "cauchyTransform_eq_integral",
+          "line": 49
+        },
+        {
+          "kind": "theorem",
+          "name": "integrable_div_sub",
+          "line": 54
+        },
+        {
+          "kind": "theorem",
+          "name": "fderiv_cauchyTransform_apply",
+          "line": 62
+        },
+        {
+          "kind": "theorem",
+          "name": "cauchyRiemannDefect_cauchyTransform",
+          "line": 73
+        },
+        {
+          "kind": "theorem",
+          "name": "differentiableAt_complex_iff_defect_eq_zero",
+          "line": 88
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.CauchyTransformBounds",
+      "path": "ComplexApproximation/CauchyTransformBounds.lean",
+      "title": "Uniform estimates for the Cauchy transform",
+      "imports": [
+        "ComplexApproximation.CauchyPompeiu"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "cauchyKernelMass",
+          "line": 16
+        },
+        {
+          "kind": "theorem",
+          "name": "cauchyKernelMass_nonneg",
+          "line": 19
+        },
+        {
+          "kind": "theorem",
+          "name": "norm_cauchyTransform_le",
+          "line": 22
+        },
+        {
+          "kind": "theorem",
+          "name": "norm_cauchyTransform_le_of_support_subset",
+          "line": 59
+        },
+        {
+          "kind": "theorem",
+          "name": "norm_solveCauchyRiemann_le",
+          "line": 81
+        },
+        {
+          "kind": "theorem",
+          "name": "exists_bound_solveCauchyRiemann",
+          "line": 96
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.Conformal.BoundedKernel",
+      "path": "ComplexApproximation/Conformal/BoundedKernel.lean",
+      "title": "Compatibility imports for FunctionTheory",
+      "imports": [
+        "ComplexApproximation.Conformal.RiemannInverseBounds",
+        "ComplexApproximation.Conformal.KernelSubsequence",
+        "FunctionTheory.Conformal.BoundedKernel"
+      ],
+      "declarations": [
+        {
+          "kind": "alias",
+          "name": "exists_normalized_riemann_kernel_subsequence",
+          "line": 13
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.Conformal.ImaginaryBounds",
+      "path": "ComplexApproximation/Conformal/ImaginaryBounds.lean",
+      "title": "Compatibility imports for FunctionTheory",
+      "imports": [
+        "FunctionTheory.Conformal.ImaginaryBounds"
+      ],
+      "declarations": [
+        {
+          "kind": "alias",
+          "name": "locallyBoundedOn_of_im_lower_bound",
+          "line": 11
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.Conformal.InverseLimits",
+      "path": "ComplexApproximation/Conformal/InverseLimits.lean",
+      "title": "Compatibility imports for FunctionTheory",
+      "imports": [
+        "ComplexApproximation.Conformal.KernelImage",
+        "FunctionTheory.Conformal.InverseLimits"
+      ],
+      "declarations": [
+        {
+          "kind": "alias",
+          "name": "mapsTo_unitBall_of_holomorphic_limit",
+          "line": 12
+        },
+        {
+          "kind": "alias",
+          "name": "leftInvOn_of_locallyUniform_limits",
+          "line": 13
+        },
+        {
+          "kind": "alias",
+          "name": "invOn_of_locallyUniform_limits",
+          "line": 14
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.Conformal.KernelConvergence",
+      "path": "ComplexApproximation/Conformal/KernelConvergence.lean",
+      "title": "Compatibility imports for FunctionTheory",
+      "imports": [
+        "ComplexApproximation.Conformal.BoundedKernel",
+        "FunctionTheory.Conformal.KernelConvergence"
+      ],
+      "declarations": [
+        {
+          "kind": "alias",
+          "name": "locallyUniformOn_of_subsequence_limits",
+          "line": 12
+        },
+        {
+          "kind": "alias",
+          "name": "normalized_riemannMaps_tendsto_on_bounded_kernel",
+          "line": 13
+        },
+        {
+          "kind": "alias",
+          "name": "exists_normalized_riemannMap_of_bounded_kernel",
+          "line": 14
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.Conformal.KernelImage",
+      "path": "ComplexApproximation/Conformal/KernelImage.lean",
+      "title": "Compatibility imports for FunctionTheory",
+      "imports": [
+        "ComplexApproximation.Conformal.KernelSeparation",
+        "FunctionTheory.Conformal.KernelImage"
+      ],
+      "declarations": [
+        {
+          "kind": "alias",
+          "name": "image_subset_interior_iInter_of_holomorphic_limit",
+          "line": 12
+        },
+        {
+          "kind": "alias",
+          "name": "nonconstant_of_derivative_lower_bound_of_tendstoLocallyUniformlyOn",
+          "line": 13
+        },
+        {
+          "kind": "alias",
+          "name": "image_subset_kernel_of_derivative_lower_bound",
+          "line": 14
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.Conformal.KernelSeparation",
+      "path": "ComplexApproximation/Conformal/KernelSeparation.lean",
+      "title": "Compatibility imports for FunctionTheory",
+      "imports": [
+        "FunctionTheory.Conformal.KernelSeparation"
+      ],
+      "declarations": [
+        {
+          "kind": "alias",
+          "name": "locallyUniformOn_reindex",
+          "line": 11
+        },
+        {
+          "kind": "alias",
+          "name": "eventually_disjoint_image_of_tendstoUniformlyOn",
+          "line": 12
+        },
+        {
+          "kind": "alias",
+          "name": "eventually_disjoint_image_of_tendstoLocallyUniformlyOn",
+          "line": 13
+        },
+        {
+          "kind": "alias",
+          "name": "eventually_disjoint_direct_image_of_inverse_convergence",
+          "line": 14
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.Conformal.KernelSubsequence",
+      "path": "ComplexApproximation/Conformal/KernelSubsequence.lean",
+      "title": "Compatibility imports for FunctionTheory",
+      "imports": [
+        "ComplexApproximation.Conformal.InverseLimits",
+        "FunctionTheory.Conformal.KernelSubsequence"
+      ],
+      "declarations": [
+        {
+          "kind": "alias",
+          "name": "exists_biholomorphic_kernel_subsequence",
+          "line": 12
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.Conformal.RiemannInverseBounds",
+      "path": "ComplexApproximation/Conformal/RiemannInverseBounds.lean",
+      "title": "Compatibility imports for FunctionTheory",
+      "imports": [
+        "ComplexApproximation.Conformal.RiemannMapping",
+        "FunctionTheory.Conformal.RiemannInverseBounds"
+      ],
+      "declarations": [
+        {
+          "kind": "alias",
+          "name": "normalized_inverse_derivative_lower_bound",
+          "line": 12
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.Conformal.RiemannMapping",
+      "path": "ComplexApproximation/Conformal/RiemannMapping.lean",
+      "title": "Compatibility imports for FunctionTheory",
+      "imports": [
+        "Runge.LocalDomain",
+        "FunctionTheory.Conformal.RiemannMapping"
+      ],
+      "declarations": [
+        {
+          "kind": "alias",
+          "name": "exists_riemannMap_on_domain",
+          "line": 12
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.CorrectedInterpolation",
+      "path": "ComplexApproximation/CorrectedInterpolation.lean",
+      "title": "A holomorphic correction of a cutoff interpolation -/",
+      "imports": [
+        "ComplexApproximation.SmoothLocalization"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "interpolate",
+          "line": 10
+        },
+        {
+          "kind": "def",
+          "name": "interpolationDensity",
+          "line": 13
+        },
+        {
+          "kind": "def",
+          "name": "gluingOpen",
+          "line": 16
+        },
+        {
+          "kind": "theorem",
+          "name": "isOpen_gluingOpen",
+          "line": 20
+        },
+        {
+          "kind": "theorem",
+          "name": "subset_gluingOpen",
+          "line": 24
+        },
+        {
+          "kind": "theorem",
+          "name": "differentiableAt_correctedInterpolation",
+          "line": 35
+        },
+        {
+          "kind": "theorem",
+          "name": "analyticOnNhd_correctedInterpolation",
+          "line": 72
+        },
+        {
+          "kind": "theorem",
+          "name": "norm_interpolate_sub_le",
+          "line": 85
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.HalfStrip",
+      "path": "ComplexApproximation/HalfStrip.lean",
+      "title": "An explicit conformal map on a half-strip",
+      "imports": [
+        "Mathlib.Analysis.SpecialFunctions.Complex.LogDeriv",
+        "Mathlib.Analysis.SpecialFunctions.Trigonometric.DerivHyp",
+        "Mathlib.Analysis.SpecialFunctions.Arsinh"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "domain",
+          "line": 18
+        },
+        {
+          "kind": "def",
+          "name": "map",
+          "line": 20
+        },
+        {
+          "kind": "theorem",
+          "name": "isOpen_domain",
+          "line": 22
+        },
+        {
+          "kind": "theorem",
+          "name": "sinh_re",
+          "line": 26
+        },
+        {
+          "kind": "theorem",
+          "name": "cosh_re",
+          "line": 31
+        },
+        {
+          "kind": "theorem",
+          "name": "sinh_re_pos",
+          "line": 36
+        },
+        {
+          "kind": "theorem",
+          "name": "cosh_re_pos",
+          "line": 40
+        },
+        {
+          "kind": "theorem",
+          "name": "sinh_ne_zero",
+          "line": 44
+        },
+        {
+          "kind": "theorem",
+          "name": "cosh_ne_zero",
+          "line": 49
+        },
+        {
+          "kind": "theorem",
+          "name": "hasDerivAt_map",
+          "line": 54
+        },
+        {
+          "kind": "theorem",
+          "name": "differentiableOn_map",
+          "line": 58
+        },
+        {
+          "kind": "theorem",
+          "name": "deriv_map_ne_zero",
+          "line": 61
+        },
+        {
+          "kind": "theorem",
+          "name": "abs_im_map_lt",
+          "line": 65
+        },
+        {
+          "kind": "theorem",
+          "name": "injOn_sinh",
+          "line": 69
+        },
+        {
+          "kind": "theorem",
+          "name": "injOn_map",
+          "line": 91
+        },
+        {
+          "kind": "theorem",
+          "name": "map_ofReal",
+          "line": 97
+        },
+        {
+          "kind": "theorem",
+          "name": "real_axis_surjective",
+          "line": 100
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.HalfStripApproximation",
+      "path": "ComplexApproximation/HalfStripApproximation.lean",
+      "title": "Arakelian approximation on the model Section 7 configuration -/",
+      "imports": [
+        "ComplexApproximation.ArakelianGluing",
+        "ComplexApproximation.Topology.ArakelianHomeomorphism",
+        "ComplexApproximation.Topology.StripArakelian",
+        "ComplexApproximation.Topology.HalfStripBands"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "isArakelian_horizontal_background_union_image_band",
+          "line": 12
+        },
+        {
+          "kind": "theorem",
+          "name": "arakelian_approximation_halfStrip_configuration",
+          "line": 25
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.HalfStripBounds",
+      "path": "ComplexApproximation/HalfStripBounds.lean",
+      "title": "Uniform derivative bounds for the explicit half-strip map -/",
+      "imports": [
+        "ComplexApproximation.HalfStrip",
+        "Mathlib.Analysis.Calculus.MeanValue",
+        "Mathlib.Analysis.Complex.Convex"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "deriv_map_mul_one_sub_exp",
+          "line": 12
+        },
+        {
+          "kind": "theorem",
+          "name": "derivative_bounds",
+          "line": 26
+        },
+        {
+          "kind": "theorem",
+          "name": "exists_uniform_derivative_bounds",
+          "line": 66
+        },
+        {
+          "kind": "theorem",
+          "name": "re_derivative_lower_bound",
+          "line": 77
+        },
+        {
+          "kind": "def",
+          "name": "truncated",
+          "line": 117
+        },
+        {
+          "kind": "theorem",
+          "name": "convex_domain",
+          "line": 119
+        },
+        {
+          "kind": "theorem",
+          "name": "convex_truncated",
+          "line": 128
+        },
+        {
+          "kind": "theorem",
+          "name": "exists_lipschitzOn_truncated",
+          "line": 131
+        },
+        {
+          "kind": "theorem",
+          "name": "tendsto_real_map_atTop",
+          "line": 140
+        },
+        {
+          "kind": "theorem",
+          "name": "tendsto_real_map_at_zero",
+          "line": 144
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.HalfStripExtension",
+      "path": "ComplexApproximation/HalfStripExtension.lean",
+      "title": "Ambient extension of the explicit conformal half-strip map -/",
+      "imports": [
+        "ComplexApproximation.BiLipschitzExtension",
+        "ComplexApproximation.HalfStripBounds"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "exists_bilipschitz_extension",
+          "line": 11
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.HalfStripMargins",
+      "path": "ComplexApproximation/HalfStripMargins.lean",
+      "title": "Uniform neighbourhoods of half-strips and their boundary bands -/",
+      "imports": [
+        "ComplexApproximation.Topology.HalfStripBands"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "openRightHalfStrip_subset_interior",
+          "line": 10
+        },
+        {
+          "kind": "theorem",
+          "name": "frontier_closedRightHalfStrip_subset",
+          "line": 17
+        },
+        {
+          "kind": "theorem",
+          "name": "ball_subset_openRightHalfStrip",
+          "line": 29
+        },
+        {
+          "kind": "theorem",
+          "name": "ball_frontier_subset_halfStripBand",
+          "line": 43
+        },
+        {
+          "kind": "theorem",
+          "name": "exists_frontier_tube_in_halfStripBand",
+          "line": 67
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.HalfStripNormalisation",
+      "path": "ComplexApproximation/HalfStripNormalisation.lean",
+      "title": "Normalising the explicit half-strip map",
+      "imports": [
+        "ComplexApproximation.HalfStripExtension",
+        "Mathlib.Topology.Order.Compact"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "realProfile",
+          "line": 17
+        },
+        {
+          "kind": "theorem",
+          "name": "continuousOn_realProfile",
+          "line": 19
+        },
+        {
+          "kind": "theorem",
+          "name": "exists_compression",
+          "line": 24
+        },
+        {
+          "kind": "theorem",
+          "name": "tendsto_scaled_profile_at_zero",
+          "line": 45
+        },
+        {
+          "kind": "theorem",
+          "name": "exists_small_shift_far_left",
+          "line": 56
+        },
+        {
+          "kind": "theorem",
+          "name": "tendsto_scaled_profile_atTop",
+          "line": 66
+        },
+        {
+          "kind": "def",
+          "name": "normalizedMap",
+          "line": 80
+        },
+        {
+          "kind": "theorem",
+          "name": "normalizedMap_ofReal",
+          "line": 83
+        },
+        {
+          "kind": "theorem",
+          "name": "normalizedMap_im_bound",
+          "line": 90
+        },
+        {
+          "kind": "theorem",
+          "name": "hasDerivAt_normalizedMap",
+          "line": 102
+        },
+        {
+          "kind": "theorem",
+          "name": "exists_bilipschitz_normalized_extension",
+          "line": 110
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.HalfStripProjection",
+      "path": "ComplexApproximation/HalfStripProjection.lean",
+      "title": "The nonexpansive projection onto a closed horizontal half-strip -/",
+      "imports": [
+        "Mathlib.Analysis.Complex.Convex",
+        "Mathlib.Topology.MetricSpace.Lipschitz"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "closedRightHalfStrip",
+          "line": 11
+        },
+        {
+          "kind": "def",
+          "name": "halfStripProjection",
+          "line": 13
+        },
+        {
+          "kind": "theorem",
+          "name": "halfStripProjection_mem",
+          "line": 16
+        },
+        {
+          "kind": "theorem",
+          "name": "halfStripProjection_eq",
+          "line": 21
+        },
+        {
+          "kind": "theorem",
+          "name": "lipschitzWith_halfStripProjection",
+          "line": 28
+        },
+        {
+          "kind": "theorem",
+          "name": "convex_closedRightHalfStrip",
+          "line": 49
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.HalfStripTail",
+      "path": "ComplexApproximation/HalfStripTail.lean",
+      "title": "Uniform rightward escape along a closed half-strip -/",
+      "imports": [
+        "ComplexApproximation.HalfStripNormalisation"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "uniform_re_escape_of_halfStrip_extension",
+          "line": 10
+        },
+        {
+          "kind": "theorem",
+          "name": "tendsto_re_normalizedMap_atTop",
+          "line": 32
+        },
+        {
+          "kind": "theorem",
+          "name": "uniform_re_escape_normalizedMap",
+          "line": 39
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.HolomorphicLimit",
+      "path": "ComplexApproximation/HolomorphicLimit.lean",
+      "title": "Limits of approximations on expanding neighbourhoods",
+      "imports": [
+        "Mathlib.Analysis.Complex.LocallyUniformLimit",
+        "Mathlib.Topology.Algebra.InfiniteSum.Real",
+        "Mathlib.Tactic.Abel"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "correctionLimit",
+          "line": 19
+        },
+        {
+          "kind": "theorem",
+          "name": "tendstoUniformlyOn_correctionLimit",
+          "line": 22
+        },
+        {
+          "kind": "theorem",
+          "name": "exists_entire_limit_of_eventually_holomorphic_corrections",
+          "line": 38
+        },
+        {
+          "kind": "theorem",
+          "name": "limit_error_le_tsum",
+          "line": 56
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.HorizontalStripExtension",
+      "path": "ComplexApproximation/HorizontalStripExtension.lean",
+      "title": "Quantitative extensions from complete horizontal strips -/",
+      "imports": [
+        "ComplexApproximation.BiLipschitzExtension"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "closedHorizontalStrip",
+          "line": 10
+        },
+        {
+          "kind": "def",
+          "name": "horizontalStripProjection",
+          "line": 12
+        },
+        {
+          "kind": "theorem",
+          "name": "horizontalStripProjection_mem",
+          "line": 15
+        },
+        {
+          "kind": "theorem",
+          "name": "horizontalStripProjection_eq",
+          "line": 19
+        },
+        {
+          "kind": "theorem",
+          "name": "lipschitzWith_horizontalStripProjection",
+          "line": 26
+        },
+        {
+          "kind": "theorem",
+          "name": "convex_closedHorizontalStrip",
+          "line": 41
+        },
+        {
+          "kind": "theorem",
+          "name": "exists_bilipschitz_extension_on_horizontalStrip",
+          "line": 44
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.MainTheorems",
+      "path": "ComplexApproximation/MainTheorems.lean",
+      "title": "Main statements for mathematical review",
+      "imports": [
+        "Runge.LocalDomain",
+        "ComplexApproximation.Topology.Nonseparation",
+        "ComplexApproximation.ArakelianLocalDomain"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "rational_runge",
+          "line": 22
+        },
+        {
+          "kind": "theorem",
+          "name": "prescribed_poles_runge",
+          "line": 29
+        },
+        {
+          "kind": "theorem",
+          "name": "polynomial_runge",
+          "line": 38
+        },
+        {
+          "kind": "theorem",
+          "name": "polynomial_runge_on_domain",
+          "line": 45
+        },
+        {
+          "kind": "theorem",
+          "name": "fullness_under_domain_homeomorphism",
+          "line": 53
+        },
+        {
+          "kind": "theorem",
+          "name": "arakelian",
+          "line": 63
+        },
+        {
+          "kind": "theorem",
+          "name": "cauchy_pompeiu_compact",
+          "line": 71
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.SmoothLocalization",
+      "path": "ComplexApproximation/SmoothLocalization.lean",
+      "title": "Smooth localization with pointwise control -/",
+      "imports": [
+        "ComplexApproximation.CauchyRiemannGluing"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "exists_smooth_cutoff_controlled",
+          "line": 12
+        },
+        {
+          "kind": "theorem",
+          "name": "contDiff_cauchyRiemannDefect",
+          "line": 30
+        },
+        {
+          "kind": "theorem",
+          "name": "tsupport_cauchyRiemannDefect_subset",
+          "line": 36
+        },
+        {
+          "kind": "theorem",
+          "name": "contDiff_cutoff_mul",
+          "line": 46
+        },
+        {
+          "kind": "theorem",
+          "name": "support_cutoff_mul_subset",
+          "line": 59
+        },
+        {
+          "kind": "theorem",
+          "name": "hasCompactSupport_cutoff_mul",
+          "line": 66
+        },
+        {
+          "kind": "theorem",
+          "name": "norm_cutoff_mul_le",
+          "line": 72
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.Topology.Arakelian",
+      "path": "ComplexApproximation/Topology/Arakelian.lean",
+      "title": "Arakelian's bounded-holes condition and an exhaustion",
+      "imports": [
+        "ComplexApproximation.Topology.Filling"
+      ],
+      "declarations": [
+        {
+          "kind": "structure",
+          "name": "IsArakelian",
+          "line": 17
+        },
+        {
+          "kind": "def",
+          "name": "arakelianExhaustion",
+          "line": 22
+        },
+        {
+          "kind": "theorem",
+          "name": "arakelianExhaustion_zero",
+          "line": 25
+        },
+        {
+          "kind": "theorem",
+          "name": "arakelianExhaustion_succ",
+          "line": 28
+        },
+        {
+          "kind": "theorem",
+          "name": "subset_arakelianExhaustion",
+          "line": 32
+        },
+        {
+          "kind": "theorem",
+          "name": "arakelianExhaustion_mono",
+          "line": 38
+        },
+        {
+          "kind": "theorem",
+          "name": "isClosed_arakelianExhaustion",
+          "line": 47
+        },
+        {
+          "kind": "theorem",
+          "name": "noBoundedComplementComponents_arakelianExhaustion",
+          "line": 54
+        },
+        {
+          "kind": "theorem",
+          "name": "IsArakelian.isBounded_exhaustion_diff",
+          "line": 62
+        },
+        {
+          "kind": "theorem",
+          "name": "IsArakelian.isBounded_exhaustion_succ_diff",
+          "line": 68
+        },
+        {
+          "kind": "theorem",
+          "name": "closedBall_subset_arakelianExhaustion",
+          "line": 73
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.Topology.ArakelianElementaryGeometry",
+      "path": "ComplexApproximation/Topology/ArakelianElementaryGeometry.lean",
+      "title": "ArakelianElementaryGeometry",
+      "imports": [
+        "ComplexApproximation.Topology.HorizontalEscape",
+        "Mathlib.Analysis.Convex.Star",
+        "Mathlib.Analysis.Convex.Topology",
+        "Mathlib.Analysis.Normed.Module.Convex"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "noBoundedComplementComponents_of_starConvex",
+          "line": 11
+        },
+        {
+          "kind": "theorem",
+          "name": "isArakelian_of_closed_starConvex",
+          "line": 31
+        },
+        {
+          "kind": "theorem",
+          "name": "IsArakelian.of_bounded_modification",
+          "line": 52
+        },
+        {
+          "kind": "theorem",
+          "name": "isArakelian_fill_compact_union_starConvex",
+          "line": 72
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.Topology.ArakelianHomeomorphism",
+      "path": "ComplexApproximation/Topology/ArakelianHomeomorphism.lean",
+      "title": "Topological invariance of the planar Arakelian condition -/",
+      "imports": [
+        "ComplexApproximation.Topology.Arakelian",
+        "Mathlib.Topology.Homeomorph.Lemmas"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "isBounded_image_continuous",
+          "line": 10
+        },
+        {
+          "kind": "theorem",
+          "name": "isBounded_image_homeomorph_iff",
+          "line": 14
+        },
+        {
+          "kind": "theorem",
+          "name": "mem_fill_image_homeomorph_iff",
+          "line": 22
+        },
+        {
+          "kind": "theorem",
+          "name": "fill_image_homeomorph",
+          "line": 36
+        },
+        {
+          "kind": "theorem",
+          "name": "IsArakelian.image_homeomorph",
+          "line": 49
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.Topology.ConformalArakelian",
+      "path": "ComplexApproximation/Topology/ConformalArakelian.lean",
+      "title": "ConformalArakelian",
+      "imports": [
+        "ComplexApproximation.Topology.HomeomorphicTail",
+        "ComplexApproximation.BiLipschitzExtension",
+        "FunctionTheory.Conformal.StripProper"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "exists_homeomorph_on_straight_tail_of_derivative_limit",
+          "line": 13
+        },
+        {
+          "kind": "theorem",
+          "name": "hasHomeomorphicTailOn_of_strip_derivative_limit",
+          "line": 67
+        },
+        {
+          "kind": "theorem",
+          "name": "IsArakelian.image_conformal_of_strip_derivative_limit",
+          "line": 87
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.Topology.EscapingFullFamily",
+      "path": "ComplexApproximation/Topology/EscapingFullFamily.lean",
+      "title": "Escaping families of full compact sets",
+      "imports": [
+        "ComplexApproximation.Topology.FullCompactSets",
+        "FunctionTheory.Topology.LocallyFiniteCompactFamily"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "noBoundedComplementComponents_of_full_compact_pieces",
+          "line": 16
+        },
+        {
+          "kind": "theorem",
+          "name": "noBoundedComplementComponents_escaping_full_family",
+          "line": 41
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.Topology.FilledContinua",
+      "path": "ComplexApproximation/Topology/FilledContinua.lean",
+      "title": "Filling compact continua",
+      "imports": [
+        "ComplexApproximation.Topology.Filling",
+        "ComplexApproximation.Topology.Nonseparation",
+        "TauCeti.Analysis.Normed.Module.FilledHull",
+        "Mathlib.Topology.Connected.Clopen"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "isCompact_fill",
+          "line": 17
+        },
+        {
+          "kind": "theorem",
+          "name": "isConnected_compl_fill",
+          "line": 23
+        },
+        {
+          "kind": "theorem",
+          "name": "isConnected_fill",
+          "line": 28
+        },
+        {
+          "kind": "theorem",
+          "name": "fill_subset_of_unbounded_preconnected_complement",
+          "line": 55
+        },
+        {
+          "kind": "theorem",
+          "name": "fill_subset_of_noBoundedComplementComponents",
+          "line": 64
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.Topology.Filling",
+      "path": "ComplexApproximation/Topology/Filling.lean",
+      "title": "Filling bounded complementary components",
+      "imports": [
+        "Mathlib.Analysis.Complex.Convex",
+        "Mathlib.Analysis.SpecialFunctions.Complex.Log",
+        "Mathlib.Topology.Connected.LocallyConnected",
+        "Mathlib.Analysis.LocallyConvex.WithSeminorms"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "NoBoundedComplementComponents",
+          "line": 22
+        },
+        {
+          "kind": "def",
+          "name": "fill",
+          "line": 25
+        },
+        {
+          "kind": "theorem",
+          "name": "subset_fill",
+          "line": 28
+        },
+        {
+          "kind": "theorem",
+          "name": "fill_mono",
+          "line": 34
+        },
+        {
+          "kind": "theorem",
+          "name": "component_subset_compl_fill",
+          "line": 40
+        },
+        {
+          "kind": "theorem",
+          "name": "connectedComponentIn_compl_fill",
+          "line": 45
+        },
+        {
+          "kind": "theorem",
+          "name": "isClosed_fill",
+          "line": 53
+        },
+        {
+          "kind": "theorem",
+          "name": "noBoundedComplementComponents_fill",
+          "line": 62
+        },
+        {
+          "kind": "theorem",
+          "name": "fill_eq_self",
+          "line": 68
+        },
+        {
+          "kind": "theorem",
+          "name": "fill_fill",
+          "line": 74
+        },
+        {
+          "kind": "theorem",
+          "name": "isConnected_exterior",
+          "line": 77
+        },
+        {
+          "kind": "theorem",
+          "name": "not_isBounded_exterior",
+          "line": 98
+        },
+        {
+          "kind": "theorem",
+          "name": "isConnected_compl_of_unbounded_components",
+          "line": 113
+        },
+        {
+          "kind": "theorem",
+          "name": "isConnected_compl_inter_closedBall",
+          "line": 136
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.Topology.FillingCoordinateBounds",
+      "path": "ComplexApproximation/Topology/FillingCoordinateBounds.lean",
+      "title": "FillingCoordinateBounds",
+      "imports": [
+        "ComplexApproximation.Topology.FillingStraightChannels"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "fill_preserves_im_bound",
+          "line": 8
+        },
+        {
+          "kind": "theorem",
+          "name": "fill_preserves_re_lower_bound",
+          "line": 18
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.Topology.FillingDecreasingIntersection",
+      "path": "ComplexApproximation/Topology/FillingDecreasingIntersection.lean",
+      "title": "FillingDecreasingIntersection",
+      "imports": [
+        "ComplexApproximation.Topology.FilledContinua",
+        "Mathlib.Topology.Connected.LocallyPathConnected",
+        "Mathlib.Analysis.Normed.Module.Connected"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "iInter_fill_eq_of_uniformly_bounded_holes",
+          "line": 13
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.Topology.FillingInterior",
+      "path": "ComplexApproximation/Topology/FillingInterior.lean",
+      "title": "FillingInterior",
+      "imports": [
+        "ComplexApproximation.Topology.FilledContinua"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "fill_subset_interior_of_noBoundedComplementComponents",
+          "line": 9
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.Topology.FillingStraightChannels",
+      "path": "ComplexApproximation/Topology/FillingStraightChannels.lean",
+      "title": "FillingStraightChannels",
+      "imports": [
+        "ComplexApproximation.Topology.HorizontalEscape",
+        "ComplexApproximation.Topology.Filling"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "fill_preserves_channel_in_vertical_slab",
+          "line": 10
+        },
+        {
+          "kind": "theorem",
+          "name": "interior_fill_gate_bound",
+          "line": 39
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.Topology.FullCompactSets",
+      "path": "ComplexApproximation/Topology/FullCompactSets.lean",
+      "title": "Full compact sets and their neighbourhoods",
+      "imports": [
+        "ComplexApproximation.Topology.Filling",
+        "ComplexApproximation.Topology.Nonseparation",
+        "Runge.PolynomialSeparation",
+        "Mathlib.Analysis.Complex.AbsMax",
+        "Mathlib.Analysis.Calculus.Deriv.Polynomial"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "isConnected_compl_of_polynomial_separation",
+          "line": 25
+        },
+        {
+          "kind": "theorem",
+          "name": "exists_full_compact_neighbourhood",
+          "line": 38
+        },
+        {
+          "kind": "theorem",
+          "name": "isConnected_compl_union_disjoint",
+          "line": 106
+        },
+        {
+          "kind": "theorem",
+          "name": "isConnected_compl_finite_disjoint_union",
+          "line": 118
+        },
+        {
+          "kind": "theorem",
+          "name": "isConnected_compl_closure_interior",
+          "line": 143
+        },
+        {
+          "kind": "theorem",
+          "name": "exists_open_full_compact_neighbourhood",
+          "line": 153
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.Topology.FullFamilyFilling",
+      "path": "ComplexApproximation/Topology/FullFamilyFilling.lean",
+      "title": "FullFamilyFilling",
+      "imports": [
+        "ComplexApproximation.Topology.TwoPointNonseparation",
+        "ComplexApproximation.Topology.FullCompactSets"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "fill_eq_self_of_full_compact",
+          "line": 12
+        },
+        {
+          "kind": "theorem",
+          "name": "fill_union_finite_disjoint_full_family",
+          "line": 24
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.Topology.FullNeighborhoodFamily",
+      "path": "ComplexApproximation/Topology/FullNeighborhoodFamily.lean",
+      "title": "FullNeighborhoodFamily",
+      "imports": [
+        "ComplexApproximation.Topology.FullCompactSets",
+        "FunctionTheory.Topology.LocallyFiniteCompactFamily",
+        "FunctionTheory.Topology.BoundaryBarriers",
+        "Mathlib.Analysis.Normed.Module.Connected"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "exists_disjoint_escaping_open_full_neighborhoods",
+          "line": 15
+        },
+        {
+          "kind": "theorem",
+          "name": "exists_full_boundary_barrier_neighborhood",
+          "line": 41
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.Topology.FullSeparatedExhaustion",
+      "path": "ComplexApproximation/Topology/FullSeparatedExhaustion.lean",
+      "title": "FullSeparatedExhaustion",
+      "imports": [
+        "ComplexApproximation.Topology.FullFamilyFilling",
+        "FunctionTheory.Topology.LocallyFiniteCompactFamily",
+        "Mathlib.Topology.Compactness.LocallyFinite",
+        "Mathlib.Data.Nat.Find"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "exists_full_separating_exhaustion",
+          "line": 25
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.Topology.FullSubsetSeparation",
+      "path": "ComplexApproximation/Topology/FullSubsetSeparation.lean",
+      "title": "FullSubsetSeparation",
+      "imports": [
+        "ComplexApproximation.Topology.FullCompactSets",
+        "FunctionTheory.Topology.LocallyFiniteSeparation",
+        "FunctionTheory.Topology.LocallyFiniteCompactFamily"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "noBoundedComplementComponents_of_unbounded_connected_compl",
+          "line": 13
+        },
+        {
+          "kind": "theorem",
+          "name": "isConnected_compl_of_noBounded_disjoint_union",
+          "line": 21
+        },
+        {
+          "kind": "theorem",
+          "name": "not_isBounded_compl_locallyFinite_disjoint_compacts",
+          "line": 50
+        },
+        {
+          "kind": "theorem",
+          "name": "full_members_of_full_locallyFinite_disjoint_compacts",
+          "line": 70
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.Topology.HalfStripBands",
+      "path": "ComplexApproximation/Topology/HalfStripBands.lean",
+      "title": "A U-shaped band together with a nested half-strip",
+      "imports": [
+        "ComplexApproximation.HalfStripProjection",
+        "ComplexApproximation.Topology.HorizontalEscape"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "openRightHalfStrip",
+          "line": 14
+        },
+        {
+          "kind": "def",
+          "name": "halfStripBand",
+          "line": 16
+        },
+        {
+          "kind": "def",
+          "name": "bandAndHalfStrip",
+          "line": 19
+        },
+        {
+          "kind": "theorem",
+          "name": "isClosed_closedRightHalfStrip",
+          "line": 22
+        },
+        {
+          "kind": "theorem",
+          "name": "isOpen_openRightHalfStrip",
+          "line": 26
+        },
+        {
+          "kind": "theorem",
+          "name": "isClosed_bandAndHalfStrip",
+          "line": 30
+        },
+        {
+          "kind": "theorem",
+          "name": "noBoundedComplementComponents_bandAndHalfStrip",
+          "line": 47
+        },
+        {
+          "kind": "theorem",
+          "name": "isArakelian_bandAndHalfStrip",
+          "line": 92
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.Topology.HomeomorphicTail",
+      "path": "ComplexApproximation/Topology/HomeomorphicTail.lean",
+      "title": "HomeomorphicTail",
+      "imports": [
+        "ComplexApproximation.Topology.LocalHomeomorphNonseparation"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "HasHomeomorphicTailOn",
+          "line": 9
+        },
+        {
+          "kind": "theorem",
+          "name": "HasHomeomorphicTailOn.mono",
+          "line": 12
+        },
+        {
+          "kind": "theorem",
+          "name": "HasHomeomorphicTailOn.congr",
+          "line": 17
+        },
+        {
+          "kind": "theorem",
+          "name": "HasHomeomorphicTailOn.homeomorph_comp",
+          "line": 22
+        },
+        {
+          "kind": "theorem",
+          "name": "HasHomeomorphicTailOn.isClosed_image",
+          "line": 28
+        },
+        {
+          "kind": "theorem",
+          "name": "IsArakelian.image_openPartialHomeomorph_of_homeomorphic_tail",
+          "line": 56
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.Topology.HorizontalEscape",
+      "path": "ComplexApproximation/Topology/HorizontalEscape.lean",
+      "title": "Outward horizontal rays as witnesses of unbounded components -/",
+      "imports": [
+        "ComplexApproximation.Topology.HorizontalSets"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "not_isBounded_component_of_affine_ray",
+          "line": 10
+        },
+        {
+          "kind": "theorem",
+          "name": "exists_unbounded_horizontal_set",
+          "line": 32
+        },
+        {
+          "kind": "theorem",
+          "name": "not_isBounded_component_of_horizontal_escape",
+          "line": 59
+        },
+        {
+          "kind": "theorem",
+          "name": "not_isBounded_component_of_right_ray",
+          "line": 66
+        },
+        {
+          "kind": "theorem",
+          "name": "not_isBounded_component_of_left_ray",
+          "line": 83
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.Topology.HorizontalSets",
+      "path": "ComplexApproximation/Topology/HorizontalSets.lean",
+      "title": "Horizontal approximation sets",
+      "imports": [
+        "ComplexApproximation.Topology.Arakelian"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "horizontalLift",
+          "line": 14
+        },
+        {
+          "kind": "theorem",
+          "name": "norm_le_norm_add_real",
+          "line": 16
+        },
+        {
+          "kind": "theorem",
+          "name": "norm_le_norm_sub_real",
+          "line": 22
+        },
+        {
+          "kind": "theorem",
+          "name": "noBoundedComplementComponents_horizontalLift_union_closedBall",
+          "line": 28
+        },
+        {
+          "kind": "theorem",
+          "name": "noBoundedComplementComponents_horizontalLift",
+          "line": 64
+        },
+        {
+          "kind": "theorem",
+          "name": "isArakelian_horizontalLift",
+          "line": 69
+        },
+        {
+          "kind": "theorem",
+          "name": "isArakelian_horizontalLift_union_closedBall",
+          "line": 80
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.Topology.LocalHomeomorphNonseparation",
+      "path": "ComplexApproximation/Topology/LocalHomeomorphNonseparation.lean",
+      "title": "LocalHomeomorphNonseparation",
+      "imports": [
+        "ComplexApproximation.Topology.StripLocalisation",
+        "ComplexApproximation.Topology.ArakelianHomeomorphism",
+        "ComplexApproximation.Topology.ArakelianElementaryGeometry",
+        "Mathlib.Topology.OpenPartialHomeomorph.Basic"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "isConnected_compl_image_openPartialHomeomorph",
+          "line": 12
+        },
+        {
+          "kind": "theorem",
+          "name": "noBoundedComplementComponents_image_openPartialHomeomorph",
+          "line": 34
+        },
+        {
+          "kind": "theorem",
+          "name": "IsArakelian.image_openPartialHomeomorph_of_eqOn_off_compact",
+          "line": 81
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.Topology.NestedBandNonseparation",
+      "path": "ComplexApproximation/Topology/NestedBandNonseparation.lean",
+      "title": "NestedBandNonseparation",
+      "imports": [
+        "ComplexApproximation.Topology.Filling",
+        "ComplexApproximation.Topology.Nonseparation"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "isConnected_of_unbounded_components_of_connected_subset",
+          "line": 10
+        },
+        {
+          "kind": "theorem",
+          "name": "noBoundedComplementComponents_band_union_inner",
+          "line": 36
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.Topology.Nonseparation",
+      "path": "ComplexApproximation/Topology/Nonseparation.lean",
+      "title": "Nonseparation in plane domains",
+      "imports": [
+        "Mathlib.Analysis.Complex.BranchLogRoot",
+        "Mathlib.Analysis.Complex.CoveringMap",
+        "Mathlib.Analysis.Convex.Contractible",
+        "Mathlib.Topology.UrysohnsLemma",
+        "Mathlib.Topology.Piecewise",
+        "Mathlib.Topology.Connected.LocallyConnected",
+        "Mathlib.Topology.OpenPartialHomeomorph.Basic"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "frontier_component_subset_compl",
+          "line": 26
+        },
+        {
+          "kind": "theorem",
+          "name": "isPreconnected_compl_union_disjoint",
+          "line": 119
+        },
+        {
+          "kind": "theorem",
+          "name": "complement_component_meets_domain",
+          "line": 139
+        },
+        {
+          "kind": "theorem",
+          "name": "isConnected_compl_iff_domain_diff",
+          "line": 160
+        },
+        {
+          "kind": "theorem",
+          "name": "isConnected_compl_image_domain_homeomorph",
+          "line": 195
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.Topology.StraightBandArakelian",
+      "path": "ComplexApproximation/Topology/StraightBandArakelian.lean",
+      "title": "StraightBandArakelian",
+      "imports": [
+        "ComplexApproximation.Topology.HalfStripBands",
+        "ComplexApproximation.Topology.ArakelianHomeomorphism",
+        "ComplexApproximation.Topology.ArakelianElementaryGeometry",
+        "FunctionTheory.Conformal.StripBounds"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "isArakelian_of_straight_band_tail",
+          "line": 12
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.Topology.StraightTailComplement",
+      "path": "ComplexApproximation/Topology/StraightTailComplement.lean",
+      "title": "StraightTailComplement",
+      "imports": [
+        "ComplexApproximation.Topology.NestedBandNonseparation",
+        "Mathlib.Analysis.Complex.Convex",
+        "Mathlib.Analysis.Normed.Module.Connected"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "isConnected_compl_of_straight_tail",
+          "line": 11
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.Topology.StripArakelian",
+      "path": "ComplexApproximation/Topology/StripArakelian.lean",
+      "title": "Adding an Arakelian set inside one horizontal gap -/",
+      "imports": [
+        "ComplexApproximation.Topology.StripLocalisation"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "strip_boundary_collars",
+          "line": 10
+        },
+        {
+          "kind": "theorem",
+          "name": "unbounded_component_in_strip",
+          "line": 45
+        },
+        {
+          "kind": "theorem",
+          "name": "unbounded_component_outside_strip",
+          "line": 55
+        },
+        {
+          "kind": "theorem",
+          "name": "IsArakelian.union_horizontal_background",
+          "line": 71
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.Topology.StripLocalisation",
+      "path": "ComplexApproximation/Topology/StripLocalisation.lean",
+      "title": "Restricting escape to a horizontal strip",
+      "imports": [
+        "ComplexApproximation.Topology.HorizontalEscape",
+        "ComplexApproximation.Topology.Nonseparation"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "openHorizontalStrip",
+          "line": 16
+        },
+        {
+          "kind": "theorem",
+          "name": "isOpen_openHorizontalStrip",
+          "line": 18
+        },
+        {
+          "kind": "theorem",
+          "name": "unbounded_connected_meets_frontier",
+          "line": 22
+        },
+        {
+          "kind": "theorem",
+          "name": "unbounded_component_restrict_of_boundary_collars",
+          "line": 40
+        },
+        {
+          "kind": "theorem",
+          "name": "frontier_openHorizontalStrip",
+          "line": 73
+        }
+      ]
+    },
+    {
+      "module": "ComplexApproximation.Topology.TwoPointNonseparation",
+      "path": "ComplexApproximation/Topology/TwoPointNonseparation.lean",
+      "title": "The two-point disjoint Janiszewski theorem and filling disjoint compacta",
+      "imports": [
+        "ComplexApproximation.Topology.Nonseparation",
+        "ComplexApproximation.Topology.FilledContinua"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "mem_connectedComponentIn_compl_union_disjoint",
+          "line": 104
+        },
+        {
+          "kind": "theorem",
+          "name": "exterior_subset_component_of_not_mem_fill",
+          "line": 122
+        },
+        {
+          "kind": "theorem",
+          "name": "fill_union_disjoint_compacts",
+          "line": 137
+        }
+      ]
+    },
+    {
+      "module": "Runge",
+      "path": "Runge.lean",
+      "title": "Runge",
+      "imports": [
+        "Runge.Rational",
+        "Runge.PoleShift",
+        "Runge.RationalApproximation",
+        "Runge.Holomorphic",
+        "Runge.LocalDomain",
+        "Runge.PolynomialSeparation",
+        "Runge.Interpolation",
+        "Runge.InterpolationLocalDomain",
+        "Runge.MeromorphicInterpolation",
+        "Runge.MeromorphicInterpolationLocalDomain",
+        "Runge.MeromorphicIncrement",
+        "Runge.MarkedMeromorphicApproximation",
+        "Runge.DisjointMarkedApproximation",
+        "Runge.MarkedPolynomialApproximation",
+        "Runge.DisjointPolynomialApproximation",
+        "Runge.MeromorphicReturnApproximation",
+        "Runge.PolynomialReturnApproximation"
+      ],
+      "declarations": []
+    },
+    {
+      "module": "Runge.CauchyGreen",
+      "path": "Runge/CauchyGreen.lean",
+      "title": "The Cauchy–Riemann defect and the Cauchy–Green kernel",
+      "imports": [
+        "Runge.SmoothCutoff",
+        "Mathlib.Analysis.Complex.CauchyIntegral",
+        "Mathlib.Tactic.Ring"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "cauchyRiemannDefect",
+          "line": 17
+        },
+        {
+          "kind": "theorem",
+          "name": "cauchyRiemannDefect_eq_zero",
+          "line": 20
+        },
+        {
+          "kind": "theorem",
+          "name": "continuous_cauchyRiemannDefect",
+          "line": 27
+        },
+        {
+          "kind": "theorem",
+          "name": "hasCompactSupport_cauchyRiemannDefect",
+          "line": 33
+        },
+        {
+          "kind": "theorem",
+          "name": "cauchyRiemannDefect_congr",
+          "line": 37
+        },
+        {
+          "kind": "theorem",
+          "name": "cauchyRiemannDefect_mul",
+          "line": 41
+        },
+        {
+          "kind": "theorem",
+          "name": "cauchyRiemannDefect_sub_const",
+          "line": 51
+        },
+        {
+          "kind": "theorem",
+          "name": "cauchyRiemannDefect_dslope",
+          "line": 55
+        },
+        {
+          "kind": "theorem",
+          "name": "exists_extension_with_separated_defect",
+          "line": 67
+        },
+        {
+          "kind": "def",
+          "name": "rectangleBoundary",
+          "line": 80
+        },
+        {
+          "kind": "theorem",
+          "name": "rectangleBoundary_dslope",
+          "line": 88
+        }
+      ]
+    },
+    {
+      "module": "Runge.CauchyKernel",
+      "path": "Runge/CauchyKernel.lean",
+      "title": "Uniform rational approximation of a Cauchy area integral",
+      "imports": [
+        "Runge.UniformClosure",
+        "Mathlib.MeasureTheory.Integral.Bochner.Set",
+        "Mathlib.MeasureTheory.Measure.Lebesgue.Complex"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "continuous_cauchyKernel",
+          "line": 18
+        },
+        {
+          "kind": "def",
+          "name": "cauchyKernelFamily",
+          "line": 37
+        },
+        {
+          "kind": "theorem",
+          "name": "continuous_cauchyKernelFamily",
+          "line": 42
+        },
+        {
+          "kind": "theorem",
+          "name": "cauchyKernelFamily_mem",
+          "line": 47
+        },
+        {
+          "kind": "theorem",
+          "name": "hasCompactSupport_cauchyKernelFamily",
+          "line": 63
+        },
+        {
+          "kind": "theorem",
+          "name": "cauchyIntegral_uniform_rational_approximation",
+          "line": 76
+        }
+      ]
+    },
+    {
+      "module": "Runge.DisjointMarkedApproximation",
+      "path": "Runge/DisjointMarkedApproximation.lean",
+      "title": "DisjointMarkedApproximation",
+      "imports": [
+        "Runge.MarkedMeromorphicApproximation",
+        "FunctionTheory.Meromorphic.CompactGluing"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "meromorphic_approximation_on_disjoint_compacts",
+          "line": 14
+        }
+      ]
+    },
+    {
+      "module": "Runge.DisjointPolynomialApproximation",
+      "path": "Runge/DisjointPolynomialApproximation.lean",
+      "title": "DisjointPolynomialApproximation",
+      "imports": [
+        "Runge.MarkedPolynomialApproximation",
+        "FunctionTheory.Meromorphic.CompactGluing"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "polynomial_approximation_on_disjoint_compacts",
+          "line": 13
+        }
+      ]
+    },
+    {
+      "module": "Runge.Holomorphic",
+      "path": "Runge/Holomorphic.lean",
+      "title": "Runge's theorem stated using complex differentiability",
+      "imports": [
+        "Runge.PrescribedPoles"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "rational_approximation_of_holomorphic",
+          "line": 15
+        },
+        {
+          "kind": "theorem",
+          "name": "prescribed_poles_approximation_of_holomorphic",
+          "line": 22
+        },
+        {
+          "kind": "theorem",
+          "name": "polynomial_approximation_of_holomorphic",
+          "line": 31
+        }
+      ]
+    },
+    {
+      "module": "Runge.IntegralTransforms",
+      "path": "Runge/IntegralTransforms.lean",
+      "title": "IntegralTransforms",
+      "imports": [
+        "Runge.CauchyKernel",
+        "Runge.UniformOperations",
+        "Runge.CauchyGreen",
+        "Mathlib.MeasureTheory.Integral.DominatedConvergence"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "simpleKernel",
+          "line": 10
+        },
+        {
+          "kind": "theorem",
+          "name": "simpleKernel_mem",
+          "line": 17
+        },
+        {
+          "kind": "theorem",
+          "name": "continuous_simpleKernel_along",
+          "line": 25
+        },
+        {
+          "kind": "def",
+          "name": "lineCauchyTransform",
+          "line": 36
+        },
+        {
+          "kind": "theorem",
+          "name": "lineCauchyTransform_mem",
+          "line": 40
+        },
+        {
+          "kind": "theorem",
+          "name": "lineCauchyTransform_apply",
+          "line": 46
+        },
+        {
+          "kind": "theorem",
+          "name": "bottom_line_avoids",
+          "line": 52
+        },
+        {
+          "kind": "theorem",
+          "name": "top_line_avoids",
+          "line": 57
+        },
+        {
+          "kind": "theorem",
+          "name": "right_line_avoids",
+          "line": 62
+        },
+        {
+          "kind": "theorem",
+          "name": "left_line_avoids",
+          "line": 67
+        },
+        {
+          "kind": "def",
+          "name": "boundaryCauchyTransform",
+          "line": 72
+        },
+        {
+          "kind": "theorem",
+          "name": "boundaryCauchyTransform_mem",
+          "line": 79
+        },
+        {
+          "kind": "theorem",
+          "name": "boundaryCauchyTransform_apply",
+          "line": 89
+        },
+        {
+          "kind": "def",
+          "name": "areaCauchyTransform",
+          "line": 100
+        },
+        {
+          "kind": "theorem",
+          "name": "areaCauchyTransform_mem",
+          "line": 105
+        },
+        {
+          "kind": "theorem",
+          "name": "areaCauchyTransform_apply",
+          "line": 114
+        }
+      ]
+    },
+    {
+      "module": "Runge.Interpolation",
+      "path": "Runge/Interpolation.lean",
+      "title": "Runge approximation with finite jet interpolation",
+      "imports": [
+        "Runge.Holomorphic",
+        "FunctionTheory.Analytic.FiniteInterpolation"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "prescribed_poles_approximation_with_interpolation",
+          "line": 25
+        },
+        {
+          "kind": "theorem",
+          "name": "polynomial_approximation_with_interpolation",
+          "line": 72
+        },
+        {
+          "kind": "theorem",
+          "name": "rational_approximation_with_interpolation",
+          "line": 108
+        }
+      ]
+    },
+    {
+      "module": "Runge.InterpolationLocalDomain",
+      "path": "Runge/InterpolationLocalDomain.lean",
+      "title": "Finite interpolation for functions with their actual domain",
+      "imports": [
+        "Runge.Interpolation",
+        "Runge.LocalDomain"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "polynomial_approximation_with_interpolation_on_domain",
+          "line": 19
+        },
+        {
+          "kind": "theorem",
+          "name": "prescribed_poles_approximation_with_interpolation_on_domain",
+          "line": 33
+        },
+        {
+          "kind": "theorem",
+          "name": "rational_approximation_with_interpolation_on_domain",
+          "line": 52
+        }
+      ]
+    },
+    {
+      "module": "Runge.LocalDomain",
+      "path": "Runge/LocalDomain.lean",
+      "title": "Runge approximation for functions with their actual domain",
+      "imports": [
+        "Runge.Holomorphic",
+        "FunctionTheory.Holomorphic"
+      ],
+      "declarations": [
+        {
+          "kind": "abbrev",
+          "name": "IsHolomorphicFunctionOn",
+          "line": 20
+        },
+        {
+          "kind": "abbrev",
+          "name": "domainExtension",
+          "line": 23
+        },
+        {
+          "kind": "theorem",
+          "name": "domainExtension_apply",
+          "line": 25
+        },
+        {
+          "kind": "theorem",
+          "name": "IsHolomorphicFunctionOn.differentiableOn_extension",
+          "line": 29
+        },
+        {
+          "kind": "theorem",
+          "name": "isHolomorphicFunctionOn_restrict",
+          "line": 34
+        },
+        {
+          "kind": "def",
+          "name": "HasHolomorphicExtension",
+          "line": 40
+        },
+        {
+          "kind": "theorem",
+          "name": "rational_approximation_on_domain",
+          "line": 44
+        },
+        {
+          "kind": "theorem",
+          "name": "prescribed_poles_approximation_on_domain",
+          "line": 53
+        },
+        {
+          "kind": "theorem",
+          "name": "polynomial_approximation_on_domain",
+          "line": 65
+        },
+        {
+          "kind": "theorem",
+          "name": "rational_approximation_on_compact",
+          "line": 73
+        },
+        {
+          "kind": "theorem",
+          "name": "prescribed_poles_approximation_on_compact",
+          "line": 81
+        },
+        {
+          "kind": "theorem",
+          "name": "polynomial_approximation_on_compact",
+          "line": 92
+        }
+      ]
+    },
+    {
+      "module": "Runge.MarkedMeromorphicApproximation",
+      "path": "Runge/MarkedMeromorphicApproximation.lean",
+      "title": "MarkedMeromorphicApproximation",
+      "imports": [
+        "Runge.MeromorphicIncrement",
+        "FunctionTheory.Analytic.JetLocalDegree"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "meromorphic_approximation_preserving_marked_local_degrees",
+          "line": 14
+        }
+      ]
+    },
+    {
+      "module": "Runge.MarkedPolynomialApproximation",
+      "path": "Runge/MarkedPolynomialApproximation.lean",
+      "title": "MarkedPolynomialApproximation",
+      "imports": [
+        "Runge.Interpolation",
+        "FunctionTheory.Analytic.JetLocalDegree"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "polynomial_approximation_preserving_marked_local_degrees",
+          "line": 13
+        }
+      ]
+    },
+    {
+      "module": "Runge.MeromorphicIncrement",
+      "path": "Runge/MeromorphicIncrement.lean",
+      "title": "MeromorphicIncrement",
+      "imports": [
+        "Runge.MeromorphicInterpolation",
+        "FunctionTheory.Meromorphic.ApproximationRepresentative"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "meromorphic_approximation_with_analytic_increment",
+          "line": 15
+        }
+      ]
+    },
+    {
+      "module": "Runge.MeromorphicInterpolation",
+      "path": "Runge/MeromorphicInterpolation.lean",
+      "title": "MeromorphicInterpolation",
+      "imports": [
+        "Runge.Interpolation",
+        "FunctionTheory.Meromorphic.CompactDecomposition"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "meromorphic_prescribed_poles_approximation_with_interpolation",
+          "line": 19
+        }
+      ]
+    },
+    {
+      "module": "Runge.MeromorphicInterpolationLocalDomain",
+      "path": "Runge/MeromorphicInterpolationLocalDomain.lean",
+      "title": "MeromorphicInterpolationLocalDomain",
+      "imports": [
+        "Runge.MeromorphicInterpolation",
+        "FunctionTheory.Meromorphic.LocalDomain"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "meromorphic_prescribed_poles_approximation_with_interpolation_on_domain",
+          "line": 14
+        }
+      ]
+    },
+    {
+      "module": "Runge.MeromorphicReturnApproximation",
+      "path": "Runge/MeromorphicReturnApproximation.lean",
+      "title": "MeromorphicReturnApproximation",
+      "imports": [
+        "Runge.MarkedMeromorphicApproximation",
+        "FunctionTheory.Analytic.FiniteOrbitMarks",
+        "FunctionTheory.Topology.IterateApproximationDomains",
+        "Mathlib.Data.Finset.Lattice.Fold"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "meromorphic_approximation_preserving_finite_returns",
+          "line": 17
+        }
+      ]
+    },
+    {
+      "module": "Runge.PoleAlgebra",
+      "path": "Runge/PoleAlgebra.lean",
+      "title": "PoleAlgebra",
+      "imports": [
+        "Runge.PoleTopology",
+        "Mathlib.Analysis.Complex.Polynomial.Basic"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "poleAlgebra",
+          "line": 10
+        },
+        {
+          "kind": "def",
+          "name": "poleClosure",
+          "line": 41
+        },
+        {
+          "kind": "theorem",
+          "name": "polynomialMap_mem_poleAlgebra",
+          "line": 44
+        },
+        {
+          "kind": "theorem",
+          "name": "poleKernel_mem_poleAlgebra",
+          "line": 48
+        },
+        {
+          "kind": "theorem",
+          "name": "mem_poleClosure_iff",
+          "line": 62
+        },
+        {
+          "kind": "theorem",
+          "name": "poleAlgebra_empty_polynomial",
+          "line": 82
+        },
+        {
+          "kind": "theorem",
+          "name": "mem_poleClosure_empty_iff",
+          "line": 95
+        }
+      ]
+    },
+    {
+      "module": "Runge.PoleShift",
+      "path": "Runge/PoleShift.lean",
+      "title": "A quantitative step in moving a pole",
+      "imports": [
+        "Runge.Rational",
+        "Mathlib.Analysis.Complex.Basic",
+        "Mathlib.Analysis.SpecificLimits.Basic",
+        "Mathlib.Tactic.FieldSimp",
+        "Mathlib.Tactic.Ring"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "polePartial",
+          "line": 21
+        },
+        {
+          "kind": "theorem",
+          "name": "inv_sub_difference",
+          "line": 25
+        },
+        {
+          "kind": "theorem",
+          "name": "polePartial_remainder",
+          "line": 31
+        },
+        {
+          "kind": "theorem",
+          "name": "norm_polePartial_error_le",
+          "line": 52
+        },
+        {
+          "kind": "theorem",
+          "name": "exists_polePartial_uniform_error",
+          "line": 68
+        },
+        {
+          "kind": "theorem",
+          "name": "polePartial_isRationalOn",
+          "line": 84
+        },
+        {
+          "kind": "theorem",
+          "name": "pole_shift_uniform_approximation",
+          "line": 95
+        }
+      ]
+    },
+    {
+      "module": "Runge.PoleTopology",
+      "path": "Runge/PoleTopology.lean",
+      "title": "PoleTopology",
+      "imports": [
+        "Runge.PoleShift",
+        "Runge.UniformClosure",
+        "Mathlib.Topology.Connected.Clopen"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "polynomialMap",
+          "line": 10
+        },
+        {
+          "kind": "theorem",
+          "name": "polynomialMap_apply",
+          "line": 13
+        },
+        {
+          "kind": "def",
+          "name": "poleKernel",
+          "line": 16
+        },
+        {
+          "kind": "theorem",
+          "name": "poleKernel_apply",
+          "line": 22
+        },
+        {
+          "kind": "theorem",
+          "name": "continuous_poleKernel",
+          "line": 25
+        },
+        {
+          "kind": "def",
+          "name": "polePartialMap",
+          "line": 37
+        },
+        {
+          "kind": "theorem",
+          "name": "polePartialMap_apply",
+          "line": 41
+        },
+        {
+          "kind": "theorem",
+          "name": "polePartialMap_mem",
+          "line": 45
+        },
+        {
+          "kind": "theorem",
+          "name": "poleKernel_mem_of_near",
+          "line": 55
+        },
+        {
+          "kind": "def",
+          "name": "goodPoles",
+          "line": 70
+        },
+        {
+          "kind": "theorem",
+          "name": "isClosed_goodPoles",
+          "line": 73
+        },
+        {
+          "kind": "theorem",
+          "name": "isOpen_goodPoles",
+          "line": 77
+        },
+        {
+          "kind": "theorem",
+          "name": "isClopen_goodPoles",
+          "line": 95
+        }
+      ]
+    },
+    {
+      "module": "Runge.PolesAtInfinity",
+      "path": "Runge/PolesAtInfinity.lean",
+      "title": "PolesAtInfinity",
+      "imports": [
+        "Runge.PoleTopology"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "polynomialPolePartial",
+          "line": 8
+        },
+        {
+          "kind": "theorem",
+          "name": "polynomialPolePartial_eval",
+          "line": 11
+        },
+        {
+          "kind": "theorem",
+          "name": "polynomialPolePartial_remainder",
+          "line": 16
+        },
+        {
+          "kind": "theorem",
+          "name": "exists_polynomialPolePartial_uniform",
+          "line": 32
+        },
+        {
+          "kind": "theorem",
+          "name": "poleKernel_mem_of_large_norm",
+          "line": 57
+        }
+      ]
+    },
+    {
+      "module": "Runge.PolynomialReturnApproximation",
+      "path": "Runge/PolynomialReturnApproximation.lean",
+      "title": "PolynomialReturnApproximation",
+      "imports": [
+        "Runge.MarkedPolynomialApproximation",
+        "FunctionTheory.Analytic.FiniteOrbitMarks",
+        "FunctionTheory.Topology.IterateApproximationDomains",
+        "Mathlib.Data.Finset.Lattice.Fold"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "polynomial_approximation_preserving_finite_returns",
+          "line": 17
+        }
+      ]
+    },
+    {
+      "module": "Runge.PolynomialSeparation",
+      "path": "Runge/PolynomialSeparation.lean",
+      "title": "Polynomial separation of full compact sets",
+      "imports": [
+        "Runge.Holomorphic"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "exists_polynomial_separator",
+          "line": 15
+        }
+      ]
+    },
+    {
+      "module": "Runge.PrescribedPoles",
+      "path": "Runge/PrescribedPoles.lean",
+      "title": "PrescribedPoles",
+      "imports": [
+        "Runge.RationalGeneration",
+        "Runge.PolesAtInfinity",
+        "Runge.RationalApproximation"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "MeetsBoundedComplementComponents",
+          "line": 11
+        },
+        {
+          "kind": "theorem",
+          "name": "poleKernel_mem_of_same_component",
+          "line": 15
+        },
+        {
+          "kind": "theorem",
+          "name": "all_poleKernels_mem_poleClosure",
+          "line": 29
+        },
+        {
+          "kind": "theorem",
+          "name": "rationalClosure_le_poleClosure",
+          "line": 52
+        },
+        {
+          "kind": "theorem",
+          "name": "analytic_mem_poleClosure",
+          "line": 59
+        },
+        {
+          "kind": "theorem",
+          "name": "prescribed_poles_approximation",
+          "line": 73
+        },
+        {
+          "kind": "theorem",
+          "name": "meets_empty_of_connected_complement",
+          "line": 85
+        },
+        {
+          "kind": "theorem",
+          "name": "polynomial_approximation",
+          "line": 94
+        }
+      ]
+    },
+    {
+      "module": "Runge.Rational",
+      "path": "Runge/Rational.lean",
+      "title": "Rational functions without poles on a set",
+      "imports": [
+        "Mathlib.Basic.Complex.Basic",
+        "Mathlib.Algebra.Polynomial.Eval.Defs",
+        "Mathlib.Algebra.BigOperators.Field"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "IsRationalOn",
+          "line": 20
+        },
+        {
+          "kind": "theorem",
+          "name": "polynomial",
+          "line": 26
+        },
+        {
+          "kind": "theorem",
+          "name": "const",
+          "line": 30
+        },
+        {
+          "kind": "theorem",
+          "name": "add",
+          "line": 33
+        },
+        {
+          "kind": "theorem",
+          "name": "mul",
+          "line": 46
+        },
+        {
+          "kind": "theorem",
+          "name": "sum",
+          "line": 59
+        },
+        {
+          "kind": "theorem",
+          "name": "pow",
+          "line": 70
+        },
+        {
+          "kind": "theorem",
+          "name": "simplePole",
+          "line": 77
+        },
+        {
+          "kind": "theorem",
+          "name": "exists_polynomials_sum_simplePoles",
+          "line": 90
+        }
+      ]
+    },
+    {
+      "module": "Runge.RationalApproximation",
+      "path": "Runge/RationalApproximation.lean",
+      "title": "RationalApproximation",
+      "imports": [
+        "Runge.IntegralTransforms",
+        "Runge.RectangleKernel"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "rectangleBoundary_const_mul",
+          "line": 9
+        },
+        {
+          "kind": "theorem",
+          "name": "dslope_eq_of_value_zero",
+          "line": 14
+        },
+        {
+          "kind": "theorem",
+          "name": "rectangleBoundary_dslope_of_support",
+          "line": 19
+        },
+        {
+          "kind": "theorem",
+          "name": "exists_rectangle_containing_compact",
+          "line": 63
+        },
+        {
+          "kind": "theorem",
+          "name": "smooth_extension_mem_rationalClosure",
+          "line": 72
+        },
+        {
+          "kind": "theorem",
+          "name": "rational_approximation",
+          "line": 118
+        }
+      ]
+    },
+    {
+      "module": "Runge.RationalGeneration",
+      "path": "Runge/RationalGeneration.lean",
+      "title": "RationalGeneration",
+      "imports": [
+        "Runge.PoleAlgebra"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "inverse_factor_product_mem",
+          "line": 7
+        },
+        {
+          "kind": "theorem",
+          "name": "rationalAlgebra_le_of_polynomials_and_kernels",
+          "line": 22
+        },
+        {
+          "kind": "theorem",
+          "name": "rationalClosure_le_of_polynomials_and_kernels",
+          "line": 46
+        }
+      ]
+    },
+    {
+      "module": "Runge.RectangleKernel",
+      "path": "Runge/RectangleKernel.lean",
+      "title": "RectangleKernel",
+      "imports": [
+        "Runge.CauchyGreen"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "complex_ne_zero_of_im_neg",
+          "line": 7
+        },
+        {
+          "kind": "theorem",
+          "name": "complex_ne_zero_of_im_pos",
+          "line": 11
+        },
+        {
+          "kind": "theorem",
+          "name": "complex_ne_zero_of_re_pos",
+          "line": 15
+        },
+        {
+          "kind": "theorem",
+          "name": "complex_ne_zero_of_re_neg",
+          "line": 19
+        },
+        {
+          "kind": "theorem",
+          "name": "inv_im_pos_of_im_neg",
+          "line": 23
+        },
+        {
+          "kind": "theorem",
+          "name": "neg_inv_im_pos_of_im_pos",
+          "line": 27
+        },
+        {
+          "kind": "theorem",
+          "name": "inv_re_pos_of_re_pos",
+          "line": 31
+        },
+        {
+          "kind": "theorem",
+          "name": "neg_inv_re_pos_of_re_neg",
+          "line": 35
+        },
+        {
+          "kind": "theorem",
+          "name": "rectangleKernel_im_pos",
+          "line": 39
+        },
+        {
+          "kind": "theorem",
+          "name": "rectangleKernel_ne_zero",
+          "line": 86
+        }
+      ]
+    },
+    {
+      "module": "Runge.SmoothCutoff",
+      "path": "Runge/SmoothCutoff.lean",
+      "title": "Compatibility names for smooth cutoff and compact extension",
+      "imports": [
+        "FunctionTheory.Smooth.Cutoff"
+      ],
+      "declarations": []
+    },
+    {
+      "module": "Runge.UniformClosure",
+      "path": "Runge/UniformClosure.lean",
+      "title": "Uniform closure of rational functions",
+      "imports": [
+        "Runge.Rational",
+        "Mathlib.Topology.Algebra.Polynomial",
+        "Mathlib.Topology.ContinuousMap.Compact",
+        "Mathlib.Topology.Algebra.Algebra",
+        "Mathlib.MeasureTheory.Integral.Bochner.ContinuousLinearMap"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "rationalAlgebra",
+          "line": 19
+        },
+        {
+          "kind": "def",
+          "name": "rationalMap",
+          "line": 45
+        },
+        {
+          "kind": "theorem",
+          "name": "rationalMap_mem",
+          "line": 51
+        },
+        {
+          "kind": "def",
+          "name": "rationalClosure",
+          "line": 56
+        },
+        {
+          "kind": "theorem",
+          "name": "mem_rationalClosure_iff",
+          "line": 59
+        },
+        {
+          "kind": "theorem",
+          "name": "integral_mem_closedSubmodule",
+          "line": 80
+        },
+        {
+          "kind": "theorem",
+          "name": "integral_mem_rationalClosure",
+          "line": 92
+        },
+        {
+          "kind": "theorem",
+          "name": "integral_uniform_rational_approximation",
+          "line": 102
+        }
+      ]
+    },
+    {
+      "module": "Runge.UniformOperations",
+      "path": "Runge/UniformOperations.lean",
+      "title": "UniformOperations",
+      "imports": [
+        "Runge.UniformClosure",
+        "Mathlib.Topology.ContinuousMap.Units",
+        "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "ringInverse_apply",
+          "line": 9
+        },
+        {
+          "kind": "theorem",
+          "name": "ringInverse_mem_rationalAlgebra",
+          "line": 16
+        },
+        {
+          "kind": "theorem",
+          "name": "ringInverse_mem_rationalClosure",
+          "line": 32
+        },
+        {
+          "kind": "theorem",
+          "name": "intervalIntegral_mem_rationalClosure",
+          "line": 42
+        },
+        {
+          "kind": "theorem",
+          "name": "continuousMap_intervalIntegral_apply",
+          "line": 49
+        }
+      ]
+    },
+    {
+      "module": "RungeTargets",
+      "path": "RungeTargets.lean",
+      "title": "RungeTargets",
+      "imports": [
+        "RungeTargets.Statements"
+      ],
+      "declarations": []
+    },
+    {
+      "module": "RungeTargets.Statements",
+      "path": "RungeTargets/Statements.lean",
+      "title": "Original target statements, now proved",
+      "imports": [
+        "Mathlib.Analysis.Analytic.Basic",
+        "Mathlib.Analysis.Complex.Basic",
+        "Runge.Holomorphic"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "rational_approximation",
+          "line": 18
+        },
+        {
+          "kind": "theorem",
+          "name": "polynomial_approximation",
+          "line": 26
+        },
+        {
+          "kind": "theorem",
+          "name": "prescribed_poles_approximation",
+          "line": 34
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "ComplexApproximation.Topology.FilledContinua",
+      "to": "ComplexApproximation",
+      "external": false
+    },
+    {
+      "from": "Runge",
+      "to": "ComplexApproximation",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.MainTheorems",
+      "to": "ComplexApproximation",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.Nonseparation",
+      "to": "ComplexApproximation",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.HorizontalSets",
+      "to": "ComplexApproximation",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.ArakelianHomeomorphism",
+      "to": "ComplexApproximation",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.StripArakelian",
+      "to": "ComplexApproximation",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.HalfStripBands",
+      "to": "ComplexApproximation",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.HalfStripExtension",
+      "to": "ComplexApproximation",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.HalfStripApproximation",
+      "to": "ComplexApproximation",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.HalfStripMargins",
+      "to": "ComplexApproximation",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.HalfStripTail",
+      "to": "ComplexApproximation",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.HorizontalStripExtension",
+      "to": "ComplexApproximation",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Conformal.KernelConvergence",
+      "to": "ComplexApproximation",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.FillingStraightChannels",
+      "to": "ComplexApproximation",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.FillingInterior",
+      "to": "ComplexApproximation",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.FillingCoordinateBounds",
+      "to": "ComplexApproximation",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.ArakelianElementaryGeometry",
+      "to": "ComplexApproximation",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.FillingDecreasingIntersection",
+      "to": "ComplexApproximation",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.NestedBandNonseparation",
+      "to": "ComplexApproximation",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.StraightTailComplement",
+      "to": "ComplexApproximation",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.StraightBandArakelian",
+      "to": "ComplexApproximation",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.LocalHomeomorphNonseparation",
+      "to": "ComplexApproximation",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.HomeomorphicTail",
+      "to": "ComplexApproximation",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.ConformalArakelian",
+      "to": "ComplexApproximation",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.FullCompactSets",
+      "to": "ComplexApproximation",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.EscapingFullFamily",
+      "to": "ComplexApproximation",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.FullSubsetSeparation",
+      "to": "ComplexApproximation",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.TwoPointNonseparation",
+      "to": "ComplexApproximation",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.FullFamilyFilling",
+      "to": "ComplexApproximation",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.FullSeparatedExhaustion",
+      "to": "ComplexApproximation",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.FullNeighborhoodFamily",
+      "to": "ComplexApproximation",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.ArakelianStep",
+      "to": "ComplexApproximation.Arakelian",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.HolomorphicLimit",
+      "to": "ComplexApproximation.Arakelian",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.Arakelian",
+      "to": "ComplexApproximation.Arakelian",
+      "external": false
+    },
+    {
+      "from": "Mathlib.Analysis.SpecificLimits.Normed",
+      "to": "ComplexApproximation.Arakelian",
+      "external": true
+    },
+    {
+      "from": "ComplexApproximation.Arakelian",
+      "to": "ComplexApproximation.ArakelianGluing",
+      "external": false
+    },
+    {
+      "from": "Mathlib.Topology.Separation.Regular",
+      "to": "ComplexApproximation.ArakelianGluing",
+      "external": true
+    },
+    {
+      "from": "ComplexApproximation.Arakelian",
+      "to": "ComplexApproximation.ArakelianLocalDomain",
+      "external": false
+    },
+    {
+      "from": "Runge.LocalDomain",
+      "to": "ComplexApproximation.ArakelianLocalDomain",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.CorrectedInterpolation",
+      "to": "ComplexApproximation.ArakelianStep",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.Filling",
+      "to": "ComplexApproximation.ArakelianStep",
+      "external": false
+    },
+    {
+      "from": "Runge.Holomorphic",
+      "to": "ComplexApproximation.ArakelianStep",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.HalfStripProjection",
+      "to": "ComplexApproximation.BiLipschitzExtension",
+      "external": false
+    },
+    {
+      "from": "Mathlib.Analysis.Calculus.InverseFunctionTheorem.FiniteDimensional",
+      "to": "ComplexApproximation.BiLipschitzExtension",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Analysis.Calculus.MeanValue",
+      "to": "ComplexApproximation.BiLipschitzExtension",
+      "external": true
+    },
+    {
+      "from": "Mathlib.LinearAlgebra.Complex.FiniteDimensional",
+      "to": "ComplexApproximation.BiLipschitzExtension",
+      "external": true
+    },
+    {
+      "from": "ComplexApproximation.CauchyTransform",
+      "to": "ComplexApproximation.CauchyPompeiu",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.CauchyRectangle",
+      "to": "ComplexApproximation.CauchyPompeiu",
+      "external": false
+    },
+    {
+      "from": "Runge.RationalApproximation",
+      "to": "ComplexApproximation.CauchyPompeiu",
+      "external": false
+    },
+    {
+      "from": "Runge.RectangleKernel",
+      "to": "ComplexApproximation.CauchyRectangle",
+      "external": false
+    },
+    {
+      "from": "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "to": "ComplexApproximation.CauchyRectangle",
+      "external": true
+    },
+    {
+      "from": "ComplexApproximation.CauchyTransformBounds",
+      "to": "ComplexApproximation.CauchyRiemannGluing",
+      "external": false
+    },
+    {
+      "from": "Runge.CauchyGreen",
+      "to": "ComplexApproximation.CauchyTransform",
+      "external": false
+    },
+    {
+      "from": "Mathlib.Analysis.Calculus.ContDiff.Convolution",
+      "to": "ComplexApproximation.CauchyTransform",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Analysis.SpecialFunctions.Pow.Integral",
+      "to": "ComplexApproximation.CauchyTransform",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Analysis.Complex.Conformal",
+      "to": "ComplexApproximation.CauchyTransform",
+      "external": true
+    },
+    {
+      "from": "ComplexApproximation.CauchyPompeiu",
+      "to": "ComplexApproximation.CauchyTransformBounds",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Conformal.RiemannInverseBounds",
+      "to": "ComplexApproximation.Conformal.BoundedKernel",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Conformal.KernelSubsequence",
+      "to": "ComplexApproximation.Conformal.BoundedKernel",
+      "external": false
+    },
+    {
+      "from": "FunctionTheory.Conformal.BoundedKernel",
+      "to": "ComplexApproximation.Conformal.BoundedKernel",
+      "external": true
+    },
+    {
+      "from": "FunctionTheory.Conformal.ImaginaryBounds",
+      "to": "ComplexApproximation.Conformal.ImaginaryBounds",
+      "external": true
+    },
+    {
+      "from": "ComplexApproximation.Conformal.KernelImage",
+      "to": "ComplexApproximation.Conformal.InverseLimits",
+      "external": false
+    },
+    {
+      "from": "FunctionTheory.Conformal.InverseLimits",
+      "to": "ComplexApproximation.Conformal.InverseLimits",
+      "external": true
+    },
+    {
+      "from": "ComplexApproximation.Conformal.BoundedKernel",
+      "to": "ComplexApproximation.Conformal.KernelConvergence",
+      "external": false
+    },
+    {
+      "from": "FunctionTheory.Conformal.KernelConvergence",
+      "to": "ComplexApproximation.Conformal.KernelConvergence",
+      "external": true
+    },
+    {
+      "from": "ComplexApproximation.Conformal.KernelSeparation",
+      "to": "ComplexApproximation.Conformal.KernelImage",
+      "external": false
+    },
+    {
+      "from": "FunctionTheory.Conformal.KernelImage",
+      "to": "ComplexApproximation.Conformal.KernelImage",
+      "external": true
+    },
+    {
+      "from": "FunctionTheory.Conformal.KernelSeparation",
+      "to": "ComplexApproximation.Conformal.KernelSeparation",
+      "external": true
+    },
+    {
+      "from": "ComplexApproximation.Conformal.InverseLimits",
+      "to": "ComplexApproximation.Conformal.KernelSubsequence",
+      "external": false
+    },
+    {
+      "from": "FunctionTheory.Conformal.KernelSubsequence",
+      "to": "ComplexApproximation.Conformal.KernelSubsequence",
+      "external": true
+    },
+    {
+      "from": "ComplexApproximation.Conformal.RiemannMapping",
+      "to": "ComplexApproximation.Conformal.RiemannInverseBounds",
+      "external": false
+    },
+    {
+      "from": "FunctionTheory.Conformal.RiemannInverseBounds",
+      "to": "ComplexApproximation.Conformal.RiemannInverseBounds",
+      "external": true
+    },
+    {
+      "from": "Runge.LocalDomain",
+      "to": "ComplexApproximation.Conformal.RiemannMapping",
+      "external": false
+    },
+    {
+      "from": "FunctionTheory.Conformal.RiemannMapping",
+      "to": "ComplexApproximation.Conformal.RiemannMapping",
+      "external": true
+    },
+    {
+      "from": "ComplexApproximation.SmoothLocalization",
+      "to": "ComplexApproximation.CorrectedInterpolation",
+      "external": false
+    },
+    {
+      "from": "Mathlib.Analysis.SpecialFunctions.Complex.LogDeriv",
+      "to": "ComplexApproximation.HalfStrip",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Analysis.SpecialFunctions.Trigonometric.DerivHyp",
+      "to": "ComplexApproximation.HalfStrip",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Analysis.SpecialFunctions.Arsinh",
+      "to": "ComplexApproximation.HalfStrip",
+      "external": true
+    },
+    {
+      "from": "ComplexApproximation.ArakelianGluing",
+      "to": "ComplexApproximation.HalfStripApproximation",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.ArakelianHomeomorphism",
+      "to": "ComplexApproximation.HalfStripApproximation",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.StripArakelian",
+      "to": "ComplexApproximation.HalfStripApproximation",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.HalfStripBands",
+      "to": "ComplexApproximation.HalfStripApproximation",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.HalfStrip",
+      "to": "ComplexApproximation.HalfStripBounds",
+      "external": false
+    },
+    {
+      "from": "Mathlib.Analysis.Calculus.MeanValue",
+      "to": "ComplexApproximation.HalfStripBounds",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Analysis.Complex.Convex",
+      "to": "ComplexApproximation.HalfStripBounds",
+      "external": true
+    },
+    {
+      "from": "ComplexApproximation.BiLipschitzExtension",
+      "to": "ComplexApproximation.HalfStripExtension",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.HalfStripBounds",
+      "to": "ComplexApproximation.HalfStripExtension",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.HalfStripBands",
+      "to": "ComplexApproximation.HalfStripMargins",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.HalfStripExtension",
+      "to": "ComplexApproximation.HalfStripNormalisation",
+      "external": false
+    },
+    {
+      "from": "Mathlib.Topology.Order.Compact",
+      "to": "ComplexApproximation.HalfStripNormalisation",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Analysis.Complex.Convex",
+      "to": "ComplexApproximation.HalfStripProjection",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Topology.MetricSpace.Lipschitz",
+      "to": "ComplexApproximation.HalfStripProjection",
+      "external": true
+    },
+    {
+      "from": "ComplexApproximation.HalfStripNormalisation",
+      "to": "ComplexApproximation.HalfStripTail",
+      "external": false
+    },
+    {
+      "from": "Mathlib.Analysis.Complex.LocallyUniformLimit",
+      "to": "ComplexApproximation.HolomorphicLimit",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Topology.Algebra.InfiniteSum.Real",
+      "to": "ComplexApproximation.HolomorphicLimit",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Tactic.Abel",
+      "to": "ComplexApproximation.HolomorphicLimit",
+      "external": true
+    },
+    {
+      "from": "ComplexApproximation.BiLipschitzExtension",
+      "to": "ComplexApproximation.HorizontalStripExtension",
+      "external": false
+    },
+    {
+      "from": "Runge.LocalDomain",
+      "to": "ComplexApproximation.MainTheorems",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.Nonseparation",
+      "to": "ComplexApproximation.MainTheorems",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.ArakelianLocalDomain",
+      "to": "ComplexApproximation.MainTheorems",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.CauchyRiemannGluing",
+      "to": "ComplexApproximation.SmoothLocalization",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.Filling",
+      "to": "ComplexApproximation.Topology.Arakelian",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.HorizontalEscape",
+      "to": "ComplexApproximation.Topology.ArakelianElementaryGeometry",
+      "external": false
+    },
+    {
+      "from": "Mathlib.Analysis.Convex.Star",
+      "to": "ComplexApproximation.Topology.ArakelianElementaryGeometry",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Analysis.Convex.Topology",
+      "to": "ComplexApproximation.Topology.ArakelianElementaryGeometry",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Analysis.Normed.Module.Convex",
+      "to": "ComplexApproximation.Topology.ArakelianElementaryGeometry",
+      "external": true
+    },
+    {
+      "from": "ComplexApproximation.Topology.Arakelian",
+      "to": "ComplexApproximation.Topology.ArakelianHomeomorphism",
+      "external": false
+    },
+    {
+      "from": "Mathlib.Topology.Homeomorph.Lemmas",
+      "to": "ComplexApproximation.Topology.ArakelianHomeomorphism",
+      "external": true
+    },
+    {
+      "from": "ComplexApproximation.Topology.HomeomorphicTail",
+      "to": "ComplexApproximation.Topology.ConformalArakelian",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.BiLipschitzExtension",
+      "to": "ComplexApproximation.Topology.ConformalArakelian",
+      "external": false
+    },
+    {
+      "from": "FunctionTheory.Conformal.StripProper",
+      "to": "ComplexApproximation.Topology.ConformalArakelian",
+      "external": true
+    },
+    {
+      "from": "ComplexApproximation.Topology.FullCompactSets",
+      "to": "ComplexApproximation.Topology.EscapingFullFamily",
+      "external": false
+    },
+    {
+      "from": "FunctionTheory.Topology.LocallyFiniteCompactFamily",
+      "to": "ComplexApproximation.Topology.EscapingFullFamily",
+      "external": true
+    },
+    {
+      "from": "ComplexApproximation.Topology.Filling",
+      "to": "ComplexApproximation.Topology.FilledContinua",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.Nonseparation",
+      "to": "ComplexApproximation.Topology.FilledContinua",
+      "external": false
+    },
+    {
+      "from": "TauCeti.Analysis.Normed.Module.FilledHull",
+      "to": "ComplexApproximation.Topology.FilledContinua",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Topology.Connected.Clopen",
+      "to": "ComplexApproximation.Topology.FilledContinua",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Analysis.Complex.Convex",
+      "to": "ComplexApproximation.Topology.Filling",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Analysis.SpecialFunctions.Complex.Log",
+      "to": "ComplexApproximation.Topology.Filling",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Topology.Connected.LocallyConnected",
+      "to": "ComplexApproximation.Topology.Filling",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Analysis.LocallyConvex.WithSeminorms",
+      "to": "ComplexApproximation.Topology.Filling",
+      "external": true
+    },
+    {
+      "from": "ComplexApproximation.Topology.FillingStraightChannels",
+      "to": "ComplexApproximation.Topology.FillingCoordinateBounds",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.FilledContinua",
+      "to": "ComplexApproximation.Topology.FillingDecreasingIntersection",
+      "external": false
+    },
+    {
+      "from": "Mathlib.Topology.Connected.LocallyPathConnected",
+      "to": "ComplexApproximation.Topology.FillingDecreasingIntersection",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Analysis.Normed.Module.Connected",
+      "to": "ComplexApproximation.Topology.FillingDecreasingIntersection",
+      "external": true
+    },
+    {
+      "from": "ComplexApproximation.Topology.FilledContinua",
+      "to": "ComplexApproximation.Topology.FillingInterior",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.HorizontalEscape",
+      "to": "ComplexApproximation.Topology.FillingStraightChannels",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.Filling",
+      "to": "ComplexApproximation.Topology.FillingStraightChannels",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.Filling",
+      "to": "ComplexApproximation.Topology.FullCompactSets",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.Nonseparation",
+      "to": "ComplexApproximation.Topology.FullCompactSets",
+      "external": false
+    },
+    {
+      "from": "Runge.PolynomialSeparation",
+      "to": "ComplexApproximation.Topology.FullCompactSets",
+      "external": false
+    },
+    {
+      "from": "Mathlib.Analysis.Complex.AbsMax",
+      "to": "ComplexApproximation.Topology.FullCompactSets",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Analysis.Calculus.Deriv.Polynomial",
+      "to": "ComplexApproximation.Topology.FullCompactSets",
+      "external": true
+    },
+    {
+      "from": "ComplexApproximation.Topology.TwoPointNonseparation",
+      "to": "ComplexApproximation.Topology.FullFamilyFilling",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.FullCompactSets",
+      "to": "ComplexApproximation.Topology.FullFamilyFilling",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.FullCompactSets",
+      "to": "ComplexApproximation.Topology.FullNeighborhoodFamily",
+      "external": false
+    },
+    {
+      "from": "FunctionTheory.Topology.LocallyFiniteCompactFamily",
+      "to": "ComplexApproximation.Topology.FullNeighborhoodFamily",
+      "external": true
+    },
+    {
+      "from": "FunctionTheory.Topology.BoundaryBarriers",
+      "to": "ComplexApproximation.Topology.FullNeighborhoodFamily",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Analysis.Normed.Module.Connected",
+      "to": "ComplexApproximation.Topology.FullNeighborhoodFamily",
+      "external": true
+    },
+    {
+      "from": "ComplexApproximation.Topology.FullFamilyFilling",
+      "to": "ComplexApproximation.Topology.FullSeparatedExhaustion",
+      "external": false
+    },
+    {
+      "from": "FunctionTheory.Topology.LocallyFiniteCompactFamily",
+      "to": "ComplexApproximation.Topology.FullSeparatedExhaustion",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Topology.Compactness.LocallyFinite",
+      "to": "ComplexApproximation.Topology.FullSeparatedExhaustion",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Data.Nat.Find",
+      "to": "ComplexApproximation.Topology.FullSeparatedExhaustion",
+      "external": true
+    },
+    {
+      "from": "ComplexApproximation.Topology.FullCompactSets",
+      "to": "ComplexApproximation.Topology.FullSubsetSeparation",
+      "external": false
+    },
+    {
+      "from": "FunctionTheory.Topology.LocallyFiniteSeparation",
+      "to": "ComplexApproximation.Topology.FullSubsetSeparation",
+      "external": true
+    },
+    {
+      "from": "FunctionTheory.Topology.LocallyFiniteCompactFamily",
+      "to": "ComplexApproximation.Topology.FullSubsetSeparation",
+      "external": true
+    },
+    {
+      "from": "ComplexApproximation.HalfStripProjection",
+      "to": "ComplexApproximation.Topology.HalfStripBands",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.HorizontalEscape",
+      "to": "ComplexApproximation.Topology.HalfStripBands",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.LocalHomeomorphNonseparation",
+      "to": "ComplexApproximation.Topology.HomeomorphicTail",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.HorizontalSets",
+      "to": "ComplexApproximation.Topology.HorizontalEscape",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.Arakelian",
+      "to": "ComplexApproximation.Topology.HorizontalSets",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.StripLocalisation",
+      "to": "ComplexApproximation.Topology.LocalHomeomorphNonseparation",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.ArakelianHomeomorphism",
+      "to": "ComplexApproximation.Topology.LocalHomeomorphNonseparation",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.ArakelianElementaryGeometry",
+      "to": "ComplexApproximation.Topology.LocalHomeomorphNonseparation",
+      "external": false
+    },
+    {
+      "from": "Mathlib.Topology.OpenPartialHomeomorph.Basic",
+      "to": "ComplexApproximation.Topology.LocalHomeomorphNonseparation",
+      "external": true
+    },
+    {
+      "from": "ComplexApproximation.Topology.Filling",
+      "to": "ComplexApproximation.Topology.NestedBandNonseparation",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.Nonseparation",
+      "to": "ComplexApproximation.Topology.NestedBandNonseparation",
+      "external": false
+    },
+    {
+      "from": "Mathlib.Analysis.Complex.BranchLogRoot",
+      "to": "ComplexApproximation.Topology.Nonseparation",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Analysis.Complex.CoveringMap",
+      "to": "ComplexApproximation.Topology.Nonseparation",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Analysis.Convex.Contractible",
+      "to": "ComplexApproximation.Topology.Nonseparation",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Topology.UrysohnsLemma",
+      "to": "ComplexApproximation.Topology.Nonseparation",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Topology.Piecewise",
+      "to": "ComplexApproximation.Topology.Nonseparation",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Topology.Connected.LocallyConnected",
+      "to": "ComplexApproximation.Topology.Nonseparation",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Topology.OpenPartialHomeomorph.Basic",
+      "to": "ComplexApproximation.Topology.Nonseparation",
+      "external": true
+    },
+    {
+      "from": "ComplexApproximation.Topology.HalfStripBands",
+      "to": "ComplexApproximation.Topology.StraightBandArakelian",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.ArakelianHomeomorphism",
+      "to": "ComplexApproximation.Topology.StraightBandArakelian",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.ArakelianElementaryGeometry",
+      "to": "ComplexApproximation.Topology.StraightBandArakelian",
+      "external": false
+    },
+    {
+      "from": "FunctionTheory.Conformal.StripBounds",
+      "to": "ComplexApproximation.Topology.StraightBandArakelian",
+      "external": true
+    },
+    {
+      "from": "ComplexApproximation.Topology.NestedBandNonseparation",
+      "to": "ComplexApproximation.Topology.StraightTailComplement",
+      "external": false
+    },
+    {
+      "from": "Mathlib.Analysis.Complex.Convex",
+      "to": "ComplexApproximation.Topology.StraightTailComplement",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Analysis.Normed.Module.Connected",
+      "to": "ComplexApproximation.Topology.StraightTailComplement",
+      "external": true
+    },
+    {
+      "from": "ComplexApproximation.Topology.StripLocalisation",
+      "to": "ComplexApproximation.Topology.StripArakelian",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.HorizontalEscape",
+      "to": "ComplexApproximation.Topology.StripLocalisation",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.Nonseparation",
+      "to": "ComplexApproximation.Topology.StripLocalisation",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.Nonseparation",
+      "to": "ComplexApproximation.Topology.TwoPointNonseparation",
+      "external": false
+    },
+    {
+      "from": "ComplexApproximation.Topology.FilledContinua",
+      "to": "ComplexApproximation.Topology.TwoPointNonseparation",
+      "external": false
+    },
+    {
+      "from": "Runge.Rational",
+      "to": "Runge",
+      "external": false
+    },
+    {
+      "from": "Runge.PoleShift",
+      "to": "Runge",
+      "external": false
+    },
+    {
+      "from": "Runge.RationalApproximation",
+      "to": "Runge",
+      "external": false
+    },
+    {
+      "from": "Runge.Holomorphic",
+      "to": "Runge",
+      "external": false
+    },
+    {
+      "from": "Runge.LocalDomain",
+      "to": "Runge",
+      "external": false
+    },
+    {
+      "from": "Runge.PolynomialSeparation",
+      "to": "Runge",
+      "external": false
+    },
+    {
+      "from": "Runge.Interpolation",
+      "to": "Runge",
+      "external": false
+    },
+    {
+      "from": "Runge.InterpolationLocalDomain",
+      "to": "Runge",
+      "external": false
+    },
+    {
+      "from": "Runge.MeromorphicInterpolation",
+      "to": "Runge",
+      "external": false
+    },
+    {
+      "from": "Runge.MeromorphicInterpolationLocalDomain",
+      "to": "Runge",
+      "external": false
+    },
+    {
+      "from": "Runge.MeromorphicIncrement",
+      "to": "Runge",
+      "external": false
+    },
+    {
+      "from": "Runge.MarkedMeromorphicApproximation",
+      "to": "Runge",
+      "external": false
+    },
+    {
+      "from": "Runge.DisjointMarkedApproximation",
+      "to": "Runge",
+      "external": false
+    },
+    {
+      "from": "Runge.MarkedPolynomialApproximation",
+      "to": "Runge",
+      "external": false
+    },
+    {
+      "from": "Runge.DisjointPolynomialApproximation",
+      "to": "Runge",
+      "external": false
+    },
+    {
+      "from": "Runge.MeromorphicReturnApproximation",
+      "to": "Runge",
+      "external": false
+    },
+    {
+      "from": "Runge.PolynomialReturnApproximation",
+      "to": "Runge",
+      "external": false
+    },
+    {
+      "from": "Runge.SmoothCutoff",
+      "to": "Runge.CauchyGreen",
+      "external": false
+    },
+    {
+      "from": "Mathlib.Analysis.Complex.CauchyIntegral",
+      "to": "Runge.CauchyGreen",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Tactic.Ring",
+      "to": "Runge.CauchyGreen",
+      "external": true
+    },
+    {
+      "from": "Runge.UniformClosure",
+      "to": "Runge.CauchyKernel",
+      "external": false
+    },
+    {
+      "from": "Mathlib.MeasureTheory.Integral.Bochner.Set",
+      "to": "Runge.CauchyKernel",
+      "external": true
+    },
+    {
+      "from": "Mathlib.MeasureTheory.Measure.Lebesgue.Complex",
+      "to": "Runge.CauchyKernel",
+      "external": true
+    },
+    {
+      "from": "Runge.MarkedMeromorphicApproximation",
+      "to": "Runge.DisjointMarkedApproximation",
+      "external": false
+    },
+    {
+      "from": "FunctionTheory.Meromorphic.CompactGluing",
+      "to": "Runge.DisjointMarkedApproximation",
+      "external": true
+    },
+    {
+      "from": "Runge.MarkedPolynomialApproximation",
+      "to": "Runge.DisjointPolynomialApproximation",
+      "external": false
+    },
+    {
+      "from": "FunctionTheory.Meromorphic.CompactGluing",
+      "to": "Runge.DisjointPolynomialApproximation",
+      "external": true
+    },
+    {
+      "from": "Runge.PrescribedPoles",
+      "to": "Runge.Holomorphic",
+      "external": false
+    },
+    {
+      "from": "Runge.CauchyKernel",
+      "to": "Runge.IntegralTransforms",
+      "external": false
+    },
+    {
+      "from": "Runge.UniformOperations",
+      "to": "Runge.IntegralTransforms",
+      "external": false
+    },
+    {
+      "from": "Runge.CauchyGreen",
+      "to": "Runge.IntegralTransforms",
+      "external": false
+    },
+    {
+      "from": "Mathlib.MeasureTheory.Integral.DominatedConvergence",
+      "to": "Runge.IntegralTransforms",
+      "external": true
+    },
+    {
+      "from": "Runge.Holomorphic",
+      "to": "Runge.Interpolation",
+      "external": false
+    },
+    {
+      "from": "FunctionTheory.Analytic.FiniteInterpolation",
+      "to": "Runge.Interpolation",
+      "external": true
+    },
+    {
+      "from": "Runge.Interpolation",
+      "to": "Runge.InterpolationLocalDomain",
+      "external": false
+    },
+    {
+      "from": "Runge.LocalDomain",
+      "to": "Runge.InterpolationLocalDomain",
+      "external": false
+    },
+    {
+      "from": "Runge.Holomorphic",
+      "to": "Runge.LocalDomain",
+      "external": false
+    },
+    {
+      "from": "FunctionTheory.Holomorphic",
+      "to": "Runge.LocalDomain",
+      "external": true
+    },
+    {
+      "from": "Runge.MeromorphicIncrement",
+      "to": "Runge.MarkedMeromorphicApproximation",
+      "external": false
+    },
+    {
+      "from": "FunctionTheory.Analytic.JetLocalDegree",
+      "to": "Runge.MarkedMeromorphicApproximation",
+      "external": true
+    },
+    {
+      "from": "Runge.Interpolation",
+      "to": "Runge.MarkedPolynomialApproximation",
+      "external": false
+    },
+    {
+      "from": "FunctionTheory.Analytic.JetLocalDegree",
+      "to": "Runge.MarkedPolynomialApproximation",
+      "external": true
+    },
+    {
+      "from": "Runge.MeromorphicInterpolation",
+      "to": "Runge.MeromorphicIncrement",
+      "external": false
+    },
+    {
+      "from": "FunctionTheory.Meromorphic.ApproximationRepresentative",
+      "to": "Runge.MeromorphicIncrement",
+      "external": true
+    },
+    {
+      "from": "Runge.Interpolation",
+      "to": "Runge.MeromorphicInterpolation",
+      "external": false
+    },
+    {
+      "from": "FunctionTheory.Meromorphic.CompactDecomposition",
+      "to": "Runge.MeromorphicInterpolation",
+      "external": true
+    },
+    {
+      "from": "Runge.MeromorphicInterpolation",
+      "to": "Runge.MeromorphicInterpolationLocalDomain",
+      "external": false
+    },
+    {
+      "from": "FunctionTheory.Meromorphic.LocalDomain",
+      "to": "Runge.MeromorphicInterpolationLocalDomain",
+      "external": true
+    },
+    {
+      "from": "Runge.MarkedMeromorphicApproximation",
+      "to": "Runge.MeromorphicReturnApproximation",
+      "external": false
+    },
+    {
+      "from": "FunctionTheory.Analytic.FiniteOrbitMarks",
+      "to": "Runge.MeromorphicReturnApproximation",
+      "external": true
+    },
+    {
+      "from": "FunctionTheory.Topology.IterateApproximationDomains",
+      "to": "Runge.MeromorphicReturnApproximation",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Data.Finset.Lattice.Fold",
+      "to": "Runge.MeromorphicReturnApproximation",
+      "external": true
+    },
+    {
+      "from": "Runge.PoleTopology",
+      "to": "Runge.PoleAlgebra",
+      "external": false
+    },
+    {
+      "from": "Mathlib.Analysis.Complex.Polynomial.Basic",
+      "to": "Runge.PoleAlgebra",
+      "external": true
+    },
+    {
+      "from": "Runge.Rational",
+      "to": "Runge.PoleShift",
+      "external": false
+    },
+    {
+      "from": "Mathlib.Analysis.Complex.Basic",
+      "to": "Runge.PoleShift",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Analysis.SpecificLimits.Basic",
+      "to": "Runge.PoleShift",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Tactic.FieldSimp",
+      "to": "Runge.PoleShift",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Tactic.Ring",
+      "to": "Runge.PoleShift",
+      "external": true
+    },
+    {
+      "from": "Runge.PoleShift",
+      "to": "Runge.PoleTopology",
+      "external": false
+    },
+    {
+      "from": "Runge.UniformClosure",
+      "to": "Runge.PoleTopology",
+      "external": false
+    },
+    {
+      "from": "Mathlib.Topology.Connected.Clopen",
+      "to": "Runge.PoleTopology",
+      "external": true
+    },
+    {
+      "from": "Runge.PoleTopology",
+      "to": "Runge.PolesAtInfinity",
+      "external": false
+    },
+    {
+      "from": "Runge.MarkedPolynomialApproximation",
+      "to": "Runge.PolynomialReturnApproximation",
+      "external": false
+    },
+    {
+      "from": "FunctionTheory.Analytic.FiniteOrbitMarks",
+      "to": "Runge.PolynomialReturnApproximation",
+      "external": true
+    },
+    {
+      "from": "FunctionTheory.Topology.IterateApproximationDomains",
+      "to": "Runge.PolynomialReturnApproximation",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Data.Finset.Lattice.Fold",
+      "to": "Runge.PolynomialReturnApproximation",
+      "external": true
+    },
+    {
+      "from": "Runge.Holomorphic",
+      "to": "Runge.PolynomialSeparation",
+      "external": false
+    },
+    {
+      "from": "Runge.RationalGeneration",
+      "to": "Runge.PrescribedPoles",
+      "external": false
+    },
+    {
+      "from": "Runge.PolesAtInfinity",
+      "to": "Runge.PrescribedPoles",
+      "external": false
+    },
+    {
+      "from": "Runge.RationalApproximation",
+      "to": "Runge.PrescribedPoles",
+      "external": false
+    },
+    {
+      "from": "Mathlib.Basic.Complex.Basic",
+      "to": "Runge.Rational",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Algebra.Polynomial.Eval.Defs",
+      "to": "Runge.Rational",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Algebra.BigOperators.Field",
+      "to": "Runge.Rational",
+      "external": true
+    },
+    {
+      "from": "Runge.IntegralTransforms",
+      "to": "Runge.RationalApproximation",
+      "external": false
+    },
+    {
+      "from": "Runge.RectangleKernel",
+      "to": "Runge.RationalApproximation",
+      "external": false
+    },
+    {
+      "from": "Runge.PoleAlgebra",
+      "to": "Runge.RationalGeneration",
+      "external": false
+    },
+    {
+      "from": "Runge.CauchyGreen",
+      "to": "Runge.RectangleKernel",
+      "external": false
+    },
+    {
+      "from": "FunctionTheory.Smooth.Cutoff",
+      "to": "Runge.SmoothCutoff",
+      "external": true
+    },
+    {
+      "from": "Runge.Rational",
+      "to": "Runge.UniformClosure",
+      "external": false
+    },
+    {
+      "from": "Mathlib.Topology.Algebra.Polynomial",
+      "to": "Runge.UniformClosure",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Topology.ContinuousMap.Compact",
+      "to": "Runge.UniformClosure",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Topology.Algebra.Algebra",
+      "to": "Runge.UniformClosure",
+      "external": true
+    },
+    {
+      "from": "Mathlib.MeasureTheory.Integral.Bochner.ContinuousLinearMap",
+      "to": "Runge.UniformClosure",
+      "external": true
+    },
+    {
+      "from": "Runge.UniformClosure",
+      "to": "Runge.UniformOperations",
+      "external": false
+    },
+    {
+      "from": "Mathlib.Topology.ContinuousMap.Units",
+      "to": "Runge.UniformOperations",
+      "external": true
+    },
+    {
+      "from": "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "to": "Runge.UniformOperations",
+      "external": true
+    },
+    {
+      "from": "RungeTargets.Statements",
+      "to": "RungeTargets",
+      "external": false
+    },
+    {
+      "from": "Mathlib.Analysis.Analytic.Basic",
+      "to": "RungeTargets.Statements",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Analysis.Complex.Basic",
+      "to": "RungeTargets.Statements",
+      "external": true
+    },
+    {
+      "from": "Runge.Holomorphic",
+      "to": "RungeTargets.Statements",
+      "external": false
+    }
+  ]
+}

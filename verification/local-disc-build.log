@@ -1,0 +1,11 @@
+⚠ [3531/3544] Replayed BoundedWanderingDomains.HolomorphicLifting
+warning: BoundedWanderingDomains/HolomorphicLifting.lean:53:43: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+ℹ [3533/3544] Replayed BoundedWanderingDomains.TrappedComponentCovering
+info: BoundedWanderingDomains/TrappedComponentCovering.lean:142:0: 'AreaDeficit.eventually_deriv_ne_zero_on_disjoint_domains' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/TrappedComponentCovering.lean:143:0: 'AreaDeficit.closure_component_preimage_trapped' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3636/3644] Replayed BoundedWanderingDomains.ChartDiscs
+info: BoundedWanderingDomains/ChartDiscs.lean:88:0: 'AreaDeficit.mapsTo_chartDisc' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [3648/3648] Built BoundedWanderingDomains.LocalDiscInjectivity (14s)
+Build completed successfully (3648 jobs).

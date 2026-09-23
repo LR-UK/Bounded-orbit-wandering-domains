@@ -21,7 +21,7 @@ def run(args, output):
     if result.returncode:
         raise RuntimeError(f"{args} failed; see verification/{output}")
 
-run(["build", "Submission", "Challenge"], "build.log")
+run(["build", "BoundedWanderingDomains", "Submission", "Challenge"], "build.log")
 run(["env", "lean", "verification/Axioms.lean"], "axioms.log")
 for which in ("Challenge", "Solution"):
     run(["env", "lean", f"verification/Export{which}.lean"],
@@ -55,7 +55,7 @@ spec = importlib.util.spec_from_file_location(
     "foundation_verify", ROOT / "dependencies/FunctionTheory/scripts/verify.py")
 lexer = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(lexer)
-sources = sorted(ROOT.glob("*.lean"))
+sources = sorted([*ROOT.glob("*.lean"), *(ROOT / "BoundedWanderingDomains").rglob("*.lean")])
 for source in sources:
     code = lexer.without_lean_comments(source.read_text())
     holes = re.findall(r"\b(?:sorry|admit)\b", code)
@@ -72,13 +72,16 @@ assert len(text.splitlines()) <= 300 and len(text.encode()) <= 32 * 1024
 for module in imports:
     rel = Path(*module.split(".")).with_suffix(".lean")
     for base in (ROOT, ROOT / "dependencies/FunctionTheory",
-                 ROOT / "dependencies/ComplexDynamics"):
+                 ROOT / "dependencies/ComplexDynamics",
+                 ROOT / "dependencies/ComplexApproximation",
+                 ROOT / "dependencies/EremenkosConjecture",
+                 ROOT / "dependencies/EremenkosConjecture/vendor/schoenflies"):
         assert not (base / rel).exists(), f"Shadowed Mathlib import: {base / rel}"
 assert "import Challenge" not in (ROOT / "Solution.lean").read_text()
 assert set(CONFIG["permitted_axioms"]) == ALLOWED and CONFIG["enable_nanoda"] is True
 
 report = {
-    "result": "passed", "project_version": "0.8.0",
+    "result": "passed", "project_version": "0.12.0",
     "lean": (ROOT / "lean-toolchain").read_text().strip(),
     "mathlib": "5ed2965256430c3649e86755f9576b54eca72435",
     "curvature": -1, "area_normalisation": "divide by 2*pi",
@@ -87,7 +90,7 @@ report = {
     "comparison": "elaborated expressions; binder display names and metadata erased",
     "axiom_reports": {n: [a.strip() for a in ax.split(",") if a.strip()]
                       for n, ax in reports},
-    "root_lean_sources": len(sources),
+    "project_lean_sources": len(sources),
     "challenge_lines": len(text.splitlines()), "challenge_bytes": len(text.encode()),
     "challenge_intentional_holes": 2, "challenge_direct_imports": imports,
     "source_sha256": {p.relative_to(ROOT).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
@@ -99,4 +102,3 @@ report = {
 (OUT / "submission.json").write_text(json.dumps(report, indent=2) + "\n")
 print(json.dumps({k: report[k] for k in ("result", "theorem_types_compared",
       "definition_types_and_bodies_compared", "challenge_lines", "challenge_bytes")}))
-

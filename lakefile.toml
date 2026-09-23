@@ -1,10 +1,18 @@
 name = "area_deficit"
-version = "0.8.0"
+version = "0.12.0"
 defaultTargets = ["Submission"]
+
+[[require]]
+name = "complexApproximation"
+path = "dependencies/ComplexApproximation"
+
+[[require]]
+name = "eremenkosConjecture"
+path = "dependencies/EremenkosConjecture"
 
 [[lean_lib]]
 name = "Submission"
-roots = ["SubmissionDefinitions", "EntireFatouBridge", "Solution"]
+roots = ["Solution"]
 
 [[lean_lib]]
 name = "Challenge"
@@ -23,5 +31,4 @@ name = "complexDynamics"
 path = "dependencies/ComplexDynamics"
 
 [[lean_lib]]
-name = "AreaDeficit"
-roots = ["AreaDeficit", "AreaDeficitCore", "Regularisation", "GreenIdentity", "LaplacianChain", "LogBarrier", "PunctureRegularisation", "PositivePart", "DensityDeficit", "WanderingSets", "AreaCancellation", "AreaLimits", "LocalPunctures", "LocalTrappedTopology", "AreaTransport", "DiscMetric", "DiscArea", "DiscRestriction", "CompactDeficit", "HolomorphicTransport", "ExceptionalSets", "TotalAreaCost", "LocalCovering", "HolomorphicLifting", "UnitDiscShift", "RiemannMappingFull", "NormalFamilies", "ShrinkingImages", "UniformLocalLifting", "FinitePunctureMetricInput", "CompactCutoff", "PunctureDensityLimits", "ConformalLaplacian", "LocalMetricComparison", "LocalIntegratedDeficit", "LocalPunctureSequence", "ConditionalPositiveArea", "DiscSchwarzPick", "OmittedPairCompactness", "InteriorDensityLimit", "BarrierComponents", "ChartAreaLimit", "ChartDiscs", "LocalDynamicalAreaBound", "ConditionalWanderingDomains"]
+name = "BoundedWanderingDomains"

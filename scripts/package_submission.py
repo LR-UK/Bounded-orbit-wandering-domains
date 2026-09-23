@@ -4,9 +4,15 @@ import hashlib
 import json
 import os
 import zipfile
+from audit_attribution import audit
 
 root = Path(__file__).resolve().parents[1]
 assert json.loads((root / "verification/submission.json").read_text())["result"] == "passed"
+moves = json.loads((root / "verification/moved-sources.json").read_text())
+for old_path, new_path in moves.items():
+    assert not (root / old_path).exists(), f"Obsolete source remains: {old_path}"
+    assert (root / new_path).is_file(), f"Missing moved source: {new_path}"
+attribution = audit()
 excluded = {".lake", ".git", "__pycache__"}
 files = []
 for directory, dirs, names in os.walk(root, followlinks=True):
@@ -26,7 +32,9 @@ with zipfile.ZipFile(archive, "w", zipfile.ZIP_DEFLATED) as z:
         z.write(path, Path(root.name) / path.relative_to(root))
 with zipfile.ZipFile(archive) as z:
     assert z.testzip() is None
-    for dep in ("FunctionTheory", "ComplexDynamics"):
+    for rel, digest in attribution["attribution_files"].items():
+        assert hashlib.sha256(z.read(f"{root.name}/{rel}")).hexdigest() == digest, rel
+    for dep in ("FunctionTheory", "ComplexDynamics", "ComplexApproximation", "EremenkosConjecture"):
         assert f"{root.name}/dependencies/{dep}/lakefile.toml" in z.namelist()
     for info in z.infolist():
         assert (info.external_attr >> 16) & 0o170000 != 0o120000, info.filename

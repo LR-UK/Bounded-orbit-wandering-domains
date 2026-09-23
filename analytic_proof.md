@@ -51,7 +51,7 @@ Since log t≤t for t>0 and |z−p|≤R+|p|, we have L≤0 on S∖F.
 Every summand is harmonic away from its centre, so ΔL=0 off F.
 Near p∈F write L(z)=log|z−p|+H_p(z), where H_p is smooth and bounded
 near p. Therefore L(z)→−∞ as z→p, z≠p. If F is empty, L=0.
-These facts are proved in LogBarrier.lean.
+These facts are proved in BoundedWanderingDomains/LogBarrier.lean.
 
 ## 2. A regularisation that vanishes near each puncture
 
@@ -64,7 +64,7 @@ Let q be smooth and nondecreasing, with q=0 on (−∞,0], q=1 on
 
 The fundamental theorem of calculus gives β′=q and β″=q′≥0.
 Thus β is smooth, vanishes for t≤0, and 0≤β(t)≤t₊. These facts
-and the derivative identities are proved in Regularisation.lean.
+and the derivative identities are proved in BoundedWanderingDomains/Regularisation.lean.
 
 For n≥0 put A_n=n+1 and, off F, define
 
@@ -84,7 +84,7 @@ these regularity statements follow from the hypotheses.
 The neighbourhood may depend on n; no uniform neighbourhood is
 required. This construction avoids a separate removable-singularity
 theorem and avoids integration by parts on a region with small holes.
-See PunctureRegularisation.lean.
+See BoundedWanderingDomains/PunctureRegularisation.lean.
 
 ## 3. Pointwise estimates
 
@@ -107,7 +107,7 @@ The second-order chain rule and ΔL=0 give, off F,
 
 At a puncture in S, b_n vanishes on a neighbourhood, so Δb_n=0=s_n.
 The inequality therefore holds throughout S.
-LaplacianChain.lean proves the chain rule for mathlib's actual
+BoundedWanderingDomains/LaplacianChain.lean proves the chain rule for mathlib's actual
 Euclidean Laplacian on ℂ, using Fréchet derivatives in directions 1,i.
 
 ## 4. Green's identity and a uniform integral bound
@@ -120,7 +120,7 @@ parts twice in each real coordinate gives
 =\int_{\mathbb C}b_n\Delta\chi\,dA.
 \]
 
-GreenIdentity.lean derives this from mathlib's directional integration
+BoundedWanderingDomains/GreenIdentity.lean derives this from mathlib's directional integration
 by parts. It also derives integrability of the products involved:
 they are continuous and compactly supported. The support of Δχ
 is contained in S. There is no boundary term, and regularity of
@@ -167,7 +167,7 @@ Strict monotonicity of log and positivity of a,b show that u and
 a²−b² have the same sign. The required sign conditions follow.
 The bound for u₊ also provides the local upper bounds at punctures.
 Applying the general result proves the displayed density estimate.
-This deduction is checked in DensityDeficit.lean.
+This deduction is checked in BoundedWanderingDomains/DensityDeficit.lean.
 
 For a family of density pairs with a common M and fixed χ, the
 right-hand side is uniform. Obtaining that common M from Poincaré
