@@ -3,6 +3,10 @@ Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
+
+/- Compatibility update, 23 September 2026: current Mathlib names and Lean
+linter suggestions; original mathematical statements and attribution retained. -/
+
 import Schoenflies.LocalGrid
 import Schoenflies.Graph.Ear
 import Schoenflies.Line
@@ -184,7 +188,7 @@ theorem sameLinks_overlayGraph (pieces : List Piece) (points : List Plane) :
     Graph.SameLinks (pieceListGraph (subdivide pieces points)) (overlayGraph pieces points) := by
   constructor
   · ext v
-    simp only [pieceListGraph_vertexSet, overlayGraph_vertexSet, endSet, mem_setOf_eq]
+    simp only [pieceListGraph_vertexSet, overlayGraph_vertexSet, endSet, mem_ofPred_eq]
     constructor
     · rintro ⟨P, hP, hv⟩
       exact ⟨orientPiece P, mem_overlayPieces.2 ⟨P, hP, rfl⟩, (orientPiece_ends P v).2 hv⟩
@@ -346,12 +350,12 @@ theorem isPathGraph_single {q₀ q₁ : Plane} (hne : q₀ ≠ q₁) :
     · rintro ⟨P, hP, hx⟩
       rw [List.mem_singleton] at hP
       subst hP
-      simp only [Graph.walkVertices, mem_insert_iff, Graph.coveredVertices, mem_setOf_eq]
+      simp only [Graph.walkVertices, mem_insert_iff, Graph.coveredVertices, mem_ofPred_eq]
       rcases hx with h | h
       · exact Or.inl h
       · exact Or.inr ⟨(q₀, q₁), hmem, pieceListGraph_inc hmem (Or.inr h)⟩
     · intro hx
-      simp only [Graph.walkVertices, mem_insert_iff, Graph.coveredVertices, mem_setOf_eq] at hx
+      simp only [Graph.walkVertices, mem_insert_iff, Graph.coveredVertices, mem_ofPred_eq] at hx
       rcases hx with h | ⟨e, he, hinc⟩
       · exact ⟨(q₀, q₁), hmem, Or.inl h⟩
       · rw [List.mem_singleton] at he

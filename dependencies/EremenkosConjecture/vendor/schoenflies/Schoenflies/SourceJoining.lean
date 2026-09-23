@@ -3,6 +3,10 @@ Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
+
+/- Compatibility update, 23 September 2026: current Mathlib names and Lean
+linter suggestions; original mathematical statements and attribution retained. -/
+
 import Schoenflies.OverlayExtension
 import Schoenflies.StageTransition
 
@@ -24,7 +28,7 @@ open scoped Graph
 
 namespace Schoenflies
 
-open Graph
+open _root_.Schoenflies.Graph
 
 variable {γ : Type*} {S₀ : CellStructure γ}
   {srcOuter srcDom tgtOuter tgtDom : Set Plane}
@@ -92,10 +96,10 @@ theorem head_getLast_mem_endSet_segsOf {vs : List Plane} (hvs : vs ≠ [])
       | v :: rest =>
           rw [segsOf_cons_cons]
           by_cases huv : u = v
-          · rw [if_pos huv]
+          · rw [ite_eq_left huv]
             subst u
             exact ih (List.cons_ne_nil v rest) hne
-          · rw [if_neg huv]
+          · rw [ite_eq_right huv]
             constructor
             · exact ⟨(u, v), List.mem_cons_self, Or.inl rfl⟩
             · by_cases hvlast : v = (v :: rest).getLast (List.cons_ne_nil v rest)
@@ -299,7 +303,7 @@ theorem drawing_of_inner {e : γ} (he : e ∈ E(u.innerGraph)) :
     u.drawing e =
       (Q.joinedCrosscutOverlay J p s epsilon extra joins).relabelDrawing
         u.name segmentDrawing e := by
-  rw [drawing, if_neg]
+  rw [drawing, ite_eq_right]
   obtain ⟨R, hR, rfl⟩ := he
   exact fun heOuter => u.name_fresh R hR
     (P.str.mem_cells_of_mem_edgeSet (P.str.outerGraph_le.edgeSet_mono heOuter))
@@ -636,8 +640,8 @@ theorem exists_join_trace (hs : 0 < s) (hJ : J.Nondeg)
       _root_.Graph.edgesCover u.drawing D = cover joins := by
   let T := _root_.Graph.traceGraph u.graph u.drawing (cover joins)
   have hTle : T ≤ u.graph := _root_.Graph.traceGraph_le _
-  letI : u.graph.Finite := u.graph_finite
-  letI : T.Finite := _root_.Graph.Finite.of_le hTle
+  let : u.graph.Finite := u.graph_finite
+  let : T.Finite := _root_.Graph.Finite.of_le hTle
   have hpoint : _root_.Graph.pointSet T u.drawing = cover joins :=
     u.joinTrace_pointSet hs hJ hJgeom hwindow hjoins hjoinsOpen
   have hxGraph : x ∈ V(u.graph) := u.joinEnds_subset_graph hs hJ hjoins hxEnd

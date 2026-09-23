@@ -3,6 +3,10 @@ Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
+
+/- Compatibility update, 23 September 2026: current Mathlib names and Lean
+linter suggestions; original mathematical statements and attribution retained. -/
+
 import Schoenflies.Graph.Cycle
 import Schoenflies.Graph.Degree
 
@@ -241,7 +245,7 @@ theorem IsWalk.deleteVerts {X : Set α} (h : G.IsWalk u W v)
   refine h.anti deleteVerts_le ?_ fun g hg ↦ ?_
   · exact ⟨h.left_mem, hX u mem_walkVertices_self⟩
   · obtain ⟨p, q, hpq⟩ := exists_isLink_of_mem_edgeSet (h.edge_mem hg)
-    simp only [edgeSet_deleteVerts, Set.mem_setOf_eq]
+    simp only [edgeSet_deleteVerts, Set.mem_ofPred_eq]
     exact ⟨p, q, hpq, hX p (mem_walkVertices_of_mem_covered ⟨g, hg, hpq.inc_left⟩),
       hX q (mem_walkVertices_of_mem_covered ⟨g, hg, hpq.inc_right⟩)⟩
 
@@ -249,7 +253,7 @@ theorem IsWalk.deleteVerts {X : Set α} (h : G.IsWalk u W v)
 theorem edgeSet_deleteVerts_singleton (G : Graph α β) (x : α) :
     E(G.deleteVerts {x}) = E(G) \ G.incidenceSet x := by
   ext g
-  simp only [edgeSet_deleteVerts, Set.mem_setOf_eq, Set.mem_sdiff, mem_incidenceSet,
+  simp only [edgeSet_deleteVerts, Set.mem_ofPred_eq, Set.mem_sdiff, mem_incidenceSet,
     Set.mem_singleton_iff]
   refine ⟨fun ⟨p, q, hpq, hp, hq⟩ ↦ ⟨hpq.edge_mem, fun hinc ↦ ?_⟩, fun ⟨hg, hninc⟩ ↦ ?_⟩
   · rcases hinc.eq_or_eq_of_isLink hpq with rfl | rfl
@@ -282,16 +286,16 @@ private theorem isTree_edge_count_aux :
   induction n with
   | zero =>
     intro G hfin hle hT
-    haveI := hfin
+    have := hfin
     obtain ⟨a, ha⟩ := hT.connected.nonempty
     have := (Set.ncard_pos (finite_vertexSet G)).2 ⟨a, ha⟩
     omega
   | succ n ih =>
     intro G hfin hle hT
-    haveI := hfin
+    have := hfin
     by_cases h2 : 2 ≤ V(G).ncard
     · obtain ⟨x, hx⟩ := hT.has_leaf h2
-      haveI : (G.deleteVerts {x}).Finite := Finite.of_le deleteVerts_le
+      have : (G.deleteVerts {x}).Finite := Finite.of_le deleteVerts_le
       have hT' : (G.deleteVerts {x}).IsTree := hT.delete_leaf hx h2
       have hV : V(G.deleteVerts {x}).ncard = V(G).ncard - 1 := by
         rw [vertexSet_deleteVerts, Set.ncard_sdiff_singleton_of_mem hx.mem_vertexSet]

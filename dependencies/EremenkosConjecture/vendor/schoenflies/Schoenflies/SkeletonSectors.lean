@@ -3,6 +3,10 @@ Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
+
+/- Compatibility update, 23 September 2026: current Mathlib names and Lean
+linter suggestions; original mathematical statements and attribution retained. -/
+
 import Schoenflies.SkeletonLocal
 
 /-!
@@ -178,19 +182,19 @@ theorem det_mul_det_add (a b c e : Plane) :
 counterclockwise from `u` to `w` exactly when `w` lies on the arc counterclockwise from `d` to
 `u`. -/
 theorem mem_arcCCW_rotate : d ∈ arcCCW u w ↔ w ∈ arcCCW d u := by
-  simp only [arcCCW, mem_setOf_eq]
+  simp only [arcCCW, mem_ofPred_eq]
   tauto
 
 /-- A bounding ray is not on its own arc. -/
 theorem left_notMem_arcCCW (u w : Plane) : u ∉ arcCCW u w := by
   have h : det w u = -det u w := det_comm w u
-  simp only [arcCCW, mem_setOf_eq, det_self, h]
+  simp only [arcCCW, mem_ofPred_eq, det_self, h]
   rintro (⟨h1, _⟩ | ⟨h1, h2⟩ | ⟨_, h2⟩) <;> linarith
 
 /-- The other bounding ray is not on the arc either. -/
 theorem right_notMem_arcCCW (u w : Plane) : w ∉ arcCCW u w := by
   have h : det w u = -det u w := det_comm w u
-  simp only [arcCCW, mem_setOf_eq, det_self, h]
+  simp only [arcCCW, mem_ofPred_eq, det_self, h]
   rintro (⟨_, h2⟩ | ⟨h1, _⟩ | ⟨_, h2⟩) <;> linarith
 
 /-- **Asymmetry.** Transposing the first two entries of the triple negates the cyclic order:
@@ -200,7 +204,7 @@ theorem notMem_arcCCW_swap (h : v ∈ arcCCW u w) : u ∉ arcCCW v w := by
   have e1 : det v u = -det u v := det_comm v u
   have e2 : det u w = -det w u := det_comm u w
   have e3 : det w v = -det v w := det_comm w v
-  simp only [arcCCW, mem_setOf_eq] at h ⊢
+  simp only [arcCCW, mem_ofPred_eq] at h ⊢
   rw [e1, e3]
   rcases h with ⟨h1, h2⟩ | ⟨h1, h2⟩ | ⟨h1, h2⟩ <;>
     rintro (⟨g1, g2⟩ | ⟨g1, g2⟩ | ⟨g1, g2⟩) <;> linarith
@@ -268,7 +272,7 @@ private theorem grassmann (u w v d : Plane) :
 transitive: if `w` comes before `v` and `v` before `d`, then `w` comes before `d`. This is what
 makes a finite set of directions linearly ordered once a ray to cut at has been chosen. -/
 theorem arcCCW_trans (h₁ : w ∈ arcCCW u v) (h₂ : v ∈ arcCCW u d) : w ∈ arcCCW u d := by
-  simp only [arcCCW, mem_setOf_eq] at h₁ h₂ ⊢
+  simp only [arcCCW, mem_ofPred_eq] at h₁ h₂ ⊢
   have hv : det u v = -det v u := det_comm u v
   rw [hv] at h₂
   exact trans_aux₁ (grassmann u w v d) h₁ h₂
@@ -278,7 +282,7 @@ theorem arcCCW_trans (h₁ : w ∈ arcCCW u v) (h₂ : v ∈ arcCCW u d) : w ∈
 counterclockwise from `w` to `d`. This is the step that turns "nothing of the finite set lies
 between `u` and the extreme rays" into "nothing lies inside the sector". -/
 theorem arcCCW_trans' (h₁ : w ∈ arcCCW u v) (h₂ : v ∈ arcCCW u d) : v ∈ arcCCW w d := by
-  simp only [arcCCW, mem_setOf_eq] at h₁ h₂ ⊢
+  simp only [arcCCW, mem_ofPred_eq] at h₁ h₂ ⊢
   have hv : det u v = -det v u := det_comm u v
   have hd : det d w = -det w d := det_comm d w
   rw [hv] at h₂
@@ -401,7 +405,7 @@ theorem mem_arcCCW_total (hu : u ≠ 0) (hv : IsDirection v) (hw : IsDirection w
         ring
       rw [he, mul_comm, mul_assoc]
       exact mul_pos (inv_pos.2 hupos) (mul_self_pos.2 hne)
-  simp only [arcCCW, mem_setOf_eq]
+  simp only [arcCCW, mem_ofPred_eq]
   rw [hAB, hCB, hWV]
   rcases key with h | h
   · exact Or.inl h
@@ -446,7 +450,7 @@ theorem arcCCW_neg (u : Plane) : arcCCW u (-u) = {v | 0 < det u v} := by
     intro v; rw [hsm, det_smul_right, det_comm v u]; ring
   have e2 : det (-u) u = 0 := by rw [hsm, det_smul_left, det_self, mul_zero]
   ext v
-  simp only [arcCCW, mem_setOf_eq, e1, e2]
+  simp only [arcCCW, mem_ofPred_eq, e1, e2]
   constructor
   · rintro (⟨h, _⟩ | ⟨_, h⟩ | ⟨h, _⟩) <;> linarith
   · exact fun h => Or.inl ⟨h, h⟩
@@ -461,7 +465,7 @@ theorem isConnected_arcCCW_ball_of_ne (hu : IsDirection u) (hw : IsDirection w) 
     have hhalf : (0 : ℝ) < ρ / 2 := by linarith
     refine ⟨⟨(ρ / 2) • perp u, ?_, ?_⟩,
       ((convex_det_right_pos u).inter (convex_ball _ _)).isPreconnected⟩
-    · simp only [mem_setOf_eq, det_smul_right, det_perp_self, hu.norm, one_pow, mul_one]
+    · simp only [mem_ofPred_eq, det_smul_right, det_perp_self, hu.norm, one_pow, mul_one]
       exact hhalf
     · rw [mem_ball, dist_zero_right, norm_smul, Real.norm_eq_abs, norm_perp, hu.norm, mul_one,
         abs_of_pos hhalf]
@@ -558,8 +562,8 @@ theorem mem_arcCCW_rev_of_notMem {d w z : Plane} (hd : IsDirection d) (hw : IsDi
       rw [hwd, neg_neg] at hne
       rw [hwd]
       exact hne
-    rw [harc, mem_setOf_eq, not_lt] at h
-    rw [harc', mem_setOf_eq, hwd]
+    rw [harc, mem_ofPred_eq, not_lt] at h
+    rw [harc', mem_ofPred_eq, hwd]
     have hdz : det d z ≠ 0 := by
       intro hzero
       rcases eq_dir_or_eq_neg_dir hd.ne_zero hz hzero with h1 | h1
@@ -980,11 +984,11 @@ theorem IsDrawing.not_three_localDirs_on_edge [G.Finite] (h : IsDrawing G drawin
     (hs₂ : segment ℝ x (x + r • d₂) ⊆ edgeArc drawing e)
     (hs₃ : segment ℝ x (x + r • d₃) ⊆ edgeArc drawing e) : False := by
   obtain ⟨hcont, hinj, -⟩ := h.edge_param he
-  haveI : CompactSpace ↥(I : Set ℝ) := isCompact_iff_compactSpace.1 isCompact_I
-  set φ : ↥(I : Set ℝ) → Plane := Set.restrict I (drawing e) with hφdef
+  have : CompactSpace ↥(I : Set ℝ) := isCompact_iff_compactSpace.1 isCompact_I
+  set φ : ↥(I : Set ℝ) → Plane := Set.domRestrict I (drawing e) with hφdef
   have hφi : Function.Injective φ := Set.injOn_iff_injective.1 hinj
-  have hcm : IsClosedMap φ := (hcont.restrict).isClosedMap
-  have hrange : Set.range φ = edgeArc drawing e := Set.range_restrict _ _
+  have hcm : IsClosedMap φ := (hcont.domRestrict).isClosedMap
+  have hrange : Set.range φ = edgeArc drawing e := Set.range_domRestrict _ _
   -- The preimage of a radial segment is a connected set of parameters.
   have hpre : ∀ dd : Plane, segment ℝ x (x + r • dd) ⊆ edgeArc drawing e →
       IsPreconnected (Subtype.val '' (φ ⁻¹' segment ℝ x (x + r • dd))) := by

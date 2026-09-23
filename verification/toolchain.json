@@ -1,0 +1,5 @@
+{
+  "lean": "Lean (version 4.35.0-rc2, x86_64-unknown-linux-gnu, commit 11acb17ec6b07a8f9e9173e6845197929540936b, Release)",
+  "lake": "Lake version 5.0.0-src+11acb17 (Lean version 4.35.0-rc2)",
+  "mathlib_commit": "065356127b1dc0016f66b7283ce0ce2c4055aa55"
+}

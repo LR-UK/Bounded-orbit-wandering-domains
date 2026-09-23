@@ -1,0 +1,82 @@
+'AreaDeficit.beta_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.green_laplacian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.laplacian_comp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.logBarrier_eventually_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.puncturedBeta_contDiffAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.positive_part_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.density_deficit_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.injOn_forwardOrbit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.finite_area_cancellation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.null_wandering_set_of_density_data' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.finite_weighted_area_of_compact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.no_unbounded_limiting_wandering_areas' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.analytic_localPunctures_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.analytic_trapped_inter_puncture_closure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.area_advance_of_integrated_defect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.wandering_area_bound_of_integrated_defect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.null_wandering_set_of_integrated_defects' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.discDensity_curvature' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.disc_area_lintegral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.disc_area_sqrt_nat' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.no_uniform_disc_area_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.covering_centre_restriction_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.density_deficit_on_set' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.holomorphic_change_of_variables' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.holomorphic_area_advance_of_density_deficit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.localBackwardExceptionalSet_countable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.volume_sdiff_localBackwardExceptionalSet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.localBackwardExceptionalSet_congr_on' depends on axioms: [propext, Quot.sound]
+'AreaDeficit.area_cost_on_set_of_total_cost' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.finite_local_critical_points' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.finite_local_critical_values' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.compact_analytic_covering' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.exists_local_disc_covering' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.exists_holomorphic_covering_lift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Complex.exists_bijOn_unitBall_map_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Complex.eqOn_zero_or_forall_ne_zero_of_tendstoLocallyUniformlyOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Complex.eqOn_const_or_injOn_of_tendstoLocallyUniformlyOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.bounded_holomorphic_subsequence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.nonconstant_limit_avoids_closure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.limit_constant_at_omitted_closure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.disjoint_bounded_images_shrink' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionTheory.exists_uniform_radius_of_compact_centres_omit_pair' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'AreaDeficit.exists_uniform_local_lifting_radius' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.FinitePunctureMetricInput.density_mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.FinitePunctureMetricInput.insertion_area_cost' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.FinitePunctureMetricInput.density_tendsto_atTop' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.FinitePunctureMetricInput.density_limit_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.pullback_density_curvature' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.exists_compact_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.FinitePunctureMetricInput.compact_log_comparison' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'AreaDeficit.FinitePunctureMetricInput.local_integrated_deficit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'AreaDeficit.FinitePunctureMetricInput.local_area_advance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.FinitePunctureMetricInput.local_cancellation_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'AreaDeficit.exists_local_puncture_sequence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.FinitePunctureMetricInput.null_local_wandering_set' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'AreaDeficit.disc_schwarz_centre' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.barrier_component_eq_trapped_component' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.FinitePunctureMetricInput.chart_area_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.chart_disc_area' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.mapsTo_chartDisc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.chartDisc_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.FinitePunctureMetricInput.local_dynamical_area_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'AreaDeficit.FinitePunctureMetricInput.no_wandering_chart_orbit_with_anchors' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'AreaDeficit.FinitePunctureMetricInput.no_wandering_component_orbit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

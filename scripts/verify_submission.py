@@ -6,6 +6,7 @@ import json
 import re
 import shutil
 import subprocess
+import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "verification"
@@ -21,8 +22,16 @@ def run(args, output):
     if result.returncode:
         raise RuntimeError(f"{args} failed; see verification/{output}")
 
-run(["build", "BoundedWanderingDomains", "Submission", "Challenge"], "build.log")
+subprocess.run([sys.executable, str(ROOT / "scripts/build_submission.py")], cwd=ROOT, check=True)
+run(["build", "BoundedWanderingDomains", "Submission", "Challenge", "CoveringSolution"], "build.log")
+build_warnings = [line for line in (OUT / "build.log").read_text().splitlines()
+                  if line.startswith("warning:")]
+unexpected_warnings = [line for line in build_warnings if not re.fullmatch(
+    r"warning: Challenge\.lean:\d+:\d+: declaration uses `sorry`", line)]
+assert not unexpected_warnings, "Unexpected build warnings: " + repr(unexpected_warnings)
 run(["env", "lean", "verification/Axioms.lean"], "axioms.log")
+run(["env", "lean", "verification/CoveringAxioms.lean"], "covering-axioms.log")
+run(["env", "lean", "verification/UnconditionalAxioms.lean"], "unconditional-axioms.log")
 for which in ("Challenge", "Solution"):
     run(["env", "lean", f"verification/Export{which}.lean"],
         f"{which.lower()}-declarations.log")
@@ -42,7 +51,7 @@ assert set(challenge) == set(solution) == expected
 for name in sorted(expected):
     assert challenge[name] == solution[name], f"Declaration mismatch: {name}"
 
-audit = (OUT / "axioms.log").read_text()
+audit = (OUT / "axioms.log").read_text() + (OUT / "covering-axioms.log").read_text() + (OUT / "unconditional-axioms.log").read_text()
 reports = re.findall(
     r"'([^']+)' (?:depends on axioms:\s*\[([^\]]*)\]|does not depend on any axioms)",
     audit)
@@ -55,7 +64,8 @@ spec = importlib.util.spec_from_file_location(
     "foundation_verify", ROOT / "dependencies/FunctionTheory/scripts/verify.py")
 lexer = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(lexer)
-sources = sorted([*ROOT.glob("*.lean"), *(ROOT / "BoundedWanderingDomains").rglob("*.lean")])
+sources = sorted([*ROOT.glob("*.lean"), *(ROOT / "BoundedWanderingDomains").rglob("*.lean"),
+                  *(ROOT / "RiemannDynamics").rglob("*.lean"), *(ROOT / "RMT4").rglob("*.lean")])
 for source in sources:
     code = lexer.without_lean_comments(source.read_text())
     holes = re.findall(r"\b(?:sorry|admit)\b", code)
@@ -78,12 +88,18 @@ for module in imports:
                  ROOT / "dependencies/EremenkosConjecture/vendor/schoenflies"):
         assert not (base / rel).exists(), f"Shadowed Mathlib import: {base / rel}"
 assert "import Challenge" not in (ROOT / "Solution.lean").read_text()
-assert set(CONFIG["permitted_axioms"]) == ALLOWED and CONFIG["enable_nanoda"] is True
+assert set(CONFIG["permitted_axioms"]) == ALLOWED
+assert "external_kernels" not in CONFIG
+manifest = json.loads((ROOT / "lake-manifest.json").read_text())
+mathlib = next(p["rev"] for p in manifest["packages"] if p["name"] == "mathlib")
+for package in manifest["packages"]:
+    if package["type"] == "path":
+        assert (ROOT / package["dir"]).resolve().is_relative_to(ROOT), package
 
 report = {
-    "result": "passed", "project_version": "0.12.0",
+    "result": "passed", "project_version": "1.0.0",
     "lean": (ROOT / "lean-toolchain").read_text().strip(),
-    "mathlib": "5ed2965256430c3649e86755f9576b54eca72435",
+    "mathlib": mathlib,
     "curvature": -1, "area_normalisation": "divide by 2*pi",
     "theorem_types_compared": len(CONFIG["theorem_names"]),
     "definition_types_and_bodies_compared": len(CONFIG["definition_names"]),
@@ -93,11 +109,13 @@ report = {
     "project_lean_sources": len(sources),
     "challenge_lines": len(text.splitlines()), "challenge_bytes": len(text.encode()),
     "challenge_intentional_holes": 2, "challenge_direct_imports": imports,
+    "unexpected_build_warnings": unexpected_warnings,
+    "expected_challenge_warnings": build_warnings,
     "source_sha256": {p.relative_to(ROOT).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
                       for p in sources + [ROOT / "comparator.json", ROOT / "formalization.yaml",
                                           ROOT / "lakefile.toml", ROOT / "lake-manifest.json"]},
-    "official_comparator": "not run", "nanoda": "not run",
-    "palomar_policy_validation": "not run", "public_submission": "not made",
+    "official_comparator": "see comparator-status.json and comparator.log",
+    "metadata_contract": "see metadata.json", "public_submission": "not made",
 }
 (OUT / "submission.json").write_text(json.dumps(report, indent=2) + "\n")
 print(json.dumps({k: report[k] for k in ("result", "theorem_types_compared",

@@ -1,0 +1,158 @@
+ℹ [3484/3554] Replayed BoundedWanderingDomains.AreaDeficitCore
+info: BoundedWanderingDomains/AreaDeficitCore.lean:221:0: 'AreaDeficitCore.curvature_sign' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficitCore.lean:222:0: 'AreaDeficitCore.primitive_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficitCore.lean:223:0: 'AreaDeficitCore.slope_scaled_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficitCore.lean:224:0: 'AreaDeficitCore.smooth_cutoff_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficitCore.lean:225:0: 'AreaDeficitCore.fatou_uniform_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficitCore.lean:226:0: 'AreaDeficitCore.positive_part_area_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3751/3798] Replayed BoundedWanderingDomains.ConformalLaplacian
+info: BoundedWanderingDomains/ConformalLaplacian.lean:113:0: 'AreaDeficit.pullback_density_curvature' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3752/3798] Replayed BoundedWanderingDomains.FinitePunctureMetricInput
+info: BoundedWanderingDomains/FinitePunctureMetricInput.lean:144:0: 'AreaDeficit.FinitePunctureMetricInput.density_mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/FinitePunctureMetricInput.lean:145:0: 'AreaDeficit.FinitePunctureMetricInput.insertion_area_cost' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3753/3798] Replayed BoundedWanderingDomains.LocalMetricComparison
+info: BoundedWanderingDomains/LocalMetricComparison.lean:138:0: 'AreaDeficit.FinitePunctureMetricInput.compact_log_comparison' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [3754/3798] Replayed BoundedWanderingDomains.LocalIntegratedDeficit
+info: BoundedWanderingDomains/LocalIntegratedDeficit.lean:147:0: 'AreaDeficit.FinitePunctureMetricInput.local_integrated_deficit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: BoundedWanderingDomains/LocalIntegratedDeficit.lean:148:0: 'AreaDeficit.FinitePunctureMetricInput.local_area_advance' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/LocalIntegratedDeficit.lean:149:0: 'AreaDeficit.FinitePunctureMetricInput.local_cancellation_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [3755/3798] Replayed BoundedWanderingDomains.LocalPunctureSequence
+info: BoundedWanderingDomains/LocalPunctureSequence.lean:98:0: 'AreaDeficit.exists_local_puncture_sequence' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3757/3798] Replayed BoundedWanderingDomains.ConditionalPositiveArea
+info: BoundedWanderingDomains/ConditionalPositiveArea.lean:124:0: 'AreaDeficit.FinitePunctureMetricInput.null_local_wandering_set_with_anchors' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: BoundedWanderingDomains/ConditionalPositiveArea.lean:125:0: 'AreaDeficit.FinitePunctureMetricInput.null_local_wandering_set' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [3758/3798] Replayed BoundedWanderingDomains.LocalDynamicalAreaBound
+info: BoundedWanderingDomains/LocalDynamicalAreaBound.lean:52:0: 'AreaDeficit.FinitePunctureMetricInput.local_dynamical_area_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [3761/3798] Replayed BoundedWanderingDomains.DiscSchwarzPick
+info: BoundedWanderingDomains/DiscSchwarzPick.lean:57:0: 'AreaDeficit.disc_schwarz_centre' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3762/3798] Replayed BoundedWanderingDomains.InteriorDensityLimit
+info: BoundedWanderingDomains/InteriorDensityLimit.lean:119:0: 'AreaDeficit.FinitePunctureMetricInput.density_limit_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3763/3798] Replayed BoundedWanderingDomains.ChartAreaLimit
+info: BoundedWanderingDomains/ChartAreaLimit.lean:99:0: 'AreaDeficit.FinitePunctureMetricInput.chart_area_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/ChartAreaLimit.lean:100:0: 'AreaDeficit.chart_disc_area' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3768/3798] Replayed BoundedWanderingDomains.ChartDiscs
+info: BoundedWanderingDomains/ChartDiscs.lean:88:0: 'AreaDeficit.mapsTo_chartDisc' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3769/3798] Replayed BoundedWanderingDomains.ConditionalWanderingDomains
+info: BoundedWanderingDomains/ConditionalWanderingDomains.lean:172:0: 'AreaDeficit.FinitePunctureMetricInput.no_wandering_chart_orbit_with_anchors' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: BoundedWanderingDomains/ConditionalWanderingDomains.lean:173:0: 'AreaDeficit.FinitePunctureMetricInput.no_wandering_component_orbit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [3770/3798] Replayed BoundedWanderingDomains.AreaDeficit
+info: BoundedWanderingDomains/AreaDeficit.lean:17:0: 'AreaDeficit.beta_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:18:0: 'AreaDeficit.green_laplacian' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:19:0: 'AreaDeficit.laplacian_comp' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:20:0: 'AreaDeficit.logBarrier_eventually_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:21:0: 'AreaDeficit.puncturedBeta_contDiffAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:22:0: 'AreaDeficit.positive_part_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:23:0: 'AreaDeficit.density_deficit_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:24:0: 'AreaDeficit.injOn_forwardOrbit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:25:0: 'AreaDeficit.finite_area_cancellation' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:26:0: 'AreaDeficit.null_wandering_set_of_density_data' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:27:0: 'AreaDeficit.finite_weighted_area_of_compact' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:28:0: 'AreaDeficit.no_unbounded_limiting_wandering_areas' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:29:0: 'AreaDeficit.analytic_localPunctures_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:30:0: 'AreaDeficit.analytic_trapped_inter_puncture_closure' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:31:0: 'AreaDeficit.area_advance_of_integrated_defect' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:32:0: 'AreaDeficit.wandering_area_bound_of_integrated_defect' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:33:0: 'AreaDeficit.null_wandering_set_of_integrated_defects' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:34:0: 'AreaDeficit.discDensity_curvature' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:35:0: 'AreaDeficit.disc_area_lintegral' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:36:0: 'AreaDeficit.disc_area_sqrt_nat' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:37:0: 'AreaDeficit.no_uniform_disc_area_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:38:0: 'AreaDeficit.covering_centre_restriction_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:39:0: 'AreaDeficit.density_deficit_on_set' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:40:0: 'AreaDeficit.holomorphic_change_of_variables' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:41:0: 'AreaDeficit.holomorphic_area_advance_of_density_deficit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:42:0: 'AreaDeficit.localBackwardExceptionalSet_countable' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:43:0: 'AreaDeficit.volume_sdiff_localBackwardExceptionalSet' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:44:0: 'AreaDeficit.localBackwardExceptionalSet_congr_on' depends on axioms: [propext, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:45:0: 'AreaDeficit.area_cost_on_set_of_total_cost' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:46:0: 'AreaDeficit.finite_local_critical_points' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:47:0: 'AreaDeficit.finite_local_critical_values' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:48:0: 'AreaDeficit.compact_analytic_covering' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:49:0: 'AreaDeficit.exists_local_disc_covering' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:50:0: 'AreaDeficit.exists_holomorphic_covering_lift' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:51:0: 'Complex.exists_bijOn_unitBall_map_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:52:0: 'Complex.eqOn_zero_or_forall_ne_zero_of_tendstoLocallyUniformlyOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:53:0: 'Complex.eqOn_const_or_injOn_of_tendstoLocallyUniformlyOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:54:0: 'AreaDeficit.bounded_holomorphic_subsequence' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:55:0: 'AreaDeficit.nonconstant_limit_avoids_closure' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:56:0: 'AreaDeficit.limit_constant_at_omitted_closure' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:57:0: 'AreaDeficit.disjoint_bounded_images_shrink' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:58:0: 'FunctionTheory.exists_uniform_radius_of_compact_centres_omit_pair' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:59:0: 'AreaDeficit.exists_uniform_local_lifting_radius' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:61:0: 'AreaDeficit.FinitePunctureMetricInput.density_mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:62:0: 'AreaDeficit.FinitePunctureMetricInput.insertion_area_cost' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:63:0: 'AreaDeficit.FinitePunctureMetricInput.density_tendsto_atTop' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:64:0: 'AreaDeficit.FinitePunctureMetricInput.density_limit_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:65:0: 'AreaDeficit.pullback_density_curvature' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:66:0: 'AreaDeficit.exists_compact_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:67:0: 'AreaDeficit.FinitePunctureMetricInput.compact_log_comparison' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:68:0: 'AreaDeficit.FinitePunctureMetricInput.local_integrated_deficit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:69:0: 'AreaDeficit.FinitePunctureMetricInput.local_area_advance' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:70:0: 'AreaDeficit.FinitePunctureMetricInput.local_cancellation_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:71:0: 'AreaDeficit.exists_local_puncture_sequence' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:72:0: 'AreaDeficit.FinitePunctureMetricInput.null_local_wandering_set' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:73:0: 'AreaDeficit.disc_schwarz_centre' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:74:0: 'AreaDeficit.barrier_component_eq_trapped_component' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:75:0: 'AreaDeficit.FinitePunctureMetricInput.chart_area_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:76:0: 'AreaDeficit.chart_disc_area' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:77:0: 'AreaDeficit.mapsTo_chartDisc' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:78:0: 'AreaDeficit.chartDisc_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:79:0: 'AreaDeficit.FinitePunctureMetricInput.local_dynamical_area_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:80:0: 'AreaDeficit.FinitePunctureMetricInput.no_wandering_chart_orbit_with_anchors' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: BoundedWanderingDomains/AreaDeficit.lean:81:0: 'AreaDeficit.FinitePunctureMetricInput.no_wandering_component_orbit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [3781/3798] Replayed BoundedWanderingDomains.EntireFatouBridge
+info: BoundedWanderingDomains/EntireFatouBridge.lean:74:0: 'AreaDeficit.fatou_orbit_eq_trapped_components' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3782/3798] Replayed BoundedWanderingDomains.EventualCompactDiscs
+info: BoundedWanderingDomains/EventualCompactDiscs.lean:123:0: 'AreaDeficit.FinitePunctureMetricInput.no_wandering_chart_orbit_with_eventual_compact_discs' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [3785/3798] Replayed BoundedWanderingDomains.TrappedComponentCovering
+info: BoundedWanderingDomains/TrappedComponentCovering.lean:142:0: 'AreaDeficit.eventually_deriv_ne_zero_on_disjoint_domains' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/TrappedComponentCovering.lean:143:0: 'AreaDeficit.closure_component_preimage_trapped' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3786/3798] Replayed BoundedWanderingDomains.TrappedFilling
+info: BoundedWanderingDomains/TrappedFilling.lean:24:0: 'AreaDeficit.bounded_region_subset_trapped_interior' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4008/4053] Replayed BoundedWanderingDomains.TrappedSimpleConnectivity
+info: BoundedWanderingDomains/TrappedSimpleConnectivity.lean:70:0: 'AreaDeficit.trapped_closed_disc_no_bounded_complement' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BoundedWanderingDomains/TrappedSimpleConnectivity.lean:71:0: 'AreaDeficit.bounded_fatou_orbit_simplyConnected' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4012/4053] Replayed BoundedWanderingDomains.BoundedPointWandering
+info: BoundedWanderingDomains/BoundedPointWandering.lean:130:0: 'AreaDeficit.FinitePunctureMetricInput.no_wandering_fatou_orbit_of_bounded_point' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [4052/4053] Replayed BoundedWanderingDomains.CoveringTotalArea
+info: BoundedWanderingDomains/CoveringTotalArea.lean:59:0: 'AreaDeficit.IsHolomorphicDiscCovering.total_area' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [4053/4053] Built BoundedWanderingDomains (15s)
+Build completed successfully (4053 jobs).

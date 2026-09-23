@@ -3,6 +3,10 @@ Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
+
+/- Compatibility update, 23 September 2026: current Mathlib names and Lean
+linter suggestions; original mathematical statements and attribution retained. -/
+
 import Schoenflies.SimpleArc
 import Schoenflies.PolygonalCrosscut
 import Schoenflies.TwoArcs
@@ -876,7 +880,7 @@ theorem pair_eq_of_mem_pair {a b p q : Plane} (hab : a ≠ b) (ha : a = p ∨ a 
 /-- The successor in `ZMod n`, read as a numeral below `n`. -/
 theorem zmod_val_succ {n : ℕ} (hn : 1 < n) (j : ZMod n) :
     (j + 1).val = if j.val + 1 < n then j.val + 1 else 0 := by
-  haveI : NeZero n := ⟨by omega⟩
+  have : NeZero n := ⟨by omega⟩
   have h1 : (1 : ZMod n).val = 1 := by
     rw [show (1 : ZMod n) = ((1 : ℕ) : ZMod n) by norm_num]
     exact ZMod.val_cast_of_lt hn
@@ -1084,27 +1088,27 @@ theorem exists_prePolygon_of_isJordanCurve {C : Set Plane} (hJ : IsJordanCurve C
     · exfalso
       have hcond : ¬ ((⟨0, hn0⟩ : Fin n) : ℕ) + 1 < n :=
         fun hc => absurd (lt_of_le_of_lt (Nat.le_add_left 1 _) hc) (by omega)
-      have hnx0 : nx ⟨0, hn0⟩ = 1 := by rw [hnx, parNext, dif_neg hcond]
+      have hnx0 : nx ⟨0, hn0⟩ = 1 := by rw [hnx, parNext, dite_eq_right hcond]
       exact hfne ⟨0, hn0⟩ (by rw [htp0, hnx0]; exact hf.closes)
     · exact hge
-  haveI : NeZero n := ⟨by omega⟩
+  have : NeZero n := ⟨by omega⟩
   -- The cyclic vertex list: the ends, in the order the loop reaches them.
   set w : ZMod n → Plane := fun j => f (tp ⟨j.val, ZMod.val_lt j⟩) with hw
   have hwsucc : ∀ j : ZMod n, w (j + 1) = f (nx ⟨j.val, ZMod.val_lt j⟩) := by
     intro j
     have hjlt := ZMod.val_lt j
     by_cases hj : j.val + 1 < n
-    · have hval : (j + 1).val = j.val + 1 := by rw [zmod_val_succ (by omega) j, if_pos hj]
+    · have hval : (j + 1).val = j.val + 1 := by rw [zmod_val_succ (by omega) j, ite_eq_left hj]
       have hfin : (⟨(j + 1).val, ZMod.val_lt (j + 1)⟩ : Fin n) = ⟨j.val + 1, hj⟩ :=
         Fin.val_injective hval
       simp only [hw, hfin]
-      rw [hnx, parNext, dif_pos (show (⟨j.val, hjlt⟩ : Fin n).val + 1 < n from hj)]
+      rw [hnx, parNext, dite_eq_left (show (⟨j.val, hjlt⟩ : Fin n).val + 1 < n from hj)]
       rfl
-    · have hval : (j + 1).val = 0 := by rw [zmod_val_succ (by omega) j, if_neg hj]
+    · have hval : (j + 1).val = 0 := by rw [zmod_val_succ (by omega) j, ite_eq_right hj]
       have hfin : (⟨(j + 1).val, ZMod.val_lt (j + 1)⟩ : Fin n) = ⟨0, hn0⟩ :=
         Fin.val_injective hval
       simp only [hw, hfin]
-      rw [htp0, hnx, parNext, dif_neg (show ¬ ((⟨j.val, hjlt⟩ : Fin n).val + 1 < n) from hj)]
+      rw [htp0, hnx, parNext, dite_eq_right (show ¬ ((⟨j.val, hjlt⟩ : Fin n).val + 1 < n) from hj)]
       exact hf.closes
   have hedgeq : ∀ j : ZMod n,
       segment ℝ (w j) (w (j + 1)) = (pc ⟨j.val, ZMod.val_lt j⟩).seg := by
@@ -1141,7 +1145,7 @@ theorem exists_prePolygon_of_isJordanCurve {C : Set Plane} (hJ : IsJordanCurve C
         omega
       have hsucc1 : (1 : ZMod n) + 1 = 0 := by
         refine ZMod.val_injective _ ?_
-        rw [zmod_val_succ (by omega) 1, hone, if_neg (by omega), ZMod.val_zero]
+        rw [zmod_val_succ (by omega) 1, hone, ite_eq_right (by omega), ZMod.val_zero]
       have hw01 : w 0 ≠ w 1 := fun he => h01 (hwinj he)
       obtain ⟨p, hp, hp1, hp2⟩ := PrePolygon.exists_mem_segment_ne hw01
       have hmem := hwmeet 0 1 h01

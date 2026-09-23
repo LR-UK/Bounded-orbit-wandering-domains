@@ -50,7 +50,7 @@ theorem exists_holomorphic_covering_lift {f p : ℂ → ℂ} {U K S : Set ℂ}
     have hh' : U.domRestrict h = fun z => (H z : ℂ) := funext he
     rw [hh']
     exact continuous_subtype_val.comp H.continuous
-  have hm : MapsTo h U K := fun z hz => by simpa [h, hz] using (H ⟨z, hz⟩).2
+  have hm : MapsTo h U K := fun z hz => by simp [h, hz]
   have hfac : EqOn (f ∘ h) p U := by
     intro z hz
     have heq := congrFun hH ⟨z, hz⟩

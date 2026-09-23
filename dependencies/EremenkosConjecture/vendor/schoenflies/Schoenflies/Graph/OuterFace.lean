@@ -3,6 +3,10 @@ Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
+
+/- Compatibility update, 23 September 2026: current Mathlib names and Lean
+linter suggestions; original mathematical statements and attribution retained. -/
+
 import Schoenflies.Graph.Drawing
 
 /-!
@@ -90,7 +94,7 @@ theorem not_isBounded_beyondSquare (r : ℝ) :
   have hmem : Schoenflies.Plane.mk t 0 ∈ Schoenflies.Plane.beyondSquare r :=
     Or.inl (show r < |t| by rw [abs_of_nonneg ht0]; exact htr)
   have hin := hs hmem
-  simp only [Schoenflies.Plane.closedSquare, mem_setOf_eq, Schoenflies.Plane.supDist_zero,
+  simp only [Schoenflies.Plane.closedSquare, mem_ofPred_eq, Schoenflies.Plane.supDist_zero,
     Schoenflies.Plane.supNorm, max_le_iff] at hin
   have h1 : |t| ≤ s := hin.1
   rw [abs_of_nonneg ht0] at h1

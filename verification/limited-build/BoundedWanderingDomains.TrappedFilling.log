@@ -1,0 +1,3 @@
+ℹ [3497/3497] Built BoundedWanderingDomains.TrappedFilling (16s)
+info: BoundedWanderingDomains/TrappedFilling.lean:24:0: 'AreaDeficit.bounded_region_subset_trapped_interior' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (3497 jobs).

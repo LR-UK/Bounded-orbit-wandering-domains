@@ -3,6 +3,10 @@ Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
+
+/- Compatibility update, 23 September 2026: current Mathlib names and Lean
+linter suggestions; original mathematical statements and attribution retained. -/
+
 import Schoenflies.Direction
 import Schoenflies.UniformBound
 import Mathlib.Data.ZMod.Basic
@@ -207,7 +211,7 @@ theorem isConnected_arcCCW_ball (h : det u w ≠ 0) (hρ : 0 < ρ) :
     have harc : arcCCW u w = {d : Plane | det w d < 0} ∪ {d : Plane | det d u < 0} := by
       ext d
       rw [mem_arcCCW_rev_iff h']
-      simp only [mem_union, mem_setOf_eq]
+      simp only [mem_union, mem_ofPred_eq]
     have hd0 : (-ε) • (u + w) ∈ ball (0 : Plane) ρ :=
       hball _ (by rw [abs_of_neg (neg_neg_iff_pos.2 hε), neg_neg])
     have hA : (-ε) • (u + w) ∈ {d : Plane | det w d < 0} := by
@@ -227,7 +231,7 @@ theorem isConnected_arcCCW_ball (h : det u w ≠ 0) (hρ : 0 < ρ) :
     have harc : arcCCW u w = {d : Plane | 0 < det u d} ∩ {d : Plane | 0 < det d w} := by
       ext d
       rw [mem_arcCCW_iff hpos]
-      simp only [mem_inter_iff, mem_setOf_eq]
+      simp only [mem_inter_iff, mem_ofPred_eq]
     have hmem : ε • (u + w) ∈ arcCCW u w ∩ ball (0 : Plane) ρ := by
       refine ⟨?_, hball _ (abs_of_pos hε)⟩
       rw [harc]
@@ -275,7 +279,7 @@ theorem cone_eq_image (v : Plane) (A : Set Plane) (ρ : ℝ) :
       module
   · rintro ⟨d, ⟨hd, hb⟩, rfl⟩
     have he : v + d - v = d := by module
-    refine ⟨by rw [mem_setOf_eq, he]; exact hd, ?_⟩
+    refine ⟨by rw [mem_ofPred_eq, he]; exact hd, ?_⟩
     rw [mem_ball, dist_eq_norm, he]
     rw [mem_ball, dist_zero_right] at hb
     exact hb
@@ -388,7 +392,7 @@ theorem isOpen_strip (a u : Plane) (t₁ t₂ s₁ s₂ : ℝ) : IsOpen (strip a
       ({x : Plane | t₁ < coordAlong a u x} ∩ {x : Plane | coordAlong a u x < t₂}) ∩
         ({x : Plane | s₁ < coordAcross a u x} ∩ {x : Plane | coordAcross a u x < s₂}) := by
     ext y
-    simp only [mem_strip_iff, mem_inter_iff, mem_setOf_eq]
+    simp only [mem_strip_iff, mem_inter_iff, mem_ofPred_eq]
     tauto
   rw [key]
   exact ((isOpen_lt continuous_const (continuous_coordAlong a u)).inter
@@ -407,7 +411,7 @@ theorem convex_strip (a u : Plane) (t₁ t₂ s₁ s₂ : ℝ) : Convex ℝ (str
       simp only [coordAcross, det]
       simp
       ring
-    simp only [mem_strip_iff, mem_inter_iff, mem_setOf_eq, h1, h2]
+    simp only [mem_strip_iff, mem_inter_iff, mem_ofPred_eq, h1, h2]
     constructor
     · rintro ⟨a1, a2, a3, a4⟩; exact ⟨⟨by linarith, by linarith⟩, ⟨by linarith, by linarith⟩⟩
     · rintro ⟨⟨a1, a2⟩, ⟨a3, a4⟩⟩; exact ⟨by linarith, by linarith, by linarith, by linarith⟩

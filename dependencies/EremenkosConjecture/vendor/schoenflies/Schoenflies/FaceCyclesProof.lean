@@ -3,6 +3,10 @@ Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
+
+/- Compatibility update, 23 September 2026: current Mathlib names and Lean
+linter suggestions; original mathematical statements and attribution retained. -/
+
 import Schoenflies.FaceCycles
 import Schoenflies.Realization
 
@@ -840,7 +844,7 @@ theorem IsDrawing.hasFaceCycles_union [G.Finite] (h : IsDrawing G drawing)
     (hint : ∀ y ∈ G.walkVertices a D', y ≠ a → y ≠ b → y ∉ V(B))
     (hnew : ∀ g ∈ D', g ∉ E(B)) :
     HasFaceCycles (B.union (G.pathGraphOf a D')) drawing := by
-  haveI : B.Finite := Finite.of_le hBG
+  have : B.Finite := Finite.of_le hBG
   have hB : IsDrawing B drawing := h.mono hBG
   have hne : D' ≠ [] := hpath.ne_nil hab
   have hPG : G.pathGraphOf a D' ≤ G := pathGraphOf_le hpath.isWalk

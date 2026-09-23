@@ -3,6 +3,10 @@ Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
+
+/- Compatibility update, 23 September 2026: current Mathlib names and Lean
+linter suggestions; original mathematical statements and attribution retained. -/
+
 import Schoenflies.SquareMeshConnected
 import Schoenflies.Graph.Ear
 
@@ -133,7 +137,7 @@ theorem pieceListGraph_inc_iff {l : List Piece} {P : Piece} {v : Plane} :
 
 theorem endSet_pair (a q b : Plane) : endSet [((a, q) : Piece), (q, b)] = {a, q, b} := by
   ext x
-  simp only [endSet, mem_setOf_eq, List.mem_cons, List.not_mem_nil, or_false, mem_insert_iff,
+  simp only [endSet, mem_ofPred_eq, List.mem_cons, List.not_mem_nil, or_false, mem_insert_iff,
     mem_singleton_iff]
   constructor
   · rintro ⟨P, hP, hx⟩
@@ -240,7 +244,7 @@ theorem splitAllAt_eq_self {l : List Piece} {q : Plane} (h : ∀ R ∈ l, q ∉ 
   induction l with
   | nil => rfl
   | cons R l ih =>
-    rw [splitAllAt, List.flatMap_cons, splitAt, if_neg (h R (List.mem_cons_self ..))]
+    rw [splitAllAt, List.flatMap_cons, splitAt, ite_eq_right (h R (List.mem_cons_self ..))]
     rw [show l.flatMap (splitAt q) = splitAllAt q l from rfl,
       ih fun S hS => h S (List.mem_cons_of_mem _ hS)]
     rfl
@@ -256,22 +260,22 @@ theorem mem_splitAllAt_iff {l : List Piece} {P R : Piece} {q : Plane} (hP : P �
     obtain ⟨S, hS, hRS⟩ := List.mem_flatMap.1 hR
     by_cases hqS : q ∈ S.interior
     · obtain rfl := huniq S hS hqS
-      rw [splitAt, if_pos hqS] at hRS
+      rw [splitAt, ite_eq_left hqS] at hRS
       exact Or.inr hRS
-    · rw [splitAt, if_neg hqS] at hRS
+    · rw [splitAt, ite_eq_right hqS] at hRS
       obtain rfl : R = S := List.mem_singleton.1 hRS
       exact Or.inl ⟨hS, fun h => hqS (h ▸ hq)⟩
   · rintro (⟨hR, hRP⟩ | hR)
     · have hqR : q ∉ R.interior := fun h => hRP (huniq R hR h)
-      exact List.mem_flatMap.2 ⟨R, hR, by rw [splitAt, if_neg hqR]; simp⟩
-    · exact List.mem_flatMap.2 ⟨P, hP, by rw [splitAt, if_pos hq]; exact hR⟩
+      exact List.mem_flatMap.2 ⟨R, hR, by rw [splitAt, ite_eq_right hqR]; simp⟩
+    · exact List.mem_flatMap.2 ⟨P, hP, by rw [splitAt, ite_eq_left hq]; exact hR⟩
 
 /-- The ends of a split list: the old ends and the cut point. -/
 theorem endSet_splitAllAt {l : List Piece} {P : Piece} {q : Plane} (hP : P ∈ l)
     (hq : q ∈ P.interior) (huniq : ∀ S ∈ l, q ∈ S.interior → S = P) :
     endSet (splitAllAt q l) = endSet l ∪ {q} := by
   ext v
-  simp only [endSet, mem_setOf_eq, mem_union, mem_singleton_iff]
+  simp only [endSet, mem_ofPred_eq, mem_union, mem_singleton_iff]
   constructor
   · rintro ⟨R, hR, hv⟩
     rcases (mem_splitAllAt_iff hP hq huniq).1 hR with ⟨hRl, -⟩ | hR2
@@ -373,7 +377,7 @@ theorem CleanCut.splitAllAt {l : List Piece} {q q' : Plane} (hnd : ∀ R ∈ l, 
         (splitAt_interior_subset q' S₀ S hSS₀ hqS)
     -- … and the two halves of one piece have disjoint interiors
     by_cases hq'R : q' ∈ R₀.interior
-    · rw [splitAt, if_pos hq'R] at hRR₀ hSS₀
+    · rw [splitAt, ite_eq_left hq'R] at hRR₀ hSS₀
       simp only [List.mem_cons, List.not_mem_nil, or_false] at hRR₀ hSS₀
       have hnd₀ : R₀.Nondeg := hnd R₀ hR₀
       rcases hRR₀ with rfl | rfl <;> rcases hSS₀ with rfl | rfl
@@ -381,7 +385,7 @@ theorem CleanCut.splitAllAt {l : List Piece} {q q' : Plane} (hnd : ∀ R ∈ l, 
       · exact absurd (openSegment_halves_disjoint hnd₀ hq'R hqR hqS) not_false
       · exact absurd (openSegment_halves_disjoint hnd₀ hq'R hqS hqR) not_false
       · rfl
-    · rw [splitAt, if_neg hq'R] at hRR₀ hSS₀
+    · rw [splitAt, ite_eq_right hq'R] at hRR₀ hSS₀
       rw [List.mem_singleton.1 hRR₀, List.mem_singleton.1 hSS₀]
   · rcases hq.2 with hnone | hend
     · exact Or.inl fun R hR => by

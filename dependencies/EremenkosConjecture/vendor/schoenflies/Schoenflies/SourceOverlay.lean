@@ -3,6 +3,10 @@ Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
+
+/- Compatibility update, 23 September 2026: current Mathlib names and Lean
+linter suggestions; original mathematical statements and attribution retained. -/
+
 import Schoenflies.QuantitativeStages
 import Schoenflies.GridAttach
 
@@ -314,7 +318,7 @@ theorem localGridVertices_subset_localOverlay {p : Plane} {s epsilon : ℝ}
       V(Q.localOverlay p s epsilon extra) := by
   intro x hx
   rw [localGrid_eq, pieceListGraph_vertexSet] at hx
-  simp only [endSet, Set.mem_setOf_eq] at hx
+  simp only [endSet, Set.mem_ofPred_eq] at hx
   obtain ⟨R, hR, hxR⟩ := hx
   change x ∈ V(overlayGraph (Q.localPieces p s epsilon)
     (attachPoints (Q.localPieces p s epsilon)
@@ -478,7 +482,7 @@ theorem localGridPoint_mem_closedSquare {p : Plane} {s : ℝ} {k i j : ℕ}
   have hxmono := (localGridX_strictMono (p := p) hs hk).monotone
   have hymono := (localGridY_strictMono (p := p) hs hk).monotone
   rw [Plane.closedSquare_eq_inter]
-  simp only [Set.mem_inter_iff, Set.mem_setOf_eq, gridPt]
+  simp only [Set.mem_inter_iff, Set.mem_ofPred_eq, gridPt]
   constructor
   · constructor
     · calc
@@ -668,7 +672,7 @@ theorem drawing_of_outer {e : γ} (he : e ∈ E(P.str.outerGraph)) :
 theorem drawing_of_inner {e : γ} (he : e ∈ E(w.innerGraph)) :
     w.drawing e =
       (Q.localOverlay p s epsilon extra).relabelDrawing w.name segmentDrawing e := by
-  rw [drawing, if_neg]
+  rw [drawing, ite_eq_right]
   obtain ⟨R, hR, rfl⟩ := he
   exact fun heOuter => w.name_fresh R hR
     (P.str.mem_cells_of_mem_edgeSet (P.str.outerGraph_le.edgeSet_mono heOuter))

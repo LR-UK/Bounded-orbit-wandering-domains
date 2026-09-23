@@ -1,0 +1,152 @@
+{
+  "result": "passed",
+  "validator_repository": "https://github.com/PalomarRegistry/PalomarSubmission",
+  "validator_commit": "e48a86d0495356b5131a92c9406aa6e27cf99e56",
+  "metadata_sha256": "f453a9d7de331b0f675e067e8dbfe97ccfafed5b9491f8c732e72d9f0106fabe",
+  "provenance": {
+    "result_origin": "original",
+    "repository_role": "substantive-development",
+    "responsible_maintainers": [
+      {
+        "name": "Lasse Rempe"
+      }
+    ],
+    "mathematical_sources": [
+      {
+        "title": "Bounded-orbit wandering domains: working proof and manuscript",
+        "authors": [
+          {
+            "name": "Nikolai Prochorov"
+          },
+          {
+            "name": "Lasse Rempe"
+          },
+          {
+            "name": "James Waterman"
+          }
+        ],
+        "relationship": "other",
+        "contributors": [
+          {
+            "name": "Lasse Rempe",
+            "role": "Mathematical direction, proof discussion, theorem scope and normalisation"
+          },
+          {
+            "name": "OpenAI ChatGPT/Codex",
+            "role": "AI-assisted Lean proof construction, compatibility work and verification"
+          }
+        ],
+        "location": "Working manuscript and formalisation, September 2026",
+        "note": "The manuscript is being drafted separately by the authors. The precise formalised claims are the two declarations in Challenge.lean; their local dynamical hypotheses are explicit. No independent human review or registry acceptance is claimed.",
+        "type": "original-proof"
+      },
+      {
+        "title": "A new proof of no-wandering domain theorems without quasiconformal techniques",
+        "authors": [
+          {
+            "name": "Zihao Ye"
+          }
+        ],
+        "relationship": "background",
+        "identifier": "https://arxiv.org/abs/2609.23834v1",
+        "note": "Motivation for the use of hyperbolic area in the initial discussion. The compared results are the local and bounded-point-orbit statements; this submission does not claim to formalise all of Ye's assertions.",
+        "type": "paper"
+      },
+      {
+        "title": "Absence of wandering domains for some real entire functions with bounded singular sets",
+        "authors": [
+          {
+            "name": "Helena Mihaljevi\u0107-Brandt"
+          },
+          {
+            "name": "Lasse Rempe-Gillen"
+          }
+        ],
+        "relationship": "background",
+        "identifier": "https://doi.org/10.1007/s00208-013-0936-z",
+        "note": "Proposition 3.4 records the hyperbolic-density comparison discussed in the working proof.",
+        "type": "paper"
+      },
+      {
+        "title": "Quotients of hyperbolic metrics",
+        "authors": [
+          {
+            "name": "David Minda"
+          }
+        ],
+        "relationship": "background",
+        "identifier": "https://doi.org/10.1007/s40315-017-0195-1",
+        "note": "Background for comparison of hyperbolic metrics; not a trusted axiom.",
+        "type": "paper"
+      }
+    ],
+    "related_formalizations": [
+      {
+        "identifier": "https://github.com/leanprover-community/mathlib4/tree/065356127b1dc0016f66b7283ce0ce2c4055aa55",
+        "relationship": "builds-on",
+        "note": "Pinned foundation and the only non-core direct Challenge imports."
+      },
+      {
+        "identifier": "dependencies/FunctionTheory",
+        "relationship": "builds-on",
+        "note": "Supplied source snapshot, retained as a contained path dependency with its own licences and provenance manifests. Used for normal families, holomorphic inverse maps and related analytic foundations."
+      },
+      {
+        "identifier": "dependencies/ComplexDynamics",
+        "relationship": "builds-on",
+        "note": "Supplied source snapshot; actual Fatou normality and component definitions. The short Challenge definitions reproduce the same declarations."
+      },
+      {
+        "identifier": "dependencies/ComplexApproximation",
+        "relationship": "builds-on",
+        "note": "Supplied source snapshot; filled continua and planar topology."
+      },
+      {
+        "identifier": "dependencies/EremenkosConjecture",
+        "relationship": "builds-on",
+        "note": "Supplied source snapshot; simple connectivity of interior components from absence of bounded complementary components."
+      },
+      {
+        "identifier": "https://github.com/alonamaloh/schoenflies-lean/tree/05a43d29cde026618777db3d4e4316204ccca237",
+        "relationship": "builds-on",
+        "note": "Attributed vendored topology dependency within EremenkosConjecture; see its PROVENANCE.md."
+      },
+      {
+        "identifier": "https://github.com/TauCetiProject/TauCeti/tree/f441315d5d3c9ccc377a691d7a7da00613010718",
+        "relationship": "builds-on",
+        "note": "138 attributed modules within FunctionTheory; original source authors include the Tau Ceti contributors and Chris Birkbeck. Licence, alignment and compatibility records are retained."
+      },
+      {
+        "identifier": "https://github.com/girving/ray/tree/753f7131cf96f4651294de4398368abf136c34de",
+        "relationship": "adapts",
+        "note": "Sphere-atlas and coordinate adaptations in FunctionTheory; licence, review copies and source manifest included."
+      },
+      {
+        "identifier": "https://github.com/will1491/no-wandering-domains/tree/0a6497b0cc9ed39a6a705bf013449635894b56d0",
+        "relationship": "builds-on",
+        "note": "Eight attributed modules and the derived finite-chart convergence proof within FunctionTheory. Code author Will (Ziang) Li; associated paper by Ziang Li and Yusheng Luo. Licence and adaptation records included."
+      },
+      {
+        "identifier": "https://github.com/deancureton/sphere-six-complex/tree/895c0a0",
+        "relationship": "builds-on",
+        "note": "Secondary source attribution retained in TauCeti/Analysis/Complex/Conformal/Inverse/BoundaryCluster.lean (Apache-2.0); not a separately vendored repository."
+      },
+      {
+        "identifier": "https://github.com/urkud/mathlib4/tree/d43061d911b1aeae0788591da437a3b115098962",
+        "relationship": "adapts",
+        "note": "BoundedWanderingDomains/RiemannMappingFull.lean and BoundedWanderingDomains/UnitDiscShift.lean; see THIRD_PARTY_NOTICES.md."
+      },
+      {
+        "identifier": "https://github.com/will1491/RiemannDynamics/tree/b3fa37cc0f18a23ea66b654ea3f73eb472129010",
+        "relationship": "adapts",
+        "note": "Selected source ported to the submitted Lean/Mathlib pins. Original headers and Apache 2.0 licence retained. Covering second-countability is generalised; the punctured-plane bridge and final dynamical connection are project additions. See THIRD_PARTY_NOTICES.md."
+      },
+      {
+        "identifier": "https://github.com/will1491/RMT4/tree/7e092cd5e347a1ee01afb165dd6ab043082e0f4d",
+        "relationship": "adapts",
+        "note": "The cindex and has_sqrt modules are included with their original attribution and Apache 2.0 licence; compatibility adaptations are recorded."
+      }
+    ]
+  },
+  "scope": "Mechanical metadata contract only; no independent policy review or registry acceptance"
+}

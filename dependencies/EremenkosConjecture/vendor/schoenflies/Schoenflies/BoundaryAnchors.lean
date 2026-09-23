@@ -3,6 +3,10 @@ Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
+
+/- Compatibility update, 23 September 2026: current Mathlib names and Lean
+linter suggestions; original mathematical statements and attribution retained. -/
+
 import Schoenflies.InteriorHomeomorphism
 
 /-!
@@ -119,7 +123,7 @@ theorem Graph.pointSet_traceGraph_eq_interiorPart
       have harc := h.edge_isArcBetween hxy
       apply Or.inr
       exact Set.mem_iUnion₂.2 ⟨e, by
-        rw [Graph.edgeSet_eq_setOf_exists_isLink]
+        rw [Graph.edgeSet_eq_setOfPred_exists_isLink]
         exact ⟨x, y, (Graph.traceGraph_isLink D).2
           ⟨heD, hxy, heD harc.left_mem, heD harc.right_mem⟩⟩, hze⟩
 
@@ -246,7 +250,7 @@ theorem Graph.IsStageOn.exists_crosscut_path
       h.vertex_mem hlb.right_mem (hcase hlb hbnb hbC)
     let K := Graph.traceGraph G drawing (inside C)
     have hKle : K ≤ G := Graph.traceGraph_le _
-    letI : K.Finite := Graph.Finite.of_le hKle
+    let : K.Finite := Graph.Finite.of_le hKle
     have hKpoint : Graph.pointSet K drawing =
         Graph.interiorPart G drawing (inside C) :=
       Graph.pointSet_traceGraph_eq_interiorPart h.isDrawing (inside C)
@@ -793,7 +797,7 @@ theorem prescribedSourceAnchorSet_hasAnchorCrosscuts :
   have hrTargetAdmissible :
       r.pair.tgt.IsAdmissible modelCurve (Plane.closedSquare 0 1) :=
     r.pair.tgt_isAdmissible hrAdmissible.isConnected_nonboundary
-  letI : r.pair.src.graph.Finite := CellStructure.Realization.finite_graph r.pair.src
+  let : r.pair.src.graph.Finite := CellStructure.Realization.finite_graph r.pair.src
   have hsourceStage := hrAdmissible.isStageOn
   have htargetStage : Graph.IsStageOn r.pair.tgt.graph r.pair.tgt.drawing
       modelCurve (inside modelCurve) := by

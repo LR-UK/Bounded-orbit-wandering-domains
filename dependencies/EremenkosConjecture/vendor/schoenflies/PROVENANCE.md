@@ -10,8 +10,8 @@ is included. It contains the previously selected 76-module `JordanClosed`
 closure. The comparator challenge is not included.
 
 Ported from Lean 4.32.2 to Lean 4.34.0 and the parent project's Mathlib pin.
-The [alignment record](ALIGNMENT.json) reports 125 identical files after
-line-ending normalization, with these three proof compatibility adaptations:
+The initial import had 125 identical files after line-ending normalization,
+with these three proof compatibility adaptations:
 
 - `Subarc.lean`: `image_reparam_I` explicitly unfolds the interval and
   reparametrisation before simplifying scalar multiplication.
@@ -29,3 +29,13 @@ scan and source hashes now include all 128 vendored modules.
 These topological proofs remain attributed to their public author. Our
 application uses closed-interior extension to prove simple connectivity;
 it does not assert an extension of arbitrary conformal maps to the plane.
+
+## Compatibility update, 23 September 2026
+
+The containing BoundedWanderingDomains development updates deprecated names,
+instance-style syntax and namespace openings without changing the mathematical
+statements. Modified files retain their original notices and carry a dated
+modification note. The current [alignment record](ALIGNMENT.json) has 63
+identical files; its recorded upstream hashes are retained. Exact paths and a
+patch against the frozen submission are in the containing repository's
+`verification/linter-updated-files.json` and `verification/linter-compatibility.patch`.

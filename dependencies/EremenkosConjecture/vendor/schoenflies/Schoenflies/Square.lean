@@ -3,6 +3,10 @@ Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
+
+/- Compatibility update, 23 September 2026: current Mathlib names and Lean
+linter suggestions; original mathematical statements and attribution retained. -/
+
 import Schoenflies.Plane
 
 /-!
@@ -116,21 +120,21 @@ square is four of them. -/
 
 theorem convex_coord_le (i : Fin 2) (r : ℝ) : Convex ℝ {x : Plane | x i ≤ r} := by
   intro x hx y hy a b ha hb hab
-  simp only [mem_setOf_eq] at *
+  simp only [mem_ofPred_eq] at *
   rw [smul_add_apply]
   have hr : a * r + b * r = r := by rw [← add_mul, hab, one_mul]
   nlinarith [mul_le_mul_of_nonneg_left hx ha, mul_le_mul_of_nonneg_left hy hb]
 
 theorem convex_coord_ge (i : Fin 2) (r : ℝ) : Convex ℝ {x : Plane | r ≤ x i} := by
   intro x hx y hy a b ha hb hab
-  simp only [mem_setOf_eq] at *
+  simp only [mem_ofPred_eq] at *
   rw [smul_add_apply]
   have hr : a * r + b * r = r := by rw [← add_mul, hab, one_mul]
   nlinarith [mul_le_mul_of_nonneg_left hx ha, mul_le_mul_of_nonneg_left hy hb]
 
 theorem convex_coord_lt (i : Fin 2) (r : ℝ) : Convex ℝ {x : Plane | x i < r} := by
   intro x hx y hy a b ha hb hab
-  simp only [mem_setOf_eq] at *
+  simp only [mem_ofPred_eq] at *
   rw [smul_add_apply]
   have hr : a * r + b * r = r := by rw [← add_mul, hab, one_mul]
   rcases eq_or_lt_of_le ha with rfl | ha'
@@ -140,7 +144,7 @@ theorem convex_coord_lt (i : Fin 2) (r : ℝ) : Convex ℝ {x : Plane | x i < r}
 
 theorem convex_coord_gt (i : Fin 2) (r : ℝ) : Convex ℝ {x : Plane | r < x i} := by
   intro x hx y hy a b ha hb hab
-  simp only [mem_setOf_eq] at *
+  simp only [mem_ofPred_eq] at *
   rw [smul_add_apply]
   have hr : a * r + b * r = r := by rw [← add_mul, hab, one_mul]
   rcases eq_or_lt_of_le ha with rfl | ha'
@@ -167,7 +171,7 @@ theorem closedSquare_eq_inter (c : Plane) (r : ℝ) :
       ({x : Plane | c 0 - r ≤ x 0} ∩ {x : Plane | x 0 ≤ c 0 + r}) ∩
       ({x : Plane | c 1 - r ≤ x 1} ∩ {x : Plane | x 1 ≤ c 1 + r}) := by
   ext x
-  simp only [closedSquare, supDist, supNorm, sub_apply, mem_setOf_eq, mem_inter_iff,
+  simp only [closedSquare, supDist, supNorm, sub_apply, mem_ofPred_eq, mem_inter_iff,
     max_le_iff, abs_le]
   constructor
   · rintro ⟨⟨h1, h2⟩, h3, h4⟩; exact ⟨⟨by linarith, by linarith⟩, by linarith, by linarith⟩
@@ -178,7 +182,7 @@ theorem openSquare_eq_inter (c : Plane) (r : ℝ) :
       ({x : Plane | c 0 - r < x 0} ∩ {x : Plane | x 0 < c 0 + r}) ∩
       ({x : Plane | c 1 - r < x 1} ∩ {x : Plane | x 1 < c 1 + r}) := by
   ext x
-  simp only [openSquare, supDist, supNorm, sub_apply, mem_setOf_eq, mem_inter_iff,
+  simp only [openSquare, supDist, supNorm, sub_apply, mem_ofPred_eq, mem_inter_iff,
     max_lt_iff, abs_lt]
   constructor
   · rintro ⟨⟨h1, h2⟩, h3, h4⟩; exact ⟨⟨by linarith, by linarith⟩, by linarith, by linarith⟩
@@ -223,7 +227,7 @@ theorem isConnected_beyondSquare (r : ℝ) : IsConnected (beyondSquare r) := by
   set B : Set Plane := {x : Plane | x 1 < -r} with hB
   have hcover : beyondSquare r = R ∪ T ∪ L ∪ B := by
     ext x
-    simp only [beyondSquare, hR, hL, hT, hB, mem_setOf_eq, mem_union, lt_abs]
+    simp only [beyondSquare, hR, hL, hT, hB, mem_ofPred_eq, mem_union, lt_abs]
     constructor
     · rintro (h | h) <;> rcases h with h | h
       · exact Or.inl (Or.inl (Or.inl h))

@@ -8,6 +8,7 @@ from audit_attribution import audit
 
 root = Path(__file__).resolve().parents[1]
 assert json.loads((root / "verification/submission.json").read_text())["result"] == "passed"
+assert json.loads((root / "verification/metadata.json").read_text())["result"] == "passed"
 moves = json.loads((root / "verification/moved-sources.json").read_text())
 for old_path, new_path in moves.items():
     assert not (root / old_path).exists(), f"Obsolete source remains: {old_path}"
@@ -15,10 +16,15 @@ for old_path, new_path in moves.items():
 attribution = audit()
 excluded = {".lake", ".git", "__pycache__"}
 files = []
-for directory, dirs, names in os.walk(root, followlinks=True):
+for directory, dirs, names in os.walk(root, followlinks=False):
     dirs[:] = sorted(d for d in dirs if d not in excluded)
     for name in sorted(names):
         path = Path(directory) / name
+        assert not path.is_symlink(), f"Unexpected symlink: {path}"
+        if path.relative_to(root).as_posix() in {"verification/cache435.log", "verification/cache-closure435.log", "verification/build435.log"}:
+            continue
+        if path.parent == root and path.suffix == ".log":
+            continue
         if path.is_file() and path.suffix not in {".pyc", ".olean", ".ilean", ".trace"}:
             files.append(path)
 manifest = {p.relative_to(root).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
@@ -26,7 +32,7 @@ manifest = {p.relative_to(root).as_posix(): hashlib.sha256(p.read_bytes()).hexdi
 (root / "verification/package-sources.json").write_text(json.dumps(manifest, indent=2) + "\n")
 files = [p for p in files if p.name != "package-sources.json"]
 files.append(root / "verification/package-sources.json")
-archive = root.parent / "bounded-wandering-palomar.zip"
+archive = root.parent / "bounded-wandering-palomar-unconditional-2026-09-23.zip"
 with zipfile.ZipFile(archive, "w", zipfile.ZIP_DEFLATED) as z:
     for path in files:
         z.write(path, Path(root.name) / path.relative_to(root))
@@ -40,4 +46,5 @@ with zipfile.ZipFile(archive) as z:
         assert (info.external_attr >> 16) & 0o170000 != 0o120000, info.filename
         assert not any(part in excluded for part in Path(info.filename).parts)
 print(json.dumps({"archive": str(archive), "bytes": archive.stat().st_size,
-                  "source_files": len(files), "contained_dependencies": True}))
+                  "source_files": len(files), "contained_dependencies": True,
+                  "sha256": hashlib.sha256(archive.read_bytes()).hexdigest()}))

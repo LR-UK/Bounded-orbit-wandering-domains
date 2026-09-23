@@ -3,6 +3,10 @@ Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
+
+/- Compatibility update, 23 September 2026: current Mathlib names and Lean
+linter suggestions; original mathematical statements and attribution retained. -/
+
 import Schoenflies.PolyPath
 import Schoenflies.Square
 import Schoenflies.UniformBound
@@ -185,7 +189,7 @@ namespace Plane
 centre in each coordinate separately. -/
 theorem mem_openSquare_iff (c : Plane) (r : ℝ) (x : Plane) :
     x ∈ openSquare c r ↔ ∀ i, |x i - c i| < r := by
-  simp only [openSquare, mem_setOf_eq, supDist, supNorm, sub_apply, max_lt_iff,
+  simp only [openSquare, mem_ofPred_eq, supDist, supNorm, sub_apply, max_lt_iff,
     Fin.forall_fin_two]
 
 /-- The centre of a square of positive radius is in it. -/
@@ -246,17 +250,17 @@ theorem openSquare_disjoint_sideHalfPlane {c : Plane} {r s : ℝ} {p : Plane} {i
   rw [abs_lt] at hlt
   cases b
   · exact absurd (show x i ≤ c i - r from hmem) (by
-      simp only [sideGap, cond_false] at hs; linarith [hlt.1])
+      simp only [sideGap, Bool.cond_false] at hs; linarith [hlt.1])
   · exact absurd (show c i + r ≤ x i from hmem) (by
-      simp only [sideGap, cond_true] at hs; linarith [hlt.2])
+      simp only [sideGap, Bool.cond_true] at hs; linarith [hlt.2])
 
 /-- If there is no room between `p` and a half-plane, `p` is in it. -/
 theorem mem_sideHalfPlane_of_sideGap_nonpos {c : Plane} {r : ℝ} {p : Plane} {i : Fin 2}
     {b : Bool} (h : sideGap c r p i b ≤ 0) : p ∈ sideHalfPlane c r i b := by
   cases b
-  · simp only [sideGap, cond_false] at h
+  · simp only [sideGap, Bool.cond_false] at h
     exact show p i ≤ c i - r by linarith
-  · simp only [sideGap, cond_true] at h
+  · simp only [sideGap, Bool.cond_true] at h
     exact show c i + r ≤ p i by linarith
 
 /-- Each piece the sides of one square cut a small square into is an axis-parallel rectangle —
@@ -346,7 +350,7 @@ theorem isLocallyPolyConn_compl_biUnion {A : Set Plane} (hA : A.Finite) (ρ : Pl
       rintro c ⟨hcA, hcne⟩
       have : p ∉ closedSquare c (ρ c) :=
         Set.disjoint_left.1 (hdisj c₀ hc₀A c hcA fun h => hcne (h ▸ rfl)) hpc₀
-      simp only [closedSquare, mem_setOf_eq, not_le] at this
+      simp only [closedSquare, mem_ofPred_eq, not_le] at this
       linarith
     obtain ⟨s₁, hs₁, hs₁le⟩ := exists_pos_le_of_finite (hA.sdiff (t := {c₀}))
       (f := fun c => supDist p c - ρ c) hfar
@@ -388,7 +392,7 @@ theorem isLocallyPolyConn_compl_biUnion {A : Set Plane} (hA : A.Finite) (ρ : Pl
     have hfar : ∀ c ∈ A, 0 < supDist p c - ρ c := by
       intro c hcA
       have := hnear c hcA
-      simp only [closedSquare, mem_setOf_eq, not_le] at this
+      simp only [closedSquare, mem_ofPred_eq, not_le] at this
       linarith
     obtain ⟨s, hs, hsle⟩ := exists_pos_le_of_finite hA (f := fun c => supDist p c - ρ c) hfar
     refine isLocallyPolyConnAt_of_convex (isOpen_openSquare p s)

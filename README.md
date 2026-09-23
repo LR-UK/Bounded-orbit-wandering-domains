@@ -1,115 +1,83 @@
-# No bounded-orbit wandering domains
+# Absence of bounded-orbit wandering domains
 
-We prove that transcendental entire functions do not have bounded-orbit wandering domains.
+This is the unconditional formalisation prepared for Palomar, version 1.0.0,
+23 September 2026. It proves that a transcendental entire function cannot have
+a wandering Fatou component containing a point with bounded forward orbit.
+**Only one point orbit is required to be bounded.**
 
-This answers a major open question in the field. The proof builds upon Zihao Ye's new proof of Sullivan's No Wandering Domains theorem, and was obtained with assistance by generative AI, specifically ChatGPT 6 Astra. We also formalise a stronger theorem, which shows that locally defined holomorphic functions do not have wandering domains on which the iterates are univalent.
+The former classical hyperbolic metric hypothesis has been discharged by
+formalised disc-covering existence and the total-area formula. Both public
+results are in [Solution.lean](Solution.lean). Their independent statements
+are in [Challenge.lean](Challenge.lean), using only Mathlib imports.
 
-The formalisations are conditional on classical statements concerning the hyperbolic metrics of finitely punctured spheres which are well-known, but not yet formalised. Hence the theorems contain the existence of hyperbolic metrics on the corresponding punctures spheres as a hypothesis.
+## Exact statements
 
-Start with **Challenge.lean**: both results are stated independently in about 180 lines with only Mathlib imports. **Solution.lean** and the accompanying modules contain the substantive formal development.
+1. **Entire functions.** A pairwise disjoint forward orbit of actual Fatou
+   components cannot contain a point with bounded forward orbit. Boundedness
+   of the union of the components is not assumed. Simple connectivity and
+   eventual injectivity are derived for auxiliary trapped components.
+2. **Local functions.** The function is analytic near the compact closure of
+   an open set V and has no constant germ there. The relevant simply connected
+   trapped components lie in one compact subset of V and satisfy eventual
+   injectivity on each fixed intrinsic disc. Such a component orbit cannot
+   be pairwise disjoint. These dynamical hypotheses remain explicit.
 
-## Project layout
+Curvature is −1; area is divided by 2π. For each chart radius 0 < r < 1 the
+starting time for injectivity may depend on r. The intrinsic radius is
+2 artanh(r). The derived-singular-set statement is outside this submission.
 
-`Challenge.lean` and `Solution.lean` remain at the repository root.
+Fatou normality uses subsequential locally uniform convergence of sphere-valued
+iterates into the one-point compactification of ℂ. Transcendental entire means
+complex differentiability everywhere and inequality to every complex polynomial.
+The eight short supporting definitions are included in the comparison.
 
-The 55 supporting proof modules are under `BoundedWanderingDomains/`; `BoundedWanderingDomains.lean` imports that supporting development.
+## Build and verification
 
-Supporting module paths have the prefix `BoundedWanderingDomains.`. Version 0.12 corrects the entire theorem to require only one bounded point orbit. Curvature remains −1.
-
-The archive contains the full source tree, including its dependencies.
-
-## Exact scope
-
-Both theorems assume `ClassicalHyperbolicMetrics`: existence of curvature −1
-metrics on finitely punctured planes with positivity, smoothness, the curvature
-equation, sharp disc Schwarz inequality, extremal discs and classical total
-area. This is an explicit hypothesis, not a new Lean axiom.
-Area is divided by 2π.
-
-1. **Local functions.** V is open with compact closure; f is analytic near its
-   closure and has no constant germ there. Let T be the interior of the points
-   whose iterates stay in V. The components U_n of T through f^n(z) cannot be
-   pairwise disjoint if they are simply connected, all lie in one compact K
-   contained in V, and satisfy eventual injectivity on each fixed intrinsic disc.
-2. **Transcendental entire functions.** An orbit of actual Fatou components U_n
-   cannot be pairwise disjoint if some z in U_0 has a bounded forward orbit:
-   `Bornology.IsBounded (Set.range (fun n : ℕ => (f^[n]) z))`.
-   No bound on the union of the components is assumed. Simple connectivity of
-   auxiliary trapped components and eventual injectivity on intrinsic discs
-   are derived in the proof.
-
-For every chart radius 0 < r < 1, there is a starting time N(r) after which f
-is injective on the radius-r normalised Riemann-chart disc around f^n(z).
-The curvature −1 intrinsic radius is 2 artanh(r). N may depend on r.
-For the entire theorem these discs lie in auxiliary trapped components;
-their eventual compact containment suffices for the area argument.
-
-Simple connectivity and eventual disc injectivity are hypotheses only in
-the local result.
-The bounded-point-orbit theorem is proved subject to the explicit classical
-metric hypothesis. The derived-singular-set statement is not included.
-
-## Definitions and proof dependencies
-
-Differentiability, analyticity, iteration, connected components, simple
-connectivity, boundedness, integration and convergence use Mathlib definitions.
-Transcendental entire is expressed as complex differentiability everywhere
-and inequality to every complex polynomial.
-
-Fatou components use normality of sphere-valued iterates, with sphere
-`OnePoint ℂ` and its compact Hausdorff uniformity. No matching definitions
-were found in the pinned Mathlib or supplied Tau Ceti sources, so the short
-ComplexDynamics definitions are reproduced in the independent Challenge.
-The Solution uses the supplied definitions. All nine public supporting
-definitions are compared, including the uniform-space instance.
-
-`PointOrbitBridge.lean` obtains a bounded neighbourhood from the bounded
-point orbit using Schottky's estimate. `TrappedSimpleConnectivity.lean` and
-the supplied planar topology theorem provide simply connected trapped
-components inside the Fatou components. `LocalDiscInjectivity.lean` proves
-the local inverse-branch argument on shrinking intrinsic discs.
-`BoundedPointWandering.lean` joins these results to the uniform area
-contradiction in `EventualCompactDiscs.lean`.
-
-See `BOUNDED_POINT_PROOF.md` for the proof and its mapping to the Lean modules.
-All four supplied dependencies remain included as real source directories,
-with their licences and provenance. No new topology hypothesis or custom
-axiom is introduced. See `NEXT_STEPS.md` for remaining metric obligations.
-
-## Build and verify
-
-With Lean 4.34.0, from the project root:
+The toolchain is `leanprover/lean4:v4.35.0-rc2`. Mathlib is pinned to
+`065356127b1dc0016f66b7283ce0ce2c4055aa55`. From this directory:
 
 ```sh
-lake exe cache get
-lake build Submission Challenge
+python3 scripts/fetch_cache.py
 python3 scripts/verify_submission.py
+python3 scripts/verify_metadata.py
+python3 scripts/audit_attribution.py
+./scripts/verify-comparator.sh
 ```
 
-The default build target is the proved Solution development. Challenge has
-exactly two intentional proof holes and is not imported by Solution.
+The verification script builds with bounded parallelism, then runs the full
+Lake target check. The Python metadata check requires PyYAML. The final command requires Linux
+with working unprivileged user namespaces and bubblewrap; it uses the bundled
+Palomar Comparator, NanoDa and con-ron without weakening their checks.
+See [VERIFICATION.md](VERIFICATION.md) for the actual results and limitations.
+The two `sorry`s in Challenge are intentional statement placeholders; Solution
+does not import Challenge. No proof holes or extra axioms are permitted in
+Solution's dependency closure.
 
-The local verification compares exported elaborated declaration types and
-definition bodies, and audits the final theorem axioms. It is not the official
-Palomar Comparator or NanoDa. See VERIFICATION.md and PALOMAR_STATUS.md.
-The current report is verification/submission.json.
+## Organisation and provenance
 
-## Submission and attribution
+- `BoundedWanderingDomains/`: analytic, dynamical and area arguments.
+- `RiemannDynamics/`: attributed uniformisation port and the final bridge.
+- `RMT4/`: attributed supporting analytic source.
+- `dependencies/`: four contained source dependencies and vendored Schoenflies.
+- `verification/`: reproducible audit scripts' outputs and supporting exporters.
+- `history/`: clearly separated earlier-stage documents and logs.
 
-The package contains the metadata, Comparator configuration, pinned
-dependencies and licences. Actual submission still needs a public repository
-and its full commit SHA. No public submission has been made.
+There are no sibling-project dependencies. Mathlib and its pinned Git
+dependencies are fetched by Lake. Build caches are not distributed.
+The mathematical proof outline is in [BOUNDED_POINT_PROOF.md](BOUNDED_POINT_PROOF.md).
+The new unconditional connection is in
+`RiemannDynamics/BoundedWanderingSolution.lean`.
 
-Mathematical direction: Lasse Rempe. AI-assisted formalisation: OpenAI
-ChatGPT/Codex. The working argument was motivated by Zihao Ye's preprint
-and the hyperbolic-density comparisons discussed with the author.
-Precise sources and review limitations are in formalization.yaml.
+Mathematical direction: Lasse Rempe. Paper authors: Nikolai Prochorov,
+Lasse Rempe and James Waterman. AI-assisted formalisation: OpenAI ChatGPT/Codex.
+Third-party proofs retain their own authorship and licences; see
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and `formalization.yaml`.
+The manuscript is being prepared separately. No independent human review or
+Palomar acceptance is claimed.
 
+## Submission
 
-## Licences and reused proofs
-
-See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for the complete component
-index, source authors, pinned revisions, adaptation records and links to all
-included licences. Original upstream notices are retained. Run
-`python3 scripts/audit_attribution.py` to check the packaged attribution material.
-The packaging script also checks its presence and contents in the archive.
+Use [SUBMISSION.md](SUBMISSION.md) for the prepared form values and remaining
+publication step. The current submission form is
+https://submit.palomar-registry.org/ . A public repository and the full immutable
+commit SHA are required. This archive has not been published or submitted.

@@ -1,0 +1,3 @@
+ℹ [3212/3212] Built BoundedWanderingDomains.ChartDiscs (18s)
+info: BoundedWanderingDomains/ChartDiscs.lean:88:0: 'AreaDeficit.mapsTo_chartDisc' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (3212 jobs).

@@ -3,6 +3,10 @@ Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
+
+/- Compatibility update, 23 September 2026: current Mathlib names and Lean
+linter suggestions; original mathematical statements and attribution retained. -/
+
 import Schoenflies.FiniteTransferTarget
 import Schoenflies.SquareMeshClosed
 
@@ -112,12 +116,12 @@ theorem exists_finiteGraph_edgeRelabeling_avoiding
   · intro e he g hg heg
     have hnames : freshName (⟨e, he⟩ : E(H)) = freshName ⟨g, hg⟩ := by
       dsimp only [name] at heg
-      rw [dif_pos he, dif_pos hg] at heg
+      rw [dite_eq_left he, dite_eq_left hg] at heg
       exact heg
     exact congrArg Subtype.val (hfreshName hnames)
   · intro e he
     dsimp only [name]
-    rw [dif_pos he]
+    rw [dite_eq_left he]
     exact havoid (⟨e, he⟩ : E(H))
 
 /-- A finite square mesh can have all of its edges injectively renamed into any infinite cell

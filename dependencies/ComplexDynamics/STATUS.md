@@ -1,3 +1,10 @@
+> **Submission copy, 23 September 2026.** Toolchain and dependency pins have
+> been updated to Lean 4.35.0-rc2 and Mathlib
+> `065356127b1dc0016f66b7283ce0ce2c4055aa55` for the unconditional submission.
+> The records below describe the supplied Lean 4.34 snapshot. Current checking
+> covers the modules imported by the root submission targets; see the root
+> VERIFICATION.md. A fresh full standalone audit of this dependency is not claimed.
+
 # Status
 
 The complete root library builds. Its initial modules are `Normality`, `Basic`,

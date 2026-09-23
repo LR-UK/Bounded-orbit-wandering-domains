@@ -3,6 +3,10 @@ Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
+
+/- Compatibility update, 23 September 2026: current Mathlib names and Lean
+linter suggestions; original mathematical statements and attribution retained. -/
+
 import Schoenflies.FiniteTransfer
 import Schoenflies.RealizeSubdivHomeo
 
@@ -48,8 +52,8 @@ theorem connected_of_isPreconnected_pointSet [G.Finite]
   let B : Graph Plane β := G.induce (V(G) \ G.component x)
   have hAle : A ≤ G := G.induce_le component_subset_vertexSet
   have hBle : B ≤ G := G.induce_le Set.sdiff_subset
-  letI : A.Finite := Graph.Finite.of_le hAle
-  letI : B.Finite := Graph.Finite.of_le hBle
+  let : A.Finite := Graph.Finite.of_le hAle
+  let : B.Finite := Graph.Finite.of_le hBle
   have hAclosed : IsClosed (pointSet A drawing) := (hdraw.mono hAle).isClosed_pointSet
   have hBclosed : IsClosed (pointSet B drawing) := (hdraw.mono hBle).isClosed_pointSet
   have hcover : pointSet G drawing ⊆ pointSet A drawing ∪ pointSet B drawing := by
@@ -64,14 +68,14 @@ theorem connected_of_isPreconnected_pointSet [G.Finite]
       · have hvC : v ∈ G.component x := mem_component_of_isLink huC huv
         exact Or.inl (Or.inr (Set.mem_iUnion₂_of_mem
           (show e ∈ E(A) by
-            rw [edgeSet_eq_setOf_exists_isLink]
+            rw [edgeSet_eq_setOfPred_exists_isLink]
             exact ⟨u, v, huv, huC, hvC⟩) hze))
       · have hvC : v ∉ G.component x := by
           intro hvC
           exact huC (mem_component_of_isLink hvC huv.symm)
         exact Or.inr (Or.inr (Set.mem_iUnion₂_of_mem
           (show e ∈ E(B) by
-            rw [edgeSet_eq_setOf_exists_isLink]
+            rw [edgeSet_eq_setOfPred_exists_isLink]
             exact ⟨u, v, huv, ⟨huv.left_mem, huC⟩, ⟨huv.right_mem, hvC⟩⟩) hze))
   have hAB : Disjoint (pointSet A drawing) (pointSet B drawing) := by
     rw [Set.disjoint_left]
@@ -79,13 +83,13 @@ theorem connected_of_isPreconnected_pointSet [G.Finite]
     rcases hzA with hzAV | hzAE <;> rcases hzB with hzBV | hzBE
     · exact hzBV.2 hzAV
     · obtain ⟨e, heB, hze⟩ := Set.mem_iUnion₂.1 hzBE
-      rw [edgeSet_eq_setOf_exists_isLink] at heB
+      rw [edgeSet_eq_setOfPred_exists_isLink] at heB
       obtain ⟨u, v, huv, huB, hvB⟩ := heB
       have hzinc := hdraw.vertex_mem_edgeArc huv (component_subset_vertexSet hzAV) hze
       rcases hzinc with rfl | rfl
       exacts [huB.2 hzAV, hvB.2 hzAV]
     · obtain ⟨e, heA, hze⟩ := Set.mem_iUnion₂.1 hzAE
-      rw [edgeSet_eq_setOf_exists_isLink] at heA
+      rw [edgeSet_eq_setOfPred_exists_isLink] at heA
       obtain ⟨u, v, huv, huA, hvA⟩ := heA
       have hzinc := hdraw.vertex_mem_edgeArc huv hzBV.1 hze
       rcases hzinc with rfl | rfl
@@ -97,7 +101,7 @@ theorem connected_of_isPreconnected_pointSet [G.Finite]
       have hef : e ≠ f := by
         intro hef
         subst f
-        rw [edgeSet_eq_setOf_exists_isLink] at heA hfB
+        rw [edgeSet_eq_setOfPred_exists_isLink] at heA hfB
         obtain ⟨u, v, huv, huA, -⟩ := heA
         obtain ⟨u', v', huv', huB, hvB⟩ := hfB
         rcases huv.left_eq_or_eq huv' with h | h
@@ -105,7 +109,7 @@ theorem connected_of_isPreconnected_pointSet [G.Finite]
         · exact hvB.2 (h ▸ huA)
       obtain ⟨hzV, ⟨u, heu⟩, ⟨v, hfv⟩⟩ :=
         hdraw.edge_inter heG hfG hef hzeA hzfB
-      rw [edgeSet_eq_setOf_exists_isLink] at heA hfB
+      rw [edgeSet_eq_setOfPred_exists_isLink] at heA hfB
       obtain ⟨a, b, hab, haA, hbA⟩ := heA
       obtain ⟨c, d, hcd, hcB, hdB⟩ := hfB
       rcases heu.left_eq_or_eq hab with rfl | rfl <;>
@@ -135,7 +139,7 @@ def traceGraph (G : Graph Plane β) (drawing : β → ℝ → Plane) (A : Set Pl
 @[simp] theorem traceGraph_isLink (A : Set Plane) :
     (traceGraph G drawing A).IsLink e x y ↔
       edgeArc drawing e ⊆ A ∧ G.IsLink e x y ∧ x ∈ A ∧ y ∈ A := by
-  simp only [traceGraph, induce_isLink, restrict_isLink, Set.mem_setOf_eq,
+  simp only [traceGraph, induce_isLink, restrict_isLink, Set.mem_ofPred_eq,
     Set.mem_inter_iff]
   constructor
   · rintro ⟨⟨hsub, hlink⟩, ⟨-, hxA⟩, ⟨-, hyA⟩⟩
@@ -164,7 +168,7 @@ theorem pointSet_traceGraph_subset (A : Set Plane) :
   rintro z (hz | hz)
   · exact hz.2
   · obtain ⟨e, he, hze⟩ := Set.mem_iUnion₂.1 hz
-    rw [edgeSet_eq_setOf_exists_isLink] at he
+    rw [edgeSet_eq_setOfPred_exists_isLink] at he
     obtain ⟨x, y, hxy⟩ := he
     exact (traceGraph_isLink A).1 hxy |>.1 hze
 
@@ -185,7 +189,7 @@ theorem pointSet_traceGraph_eq (hdraw : IsDrawing G drawing) (A : Set Plane)
         habsorb he ⟨z, ⟨hze, hzA, hzVG⟩⟩
       exact Or.inr (Set.mem_iUnion₂_of_mem
         (show e ∈ E(traceGraph G drawing A) by
-          rw [edgeSet_eq_setOf_exists_isLink]
+          rw [edgeSet_eq_setOfPred_exists_isLink]
           obtain ⟨x, y, hxy⟩ := G.exists_isLink_of_mem_edgeSet he
           have harc := hdraw.edge_isArcBetween hxy
           exact ⟨x, y, (traceGraph_isLink A).2
@@ -302,8 +306,8 @@ theorem exists_edge_trace (hH : IsSourceExtension R outer dom H Hdraw)
       Graph.edgesCover Hdraw D = edgeArc R.drawing e := by
   let K := Graph.traceGraph H Hdraw (edgeArc R.drawing e)
   have hKle : K ≤ H := Graph.traceGraph_le _
-  letI : H.Finite := hH.finite
-  letI : K.Finite := Graph.Finite.of_le hKle
+  let : H.Finite := hH.finite
+  let : K.Finite := Graph.Finite.of_le hKle
   have hpoint : pointSet K Hdraw = edgeArc R.drawing e :=
     edge_trace_pointSet hH hab.edge_mem
   have haH : R.pos a ∈ V(H) := hH.vertexSet_subset (by
@@ -683,8 +687,8 @@ theorem exists_edge_trace (h : IsPlaneSubdivisionExtension G Gdraw K Kdraw)
     ∃ D : List δ, K.IsPath a D b ∧ edgesCover Kdraw D = edgeArc Gdraw e := by
   let T := Graph.traceGraph K Kdraw (edgeArc Gdraw e)
   have hTK : T ≤ K := Graph.traceGraph_le _
-  letI : K.Finite := h.finite
-  letI : T.Finite := Graph.Finite.of_le hTK
+  let : K.Finite := h.finite
+  let : T.Finite := Graph.Finite.of_le hTK
   have hpoint : pointSet T Kdraw = edgeArc Gdraw e := h.edge_trace_pointSet hab.edge_mem
   have haK : a ∈ V(K) := h.vertexSet_subset hab.left_mem
   have hbK : b ∈ V(K) := h.vertexSet_subset hab.right_mem
@@ -1083,7 +1087,7 @@ theorem outerSet_realize {d : S.SubdivData} {R : S.Realization}
     have hvertex : d.realizePos R t '' V(d.outer) =
         insert (R.drawing d.edge t) (R.pos '' V(S.outerGraph)) := by
       rw [CellStructure.SubdivData.outer, subdivGraph_vertexSet]
-      simp only [d.outer_isLink he, and_true, Set.setOf_eq_eq_singleton,
+      simp only [d.outer_isLink he, and_true, Set.ofPred_eq_eq_singleton,
         Set.image_union, Set.image_singleton, d.realizePos_newVertex]
       rw [Set.union_comm]
       congr 1
@@ -1326,7 +1330,7 @@ theorem exists_subdivideAtData [Infinite γ]
         exact (P.src.isDrawing.edge_param heR).2.2.right_mem
       have htIoo : t ∈ Set.Ioo (0 : ℝ) 1 :=
         ⟨lt_of_le_of_ne ht.1 (Ne.symm ht0), lt_of_le_of_ne ht.2 ht1⟩
-      letI : Finite (Fin 3) := inferInstance
+      let : Finite (Fin 3) := inferInstance
       obtain ⟨fresh, hfresh, havoid⟩ :=
         exists_injective_avoiding P.str.cells P.str.finite_cells (Fin 3)
       have h01 : fresh 0 ≠ fresh 1 := fun h => by
@@ -1573,8 +1577,8 @@ noncomputable def commonSubdivisionData [Infinite γ]
   classical
   let K := Graph.traceGraph H Hdraw P.src.skeletonSet
   have hKle : K ≤ H := Graph.traceGraph_le _
-  letI : H.Finite := hH.finite
-  letI : K.Finite := Graph.Finite.of_le hKle
+  let : H.Finite := hH.finite
+  let : K.Finite := Graph.Finite.of_le hKle
   have hK2 : K.IsTwoConnected :=
     trace_isTwoConnected hH P.src_isWeaklyAdmissible.isTwoConnected
   have hvertices : V(K) ⊆ P.src.skeletonSet := by

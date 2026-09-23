@@ -1,0 +1,29 @@
+'AreaDeficit.IsHolomorphicDiscCovering.deriv_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.IsHolomorphicDiscCovering.fibre_density_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.IsHolomorphicDiscCovering.density_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.IsHolomorphicDiscCovering.density_schwarz' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.IsHolomorphicDiscCovering.density_extremal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.IsHolomorphicDiscCovering.density_contDiffAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.IsHolomorphicDiscCovering.density_curvature' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BoundedWanderingDomains.classicalHyperbolicMetrics_of_coveringsAndArea' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire_of_coveringsAndArea' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BoundedWanderingDomains.no_local_bounded_wandering_domains_of_coveringsAndArea' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'AreaDeficit.integral_inverse_sqrt_semicircle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.integral_upper_halfPlane_vertical' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.idealTriangle_iterated_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.modelIdealTriangle_area' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.upperHalfPlaneIdealTriangle_volume' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.upperHalfPlaneIdealTriangle_smul_volume' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.volume_of_idealTriangle_partition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.squareRootCovering_radii_tendsto_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.exists_inverseBranch_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.IsHolomorphicDiscCovering.density_independent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.IsHolomorphicDiscCovering.density_pullback' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.IsHolomorphicDiscCovering.area_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.IsHolomorphicDiscCovering.area_of_partition' depends on axioms: [propext, Classical.choice, Quot.sound]

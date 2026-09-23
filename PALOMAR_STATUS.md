@@ -1,37 +1,16 @@
-# Prepared Palomar submission: bounded-point-orbit theorem
+# Unconditional submission status
 
-The entire Challenge and Solution now assume boundedness only of the forward
-orbit of one point in the Fatou component. The bounded-union requirement has
-been removed with a proved bridge and local inverse-branch argument.
-The classical curvature −1 metric input remains the explicit hypothesis.
+This is the new version 1.0.0 package. Both independent Challenge statements
+omit the former classical hyperbolic metric hypothesis. The entire theorem
+requires only one bounded point orbit. The local theorem retains its stated
+local dynamical hypotheses. See README.md for the mathematical scope,
+VERIFICATION.md for actual checks, and SUBMISSION.md for the prepared form.
 
-This is a source package for review and publication, not an already submitted
-or registered Palomar entry.
+The earlier frozen conditional submission is preserved separately. This
+package has not been publicly uploaded, registered or accepted by Palomar.
 
-- Project directory: repository root.
-- Challenge module: `Challenge`.
-- Solution module: `Solution`.
-- Comparator configuration: `comparator.json`.
-- Metadata: `formalization.yaml`.
-- Licence: Apache-2.0, with inherited notices retained.
-- Lean: 4.34.0.
-- Mathlib: `5ed2965256430c3649e86755f9576b54eca72435`.
-
-The Challenge has two intentional theorem holes and only Mathlib imports.
-The Solution does not import the Challenge. Comparator is configured to compare
-the two theorems and all nine public supporting definitions, including the
-sphere's uniform-space instance, and to enable NanoDa.
-
-Local build, source, axiom and declaration checks are described in
-VERIFICATION.md. Official Palomar Comparator/NanoDa and metadata-policy
-validation have not been run in this environment.
-
-For actual submission, publish these sources (including all four contained
-dependencies and the vendored Schoenflies sources) in a public GitHub repository and select its full immutable
-40-character commit SHA. Use that repository and SHA with the root layout above.
-No repository URL, public commit or submission identifier has been invented.
-
-Preparation follows the official instructions inspected on 22 September 2026:
-https://palomar-registry.org/how-to-submit
-and the configuration shape in:
-https://github.com/PalomarRegistry/PalomarTemplate
+The Lean 4.35.0-rc2 build, local declaration comparison, axiom/source audit,
+metadata contract and attribution checks have passed. The official Comparator
+attempt was blocked by this environment's bubblewrap restriction before proof
+replay. Run the included CI to complete that gate before submission. No public
+repository URL, commit SHA or registry identifier has been invented.

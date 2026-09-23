@@ -11,7 +11,16 @@ def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 def audit():
-    records = {ROOT / 'LICENSE', ROOT / 'THIRD_PARTY_NOTICES.md'}
+    records = {ROOT / 'LICENSE', ROOT / 'THIRD_PARTY_NOTICES.md',
+               ROOT / 'DEPENDENCY_COMPATIBILITY.md',
+               ROOT / 'verification/linter-updated-files.json',
+               ROOT / 'verification/linter-compatibility.patch',
+               ROOT / 'RIEMANN_DYNAMICS_LICENSE', ROOT / 'RMT4_LICENSE',
+               ROOT / 'port-deprecation-updates.json',
+               ROOT / 'verification/toolchain435-changes.json',
+               ROOT / 'verification/toolchain435-changes.patch',
+               ROOT / 'verification/palomar-contract/LICENSE',
+               ROOT / 'verification/palomar-contract/PROVENANCE.md'}
     for name in ('FunctionTheory', 'ComplexDynamics', 'ComplexApproximation', 'EremenkosConjecture'):
         base = ROOT / 'dependencies' / name
         for filename in ('LICENSE', 'THIRD_PARTY_NOTICES.md', 'PROVENANCE.md'):
@@ -26,8 +35,8 @@ def audit():
                 path = Path(directory) / name
                 if 'third_party' in path.parts or name in {'LICENSE', 'PROVENANCE.md', 'ALIGNMENT.json'}:
                     records.add(path)
-    licences = sorted(p for p in records if p.name == 'LICENSE')
-    assert len(licences) == 9
+    licences = sorted(p for p in records if (p.name == 'LICENSE' and 'palomar-contract' not in p.parts) or p.name in {'RIEMANN_DYNAMICS_LICENSE', 'RMT4_LICENSE'})
+    assert len(licences) == 11
     for path in licences:
         text = path.read_text()
         assert 'Apache License' in text and 'Version 2.0, January 2004' in text, path

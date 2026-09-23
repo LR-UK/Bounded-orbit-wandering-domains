@@ -3,6 +3,10 @@ Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
+
+/- Compatibility update, 23 September 2026: current Mathlib names and Lean
+linter suggestions; original mathematical statements and attribution retained. -/
+
 import Schoenflies.Graph.Walk
 import Mathlib.Combinatorics.Graph.Delete
 import Mathlib.Data.Set.Finite.Basic
@@ -245,7 +249,7 @@ theorem pathGraphOf_vertexSet : V(G.pathGraphOf u W) = G.walkVertices u W := rfl
 theorem pathGraphOf_isLink :
     (G.pathGraphOf u W).IsLink e x y ↔
       e ∈ W ∧ G.IsLink e x y ∧ x ∈ G.walkVertices u W ∧ y ∈ G.walkVertices u W := by
-  simp only [pathGraphOf, induce_isLink, restrict_isLink, mem_setOf_eq]
+  simp only [pathGraphOf, induce_isLink, restrict_isLink, mem_ofPred_eq]
   tauto
 
 theorem mem_vertexSet_pathGraphOf_self : u ∈ V(G.pathGraphOf u W) := mem_walkVertices_self
@@ -258,8 +262,8 @@ theorem pathGraphOf_le (h : G.IsWalk u W v) : G.pathGraphOf u W ≤ G :=
 walk, to know that an entry of `W` is an edge of `G` at all and that its ends are visited. -/
 theorem pathGraphOf_edgeSet (h : G.IsWalk u W v) : E(G.pathGraphOf u W) = {e | e ∈ W} := by
   ext f
-  rw [edgeSet_eq_setOf_exists_isLink]
-  simp only [pathGraphOf_isLink, mem_setOf_eq]
+  rw [edgeSet_eq_setOfPred_exists_isLink]
+  simp only [pathGraphOf_isLink, mem_ofPred_eq]
   refine ⟨fun ⟨_, _, hf, _⟩ ↦ hf, fun hf ↦ ?_⟩
   obtain ⟨a, b, hab⟩ := exists_isLink_of_mem_edgeSet (h.edge_mem hf)
   exact ⟨a, b, hf, hab, mem_walkVertices_of_mem_covered ⟨f, hf, hab.inc_left⟩,

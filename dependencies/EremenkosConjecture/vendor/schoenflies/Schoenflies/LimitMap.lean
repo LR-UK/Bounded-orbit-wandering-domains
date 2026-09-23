@@ -3,6 +3,10 @@ Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
+
+/- Compatibility update, 23 September 2026: current Mathlib names and Lean
+linter suggestions; original mathematical statements and attribution retained. -/
+
 import Schoenflies.RefinementStars
 import Schoenflies.Inversion
 
@@ -477,7 +481,7 @@ noncomputable def F (L : LimitTower γ) (x : Plane) : Plane :=
 
 /-- **The characterising property of `F`.** -/
 theorem iInter_tgtStar_eq (hx : x ∈ L.dom) : ⋂ n, L.tgtStar n x = {L.F x} := by
-  rw [F, dif_pos (L.exists_eq_singleton_iInter_tgtStar hx)]
+  rw [F, dite_eq_left (L.exists_eq_singleton_iInter_tgtStar hx)]
   exact (L.exists_eq_singleton_iInter_tgtStar hx).choose_spec
 
 theorem F_mem_iInter (hx : x ∈ L.dom) : L.F x ∈ ⋂ n, L.tgtStar n x := by
@@ -863,7 +867,7 @@ noncomputable def inv (L : LimitTower γ) (y : Plane) : Plane :=
 
 theorem inv_spec (h : ∃ x, x ∈ L.region ∧ L.F x = y) :
     L.inv y ∈ L.region ∧ L.F (L.inv y) = y := by
-  rw [inv, dif_pos h]
+  rw [inv, dite_eq_left h]
   exact h.choose_spec
 
 theorem inv_mem_region (hy : y ∈ L.region') : L.inv y ∈ L.region :=

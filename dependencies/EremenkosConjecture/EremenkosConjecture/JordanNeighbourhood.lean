@@ -1,3 +1,6 @@
+/- Compatibility update, 23 September 2026: current Lean linter suggestions;
+mathematical statements and original attribution retained. -/
+
 import EremenkosConjecture.SquareChainNeighbourhood
 
 /-! # Jordan neighbourhoods from outer faces of finite plane graphs -/
@@ -75,7 +78,7 @@ theorem exists_jordan_neighbourhood_within_full_compact {K M : Set Plane}
   obtain ⟨r, N, c, hr, hstep, hcover, hsub⟩ :=
     exists_square_chain_cover hK hconn isOpen_interior hKM
   let G := familyChain c N N r 0
-  haveI : G.Finite := familyChain_finite
+  have : G.Finite := familyChain_finite
   have hG : Graph.IsDrawing G segmentDrawing :=
     (familyOverlay_isDrawing hr).mono familyChain_le
   have h2 : G.IsTwoConnected := familyChain_isTwoConnected squaresTwoConnected hr

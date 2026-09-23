@@ -3,6 +3,10 @@ Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
+
+/- Compatibility update, 23 September 2026: current Mathlib names and Lean
+linter suggestions; original mathematical statements and attribution retained. -/
+
 import Schoenflies.SourceOverlay
 
 /-!
@@ -29,7 +33,7 @@ open scoped Graph
 
 namespace Schoenflies
 
-open Graph
+open _root_.Schoenflies.Graph
 
 variable {γ : Type*} {S₀ : CellStructure γ}
   {srcOuter srcDom tgtOuter tgtDom : Set Plane}
@@ -312,7 +316,7 @@ theorem localGridVertices_subset_crosscutOverlay {J : Piece} {p : Plane}
       V(Q.crosscutOverlay J p s epsilon extra) := by
   intro x hx
   rw [localGrid_eq, pieceListGraph_vertexSet] at hx
-  simp only [endSet, Set.mem_setOf_eq] at hx
+  simp only [endSet, Set.mem_ofPred_eq] at hx
   obtain ⟨R, hR, hxR⟩ := hx
   change x ∈ V(overlayGraph (Q.crosscutPieces J p s epsilon)
     (attachPoints (Q.crosscutPieces J p s epsilon)
@@ -630,7 +634,7 @@ theorem drawing_of_inner {e : γ} (he : e ∈ E(w.innerGraph)) :
     w.drawing e =
       (Q.crosscutOverlay J p s epsilon extra).relabelDrawing
         w.name segmentDrawing e := by
-  rw [drawing, if_neg]
+  rw [drawing, ite_eq_right]
   obtain ⟨R, hR, rfl⟩ := he
   exact fun heOuter => w.name_fresh R hR
     (P.str.mem_cells_of_mem_edgeSet (P.str.outerGraph_le.edgeSet_mono heOuter))
@@ -1071,7 +1075,7 @@ theorem crosscut_isPlaneSubdivisionExtension (hs : 0 < s) (hJ : J.Nondeg)
   vertexSet_subset := by
     intro x hx
     rw [pieceListGraph_vertexSet] at hx
-    simp only [endSet, Set.mem_setOf_eq] at hx
+    simp only [endSet, Set.mem_ofPred_eq] at hx
     obtain ⟨R, hR, hxR⟩ := hx
     simp only [List.mem_singleton] at hR
     subst R

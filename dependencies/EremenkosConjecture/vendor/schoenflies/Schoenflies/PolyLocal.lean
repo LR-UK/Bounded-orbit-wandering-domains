@@ -3,6 +3,10 @@ Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
+
+/- Compatibility update, 23 September 2026: current Mathlib names and Lean
+linter suggestions; original mathematical statements and attribution retained. -/
+
 import Schoenflies.LocallyPolygonal
 import Schoenflies.PolygonalCarrier
 
@@ -277,7 +281,7 @@ theorem isLocallyPolyConn'_compl_biUnion {Q : Set Plane} (hQ : Q.Finite) (ρ : P
       rintro c ⟨hcQ, hcne⟩
       have : p ∉ closedSquare c (ρ c) :=
         Set.disjoint_left.1 (hdisj c₀ hc₀Q c hcQ fun h => hcne (h ▸ rfl)) hpc₀
-      simp only [closedSquare, mem_setOf_eq, not_le] at this
+      simp only [closedSquare, mem_ofPred_eq, not_le] at this
       linarith
     obtain ⟨s, hs, hsle⟩ := exists_pos_le_of_finite (hQ.sdiff (t := {c₀}))
       (f := fun c => supDist p c - ρ c) hfar
@@ -298,7 +302,7 @@ theorem isLocallyPolyConn'_compl_biUnion {Q : Set Plane} (hQ : Q.Finite) (ρ : P
     have hfar : ∀ c ∈ Q, 0 < supDist p c - ρ c := by
       intro c hcQ
       have := hnear c hcQ
-      simp only [closedSquare, mem_setOf_eq, not_le] at this
+      simp only [closedSquare, mem_ofPred_eq, not_le] at this
       linarith
     obtain ⟨s, hs, hsle⟩ := exists_pos_le_of_finite hQ (f := fun c => supDist p c - ρ c) hfar
     refine isLocallyPolyConnAt'_of_nbhd_subset (isOpen_openSquare p s) (mem_openSquare_self hs)

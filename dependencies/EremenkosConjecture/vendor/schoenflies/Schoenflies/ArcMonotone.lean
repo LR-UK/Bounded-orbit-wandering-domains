@@ -3,6 +3,10 @@ Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
+
+/- Compatibility update, 23 September 2026: current Mathlib names and Lean
+linter suggestions; original mathematical statements and attribution retained. -/
+
 import Schoenflies.Subarc
 
 /-!
@@ -86,7 +90,7 @@ theorem arcParam_spec (hp : p ∈ f '' I) : arcParam f p ∈ I ∧ f (arcParam f
   have h : ∃ s, s ∈ I ∧ f s = p := by
     obtain ⟨s, hs, rfl⟩ := hp
     exact ⟨s, hs, rfl⟩
-  rw [arcParam, dif_pos h]
+  rw [arcParam, dite_eq_left h]
   exact h.choose_spec
 
 theorem arcParam_mem_I (hp : p ∈ f '' I) : arcParam f p ∈ I := (arcParam_spec hp).1

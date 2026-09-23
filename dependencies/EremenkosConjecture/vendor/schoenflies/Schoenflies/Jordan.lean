@@ -3,6 +3,10 @@ Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
+
+/- Compatibility update, 23 September 2026: current Mathlib names and Lean
+linter suggestions; original mathematical statements and attribution retained. -/
+
 import Schoenflies.AccessibleJoin
 import Schoenflies.CrosscutCells
 import Schoenflies.JordanSeparates
@@ -719,7 +723,7 @@ theorem not_three_components (harc : ∀ A : Set Plane, IsArc A → IsConnected 
         first
           | exact absurd rfl hjl
           | assumption
-          | (rw [inter_comm]; assumption)
+          | (rwa [inter_comm])
   choose xx hxxΩ TT hTTarc hTTsub hTTmeet using htri
   /- ### Assembling the `K(3,3)` -/
   have hTC : ∀ i j, TT i j ∩ f '' I = {f (t i j)} := by

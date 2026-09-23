@@ -1,0 +1,16 @@
+ShrinkingImages.lean:31:4: error: Type mismatch: After simplification, term
+  this
+ has type
+  @TendstoUniformlyOn ℂ ℂ ℕ PseudoMetricSpace.toUniformSpace
+    (⇑(UniformOnFun.toFun {L}) ∘ fun n => (UniformOnFun.ofFun {L}) fun z => f n z - f n x) (fun x => 0) atTop L
+but is expected to have type
+  @TendstoUniformlyOn ℂ ℂ ℕ PseudoMetricSpace.toUniformSpace (fun n z => f n z - f n x) (fun x => 0) atTop L
+ShrinkingImages.lean:51:15: error: Type mismatch: After simplification, term
+  hz
+ has type
+  @TendstoUniformlyOn ℂ ℂ ℕ PseudoMetricSpace.toUniformSpace (fun n z => f (ns (φ n)) z - f (ns (φ n)) x) (fun z => 0)
+    atTop L
+but is expected to have type
+  @TendstoUniformlyOn ℂ ℂ ℕ PseudoMetricSpace.toUniformSpace
+    (⇑(UniformOnFun.toFun {L}) ∘ fun n => (UniformOnFun.ofFun {L}) fun z => f (ns (φ n)) z - f (ns (φ n)) x)
+    (fun x => 0) atTop L

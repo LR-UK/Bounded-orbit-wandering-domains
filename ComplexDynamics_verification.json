@@ -1,36 +1,5 @@
 {
-  "result": "passed",
-  "checkedAtUTC": "2026-09-22T19:23:06.248706+00:00",
-  "toolchain": "leanprover/lean4:v4.34.0",
-  "targets": [
-    "ComplexDynamics"
-  ],
-  "selectedAxiomReports": 44,
-  "allowedAxioms": [
-    "Classical.choice",
-    "Quot.sound",
-    "propext"
-  ],
-  "sourceHashNormalization": "CRLF replaced by LF before SHA-256",
-  "sourceSha256": {
-    "ComplexDynamics.lean": "888e63312d66160e438f5841ce7b93529218f20889c644485dc561400c90adc4",
-    "ComplexDynamics/Basic.lean": "2744ffe0eb20989ac25250de19b2e1a6da2177dd0ca861faa323e5862950f778",
-    "ComplexDynamics/BoundedNormality.lean": "5dcba56b9aa208d18aca110c1f6909a3c4a43b846eef0ffe21e59096039fe4f0",
-    "ComplexDynamics/Bungee.lean": "54c3be17224af851b324e46397599cea27e4e90a4911b861b325aafa1431d41a",
-    "ComplexDynamics/Conjugacy.lean": "b54329bcf8b1647fd192054f370b44de5d85018eb7315ab74661ffdda8716bc5",
-    "ComplexDynamics/CurvesToInfinity.lean": "cc1043a9f791b866a0b347dd36de3710476a07c5bd0e1a8f3939a719826dcd4a",
-    "ComplexDynamics/FastEscape.lean": "cc5f0800bfb0db4067b58c43f809533909e72ee2e1043270a7cfa7ce3a33ad07",
-    "ComplexDynamics/FastEscapeScaling.lean": "cf58e47e47a0e14a54f664cfd1f38f4b1a79238466a2aeeefa69a0fe96475f2f",
-    "ComplexDynamics/FatouComponents.lean": "456748c1ade14a6bf563e25e25d126dbe956f5731aa1d50f53f3247dfc280b1f",
-    "ComplexDynamics/Iteration.lean": "6a649baff28593d501e962a3b76d1597ba052e336fc2f7a307ab76cf89c56ee9",
-    "ComplexDynamics/MainTheorems.lean": "e7b309f7c5a9d54e153a328b6b9a588ef9570af49a7cedab49061013a2ac2ab7",
-    "ComplexDynamics/Normality.lean": "4055cc73ee72557541a6c64dba8a60fa148ca0439c80634bc2ff2098870ef88b",
-    "ComplexDynamics/PathComponents.lean": "ef5721b3f5937d09631a6b7c78fc37296d2634d12286c49850b7af3d7a5b37db",
-    "ComplexDynamics/Scaling.lean": "0a6e8dd271690134b920c38db1be5981fe9ff247dca60a4e767ac172530eb50d",
-    "ComplexDynamics/Transcendence.lean": "ba4465d9c8dc47ce1867875baa3ba9ec59da1cacf6e4015afe296d7a0c5d38fa",
-    "ComplexDynamics/TranscendentalApproximation.lean": "1a1367f3de022b56872a1235207aaefcd6afd80b08d4d6cdf2406519455d79cf",
-    "ComplexDynamics/Trapping.lean": "ead39598899283bfe5186d2f25c439501fb1734c7337040947d7fb61311d27ef",
-    "ComplexDynamics/UniformEscape.lean": "204a6ade06489e18166709a8cb7f5107b0c08b1376b6a396c29c6f5913355715",
-    "ComplexDynamics/Wandering.lean": "843065b2d3d4b59e636c377b029746357c6c359f48f59d4a289511f554a2fbc1"
-  }
+  "status": "historical",
+  "record": "history/ComplexDynamics_verification.json",
+  "current_submission_checks": "VERIFICATION.md"
 }

@@ -3,6 +3,10 @@ Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
+
+/- Compatibility update, 23 September 2026: current Mathlib names and Lean
+linter suggestions; original mathematical statements and attribution retained. -/
+
 import Mathlib.Combinatorics.Graph.Subgraph
 import Mathlib.Data.Set.Card
 import Mathlib.Algebra.BigOperators.Group.Finset.Piecewise
@@ -231,23 +235,23 @@ theorem ncard_inc_add_ncard_isLoopAt (G : Graph α β) (he : e ∈ E(G)) :
     have hl : G.IsLoopAt e u := huv
     have h1 : {x | G.Inc e x} = {u} := by
       ext z
-      simp only [Set.mem_setOf_eq, Set.mem_singleton_iff]
+      simp only [Set.mem_ofPred_eq, Set.mem_singleton_iff]
       exact ⟨fun h => (hl.eq_of_inc h).symm, fun h => h ▸ hl.inc⟩
     have h2 : {x | G.IsLoopAt e x} = {u} := by
       ext z
-      simp only [Set.mem_setOf_eq, Set.mem_singleton_iff]
+      simp only [Set.mem_ofPred_eq, Set.mem_singleton_iff]
       exact ⟨fun h => (hl.eq_of_inc h.inc).symm, fun h => h ▸ hl⟩
     rw [h1, h2]
     simp
   · -- A non-loop: two distinct vertices, one end at each, and no loop anywhere.
     have h1 : {x | G.Inc e x} = {u, v} := by
       ext z
-      simp only [Set.mem_setOf_eq, Set.mem_insert_iff, Set.mem_singleton_iff]
+      simp only [Set.mem_ofPred_eq, Set.mem_insert_iff, Set.mem_singleton_iff]
       exact ⟨fun h => h.eq_or_eq_of_isLink huv,
         fun h => h.elim (fun hz => hz ▸ huv.inc_left) (fun hz => hz ▸ huv.inc_right)⟩
     have h2 : {x | G.IsLoopAt e x} = ∅ := by
       ext z
-      simp only [Set.mem_setOf_eq, Set.mem_empty_iff_false, iff_false]
+      simp only [Set.mem_ofPred_eq, Set.mem_empty_iff_false, iff_false]
       intro hz
       exact huv' ((hz.eq_of_inc huv.inc_left).symm.trans (hz.eq_of_inc huv.inc_right))
     rw [h1, h2, Set.ncard_pair huv']
@@ -264,7 +268,7 @@ private theorem ncard_setOf_eq_sum_ite {γ : Type*} (s : Finset γ) (p : γ → 
   rw [← Finset.card_filter p s, ← Set.ncard_coe_finset]
   congr 1
   ext z
-  simp only [Finset.coe_filter, Set.mem_setOf_eq]
+  simp only [Finset.coe_filter, Set.mem_ofPred_eq]
   exact ⟨fun h => ⟨hsub z h, h⟩, fun h => h.2⟩
 
 /-- **The handshake lemma.** The degrees of the vertices of a finite multigraph add up to

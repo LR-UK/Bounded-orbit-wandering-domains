@@ -3,6 +3,10 @@ Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
+
+/- Compatibility update, 23 September 2026: current Mathlib names and Lean
+linter suggestions; original mathematical statements and attribution retained. -/
+
 import Schoenflies.BoundaryContinuity2
 import Schoenflies.TargetOverlay
 import Mathlib.Topology.Separation.Connected
@@ -58,8 +62,8 @@ theorem IsJordanCurve.subset_closure_sdiff_finite
   have hforbiddenFinite : forbidden'.Finite := by
     apply hforbidden.preimage
     exact Set.injOn_of_injective Subtype.val_injective
-  letI : ConnectedSpace C := Subtype.connectedSpace hC.isConnected
-  letI : Nontrivial C := by
+  let : ConnectedSpace C := Subtype.connectedSpace hC.isConnected
+  let : Nontrivial C := by
     obtain ⟨x, hx, y, hy, hxy⟩ := hC.exists_ne
     exact ⟨⟨⟨x, hx⟩, ⟨y, hy⟩, fun h => hxy (congrArg Subtype.val h)⟩⟩
   have hcleanDense : Dense (eligible' \ forbidden') :=
@@ -345,7 +349,7 @@ theorem exists_clean_freshDense_of_accessibleTargetBoundary_dense
         StronglyAccessible (srcDom \ srcOuter) (P.homeo.invFun z)) ∧
       FreshAvoidsTargetNonouterEdges P fresh ∧ FreshDense fresh delta ∧
       FreshNet fresh delta := by
-  letI : Graph.Finite P.tgt.graph :=
+  let : Graph.Finite P.tgt.graph :=
     CellStructure.Realization.finite_graph P.tgt
   have haccessibleSubset : accessibleTargetBoundary P ⊆ modelCurve :=
     fun _ hz => hz.1

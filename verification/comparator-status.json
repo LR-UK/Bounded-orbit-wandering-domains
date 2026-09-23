@@ -1,0 +1,12 @@
+{
+  "result": "blocked-by-environment",
+  "exit_code": 1,
+  "toolchain": "leanprover/lean4:v4.35.0-rc2",
+  "command": "./scripts/verify-comparator.sh",
+  "reason": "bwrap: setting up uid map: Operation not permitted",
+  "official_comparator_passed": false,
+  "nanoda_replay": "not reached",
+  "con_ron_replay": "not reached",
+  "sandbox_disabled": false,
+  "next_step": "Run the included GitHub Actions workflow or the same command on Linux with working bubblewrap user namespaces."
+}

@@ -1,3 +1,6 @@
+/- Compatibility update, 23 September 2026: current Lean linter suggestions;
+mathematical statements and original attribution retained. -/
+
 import FunctionTheory.Analytic.PreimageStability
 import TauCeti.Analysis.Complex.Conformal.NormalFamilies
 import Mathlib.Analysis.Calculus.FDeriv.Analytic
@@ -35,7 +38,7 @@ theorem bloch_local_image_of_derivative_bound
       closedBall_subset_closedBall' (by have := mem_closedBall.mp hz; linarith)
     have H := TauCeti.norm_deriv_le_of_forall_mem_closedBall_norm_le
       hf.deriv.differentiableOn hhalf hsub (fun w hw => hbound w (hsub hw))
-    convert H using 1 <;> dsimp only [A] <;> ring
+    convert H using 1; dsimp only [A]; ring
   have hvar : ∀ z∈closedBall a R, ‖deriv f z-deriv f a‖≤A/8 := by
     intro z hz
     have H := (convex_closedBall a (r/2)).norm_image_sub_le_of_norm_deriv_le
@@ -83,7 +86,7 @@ theorem bloch_local_image_of_derivative_bound
     have hw' : ‖w-L a‖<A*R/4 := by
       rw [hLa]
       have H : ‖w-f a‖<‖deriv f a‖*r/128 := mem_ball_iff_norm.mp hw
-      convert H using 1 <;> dsimp only [A,R] <;> ring
+      convert H using 1; dsimp only [A,R]; ring
     obtain ⟨z,hz,hzw⟩ := exists_preimage_of_circle_bound hR
       (hL.mono (subset_univ _)) (hf.mono hRsub) hmu
       (show 2*(A*R/4)<A*R by nlinarith [mul_pos hA hR]) hclose hw'

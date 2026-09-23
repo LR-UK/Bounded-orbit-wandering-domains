@@ -99,10 +99,13 @@ The 128-module selected closure of `Schoenflies.JordanSchoenflies` comes from
 [alonamaloh/schoenflies-lean](https://github.com/alonamaloh/schoenflies-lean),
 commit `05a43d29cde026618777db3d4e4316204ccca237`.
 All original source copyright and author headers are retained, together with
-the complete licence. The provenance and alignment records identify 125
+the complete licence. The initial import records identified 125
 unchanged files after line-ending normalisation and compatibility edits to
 `Subarc.lean`, `Endgame.lean` and `InitialPair.lean`. The supplied port updates
 proof details for Lean 4.34.0 while retaining theorem statements.
+The subsequent linter/deprecation update is documented in
+[DEPENDENCY_COMPATIBILITY.md](DEPENDENCY_COMPATIBILITY.md); the current alignment
+record retains the upstream hashes and records 63 identical files.
 
 The application to simple connectivity of trapped components is additional
 project work. The Schoenflies theorem itself remains attributed to Begué.
@@ -126,7 +129,7 @@ history is retained; no HOL Light implementation is bundled here.
 Mathlib and its Lake dependencies are pinned in `lake-manifest.json` and are
 fetched separately. The `.lake` sources, caches and binaries are excluded from
 this archive. Mathlib is an Apache 2.0 dependency at revision
-`5ed2965256430c3649e86755f9576b54eca72435`; its contributors retain their source
+`065356127b1dc0016f66b7283ce0ce2c4055aa55`; its contributors retain their source
 notices. The manifest also records plausible, LeanSearchClient, importGraph,
 ProofWidgets4, aesop, Qq, batteries and Cli. Their own licences accompany the
 separately fetched packages. Lean itself is the separately installed toolchain.
@@ -155,3 +158,34 @@ copyright and licence headers. Its report is `verification/attribution.json`.
 Packaging also verifies that each recorded attribution file is present in the
 ZIP with the same contents. These are source-package checks, not a claim of
 an independent legal review or renewed upstream-source verification.
+
+## Uniformisation sources in the unconditional submission
+
+Selected `RiemannDynamics/` source is adapted from Will (Ziang) Li's
+[RiemannDynamics](https://github.com/will1491/RiemannDynamics), commit
+`b3fa37cc0f18a23ea66b654ea3f73eb472129010`. Its complete licence is retained as
+[RIEMANN_DYNAMICS_LICENSE](RIEMANN_DYNAMICS_LICENSE). The port updates Lean and
+Mathlib APIs, generalises covering second-countability, and adds the
+punctured-plane covering bridge and final dynamical application. Original
+source headers are retained. New project proofs are identified in their files.
+
+The included `RMT4/` source comes from Will (Ziang) Li's
+[RMT4](https://github.com/will1491/RMT4), commit
+`7e092cd5e347a1ee01afb165dd6ab043082e0f4d`. Its complete licence is retained as
+[RMT4_LICENSE](RMT4_LICENSE); original headers are retained. The uniformisation
+argument uses its winding-index and holomorphic square-root development.
+The Lean 4.34 port's deprecation edits are listed in
+[port-deprecation-updates.json](port-deprecation-updates.json).
+Further submission-toolchain adaptations are documented in
+[DEPENDENCY_COMPATIBILITY.md](DEPENDENCY_COMPATIBILITY.md).
+
+## Verification tooling
+
+The minimal Palomar metadata validator under `verification/palomar-contract/`
+is MIT-licensed, copyright 2026 Kim Morrison. Its
+[licence](verification/palomar-contract/LICENSE) and
+[provenance](verification/palomar-contract/PROVENANCE.md) are included.
+It is development tooling and is not part of the Lean proof's assumptions.
+The Comparator runner is adapted from PalomarTemplate at the commit recorded
+in its header; the template is Apache-2.0 licensed. The local adaptation limits
+Mathlib cache retrieval to the submitted modules' imported dependencies.

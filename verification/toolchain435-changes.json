@@ -1,0 +1,77 @@
+{
+  "baseline": "assembled unconditional Lean 4.34 submission",
+  "baseline_archive_sha256": "a2677f7caf73fa2e2051c91487f129bcff94fcee07180dbfe8b94c18f98e9fb4",
+  "toolchain": "leanprover/lean4:v4.35.0-rc2",
+  "mathlib": "065356127b1dc0016f66b7283ce0ce2c4055aa55",
+  "lean_source_files_changed": [],
+  "changed_source_and_configuration": {
+    "dependencies/ComplexApproximation/lake-manifest.json": {
+      "before": "b8a0e0a51347903b1fa8d1d861d12caf283d4d633cb0296976169cd160a45c26",
+      "after": "1a2ae651a9d90cf46eca5d366bb6a79bf8244292fee93128c0d1fc3b8043eada"
+    },
+    "dependencies/ComplexApproximation/lakefile.toml": {
+      "before": "064350ef0a2e1c39a26dd4e05c326311ef9871e3fcf52694b78b5d764c94c0bb",
+      "after": "526c04d76cc19dfd916351d464fe49e0bcdb64e1faa524c777651a5856047eb6"
+    },
+    "dependencies/ComplexApproximation/lean-toolchain": {
+      "before": "8733782dc070a99b312039cda424f601b80f3be6f6f512627da5ba25adc27632",
+      "after": "8dc8d6f560141069d9073e370611716ef77ada0da8ffa37e2149f44b2e63ac7a"
+    },
+    "dependencies/ComplexDynamics/lake-manifest.json": {
+      "before": "2c25988a1559de6d36372ac4532e88e51a70765c9312074432cc143266b8a5ce",
+      "after": "3e8c1a75405bdec33fb6f783c73e2dbc255ae61da217c76f30edf7e7449bb3a2"
+    },
+    "dependencies/ComplexDynamics/lakefile.toml": {
+      "before": "d20e00bd00f97a14b77bfe2a6635ce83540376f71e6a46d7ac5f3f292ad7ccbb",
+      "after": "43844225677247be53b98fb38b84902312700d936cef65616fd958795ab99ec7"
+    },
+    "dependencies/ComplexDynamics/lean-toolchain": {
+      "before": "8733782dc070a99b312039cda424f601b80f3be6f6f512627da5ba25adc27632",
+      "after": "8dc8d6f560141069d9073e370611716ef77ada0da8ffa37e2149f44b2e63ac7a"
+    },
+    "dependencies/EremenkosConjecture/lake-manifest.json": {
+      "before": "10f5c6607ab3f28c726491a950b55f1fa52158fabc88b65a7a416a3605e2a1ab",
+      "after": "4e253ccc0c171caae70e7918c7e63655e8ba1e12ba3edc044f621ba57050379f"
+    },
+    "dependencies/EremenkosConjecture/lean-toolchain": {
+      "before": "8733782dc070a99b312039cda424f601b80f3be6f6f512627da5ba25adc27632",
+      "after": "8dc8d6f560141069d9073e370611716ef77ada0da8ffa37e2149f44b2e63ac7a"
+    },
+    "dependencies/EremenkosConjecture/vendor/schoenflies/lake-manifest.json": {
+      "before": "5be3e34645433af9843718b2e2770a3f3faf301cfda1bf87a7d32e5a108f74c2",
+      "after": "8362cde42281b02af726e37f62770d27bd065785f61a22bf5ae624ce7c20ccbd"
+    },
+    "dependencies/EremenkosConjecture/vendor/schoenflies/lakefile.toml": {
+      "before": "550c303bd0b78079333d894251aa304797d052821c0ca31bc3563c71afdb2239",
+      "after": "21a3eef09665178b3edbf3251cdd2736d95827aaa1c64639db7c1c8ab629c01d"
+    },
+    "dependencies/EremenkosConjecture/vendor/schoenflies/lean-toolchain": {
+      "before": "744874093261c1854638246b978f088eae15414b0f636ac08481a088a7aaa867",
+      "after": "8dc8d6f560141069d9073e370611716ef77ada0da8ffa37e2149f44b2e63ac7a"
+    },
+    "dependencies/FunctionTheory/lake-manifest.json": {
+      "before": "a2c8c49ad55ef7c160ee6e13bad97e412928d9e0a454555bad31d9339539d592",
+      "after": "fb486bf5871cccb35791b06dc1166bfff70cd7f331d5a32e7bf92014bb7b1885"
+    },
+    "dependencies/FunctionTheory/lakefile.toml": {
+      "before": "e762a54961217c37c97d712f5ee07ea006e9aed78fb7a5f6155400ceab82f93a",
+      "after": "270c8f64dcdd41f8fdede48ae1c78a2cb131fe1934d1b7cd6c1658aad4f0ab2e"
+    },
+    "dependencies/FunctionTheory/lean-toolchain": {
+      "before": "8733782dc070a99b312039cda424f601b80f3be6f6f512627da5ba25adc27632",
+      "after": "8dc8d6f560141069d9073e370611716ef77ada0da8ffa37e2149f44b2e63ac7a"
+    },
+    "lake-manifest.json": {
+      "before": "57754ab457a991afb962213fb3c4ae6ce06ef17d24fc28b93aea6873337ad24d",
+      "after": "4d8d14b2a39231a87109e49dfdf94cc66d97f2232e7b04a949f7e2f361d620c3"
+    },
+    "lakefile.toml": {
+      "before": "95ac8439a5b302fc85e2e4c35585cc25c8d4ebc990c11644aa14966a5d486c51",
+      "after": "34fbc9cea4afad20db09d0401a2c7f642b2e9a1e38d45c8d745b4afa4f53efd5"
+    },
+    "lean-toolchain": {
+      "before": "8733782dc070a99b312039cda424f601b80f3be6f6f512627da5ba25adc27632",
+      "after": "8dc8d6f560141069d9073e370611716ef77ada0da8ffa37e2149f44b2e63ac7a"
+    }
+  }
+}

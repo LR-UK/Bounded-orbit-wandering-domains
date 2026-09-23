@@ -1,0 +1,3 @@
+HolomorphicLifting.lean:53:43: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`

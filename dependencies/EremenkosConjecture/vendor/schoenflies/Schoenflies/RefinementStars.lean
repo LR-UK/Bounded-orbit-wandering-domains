@@ -3,6 +3,10 @@ Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
+
+/- Compatibility update, 23 September 2026: current Mathlib names and Lean
+linter suggestions; original mathematical statements and attribution retained. -/
+
 import Schoenflies.GeneratedStructure
 
 /-!
@@ -132,7 +136,7 @@ noncomputable def carrier [Nonempty γ] (R : S.Realization) (x : Plane) : γ :=
 theorem carrier_spec [Nonempty γ] (R : S.Realization) (x : Plane)
     (h : ∃ σ, σ ∈ S.cells ∧ x ∈ R.cell σ) :
     R.carrier x ∈ S.cells ∧ x ∈ R.cell (R.carrier x) := by
-  rw [carrier, dif_pos h]
+  rw [carrier, dite_eq_left h]
   exact h.choose_spec
 
 namespace IsCellDecomposition

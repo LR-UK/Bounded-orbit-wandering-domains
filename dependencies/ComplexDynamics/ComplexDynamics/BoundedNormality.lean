@@ -1,3 +1,6 @@
+/- Compatibility update, 23 September 2026: current Lean linter suggestions;
+mathematical statements and original attribution retained. -/
+
 import ComplexDynamics.Basic
 import Mathlib.Analysis.Complex.Schwarz
 import Mathlib.Topology.ContinuousMap.Bounded.ArzelaAscoli
@@ -23,7 +26,7 @@ theorem isNormalSequenceOn_spherical_of_equicontinuous
     {B : Set ℂ} (hB : IsCompact B) (hb : ∀ n, MapsTo (F n) K B) :
     IsNormalSequenceOn (fun n z => (F n z : RiemannSphere)) K := by
   classical
-  letI : CompactSpace K := isCompact_iff_compactSpace.mp hK
+  let : CompactSpace K := isCompact_iff_compactSpace.mp hK
   let G : ℕ → BoundedContinuousFunction K ℂ := fun n =>
     BoundedContinuousFunction.mkOfCompact ⟨fun z => F n z, (hc n).domRestrict⟩
   have heG : Equicontinuous (fun (g : range G) (z : K) => g.val z) := by

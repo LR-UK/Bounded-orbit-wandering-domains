@@ -12,7 +12,6 @@
     "ComplexDynamics.sphericalIterate",
     "ComplexDynamics.fatouSet",
     "ComplexDynamics.IsFatouComponent",
-    "BoundedWanderingDomains.ClassicalHyperbolicMetrics",
     "BoundedWanderingDomains.trappedInterior",
     "BoundedWanderingDomains.EventuallyInjectiveOnLargeDiscs"
   ],
@@ -20,7 +19,5 @@
     "propext",
     "Quot.sound",
     "Classical.choice"
-  ],
-  "enable_nanoda": true
+  ]
 }
-

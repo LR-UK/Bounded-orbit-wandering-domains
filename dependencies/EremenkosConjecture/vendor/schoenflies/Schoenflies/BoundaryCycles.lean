@@ -3,6 +3,10 @@ Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
+
+/- Compatibility update, 23 September 2026: current Mathlib names and Lean
+linter suggestions; original mathematical statements and attribution retained. -/
+
 import Schoenflies.GeneratedStructure
 import Schoenflies.FaceCyclesProof
 
@@ -148,7 +152,7 @@ theorem pathCells_eq_of_perm {u₁ v₁ u₂ v₂ : γ} {W₁ W₂ : List γ}
   rw [CellStructure.pathCells, CellStructure.pathCells,
     h₁.walkVertices_eq_covered hne₁, h₂.walkVertices_eq_covered hne₂]
   ext σ
-  simp only [Set.mem_union, Set.mem_setOf_eq, Graph.mem_coveredVertices_iff]
+  simp only [Set.mem_union, Set.mem_ofPred_eq, Graph.mem_coveredVertices_iff]
   constructor
   · rintro (hσ | ⟨e, he, hi⟩)
     · exact Or.inl (hp.mem_iff.1 hσ)

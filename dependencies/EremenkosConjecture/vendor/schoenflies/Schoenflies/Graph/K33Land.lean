@@ -3,6 +3,10 @@ Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
+
+/- Compatibility update, 23 September 2026: current Mathlib names and Lean
+linter suggestions; original mathematical statements and attribution retained. -/
+
 import Schoenflies.PrePolygonArc
 import Schoenflies.Graph.K33Closed
 
@@ -154,10 +158,10 @@ theorem exists_splice {m m' : ℕ} (P : PrePolygon m) (P' : PrePolygon m')
     have := ZMod.val_lt j; omega
   have hw_lt : ∀ j : ZMod (n + 3), j.val < k →
       w j = P.vertex (a + ((j.val : ℕ) : ZMod (m + 3))) := fun j hj => by
-    rw [hwdef]; exact if_pos hj
+    rw [hwdef]; exact ite_eq_left hj
   have hw_ge : ∀ j : ZMod (n + 3), ¬ j.val < k →
       w j = P'.vertex (b + ((j.val - k : ℕ) : ZMod (m' + 3))) := fun j hj => by
-    rw [hwdef]; exact if_neg hj
+    rw [hwdef]; exact ite_eq_right hj
   have hsucc_lt : ∀ j : ZMod (n + 3), j.val < k →
       w (j + 1) = P.vertex (a + ((j.val : ℕ) : ZMod (m + 3)) + 1) := by
     intro j hj

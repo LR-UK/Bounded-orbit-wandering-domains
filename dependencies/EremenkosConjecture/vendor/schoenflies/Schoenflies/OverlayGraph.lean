@@ -3,6 +3,10 @@ Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
+
+/- Compatibility update, 23 September 2026: current Mathlib names and Lean
+linter suggestions; original mathematical statements and attribution retained. -/
+
 import Schoenflies.Overlay
 
 /-!
@@ -88,12 +92,12 @@ noncomputable def orientPiece (P : Piece) : Piece :=
 
 theorem orientPiece_of_precedes {P : Piece} (h : Precedes P.1 P.2) : orientPiece P = P := by
   classical
-  exact if_pos h
+  exact ite_eq_left h
 
 theorem orientPiece_of_not_precedes {P : Piece} (h : ¬ Precedes P.1 P.2) :
     orientPiece P = (P.2, P.1) := by
   classical
-  exact if_neg h
+  exact ite_eq_right h
 
 /-- Orienting does not move the segment. -/
 @[simp] theorem orientPiece_seg (P : Piece) : (orientPiece P).seg = P.seg := by
@@ -247,7 +251,7 @@ noncomputable def overlayGraph (pieces : List Piece) (points : List Plane) :
     rcases hxy with ⟨rfl, rfl⟩ | ⟨rfl, rfl⟩ <;> rcases hvw with ⟨rfl, rfl⟩ | ⟨rfl, rfl⟩ <;> simp
   edge_mem_iff_exists_isLink := by
     intro P
-    simp only [mem_setOf_eq]
+    simp only [mem_ofPred_eq]
     exact ⟨fun hP => ⟨P.1, P.2, hP, Or.inl ⟨rfl, rfl⟩⟩, fun ⟨_, _, hP, _⟩ => hP⟩
   left_mem_of_isLink := by
     rintro P x y ⟨hP, h⟩
@@ -347,7 +351,7 @@ theorem overlayGraph_pointSet (pieces : List Piece) (points : List Plane) :
   rw [← overlayPieces_cover pieces points]
   ext z
   simp only [Graph.pointSet, mem_union, mem_iUnion, exists_prop, overlayGraph_vertexSet,
-    endSet, mem_setOf_eq, overlayGraph_mem_edgeSet, edgeArc_segmentDrawing, cover]
+    endSet, mem_ofPred_eq, overlayGraph_mem_edgeSet, edgeArc_segmentDrawing, cover]
   constructor
   · rintro (⟨P, hP, hzP⟩ | ⟨P, hP, hzP⟩)
     · refine ⟨P, hP, ?_⟩

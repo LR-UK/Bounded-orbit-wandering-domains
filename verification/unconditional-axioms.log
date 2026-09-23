@@ -1,0 +1,16 @@
+'RiemannDynamics.exists_disc_covering_finitely_punctured_plane' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'AreaDeficit.IsHolomorphicDiscCovering.total_area' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BoundedWanderingDomains.Unconditional.classicalDiscCoveringsAndArea' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BoundedWanderingDomains.Unconditional.classicalHyperbolicMetrics' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BoundedWanderingDomains.Unconditional.no_bounded_wandering_domains_transcendental_entire' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BoundedWanderingDomains.Unconditional.no_local_bounded_wandering_domains' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

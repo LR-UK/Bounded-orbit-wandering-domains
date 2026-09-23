@@ -1,0 +1,49 @@
+import BoundedWanderingDomains.CoveringTotalArea
+import BoundedWanderingDomains.CuspDensityBounds
+import BoundedWanderingDomains.CoveringAreaTransport
+import CoveringSolution
+import BoundedWanderingDomains.IdealTriangleArea
+import BoundedWanderingDomains.CoveringExhaustion
+import BoundedWanderingDomains.CoveringLimitBranches
+
+#print axioms AreaDeficit.IsHolomorphicDiscCovering.deriv_ne_zero
+#print axioms AreaDeficit.IsHolomorphicDiscCovering.fibre_density_eq
+#print axioms AreaDeficit.IsHolomorphicDiscCovering.density_pos
+#print axioms AreaDeficit.IsHolomorphicDiscCovering.density_schwarz
+#print axioms AreaDeficit.IsHolomorphicDiscCovering.density_extremal
+#print axioms AreaDeficit.IsHolomorphicDiscCovering.density_contDiffAt
+#print axioms AreaDeficit.IsHolomorphicDiscCovering.density_curvature
+#print axioms BoundedWanderingDomains.classicalHyperbolicMetrics_of_coveringsAndArea
+#print axioms BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire_of_coveringsAndArea
+#print axioms BoundedWanderingDomains.no_local_bounded_wandering_domains_of_coveringsAndArea
+#print axioms AreaDeficit.integral_inverse_sqrt_semicircle
+#print axioms AreaDeficit.integral_upper_halfPlane_vertical
+#print axioms AreaDeficit.idealTriangle_iterated_integral
+
+#print axioms AreaDeficit.modelIdealTriangle_area
+#print axioms AreaDeficit.upperHalfPlaneIdealTriangle_volume
+#print axioms AreaDeficit.upperHalfPlaneIdealTriangle_smul_volume
+#print axioms AreaDeficit.volume_of_idealTriangle_partition
+#print axioms AreaDeficit.squareRootCovering_radii_tendsto_one
+
+#print axioms AreaDeficit.exists_inverseBranch_limit
+
+#print axioms AreaDeficit.IsHolomorphicDiscCovering.density_independent
+
+#print axioms AreaDeficit.IsHolomorphicDiscCovering.density_pullback
+
+#print axioms AreaDeficit.IsHolomorphicDiscCovering.area_image
+
+#print axioms AreaDeficit.IsHolomorphicDiscCovering.area_of_partition
+
+#print axioms AreaDeficit.norm_deriv_le_of_re_upper
+
+#print axioms AreaDeficit.norm_deriv_le_of_zero_free_bounded
+
+#print axioms AreaDeficit.norm_deriv_le_cusp_bound
+
+#print axioms AreaDeficit.IsHolomorphicDiscCovering.density_lower_cusp
+
+#print axioms AreaDeficit.IsHolomorphicDiscCovering.density_upper_cusp
+
+#print axioms AreaDeficit.IsHolomorphicDiscCovering.total_area

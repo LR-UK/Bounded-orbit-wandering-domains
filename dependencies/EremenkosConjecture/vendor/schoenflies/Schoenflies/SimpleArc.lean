@@ -3,6 +3,10 @@ Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
+
+/- Compatibility update, 23 September 2026: current Mathlib names and Lean
+linter suggestions; original mathematical statements and attribution retained. -/
+
 import Schoenflies.OverlayGraph
 import Schoenflies.Graph.CycleJordan
 
@@ -146,14 +150,14 @@ theorem cover_segsOf (vs : List Plane) :
       · -- A repeated vertex contributes the point `u`, which the rest of the chain already
         -- holds.
         subst huv
-        rw [if_pos rfl, segment_same]
+        rw [ite_eq_left rfl, segment_same]
         have hmem : u ∈ poly (u :: rest) := mem_poly_of_mem (List.mem_cons_self ..)
         rcases ih with h | ⟨h1, h2⟩
         · exact Or.inl (by rw [h, union_eq_self_of_subset_left (singleton_subset_iff.2 hmem)])
         · refine Or.inr ⟨h1, ?_⟩
           rw [union_eq_self_of_subset_left (singleton_subset_iff.2 hmem)]
           exact h2
-      · rw [if_neg huv, cover_cons]
+      · rw [ite_eq_right huv, cover_cons]
         refine Or.inl ?_
         rcases ih with h | ⟨h1, h2⟩
         · rw [h]; rfl
@@ -284,7 +288,7 @@ theorem overlayGraph_reaches (hnd : ∀ P ∈ pieces, P.Nondeg)
   -- And they carry disjoint sets: a common point is a vertex incident with an edge of each.
   have hdisj : ∀ z, z ∈ S → z ∈ T → False := by
     intro z hzS hzT
-    simp only [hS, hT, mem_iUnion, mem_setOf_eq, exists_prop] at hzS hzT
+    simp only [hS, hT, mem_iUnion, mem_ofPred_eq, exists_prop] at hzS hzT
     obtain ⟨P, ⟨hP, hPr⟩, hzP⟩ := hzS
     obtain ⟨Q, ⟨hQ, hQr⟩, hzQ⟩ := hzT
     have hPQ : P ≠ Q := by rintro rfl; exact hQr hPr
@@ -315,7 +319,7 @@ theorem overlayGraph_reaches (hnd : ∀ P ∈ pieces, P.Nondeg)
       hsub ⟨a, ha, fun h => hdisj a haS h⟩ ⟨b, hb, fun h => hdisj b h hbT⟩
     exact (hunion z hzc).elim hzS hzT
   -- `b` is a vertex on an edge of the reachable class, hence an end of it.
-  simp only [hS, mem_iUnion, mem_setOf_eq, exists_prop] at hbS
+  simp only [hS, mem_iUnion, mem_ofPred_eq, exists_prop] at hbS
   obtain ⟨P, ⟨hP, hPr⟩, hbP⟩ := hbS
   have hbend : b = P.1 ∨ b = P.2 :=
     hdraw.vertex_mem_edgeArc (hlink P hP) hbV (by rwa [edgeArc_segmentDrawing])

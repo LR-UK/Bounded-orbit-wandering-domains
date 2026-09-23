@@ -1,0 +1,45 @@
+name: Unconditional submission
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 120
+    env:
+      LEAN_NUM_THREADS: "2"
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: leanprover/lean-action@38fbc41a8c28c4cbaec22d7f7de508ec2e7c0dd9
+        with:
+          build: "false"
+          test: "false"
+          lint: "false"
+          use-mathlib-cache: "false"
+      - name: Install verification dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y bubblewrap python3-yaml
+      - name: Fetch the required Mathlib cache
+        run: python3 scripts/fetch_cache.py
+      - name: Build, compare declarations and audit axioms
+        run: python3 scripts/verify_submission.py
+      - name: Validate metadata and attribution
+        run: |
+          python3 scripts/verify_metadata.py
+          python3 scripts/audit_attribution.py
+      - name: Official Comparator and independent kernels
+        run: |
+          set -o pipefail
+          ./scripts/verify-comparator.sh 2>&1 | tee verification/comparator-ci.log
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        if: always()
+        with:
+          name: submission-verification
+          path: verification/
+          if-no-files-found: error

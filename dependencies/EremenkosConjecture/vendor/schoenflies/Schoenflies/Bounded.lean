@@ -3,6 +3,10 @@ Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
+
+/- Compatibility update, 23 September 2026: current Mathlib names and Lean
+linter suggestions; original mathematical statements and attribution retained. -/
+
 import Schoenflies.Square
 
 /-!
@@ -38,7 +42,7 @@ namespace Plane
 /-- The outside of a square is exactly the complement of the closed square. -/
 theorem beyondSquare_eq_compl (r : ℝ) : beyondSquare r = (closedSquare 0 r)ᶜ := by
   ext x
-  simp only [beyondSquare, closedSquare, mem_setOf_eq, mem_compl_iff, supDist_zero, supNorm,
+  simp only [beyondSquare, closedSquare, mem_ofPred_eq, mem_compl_iff, supDist_zero, supNorm,
     max_le_iff, not_and_or, not_le]
 
 /-- A bounded set sits inside a closed square about the origin, of nonnegative radius. -/

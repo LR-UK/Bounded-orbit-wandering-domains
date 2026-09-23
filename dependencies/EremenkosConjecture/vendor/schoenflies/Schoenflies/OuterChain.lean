@@ -3,6 +3,10 @@ Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
+
+/- Compatibility update, 23 September 2026: current Mathlib names and Lean
+linter suggestions; original mathematical statements and attribution retained. -/
+
 import Schoenflies.FaceCyclesLand
 import Schoenflies.Graph.TwoConnected
 
@@ -309,13 +313,13 @@ theorem exists_spliced_cycles {H F : Graph α β} {e : β} {u v a b : α} {D R D
   have harc : ∀ {W : List β}, (∀ g ∈ W, g ∈ D₁ ++ D₂) →
       ∀ g ∈ W, g ∈ E(H.cycleGraph u e D) := by
     intro W hW g hg
-    rw [hcyc.cycleGraph_edgeSet, Set.mem_setOf_eq, List.mem_append]
+    rw [hcyc.cycleGraph_edgeSet, Set.mem_ofPred_eq, List.mem_append]
     rcases List.mem_cons.1 (hcc.split.mem_iff.1 (hW g hg)) with rfl | h
     · exact Or.inr (List.mem_singleton_self _)
     · exact Or.inl h
   have hnew : ∀ g ∈ R, g ∉ E(H.cycleGraph u e D) := by
     intro g hg hmem
-    rw [hcyc.cycleGraph_edgeSet, Set.mem_setOf_eq] at hmem
+    rw [hcyc.cycleGraph_edgeSet, Set.mem_ofPred_eq] at hmem
     exact hcc.edges_new g hg hmem
   have hint : ∀ y ∈ H.walkVertices a R, y ≠ a → y ≠ b → y ∉ V(H.cycleGraph u e D) := by
     intro y hy hya hyb
@@ -779,7 +783,7 @@ theorem outer_chain (h : IsPlaneChain Γ drawing G n) (hout : OuterOnPairs Γ dr
       ¬ Bornology.IsBounded (face (chainUnion Γ 0 n) drawing x) := by
   have hext := h.mem_exterior_chain hout
   refine ⟨hext, fun hb => ?_⟩
-  haveI : (chainUnion Γ 0 n).Finite := h.block_finite (i := 0) (m := n) (by omega)
+  have : (chainUnion Γ 0 n).Finite := h.block_finite (i := 0) (m := n) (by omega)
   exact h.not_encloses hout hdesc n 0 (by omega)
     (encloses_of_isBounded_face (h.block_isDrawing (by omega)) (h.block_polygonal (by omega))
       (h.block_isTwoConnected (by omega)) hext hb)

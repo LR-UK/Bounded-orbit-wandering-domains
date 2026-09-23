@@ -3,6 +3,10 @@ Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
+
+/- Compatibility update, 23 September 2026: current Mathlib names and Lean
+linter suggestions; original mathematical statements and attribution retained. -/
+
 import Schoenflies.Plane
 
 /-!
@@ -113,7 +117,7 @@ theorem isOpen_accessCone : IsOpen (accessCone p v s) := by
   have h1 : Continuous fun x : Plane => ‖x - p‖ := (continuous_id.sub continuous_const).norm
   have h2 : Continuous fun x : Plane => inner ℝ v (x - p) :=
     continuous_const.inner (continuous_id.sub continuous_const)
-  rw [accessCone, setOf_and]
+  rw [accessCone, ofPred_and]
   exact (isOpen_lt h1 continuous_const).inter (isOpen_lt (h1.div_const 2) h2)
 
 /-- Membership in the cone in the form used by the blueprint: a unit direction `w` making an

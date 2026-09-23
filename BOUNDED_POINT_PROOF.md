@@ -7,8 +7,10 @@ The final entire-function statement assumes
 ```
 
 for z in the initial Fatou component. It does not assume a bound on whole
-Fatou components. As before, it is conditional on `ClassicalHyperbolicMetrics`,
-with curvature −1. The local Challenge theorem retains its previous hypotheses.
+Fatou components. The metric input used by intermediate lemmas is now proved by
+`RiemannDynamics/BoundedWanderingSolution.lean`, so the final theorem is
+unconditional. Curvature is −1. The local Challenge theorem retains its
+explicit local dynamical hypotheses.
 
 ## 1. A bounded neighbourhood of the marked point
 
@@ -105,6 +107,7 @@ needed here is proved in `EventualCompactDiscs.lean`; its quantifiers
 explicitly permit the starting time to depend on r.
 
 `BoundedPointWandering.lean` proves the assembled theorem.
-`Solution.lean` converts the Mathlib bounded-set hypothesis to a numerical
-orbit bound and supplies the metric input. Neither simple connectivity nor
+The unconditional bridge converts the Mathlib bounded-set hypothesis to a
+numerical orbit bound and supplies the proved metric input; `Solution.lean`
+exports the public theorem. Neither simple connectivity nor
 eventual injectivity is a hypothesis of the entire Challenge statement.

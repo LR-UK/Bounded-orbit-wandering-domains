@@ -3,6 +3,10 @@ Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
+
+/- Compatibility update, 23 September 2026: current Mathlib names and Lean
+linter suggestions; original mathematical statements and attribution retained. -/
+
 import Schoenflies.QuantitativeForwardStages
 
 /-!
@@ -183,7 +187,7 @@ The auxiliary anchor list may be empty: each target-mesh constructor adds whatev
 boundary anchors it needs. -/
 noncomputable def denseQuantitativeSchedule (hC : IsSeparating C) :
     QuantitativeSchedule C := by
-  letI : Nonempty (inside C) := hC.isConnected_inside.nonempty.to_subtype
+  let : Nonempty (inside C) := hC.isConnected_inside.nonempty.to_subtype
   exact
     { centreBase := fun n => (TopologicalSpace.denseSeq (inside C) n : Plane)
       centreBase_mem := fun n => (TopologicalSpace.denseSeq (inside C) n).property
@@ -191,7 +195,7 @@ noncomputable def denseQuantitativeSchedule (hC : IsSeparating C) :
 
 theorem denseQuantitativeSchedule_centresDense (hC : IsSeparating C) :
     (denseQuantitativeSchedule hC).CentresDense := by
-  letI : Nonempty (inside C) := hC.isConnected_inside.nonempty.to_subtype
+  let : Nonempty (inside C) := hC.isConnected_inside.nonempty.to_subtype
   intro x hx δ hδ
   obtain ⟨k, hk⟩ :=
     (TopologicalSpace.denseRange_denseSeq (inside C)).exists_dist_lt

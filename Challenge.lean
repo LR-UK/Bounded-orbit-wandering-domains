@@ -2,9 +2,7 @@
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import Mathlib.Analysis.InnerProductSpace.Laplacian
 import Mathlib.Analysis.Complex.CauchyIntegral
-import Mathlib.MeasureTheory.Measure.Lebesgue.Complex
 import Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected
 import Mathlib.Topology.UniformSpace.LocallyUniformConvergence
 import Mathlib.Topology.UniformSpace.Uniformizable
@@ -12,15 +10,14 @@ import Mathlib.Topology.Compactification.OnePoint.Basic
 import Mathlib.Topology.Connected.LocallyConnected
 
 /-!
-# Conditional absence of bounded-orbit wandering domains
+# Absence of bounded-orbit wandering domains
 
 This Challenge is independent of the proof development. Its imports are
 Mathlib only. The two deliberate theorem holes are supplied by Solution.
 
-The classical input below is *a hypothesis*: existence of the usual
-curvature −1 metrics on planes with finitely many punctures, their sharp
-disc Schwarz property, extremal discs, and their total-area formula.
-No dynamical, area-deficit, or limiting-density conclusion is assumed.
+The classical hyperbolic metric facts are proved in the Solution development,
+including disc-covering existence and the total-area formula. Neither theorem
+assumes a metric-existence, covering-existence or area-formula hypothesis.
 
 Two results are stated:
 1. For a locally defined analytic map, an orbit of simply connected
@@ -52,8 +49,8 @@ This is the substantive development, not a wrapper around a previously
 registered theorem. Global derived-singular-set statements are not claimed.
 -/
 
-open Set Metric Function Filter MeasureTheory
-open scoped Topology Uniformity ENNReal
+open Set Metric Function Filter
+open scoped Topology Uniformity
 
 namespace ComplexDynamics
 
@@ -89,36 +86,6 @@ end ComplexDynamics
 
 namespace BoundedWanderingDomains
 
-/-- The classical curvature −1 hyperbolic metric facts for finitely
-punctured planes. This is a proposition, not a global axiom.
-This property states that, on every finitely punctured plane with at least two punctures,
-there is a density ρ(P) which has the following properties:
-* positive on the complement of the punctures;
-* C^2 on the complement of the punctures;
-* has curvature -1 on the complement of the punctures;
-* the Schwarz-Pick lemma holds at 0 for maps from the unit disc to the finitely punctured plane;
-* at every point there is an extremal holomorphic disc attaining equality in
-  Schwarz-Pick, as supplied classically by a universal covering map;
-* the total hyperbolic area is 2π times (P.card - 1).
-
-The fifth clause below records only the extremal-disc property: it does not
-explicitly assert that the chosen map is a universal covering.
-The area integral is normalised by dividing by 2π. -/
-def ClassicalHyperbolicMetrics : Prop :=
-  ∃ ρ : Finset ℂ → ℂ → ℝ,
-    (∀ P : Finset ℂ, 2 ≤ P.card → ∀ z, z ∉ P → 0 < ρ P z) ∧
-    (∀ P : Finset ℂ, 2 ≤ P.card → ContDiffOn ℝ 2 (ρ P) ((↑P : Set ℂ)ᶜ)) ∧
-    (∀ P : Finset ℂ, 2 ≤ P.card → ∀ z, z ∉ P →
-      Laplacian.laplacian (fun w => Real.log (ρ P w)) z = (ρ P z)^2) ∧
-    (∀ P : Finset ℂ, 2 ≤ P.card → ∀ p : ℂ → ℂ,
-      DifferentiableOn ℂ p (ball 0 1) → MapsTo p (ball 0 1) ((↑P : Set ℂ)ᶜ) →
-      ρ P (p 0) * ‖deriv p 0‖ ≤ 2) ∧
-    (∀ P : Finset ℂ, 2 ≤ P.card → ∀ z, z ∉ P → ∃ p : ℂ → ℂ,
-      DifferentiableOn ℂ p (ball 0 1) ∧ MapsTo p (ball 0 1) ((↑P : Set ℂ)ᶜ) ∧
-      p 0 = z ∧ ρ P z * ‖deriv p 0‖ = 2) ∧
-    (∀ P : Finset ℂ, 2 ≤ P.card →
-      (∫⁻ z : ℂ, ENNReal.ofReal ((ρ P z)^2 / (2 * Real.pi))) = (P.card - 1 : ℕ))
-
 /-- The interior of the set of points whose entire forward orbit stays
 in V. The values of the total function outside V play no role. -/
 def trappedInterior (f : ℂ → ℂ) (V : Set ℂ) : Set ℂ :=
@@ -139,11 +106,9 @@ namespace BoundedWanderingDomains
 
 /-- LOCAL THEOREM. Analyticity is needed only near closure(V). The U_n are
 the components of the maximal trapped open set through f^[n](z).
-A compact K inside V contains the entire component orbit. Subject to the
-classical metrics and eventual disc injectivity, these components cannot
+A compact K inside V contains the entire component orbit. Under eventual disc injectivity, these components cannot
 be pairwise disjoint. -/
 theorem no_local_bounded_wandering_domains
-    (hmetric : ClassicalHyperbolicMetrics)
     {f : ℂ → ℂ} {V K : Set ℂ} {z : ℂ} {U : ℕ → Set ℂ}
     (hV : IsOpen V) (hVc : IsCompact (closure V))
     (hf : AnalyticOnNhd ℂ f (closure V))
@@ -162,9 +127,8 @@ Fatou component containing a point z with bounded forward orbit.
 The bounded set is only {f^[n](z) : n ∈ ℕ}; no bound on the union of
 Fatou components is assumed. Simple connectivity of auxiliary trapped
 components and eventual injectivity on intrinsic discs are proved.
-The only classical input is ClassicalHyperbolicMetrics, with curvature −1. -/
+The proof constructs the required hyperbolic metrics with curvature −1. -/
 theorem no_bounded_wandering_domains_transcendental_entire
-    (hmetric : ClassicalHyperbolicMetrics)
     {f : ℂ → ℂ} (hf : Differentiable ℂ f)
     (htrans : ¬ ∃ p : Polynomial ℂ, ∀ z, f z = p.eval z)
     {U : ℕ → Set ℂ} {z : ℂ}

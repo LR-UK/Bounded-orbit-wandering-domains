@@ -1,0 +1,22 @@
+RiemannMappingFull.lean:64:16: warning: `IsCompact.finite_diff_of_mem_codiscreteWithin` has been deprecated: Use `IsCompact.finite_sdiff_of_mem_codiscreteWithin` instead
+RiemannMappingFull.lean:65:10: warning: `AnalyticOnNhd.codiscreteWithin_setOf_analyticOrderAt_eq_zero_or_top` has been deprecated: Use `AnalyticOnNhd.codiscreteWithin_setOfPred_analyticOrderAt_eq_zero_or_top` instead
+RiemannMappingFull.lean:66:36: warning: `Set.mem_diff` has been deprecated: Use `Set.mem_sdiff` instead
+RiemannMappingFull.lean:66:46: warning: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+RiemannMappingFull.lean:68:4: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+RiemannMappingFull.lean:252:34: warning: `Set.setOf_mem_eq` has been deprecated: Use `Set.ofPred_mem_eq` instead
+RiemannMappingFull.lean:254:43: warning: `IsCompact.finite_diff_of_mem_codiscreteWithin` has been deprecated: Use `IsCompact.finite_sdiff_of_mem_codiscreteWithin` instead
+RiemannMappingFull.lean:255:45: warning: `AnalyticOnNhd.codiscreteWithin_setOf_analyticOrderAt_eq_zero_or_top` has been deprecated: Use `AnalyticOnNhd.codiscreteWithin_setOfPred_analyticOrderAt_eq_zero_or_top` instead
+RiemannMappingFull.lean:299:7: warning: `Set.restrict` has been deprecated: Use `Set.domRestrict` instead
+RiemannMappingFull.lean:299:19: warning: `continuousOn_iff_continuous_restrict` has been deprecated: Use `continuousOn_iff_continuous_domRestrict` instead
+RiemannMappingFull.lean:305:8: warning: `continuousOn_iff_continuous_restrict` has been deprecated: Use `continuousOn_iff_continuous_domRestrict` instead
+RiemannMappingFull.lean:312:15: warning: `Set.restrict` has been deprecated: Use `Set.domRestrict` instead
+RiemannMappingFull.lean:321:8: warning: `continuousOn_iff_continuous_restrict` has been deprecated: Use `continuousOn_iff_continuous_domRestrict` instead
+RiemannMappingFull.lean:321:46: warning: `Set.restrict_piecewise` has been deprecated: Use `Set.domRestrict_piecewise` instead
+RiemannMappingFull.lean:322:8: warning: `continuousOn_iff_continuous_restrict` has been deprecated: Use `continuousOn_iff_continuous_domRestrict` instead
+RiemannMappingFull.lean:564:13: warning: `Set.mem_setOf` has been deprecated: Use `Set.mem_ofPred` instead

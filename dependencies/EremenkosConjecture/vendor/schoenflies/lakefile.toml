@@ -4,6 +4,6 @@ defaultTargets = ["Schoenflies.JordanClosed"]
 [[require]]
 name = "mathlib"
 git = "https://github.com/leanprover-community/mathlib4.git"
-rev = "5ed2965256430c3649e86755f9576b54eca72435"
+rev = "065356127b1dc0016f66b7283ce0ce2c4055aa55"
 [[lean_lib]]
 name = "Schoenflies"
