@@ -48,6 +48,23 @@ theorem closedComplementHyperbolicAreaWeight_anchor_independent
       ENNReal.ofReal ((closedComplementDensity A hA hcd hc hd z)^2) := by
   rw [closedComplementDensity_anchor_independent A hA hab hcd ha hb hc hd z]
 
+/-- Monotonicity of curvature −1 area density, even if the two covering
+constructions use different omitted-point anchors. -/
+theorem hyperbolicAreaWeight_mono_any (A B : Set ℂ)
+    (hA : IsClosed A) (hB : IsClosed B) (hAB : A ⊆ B)
+    {a b c d z : ℂ} (hab : a ≠ b) (hcd : c ≠ d)
+    (ha : a ∈ A) (hb : b ∈ A) (hc : c ∈ B) (hd : d ∈ B)
+    (hz : z ∉ B) :
+    ENNReal.ofReal ((closedComplementDensity A hA hab ha hb z)^2) ≤
+      ENNReal.ofReal ((closedComplementDensity B hB hcd hc hd z)^2) := by
+  apply ENNReal.ofReal_le_ofReal
+  have hp := le_of_lt (closedComplementDensity_pos A hA hab ha hb
+    (fun hx => hz (hAB hx)))
+  have hm := closedComplementDensity_mono A B hA hB hAB hab ha hb hz
+  rw [closedComplementDensity_anchor_independent B hB hab hcd
+    (hAB ha) (hAB hb) hc hd z] at hm
+  nlinarith
+
 /-- Inserting finitely many auxiliary punctures leaves an integration
 domain unchanged up to a volume-null set. -/
 theorem restrict_complement_union_finite
@@ -69,4 +86,5 @@ end AreaDeficit
 #print axioms AreaDeficit.closedComplementDensity_anchor_independent
 #print axioms AreaDeficit.closedComplementAreaWeight_anchor_independent
 #print axioms AreaDeficit.closedComplementHyperbolicAreaWeight_anchor_independent
+#print axioms AreaDeficit.hyperbolicAreaWeight_mono_any
 #print axioms AreaDeficit.restrict_complement_union_finite

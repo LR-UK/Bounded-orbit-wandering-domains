@@ -55,6 +55,12 @@ registration on this branch.
   subtraction/integration inequality, invariance of the intrinsic metric
   under changes of omitted-point anchors, and nullity of finite inserted
   punctures. These prepare the removal of the fixed-anchor hypothesis.
+- `AreaAnchorFree.lean`: **removes that hypothesis completely in the plane**.
+  Given disjoint compact planar sets `W,K`, one finite bound is chosen before
+  the old closed obstacle `A`; for every hyperbolic complement of `A`, the
+  curvature −1 hyperbolic area gain on `W ∩ Aᶜ` from removing `K` obeys
+  the bound. It combines the anchored cutoff theorem with the `2π`-per-point
+  estimate, without assuming that the total old area is finite.
 
 These modules compile with the pinned Lean toolchain and mathlib.
 Their printed axiom lists contain only `propext`, `Classical.choice`, and
@@ -67,11 +73,10 @@ Their printed axiom lists contain only `propext`, `Classical.choice`, and
    integral and handle the chart pole correctly. The plane statement is
    unconditional, whereas the arbitrary sphere statement has not been
    checked.
-2. Extend the proved compact-removal bound from closed planar obstacles
-   containing two *fixed* omitted values to all hyperbolic sphere domains.
-   The existing finite-point removal bound can pay for inserting two fixed
-   anchors into the old obstacle; this transfer and the Möbius-coordinate
-   invariance of the hyperbolic area integral are not yet formalised.
+2. Transfer the proved **anchor-free** planar compact-removal theorem to
+   all hyperbolic sphere domains. Choose a sphere chart pole outside both
+   fixed compact sets, prove Möbius-coordinate invariance of the hyperbolic
+   area integral, and handle an old domain containing the chart pole.
 3. Connect both area bounds to the dynamical iteration argument. In
    particular formalise the relevant Fatou component and singular-set facts,
    covering dynamics, and spherical accumulation, and prove the derived-set
@@ -90,6 +95,7 @@ PATH=/tmp/lean-4.35.0-rc2-linux/bin:$PATH LEAN_NUM_THREADS=4 lake build \
   BoundedWanderingDomains.GeneralMetricDeficit \
   BoundedWanderingDomains.AnchoredCompactArea \
   BoundedWanderingDomains.AreaAnchorIndependence \
+  BoundedWanderingDomains.AreaAnchorFree \
   BoundedWanderingDomains.SphericalDerivedSet
 ```
 
