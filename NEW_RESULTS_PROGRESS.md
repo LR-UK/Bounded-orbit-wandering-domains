@@ -46,6 +46,15 @@ registration on this branch.
   sets. The bound is chosen before the old closed obstacle and applies to
   every obstacle containing the same two fixed omitted values. It includes
   existence of the separating cutoff, rather than assuming one as input.
+  The integral is the actual curvature −1 hyperbolic area.
+- `UnnormalisedPointRemoval.lean`: exposes the old finite-puncture bounds
+  in curvature −1 hyperbolic area, as requested: one point costs at most
+  `2π` and `E` costs at most `2π * E.card`. The older divided-by-`2π`
+  quantity is now used only internally in transferring its proof.
+- `AreaGainSubadditivity.lean` and `AreaAnchorIndependence.lean`: a
+  subtraction/integration inequality, invariance of the intrinsic metric
+  under changes of omitted-point anchors, and nullity of finite inserted
+  punctures. These prepare the removal of the fixed-anchor hypothesis.
 
 These modules compile with the pinned Lean toolchain and mathlib.
 Their printed axiom lists contain only `propext`, `Classical.choice`, and
@@ -77,8 +86,10 @@ Build in this branch:
 ```sh
 PATH=/tmp/lean-4.35.0-rc2-linux/bin:$PATH LEAN_NUM_THREADS=4 lake build \
   BoundedWanderingDomains.UnconditionalPointRemoval \
+  BoundedWanderingDomains.UnnormalisedPointRemoval \
   BoundedWanderingDomains.GeneralMetricDeficit \
   BoundedWanderingDomains.AnchoredCompactArea \
+  BoundedWanderingDomains.AreaAnchorIndependence \
   BoundedWanderingDomains.SphericalDerivedSet
 ```
 
