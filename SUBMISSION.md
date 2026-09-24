@@ -1,66 +1,37 @@
-# Prepared Palomar submission
+# Prepared Palomar submissions — version 1.2.0
 
-The configuration below compares the two bounded-orbit results. The three new
-results in `NewResults.lean` are proved but have not been added to this registry
-configuration. See `NEW_RESULTS_PROGRESS.md`.
+Use the same reviewed, publicly pushed immutable commit for either configuration.
+No submission is made by these files.
 
-## Form values
+| Field | Bounded-orbit update | New entire singular-limit result |
+| --- | --- | --- |
+| Repository | LR-UK/Bounded-orbit-wandering-domains | Same |
+| Project directory | . | . |
+| Comparator | comparator.json | comparator-singular-limits.json |
+| Challenge module | Challenge | SingularLimitsChallenge |
+| Solution module | Solution | SingularLimitsSolution |
+| Metadata | formalization.yaml | formalization.yaml |
+| Responsible maintainer | Lasse Rempe | Lasse Rempe |
+| Commit | Full SHA of final publicly pushed snapshot | Same |
+| Existing ID | Existing bounded-orbit ID, if assigned | New result; do not reuse that ID |
 
-| Field | Prepared value |
-| --- | --- |
-| Title | Absence of bounded-orbit wandering domains |
-| Project directory | `.` (repository root) |
-| Challenge module | `Challenge` |
-| Solution module | `Solution` |
-| Comparator configuration | `comparator.json` |
-| Metadata | `formalization.yaml` |
-| Responsible maintainer | Lasse Rempe |
-| Repository | Supply the public GitHub repository containing this package |
-| Commit | Supply its full immutable 40-character commit SHA |
+The first compares the strengthened local theorem without simple connectivity
+and the entire bounded-point-orbit theorem. The second compares locally uniform
+subsequential convergence to a derived spherical singular value on every entire
+wandering component. No simple-connectivity or injectivity hypothesis is present
+in either public dynamical result. The local statement still requires one point's
+entire orbit to lie in a compact subset of its analytic iteration domain.
 
-Compared theorems:
+The two sphere area estimates are proved in NewResults and audited transitively.
+They are not presented as standalone Challenge declarations in these submissions.
 
-- `BoundedWanderingDomains.no_local_bounded_wandering_domains`
-- `BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire`
+Before submitting, run the strict local verification and both protected Comparator
+commands listed in README, or check the corresponding GitHub Actions results.
+This environment cannot create the user namespace required by bubblewrap;
+no official Comparator/independent-kernel pass is claimed locally.
 
-The accompanying configuration compares seven public definitions and permits
-only `propext`, `Classical.choice` and `Quot.sound`.
-
-## Submission description
-
-We formalise the absence of wandering Fatou components containing a point
-with bounded forward orbit for transcendental entire functions. The result
-requires boundedness only of one point orbit. We also prove a local absence
-theorem for trapped components when only one point orbit is
-compactly contained in the iteration domain. Whole-component compact containment
-simple connectivity and eventual injectivity are no longer hypotheses. This local statement covers
-plane-valued maps analytic near compact closure(V). The former classical hyperbolic metric
-assumption is now proved: the submission includes disc-covering existence,
-the curvature −1 metric and the total-area formula. The independently stated
-Challenge and the proved Solution have the same two public theorem signatures
-and the same seven supporting definitions.
-
-## Publish and submit
-
-1. Preserve the earlier conditional and version 1.0.0 commits/tags. Put the contents of this
-   package at the root of the intended public GitHub repository, including
-   contained dependencies, licences, metadata and `.github/workflows/ci.yml`.
-   Use a new commit for this stronger local theorem (project version 1.1.0). Exclude `.lake` caches.
-2. Run the included CI. Check that the official Comparator and its independent
-   kernels finish successfully, as well as the build and metadata checks.
-   The local execution status and any environment limitation are documented
-   in VERIFICATION.md; a local diagnostic is not a substitute for Comparator.
-3. Copy the full commit SHA (`git rev-parse HEAD`) and repository URL into
-   https://submit.palomar-registry.org/ with the root-directory values above.
-   If the earlier result has been registered, enter its existing Palomar ID
-   to request a new version. Each version has its own immutable commit.
-   The submitting author should supply any authorisation/account fields from
-   their own account. No account details or public commit have been invented.
-4. Review the preview and submit. Registry validation and human review remain
-   separate from the preparation of this archive.
-
-Prepared against PalomarSubmission commit
-`e48a86d0495356b5131a92c9406aa6e27cf99e56` and PalomarTemplate commit
-`cb5c79b69a740d2dc299071fc35994627050d77a`, inspected 23 September 2026.
-The current verifier requires Lean 4.35.0-rc2 or newer; this package pins that
-release and its matching Mathlib tag.
+The current requirements were checked at https://palomar-registry.org/how-to-submit
+on 24 September 2026. Use https://submit.palomar-registry.org/ when ready and retain
+the submission status link. The prepared archive is not a public Git commit until
+its history is pushed. Do not overwrite, withdraw or resubmit the pending earlier
+submission automatically.

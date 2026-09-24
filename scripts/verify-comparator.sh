@@ -34,7 +34,7 @@ done
 # generated copy does the same, so the local check judges as the registry does.
 config=$(mktemp "${TMPDIR:-/tmp}/palomar-comparator.XXXXXX")
 trap 'rm -f "$config"' EXIT
-python3 - comparator.json "$config" "$prefix" <<'PY'
+python3 - "${1:-comparator.json}" "$config" "$prefix" <<'PY'
 import json
 import pathlib
 import sys

@@ -1,3 +1,10 @@
+> **24 September 2026 compatibility update.** Deprecated names and unused tactics
+> in the active proof closure have been cleaned up without changing statements.
+> The module map was regenerated. The standalone `scripts/verify.py` was attempted,
+> but its separate dependency fetch was blocked by the network before compilation.
+> This is not a standalone-audit pass. The root submission build checks the active
+> dependency closure using the already available pinned cache; see root VERIFICATION.md.
+
 > **Submission copy, 23 September 2026.** Toolchain and dependency pins have
 > been updated to Lean 4.35.0-rc2 and Mathlib
 > `065356127b1dc0016f66b7283ce0ce2c4055aa55` for the unconditional submission.

@@ -1,0 +1,23 @@
+{
+  "challenge_module": "SingularLimitsChallenge",
+  "solution_module": "SingularLimitsSolution",
+  "theorem_names": [
+    "BoundedWanderingDomains.wandering_orbit_locallyUniform_spherical_singular_derivedSet"
+  ],
+  "definition_names": [
+    "ComplexDynamics.IsNormalSequenceOn",
+    "ComplexDynamics.RiemannSphere",
+    "ComplexDynamics.riemannSphereUniformSpace",
+    "ComplexDynamics.sphericalIterate",
+    "ComplexDynamics.fatouSet",
+    "ComplexDynamics.IsFatouComponent",
+    "ComplexDynamics.regularValueSet",
+    "ComplexDynamics.singularValues",
+    "ComplexDynamics.sphericalSingularValues"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}

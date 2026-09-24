@@ -1,46 +1,62 @@
-# Verification of completed formalisation — 24 September 2026
+# Verification — prepared GitHub update 1.2.0
 
-The combined Lean build passed: **4,459 Lake jobs**. The three new results,
-the local theorem without simple connectivity, and the existing bounded-orbit
-theorem are checked together. Toolchain: Lean 4.35.0-rc2; Mathlib commit
+The strict submission audit passed on 24 September 2026. The full build completed
+**4,463 Lake jobs**, including NewResults and both independent Challenge/proof
+configurations. Lean is pinned to 4.35.0-rc2 and Mathlib to
 `065356127b1dc0016f66b7283ce0ce2c4055aa55`.
 
 | Check | Result |
 | --- | --- |
-| Full supporting library, Submission, Challenge, CoveringSolution, NewResults | Passed |
-| Final declarations audited transitively | 7; only propext, Classical.choice, Quot.sound |
-| Independent Challenge/Solution theorem types | 2 matched |
-| Supporting definition types and bodies | 7 matched |
-| Main project and imported EL/Ray source scan | 283 Lean files; no holes or extra axioms outside Challenge |
-| Challenge placeholders | Exactly 2, intentional; not imported by Solution |
+| Combined library and both Challenge/proof pairs | Passed |
+| Independent theorem-type comparisons | 3 passed across two configurations |
+| Definition types and bodies | 7 in bounded-orbit configuration; 9 in singular-limit configuration; all matched |
+| Transitive axiom reports | 56 distinct declarations; only propext, Classical.choice, Quot.sound |
+| Project, RiemannDynamics, RMT4, Eremenko–Lyubich and Ray source scan | 285 Lean files; no holes or extra axioms outside Challenges |
+| Unexpected warnings | None |
+| Intentional statement placeholders | 2 in Challenge; 1 in SingularLimitsChallenge |
 | Metadata contract | Passed |
-| Existing attribution packaging check | Passed; EL/Ray provenance also retained separately |
-| Official Comparator and independent-kernel replay | Not run for this snapshot |
+| Attribution packaging | Passed; 12 licence texts, 51 attribution records |
+| Official Comparator and independent-kernel replay | Pending in a supported environment; both configurations included in CI |
 
-The machine-readable report is `verification/completion.json`; corresponding
-build, declaration-export and axiom logs have the `completion-` prefix.
+The authoritative report is `verification/submission.json`, with `build.log`,
+axiom logs and four declaration-export logs in the same directory. Both
+Challenge files remain below the preferred 300-line / 32 KiB size and import
+only pinned Mathlib modules. Their supporting definitions are compared exactly,
+including singular values, Fatou normality and the compact sphere uniformity.
+The singular-limit Challenge controls a Mathlib instance during definition
+elaboration to reproduce the original definitions' elaborated expressions;
+its theorem uses the same standard complex structures as the proved theorem.
 
-There are 83 dependency deprecation/linter warnings in the build, in addition
-to the two expected Challenge warnings. These do not represent proof holes.
-The historical `verify_submission.py` demands a warning-free dependency build
-and is not claimed to pass for this snapshot. It remains unchanged.
-`verify_completion.py` records all warnings explicitly, while treating build
-errors, proof holes, additional axioms and declaration mismatches as failures.
-
-Reproduce:
+Reproduce the strict checks:
 
 ```sh
-LEAN_NUM_THREADS=4 python3 scripts/verify_completion.py
+LEAN_NUM_THREADS=4 python3 scripts/verify_submission.py
 python3 scripts/verify_metadata.py
 python3 scripts/audit_attribution.py
 ```
 
-All seven final axiom reports use only Lean's three standard axioms. The source
-scan includes the project, RiemannDynamics, RMT4, EremenkoLyubichConstant and Ray.
-Transitive axiom checking also covers imported proof dependencies.
+`verify_completion.py` is now an alias for this strict audit. Earlier completion
+reports and historical logs describe their earlier snapshots; they are not the
+current authority. The eight dependency warning fixes retain theorem statements,
+proof meaning and original authorship; their exact diff is recorded in
+`verification/update-warning-compatibility.patch`.
 
-The three new results are proved but are not yet included in the independent
-Palomar Challenge/comparator configuration. No official registry replay,
-publication, acceptance or independent human review is claimed. The earlier
-verification narrative is preserved in `history/verification-before-singular-limits.md`;
-older JSON/log reports describe their historical snapshots, not this update.
+## Remaining official replay
+
+The current environment rejects bubblewrap's user-namespace setup with
+`Operation not permitted`. See `verification/comparator-environment-check.log`.
+No sandbox restriction or independent-kernel requirement was disabled. The CI
+workflow runs the bundled Comparator, NanoDa and con-ron for both configurations.
+No official replay pass, publication, registry submission or acceptance is claimed.
+
+A separate full standalone FunctionTheory audit was attempted after its source
+cleanup but its separate dependency fetch was blocked by network access. That
+attempt is not a standalone-audit pass; the complete dependency closure used by
+this project was built successfully from the root project. Dependency status
+notes distinguish these scopes. No additional mathematical dependency assumptions
+are introduced by this distinction.
+
+The entire singular-limit theorem has its own independent Challenge. The two
+sphere area bounds are proved and audited supporting results, without separate
+registry configurations. No local-map or meromorphic singular-limit extension
+is claimed.

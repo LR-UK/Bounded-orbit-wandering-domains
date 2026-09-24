@@ -1,0 +1,10 @@
+[
+  "dependencies/ComplexApproximation/ComplexApproximation/Topology/Arakelian.lean",
+  "dependencies/FunctionTheory/FunctionTheory/NormalFamilies/ZalcmanMontel.lean",
+  "dependencies/FunctionTheory/FunctionTheory/RiemannSphere/Basic.lean",
+  "dependencies/FunctionTheory/FunctionTheory/RiemannSphere/Coordinates.lean",
+  "dependencies/FunctionTheory/NoWanderingDomains/NormalFamilies/Zalcman.lean",
+  "dependencies/FunctionTheory/NoWanderingDomains/Sphere/InversionIsometry.lean",
+  "dependencies/FunctionTheory/NoWanderingDomains/Sphere/MobiusAction.lean",
+  "dependencies/FunctionTheory/NoWanderingDomains/Sphere/SphereHolomorphic.lean"
+]

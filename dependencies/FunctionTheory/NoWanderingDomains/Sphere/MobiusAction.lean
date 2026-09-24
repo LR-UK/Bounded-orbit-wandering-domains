@@ -68,11 +68,11 @@ theorem inversionGL_smul_coe_chartInftyMap {z : ℂ̂} (hz : z ≠ ((0 : ℂ) : 
   cases z with
   | infty =>
     have hval : chartInftyMap (∞ : ℂ̂) = 0 := rfl
-    rw [hval, inversionGL_smul_coe, if_pos rfl]
+    rw [hval, inversionGL_smul_coe, ite_eq_left rfl]
   | coe w =>
     have hw : w ≠ 0 := fun h => hz (OnePoint.coe_eq_coe.mpr h)
     have hval : chartInftyMap ((w : ℂ) : ℂ̂) = w⁻¹ := rfl
-    rw [hval, inversionGL_smul_coe, if_neg (inv_ne_zero hw), inv_inv]
+    rw [hval, inversionGL_smul_coe, ite_eq_right (inv_ne_zero hw), inv_inv]
 
 /-- **Möbius transformations are continuous** on the Riemann sphere. Since the
 inverse transformation is the action of `g⁻¹`, every `g • ·` is in fact a
@@ -93,9 +93,9 @@ theorem continuous_gl_smul (g : GL (Fin 2) ℂ) : Continuous (fun z : ℂ̂ => g
     have hval_coe : ∀ x : ℂ,
         u • (x : ℂ̂) = (((u 0 0 * x + u 0 1) / u 1 1 : ℂ) : ℂ̂) := by
       intro x
-      rw [OnePoint.smul_some_eq_ite, h10, zero_mul, zero_add, if_neg hd]
+      rw [OnePoint.smul_some_eq_ite, h10, zero_mul, zero_add, ite_eq_right hd]
     have hval_infty : u • (∞ : ℂ̂) = ∞ := by
-      rw [OnePoint.smul_infty_eq_ite, if_pos h10]
+      rw [OnePoint.smul_infty_eq_ite, ite_eq_left h10]
     rw [OnePoint.continuous_iff]
     refine ⟨?_, ?_⟩
     · -- the affine map sends the cocompact filter to itself, hence `∞ ↦ ∞`.
@@ -143,7 +143,7 @@ theorem continuous_gl_smul (g : GL (Fin 2) ℂ) : Continuous (fun z : ℂ̂ => g
             IsCompact ({0} : Set ℂ)).compl_mem_cocompact] with x hx
           simpa using hx
         filter_upwards [h0ne] with x hx
-        rw [inversionGL_smul_coe, if_neg hx]
+        rw [inversionGL_smul_coe, ite_eq_right hx]
       exact key
     · have key : Continuous (fun x : ℂ => inversionGL • (↑x : ℂ̂)) := by
         rw [continuous_iff_continuousAt]
@@ -151,7 +151,7 @@ theorem continuous_gl_smul (g : GL (Fin 2) ℂ) : Continuous (fun z : ℂ̂ => g
         by_cases hx₀ : x₀ = 0
         · subst hx₀
           have hv0 : inversionGL • ((0 : ℂ) : ℂ̂) = ∞ := by
-            rw [inversionGL_smul_coe, if_pos rfl]
+            rw [inversionGL_smul_coe, ite_eq_left rfl]
           have hT : Filter.Tendsto (fun x : ℂ => inversionGL • (↑x : ℂ̂)) (nhds 0)
               (nhds (inversionGL • ((0 : ℂ) : ℂ̂))) := by
             rw [hv0]
@@ -165,10 +165,10 @@ theorem continuous_gl_smul (g : GL (Fin 2) ℂ) : Continuous (fun z : ℂ̂ => g
             filter_upwards [hev] with x hx
             by_cases hx0 : x = 0
             · refine Set.mem_union_right _ ?_
-              rw [inversionGL_smul_coe, if_pos hx0]
+              rw [inversionGL_smul_coe, ite_eq_left hx0]
               exact Set.mem_singleton _
             · refine Set.mem_union_left _ ?_
-              rw [inversionGL_smul_coe, if_neg hx0]
+              rw [inversionGL_smul_coe, ite_eq_right hx0]
               refine ⟨x⁻¹, ?_, rfl⟩
               simp only [Set.mem_compl_iff]
               intro hmem
@@ -181,7 +181,7 @@ theorem continuous_gl_smul (g : GL (Fin 2) ℂ) : Continuous (fun z : ℂ̂ => g
             OnePoint.continuous_coe.continuousAt.comp (continuousAt_inv₀ hx₀)
           refine hbase.congr ?_
           filter_upwards [eventually_ne_nhds hx₀] with x hx
-          rw [inversionGL_smul_coe, if_neg hx]
+          rw [inversionGL_smul_coe, ite_eq_right hx]
       exact key
   -- Step (C): factor a general element through the two special cases.
   by_cases hc : (g : Matrix (Fin 2) (Fin 2) ℂ) 1 0 = 0
@@ -244,7 +244,7 @@ theorem exists_gl_smul_eq_zero_one_infty {a b c : ℂ̂}
       rw [← hγ, OnePoint.smul_some_eq_ite, hcoe]
       have hcond : !![(0 : ℂ), 1; 1, -γ] 1 0 * γ + !![(0 : ℂ), 1; 1, -γ] 1 1 = 0 := by
         simp
-      rw [if_pos hcond]
+      rw [ite_eq_left hcond]
   -- Step 2: the images of `a` and `b` under `g₁` are finite and distinct.
   have ha' : g₁ • a ≠ ∞ := fun h => hac (MulAction.injective g₁ (h.trans hg₁c.symm))
   have hb' : g₁ • b ≠ ∞ := fun h => hbc (MulAction.injective g₁ (h.trans hg₁c.symm))
@@ -265,13 +265,13 @@ theorem exists_gl_smul_eq_zero_one_infty {a b c : ℂ̂}
     rw [SemigroupAction.mul_smul, ← hα, OnePoint.smul_some_eq_ite, hcoe₂]
     have hcond : ¬(!![(1 : ℂ), -α; 0, β - α] 1 0 * α + !![(1 : ℂ), -α; 0, β - α] 1 1 = 0) := by
       simpa using hβα
-    rw [if_neg hcond, OnePoint.coe_eq_coe]
+    rw [ite_eq_right hcond, OnePoint.coe_eq_coe]
     simp
   · -- `b ↦ β ↦ 1`
     rw [SemigroupAction.mul_smul, ← hβ, OnePoint.smul_some_eq_ite, hcoe₂]
     have hcond : ¬(!![(1 : ℂ), -α; 0, β - α] 1 0 * β + !![(1 : ℂ), -α; 0, β - α] 1 1 = 0) := by
       simpa using hβα
-    rw [if_neg hcond, OnePoint.coe_eq_coe]
+    rw [ite_eq_right hcond, OnePoint.coe_eq_coe]
     have : !![(1 : ℂ), -α; 0, β - α] 1 0 * β + !![(1 : ℂ), -α; 0, β - α] 1 1 = β - α := by
       simp [sub_eq_add_neg]
     rw [this]
@@ -282,7 +282,7 @@ theorem exists_gl_smul_eq_zero_one_infty {a b c : ℂ̂}
     rw [SemigroupAction.mul_smul, hg₁c, OnePoint.smul_infty_eq_ite]
     have hcond : ((g₂ : Matrix (Fin 2) (Fin 2) ℂ) 1 0 : ℂ) = 0 := by
       rw [hg₂, hcoe₂]; simp
-    rw [if_pos hcond]
+    rw [ite_eq_left hcond]
 
 /-- A Möbius transformation with explicit coefficients, as a total map on
 the sphere: `x ↦ (a·x + b)/(c·x + d)` with poles sent to `∞` and
@@ -325,7 +325,7 @@ theorem continuousOn_mobiusApply :
   have hinfty_val : ∀ a b c d : ℂ, mobiusApply a b c d (∞ : ℂ̂)
       = if c = 0 then ∞ else ((a / c : ℂ) : ℂ̂) := fun _ _ _ _ => rfl
   have hinv0 : inversionGL • ((0 : ℂ) : ℂ̂) = (∞ : ℂ̂) := by
-    rw [inversionGL_smul_coe, if_pos rfl]
+    rw [inversionGL_smul_coe, ite_eq_left rfl]
   -- (I) Row swap: on the determinant locus,
   -- `mobiusApply a b c d = inversionGL • mobiusApply c d a b`.
   have hrow : ∀ a b c d : ℂ, a * d - b * c ≠ 0 → ∀ w : ℂ̂,
@@ -336,20 +336,20 @@ theorem continuousOn_mobiusApply :
       rw [hcoe_val, hcoe_val]
       by_cases hcd : c * x + d = 0
       · have hab : a * x + b ≠ 0 := fun h => hdet (by linear_combination a * hcd - c * h)
-        rw [if_pos hcd, if_neg hab, inversionGL_smul_coe, hcd, zero_div, if_pos rfl]
+        rw [ite_eq_left hcd, ite_eq_right hab, inversionGL_smul_coe, hcd, zero_div, ite_eq_left rfl]
       · by_cases hab : a * x + b = 0
-        · rw [if_neg hcd, if_pos hab, inversionGL_smul_infty, hab, zero_div]
-        · rw [if_neg hcd, if_neg hab, inversionGL_smul_coe,
-            if_neg (div_ne_zero hcd hab), inv_div]
+        · rw [ite_eq_right hcd, ite_eq_left hab, inversionGL_smul_infty, hab, zero_div]
+        · rw [ite_eq_right hcd, ite_eq_right hab, inversionGL_smul_coe,
+            ite_eq_right (div_ne_zero hcd hab), inv_div]
     | infty =>
       rw [hinfty_val, hinfty_val]
       by_cases hc : c = 0
       · have ha : a ≠ 0 := fun h => hdet (by rw [h, hc]; ring)
-        rw [if_pos hc, if_neg ha, inversionGL_smul_coe, hc, zero_div, if_pos rfl]
+        rw [ite_eq_left hc, ite_eq_right ha, inversionGL_smul_coe, hc, zero_div, ite_eq_left rfl]
       · by_cases ha : a = 0
-        · rw [if_neg hc, if_pos ha, inversionGL_smul_infty, ha, zero_div]
-        · rw [if_neg hc, if_neg ha, inversionGL_smul_coe,
-            if_neg (div_ne_zero hc ha), inv_div]
+        · rw [ite_eq_right hc, ite_eq_left ha, inversionGL_smul_infty, ha, zero_div]
+        · rw [ite_eq_right hc, ite_eq_right ha, inversionGL_smul_coe,
+            ite_eq_right (div_ne_zero hc ha), inv_div]
   -- (II) Column swap through the inversion parameterization of `∞`.
   have hcol : ∀ a b c d t : ℂ,
       mobiusApply a b c d (inversionGL • (t : ℂ̂)) = mobiusApply b a d c ((t : ℂ̂)) := by
@@ -358,18 +358,18 @@ theorem continuousOn_mobiusApply :
     · subst ht
       rw [hinv0, hinfty_val, hcoe_val]
       norm_num
-    · rw [inversionGL_smul_coe, if_neg ht, hcoe_val, hcoe_val]
+    · rw [inversionGL_smul_coe, ite_eq_right ht, hcoe_val, hcoe_val]
       by_cases hdc : d * t + c = 0
       · have h1 : c * t⁻¹ + d = 0 := by
           field_simp
           linear_combination hdc
-        rw [if_pos h1, if_pos hdc]
+        rw [ite_eq_left h1, ite_eq_left hdc]
       · have h1 : c * t⁻¹ + d ≠ 0 := by
           intro h
           apply hdc
           field_simp at h
           linear_combination h
-        rw [if_neg h1, if_neg hdc, OnePoint.coe_eq_coe, div_eq_div_iff h1 hdc]
+        rw [ite_eq_right h1, ite_eq_right hdc, OnePoint.coe_eq_coe, div_eq_div_iff h1 hdc]
         field_simp
         ring
   -- Neighborhood transport along the finite-chart parameterization.
@@ -419,11 +419,11 @@ theorem continuousOn_mobiusApply :
         (𝓝 (mobiusApply p.1 p.2.1 p.2.2.1 p.2.2.2 ((x : ℂ̂)))) := by
       have hvx : mobiusApply p.1 p.2.1 p.2.2.1 p.2.2.2 ((x : ℂ̂))
           = (((p.1 * x + p.2.1) / (p.2.2.1 * x + p.2.2.2) : ℂ) : ℂ̂) := by
-        rw [hcoe_val, if_neg hden]
+        rw [hcoe_val, ite_eq_right hden]
       rw [hvx]
       refine Filter.Tendsto.congr' ?_ hg.tendsto
       filter_upwards [hev] with q hq
-      simp only [hcoe_val, if_neg hq]
+      simp only [hcoe_val, ite_eq_right hq]
     have hfin : Filter.Tendsto (fun q : (ℂ × ℂ × ℂ × ℂ) × ℂ̂ =>
         mobiusApply q.1.1 q.1.2.1 q.1.2.2.1 q.1.2.2.2 q.2) (𝓝 (p, (x : ℂ̂)))
         (𝓝 (mobiusApply p.1 p.2.1 p.2.2.1 p.2.2.2 ((x : ℂ̂)))) := by

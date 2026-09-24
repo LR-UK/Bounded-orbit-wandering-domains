@@ -17,10 +17,10 @@ def visit(m):
     b=next((b for b in B if (b/rel).is_file()),None)
     if b is None: raise RuntimeError(m)
     code=v.without_lean_comments((b/rel).read_text())
-    ds=[x for l in re.findall(r'^\s*(?:public\s+)?import\s+([^\n]+)',code,re.M) for x in l.split() if x.split('.')[0] not in SKIP]
+    ds=[x for l in re.findall(r'^\s*(?:public\s+)?import\s+(?:all\s+)?([^\n]+)',code,re.M) for x in l.split() if x.split('.')[0] not in SKIP]
     graph[m]=set(ds);locations[m]=b
     for d in ds: visit(d)
-for m in ('Solution','Challenge','BoundedWanderingDomains','CoveringSolution'):visit(m)
+for m in ('Solution','Challenge','BoundedWanderingDomains','CoveringSolution','NewResults','SingularLimitsChallenge','SingularLimitsSolution'):visit(m)
 def cached(m):
     b=locations[m]/'.lake/build/lib/lean'/Path(*m.split('.'))
     return b.with_suffix('.olean').is_file() and b.with_suffix('.trace').is_file()

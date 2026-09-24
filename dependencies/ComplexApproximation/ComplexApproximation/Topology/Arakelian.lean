@@ -32,7 +32,7 @@ theorem arakelianExhaustion_succ (E : Set ℂ) (n : ℕ) :
 theorem subset_arakelianExhaustion (E : Set ℂ) (n : ℕ) : E ⊆ arakelianExhaustion E n := by
   by_cases hn : n = 0
   · simp [arakelianExhaustion, hn]
-  · simpa only [arakelianExhaustion, if_neg hn] using
+  · simpa only [arakelianExhaustion, ite_eq_right hn] using
       (subset_union_left.trans (subset_fill (E ∪ closedBall 0 (n : ℝ))))
 
 theorem arakelianExhaustion_mono (E : Set ℂ) : Monotone (arakelianExhaustion E) := by
@@ -40,7 +40,7 @@ theorem arakelianExhaustion_mono (E : Set ℂ) : Monotone (arakelianExhaustion E
   by_cases hm : m = 0
   · simpa [hm] using subset_arakelianExhaustion E n
   · have hn : n ≠ 0 := by omega
-    simp only [arakelianExhaustion, if_neg hm, if_neg hn]
+    simp only [arakelianExhaustion, ite_eq_right hm, ite_eq_right hn]
     apply fill_mono (union_subset_union_right E _)
     exact closedBall_subset_closedBall (by exact_mod_cast hmn)
 
@@ -48,7 +48,7 @@ theorem isClosed_arakelianExhaustion {E : Set ℂ} (hE : IsClosed E) (n : ℕ) :
     IsClosed (arakelianExhaustion E n) := by
   by_cases hn : n = 0
   · simpa [arakelianExhaustion, hn] using hE
-  · simpa only [arakelianExhaustion, if_neg hn] using
+  · simpa only [arakelianExhaustion, ite_eq_right hn] using
       isClosed_fill (hE.union isClosed_closedBall)
 
 theorem noBoundedComplementComponents_arakelianExhaustion {E : Set ℂ}
@@ -56,23 +56,23 @@ theorem noBoundedComplementComponents_arakelianExhaustion {E : Set ℂ}
     NoBoundedComplementComponents (arakelianExhaustion E n) := by
   by_cases hn : n = 0
   · simpa [arakelianExhaustion, hn] using hE
-  · simpa only [arakelianExhaustion, if_neg hn] using
+  · simpa only [arakelianExhaustion, ite_eq_right hn] using
       noBoundedComplementComponents_fill (E ∪ closedBall 0 (n : ℝ))
 
 theorem IsArakelian.isBounded_exhaustion_diff {E : Set ℂ} (hE : IsArakelian E) (n : ℕ) :
     IsBounded (arakelianExhaustion E n \ E) := by
   by_cases hn : n = 0
-  · simpa [hn] using (isBounded_empty : IsBounded (∅ : Set ℂ))
-  · simpa only [arakelianExhaustion, if_neg hn] using hE.boundedHoles (n : ℝ)
+  · simp [hn]
+  · simpa only [arakelianExhaustion, ite_eq_right hn] using hE.boundedHoles (n : ℝ)
 
 theorem IsArakelian.isBounded_exhaustion_succ_diff {E : Set ℂ} (hE : IsArakelian E) (n : ℕ) :
     IsBounded (arakelianExhaustion E (n + 1) \ arakelianExhaustion E n) :=
   (hE.isBounded_exhaustion_diff (n + 1)).subset
-    (diff_subset_diff_right (subset_arakelianExhaustion E n))
+    (sdiff_subset_sdiff_right (subset_arakelianExhaustion E n))
 
 theorem closedBall_subset_arakelianExhaustion (E : Set ℂ) {n : ℕ} (hn : n ≠ 0) :
     closedBall 0 (n : ℝ) ⊆ arakelianExhaustion E n := by
-  simp only [arakelianExhaustion, if_neg hn]
+  simp only [arakelianExhaustion, ite_eq_right hn]
   exact subset_union_right.trans (subset_fill _)
 
 end ComplexApproximation

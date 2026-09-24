@@ -34,6 +34,10 @@ The three additional proved results are exposed by [NewResults.lean](NewResults.
 uniform compact-deletion area gain on the sphere, the 2π-per-puncture bound,
 and locally uniform derived singular accumulation for entire wandering components.
 See [NEW_RESULTS_PROGRESS.md](NEW_RESULTS_PROGRESS.md) for precise names and scope.
+The entire singular-limit theorem has its own independent
+[SingularLimitsChallenge.lean](SingularLimitsChallenge.lean), proof entry point
+and `comparator-singular-limits.json`. The area bounds remain supporting results.
+See [GITHUB_UPDATE.md](GITHUB_UPDATE.md) for the prepared version 1.2.0 update.
 
 ## Build and verification
 
@@ -43,10 +47,11 @@ The toolchain is `leanprover/lean4:v4.35.0-rc2`. Mathlib is pinned to
 ```sh
 python3 scripts/fetch_cache.py
 lake build BoundedWanderingDomains Submission Challenge CoveringSolution NewResults
-python3 scripts/verify_completion.py
+python3 scripts/verify_submission.py
 python3 scripts/verify_metadata.py
 python3 scripts/audit_attribution.py
-./scripts/verify-comparator.sh
+./scripts/verify-comparator.sh comparator.json
+./scripts/verify-comparator.sh comparator-singular-limits.json
 ```
 
 The verification script builds with bounded parallelism, then runs the full
@@ -54,8 +59,8 @@ Lake target check. The Python metadata check requires PyYAML. The final command 
 with working unprivileged user namespaces and bubblewrap; it uses the bundled
 Palomar Comparator, NanoDa and con-ron without weakening their checks.
 See [VERIFICATION.md](VERIFICATION.md) for the actual results and limitations.
-The two `sorry`s in Challenge are intentional statement placeholders; Solution
-does not import Challenge. No proof holes or extra axioms are permitted in
+The two `sorry`s in Challenge and one in SingularLimitsChallenge are intentional
+statement placeholders; neither proof entry point imports a Challenge. No proof holes or extra axioms are permitted in
 Solution's dependency closure.
 
 ## Organisation and provenance

@@ -48,3 +48,11 @@ The exact toolchain-port source/configuration changes are recorded in
 `verification/toolchain435-changes.patch`, relative to the assembled,
 unconditional Lean 4.34 baseline. The root VERIFICATION.md records the actual
 new-toolchain checks and the local official-Comparator environment limitation.
+
+## Version 1.2.0 warning cleanup
+
+Eight active dependency source files received only deprecated-lemma renames and
+removal of unused simp arguments/tactic sequencing. Public theorem statements and
+original attribution are retained. The patch and paths are recorded under
+verification/update-warning-compatibility.patch and update-warning-files.json.
+The root strict build accepts only the three intentional Challenge placeholders.

@@ -207,11 +207,11 @@ theorem sphericalDeriv_inversionGL_smul (F : ℂ → ℂ̂) (z : ℂ) :
     intro b
     by_cases hb : b = 0
     · subst hb
-      rw [inversionGL_smul_coe, if_pos rfl, sInf, sCoe, hL, e00]
+      rw [inversionGL_smul_coe, ite_eq_left rfl, sInf, sCoe, hL, e00]
       have e1 : -(2 * (0 : ℂ).im / (1 + ‖(0 : ℂ)‖ ^ 2)) = (0 : ℝ) := by simp
       have e2 : -((‖(0 : ℂ)‖ ^ 2 - 1) / (1 + ‖(0 : ℂ)‖ ^ 2)) = (1 : ℝ) := by norm_num
       rw [e1, e2]
-    · rw [inversionGL_smul_coe, if_neg hb, sCoe, sCoe, hL]
+    · rw [inversionGL_smul_coe, ite_eq_right hb, sCoe, sCoe, hL]
       have hn0 : Complex.normSq b ≠ 0 := (Complex.normSq_pos.mpr hb).ne'
       have h := Complex.normSq_nonneg b
       have hn1 : (1 : ℝ) + Complex.normSq b ≠ 0 := by intro hcon; linarith
@@ -379,14 +379,14 @@ theorem SphereHolomorphicOn.differentiableAt_stereoEmbed {F : ℂ → ℂ̂}
       rw [map_sub, _root_.map_smul, ContinuousLinearEquiv.apply_symm_apply, hsv]
       by_cases ha : a = 0
       · subst ha
-        rw [inversionGL_smul_coe, if_pos rfl]
+        rw [inversionGL_smul_coe, ite_eq_left rfl]
         have hsi : EuclideanSpace.equiv (Fin 3) ℝ (stereoEmbed (∞ : ℂ̂))
             = ![0, 0, 1] := rfl
         rw [hsi]
         funext i
         fin_cases i <;>
           norm_num [Pi.smul_apply, smul_eq_mul, Complex.zero_re, Complex.zero_im]
-      · rw [inversionGL_smul_coe, if_neg ha, hsv]
+      · rw [inversionGL_smul_coe, ite_eq_right ha, hsv]
         have hns : Complex.normSq a = ‖a‖ ^ 2 := (Complex.sq_norm a).symm
         have hna : ‖a‖ ^ 2 ≠ 0 := pow_ne_zero 2 (norm_ne_zero_iff.mpr ha)
         have h1a : (1 : ℝ) + ‖a‖ ^ 2 ≠ 0 := by positivity
@@ -451,7 +451,7 @@ theorem SphereHolomorphicOn.continuousOn_sphericalDeriv {F : ℂ → ℂ̂}
       | infty => rw [inversionGL_smul_infty]; rfl
       | coe x =>
         have hx : x ≠ 0 := fun h => hne w hw (by rw [hFw, h])
-        rw [inversionGL_smul_coe, if_neg hx]
+        rw [inversionGL_smul_coe, ite_eq_right hx]
         rfl
     have hflip : sphericalDeriv F = sphericalDeriv (fun w => inversionGL • F w) :=
       funext fun w => (sphericalDeriv_inversionGL_smul F w).symm
@@ -857,11 +857,11 @@ theorem sphereHolomorphicOn_of_tendstoLocallyUniformlyOn {Fn : ℕ → ℂ → �
       | coe x =>
         by_cases hx : x = 0
         · subst hx
-          rw [inversionGL_smul_coe, if_pos rfl, ci, inv_zero, cf0]
-        · rw [inversionGL_smul_coe, if_neg hx, ci, cf]
+          rw [inversionGL_smul_coe, ite_eq_left rfl, ci, inv_zero, cf0]
+        · rw [inversionGL_smul_coe, ite_eq_right hx, ci, cf]
     refine ⟨V, hVo, hzV, hVU, Or.inr ⟨fun w hw hc => ?_,
       hVdiff.congr fun w _ => hkey (g w)⟩⟩
-    have h1 : inversionGL • g w = ∞ := by rw [hc, inversionGL_smul_coe, if_pos rfl]
+    have h1 : inversionGL • g w = ∞ := by rw [hc, inversionGL_smul_coe, ite_eq_left rfl]
     exact hVne w hw h1
   · obtain ⟨V, hVo, hzV, hVU, hVne, hVdiff⟩ := key Fn g hol hg z₀ hz₀ hzi
     exact ⟨V, hVo, hzV, hVU, Or.inl ⟨hVne, hVdiff⟩⟩

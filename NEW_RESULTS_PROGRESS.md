@@ -43,12 +43,13 @@ changes are documented in `EremenkoLyubichConstant/RECOVERY_PORT.md`.
 `verification/NewResultsAxioms.lean` audits all final declarations. Only
 `propext`, `Classical.choice`, and `Quot.sound` occur transitively. No proof
 holes or additional axioms occur in their dependency closure.
-`verification/completion.json` records the combined build, source scan, transitive
-axioms, and independent comparison of the two existing Challenge/Solution
-statements and seven supporting definitions.
+`verification/submission.json` records the strict combined build, source scan,
+transitive axioms and both independent Challenge/proof comparisons.
 
-The three new results are exposed as proved declarations through NewResults;
-they have not been added to the independent Palomar comparator configuration.
+The three new results are exposed as proved declarations through NewResults.
+The entire singular-limit theorem additionally has an independent Mathlib-only
+SingularLimitsChallenge and comparator-singular-limits.json. The two area results
+remain supporting theorems, without standalone registry configurations.
 No public push, registry submission, official Comparator replay, or independent
 human review is claimed. No meromorphic extension is claimed; in particular,
 the multiply connected meromorphic question remains outside this work.

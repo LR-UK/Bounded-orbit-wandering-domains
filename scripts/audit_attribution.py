@@ -11,7 +11,12 @@ def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 def audit():
-    records = {ROOT / 'LICENSE', ROOT / 'THIRD_PARTY_NOTICES.md',
+    records = {ROOT / 'EremenkoLyubichConstant/RAY_LICENSE',
+               ROOT / 'EremenkoLyubichConstant/RECOVERY_PORT.md',
+               ROOT / 'EremenkoLyubichConstant/THIRD_PARTY_NOTICES.md',
+               ROOT / 'verification/update-warning-files.json',
+               ROOT / 'verification/update-warning-compatibility.patch',
+               ROOT / 'LICENSE', ROOT / 'THIRD_PARTY_NOTICES.md',
                ROOT / 'DEPENDENCY_COMPATIBILITY.md',
                ROOT / 'verification/linter-updated-files.json',
                ROOT / 'verification/linter-compatibility.patch',
@@ -35,8 +40,8 @@ def audit():
                 path = Path(directory) / name
                 if 'third_party' in path.parts or name in {'LICENSE', 'PROVENANCE.md', 'ALIGNMENT.json'}:
                     records.add(path)
-    licences = sorted(p for p in records if (p.name == 'LICENSE' and 'palomar-contract' not in p.parts) or p.name in {'RIEMANN_DYNAMICS_LICENSE', 'RMT4_LICENSE'})
-    assert len(licences) == 11
+    licences = sorted(p for p in records if (p.name == 'LICENSE' and 'palomar-contract' not in p.parts) or p.name in {'RIEMANN_DYNAMICS_LICENSE', 'RMT4_LICENSE', 'RAY_LICENSE'})
+    assert len(licences) == 12
     for path in licences:
         text = path.read_text()
         assert 'Apache License' in text and 'Version 2.0, January 2004' in text, path

@@ -42,16 +42,16 @@ theorem mAnalytic_inv : ContMDiff I I ⊤ (fun z : 𝕊 ↦ z⁻¹) := by
       PartialEquiv.trans_apply, Equiv.toPartialEquiv_apply, invEquiv_apply,
       coePartialEquiv_symm_apply, toComplex_coe, PartialEquiv.coe_trans_symm,
       PartialEquiv.symm_symm, coePartialEquiv_apply, Equiv.toPartialEquiv_symm_apply,
-      invEquiv_symm, inv_inv, toComplex_zero]
+      invEquiv_symm, inv_inv]
     exact contDiffAt_id.contDiffWithinAt
   | coe z =>
     by_cases hz : z = 0
     · subst z
-      simp only [extChartAt_coe, PartialEquiv.symm_symm, Function.comp_def,
-        coePartialEquiv_apply, coePartialEquiv_symm_apply, toComplex_coe,
+      simp only [  Function.comp_def,
+         coePartialEquiv_symm_apply,
         coe_zero, inv_zero', extChartAt_inf, PartialEquiv.trans_apply,
         coePartialEquiv_symm_apply, invEquiv_apply, Equiv.toPartialEquiv_apply,
-        inv_inv, toComplex_coe]
+        inv_inv]
       exact contDiffAt_id.contDiffWithinAt
     · simp only [inv_coe hz, extChartAt_coe, Function.comp_def,
         PartialEquiv.symm_symm, coePartialEquiv_apply, coePartialEquiv_symm_apply,

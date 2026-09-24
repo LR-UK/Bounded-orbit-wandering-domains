@@ -1,3 +1,8 @@
+> **24 September 2026 compatibility update.** Topology/Arakelian received only
+> deprecated-name replacements and removal of an already-closing simp proof.
+> This module is checked through the root project's strict build; no new full
+> standalone dependency audit is claimed. See root VERIFICATION.md.
+
 > **Submission copy, 23 September 2026.** Toolchain and dependency pins have
 > been updated to Lean 4.35.0-rc2 and Mathlib
 > `065356127b1dc0016f66b7283ce0ce2c4055aa55` for the unconditional submission.

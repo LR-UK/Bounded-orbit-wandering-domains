@@ -12,6 +12,8 @@ project:
     The formalisation includes a number of classical results that were
     implemented as auxiliary results, including results concerning the hyperbolic metric
     for a finitely punctured sphere, and its area.
+    It also proves sphere area-gain bounds and a locally uniform subsequence
+    converging to a derived spherical singular value on every entire wandering component.
   authors:
   - Nikolai Prochorov
   - Lasse Rempe
@@ -44,7 +46,7 @@ sources:
     role: AI-assisted Lean proof construction, compatibility work and verification
   location: "https://github.com/LR-UK/Bounded-orbit-wandering-domains/tree/main/paper/Absence_of_bounded_orbit_wandering_domains-1.pdf"
   note: The manuscript was drafted separately by the authors. The precise formalised claims are the
-    declarations in Solution.lean and NewResults.lean; only the two in Challenge.lean are independently compared. No independent
+    declarations in Solution.lean and NewResults.lean. The two bounded-orbit results and the entire singular-limit result have separate independent Challenge configurations. No independent
     human review or registry acceptance is claimed.
 - title: A new proof of no-wandering domain theorems without quasiconformal techniques
   authors:
@@ -161,7 +163,7 @@ status:
     hypotheses. NewResults also proves uniform compact-deletion area gain on the
     sphere, the 2*pi-per-puncture bound, and a locally uniform subsequence on every
     entire wandering component converging to a derived spherical singular value.
-    The two independent Challenge placeholders are not imported by Solution.
+    Independent Challenge placeholders are not imported by either proof entry point.
   sorry_count: 0
   sorry_in_definitions: 0
   axioms:
@@ -232,8 +234,9 @@ fidelity:
     plane maps analytic near compact closure(V), with one compactly contained
     point orbit; no simple connectivity is assumed. Singular limits are on the
     sphere, including infinity. No meromorphic extension or positive-area-set
-    theorem is claimed. Only the two bounded-orbit theorems are independently
-    compared by the current Challenge configuration.
+    theorem is claimed. The bounded-orbit and entire singular-limit theorems have
+    separate comparator configurations. The two sphere area results are proved
+    supporting results, without standalone registry Challenge declarations.
 
 review:
   status: self-assessed

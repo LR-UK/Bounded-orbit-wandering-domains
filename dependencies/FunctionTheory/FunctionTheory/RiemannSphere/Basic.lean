@@ -128,11 +128,11 @@ public instance : InvolutiveInv 𝕊 where
       · simp only [z0, coe_zero, toComplex_zero, inv_zero, ite_true, inf_ne_zero, toComplex_inf,
           ite_false]
       · simp only [coe_eq_zero, z0, toComplex_coe, ite_false, inv_eq_zero, inv_inv]
-@[simp] public lemma inv_zero' : (0 : 𝕊)⁻¹ = ∞ := by simp only [inv_def, inv, if_true]
+@[simp] public lemma inv_zero' : (0 : 𝕊)⁻¹ = ∞ := by simp only [inv_def, inv, ite_true]
 @[simp] public lemma inv_inf : ((∞ : 𝕊)⁻¹ : 𝕊) = 0 := by simp [inv_def, inv, inf_ne_zero]
 
 public theorem inv_coe {z : ℂ} (z0 : z ≠ 0) : (z : 𝕊)⁻¹ = ↑(z : ℂ)⁻¹ := by
-  simp only [inv_def, inv, z0, toComplex_coe, if_false, coe_eq_zero]
+  simp only [inv_def, inv, z0, toComplex_coe, ite_false, coe_eq_zero]
 @[simp] public lemma inv_eq_inf {z : 𝕊} : z⁻¹ = ∞ ↔ z = 0 := by
   induction z using OnePoint.rec
   · simp only [inv_inf]; exact ⟨Eq.symm, Eq.symm⟩
@@ -141,8 +141,8 @@ public theorem inv_coe {z : ℂ} (z0 : z ≠ 0) : (z : 𝕊)⁻¹ = ↑(z : ℂ)
   induction' z using OnePoint.rec with z
   · simp only [inv_inf]
   · simp only [inv_def, inv, toComplex_coe]
-    by_cases z0 : (z : 𝕊) = 0; simp only [if_pos, z0, inf_ne_zero, inf_ne_zero.symm]
-    simp only [if_neg z0, coe_ne_inf, iff_false]; rw [coe_eq_zero, _root_.inv_eq_zero]
+    by_cases z0 : (z : 𝕊) = 0; simp only [ite_eq_left, z0, inf_ne_zero, inf_ne_zero.symm]
+    simp only [ite_eq_right z0, coe_ne_inf, iff_false]; rw [coe_eq_zero, _root_.inv_eq_zero]
     simpa only [coe_eq_zero] using z0
 public theorem toComplex_inv {z : 𝕊} : z⁻¹.toComplex = z.toComplex⁻¹ := by
   induction' z using OnePoint.rec with z
@@ -183,7 +183,7 @@ public theorem continuous_inv : Continuous fun z : 𝕊 ↦ z⁻¹ := by
   · simp only [OnePoint.continuousAt_coe, Function.comp_def, inv_def, inv, coe_eq_zero,
       toComplex_coe]
     by_cases z0 : z = 0
-    · simp only [z0, ContinuousAt, OnePoint.nhds_infty_eq, if_true,
+    · simp only [z0, ContinuousAt, OnePoint.nhds_infty_eq, ite_true,
         Filter.coclosedCompact_eq_cocompact, ← Metric.cobounded_eq_cocompact]
       simp only [← nhdsNE_sup_pure, Filter.tendsto_sup]
       constructor
@@ -200,7 +200,7 @@ public theorem continuous_inv : Continuous fun z : 𝕊 ↦ z⁻¹ := by
           not_true, IsEmpty.forall_iff]
     · have e : ∀ᶠ w : ℂ in 𝓝 z, (if w = 0 then ∞ else ↑w⁻¹ : 𝕊) = ↑w⁻¹ := by
         refine (continuousAt_id.eventually_ne z0).mp (.of_forall fun w w0 ↦ ?_)
-        simp only [Ne, id_eq] at w0; simp only [w0, if_false]
+        simp only [Ne, id_eq] at w0; simp only [w0, ite_false]
       simp only [continuousAt_congr e]
       exact continuous_coe.continuousAt.comp (tendsto_inv₀ z0)
 instance : ContinuousInv 𝕊 := ⟨continuous_inv⟩
@@ -309,8 +309,8 @@ public theorem extChartAt_inf :
       OpenPartialHomeomorph.trans_toPartialEquiv, modelWithCornersSelf_partialEquiv,
       PartialEquiv.trans_refl, PartialEquiv.coe_trans_symm,
       OpenPartialHomeomorph.coe_toPartialEquiv_symm,
-      Homeomorph.toOpenPartialHomeomorph_symm_apply, Homeomorph.homeomorph_mk_coe_symm,
-      invEquiv_symm, PartialEquiv.coe_trans, Equiv.toPartialEquiv_apply, Function.comp_apply]
+      Homeomorph.toOpenPartialHomeomorph_symm_apply,
+       PartialEquiv.coe_trans, Equiv.toPartialEquiv_apply, Function.comp_apply]
     show coePartialEquiv.symm (invEquiv.symm z) = coePartialEquiv.symm (invEquiv z)
     rw [invEquiv_symm]
   · intro z
@@ -326,8 +326,8 @@ public theorem extChartAt_inf :
       OpenPartialHomeomorph.trans_toPartialEquiv, modelWithCornersSelf_partialEquiv,
       PartialEquiv.trans_refl, PartialEquiv.symm_source, PartialEquiv.trans_target,
       Homeomorph.toOpenPartialHomeomorph_target, OpenPartialHomeomorph.coe_toPartialEquiv_symm,
-      Homeomorph.toOpenPartialHomeomorph_symm_apply, Homeomorph.homeomorph_mk_coe_symm,
-      invEquiv_symm, PartialEquiv.trans_source, Equiv.toPartialEquiv_source,
+      Homeomorph.toOpenPartialHomeomorph_symm_apply,
+       PartialEquiv.trans_source, Equiv.toPartialEquiv_source,
       Equiv.toPartialEquiv_apply]
     show univ ∩ ⇑invEquiv.symm ⁻¹' coePartialEquiv.target
       = univ ∩ ⇑invEquiv ⁻¹' coePartialEquiv.target

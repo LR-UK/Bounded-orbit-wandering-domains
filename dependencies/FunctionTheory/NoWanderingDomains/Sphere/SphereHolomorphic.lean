@@ -208,7 +208,7 @@ theorem sphereHolomorphicOn_gl_smul_coe {h : ℂ → ℂ} {V : Set ℂ}
     refine ⟨V ∩ t, hV.inter ht_open, ⟨hz, hzt⟩, Set.inter_subset_left, Or.inl ⟨?_, ?_⟩⟩
     · intro w hw
       simp only [OnePoint.smul_some_eq_ite]
-      rw [if_neg (ht_ne w hw.2)]
+      rw [ite_eq_right (ht_ne w hw.2)]
       exact OnePoint.coe_ne_infty _
     · have hinv : DifferentiableOn ℂ
           (fun w => ((N : Matrix (Fin 2) (Fin 2) ℂ) 1 0 * h w +
@@ -222,7 +222,7 @@ theorem sphereHolomorphicOn_gl_smul_coe {h : ℂ → ℂ} {V : Set ℂ}
         (hnum.mono Set.inter_subset_left).mul hinv
       refine hdiv.congr fun w hw => ?_
       simp only [OnePoint.smul_some_eq_ite]
-      rw [if_neg (ht_ne w hw.2), cf, div_eq_mul_inv]
+      rw [ite_eq_right (ht_ne w hw.2), cf, div_eq_mul_inv]
 
 /-- Sphere-holomorphy is preserved by post-composition with Möbius
 transformations. -/

@@ -32,7 +32,7 @@ theorem eventually_rescaled_ball_subset {z : ℕ → ℂ} {ρ : ℕ → ℝ} {z�
     rw [norm_mul,Complex.norm_real,Real.norm_eq_abs,abs_of_pos (hρpos n)]
     exact (mul_lt_mul_of_pos_left hw' (hρpos n)).trans hρR
   have ht : ‖z n+(ρ n : ℂ)*w-z₀‖ ≤ ‖z n-z₀‖+‖(ρ n : ℂ)*w‖ := by
-    convert norm_add_le (z n-z₀) ((ρ n : ℂ)*w) using 1 <;> congr 1 <;> ring
+    convert norm_add_le (z n-z₀) ((ρ n : ℂ)*w) using 1; congr 1; ring
   linarith
 
 /-- Montel's omitted-values theorem via the public Zalcman rescaling lemma,

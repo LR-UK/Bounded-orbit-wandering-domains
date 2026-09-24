@@ -2,6 +2,10 @@
   "result": "passed",
   "scope": "Included source attribution and archive completeness",
   "licence_texts": {
+    "EremenkoLyubichConstant/RAY_LICENSE": {
+      "license": "Apache-2.0",
+      "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1"
+    },
     "LICENSE": {
       "license": "Apache-2.0",
       "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1"
@@ -50,7 +54,10 @@
   "attribution_files": {
     "BoundedWanderingDomains/RiemannMappingFull.lean": "189e83535fc41465dce8c67df277cefb5b53b2709e17f4d3f03828274a23148c",
     "BoundedWanderingDomains/UnitDiscShift.lean": "6f47c456d9e1f54eedc1b13267548fbfe7b13b03ddf1dbe3e4d83bde7be4f858",
-    "DEPENDENCY_COMPATIBILITY.md": "c05913c581d888d97e5c1bd6cfa98dda0dc2d2ba15fbfe42b3785453031712d2",
+    "DEPENDENCY_COMPATIBILITY.md": "508fd1245e4f0597a6510921a3af7e42787b74d7b36b62348e3bc677916cbb4d",
+    "EremenkoLyubichConstant/RAY_LICENSE": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+    "EremenkoLyubichConstant/RECOVERY_PORT.md": "864500f3d90c01a42aab76bab9b8b070eb2a1a3521d1f3756dba0d9acc3d9f14",
+    "EremenkoLyubichConstant/THIRD_PARTY_NOTICES.md": "88b69eb3f9cd3d0309b3d6cebbd915c00152a1a685e07fea6b4ce4a96d9ba163",
     "LICENSE": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
     "RIEMANN_DYNAMICS_LICENSE": "44d4b40bd7b0907652947950e63b9aa4379eda788e89eb098fd21e1925612d0d",
     "RMT4_LICENSE": "d8c4abc948663fa5f3e4a2c2439ed32e88c400a8859a8117b7288d680fca02b2",
@@ -68,8 +75,8 @@
     "dependencies/EremenkosConjecture/vendor/schoenflies/LICENSE": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
     "dependencies/EremenkosConjecture/vendor/schoenflies/PROVENANCE.md": "2e2bb34df550c1053d2995971d0ac2860b928ba847f879499beb01e815bc12ee",
     "dependencies/FunctionTheory/FunctionTheory/NormalFamilies/FiniteChartConvergence.lean": "60168ef398b2277061c1d8fed2aaa73d37651bbbee68d155c9d7174230076975",
-    "dependencies/FunctionTheory/FunctionTheory/RiemannSphere/Basic.lean": "214c4487ff61c85ceb25340031d90739ba40fe637b8fca4bb8f566fb08e7d550",
-    "dependencies/FunctionTheory/FunctionTheory/RiemannSphere/Coordinates.lean": "5e2eddba0c9a9b9bf224723cbf555e07c2cd60f471015faac14f2a2ee247b021",
+    "dependencies/FunctionTheory/FunctionTheory/RiemannSphere/Basic.lean": "b87aed3f597e5bb2a1bf9995897054612a4c916275d88221af206e55790140dc",
+    "dependencies/FunctionTheory/FunctionTheory/RiemannSphere/Coordinates.lean": "1acb9eb119db9d994e9fb462ab74cb535d243b842c503033345dc7fbce4ea94b",
     "dependencies/FunctionTheory/LICENSE": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
     "dependencies/FunctionTheory/PROVENANCE.md": "2e401a8e6ce44fd6cb681ae7433991e4fc72e5c5b71164df2b80966053d4655e",
     "dependencies/FunctionTheory/THIRD_PARTY_NOTICES.md": "4d59025d42958094e58e4949c159e2eb0877303f679e2789d163c6da2415925e",
@@ -93,7 +100,9 @@
     "verification/palomar-contract/LICENSE": "10321b0cca2b8025d4b5065dd20e22c1f74da2e872c12363e3601974e093bc21",
     "verification/palomar-contract/PROVENANCE.md": "ef77f4be467c1bf31288ce8c858e0b0350fde872cfa00acc4062bb541755efe0",
     "verification/toolchain435-changes.json": "ab9bf17bbf49393a5a456704736bc724f4f35b938300234a70b52dac08db5db9",
-    "verification/toolchain435-changes.patch": "fa0edac4c88bd36a60e63dfdd5c58c56c79b7ca00e7c6524340c8c51e72c70b7"
+    "verification/toolchain435-changes.patch": "fa0edac4c88bd36a60e63dfdd5c58c56c79b7ca00e7c6524340c8c51e72c70b7",
+    "verification/update-warning-compatibility.patch": "a2bf1f25786e315433c7f2f33759763f51cfc21d0c4cc2ffe3c729ae1e85f26b",
+    "verification/update-warning-files.json": "c9405a5c14266d4e293dddfc00429aebbaf9213756c3ed484375e2892c29ec48"
   },
   "vendored_header_checks": [
     {
@@ -253,11 +262,11 @@
       "source_sha256": {
         "dependencies/FunctionTheory/NoWanderingDomains/NormalFamilies/Basic.lean": "ae63ed5f469de41de6dc5568e33056e2ad5d371e5fa5b1f8f1d68f7fed869d35",
         "dependencies/FunctionTheory/NoWanderingDomains/NormalFamilies/Spherical.lean": "bc7c894208e5e831aa1ce1108c1881052e4bbf219dd64e166f063050e655e5a9",
-        "dependencies/FunctionTheory/NoWanderingDomains/NormalFamilies/Zalcman.lean": "da6d8f73b955bfbf8193e025369614e5dc664d2ae5260f45f89b3cc3d60152ff",
+        "dependencies/FunctionTheory/NoWanderingDomains/NormalFamilies/Zalcman.lean": "dae569aad91e74c51a1e64c453bef0aeb264d5e19e61e987341a8e1b12a60c3f",
         "dependencies/FunctionTheory/NoWanderingDomains/Sphere/Basic.lean": "bafda93f8f821db6c3f8fe1fcaf80112f91b409b2a248dcda235c3748cc7b0ac",
-        "dependencies/FunctionTheory/NoWanderingDomains/Sphere/InversionIsometry.lean": "bcff739765a0309da4962808aec4e7e41e925ebbc085f59a5f36b1ebe8a153bc",
-        "dependencies/FunctionTheory/NoWanderingDomains/Sphere/MobiusAction.lean": "82470cff086b77c073d6ca9e24510b9021066276d501d97baab80e2dd6195988",
-        "dependencies/FunctionTheory/NoWanderingDomains/Sphere/SphereHolomorphic.lean": "b00d196821d3daf1fbb7eaacf61f7fe2c163e9aae577df5bee1e354ffd2b7af2",
+        "dependencies/FunctionTheory/NoWanderingDomains/Sphere/InversionIsometry.lean": "d363b7e58b3961cac864e2191043ac37aae84237a3cbedeae0df538615064452",
+        "dependencies/FunctionTheory/NoWanderingDomains/Sphere/MobiusAction.lean": "cc75a197ff11ccc6f29c585e608a99e00b09ceef489e9f95f2eeef76cf2d1fb1",
+        "dependencies/FunctionTheory/NoWanderingDomains/Sphere/SphereHolomorphic.lean": "c5e5174adc93f4d4716430bbaeeaca49dd8c9ced8360c77a6608c2abc18463ac",
         "dependencies/FunctionTheory/NoWanderingDomains/Sphere/SphericalMetric.lean": "8f92ff2acac9da4b43a3340211257d43ee1cc0a11032b7f9fe0e3ce5a749984c"
       }
     },

@@ -1156,7 +1156,7 @@
         {
           "kind": "theorem",
           "name": "bloch_local_image_of_derivative_bound",
-          "line": 16
+          "line": 19
         }
       ]
     },

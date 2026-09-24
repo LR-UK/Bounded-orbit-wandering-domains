@@ -1,0 +1,476 @@
+diff --git a/dependencies/ComplexApproximation/ComplexApproximation/Topology/Arakelian.lean b/dependencies/ComplexApproximation/ComplexApproximation/Topology/Arakelian.lean
+index dc754b2..0e71cbc 100644
+--- a/dependencies/ComplexApproximation/ComplexApproximation/Topology/Arakelian.lean
++++ b/dependencies/ComplexApproximation/ComplexApproximation/Topology/Arakelian.lean
+@@ -32,7 +32,7 @@ theorem arakelianExhaustion_succ (E : Set ℂ) (n : ℕ) :
+ theorem subset_arakelianExhaustion (E : Set ℂ) (n : ℕ) : E ⊆ arakelianExhaustion E n := by
+   by_cases hn : n = 0
+   · simp [arakelianExhaustion, hn]
+-  · simpa only [arakelianExhaustion, if_neg hn] using
++  · simpa only [arakelianExhaustion, ite_eq_right hn] using
+       (subset_union_left.trans (subset_fill (E ∪ closedBall 0 (n : ℝ))))
+ 
+ theorem arakelianExhaustion_mono (E : Set ℂ) : Monotone (arakelianExhaustion E) := by
+@@ -40,7 +40,7 @@ theorem arakelianExhaustion_mono (E : Set ℂ) : Monotone (arakelianExhaustion E
+   by_cases hm : m = 0
+   · simpa [hm] using subset_arakelianExhaustion E n
+   · have hn : n ≠ 0 := by omega
+-    simp only [arakelianExhaustion, if_neg hm, if_neg hn]
++    simp only [arakelianExhaustion, ite_eq_right hm, ite_eq_right hn]
+     apply fill_mono (union_subset_union_right E _)
+     exact closedBall_subset_closedBall (by exact_mod_cast hmn)
+ 
+@@ -48,7 +48,7 @@ theorem isClosed_arakelianExhaustion {E : Set ℂ} (hE : IsClosed E) (n : ℕ) :
+     IsClosed (arakelianExhaustion E n) := by
+   by_cases hn : n = 0
+   · simpa [arakelianExhaustion, hn] using hE
+-  · simpa only [arakelianExhaustion, if_neg hn] using
++  · simpa only [arakelianExhaustion, ite_eq_right hn] using
+       isClosed_fill (hE.union isClosed_closedBall)
+ 
+ theorem noBoundedComplementComponents_arakelianExhaustion {E : Set ℂ}
+@@ -56,23 +56,23 @@ theorem noBoundedComplementComponents_arakelianExhaustion {E : Set ℂ}
+     NoBoundedComplementComponents (arakelianExhaustion E n) := by
+   by_cases hn : n = 0
+   · simpa [arakelianExhaustion, hn] using hE
+-  · simpa only [arakelianExhaustion, if_neg hn] using
++  · simpa only [arakelianExhaustion, ite_eq_right hn] using
+       noBoundedComplementComponents_fill (E ∪ closedBall 0 (n : ℝ))
+ 
+ theorem IsArakelian.isBounded_exhaustion_diff {E : Set ℂ} (hE : IsArakelian E) (n : ℕ) :
+     IsBounded (arakelianExhaustion E n \ E) := by
+   by_cases hn : n = 0
+-  · simpa [hn] using (isBounded_empty : IsBounded (∅ : Set ℂ))
+-  · simpa only [arakelianExhaustion, if_neg hn] using hE.boundedHoles (n : ℝ)
++  · simp [hn]
++  · simpa only [arakelianExhaustion, ite_eq_right hn] using hE.boundedHoles (n : ℝ)
+ 
+ theorem IsArakelian.isBounded_exhaustion_succ_diff {E : Set ℂ} (hE : IsArakelian E) (n : ℕ) :
+     IsBounded (arakelianExhaustion E (n + 1) \ arakelianExhaustion E n) :=
+   (hE.isBounded_exhaustion_diff (n + 1)).subset
+-    (diff_subset_diff_right (subset_arakelianExhaustion E n))
++    (sdiff_subset_sdiff_right (subset_arakelianExhaustion E n))
+ 
+ theorem closedBall_subset_arakelianExhaustion (E : Set ℂ) {n : ℕ} (hn : n ≠ 0) :
+     closedBall 0 (n : ℝ) ⊆ arakelianExhaustion E n := by
+-  simp only [arakelianExhaustion, if_neg hn]
++  simp only [arakelianExhaustion, ite_eq_right hn]
+   exact subset_union_right.trans (subset_fill _)
+ 
+ end ComplexApproximation
+diff --git a/dependencies/FunctionTheory/FunctionTheory/NormalFamilies/ZalcmanMontel.lean b/dependencies/FunctionTheory/FunctionTheory/NormalFamilies/ZalcmanMontel.lean
+index 67a4dbd..e7b5169 100644
+--- a/dependencies/FunctionTheory/FunctionTheory/NormalFamilies/ZalcmanMontel.lean
++++ b/dependencies/FunctionTheory/FunctionTheory/NormalFamilies/ZalcmanMontel.lean
+@@ -32,7 +32,7 @@ theorem eventually_rescaled_ball_subset {z : ℕ → ℂ} {ρ : ℕ → ℝ} {z
+     rw [norm_mul,Complex.norm_real,Real.norm_eq_abs,abs_of_pos (hρpos n)]
+     exact (mul_lt_mul_of_pos_left hw' (hρpos n)).trans hρR
+   have ht : ‖z n+(ρ n : ℂ)*w-z₀‖ ≤ ‖z n-z₀‖+‖(ρ n : ℂ)*w‖ := by
+-    convert norm_add_le (z n-z₀) ((ρ n : ℂ)*w) using 1 <;> congr 1 <;> ring
++    convert norm_add_le (z n-z₀) ((ρ n : ℂ)*w) using 1; congr 1; ring
+   linarith
+ 
+ /-- Montel's omitted-values theorem via the public Zalcman rescaling lemma,
+diff --git a/dependencies/FunctionTheory/FunctionTheory/RiemannSphere/Basic.lean b/dependencies/FunctionTheory/FunctionTheory/RiemannSphere/Basic.lean
+index 4996e17..8f2448d 100644
+--- a/dependencies/FunctionTheory/FunctionTheory/RiemannSphere/Basic.lean
++++ b/dependencies/FunctionTheory/FunctionTheory/RiemannSphere/Basic.lean
+@@ -128,11 +128,11 @@ public instance : InvolutiveInv 𝕊 where
+       · simp only [z0, coe_zero, toComplex_zero, inv_zero, ite_true, inf_ne_zero, toComplex_inf,
+           ite_false]
+       · simp only [coe_eq_zero, z0, toComplex_coe, ite_false, inv_eq_zero, inv_inv]
+-@[simp] public lemma inv_zero' : (0 : 𝕊)⁻¹ = ∞ := by simp only [inv_def, inv, if_true]
++@[simp] public lemma inv_zero' : (0 : 𝕊)⁻¹ = ∞ := by simp only [inv_def, inv, ite_true]
+ @[simp] public lemma inv_inf : ((∞ : 𝕊)⁻¹ : 𝕊) = 0 := by simp [inv_def, inv, inf_ne_zero]
+ 
+ public theorem inv_coe {z : ℂ} (z0 : z ≠ 0) : (z : 𝕊)⁻¹ = ↑(z : ℂ)⁻¹ := by
+-  simp only [inv_def, inv, z0, toComplex_coe, if_false, coe_eq_zero]
++  simp only [inv_def, inv, z0, toComplex_coe, ite_false, coe_eq_zero]
+ @[simp] public lemma inv_eq_inf {z : 𝕊} : z⁻¹ = ∞ ↔ z = 0 := by
+   induction z using OnePoint.rec
+   · simp only [inv_inf]; exact ⟨Eq.symm, Eq.symm⟩
+@@ -141,8 +141,8 @@ public theorem inv_coe {z : ℂ} (z0 : z ≠ 0) : (z : 𝕊)⁻¹ = ↑(z : ℂ)
+   induction' z using OnePoint.rec with z
+   · simp only [inv_inf]
+   · simp only [inv_def, inv, toComplex_coe]
+-    by_cases z0 : (z : 𝕊) = 0; simp only [if_pos, z0, inf_ne_zero, inf_ne_zero.symm]
+-    simp only [if_neg z0, coe_ne_inf, iff_false]; rw [coe_eq_zero, _root_.inv_eq_zero]
++    by_cases z0 : (z : 𝕊) = 0; simp only [ite_eq_left, z0, inf_ne_zero, inf_ne_zero.symm]
++    simp only [ite_eq_right z0, coe_ne_inf, iff_false]; rw [coe_eq_zero, _root_.inv_eq_zero]
+     simpa only [coe_eq_zero] using z0
+ public theorem toComplex_inv {z : 𝕊} : z⁻¹.toComplex = z.toComplex⁻¹ := by
+   induction' z using OnePoint.rec with z
+@@ -183,7 +183,7 @@ public theorem continuous_inv : Continuous fun z : 𝕊 ↦ z⁻¹ := by
+   · simp only [OnePoint.continuousAt_coe, Function.comp_def, inv_def, inv, coe_eq_zero,
+       toComplex_coe]
+     by_cases z0 : z = 0
+-    · simp only [z0, ContinuousAt, OnePoint.nhds_infty_eq, if_true,
++    · simp only [z0, ContinuousAt, OnePoint.nhds_infty_eq, ite_true,
+         Filter.coclosedCompact_eq_cocompact, ← Metric.cobounded_eq_cocompact]
+       simp only [← nhdsNE_sup_pure, Filter.tendsto_sup]
+       constructor
+@@ -200,7 +200,7 @@ public theorem continuous_inv : Continuous fun z : 𝕊 ↦ z⁻¹ := by
+           not_true, IsEmpty.forall_iff]
+     · have e : ∀ᶠ w : ℂ in 𝓝 z, (if w = 0 then ∞ else ↑w⁻¹ : 𝕊) = ↑w⁻¹ := by
+         refine (continuousAt_id.eventually_ne z0).mp (.of_forall fun w w0 ↦ ?_)
+-        simp only [Ne, id_eq] at w0; simp only [w0, if_false]
++        simp only [Ne, id_eq] at w0; simp only [w0, ite_false]
+       simp only [continuousAt_congr e]
+       exact continuous_coe.continuousAt.comp (tendsto_inv₀ z0)
+ instance : ContinuousInv 𝕊 := ⟨continuous_inv⟩
+@@ -309,8 +309,8 @@ public theorem extChartAt_inf :
+       OpenPartialHomeomorph.trans_toPartialEquiv, modelWithCornersSelf_partialEquiv,
+       PartialEquiv.trans_refl, PartialEquiv.coe_trans_symm,
+       OpenPartialHomeomorph.coe_toPartialEquiv_symm,
+-      Homeomorph.toOpenPartialHomeomorph_symm_apply, Homeomorph.homeomorph_mk_coe_symm,
+-      invEquiv_symm, PartialEquiv.coe_trans, Equiv.toPartialEquiv_apply, Function.comp_apply]
++      Homeomorph.toOpenPartialHomeomorph_symm_apply,
++       PartialEquiv.coe_trans, Equiv.toPartialEquiv_apply, Function.comp_apply]
+     show coePartialEquiv.symm (invEquiv.symm z) = coePartialEquiv.symm (invEquiv z)
+     rw [invEquiv_symm]
+   · intro z
+@@ -326,8 +326,8 @@ public theorem extChartAt_inf :
+       OpenPartialHomeomorph.trans_toPartialEquiv, modelWithCornersSelf_partialEquiv,
+       PartialEquiv.trans_refl, PartialEquiv.symm_source, PartialEquiv.trans_target,
+       Homeomorph.toOpenPartialHomeomorph_target, OpenPartialHomeomorph.coe_toPartialEquiv_symm,
+-      Homeomorph.toOpenPartialHomeomorph_symm_apply, Homeomorph.homeomorph_mk_coe_symm,
+-      invEquiv_symm, PartialEquiv.trans_source, Equiv.toPartialEquiv_source,
++      Homeomorph.toOpenPartialHomeomorph_symm_apply,
++       PartialEquiv.trans_source, Equiv.toPartialEquiv_source,
+       Equiv.toPartialEquiv_apply]
+     show univ ∩ ⇑invEquiv.symm ⁻¹' coePartialEquiv.target
+       = univ ∩ ⇑invEquiv ⁻¹' coePartialEquiv.target
+diff --git a/dependencies/FunctionTheory/FunctionTheory/RiemannSphere/Coordinates.lean b/dependencies/FunctionTheory/FunctionTheory/RiemannSphere/Coordinates.lean
+index c06f6ee..b70636b 100644
+--- a/dependencies/FunctionTheory/FunctionTheory/RiemannSphere/Coordinates.lean
++++ b/dependencies/FunctionTheory/FunctionTheory/RiemannSphere/Coordinates.lean
+@@ -42,16 +42,16 @@ theorem mAnalytic_inv : ContMDiff I I ⊤ (fun z : 𝕊 ↦ z⁻¹) := by
+       PartialEquiv.trans_apply, Equiv.toPartialEquiv_apply, invEquiv_apply,
+       coePartialEquiv_symm_apply, toComplex_coe, PartialEquiv.coe_trans_symm,
+       PartialEquiv.symm_symm, coePartialEquiv_apply, Equiv.toPartialEquiv_symm_apply,
+-      invEquiv_symm, inv_inv, toComplex_zero]
++      invEquiv_symm, inv_inv]
+     exact contDiffAt_id.contDiffWithinAt
+   | coe z =>
+     by_cases hz : z = 0
+     · subst z
+-      simp only [extChartAt_coe, PartialEquiv.symm_symm, Function.comp_def,
+-        coePartialEquiv_apply, coePartialEquiv_symm_apply, toComplex_coe,
++      simp only [  Function.comp_def,
++         coePartialEquiv_symm_apply,
+         coe_zero, inv_zero', extChartAt_inf, PartialEquiv.trans_apply,
+         coePartialEquiv_symm_apply, invEquiv_apply, Equiv.toPartialEquiv_apply,
+-        inv_inv, toComplex_coe]
++        inv_inv]
+       exact contDiffAt_id.contDiffWithinAt
+     · simp only [inv_coe hz, extChartAt_coe, Function.comp_def,
+         PartialEquiv.symm_symm, coePartialEquiv_apply, coePartialEquiv_symm_apply,
+diff --git a/dependencies/FunctionTheory/NoWanderingDomains/NormalFamilies/Zalcman.lean b/dependencies/FunctionTheory/NoWanderingDomains/NormalFamilies/Zalcman.lean
+index f8668af..21d7dd9 100644
+--- a/dependencies/FunctionTheory/NoWanderingDomains/NormalFamilies/Zalcman.lean
++++ b/dependencies/FunctionTheory/NoWanderingDomains/NormalFamilies/Zalcman.lean
+@@ -207,11 +207,11 @@ theorem sphericalDeriv_inversionGL_smul (F : ℂ → ℂ̂) (z : ℂ) :
+     intro b
+     by_cases hb : b = 0
+     · subst hb
+-      rw [inversionGL_smul_coe, if_pos rfl, sInf, sCoe, hL, e00]
++      rw [inversionGL_smul_coe, ite_eq_left rfl, sInf, sCoe, hL, e00]
+       have e1 : -(2 * (0 : ℂ).im / (1 + ‖(0 : ℂ)‖ ^ 2)) = (0 : ℝ) := by simp
+       have e2 : -((‖(0 : ℂ)‖ ^ 2 - 1) / (1 + ‖(0 : ℂ)‖ ^ 2)) = (1 : ℝ) := by norm_num
+       rw [e1, e2]
+-    · rw [inversionGL_smul_coe, if_neg hb, sCoe, sCoe, hL]
++    · rw [inversionGL_smul_coe, ite_eq_right hb, sCoe, sCoe, hL]
+       have hn0 : Complex.normSq b ≠ 0 := (Complex.normSq_pos.mpr hb).ne'
+       have h := Complex.normSq_nonneg b
+       have hn1 : (1 : ℝ) + Complex.normSq b ≠ 0 := by intro hcon; linarith
+@@ -379,14 +379,14 @@ theorem SphereHolomorphicOn.differentiableAt_stereoEmbed {F : ℂ → ℂ̂}
+       rw [map_sub, _root_.map_smul, ContinuousLinearEquiv.apply_symm_apply, hsv]
+       by_cases ha : a = 0
+       · subst ha
+-        rw [inversionGL_smul_coe, if_pos rfl]
++        rw [inversionGL_smul_coe, ite_eq_left rfl]
+         have hsi : EuclideanSpace.equiv (Fin 3) ℝ (stereoEmbed (∞ : ℂ̂))
+             = ![0, 0, 1] := rfl
+         rw [hsi]
+         funext i
+         fin_cases i <;>
+           norm_num [Pi.smul_apply, smul_eq_mul, Complex.zero_re, Complex.zero_im]
+-      · rw [inversionGL_smul_coe, if_neg ha, hsv]
++      · rw [inversionGL_smul_coe, ite_eq_right ha, hsv]
+         have hns : Complex.normSq a = ‖a‖ ^ 2 := (Complex.sq_norm a).symm
+         have hna : ‖a‖ ^ 2 ≠ 0 := pow_ne_zero 2 (norm_ne_zero_iff.mpr ha)
+         have h1a : (1 : ℝ) + ‖a‖ ^ 2 ≠ 0 := by positivity
+@@ -451,7 +451,7 @@ theorem SphereHolomorphicOn.continuousOn_sphericalDeriv {F : ℂ → ℂ̂}
+       | infty => rw [inversionGL_smul_infty]; rfl
+       | coe x =>
+         have hx : x ≠ 0 := fun h => hne w hw (by rw [hFw, h])
+-        rw [inversionGL_smul_coe, if_neg hx]
++        rw [inversionGL_smul_coe, ite_eq_right hx]
+         rfl
+     have hflip : sphericalDeriv F = sphericalDeriv (fun w => inversionGL • F w) :=
+       funext fun w => (sphericalDeriv_inversionGL_smul F w).symm
+@@ -857,11 +857,11 @@ theorem sphereHolomorphicOn_of_tendstoLocallyUniformlyOn {Fn : ℕ → ℂ → 
+       | coe x =>
+         by_cases hx : x = 0
+         · subst hx
+-          rw [inversionGL_smul_coe, if_pos rfl, ci, inv_zero, cf0]
+-        · rw [inversionGL_smul_coe, if_neg hx, ci, cf]
++          rw [inversionGL_smul_coe, ite_eq_left rfl, ci, inv_zero, cf0]
++        · rw [inversionGL_smul_coe, ite_eq_right hx, ci, cf]
+     refine ⟨V, hVo, hzV, hVU, Or.inr ⟨fun w hw hc => ?_,
+       hVdiff.congr fun w _ => hkey (g w)⟩⟩
+-    have h1 : inversionGL • g w = ∞ := by rw [hc, inversionGL_smul_coe, if_pos rfl]
++    have h1 : inversionGL • g w = ∞ := by rw [hc, inversionGL_smul_coe, ite_eq_left rfl]
+     exact hVne w hw h1
+   · obtain ⟨V, hVo, hzV, hVU, hVne, hVdiff⟩ := key Fn g hol hg z₀ hz₀ hzi
+     exact ⟨V, hVo, hzV, hVU, Or.inl ⟨hVne, hVdiff⟩⟩
+diff --git a/dependencies/FunctionTheory/NoWanderingDomains/Sphere/InversionIsometry.lean b/dependencies/FunctionTheory/NoWanderingDomains/Sphere/InversionIsometry.lean
+index 0457a27..ab9d636 100644
+--- a/dependencies/FunctionTheory/NoWanderingDomains/Sphere/InversionIsometry.lean
++++ b/dependencies/FunctionTheory/NoWanderingDomains/Sphere/InversionIsometry.lean
+@@ -32,19 +32,19 @@ theorem sphericalDist_inversionGL_smul (x y : ℂ̂) :
+     rw [inversionGL_smul_coe a, inversionGL_smul_coe b, sphericalDist_coe_coe]
+     by_cases ha : a = 0 <;> by_cases hb : b = 0
+     · subst ha; subst hb
+-      rw [if_pos rfl, hII]
++      rw [ite_eq_left rfl, hII]
+       simp [chordalDist]
+     · subst ha
+       have hnb : (0 : ℝ) < ‖b‖ := norm_pos_iff.mpr hb
+       have hsb : (0 : ℝ) < Real.sqrt (1 + ‖b‖ ^ 2) := Real.sqrt_pos.mpr (by positivity)
+-      rw [if_pos rfl, if_neg hb, hIC]
++      rw [ite_eq_left rfl, ite_eq_right hb, hIC]
+       simp only [chordalDistInfty, chordalDist, norm_inv, zero_sub, norm_neg]
+       rw [key ‖b‖ hnb, h0, one_mul]
+       field_simp
+     · subst hb
+       have hna : (0 : ℝ) < ‖a‖ := norm_pos_iff.mpr ha
+       have hsa : (0 : ℝ) < Real.sqrt (1 + ‖a‖ ^ 2) := Real.sqrt_pos.mpr (by positivity)
+-      rw [if_neg ha, if_pos rfl, sphericalDist_coe_infty]
++      rw [ite_eq_right ha, ite_eq_left rfl, sphericalDist_coe_infty]
+       simp only [chordalDistInfty, chordalDist, norm_inv, sub_zero]
+       rw [key ‖a‖ hna, h0, mul_one]
+       field_simp
+@@ -52,7 +52,7 @@ theorem sphericalDist_inversionGL_smul (x y : ℂ̂) :
+       have hnb : (0 : ℝ) < ‖b‖ := norm_pos_iff.mpr hb
+       have hsa : (0 : ℝ) < Real.sqrt (1 + ‖a‖ ^ 2) := Real.sqrt_pos.mpr (by positivity)
+       have hsb : (0 : ℝ) < Real.sqrt (1 + ‖b‖ ^ 2) := Real.sqrt_pos.mpr (by positivity)
+-      rw [if_neg ha, if_neg hb, sphericalDist_coe_coe]
++      rw [ite_eq_right ha, ite_eq_right hb, sphericalDist_coe_coe]
+       simp only [chordalDist, norm_inv]
+       rw [inv_sub_inv ha hb, norm_div, norm_mul, norm_sub_rev b a,
+         key ‖a‖ hna, key ‖b‖ hnb]
+@@ -64,11 +64,11 @@ theorem sphericalDist_inversionGL_smul (x y : ℂ̂) :
+     rw [inversionGL_smul_infty, inversionGL_smul_coe a, sphericalDist_coe_infty]
+     by_cases ha : a = 0
+     · subst ha
+-      rw [if_pos rfl]
++      rw [ite_eq_left rfl]
+       exact hIC 0
+     · have hna : (0 : ℝ) < ‖a‖ := norm_pos_iff.mpr ha
+       have hsa : (0 : ℝ) < Real.sqrt (1 + ‖a‖ ^ 2) := Real.sqrt_pos.mpr (by positivity)
+-      rw [if_neg ha, sphericalDist_coe_coe]
++      rw [ite_eq_right ha, sphericalDist_coe_coe]
+       simp only [chordalDist, chordalDistInfty, norm_inv, sub_zero]
+       rw [key ‖a‖ hna, h0, mul_one]
+       field_simp
+diff --git a/dependencies/FunctionTheory/NoWanderingDomains/Sphere/MobiusAction.lean b/dependencies/FunctionTheory/NoWanderingDomains/Sphere/MobiusAction.lean
+index 7307d0c..dcdd2d3 100644
+--- a/dependencies/FunctionTheory/NoWanderingDomains/Sphere/MobiusAction.lean
++++ b/dependencies/FunctionTheory/NoWanderingDomains/Sphere/MobiusAction.lean
+@@ -68,11 +68,11 @@ theorem inversionGL_smul_coe_chartInftyMap {z : ℂ̂} (hz : z ≠ ((0 : ℂ) :
+   cases z with
+   | infty =>
+     have hval : chartInftyMap (∞ : ℂ̂) = 0 := rfl
+-    rw [hval, inversionGL_smul_coe, if_pos rfl]
++    rw [hval, inversionGL_smul_coe, ite_eq_left rfl]
+   | coe w =>
+     have hw : w ≠ 0 := fun h => hz (OnePoint.coe_eq_coe.mpr h)
+     have hval : chartInftyMap ((w : ℂ) : ℂ̂) = w⁻¹ := rfl
+-    rw [hval, inversionGL_smul_coe, if_neg (inv_ne_zero hw), inv_inv]
++    rw [hval, inversionGL_smul_coe, ite_eq_right (inv_ne_zero hw), inv_inv]
+ 
+ /-- **Möbius transformations are continuous** on the Riemann sphere. Since the
+ inverse transformation is the action of `g⁻¹`, every `g • ·` is in fact a
+@@ -93,9 +93,9 @@ theorem continuous_gl_smul (g : GL (Fin 2) ℂ) : Continuous (fun z : ℂ̂ => g
+     have hval_coe : ∀ x : ℂ,
+         u • (x : ℂ̂) = (((u 0 0 * x + u 0 1) / u 1 1 : ℂ) : ℂ̂) := by
+       intro x
+-      rw [OnePoint.smul_some_eq_ite, h10, zero_mul, zero_add, if_neg hd]
++      rw [OnePoint.smul_some_eq_ite, h10, zero_mul, zero_add, ite_eq_right hd]
+     have hval_infty : u • (∞ : ℂ̂) = ∞ := by
+-      rw [OnePoint.smul_infty_eq_ite, if_pos h10]
++      rw [OnePoint.smul_infty_eq_ite, ite_eq_left h10]
+     rw [OnePoint.continuous_iff]
+     refine ⟨?_, ?_⟩
+     · -- the affine map sends the cocompact filter to itself, hence `∞ ↦ ∞`.
+@@ -143,7 +143,7 @@ theorem continuous_gl_smul (g : GL (Fin 2) ℂ) : Continuous (fun z : ℂ̂ => g
+             IsCompact ({0} : Set ℂ)).compl_mem_cocompact] with x hx
+           simpa using hx
+         filter_upwards [h0ne] with x hx
+-        rw [inversionGL_smul_coe, if_neg hx]
++        rw [inversionGL_smul_coe, ite_eq_right hx]
+       exact key
+     · have key : Continuous (fun x : ℂ => inversionGL • (↑x : ℂ̂)) := by
+         rw [continuous_iff_continuousAt]
+@@ -151,7 +151,7 @@ theorem continuous_gl_smul (g : GL (Fin 2) ℂ) : Continuous (fun z : ℂ̂ => g
+         by_cases hx₀ : x₀ = 0
+         · subst hx₀
+           have hv0 : inversionGL • ((0 : ℂ) : ℂ̂) = ∞ := by
+-            rw [inversionGL_smul_coe, if_pos rfl]
++            rw [inversionGL_smul_coe, ite_eq_left rfl]
+           have hT : Filter.Tendsto (fun x : ℂ => inversionGL • (↑x : ℂ̂)) (nhds 0)
+               (nhds (inversionGL • ((0 : ℂ) : ℂ̂))) := by
+             rw [hv0]
+@@ -165,10 +165,10 @@ theorem continuous_gl_smul (g : GL (Fin 2) ℂ) : Continuous (fun z : ℂ̂ => g
+             filter_upwards [hev] with x hx
+             by_cases hx0 : x = 0
+             · refine Set.mem_union_right _ ?_
+-              rw [inversionGL_smul_coe, if_pos hx0]
++              rw [inversionGL_smul_coe, ite_eq_left hx0]
+               exact Set.mem_singleton _
+             · refine Set.mem_union_left _ ?_
+-              rw [inversionGL_smul_coe, if_neg hx0]
++              rw [inversionGL_smul_coe, ite_eq_right hx0]
+               refine ⟨x⁻¹, ?_, rfl⟩
+               simp only [Set.mem_compl_iff]
+               intro hmem
+@@ -181,7 +181,7 @@ theorem continuous_gl_smul (g : GL (Fin 2) ℂ) : Continuous (fun z : ℂ̂ => g
+             OnePoint.continuous_coe.continuousAt.comp (continuousAt_inv₀ hx₀)
+           refine hbase.congr ?_
+           filter_upwards [eventually_ne_nhds hx₀] with x hx
+-          rw [inversionGL_smul_coe, if_neg hx]
++          rw [inversionGL_smul_coe, ite_eq_right hx]
+       exact key
+   -- Step (C): factor a general element through the two special cases.
+   by_cases hc : (g : Matrix (Fin 2) (Fin 2) ℂ) 1 0 = 0
+@@ -244,7 +244,7 @@ theorem exists_gl_smul_eq_zero_one_infty {a b c : ℂ̂}
+       rw [← hγ, OnePoint.smul_some_eq_ite, hcoe]
+       have hcond : !![(0 : ℂ), 1; 1, -γ] 1 0 * γ + !![(0 : ℂ), 1; 1, -γ] 1 1 = 0 := by
+         simp
+-      rw [if_pos hcond]
++      rw [ite_eq_left hcond]
+   -- Step 2: the images of `a` and `b` under `g₁` are finite and distinct.
+   have ha' : g₁ • a ≠ ∞ := fun h => hac (MulAction.injective g₁ (h.trans hg₁c.symm))
+   have hb' : g₁ • b ≠ ∞ := fun h => hbc (MulAction.injective g₁ (h.trans hg₁c.symm))
+@@ -265,13 +265,13 @@ theorem exists_gl_smul_eq_zero_one_infty {a b c : ℂ̂}
+     rw [SemigroupAction.mul_smul, ← hα, OnePoint.smul_some_eq_ite, hcoe₂]
+     have hcond : ¬(!![(1 : ℂ), -α; 0, β - α] 1 0 * α + !![(1 : ℂ), -α; 0, β - α] 1 1 = 0) := by
+       simpa using hβα
+-    rw [if_neg hcond, OnePoint.coe_eq_coe]
++    rw [ite_eq_right hcond, OnePoint.coe_eq_coe]
+     simp
+   · -- `b ↦ β ↦ 1`
+     rw [SemigroupAction.mul_smul, ← hβ, OnePoint.smul_some_eq_ite, hcoe₂]
+     have hcond : ¬(!![(1 : ℂ), -α; 0, β - α] 1 0 * β + !![(1 : ℂ), -α; 0, β - α] 1 1 = 0) := by
+       simpa using hβα
+-    rw [if_neg hcond, OnePoint.coe_eq_coe]
++    rw [ite_eq_right hcond, OnePoint.coe_eq_coe]
+     have : !![(1 : ℂ), -α; 0, β - α] 1 0 * β + !![(1 : ℂ), -α; 0, β - α] 1 1 = β - α := by
+       simp [sub_eq_add_neg]
+     rw [this]
+@@ -282,7 +282,7 @@ theorem exists_gl_smul_eq_zero_one_infty {a b c : ℂ̂}
+     rw [SemigroupAction.mul_smul, hg₁c, OnePoint.smul_infty_eq_ite]
+     have hcond : ((g₂ : Matrix (Fin 2) (Fin 2) ℂ) 1 0 : ℂ) = 0 := by
+       rw [hg₂, hcoe₂]; simp
+-    rw [if_pos hcond]
++    rw [ite_eq_left hcond]
+ 
+ /-- A Möbius transformation with explicit coefficients, as a total map on
+ the sphere: `x ↦ (a·x + b)/(c·x + d)` with poles sent to `∞` and
+@@ -325,7 +325,7 @@ theorem continuousOn_mobiusApply :
+   have hinfty_val : ∀ a b c d : ℂ, mobiusApply a b c d (∞ : ℂ̂)
+       = if c = 0 then ∞ else ((a / c : ℂ) : ℂ̂) := fun _ _ _ _ => rfl
+   have hinv0 : inversionGL • ((0 : ℂ) : ℂ̂) = (∞ : ℂ̂) := by
+-    rw [inversionGL_smul_coe, if_pos rfl]
++    rw [inversionGL_smul_coe, ite_eq_left rfl]
+   -- (I) Row swap: on the determinant locus,
+   -- `mobiusApply a b c d = inversionGL • mobiusApply c d a b`.
+   have hrow : ∀ a b c d : ℂ, a * d - b * c ≠ 0 → ∀ w : ℂ̂,
+@@ -336,20 +336,20 @@ theorem continuousOn_mobiusApply :
+       rw [hcoe_val, hcoe_val]
+       by_cases hcd : c * x + d = 0
+       · have hab : a * x + b ≠ 0 := fun h => hdet (by linear_combination a * hcd - c * h)
+-        rw [if_pos hcd, if_neg hab, inversionGL_smul_coe, hcd, zero_div, if_pos rfl]
++        rw [ite_eq_left hcd, ite_eq_right hab, inversionGL_smul_coe, hcd, zero_div, ite_eq_left rfl]
+       · by_cases hab : a * x + b = 0
+-        · rw [if_neg hcd, if_pos hab, inversionGL_smul_infty, hab, zero_div]
+-        · rw [if_neg hcd, if_neg hab, inversionGL_smul_coe,
+-            if_neg (div_ne_zero hcd hab), inv_div]
++        · rw [ite_eq_right hcd, ite_eq_left hab, inversionGL_smul_infty, hab, zero_div]
++        · rw [ite_eq_right hcd, ite_eq_right hab, inversionGL_smul_coe,
++            ite_eq_right (div_ne_zero hcd hab), inv_div]
+     | infty =>
+       rw [hinfty_val, hinfty_val]
+       by_cases hc : c = 0
+       · have ha : a ≠ 0 := fun h => hdet (by rw [h, hc]; ring)
+-        rw [if_pos hc, if_neg ha, inversionGL_smul_coe, hc, zero_div, if_pos rfl]
++        rw [ite_eq_left hc, ite_eq_right ha, inversionGL_smul_coe, hc, zero_div, ite_eq_left rfl]
+       · by_cases ha : a = 0
+-        · rw [if_neg hc, if_pos ha, inversionGL_smul_infty, ha, zero_div]
+-        · rw [if_neg hc, if_neg ha, inversionGL_smul_coe,
+-            if_neg (div_ne_zero hc ha), inv_div]
++        · rw [ite_eq_right hc, ite_eq_left ha, inversionGL_smul_infty, ha, zero_div]
++        · rw [ite_eq_right hc, ite_eq_right ha, inversionGL_smul_coe,
++            ite_eq_right (div_ne_zero hc ha), inv_div]
+   -- (II) Column swap through the inversion parameterization of `∞`.
+   have hcol : ∀ a b c d t : ℂ,
+       mobiusApply a b c d (inversionGL • (t : ℂ̂)) = mobiusApply b a d c ((t : ℂ̂)) := by
+@@ -358,18 +358,18 @@ theorem continuousOn_mobiusApply :
+     · subst ht
+       rw [hinv0, hinfty_val, hcoe_val]
+       norm_num
+-    · rw [inversionGL_smul_coe, if_neg ht, hcoe_val, hcoe_val]
++    · rw [inversionGL_smul_coe, ite_eq_right ht, hcoe_val, hcoe_val]
+       by_cases hdc : d * t + c = 0
+       · have h1 : c * t⁻¹ + d = 0 := by
+           field_simp
+           linear_combination hdc
+-        rw [if_pos h1, if_pos hdc]
++        rw [ite_eq_left h1, ite_eq_left hdc]
+       · have h1 : c * t⁻¹ + d ≠ 0 := by
+           intro h
+           apply hdc
+           field_simp at h
+           linear_combination h
+-        rw [if_neg h1, if_neg hdc, OnePoint.coe_eq_coe, div_eq_div_iff h1 hdc]
++        rw [ite_eq_right h1, ite_eq_right hdc, OnePoint.coe_eq_coe, div_eq_div_iff h1 hdc]
+         field_simp
+         ring
+   -- Neighborhood transport along the finite-chart parameterization.
+@@ -419,11 +419,11 @@ theorem continuousOn_mobiusApply :
+         (𝓝 (mobiusApply p.1 p.2.1 p.2.2.1 p.2.2.2 ((x : ℂ̂)))) := by
+       have hvx : mobiusApply p.1 p.2.1 p.2.2.1 p.2.2.2 ((x : ℂ̂))
+           = (((p.1 * x + p.2.1) / (p.2.2.1 * x + p.2.2.2) : ℂ) : ℂ̂) := by
+-        rw [hcoe_val, if_neg hden]
++        rw [hcoe_val, ite_eq_right hden]
+       rw [hvx]
+       refine Filter.Tendsto.congr' ?_ hg.tendsto
+       filter_upwards [hev] with q hq
+-      simp only [hcoe_val, if_neg hq]
++      simp only [hcoe_val, ite_eq_right hq]
+     have hfin : Filter.Tendsto (fun q : (ℂ × ℂ × ℂ × ℂ) × ℂ̂ =>
+         mobiusApply q.1.1 q.1.2.1 q.1.2.2.1 q.1.2.2.2 q.2) (𝓝 (p, (x : ℂ̂)))
+         (𝓝 (mobiusApply p.1 p.2.1 p.2.2.1 p.2.2.2 ((x : ℂ̂)))) := by
+diff --git a/dependencies/FunctionTheory/NoWanderingDomains/Sphere/SphereHolomorphic.lean b/dependencies/FunctionTheory/NoWanderingDomains/Sphere/SphereHolomorphic.lean
+index 366c1ab..543372d 100644
+--- a/dependencies/FunctionTheory/NoWanderingDomains/Sphere/SphereHolomorphic.lean
++++ b/dependencies/FunctionTheory/NoWanderingDomains/Sphere/SphereHolomorphic.lean
+@@ -208,7 +208,7 @@ theorem sphereHolomorphicOn_gl_smul_coe {h : ℂ → ℂ} {V : Set ℂ}
+     refine ⟨V ∩ t, hV.inter ht_open, ⟨hz, hzt⟩, Set.inter_subset_left, Or.inl ⟨?_, ?_⟩⟩
+     · intro w hw
+       simp only [OnePoint.smul_some_eq_ite]
+-      rw [if_neg (ht_ne w hw.2)]
++      rw [ite_eq_right (ht_ne w hw.2)]
+       exact OnePoint.coe_ne_infty _
+     · have hinv : DifferentiableOn ℂ
+           (fun w => ((N : Matrix (Fin 2) (Fin 2) ℂ) 1 0 * h w +
+@@ -222,7 +222,7 @@ theorem sphereHolomorphicOn_gl_smul_coe {h : ℂ → ℂ} {V : Set ℂ}
+         (hnum.mono Set.inter_subset_left).mul hinv
+       refine hdiv.congr fun w hw => ?_
+       simp only [OnePoint.smul_some_eq_ite]
+-      rw [if_neg (ht_ne w hw.2), cf, div_eq_mul_inv]
++      rw [ite_eq_right (ht_ne w hw.2), cf, div_eq_mul_inv]
+ 
+ /-- Sphere-holomorphy is preserved by post-composition with Möbius
+ transformations. -/

@@ -1,8 +1,11 @@
-# Mathematical work completed
+# Mathematical work completed; update package prepared
 
-The three new results and removal of simple connectivity from the local theorem
-are proved. See `NEW_RESULTS_PROGRESS.md` and `VERIFICATION.md`.
+All three new results and removal of local simple connectivity are proved.
+The version 1.2.0 package is ready for GitHub review, with independent Challenge
+configurations for the bounded-orbit and entire singular-limit results.
+See GITHUB_UPDATE.md, PALOMAR_STATUS.md and VERIFICATION.md.
 
-Possible subsequent work is independent mathematical review, separate Challenge
-statements/comparator entries for the three new results, and registry preparation.
+Further publication steps are supported-environment Comparator/independent-kernel
+replay, human review and a public push when authorised. The two area bounds remain
+proved supporting results; separate registry statements could be added later.
 No meromorphic extension or public submission is claimed.

@@ -32,19 +32,19 @@ theorem sphericalDist_inversionGL_smul (x y : ℂ̂) :
     rw [inversionGL_smul_coe a, inversionGL_smul_coe b, sphericalDist_coe_coe]
     by_cases ha : a = 0 <;> by_cases hb : b = 0
     · subst ha; subst hb
-      rw [if_pos rfl, hII]
+      rw [ite_eq_left rfl, hII]
       simp [chordalDist]
     · subst ha
       have hnb : (0 : ℝ) < ‖b‖ := norm_pos_iff.mpr hb
       have hsb : (0 : ℝ) < Real.sqrt (1 + ‖b‖ ^ 2) := Real.sqrt_pos.mpr (by positivity)
-      rw [if_pos rfl, if_neg hb, hIC]
+      rw [ite_eq_left rfl, ite_eq_right hb, hIC]
       simp only [chordalDistInfty, chordalDist, norm_inv, zero_sub, norm_neg]
       rw [key ‖b‖ hnb, h0, one_mul]
       field_simp
     · subst hb
       have hna : (0 : ℝ) < ‖a‖ := norm_pos_iff.mpr ha
       have hsa : (0 : ℝ) < Real.sqrt (1 + ‖a‖ ^ 2) := Real.sqrt_pos.mpr (by positivity)
-      rw [if_neg ha, if_pos rfl, sphericalDist_coe_infty]
+      rw [ite_eq_right ha, ite_eq_left rfl, sphericalDist_coe_infty]
       simp only [chordalDistInfty, chordalDist, norm_inv, sub_zero]
       rw [key ‖a‖ hna, h0, mul_one]
       field_simp
@@ -52,7 +52,7 @@ theorem sphericalDist_inversionGL_smul (x y : ℂ̂) :
       have hnb : (0 : ℝ) < ‖b‖ := norm_pos_iff.mpr hb
       have hsa : (0 : ℝ) < Real.sqrt (1 + ‖a‖ ^ 2) := Real.sqrt_pos.mpr (by positivity)
       have hsb : (0 : ℝ) < Real.sqrt (1 + ‖b‖ ^ 2) := Real.sqrt_pos.mpr (by positivity)
-      rw [if_neg ha, if_neg hb, sphericalDist_coe_coe]
+      rw [ite_eq_right ha, ite_eq_right hb, sphericalDist_coe_coe]
       simp only [chordalDist, norm_inv]
       rw [inv_sub_inv ha hb, norm_div, norm_mul, norm_sub_rev b a,
         key ‖a‖ hna, key ‖b‖ hnb]
@@ -64,11 +64,11 @@ theorem sphericalDist_inversionGL_smul (x y : ℂ̂) :
     rw [inversionGL_smul_infty, inversionGL_smul_coe a, sphericalDist_coe_infty]
     by_cases ha : a = 0
     · subst ha
-      rw [if_pos rfl]
+      rw [ite_eq_left rfl]
       exact hIC 0
     · have hna : (0 : ℝ) < ‖a‖ := norm_pos_iff.mpr ha
       have hsa : (0 : ℝ) < Real.sqrt (1 + ‖a‖ ^ 2) := Real.sqrt_pos.mpr (by positivity)
-      rw [if_neg ha, sphericalDist_coe_coe]
+      rw [ite_eq_right ha, sphericalDist_coe_coe]
       simp only [chordalDist, chordalDistInfty, norm_inv, sub_zero]
       rw [key ‖a‖ hna, h0, mul_one]
       field_simp
