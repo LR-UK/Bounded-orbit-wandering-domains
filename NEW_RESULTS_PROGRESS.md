@@ -82,6 +82,11 @@ registration on this branch.
 - `SphereCompactSeparation.lean`: disjoint compact spherical sets admit
   disjoint compact neighbourhoods, each containing the original in its
   interior.
+- `DerivedSetExceptionalAvoidance.lean`: for any open spherical neighbourhood
+  of the derived singular set, every sufficiently late member of a pairwise
+  disjoint sequence avoids all singular values outside that neighbourhood.
+  This is the finite-exception step in the bounded-singular-set argument,
+  stated for an arbitrary set of complex values.
 
 These modules compile with the pinned Lean toolchain and mathlib.
 Their printed axiom lists contain only `propext`, `Classical.choice`, and
@@ -124,6 +129,7 @@ PATH=/tmp/lean-4.35.0-rc2-linux/bin:$PATH LEAN_NUM_THREADS=4 lake build \
   BoundedWanderingDomains.SphericalEscape \
   BoundedWanderingDomains.SphericalSingularUnbounded \
   BoundedWanderingDomains.FiniteExceptionalComponents \
+  BoundedWanderingDomains.DerivedSetExceptionalAvoidance \
   BoundedWanderingDomains.SphereCompactSeparation \
   BoundedWanderingDomains.SphericalDerivedSet
 ```
