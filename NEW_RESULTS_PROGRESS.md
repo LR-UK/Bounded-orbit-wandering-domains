@@ -10,7 +10,9 @@ registration on this branch.
 - `SphericalDerivedSet.lean`: derived sets and subsequential limits are taken
   in `OnePoint ℂ` (the Riemann sphere model used in this project). In particular,
   infinity is in the spherical derived set of a set precisely when the set is
-  unbounded in the plane.
+  unbounded in the plane. The **final topological deduction** is now proved:
+  eventual entry into every open sphere neighbourhood of the derived set
+  produces a strictly increasing subsequence converging to a derived value.
 - `GeneralDomainCovering.lean`: a disc covering of every component of the
   complement of a closed planar set with two distinct omitted points, and
   independence of the hyperbolic density from the chosen covering.
@@ -63,6 +65,11 @@ registration on this branch.
   estimate, without assuming that the total old area is finite.
 - `SpherePole.lean`: for disjoint nonempty compact subsets of the connected
   sphere, there is a point outside both that can serve as a fixed chart pole.
+- `SphereChartCompact.lean`: constructs a Möbius chart omitting **any**
+  sphere point, proves compact sets avoiding the pole pull back to compact
+  planar sets, and applies the uniform planar area bound in that chart.
+  This does **not** yet identify the coordinate integral with an intrinsically
+  defined area integral on a sphere domain.
 
 These modules compile with the pinned Lean toolchain and mathlib.
 Their printed axiom lists contain only `propext`, `Classical.choice`, and
@@ -81,9 +88,10 @@ Their printed axiom lists contain only `propext`, `Classical.choice`, and
    area integral, and handle an old domain containing the chart pole.
 3. Connect both area bounds to the dynamical iteration argument. In
    particular formalise the relevant Fatou component and singular-set facts,
-   covering dynamics, and spherical accumulation, and prove the derived-set
-   conclusion for transcendental entire maps. The elementary topological
-   subsequence lemma alone does not imply this dynamical conclusion.
+   covering dynamics, and prove that a wandering point orbit eventually
+   enters every spherical neighbourhood of the derived singular set.
+   The topological deduction from that assertion to the demanded
+   subsequence is already checked.
 4. Only after the genuine unconditional theorem is checked, add it as a new
    Palomar Challenge declaration and update the comparator and public
    metadata. Existing registered challenge declarations remain untouched.
@@ -99,6 +107,7 @@ PATH=/tmp/lean-4.35.0-rc2-linux/bin:$PATH LEAN_NUM_THREADS=4 lake build \
   BoundedWanderingDomains.AreaAnchorIndependence \
   BoundedWanderingDomains.AreaAnchorFree \
   BoundedWanderingDomains.SpherePole \
+  BoundedWanderingDomains.SphereChartCompact \
   BoundedWanderingDomains.SphericalDerivedSet
 ```
 

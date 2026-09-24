@@ -6,6 +6,8 @@ import Mathlib.Analysis.Complex.Basic
 import Mathlib.Topology.Compactification.OnePoint.Basic
 import Mathlib.Topology.MetricSpace.Bounded
 import Mathlib.Topology.ClusterPt
+import Mathlib.Topology.DerivedSet
+import Mathlib.Topology.Separation.Regular
 import Mathlib.Topology.Sequences
 import RiemannDynamics.Sphere.SphericalMetric
 
@@ -24,6 +26,35 @@ namespace BoundedWanderingDomains
 /-- Accumulation points in the sphere of a planar set. -/
 def sphericalDerivedSet (S : Set ℂ) : Set (OnePoint ℂ) :=
   {a | AccPt a (𝓟 (((↑) : ℂ → OnePoint ℂ) '' S))}
+
+/-- The spherical derived set is closed. -/
+theorem isClosed_sphericalDerivedSet (S : Set ℂ) :
+    IsClosed (sphericalDerivedSet S) := by
+  exact isClosed_derivedSet (((↑) : ℂ → OnePoint ℂ) '' S)
+
+/-- If the orbit eventually enters every spherical neighbourhood of the
+derived set, all its cluster points lie in that derived set. -/
+theorem cluster_points_in_sphericalDerivedSet_of_eventually_near
+    (S : Set ℂ) (u : ℕ → OnePoint ℂ)
+    (h : ∀ O : Set (OnePoint ℂ), IsOpen O →
+      sphericalDerivedSet S ⊆ O → ∀ᶠ n in atTop, u n ∈ O) :
+    ∀ a, MapClusterPt a atTop u → a ∈ sphericalDerivedSet S := by
+  intro a ha
+  by_contra hnot
+  let D := sphericalDerivedSet S
+  have hD : IsClosed D := isClosed_sphericalDerivedSet S
+  have hDc : IsCompact D := isCompact_univ.of_isClosed_subset hD (subset_univ D)
+  have hsub : D ⊆ ({a} : Set (OnePoint ℂ))ᶜ := by
+    intro z hz heq
+    exact hnot (heq ▸ hz)
+  obtain ⟨O, hO, hDO, hOa⟩ := hDc.exists_isOpen_closure_subset
+    (isOpen_compl_singleton.mem_nhdsSet.mpr hsub)
+  obtain ⟨N, hN⟩ := Filter.eventually_atTop.mp (h O hO hDO)
+  have htail : u '' Set.Ici N ⊆ O := by
+    rintro z ⟨n, hn, rfl⟩
+    exact hN n hn
+  have hcl := (mapClusterPt_atTop_iff_forall_mem_closure.mp ha) N
+  exact (hOa (closure_mono htail hcl)) rfl
 
 /-- At infinity, being an accumulation point is just being in the closure:
 the original planar set contains no point at infinity. -/
@@ -119,7 +150,19 @@ theorem exists_subsequence_tendsto_sphericalDerivedSet
   obtain ⟨φ, hφ, hlim⟩ := hcluster.tendsto_subseq
   exact ⟨a, ha, φ, hφ, hlim⟩
 
+/-- An eventual-neighbourhood conclusion from the dynamical argument gives
+the requested strictly increasing subsequence on the sphere. -/
+theorem exists_subsequence_of_eventually_near_sphericalDerivedSet
+    (S : Set ℂ) (u : ℕ → OnePoint ℂ)
+    (h : ∀ O : Set (OnePoint ℂ), IsOpen O →
+      sphericalDerivedSet S ⊆ O → ∀ᶠ n in atTop, u n ∈ O) :
+    ∃ a ∈ sphericalDerivedSet S, ∃ φ : ℕ → ℕ,
+      StrictMono φ ∧ Tendsto (u ∘ φ) atTop (𝓝 a) :=
+  exists_subsequence_tendsto_sphericalDerivedSet S u
+    (cluster_points_in_sphericalDerivedSet_of_eventually_near S u h)
+
 end BoundedWanderingDomains
 
 #print axioms BoundedWanderingDomains.infty_mem_sphericalDerivedSet_iff
 #print axioms BoundedWanderingDomains.exists_subsequence_tendsto_sphericalDerivedSet
+#print axioms BoundedWanderingDomains.exists_subsequence_of_eventually_near_sphericalDerivedSet
