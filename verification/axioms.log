@@ -22,3 +22,15 @@
 'AreaDeficit.FinitePunctureMetricInput.no_wandering_fatou_orbit_of_bounded_point' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
+'BoundedWanderingDomains.wandering_orbit_locallyUniform_infty' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BoundedWanderingDomains.wandering_orbit_pointwise_spherical_singular_derivedSet' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BoundedWanderingDomains.wandering_orbit_locallyUniform_spherical_singular_derivedSet' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BoundedWanderingDomains.local_wandering_orbit_locallyUniform_singular_derivedSet' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

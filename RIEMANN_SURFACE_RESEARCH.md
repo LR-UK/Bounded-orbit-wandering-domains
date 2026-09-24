@@ -15,92 +15,104 @@ the stable release or its Palomar submission. No branch has been pushed.
 The stable verification report applies to the stable commit, not to the
 unfinished geometric extension described here.
 
-## Mathematical scope agreed with Lasse Rempe
+## Current status, 24 September 2026
 
-Develop the area argument intrinsically on hyperbolic Riemann surfaces,
-starting with a supplied holomorphic universal covering by the unit disc.
-Use the curvature -1 area throughout; no area normalisation by 2π.
+The full arbitrary-surface formalisation is **not complete**. In particular,
+this branch does not yet prove either local dynamical theorem in the user's
+new formulation. No such claim is hidden in an input structure or an axiom.
+The essentially thick extension is explicitly deferred.
 
-For essentially thick wandering domains, investigate a geometric limiting
-surface. Initially assume that this limit has infinite hyperbolic area.
-Whether infinite area follows from the dynamics, and whether it is necessary
-for the final conclusion, remain questions rather than proved facts.
+### Proved global formulations
 
-Geometric convergence must provide area convergence on an exhaustion, or a
-suitable lower-semicontinuity statement. Mere convergence of underlying
-pointed metric spaces is not silently identified with convergence of areas.
+`BoundedWanderingDomains/GlobalLimitStatements.lean` adds the locally uniform
+escape-to-infinity theorem and the pointwise derived-singular-value theorem.
+Together with the existing locally uniform derived-set theorem, these are
+included in the consolidated independent `Challenge.lean` and supplied by
+`Solution.lean`. The main comparator checks six theorems and thirteen
+supporting definitions. The older singular-limit comparator remains usable.
 
-The proposed application also needs eventual injectivity on the relevant
-large regions downstairs, compatible forward images, and the analytic
-finite-model area estimates. Injectivity of normalised lifts alone is not
-recorded as injectivity downstairs.
+### Checked surface foundation
 
-The suggested meromorphic class B statement about escaping multiply
-connected wandering domains and eventual injectivity is a research
-conjecture here. We do not use it as a proved theorem or add it as an axiom.
+`SurfaceResearch.lean` is a separate research entry point, built by the default
+Lake target and audited by `verification/SurfaceAxioms.lean`.
 
-## Implemented foundation
+- `LocalDynamics.lean`: actual open-source local maps, partial iteration,
+  the trapped self-map and its continuous iterates, normality in the uniformity
+  of the one-point compactification, actual normality components and wandering
+  component orbits. Undefined iterates never enter normality on trapped sets.
+- `CompactificationEscape.lean`: convergence to the added point is equivalent
+  to eventual avoidance of every compact set; a sequence either escapes or
+  has a subsequence converging inside the surface.
+- `CompactSeparation.lean`: the compact-separator condition, symmetry and
+  restriction, and its automatic validity when either set is compact.
+- `SeparatingCutoff.lean`: disjoint closed sets with a compact separator admit
+  a smooth separating cutoff, locally constant outside a compact set.
+- `ChartLaplacianSupport.lean`: the cutoff's chart Laplacian has compact support
+  and that support misses every set near which the cutoff is constant.
+- `SmoothSurface.lean`: complex differentiability of chart transitions implies
+  an underlying smooth real structure. The cutoff theorem therefore applies
+  to an arbitrary Hausdorff second-countable Riemann surface, with no extra
+  smooth-structure assumption.
+- `DiscCover.lean`: supplied surjective holomorphic disc coverings and the
+  simple connectivity of their source.
+- `GeometricArea.lean`: the earlier measure-theoretic exhaustion argument,
+  explicitly conditional on infinite limiting area and area convergence.
 
-`BoundedWanderingDomains/Surfaces/DiscCover.lean` supplies the interface
-`AreaDeficit.Surfaces.DiscCover M` for a complex manifold M. Its data are
-a holomorphic map from the disc, a topological covering proof, and explicit
-surjectivity. The source is proved simply connected. The target is not
-assumed simply connected. Hausdorffness and second countability should be
-required explicitly when subsequent surface theorems need them.
+The additional upstream metric construction in
+`RiemannDynamics/Uniformization/HyperbolicSurface.lean` has been ported from
+Will (Ziang) Li's existing pinned revision. It proves existence of a compatible
+complete metric locally isometric to the hyperbolic disc, given hyperbolicity
+of the universal path cover. Its three disc-model dependencies are included
+with the original authorship and licence headers. This metric result alone
+does not construct the area comparison needed below.
 
-`BoundedWanderingDomains/Surfaces/GeometricArea.lean` proves:
+### Exact unproved targets
 
-- `exists_eventually_large_area`: if increasing sets K_j exhaust a measured
-  space of infinite total measure, and a(j,n) tends to the measure of K_j
-  for each j, then for every finite C there is a fixed j such that
-  a(j,n) > C for every sufficiently large n.
-- `no_uniform_finite_area_bound`: consequently one common finite bound C
-  cannot hold eventually for each j, even when the required starting time
-  depends on j.
+`Surfaces/Statements.lean` records three named propositions, not theorems:
 
-These results resolve the order-of-limits issue conditional on the stated
-area convergence and infinite-area hypotheses. They are formulated on
-arbitrary measured spaces, so apply directly to Riemann surfaces. They
-do not construct a geometric limit or its area measure.
+1. `NoCompactWanderingOrbitClaim`: no point orbit of a wandering normality
+   component stays in a compact subset of the actual source O. No V, simple
+   connectivity, or injectivity hypothesis is included.
+2. `NoCompactPositiveAreaWanderingSetClaim`: the positive-area wandering-set
+   statement, with injectivity on the forward saturation and compact containment
+   in O. Positive area is defined in a chart.
+3. `WanderingDerivedSingularLimitClaim`: simply connected component orbits
+   have a subsequence escaping every compact subset of X or converging to a
+   derived singular value. No injectivity hypothesis is included.
 
-The existing `AreaDeficit.finite_area_cancellation` was already formulated
-for arbitrary measured spaces, and is available here unchanged.
+The covering definition explicitly requires surjectivity over the regular
+value neighbourhood. Mathlib permits covering maps with empty fibres, so
+that additional range condition is recorded rather than silently omitted.
+The corrected compact containment is K ⊆ O throughout.
 
-## Next geometric obligations
+### Outstanding analytic work
 
-`SURFACE_AREA_PROOFS.md` now gives mathematical proofs of the arbitrary-surface
-2π puncture bound and the uniform remote-removal estimate, with an explicit
-cutoff constant in a hyperbolic ambient surface. These are mathematical proof
-notes, not completed Lean ports. They refine the plan below; the geometric
-formalisation obligations remain explicit. The remote-removal proof also
-covers disjoint closed K and L accumulating on disjoint sets of Freudenthal
-ends, even if both sets are noncompact. Its analytic criterion is a smooth
-separating cutoff with compactly supported differential. This extension
-is recorded in the proof notes and has not yet been formalised in Lean.
+`SURFACE_AREA_PROOFS.md` contains mathematical proof notes, not Lean theorems.
+The remaining obligations are:
 
-1. Descend the disc's curvature -1 metric and area through a supplied cover;
-   prove independence of local inverse branches and of the supplied cover.
-2. Formulate Schwarz–Pick and covering area transport on these surfaces.
-3. Identify the correct surface versions of the puncture-cost and area-gain
-   statements, including all finite/infinite-area hypotheses. Do not assume
-   that every planar statement transfers unchanged to every surface.
-4. Connect a precise geometric-convergence notion to the area-exhaustion
-   theorem; establish eventual injectivity on the needed regions.
-5. Apply the conditional result to the meromorphic setting, then investigate
-   removal of the infinite-limit-area assumption and the essentially thin case.
+1. Construct the intrinsic curvature -1 area and connect it with local
+   conformal densities and the descended metric.
+2. Prove the 2π puncture bound on arbitrary surfaces, including the boundary
+   or exhaustion argument; the sphere theorem does not discharge this.
+3. Prove the uniform remote-removal estimate using the now-proved cutoffs,
+   intrinsic Schwarz comparison and a justified integration/exhaustion formula.
+4. Connect these estimates to the partial-iteration normality components and
+   prove the two local dynamical results, including the positive-area case.
 
-General uniformisation is not a dependency of this initial interface.
-External Riemann-surface libraries may be reused only after checking their
-exact definitions, theorem hypotheses, axiom dependencies, licences and
-compatibility with the pinned Lean/mathlib versions.
+The finite-model hypotheses used inside the existing planar proof are fully
+proved there. They are not treated as proved for arbitrary surfaces.
 
-## Verification
+### Verification
 
-Build the two research modules with:
-
-```sh
-lake build BoundedWanderingDomains.Surfaces.DiscCover BoundedWanderingDomains.Surfaces.GeometricArea
+```
+lake build SurfaceResearch
+python3 scripts/verify_submission.py
+python3 scripts/verify_metadata.py
+python3 scripts/audit_attribution.py
 ```
 
-The new results have axiom-printing commands. The stable Challenge files,
-solutions, metadata, dependencies and verification scripts are unchanged.
+The strict audit checks all proof dependencies for the standard axioms only,
+compares the six main Challenge declarations and the two legacy singular-limit
+declarations, and scans all project sources for unexpected holes. Passing this
+audit does not turn a named, unproved research proposition into a theorem.
+No official independent-kernel replay or registry acceptance is claimed.

@@ -200,3 +200,12 @@ source closure and compatibility changes are recorded in
 `EremenkoLyubichConstant/RECOVERY_PORT.md`. The additional `Ray/` modules retain
 Geoffrey Irving's original attribution. Their internal one-dimensional namespace
 was renamed to avoid a collision with the independently vendored sphere atlas.
+
+## Additional surface metric modules on the research branch
+
+`RiemannDynamics/Uniformization/HyperbolicSurface.lean` and the three modules
+under `RiemannDynamics/Hyperbolic/DiskModel/` are from the same pinned
+`b3fa37cc0f18a23ea66b654ea3f73eb472129010` revision cited above. They retain
+Will (Ziang) Li's authorship and Apache-2.0 notices. The port replaces deprecated
+Lean/Mathlib lemmas and corrects an obsolete introductory comment; mathematical
+statements are unchanged. `RIEMANN_DYNAMICS_LICENSE` applies to these files too.

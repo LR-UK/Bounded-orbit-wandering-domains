@@ -48,7 +48,7 @@ sources:
     role: AI-assisted Lean proof construction, compatibility work and verification
   location: "https://github.com/LR-UK/Bounded-orbit-wandering-domains/tree/main/paper/Absence_of_bounded_orbit_wandering_domains-1.pdf"
   note: The manuscript was drafted separately by the authors. The precise formalised claims are the
-    declarations in Solution.lean and NewResults.lean. The two bounded-orbit results and the entire singular-limit result have separate independent Challenge configurations. No independent
+    declarations in Solution.lean and NewResults.lean. The main independent Challenge now consolidates six proved formulations; the earlier singular-limit configuration is also retained. No independent
     human review or registry acceptance is claimed.
 - title: A new proof of no-wandering domain theorems without quasiconformal techniques
   authors:
@@ -169,6 +169,10 @@ status:
     components and analyticity without constant germs near compact closure(V).
     It yields a finite constant locally uniform limit in closure(V), belonging to
     the derived singular set of f restricted to V. Injectivity is derived.
+    The main Challenge also includes locally uniform escape to infinity and the
+    pointwise derived-singular-value formulation. The arbitrary-surface local
+    dynamical statements remain unproved research propositions; their definitions,
+    compact-separation cutoffs and intrinsic metric foundations are checked.
     Independent Challenge placeholders are not imported by either proof entry point.
   sorry_count: 0
   sorry_in_definitions: 0
@@ -247,8 +251,8 @@ fidelity:
     plane maps analytic near compact closure(V), with one compactly contained
     point orbit; no simple connectivity is assumed. Singular limits are on the
     sphere, including infinity. No meromorphic extension or positive-area-set
-    theorem is claimed. The bounded-orbit and entire singular-limit theorems have
-    separate comparator configurations. The two sphere area results are proved
+    theorem is claimed. The main Challenge consolidates the proved dynamical statements; the older
+    singular-limit comparator is retained. The surface generalisation is unfinished. The two sphere area results are proved
     supporting results, without standalone registry Challenge declarations.
     The local derived-singular-set theorem retains simple connectivity, in contrast
     to the earlier local bounded-point absence theorem. It does not assume orbit

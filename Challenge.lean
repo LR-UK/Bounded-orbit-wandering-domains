@@ -9,49 +9,35 @@ import Mathlib.Topology.UniformSpace.Uniformizable
 import Mathlib.Topology.Compactification.OnePoint.Basic
 import Mathlib.Topology.Connected.LocallyConnected
 
+import Mathlib.Topology.Covering.Basic
+import Mathlib.Analysis.CStarAlgebra.Classes
+import Mathlib.Topology.DerivedSet
+
 /-!
-# Absence of bounded-orbit wandering domains
+# Main statements: wandering domains and derived singular limit functions
 
-This Challenge is independent of the proof development. Its imports are
-Mathlib only. The two deliberate theorem holes are supplied by Solution.
+Independent statement file: only Mathlib is imported. The six deliberate
+statement holes are supplied by Solution, and their types and all supporting
+definitions are checked by the comparator configuration.
 
-The classical hyperbolic metric facts are proved in the Solution development,
-including disc-covering existence and the total-area formula. Neither theorem
-assumes a metric-existence, covering-existence or area-formula hypothesis.
+The global theorems include locally uniform escape to infinity and both
+pointwise and locally uniform derived-singular limit formulations. The local
+statements in this checkpoint are the proved planar versions: bounded trapped
+components, and the simply connected local singular-limit theorem. The proposed
+arbitrary-surface extensions remain research work and are not claimed here.
 
-Two results are stated:
-1. For a locally defined analytic map, a trapped-component
-   orbit containing one point whose forward orbit stays in a compact subset
-   of V cannot be wandering. The whole components need not lie in that compact
-   set. No univalence or eventual-injectivity hypothesis is imposed.
-2. For a transcendental entire map, a Fatou component containing one point
-   with bounded forward orbit cannot be wandering. No boundedness of whole
-   components, simple connectivity or injectivity is assumed in this theorem.
-
-Neither result assumes simple connectivity. The local statement here concerns plane-valued maps analytic
-near a compact plane closure(V); the paper's general spherical/meromorphic
-setting and positive-area-set result are outside this submission.
-
-Eventual injectivity on each fixed intrinsic disc is derived in both proofs.
-The local proof thickens the compact point-orbit set inside V and proves that
-these discs eventually lie in that thickening. Neither step assumes compact
-containment of the whole components.
-
-Mathlib supplies differentiability, analyticity, iteration, connected
-components, simple connectivity, boundedness, measures and convergence.
-Neither the pinned Mathlib nor the available Tau Ceti sources supplies the
-Fatou-component definitions needed here. The short definitions below are
-copied from the supplied ComplexDynamics repository and compared against
-those same declarations in the Solution. No value of f at infinity is used.
-
-Mathematical direction: Lasse Rempe. AI-assisted formalisation: OpenAI
-ChatGPT/Codex. The proof dependencies retain their separate attribution.
-This is the substantive development, not a wrapper around a previously
-registered theorem. The additional results are exposed separately in NewResults.lean.
+No entire map is evaluated at infinity. Hyperbolic areas use curvature -1.
+Mathematical direction: Lasse Rempe. Paper authors: Nikolai Prochorov,
+Lasse Rempe and James Waterman. AI-assisted formalisation: OpenAI ChatGPT/Codex.
 -/
 
-open Set Metric Function Filter
+open Set Metric Function Filter OnePoint Topology
 open scoped Topology Uniformity
+
+section Definitions
+
+-- Match the instance environment of the original defining modules.
+attribute [-instance] instCommCStarAlgebraComplex
 
 namespace ComplexDynamics
 
@@ -85,23 +71,49 @@ def IsFatouComponent (f : ℂ → ℂ) (U : Set ℂ) : Prop :=
 
 end ComplexDynamics
 
+namespace ComplexDynamics
+
+/-- Values with an open neighbourhood over which the entire map is a covering. -/
+def regularValueSet (f : ℂ → ℂ) : Set ℂ :=
+  {w | ∃ V : Set ℂ, IsOpen V ∧ w ∈ V ∧ IsCoveringMapOn f V}
+
+/-- The closed set of finite singular values. -/
+def singularValues (f : ℂ → ℂ) : Set ℂ := (regularValueSet f)ᶜ
+
+/-- Singular values on the sphere; the function itself is never evaluated at infinity. -/
+def sphericalSingularValues (f : ℂ → ℂ) : Set (OnePoint ℂ) :=
+  insert ∞ (((↑) : ℂ → OnePoint ℂ) '' singularValues f)
+
+end ComplexDynamics
+
+namespace ComplexDynamics
+
+def regularValueSetOn (f : ℂ → ℂ) (V : Set ℂ) : Set ℂ :=
+  {w | ∃ W : Set ℂ, IsOpen W ∧ w ∈ W ∧
+    IsCoveringMapOn (fun x : V => f x) W}
+
+def singularValuesOn (f : ℂ → ℂ) (V : Set ℂ) : Set ℂ :=
+  (regularValueSetOn f V)ᶜ
+
+def sphericalSingularValuesOn (f : ℂ → ℂ) (V : Set ℂ) : Set (OnePoint ℂ) :=
+  insert ∞ (((↑) : ℂ → OnePoint ℂ) '' singularValuesOn f V)
+
+end ComplexDynamics
+
 namespace BoundedWanderingDomains
 
-/-- The interior of the set of points whose entire forward orbit stays
-in V. The values of the total function outside V play no role. -/
+/-- Interior of the points whose entire forward orbit stays in V. -/
 def trappedInterior (f : ℂ → ℂ) (V : Set ℂ) : Set ℂ :=
   interior {z | ∀ n : ℕ, f^[n] z ∈ V}
 
-
 end BoundedWanderingDomains
 
+attribute [instance] instCommCStarAlgebraComplex
+
+end Definitions
 
 namespace BoundedWanderingDomains
 
-/-- LOCAL THEOREM. Analyticity is needed only near closure(V). The U_n are
-components of the maximal trapped open set through f^[n](z).
-Only the points f^[n](z) must lie in a fixed compact K inside V. The component
-orbit cannot be pairwise disjoint; no injectivity hypothesis is required. -/
 theorem no_local_bounded_wandering_domains
     {f : ℂ → ℂ} {V K : Set ℂ} {z : ℂ} {U : ℕ → Set ℂ}
     (hV : IsOpen V) (hVc : IsCompact (closure V))
@@ -114,12 +126,6 @@ theorem no_local_bounded_wandering_domains
     ¬ Pairwise (fun n m : ℕ => Disjoint (U n) (U m)) := by
   sorry
 
-/-- ENTIRE THEOREM. A transcendental entire function cannot have a wandering
-Fatou component containing a point z with bounded forward orbit.
-The bounded set is only {f^[n](z) : n ∈ ℕ}; no bound on the union of
-Fatou components is assumed. Simple connectivity of auxiliary trapped
-components and eventual injectivity on intrinsic discs are proved.
-The proof constructs the required hyperbolic metrics with curvature −1. -/
 theorem no_bounded_wandering_domains_transcendental_entire
     {f : ℂ → ℂ} (hf : Differentiable ℂ f)
     (htrans : ¬ ∃ p : Polynomial ℂ, ∀ z, f z = p.eval z)
@@ -129,5 +135,59 @@ theorem no_bounded_wandering_domains_transcendental_entire
     (hbounded : Bornology.IsBounded (Set.range (fun n : ℕ => (f^[n]) z))) :
     ¬ Pairwise (fun n m : ℕ => Disjoint (U n) (U m)) := by
   sorry
+
+theorem wandering_orbit_locallyUniform_infty
+    {f : ℂ → ℂ} (hf : Differentiable ℂ f)
+    (htrans : ¬ ∃ p : Polynomial ℂ, ∀ z, f z = p.eval z)
+    {U : ℕ → Set ℂ} {z : ℂ}
+    (hU : ∀ n, ComplexDynamics.IsFatouComponent f (U n))
+    (hz : z ∈ U 0) (hforward : ∀ n, MapsTo f (U n) (U (n+1)))
+    (hdis : Pairwise (fun n m => Disjoint (U n) (U m))) :
+    ∃ φ : ℕ → ℕ, StrictMono φ ∧ TendstoLocallyUniformlyOn
+      (fun k w => ((f^[φ k]) w : OnePoint ℂ))
+      (fun _ => (∞ : OnePoint ℂ)) atTop (U 0) := by
+  sorry
+
+theorem wandering_orbit_pointwise_spherical_singular_derivedSet
+    {f : ℂ → ℂ} (hf : Differentiable ℂ f)
+    (htrans : ¬ ∃ p : Polynomial ℂ, ∀ z, f z = p.eval z)
+    {U : ℕ → Set ℂ} {z : ℂ}
+    (hU : ∀ n, ComplexDynamics.IsFatouComponent f (U n))
+    (hz : z ∈ U 0) (hforward : ∀ n, MapsTo f (U n) (U (n+1)))
+    (hdis : Pairwise (fun n m => Disjoint (U n) (U m))) :
+    ∃ a ∈ derivedSet (ComplexDynamics.sphericalSingularValues f), ∃ φ : ℕ → ℕ,
+      StrictMono φ ∧ Tendsto
+        (fun k => ((f^[φ k]) z : OnePoint ℂ)) atTop (𝓝 a) := by
+  sorry
+
+theorem wandering_orbit_locallyUniform_spherical_singular_derivedSet
+    {f : ℂ → ℂ} (hf : Differentiable ℂ f)
+    (htrans : ¬ ∃ p : Polynomial ℂ, ∀ z, f z = p.eval z)
+    {U : ℕ → Set ℂ} {z : ℂ}
+    (hU : ∀ n, ComplexDynamics.IsFatouComponent f (U n))
+    (hz : z ∈ U 0) (hforward : ∀ n, MapsTo f (U n) (U (n+1)))
+    (hdis : Pairwise (fun n m => Disjoint (U n) (U m))) :
+    ∃ a ∈ derivedSet (ComplexDynamics.sphericalSingularValues f), ∃ φ : ℕ → ℕ,
+      StrictMono φ ∧ TendstoLocallyUniformlyOn
+        (fun k w => ((f^[φ k]) w : OnePoint ℂ)) (fun _ => a) atTop (U 0) := by
+  sorry
+
+attribute [-instance] instCommCStarAlgebraComplex
+
+theorem local_wandering_orbit_locallyUniform_singular_derivedSet
+    {f : ℂ → ℂ} {V : Set ℂ} {z : ℂ} {U : ℕ → Set ℂ}
+    (hV : IsOpen V) (hVc : IsCompact (closure V))
+    (hf : AnalyticOnNhd ℂ f (closure V))
+    (hn : ∀ x ∈ closure V, ¬EventuallyConst f (𝓝 x))
+    (hz : z ∈ trappedInterior f V)
+    (hU : ∀ n, U n = connectedComponentIn (trappedInterior f V) (f^[n] z))
+    (hsc : ∀ n, IsSimplyConnected (U n))
+    (hdis : Pairwise (fun n m => Disjoint (U n) (U m))) :
+    ∃ a ∈ closure V, (a : OnePoint ℂ) ∈ derivedSet (ComplexDynamics.sphericalSingularValuesOn f V) ∧
+      ∃ φ : ℕ → ℕ, StrictMono φ ∧
+        TendstoLocallyUniformlyOn (fun k w => (f^[φ k]) w) (fun _ => a) atTop (U 0) := by
+  sorry
+
+attribute [instance] instCommCStarAlgebraComplex
 
 end BoundedWanderingDomains

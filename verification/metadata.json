@@ -2,7 +2,7 @@
   "result": "passed",
   "validator_repository": "https://github.com/PalomarRegistry/PalomarSubmission",
   "validator_commit": "e48a86d0495356b5131a92c9406aa6e27cf99e56",
-  "metadata_sha256": "8ee89f75a6139b31de08ec122964bd45abc7bb843f2fc0f3f4a9d7e285986d17",
+  "metadata_sha256": "a85b779f05b93b2672ab8aa3adaed2f44986db36f7f30f585507032813572f4b",
   "provenance": {
     "result_origin": "original",
     "repository_role": "substantive-development",
@@ -37,7 +37,7 @@
           }
         ],
         "location": "https://github.com/LR-UK/Bounded-orbit-wandering-domains/tree/main/paper/Absence_of_bounded_orbit_wandering_domains-1.pdf",
-        "note": "The manuscript was drafted separately by the authors. The precise formalised claims are the declarations in Solution.lean and NewResults.lean. The two bounded-orbit results and the entire singular-limit result have separate independent Challenge configurations. No independent human review or registry acceptance is claimed.",
+        "note": "The manuscript was drafted separately by the authors. The precise formalised claims are the declarations in Solution.lean and NewResults.lean. The main independent Challenge now consolidates six proved formulations; the earlier singular-limit configuration is also retained. No independent human review or registry acceptance is claimed.",
         "type": "original-proof"
       },
       {

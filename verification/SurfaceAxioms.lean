@@ -1,0 +1,19 @@
+import SurfaceResearch
+#print axioms RiemannDynamics.exists_hyperbolicMetric
+#print axioms RiemannDynamics.exists_hyperbolicMetric_of_diffeomorph
+#print axioms AreaDeficit.Surfaces.exists_smooth_separating_cutoff
+#print axioms AreaDeficit.Surfaces.exists_smooth_separating_cutoff_mfderiv
+#print axioms AreaDeficit.Surfaces.hasCompactSupport_chartLaplacian
+#print axioms AreaDeficit.Surfaces.disjoint_tsupport_chartLaplacian_of_const_near
+#print axioms SurfaceDynamics.tendsto_infty_iff_leaves_compacts
+#print axioms SurfaceDynamics.escape_or_convergent_subsequence
+#print axioms SurfaceDynamics.LocalMap.iterate_eq_some_orbit
+#print axioms SurfaceDynamics.LocalMap.continuous_orbit
+#print axioms SurfaceDynamics.LocalMap.omega_subset_source
+#print axioms SurfaceDynamics.LocalMap.isClosed_singularValues
+#print axioms AreaDeficit.Surfaces.unitDisc_simplyConnected
+#print axioms AreaDeficit.Surfaces.exists_eventually_large_area
+#print axioms AreaDeficit.Surfaces.no_uniform_finite_area_bound
+
+#print axioms AreaDeficit.Surfaces.isManifold_real_of_complex
+#print axioms AreaDeficit.Surfaces.exists_surface_separating_cutoff

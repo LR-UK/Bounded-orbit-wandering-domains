@@ -1,0 +1,23 @@
+{
+  "repository": "https://github.com/will1491/RiemannDynamics",
+  "revision": "b3fa37cc0f18a23ea66b654ea3f73eb472129010",
+  "license": "Apache-2.0",
+  "files": {
+    "RiemannDynamics/Uniformization/HyperbolicSurface.lean": {
+      "upstream_sha256": "8ac91171a52c32cb4f9adfd86fb54d4385a9221b54306399ce2294ce73f699eb",
+      "ported_sha256": "e95df35ad06eada82037733f9c2412b60535445231a923d591cadcd3aa92179c"
+    },
+    "RiemannDynamics/Hyperbolic/DiskModel/SchwarzPick.lean": {
+      "upstream_sha256": "9eecbda75d975fc33bf55fddb727bfa0af2d52f21b2ef0eb48e69bbc4a439451",
+      "ported_sha256": "9eecbda75d975fc33bf55fddb727bfa0af2d52f21b2ef0eb48e69bbc4a439451"
+    },
+    "RiemannDynamics/Hyperbolic/DiskModel/MobiusDisk.lean": {
+      "upstream_sha256": "962ab5bdcc4a66a054294f88c59faef57c72cb5903ecb499f6969b82652876ca",
+      "ported_sha256": "b5304f026266a839c80e35f1c2d3ff2b164cc91d473809053da9b12409a65139"
+    },
+    "RiemannDynamics/Hyperbolic/DiskModel/DiskMetric.lean": {
+      "upstream_sha256": "12eab225c591d6404ddb64f2568784245e9264c4b33ccd24d988e6efc5ed1b65",
+      "ported_sha256": "68c60e922043150be40ad4225a5e82ae6fc540ff270c1bd151caab53e0e4ffd5"
+    }
+  }
+}

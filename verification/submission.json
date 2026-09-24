@@ -5,12 +5,12 @@
   "mathlib": "065356127b1dc0016f66b7283ce0ce2c4055aa55",
   "curvature": -1,
   "area_normalisation": "sphere area bounds use curvature -1 without division; older internal quantities divide by 2*pi",
-  "theorem_types_compared": 4,
+  "theorem_types_compared": 8,
   "comparisons": [
     {
       "config": "comparator.json",
-      "theorems": 2,
-      "definitions": 7
+      "theorems": 6,
+      "definitions": 13
     },
     {
       "config": "comparator-singular-limits.json",
@@ -18,9 +18,94 @@
       "definitions": 13
     }
   ],
-  "definition_types_and_bodies_compared": 20,
+  "definition_types_and_bodies_compared": 26,
   "comparison": "elaborated expressions; binder display names and metadata erased",
   "axiom_reports": {
+    "RiemannDynamics.exists_hyperbolicMetric": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RiemannDynamics.exists_hyperbolicMetric_of_diffeomorph": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "AreaDeficit.Surfaces.exists_smooth_separating_cutoff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "AreaDeficit.Surfaces.exists_smooth_separating_cutoff_mfderiv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "AreaDeficit.Surfaces.hasCompactSupport_chartLaplacian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "AreaDeficit.Surfaces.disjoint_tsupport_chartLaplacian_of_const_near": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "SurfaceDynamics.tendsto_infty_iff_leaves_compacts": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "SurfaceDynamics.escape_or_convergent_subsequence": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "SurfaceDynamics.LocalMap.iterate_eq_some_orbit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "SurfaceDynamics.LocalMap.continuous_orbit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "SurfaceDynamics.LocalMap.omega_subset_source": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "SurfaceDynamics.LocalMap.isClosed_singularValues": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "AreaDeficit.Surfaces.unitDisc_simplyConnected": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "AreaDeficit.Surfaces.exists_eventually_large_area": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "AreaDeficit.Surfaces.no_uniform_finite_area_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "AreaDeficit.Surfaces.isManifold_real_of_complex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "AreaDeficit.Surfaces.exists_surface_separating_cutoff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
     "BoundedWanderingDomains.no_local_bounded_wandering_domains": [
       "propext",
       "Classical.choice",
@@ -97,6 +182,26 @@
       "Quot.sound"
     ],
     "AreaDeficit.FinitePunctureMetricInput.no_wandering_fatou_orbit_of_bounded_point": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BoundedWanderingDomains.wandering_orbit_locallyUniform_infty": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BoundedWanderingDomains.wandering_orbit_pointwise_spherical_singular_derivedSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BoundedWanderingDomains.wandering_orbit_locallyUniform_spherical_singular_derivedSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BoundedWanderingDomains.local_wandering_orbit_locallyUniform_singular_derivedSet": [
       "propext",
       "Classical.choice",
       "Quot.sound"
@@ -291,11 +396,6 @@
       "Classical.choice",
       "Quot.sound"
     ],
-    "BoundedWanderingDomains.wandering_orbit_locallyUniform_spherical_singular_derivedSet": [
-      "propext",
-      "Classical.choice",
-      "Quot.sound"
-    ],
     "BoundedWanderingDomains.no_escaping_wandering_orbit_of_classB": [
       "propext",
       "Classical.choice",
@@ -306,33 +406,35 @@
       "Classical.choice",
       "Quot.sound"
     ],
-    "BoundedWanderingDomains.local_wandering_orbit_locallyUniform_singular_derivedSet": [
-      "propext",
-      "Classical.choice",
-      "Quot.sound"
-    ],
     "ComplexDynamics.singularValuesOn_congr": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ]
   },
-  "project_lean_sources": 290,
-  "challenge_lines": 133,
-  "challenge_bytes": 6188,
-  "challenge_intentional_holes": 2,
+  "project_lean_sources": 305,
+  "challenge_lines": 193,
+  "challenge_bytes": 8138,
+  "challenge_intentional_holes": 6,
   "challenge_direct_imports": [
     "Mathlib.Analysis.Complex.CauchyIntegral",
     "Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected",
     "Mathlib.Topology.UniformSpace.LocallyUniformConvergence",
     "Mathlib.Topology.UniformSpace.Uniformizable",
     "Mathlib.Topology.Compactification.OnePoint.Basic",
-    "Mathlib.Topology.Connected.LocallyConnected"
+    "Mathlib.Topology.Connected.LocallyConnected",
+    "Mathlib.Topology.Covering.Basic",
+    "Mathlib.Analysis.CStarAlgebra.Classes",
+    "Mathlib.Topology.DerivedSet"
   ],
   "unexpected_build_warnings": [],
   "expected_challenge_warnings": [
-    "warning: Challenge.lean:105:8: declaration uses `sorry`",
-    "warning: Challenge.lean:123:8: declaration uses `sorry`",
+    "warning: Challenge.lean:117:8: declaration uses `sorry`",
+    "warning: Challenge.lean:129:8: declaration uses `sorry`",
+    "warning: Challenge.lean:139:8: declaration uses `sorry`",
+    "warning: Challenge.lean:151:8: declaration uses `sorry`",
+    "warning: Challenge.lean:163:8: declaration uses `sorry`",
+    "warning: Challenge.lean:177:8: declaration uses `sorry`",
     "warning: SingularLimitsChallenge.lean:125:8: declaration uses `sorry`",
     "warning: SingularLimitsChallenge.lean:143:8: declaration uses `sorry`"
   ],
@@ -407,6 +509,7 @@
     "BoundedWanderingDomains/GeneralDomainMetric.lean": "d8bd13f3325c4162aeb8cf0007c93a17563792d9ae63de517aa3ef9ac402c119",
     "BoundedWanderingDomains/GeneralMetricDeficit.lean": "e4397b32291441bdac9b26de3d00c4f0045ae51ea37f543516d3f866ce26df19",
     "BoundedWanderingDomains/GeneralPunctureCost.lean": "9c0fdfaace1c4afb17c48e7a87e43d98c6742a9d7b59bf43f12c7b080cbdcd36",
+    "BoundedWanderingDomains/GlobalLimitStatements.lean": "e2bce3dd29c9842b0c1a82ba56e309c758de619ef669a5d891404405db1893b3",
     "BoundedWanderingDomains/GreenIdentity.lean": "640369f9f5a6e1b87a1270a130c5d7457f1f5792edca7eaae079c74b414ec990",
     "BoundedWanderingDomains/HolomorphicFilling.lean": "943aa2e0bd57dfde9788f6ed5dd6eb52183c49185cc43c39a1f4d9b2de0fe8e8",
     "BoundedWanderingDomains/HolomorphicLifting.lean": "d9b0d99c511bc0bf793998e85665a83c7acb25c2bd412c1904ef23225ffadced",
@@ -474,6 +577,15 @@
     "BoundedWanderingDomains/SphericalSingularUnbounded.lean": "e4d3264d902c4d1608fb8214d330ad627eadf60ed84e25105a308c4a98266b70",
     "BoundedWanderingDomains/SphericalSingularValues.lean": "702d0177733f862c4f4c031b7af887ee14af731c7aa32f3133b502616acbb4b7",
     "BoundedWanderingDomains/SubmissionDefinitions.lean": "1f7a344e045eb460ca3eeb76fd8ec048caeb58ecd7a651f926d663b4b835c449",
+    "BoundedWanderingDomains/Surfaces/ChartLaplacianSupport.lean": "f6d454ab5b7c92ff3f618595cf73c1f7e3e85a43e82f3cd1bc9994660994dbb6",
+    "BoundedWanderingDomains/Surfaces/CompactSeparation.lean": "7c5430a7953b473ca4bc2255b5f28f34b98da929b0869a41e9c7b7af59c48254",
+    "BoundedWanderingDomains/Surfaces/CompactificationEscape.lean": "bb53093810aad2d75881358d71117b6dcbfe81c0a017e9bac810753da9080f55",
+    "BoundedWanderingDomains/Surfaces/DiscCover.lean": "a3bfa3360a6ed616a14692cbeb0c384ed06d98f2b188e5e2ea6d0217435f9cfe",
+    "BoundedWanderingDomains/Surfaces/GeometricArea.lean": "fdb979e51068bf33655211093cffba690913a4f3815a3dccd6be7c5b2708c634",
+    "BoundedWanderingDomains/Surfaces/LocalDynamics.lean": "b0b20a2143944560dde597b89e1f980c95106937337f921f38493019ca054ed4",
+    "BoundedWanderingDomains/Surfaces/SeparatingCutoff.lean": "e2c016f4a6a0993a6d6145317993708b0e192143a920fb96a17b531d7175d60f",
+    "BoundedWanderingDomains/Surfaces/SmoothSurface.lean": "c6c8e5812644f4cbd3a9b57a55ae86290926ce52647414703a8d21a2d7227bf9",
+    "BoundedWanderingDomains/Surfaces/Statements.lean": "7bbe3f115c0b479b6ef42102c2361275132290fb33421d82b158e630bfef6d92",
     "BoundedWanderingDomains/TotalAreaCost.lean": "1587f9f5215a698169ac5be1766945b6400238530cb1f4d6baac1fb43d168475",
     "BoundedWanderingDomains/TractFillingObstruction.lean": "dd45961074517ce87e162d28f8053e02b8eab4ec64fa1087e74589dada6f72bb",
     "BoundedWanderingDomains/TransitionMoments.lean": "f3bc7c5d81b4cc7e8c13e717928f51a8071c27bcb2c716d4b0fbf906d1db801a",
@@ -487,7 +599,7 @@
     "BoundedWanderingDomains/UnnormalisedPointRemoval.lean": "a4861949968fc7576f8340ee691562c8a654f775f583d8c5d8ed29fe6e6ce6e4",
     "BoundedWanderingDomains/WanderingSets.lean": "39ccac6ed353d43c929ab47c9022531e3d480c4da60eee20e8eecad37b8446fe",
     "BoundedWanderingDomains.lean": "8b739189e42e4a149511e0808b5f15dcfde09824128e8b4c89a420790e45049b",
-    "Challenge.lean": "4fac3bc70ce037513d57bb60f1da3f1fc5051a663050172e8d8c2384722e4455",
+    "Challenge.lean": "7da1252e198161ba7c08455e6bd5ac7ed87989057074f9895424b685f2ddc37f",
     "CoveringSolution.lean": "a4caa5588f01aa3223a0811c17f334852cef257071bb84fdeb0e8c3178704157",
     "EremenkoLyubichConstant/ClassB.lean": "89e924bffb69755550b4933a82dcc897544c5bec2e2bafe66bcaacbef3352117",
     "EremenkoLyubichConstant/ClassBLogarithmicTransform.lean": "e911f55dfa616216f81a40f135685257ef1eca5042ad1aea27128b63890683af",
@@ -588,6 +700,9 @@
     "RiemannDynamics/Analysis/Winding/GridPrimitives/Loop.lean": "ca074e32ff74c40f955609f5fec4805ee9326ee2490724994d9af106a35f8690",
     "RiemannDynamics/Analysis/Winding/GridPrimitives/Primitives.lean": "fcb45c3d9df5450611166584f1bb4a1ae5a9a51c77b1db7b2cf1043c00d3860b",
     "RiemannDynamics/BoundedWanderingSolution.lean": "311d42cc3ab0a3e3280bda9ea06cc1dd3ee461047e9fe305baf3cca68a84155b",
+    "RiemannDynamics/Hyperbolic/DiskModel/DiskMetric.lean": "68c60e922043150be40ad4225a5e82ae6fc540ff270c1bd151caab53e0e4ffd5",
+    "RiemannDynamics/Hyperbolic/DiskModel/MobiusDisk.lean": "b5304f026266a839c80e35f1c2d3ff2b164cc91d473809053da9b12409a65139",
+    "RiemannDynamics/Hyperbolic/DiskModel/SchwarzPick.lean": "9eecbda75d975fc33bf55fddb727bfa0af2d52f21b2ef0eb48e69bbc4a439451",
     "RiemannDynamics/NormalFamilies/Basic.lean": "fd9d7c9364a3e48f5f67b6a1b168e757af94fe9916d009e321ad3addac382e99",
     "RiemannDynamics/NormalFamilies/Spherical.lean": "a2996b6da461b2504a8d8e843f9ea40a22812f71bb80cc812acdc97b3c1eab79",
     "RiemannDynamics/Sphere/Basic.lean": "2ac40c4250277c88c104652f7917384ec31b13066193310e9b6da231bc5229ee",
@@ -600,6 +715,7 @@
     "RiemannDynamics/Surface/GenusSurface/VertexChart.lean": "9623f338057ba442387cec8a223f7a12bf9d9ed679c8566470965a2003574ed1",
     "RiemannDynamics/Uniformization/CoverCountable.lean": "e0afe1f234aa53f5741ed9b11b7d28a775570b24c3afa7356d7b662f500c5a6d",
     "RiemannDynamics/Uniformization/HolomorphicEquiv.lean": "c04ad9ab8e82d6b063567c713b091ffa93eadedd1edc11e7e9228b2b3d544022",
+    "RiemannDynamics/Uniformization/HyperbolicSurface.lean": "e95df35ad06eada82037733f9c2412b60535445231a923d591cadcd3aa92179c",
     "RiemannDynamics/Uniformization/Perron/BipolarGreen/Assembly.lean": "758b2a564098cc02456003e13b7913a98374bd0aa1c988e9e3088459ad09366a",
     "RiemannDynamics/Uniformization/Perron/BipolarGreen/Barrier.lean": "353096a4d1ac5fa9ca03f0bae6e883d5f95672e4bcb371aad45f31d59331e410",
     "RiemannDynamics/Uniformization/Perron/BipolarGreen/DipoleMap.lean": "aa38d5f97cee4f6cace18ca6c90bf3ab3ea721db60de5fa0f2487098e5f62b29",
@@ -626,10 +742,11 @@
     "RiemannDynamics/Uniformization/Trichotomy.lean": "32c122fcba5c38f33b59323f9b375c99ca735660030fc9f5b0276b842a354957",
     "SingularLimitsChallenge.lean": "f7ce65e089948671d9360c90f089a751768b267537094c0085d0c3b816a17509",
     "SingularLimitsSolution.lean": "8c32d2db2c41d32ecf1c05b231530dd6466ffa0549db047b842b2dfe37d13935",
-    "Solution.lean": "a1b59fbf6035fce97f53d887674d46c98d9be17cfb04c07cd7b3c098485712dc",
-    "comparator.json": "146e39a312fee18350a37ea33f14a436df5756b6ef76a19b6ada9ff013f53be7",
-    "formalization.yaml": "8ee89f75a6139b31de08ec122964bd45abc7bb843f2fc0f3f4a9d7e285986d17",
-    "lakefile.toml": "a8790ff06798a7f95980cfbc5ad60744ca6533e688a089b732242fd04e9ff37d",
+    "Solution.lean": "cf1da95d65426f0213e4ce0c3eb24365a7166a065effc23245d2a48d0f5a6704",
+    "SurfaceResearch.lean": "a730d0cb29b253166e9859a3c86748bc1d5a1ef66dc84d522e03041d97424b0e",
+    "comparator.json": "d95d79e2b9c5003c62de0660ee18e1dbb2238742c8d34c9f69c24069e13c8d03",
+    "formalization.yaml": "a85b779f05b93b2672ab8aa3adaed2f44986db36f7f30f585507032813572f4b",
+    "lakefile.toml": "b973d840f6ea27b9e58cace8d2714ed68e0c33e9db4a5bba56c33567e39f318e",
     "lake-manifest.json": "4d8d14b2a39231a87109e49dfdf94cc66d97f2232e7b04a949f7e2f361d620c3"
   },
   "official_comparator": "see comparator-status.json and comparator.log",

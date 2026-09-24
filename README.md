@@ -1,5 +1,10 @@
 # No bounded-orbit wandering domains
 
+This is the `research-riemann-surfaces` branch. The stable 1.3.0 release is
+preserved at `stable-v1.3.0` and `v1.3.0`. The global theorem formulations below
+are proved; the arbitrary-surface dynamical extensions remain unfinished.
+See [RIEMANN_SURFACE_RESEARCH.md](RIEMANN_SURFACE_RESEARCH.md).
+
 We prove that transcendental entire functions do not have bounded-orbit wandering domains.
 
 This answers a major open question in the field. The proof builds upon Zihao Ye's new proof of Sullivan's No Wandering Domains theorem, and was obtained with assistance by generative AI. We also formalise a stronger theorem, which shows that locally defined holomorphic functions do not have wandering trapped-component orbits with one point orbit compactly contained in the iteration domain.
@@ -9,8 +14,11 @@ This is an unconditional formalisation, prepared with the use of Generative AI f
 The accompanying [paper (PDF)](paper/Absence_of_bounded_orbit_wandering_domains-1.pdf)
 contains the mathematical statements and proofs.
 
-The two bounded-orbit results are in [Solution.lean](Solution.lean). Their independent
-statements are in [Challenge.lean](Challenge.lean), using only Mathlib imports. The local statement has been strengthened by removing simple connectivity in this working branch.
+[Challenge.lean](Challenge.lean) now collects six independent statements using
+only Mathlib imports: the two bounded-orbit results, locally uniform escape to
+infinity, pointwise and locally uniform derived-singular-value accumulation,
+and the previously proved bounded local singular-limit result.
+[Solution.lean](Solution.lean) supplies all six proofs.
 
 ## Exact statements
 
@@ -28,7 +36,7 @@ statements are in [Challenge.lean](Challenge.lean), using only Mathlib imports. 
 The definition of the Fatou set, using normality, uses subsequential locally uniform convergence of sphere-valued iterates into the one-point compactification of ℂ. 
 Transcendental entire means complex differentiability everywhere and inequality to every complex polynomial.
 
-The seven short supporting definitions are included in the comparison.
+All thirteen supporting definitions are included in the comparison.
 
 The three additional proved results are exposed by [NewResults.lean](NewResults.lean):
 uniform compact-deletion area gain on the sphere, the 2π-per-puncture bound,
@@ -49,7 +57,7 @@ The toolchain is `leanprover/lean4:v4.35.0-rc2`. Mathlib is pinned to
 
 ```sh
 python3 scripts/fetch_cache.py
-lake build BoundedWanderingDomains Submission Challenge CoveringSolution NewResults
+lake build BoundedWanderingDomains Submission Challenge CoveringSolution NewResults SurfaceResearch
 python3 scripts/verify_submission.py
 python3 scripts/verify_metadata.py
 python3 scripts/audit_attribution.py
@@ -62,7 +70,7 @@ Lake target check. The Python metadata check requires PyYAML. The final command 
 with working unprivileged user namespaces and bubblewrap; it uses the bundled
 Palomar Comparator, NanoDa and con-ron without weakening their checks.
 See [VERIFICATION.md](VERIFICATION.md) for the actual results and limitations.
-The two `sorry`s in each of Challenge and SingularLimitsChallenge are intentional
+The six `sorry`s in Challenge and two in SingularLimitsChallenge are intentional
 statement placeholders; neither proof entry point imports a Challenge. No proof holes or extra axioms are permitted in
 Solution's dependency closure.
 

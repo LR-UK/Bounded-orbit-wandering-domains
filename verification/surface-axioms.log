@@ -1,0 +1,21 @@
+'RiemannDynamics.exists_hyperbolicMetric' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RiemannDynamics.exists_hyperbolicMetric_of_diffeomorph' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.exists_smooth_separating_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.exists_smooth_separating_cutoff_mfderiv' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'AreaDeficit.Surfaces.hasCompactSupport_chartLaplacian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.disjoint_tsupport_chartLaplacian_of_const_near' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SurfaceDynamics.tendsto_infty_iff_leaves_compacts' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SurfaceDynamics.escape_or_convergent_subsequence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SurfaceDynamics.LocalMap.iterate_eq_some_orbit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SurfaceDynamics.LocalMap.continuous_orbit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SurfaceDynamics.LocalMap.omega_subset_source' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SurfaceDynamics.LocalMap.isClosed_singularValues' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.unitDisc_simplyConnected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.exists_eventually_large_area' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.no_uniform_finite_area_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.isManifold_real_of_complex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.exists_surface_separating_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]

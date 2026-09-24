@@ -1,0 +1,12 @@
+/- Research entry point. The surface dynamical claims in Statements are
+named propositions awaiting proofs, not established theorems. -/
+import BoundedWanderingDomains.Surfaces.DiscCover
+import BoundedWanderingDomains.Surfaces.GeometricArea
+import BoundedWanderingDomains.Surfaces.LocalDynamics
+import BoundedWanderingDomains.Surfaces.CompactificationEscape
+import BoundedWanderingDomains.Surfaces.CompactSeparation
+import BoundedWanderingDomains.Surfaces.SeparatingCutoff
+import BoundedWanderingDomains.Surfaces.ChartLaplacianSupport
+import BoundedWanderingDomains.Surfaces.Statements
+import RiemannDynamics.Uniformization.HyperbolicSurface
+import BoundedWanderingDomains.Surfaces.SmoothSurface

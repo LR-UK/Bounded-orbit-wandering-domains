@@ -1,6 +1,6 @@
 name = "area_deficit"
 version = "1.3.0"
-defaultTargets = ["Submission", "Challenge", "NewResults", "SingularLimitsChallenge", "SingularLimitsSolution"]
+defaultTargets = ["Submission", "Challenge", "NewResults", "SingularLimitsChallenge", "SingularLimitsSolution", "SurfaceResearch"]
 
 [[require]]
 name = "complexApproximation"
@@ -58,3 +58,6 @@ name = "SingularLimitsChallenge"
 
 [[lean_lib]]
 name = "SingularLimitsSolution"
+
+[[lean_lib]]
+name = "SurfaceResearch"

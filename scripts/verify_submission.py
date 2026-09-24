@@ -23,13 +23,14 @@ def run(args, output):
         raise RuntimeError(f"{args} failed; see verification/{output}")
 
 subprocess.run([sys.executable, str(ROOT / "scripts/build_submission.py")], cwd=ROOT, check=True)
-run(["build", "BoundedWanderingDomains", "Submission", "Challenge", "CoveringSolution", "NewResults", "SingularLimitsChallenge", "SingularLimitsSolution"], "build.log")
+run(["build", "BoundedWanderingDomains", "Submission", "Challenge", "CoveringSolution", "NewResults", "SingularLimitsChallenge", "SingularLimitsSolution", "SurfaceResearch"], "build.log")
 build_warnings = [line for line in (OUT / "build.log").read_text().splitlines()
                   if line.startswith("warning:")]
 unexpected_warnings = [line for line in build_warnings if not re.fullmatch(
     r"warning: (?:Challenge|SingularLimitsChallenge)\.lean:\d+:\d+: declaration uses `sorry`", line)]
 assert not unexpected_warnings, "Unexpected build warnings: " + repr(unexpected_warnings)
 run(["env", "lean", "verification/Axioms.lean"], "axioms.log")
+run(["env", "lean", "verification/SurfaceAxioms.lean"], "surface-axioms.log")
 run(["env", "lean", "verification/CoveringAxioms.lean"], "covering-axioms.log")
 run(["env", "lean", "verification/UnconditionalAxioms.lean"], "unconditional-axioms.log")
 run(["env", "lean", "verification/NewResultsAxioms.lean"], "new-results-axioms.log")
@@ -60,7 +61,7 @@ for config_file in ("comparator.json", "comparator-singular-limits.json"):
     comparisons.append({"config": config_file, "theorems": len(config["theorem_names"]),
                         "definitions": len(config["definition_names"])})
 
-audit = (OUT / "axioms.log").read_text() + (OUT / "covering-axioms.log").read_text() + (OUT / "unconditional-axioms.log").read_text() + (OUT / "new-results-axioms.log").read_text()
+audit = (OUT / "surface-axioms.log").read_text() + (OUT / "axioms.log").read_text() + (OUT / "covering-axioms.log").read_text() + (OUT / "unconditional-axioms.log").read_text() + (OUT / "new-results-axioms.log").read_text()
 reports = re.findall(
     r"'([^']+)' (?:depends on axioms:\s*\[([^\]]*)\]|does not depend on any axioms)",
     audit)
@@ -79,7 +80,7 @@ for source in sources:
     code = lexer.without_lean_comments(source.read_text())
     holes = re.findall(r"\b(?:sorry|admit)\b", code)
     if source.name == "Challenge.lean":
-        assert holes == ["sorry", "sorry"]
+        assert holes == ["sorry"] * len(CONFIG["theorem_names"])
     elif source.name == "SingularLimitsChallenge.lean":
         assert holes == ["sorry", "sorry"]
     else:
@@ -132,7 +133,7 @@ report = {
                       for n, ax in reports},
     "project_lean_sources": len(sources),
     "challenge_lines": len(text.splitlines()), "challenge_bytes": len(text.encode()),
-    "challenge_intentional_holes": 2, "challenge_direct_imports": imports,
+    "challenge_intentional_holes": len(CONFIG["theorem_names"]), "challenge_direct_imports": imports,
     "unexpected_build_warnings": unexpected_warnings,
     "expected_challenge_warnings": build_warnings,
     "source_sha256": {p.relative_to(ROOT).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()

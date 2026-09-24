@@ -3,7 +3,11 @@
   "solution_module": "Solution",
   "theorem_names": [
     "BoundedWanderingDomains.no_local_bounded_wandering_domains",
-    "BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire"
+    "BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire",
+    "BoundedWanderingDomains.wandering_orbit_locallyUniform_infty",
+    "BoundedWanderingDomains.wandering_orbit_pointwise_spherical_singular_derivedSet",
+    "BoundedWanderingDomains.wandering_orbit_locallyUniform_spherical_singular_derivedSet",
+    "BoundedWanderingDomains.local_wandering_orbit_locallyUniform_singular_derivedSet"
   ],
   "definition_names": [
     "ComplexDynamics.IsNormalSequenceOn",
@@ -12,6 +16,12 @@
     "ComplexDynamics.sphericalIterate",
     "ComplexDynamics.fatouSet",
     "ComplexDynamics.IsFatouComponent",
+    "ComplexDynamics.regularValueSet",
+    "ComplexDynamics.singularValues",
+    "ComplexDynamics.sphericalSingularValues",
+    "ComplexDynamics.regularValueSetOn",
+    "ComplexDynamics.singularValuesOn",
+    "ComplexDynamics.sphericalSingularValuesOn",
     "BoundedWanderingDomains.trappedInterior"
   ],
   "permitted_axioms": [
