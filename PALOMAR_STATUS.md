@@ -1,13 +1,14 @@
-# Prepared registry configurations — version 1.2.0
+# Prepared registry configurations — version 1.3.0
 
 | Configuration | Independent statement | Proved entry point | Compared results |
 | --- | --- | --- | --- |
 | comparator.json | Challenge | Solution | Local and entire bounded-orbit theorems |
-| comparator-singular-limits.json | SingularLimitsChallenge | SingularLimitsSolution | Entire derived singular limit function |
+| comparator-singular-limits.json | SingularLimitsChallenge | SingularLimitsSolution | Entire and bounded-local derived singular limit functions |
 
 Both statements use Mathlib-only direct imports. The first configuration compares
-seven supporting definitions; the second compares nine, including the covering
-characterisation of singular values. The two area bounds are proved supporting
+seven supporting definitions; the second compares thirteen, including the covering
+characterisation of singular values. The local singular-limit theorem assumes simple connectivity but not injectivity.
+The two area bounds are proved supporting
 results and are not offered as standalone registry entries here.
 
 Official Comparator replay remains blocked locally by user-namespace restrictions;

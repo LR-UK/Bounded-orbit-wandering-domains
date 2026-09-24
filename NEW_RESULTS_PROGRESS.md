@@ -53,3 +53,12 @@ remain supporting theorems, without standalone registry configurations.
 No public push, registry submission, official Comparator replay, or independent
 human review is claimed. No meromorphic extension is claimed; in particular,
 the multiply connected meromorphic question remains outside this work.
+
+## Added bounded local singular-limit theorem
+
+Version 1.3.0 adds `local_wandering_orbit_locallyUniform_singular_derivedSet`.
+The singular set is that of f restricted to V. Simple connectivity of the
+trapped components is assumed; injectivity is derived. V has compact closure,
+and f is analytic with no constant germ near that closure. See
+LOCAL_SINGULAR_LIMITS.md. The independent singular-limit configuration now checks
+both the entire and local results.

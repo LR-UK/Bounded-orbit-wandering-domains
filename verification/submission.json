@@ -1,11 +1,11 @@
 {
   "result": "passed",
-  "project_version": "1.2.0",
+  "project_version": "1.3.0",
   "lean": "leanprover/lean4:v4.35.0-rc2",
   "mathlib": "065356127b1dc0016f66b7283ce0ce2c4055aa55",
   "curvature": -1,
   "area_normalisation": "sphere area bounds use curvature -1 without division; older internal quantities divide by 2*pi",
-  "theorem_types_compared": 3,
+  "theorem_types_compared": 4,
   "comparisons": [
     {
       "config": "comparator.json",
@@ -14,11 +14,11 @@
     },
     {
       "config": "comparator-singular-limits.json",
-      "theorems": 1,
-      "definitions": 9
+      "theorems": 2,
+      "definitions": 13
     }
   ],
-  "definition_types_and_bodies_compared": 16,
+  "definition_types_and_bodies_compared": 20,
   "comparison": "elaborated expressions; binder display names and metadata erased",
   "axiom_reports": {
     "BoundedWanderingDomains.no_local_bounded_wandering_domains": [
@@ -300,9 +300,24 @@
       "propext",
       "Classical.choice",
       "Quot.sound"
+    ],
+    "BoundedWanderingDomains.local_wandering_orbit_subsequence_spherical_singular_derivedSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BoundedWanderingDomains.local_wandering_orbit_locallyUniform_singular_derivedSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ComplexDynamics.singularValuesOn_congr": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
     ]
   },
-  "project_lean_sources": 285,
+  "project_lean_sources": 290,
   "challenge_lines": 133,
   "challenge_bytes": 6188,
   "challenge_intentional_holes": 2,
@@ -318,7 +333,8 @@
   "expected_challenge_warnings": [
     "warning: Challenge.lean:105:8: declaration uses `sorry`",
     "warning: Challenge.lean:123:8: declaration uses `sorry`",
-    "warning: SingularLimitsChallenge.lean:100:8: declaration uses `sorry`"
+    "warning: SingularLimitsChallenge.lean:125:8: declaration uses `sorry`",
+    "warning: SingularLimitsChallenge.lean:143:8: declaration uses `sorry`"
   ],
   "source_sha256": {
     "BoundedWanderingDomains/AnchoredCompactArea.lean": "73bb59d54b6e942ad0b667cfeb76a51fd612f7f95baafb3887e37afd6334dd61",
@@ -403,6 +419,8 @@
     "BoundedWanderingDomains/LocalBoundedPoint.lean": "45a4946f5f20f2b545677df581c73961bd683f51e14551d7623e96b9ea324a8c",
     "BoundedWanderingDomains/LocalBoundedPointGeneral.lean": "69dc596465e7591150333218b92aff94571b5f3ee264426d27fac6e54084f3d0",
     "BoundedWanderingDomains/LocalCovering.lean": "501dd4fca142f4a8a70f7eaaeb4a51fc2cde8705f33542be0fdaedcb56e9cb3f",
+    "BoundedWanderingDomains/LocalCoveringArea.lean": "b09e655596aaccb14f7baa25ada64b244f47fd223d6a1a29085716d4219bc977",
+    "BoundedWanderingDomains/LocalDerivedSetAreaContradiction.lean": "b86b5ec66a3ffa552e5e69ea03031a819244bdf73809024c1643db4d247c2293",
     "BoundedWanderingDomains/LocalDiscInjectivity.lean": "8c9e6408ac70b79deaaa6565c82d543d802116fd868ee349861520813f784a98",
     "BoundedWanderingDomains/LocalDynamicalAreaBound.lean": "8d4d9d6fa40184ac970343a4c3e04ba85abc4283a3f9bc3175ecfa1be68ad6e2",
     "BoundedWanderingDomains/LocalFilling.lean": "e2551bcb36f47df906aaf45de4d686bb3239188d93cb717c0a4720a0b48a02db",
@@ -410,7 +428,10 @@
     "BoundedWanderingDomains/LocalMetricComparison.lean": "d4f8fdc9bc9bae68c0681bd124766cfbad04e3a7ae6278f9c2451dd9d7048da5",
     "BoundedWanderingDomains/LocalPunctureSequence.lean": "3b01c85db416deff07c602aeb0b166ffddfb9d22ba1d23c314615cda377487a9",
     "BoundedWanderingDomains/LocalPunctures.lean": "62099901a784b3b9af30ff03389443ee427cf95f241b70a222225a690fba9ef1",
+    "BoundedWanderingDomains/LocalSingularLimits.lean": "83f0b52f9cf453374a8c244ecbb8015f07f94dec2be75a82b6f2ee417368b371",
+    "BoundedWanderingDomains/LocalSingularValues.lean": "d5cd52fdda9ed61e03d59228a0e011ecb1f300593b9b2d11abddae9f9e980166",
     "BoundedWanderingDomains/LocalTrappedTopology.lean": "6a348b7b587071d0e16e2696724e5342c3c307a60900f1834296d37865212aa5",
+    "BoundedWanderingDomains/LocalUniformSingularLimits.lean": "dd5430bc532e033f880fec951c871da9fa7e8e440d203b15de77d552eba8668e",
     "BoundedWanderingDomains/LocallyUniformSingularLimits.lean": "ba998cc38a6b3c6bc9056e664b66d74b6e4cb7cec11eb2f6283eb36cf7e88976",
     "BoundedWanderingDomains/LogBarrier.lean": "de1c11f840f211b4057e84fb5c42229bf380d2a6113d48b4629d8f09559f1061",
     "BoundedWanderingDomains/LogKernelBounds.lean": "5febf2287ab0216a5a2fc8eb0ccff437eff891331d0725343dd9d80bfb53c006",
@@ -489,7 +510,7 @@
     "EremenkoLyubichConstant/TractCovering.lean": "fbf68d90977e05948e0b54610a01eeb23a692987139656101bbbc7557bac26f9",
     "EremenkoLyubichConstant/TractSimplyConnected.lean": "27d4e57e0aee6be19372ce8141b059425a8490e3719c8e443d0a562da6b36407",
     "EremenkoLyubichConstant/UniversalCover.lean": "b43c14a59ca2c2521efce2ce2cecbc1205bcfbb2e81987690398832bc8a083d8",
-    "NewResults.lean": "7692eeee0178090c9ff7fcdf9263f14a6cb75d4acfd5012ac400eb608d1b1e19",
+    "NewResults.lean": "6f2b7c1ed9e5c5fc8744f94210f17abe8daabcbd35f14cbb4eb110577b54a855",
     "RMT4/Main.lean": "9bc6a54f6b79c589eb441536c67de51631df5a1a085523675e49a7b18f5e6fae",
     "RMT4/Montel.lean": "f1ea075d8b976520d07697dc14c45f83305837d44ed6c76023993a80694b5d0c",
     "RMT4/Spaces.lean": "4a58c370603c86d5ea4c98325ab6f3dcf995fa66d8311643d276bce3388dc547",
@@ -603,12 +624,12 @@
     "RiemannDynamics/Uniformization/PuncturedPlaneCovering.lean": "98b22f66eac10e425c912c2dd5fa83951e4371b68702f7d591e2c3fa8034c20b",
     "RiemannDynamics/Uniformization/SphereManifold.lean": "f1fcdf63dc066f482fc25a745b54ee02ff7708bc5ed1cc940150cc34003b227a",
     "RiemannDynamics/Uniformization/Trichotomy.lean": "32c122fcba5c38f33b59323f9b375c99ca735660030fc9f5b0276b842a354957",
-    "SingularLimitsChallenge.lean": "d52a2e266b5fff4dbcbb4f6b7e8a55ac17eabacc0df554fd4060b118fe3ca8a0",
-    "SingularLimitsSolution.lean": "c7ccf140ee2f27e1eae7bd0a2d9c049e896a87854d4c19b4fa95f78e1141a7b0",
+    "SingularLimitsChallenge.lean": "f7ce65e089948671d9360c90f089a751768b267537094c0085d0c3b816a17509",
+    "SingularLimitsSolution.lean": "8c32d2db2c41d32ecf1c05b231530dd6466ffa0549db047b842b2dfe37d13935",
     "Solution.lean": "a1b59fbf6035fce97f53d887674d46c98d9be17cfb04c07cd7b3c098485712dc",
     "comparator.json": "146e39a312fee18350a37ea33f14a436df5756b6ef76a19b6ada9ff013f53be7",
-    "formalization.yaml": "5aa313dae111474a28d663d9620adb471a63f17b1e0b4988979f9c5fb00f45ef",
-    "lakefile.toml": "a5c42020ffb4248c815744f1715a680bbacd28c519a2c8a5d1d6d23de9fc2002",
+    "formalization.yaml": "8ee89f75a6139b31de08ec122964bd45abc7bb843f2fc0f3f4a9d7e285986d17",
+    "lakefile.toml": "a8790ff06798a7f95980cfbc5ad60744ca6533e688a089b732242fd04e9ff37d",
     "lake-manifest.json": "4d8d14b2a39231a87109e49dfdf94cc66d97f2232e7b04a949f7e2f361d620c3"
   },
   "official_comparator": "see comparator-status.json and comparator.log",

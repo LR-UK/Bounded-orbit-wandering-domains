@@ -2,7 +2,8 @@
   "challenge_module": "SingularLimitsChallenge",
   "solution_module": "SingularLimitsSolution",
   "theorem_names": [
-    "BoundedWanderingDomains.wandering_orbit_locallyUniform_spherical_singular_derivedSet"
+    "BoundedWanderingDomains.wandering_orbit_locallyUniform_spherical_singular_derivedSet",
+    "BoundedWanderingDomains.local_wandering_orbit_locallyUniform_singular_derivedSet"
   ],
   "definition_names": [
     "ComplexDynamics.IsNormalSequenceOn",
@@ -13,7 +14,11 @@
     "ComplexDynamics.IsFatouComponent",
     "ComplexDynamics.regularValueSet",
     "ComplexDynamics.singularValues",
-    "ComplexDynamics.sphericalSingularValues"
+    "ComplexDynamics.sphericalSingularValues",
+    "ComplexDynamics.regularValueSetOn",
+    "ComplexDynamics.singularValuesOn",
+    "ComplexDynamics.sphericalSingularValuesOn",
+    "BoundedWanderingDomains.trappedInterior"
   ],
   "permitted_axioms": [
     "propext",

@@ -13,3 +13,10 @@
 'BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
+'BoundedWanderingDomains.local_wandering_orbit_subsequence_spherical_singular_derivedSet' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BoundedWanderingDomains.local_wandering_orbit_locallyUniform_singular_derivedSet' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ComplexDynamics.singularValuesOn_congr' depends on axioms: [propext, Classical.choice, Quot.sound]

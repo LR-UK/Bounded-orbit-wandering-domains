@@ -1,4 +1,4 @@
-# GitHub update package — version 1.2.0
+# GitHub update package — version 1.3.0
 
 The package contains complete source, a Git bundle with the recovered history,
 a patch relative to the previously recovered public baseline, verification
@@ -13,7 +13,7 @@ existing repository in PowerShell, substitute the actual extracted bundle path:
 ```powershell
 git status
 git fetch "C:/path/to/formalisation-history.bundle" formalise-spherical-singular-limits-recovered
-git switch -c review-formalisation-1.2 FETCH_HEAD
+git switch -c review-formalisation-1.3 FETCH_HEAD
 lake build
 python scripts/verify_submission.py
 python scripts/verify_metadata.py
@@ -43,6 +43,8 @@ for those checks; the Python/Lake checks also work from Windows with Lean instal
 - Both Challenge configurations are independent of the proved source and use
   only Mathlib imports. Metadata, CI, cache traversal and audits include the new work.
 
-No separate local-map or meromorphic derived-singular-set theorem is claimed.
+A bounded local derived-singular-set theorem is included with simple connectivity
+explicit and injectivity derived. See LOCAL_SINGULAR_LIMITS.md. No meromorphic
+extension is claimed.
 The two area theorems remain supporting results for registry purposes.
 See SUBMISSION.md for the two possible later Palomar submissions.

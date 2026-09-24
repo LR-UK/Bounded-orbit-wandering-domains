@@ -17,8 +17,8 @@ private partial def canonicalExpr : Lean.Expr → Lean.Expr
 open Lean Elab Command in
 run_cmd do
   let env ← getEnv
-  let definitions : List Name := [`ComplexDynamics.IsNormalSequenceOn, `ComplexDynamics.RiemannSphere, `ComplexDynamics.riemannSphereUniformSpace, `ComplexDynamics.sphericalIterate, `ComplexDynamics.fatouSet, `ComplexDynamics.IsFatouComponent, `ComplexDynamics.regularValueSet, `ComplexDynamics.singularValues, `ComplexDynamics.sphericalSingularValues]
-  let theorems : List Name := [`BoundedWanderingDomains.wandering_orbit_locallyUniform_spherical_singular_derivedSet]
+  let definitions : List Name := [`ComplexDynamics.IsNormalSequenceOn, `ComplexDynamics.RiemannSphere, `ComplexDynamics.riemannSphereUniformSpace, `ComplexDynamics.sphericalIterate, `ComplexDynamics.fatouSet, `ComplexDynamics.IsFatouComponent, `ComplexDynamics.regularValueSet, `ComplexDynamics.singularValues, `ComplexDynamics.sphericalSingularValues, `ComplexDynamics.regularValueSetOn, `ComplexDynamics.singularValuesOn, `ComplexDynamics.sphericalSingularValuesOn, `BoundedWanderingDomains.trappedInterior]
+  let theorems : List Name := [`BoundedWanderingDomains.wandering_orbit_locallyUniform_spherical_singular_derivedSet, `BoundedWanderingDomains.local_wandering_orbit_locallyUniform_singular_derivedSet]
   for name in definitions ++ theorems do
     let some ci := env.find? name | throwError "Missing declaration {name}"
     let mut fields := [

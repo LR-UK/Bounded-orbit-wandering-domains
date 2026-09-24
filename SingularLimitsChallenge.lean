@@ -25,11 +25,14 @@ The statement is existential and does not classify every limit function.
 
 Neither simple connectivity nor injectivity along the orbit is assumed.
 Infinity belongs to the spherical singular set. All dynamics remain plane-valued.
-No extension to locally defined maps or meromorphic functions is claimed.
+A second theorem treats bounded local analytic dynamics on actual trapped
+components. It assumes simple connectivity but not injectivity. The map is
+analytic and has no constant germ near compact closure(V); singular values
+belong to the restriction f|V. No meromorphic extension is claimed.
 
 This statement file imports Mathlib only and is independent of the proof.
-Its nine definitions are compared with the proof development, including
-normality and singular values. The one deliberate theorem hole is supplied
+Its thirteen definitions are compared with the proof development, including
+normality and singular values. The two deliberate theorem holes are supplied
 by SingularLimitsSolution. Mathematical direction: Lasse Rempe; paper authors:
 Nikolai Prochorov, Lasse Rempe and James Waterman. AI-assisted formalisation:
 OpenAI ChatGPT/Codex. See formalization.yaml for proof provenance and scope.
@@ -90,6 +93,28 @@ def sphericalSingularValues (f : ℂ → ℂ) : Set (OnePoint ℂ) :=
 
 end ComplexDynamics
 
+namespace ComplexDynamics
+
+def regularValueSetOn (f : ℂ → ℂ) (V : Set ℂ) : Set ℂ :=
+  {w | ∃ W : Set ℂ, IsOpen W ∧ w ∈ W ∧
+    IsCoveringMapOn (fun x : V => f x) W}
+
+def singularValuesOn (f : ℂ → ℂ) (V : Set ℂ) : Set ℂ :=
+  (regularValueSetOn f V)ᶜ
+
+def sphericalSingularValuesOn (f : ℂ → ℂ) (V : Set ℂ) : Set (OnePoint ℂ) :=
+  insert ∞ (((↑) : ℂ → OnePoint ℂ) '' singularValuesOn f V)
+
+end ComplexDynamics
+
+namespace BoundedWanderingDomains
+
+/-- Interior of the points whose entire forward orbit stays in V. -/
+def trappedInterior (f : ℂ → ℂ) (V : Set ℂ) : Set ℂ :=
+  interior {z | ∀ n : ℕ, f^[n] z ∈ V}
+
+end BoundedWanderingDomains
+
 attribute [instance] instCommCStarAlgebraComplex
 
 end Definitions
@@ -108,5 +133,27 @@ theorem wandering_orbit_locallyUniform_spherical_singular_derivedSet
       StrictMono φ ∧ TendstoLocallyUniformlyOn
         (fun k w => ((f^[φ k]) w : OnePoint ℂ)) (fun _ => a) atTop (U 0) := by
   sorry
+
+
+-- The local proof uses the original normed-field instance environment.
+attribute [-instance] instCommCStarAlgebraComplex
+
+/-- A finite constant limit function in the derived singular set of f restricted to V.
+Simple connectivity is assumed; eventual intrinsic-disc injectivity is proved. -/
+theorem local_wandering_orbit_locallyUniform_singular_derivedSet
+    {f : ℂ → ℂ} {V : Set ℂ} {z : ℂ} {U : ℕ → Set ℂ}
+    (hV : IsOpen V) (hVc : IsCompact (closure V))
+    (hf : AnalyticOnNhd ℂ f (closure V))
+    (hn : ∀ x ∈ closure V, ¬EventuallyConst f (𝓝 x))
+    (hz : z ∈ trappedInterior f V)
+    (hU : ∀ n, U n = connectedComponentIn (trappedInterior f V) (f^[n] z))
+    (hsc : ∀ n, IsSimplyConnected (U n))
+    (hdis : Pairwise (fun n m => Disjoint (U n) (U m))) :
+    ∃ a ∈ closure V, (a : OnePoint ℂ) ∈ derivedSet (ComplexDynamics.sphericalSingularValuesOn f V) ∧
+      ∃ φ : ℕ → ℕ, StrictMono φ ∧
+        TendstoLocallyUniformlyOn (fun k w => (f^[φ k]) w) (fun _ => a) atTop (U 0) := by
+  sorry
+
+attribute [instance] instCommCStarAlgebraComplex
 
 end BoundedWanderingDomains

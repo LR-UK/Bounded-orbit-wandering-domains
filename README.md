@@ -34,10 +34,13 @@ The three additional proved results are exposed by [NewResults.lean](NewResults.
 uniform compact-deletion area gain on the sphere, the 2π-per-puncture bound,
 and locally uniform derived singular accumulation for entire wandering components.
 See [NEW_RESULTS_PROGRESS.md](NEW_RESULTS_PROGRESS.md) for precise names and scope.
-The entire singular-limit theorem has its own independent
+The entire and bounded-local singular-limit theorems share the independent
 [SingularLimitsChallenge.lean](SingularLimitsChallenge.lean), proof entry point
 and `comparator-singular-limits.json`. The area bounds remain supporting results.
-See [GITHUB_UPDATE.md](GITHUB_UPDATE.md) for the prepared version 1.2.0 update.
+The added local singular-limit theorem retains simple connectivity but requires
+no injectivity; see [LOCAL_SINGULAR_LIMITS.md](LOCAL_SINGULAR_LIMITS.md) for its
+precise bounded-domain hypotheses and proof.
+See [GITHUB_UPDATE.md](GITHUB_UPDATE.md) for the prepared version 1.3.0 update.
 
 ## Build and verification
 
@@ -59,7 +62,7 @@ Lake target check. The Python metadata check requires PyYAML. The final command 
 with working unprivileged user namespaces and bubblewrap; it uses the bundled
 Palomar Comparator, NanoDa and con-ron without weakening their checks.
 See [VERIFICATION.md](VERIFICATION.md) for the actual results and limitations.
-The two `sorry`s in Challenge and one in SingularLimitsChallenge are intentional
+The two `sorry`s in each of Challenge and SingularLimitsChallenge are intentional
 statement placeholders; neither proof entry point imports a Challenge. No proof holes or extra axioms are permitted in
 Solution's dependency closure.
 

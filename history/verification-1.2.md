@@ -1,19 +1,19 @@
-# Verification — prepared GitHub update 1.3.0
+# Verification — prepared GitHub update 1.2.0
 
 The strict submission audit passed on 24 September 2026. The full build completed
-**4,468 Lake jobs**, including NewResults and both independent Challenge/proof
+**4,463 Lake jobs**, including NewResults and both independent Challenge/proof
 configurations. Lean is pinned to 4.35.0-rc2 and Mathlib to
 `065356127b1dc0016f66b7283ce0ce2c4055aa55`.
 
 | Check | Result |
 | --- | --- |
 | Combined library and both Challenge/proof pairs | Passed |
-| Independent theorem-type comparisons | 4 passed across two configurations |
-| Definition types and bodies | 7 in bounded-orbit configuration; 13 in singular-limit configuration; all matched |
-| Transitive axiom reports | 59 distinct declarations; only propext, Classical.choice, Quot.sound |
-| Project, RiemannDynamics, RMT4, Eremenko–Lyubich and Ray source scan | 290 Lean files; no holes or extra axioms outside Challenges |
+| Independent theorem-type comparisons | 3 passed across two configurations |
+| Definition types and bodies | 7 in bounded-orbit configuration; 9 in singular-limit configuration; all matched |
+| Transitive axiom reports | 56 distinct declarations; only propext, Classical.choice, Quot.sound |
+| Project, RiemannDynamics, RMT4, Eremenko–Lyubich and Ray source scan | 285 Lean files; no holes or extra axioms outside Challenges |
 | Unexpected warnings | None |
-| Intentional statement placeholders | 2 in Challenge; 2 in SingularLimitsChallenge |
+| Intentional statement placeholders | 2 in Challenge; 1 in SingularLimitsChallenge |
 | Metadata contract | Passed |
 | Attribution packaging | Passed; 12 licence texts, 51 attribution records |
 | Official Comparator and independent-kernel replay | Pending in a supported environment; both configurations included in CI |
@@ -58,5 +58,5 @@ are introduced by this distinction.
 
 The entire singular-limit theorem has its own independent Challenge. The two
 sphere area bounds are proved and audited supporting results, without separate
-registry configurations. The added bounded-local singular-limit theorem assumes simple connectivity,
-but derives injectivity. No meromorphic extension is claimed.
+registry configurations. No local-map or meromorphic singular-limit extension
+is claimed.

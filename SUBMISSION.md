@@ -1,9 +1,9 @@
-# Prepared Palomar submissions — version 1.2.0
+# Prepared Palomar submissions — version 1.3.0
 
 Use the same reviewed, publicly pushed immutable commit for either configuration.
 No submission is made by these files.
 
-| Field | Bounded-orbit update | New entire singular-limit result |
+| Field | Bounded-orbit update | Entire and local singular-limit results |
 | --- | --- | --- |
 | Repository | LR-UK/Bounded-orbit-wandering-domains | Same |
 | Project directory | . | . |
@@ -18,8 +18,11 @@ No submission is made by these files.
 The first compares the strengthened local theorem without simple connectivity
 and the entire bounded-point-orbit theorem. The second compares locally uniform
 subsequential convergence to a derived spherical singular value on every entire
-wandering component. No simple-connectivity or injectivity hypothesis is present
-in either public dynamical result. The local statement still requires one point's
+wandering component. The entire singular-limit theorem and both earlier bounded-orbit results
+assume neither simple connectivity nor injectivity. The added local singular-limit
+theorem assumes simple connectivity but derives the required injectivity; its
+working domain has compact closure and f is analytic without constant germs
+near that closure. See LOCAL_SINGULAR_LIMITS.md. The local statement still requires one point's
 entire orbit to lie in a compact subset of its analytic iteration domain.
 
 The two sphere area estimates are proved in NewResults and audited transitively.

@@ -2,7 +2,7 @@
   "result": "passed",
   "validator_repository": "https://github.com/PalomarRegistry/PalomarSubmission",
   "validator_commit": "e48a86d0495356b5131a92c9406aa6e27cf99e56",
-  "metadata_sha256": "5aa313dae111474a28d663d9620adb471a63f17b1e0b4988979f9c5fb00f45ef",
+  "metadata_sha256": "8ee89f75a6139b31de08ec122964bd45abc7bb843f2fc0f3f4a9d7e285986d17",
   "provenance": {
     "result_origin": "original",
     "repository_role": "substantive-development",

@@ -14,6 +14,8 @@ project:
     for a finitely punctured sphere, and its area.
     It also proves sphere area-gain bounds and a locally uniform subsequence
     converging to a derived spherical singular value on every entire wandering component.
+    A bounded local version holds for simply connected trapped components, without
+    an injectivity assumption, using the singular set of the restricted map.
   authors:
   - Nikolai Prochorov
   - Lasse Rempe
@@ -163,6 +165,10 @@ status:
     hypotheses. NewResults also proves uniform compact-deletion area gain on the
     sphere, the 2*pi-per-puncture bound, and a locally uniform subsequence on every
     entire wandering component converging to a derived spherical singular value.
+    The added local singular-limit theorem assumes simple connectivity of trapped
+    components and analyticity without constant germs near compact closure(V).
+    It yields a finite constant locally uniform limit in closure(V), belonging to
+    the derived singular set of f restricted to V. Injectivity is derived.
     Independent Challenge placeholders are not imported by either proof entry point.
   sorry_count: 0
   sorry_in_definitions: 0
@@ -171,6 +177,13 @@ status:
   - Classical.choice
   - Quot.sound
   main_results:
+  - declaration: BoundedWanderingDomains.local_wandering_orbit_locallyUniform_singular_derivedSet
+    file: BoundedWanderingDomains/LocalUniformSingularLimits.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
   - declaration: BoundedWanderingDomains.no_local_bounded_wandering_domains
     file: Solution.lean
     sorry_count: 0
@@ -237,6 +250,9 @@ fidelity:
     theorem is claimed. The bounded-orbit and entire singular-limit theorems have
     separate comparator configurations. The two sphere area results are proved
     supporting results, without standalone registry Challenge declarations.
+    The local derived-singular-set theorem retains simple connectivity, in contrast
+    to the earlier local bounded-point absence theorem. It does not assume orbit
+    injectivity or compact containment away from the boundary of V.
 
 review:
   status: self-assessed

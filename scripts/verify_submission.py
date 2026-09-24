@@ -81,7 +81,7 @@ for source in sources:
     if source.name == "Challenge.lean":
         assert holes == ["sorry", "sorry"]
     elif source.name == "SingularLimitsChallenge.lean":
-        assert holes == ["sorry"]
+        assert holes == ["sorry", "sorry"]
     else:
         assert not holes, source.name
     assert not re.search(r"\b(?:axiom|native_decide)\b|Lean\.ofReduceBool", code), source.name
@@ -120,7 +120,7 @@ for module in ("Challenge", "SingularLimitsChallenge"):
             assert not (base / relative).exists(), f"Shadowed Challenge import: {base / relative}"
 
 report = {
-    "result": "passed", "project_version": "1.2.0",
+    "result": "passed", "project_version": "1.3.0",
     "lean": (ROOT / "lean-toolchain").read_text().strip(),
     "mathlib": mathlib,
     "curvature": -1, "area_normalisation": "sphere area bounds use curvature -1 without division; older internal quantities divide by 2*pi",

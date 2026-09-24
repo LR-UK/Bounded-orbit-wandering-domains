@@ -1,3 +1,16 @@
+# Version 1.3.0 — local singular-limit addition
+
+Adds a derived-singular-set limit-function theorem for bounded local analytic
+dynamics. The singular set is defined for the actual restriction f|V by failure
+of the covering property. The theorem assumes simple connectivity of the wandering
+trapped components, but derives eventual intrinsic-disc injectivity. It gives
+Euclidean locally uniform convergence of a subsequence to a finite constant in
+closure(V), whose spherical value belongs to the derived singular set.
+
+The independent singular-limit Challenge and comparator now include the local
+and entire results. Existing theorems are unchanged. See LOCAL_SINGULAR_LIMITS.md
+for the exact hypotheses; no meromorphic extension is claimed.
+
 # Version 1.2.0 — prepared 24 September 2026
 
 Every wandering Fatou component of a transcendental entire function now has a

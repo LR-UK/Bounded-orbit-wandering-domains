@@ -5,9 +5,10 @@ Released under Apache 2.0 licence; see LICENSE.
 import BoundedWanderingDomains.SphereCompactRemoval
 import BoundedWanderingDomains.SphereFiniteRemoval
 import BoundedWanderingDomains.LocallyUniformSingularLimits
+import BoundedWanderingDomains.LocalUniformSingularLimits
 
 /-!
-# Three new results
+# Sphere area and derived singular limits
 
 The following proved declarations are the public entry points:
 
@@ -27,3 +28,5 @@ Area uses curvature −1 without dividing by 2π.
 #print axioms AreaDeficit.sphere_finite_puncture_gain_le_two_pi_mul_card
 #print axioms BoundedWanderingDomains.wandering_orbit_locallyUniform_spherical_singular_derivedSet
 #print axioms BoundedWanderingDomains.no_escaping_wandering_orbit_of_classB
+
+#print axioms BoundedWanderingDomains.local_wandering_orbit_locallyUniform_singular_derivedSet
