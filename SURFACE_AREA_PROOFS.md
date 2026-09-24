@@ -111,8 +111,10 @@ compact with L ∩ K = ∅. There is C(S,K,L) < ∞ such that, for every open
     Gain(Ω, Ω \ K; L ∩ Ω) ≤ C(S,K,L).                    (3)
 
 Neither K nor Ω needs finite connectivity. K need not be compact.
-The compactness of L is material: separation alone does not assert a
-finite total bound over an arbitrary noncompact measured region.
+When K is allowed to be noncompact, closedness and separation of L alone
+do not suffice. However, if K is compact, L may be merely closed and
+disjoint from K, as proved in the extension below. Thus the earlier
+restriction on L was stronger than necessary for compact removed sets.
 
 ### A fixed hyperbolic ambient surface
 
@@ -198,6 +200,78 @@ on L ∩ Ω. This proves (3) with
 The auxiliary 6π is a permissible uniform constant, not a claim of
 sharpness. The single-puncture constant 2π remains sharp, already on the
 disc and on compact hyperbolic surfaces.
+
+### Extension: compact K and closed, possibly noncompact L
+
+**Theorem.** The uniform estimate (3) also holds when K is compact and L
+is closed and disjoint from K. In particular, the area gain can be
+integrated all the way out to the ends of the original domain.
+
+More generally, in a hyperbolic ambient surface S the argument works if
+there is a smooth function 0 ≤ χ ≤ 1 such that χ = 1 on L, χ vanishes
+on a neighbourhood of K, and its differential has compact support.
+The support of Δ_S χ is then compact and disjoint from K. Choose δ > 0
+as a lower bound for its distance from K, and again put
+
+    C = log coth(δ/2) ∫_S |Δ_S χ| dA_S.                 (8)
+
+If Δ_S χ vanishes identically, the estimate below gives zero directly.
+The uniform logarithmic comparison (5) is needed only on the support
+of Δ_S χ, not throughout the noncompact measured region.
+
+For compact K and closed disjoint L, choose a smooth compactly supported
+ψ with 0 ≤ ψ ≤ 1, equal to one near K, and with support disjoint from L.
+Then χ = 1 - ψ has exactly these properties. This reverses the location
+of the cutoff: its derivatives are supported near the removed set,
+while χ is one throughout the distant region.
+
+To justify integration with this noncompactly supported χ, exhaust Ω by
+relatively compact smoothly bordered open sets D_j (finite unions are
+allowed). On D_j \ K let
+
+    u_j = log(ρ_(D_j\K) / ρ_(D_j)).
+
+Near K the cutoff is identically zero, so no regularity of K is needed.
+At the other artificial boundaries, both hyperbolic metrics have the
+same leading boundary expansion: u_j = O(t²), ∂_ν u_j = O(t).
+Hence both terms in Green's boundary expression
+χ ∂_ν u_j - u_j ∂_ν χ tend to zero. Where these boundaries meet K,
+χ and its derivatives already vanish. Thus
+
+    ∫_(D_j\K) χ (dA_(D_j\K) - dA_(D_j))
+      = ∫_(D_j\K) u_j Δ_S χ dA_S
+      ≤ C.
+
+The constant is independent of j and of Ω. Metric convergence under
+exhaustion and Fatou give the bound on L ∩ Ω. This argument handles the
+boundary-at-infinity issue; applying compact-support Green's formula
+directly to χ without this justification would not be valid.
+
+For a nonhyperbolic ambient S, use the same auxiliary-puncture reduction
+as before. Choose F ⊂ K. The cutoff χ remains zero near F, and its
+differential is still compactly supported in S \ F. The general cutoff
+criterion above therefore applies even though K \ F need not be compact
+in S \ F. Add the at-most-6π auxiliary puncture cost. Finite K of at most
+two points is handled directly by the puncture theorem.
+
+### Closed K and closed L without compactness: counterexample
+
+Take S = Ω = H = {x + iy : y > 0}, with
+
+    K = {x + iy : 0 < y ≤ 1},
+    L = {x + iy : y ≥ 2}.
+
+Both sets are closed in H and their hyperbolic distance is log 2 > 0.
+But Ω \ K is the translated upper half-plane {y > 1}, so its curvature
+-1 density is 1/(y-1), whereas ρ_Ω = 1/y. The gain on L is
+
+    ∫_R ∫_2^∞ ((y-1)^(-2) - y^(-2)) dy dx
+      = ∫_R (1/2) dx = ∞.
+
+Thus even positive hyperbolic separation does not replace all compactness
+or localisation assumptions. A finite set of punctures has finite global
+cost; an unbounded removed set can create the same positive gain along
+infinitely much of the measured region.
 
 ## 4. What must be formalised
 
