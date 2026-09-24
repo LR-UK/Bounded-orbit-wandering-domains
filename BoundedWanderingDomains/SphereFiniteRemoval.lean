@@ -4,6 +4,8 @@ Released under Apache 2.0 licence; see LICENSE.
 -/
 import BoundedWanderingDomains.SphereHyperbolicArea
 import BoundedWanderingDomains.UnnormalisedPointRemoval
+import BoundedWanderingDomains.SpherePointRemoval
+import BoundedWanderingDomains.SphereAreaGainTransitivity
 
 /-!
 # Removing finitely many finite points from a sphere domain
@@ -62,6 +64,44 @@ theorem sphere_finite_removal_gain_le_two_pi_mul_card
   simpa only [hpole, pole_infty_preimage_sphereFiniteSet,
     preimage_compl] using hplane
 
+/-- The finite-puncture estimate on the sphere, including punctures at
+infinity and without choosing a preferred pole. -/
+theorem sphere_finite_puncture_gain_le_two_pi_mul_card
+    (E : Finset (OnePoint ℂ))
+    (A : Set (OnePoint ℂ)) (hA : IsClosed A)
+    (D : SphereHyperbolicMetricData A) :
+    sphereHyperbolicAreaGain A hA (A ∪ (↑E : Set (OnePoint ℂ)))
+      (hA.union E.finite_toSet.isClosed) subset_union_left D Set.univ ≤
+        (E.card : ℝ≥0∞) * ENNReal.ofReal (2 * Real.pi) := by
+  classical
+  induction E using Finset.induction_on with
+  | empty => simp [sphereHyperbolicAreaGain]
+  | @insert w E hw ih =>
+    let B := A ∪ (↑E : Set (OnePoint ℂ))
+    have hB : IsClosed B := hA.union E.finite_toSet.isClosed
+    have heq : A ∪ (↑(insert w E) : Set (OnePoint ℂ)) = B ∪ {w} := by
+      ext x
+      simp only [B, Finset.coe_insert, mem_union, mem_insert_iff, mem_singleton_iff]
+      tauto
+    have hpoint : sphereHyperbolicAreaGain B hB (B ∪ {w})
+        (hB.union isClosed_singleton) subset_union_left
+        (D.mono subset_union_left) Set.univ ≤ ENNReal.ofReal (2 * Real.pi) := by
+      by_cases hwB : w ∈ B
+      · have hu : B ∪ {w} = B := union_eq_self_of_subset_right (singleton_subset_iff.mpr hwB)
+        simp [hu, sphereHyperbolicAreaGain]
+      · exact sphere_point_removal_gain_le_two_pi hB (D.mono subset_union_left) hwB
+    have ht := sphereHyperbolicAreaGain_trans (C := B ∪ {w}) hA hB (hB.union isClosed_singleton)
+      subset_union_left subset_union_left D (W := Set.univ)
+    simp only [heq]
+    calc
+      _ ≤ sphereHyperbolicAreaGain A hA B hB subset_union_left D Set.univ +
+          sphereHyperbolicAreaGain B hB (B ∪ {w}) (hB.union isClosed_singleton)
+            subset_union_left (D.mono subset_union_left) Set.univ := ht
+      _ ≤ (E.card : ℝ≥0∞) * ENNReal.ofReal (2 * Real.pi) +
+          ENNReal.ofReal (2 * Real.pi) := add_le_add ih hpoint
+      _ = _ := by rw [Finset.card_insert_of_notMem hw]; simp [add_mul]
+
 end AreaDeficit
 
 #print axioms AreaDeficit.sphere_finite_removal_gain_le_two_pi_mul_card
+#print axioms AreaDeficit.sphere_finite_puncture_gain_le_two_pi_mul_card
