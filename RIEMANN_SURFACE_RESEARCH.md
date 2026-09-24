@@ -68,6 +68,12 @@ for arbitrary measured spaces, and is available here unchanged.
 
 ## Next geometric obligations
 
+`SURFACE_AREA_PROOFS.md` now gives mathematical proofs of the arbitrary-surface
+2π puncture bound and the uniform remote-removal estimate, with an explicit
+cutoff constant in a hyperbolic ambient surface. These are mathematical proof
+notes, not completed Lean ports. They refine the plan below; the geometric
+formalisation obligations remain explicit.
+
 1. Descend the disc's curvature -1 metric and area through a supplied cover;
    prove independence of local inverse branches and of the supplied cover.
 2. Formulate Schwarz–Pick and covering area transport on these surfaces.
