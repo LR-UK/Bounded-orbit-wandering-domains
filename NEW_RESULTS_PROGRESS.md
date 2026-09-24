@@ -61,6 +61,8 @@ registration on this branch.
   curvature −1 hyperbolic area gain on `W ∩ Aᶜ` from removing `K` obeys
   the bound. It combines the anchored cutoff theorem with the `2π`-per-point
   estimate, without assuming that the total old area is finite.
+- `SpherePole.lean`: for disjoint nonempty compact subsets of the connected
+  sphere, there is a point outside both that can serve as a fixed chart pole.
 
 These modules compile with the pinned Lean toolchain and mathlib.
 Their printed axiom lists contain only `propext`, `Classical.choice`, and
@@ -96,6 +98,7 @@ PATH=/tmp/lean-4.35.0-rc2-linux/bin:$PATH LEAN_NUM_THREADS=4 lake build \
   BoundedWanderingDomains.AnchoredCompactArea \
   BoundedWanderingDomains.AreaAnchorIndependence \
   BoundedWanderingDomains.AreaAnchorFree \
+  BoundedWanderingDomains.SpherePole \
   BoundedWanderingDomains.SphericalDerivedSet
 ```
 
