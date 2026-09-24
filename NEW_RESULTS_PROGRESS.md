@@ -68,8 +68,19 @@ registration on this branch.
 - `SphereChartCompact.lean`: constructs a Möbius chart omitting **any**
   sphere point, proves compact sets avoiding the pole pull back to compact
   planar sets, and applies the uniform planar area bound in that chart.
-  This does **not** yet identify the coordinate integral with an intrinsically
-  defined area integral on a sphere domain.
+- `ConformalDensityInvariance.lean` and `SphereChartTransition.lean`: prove
+  conformal covariance of the intrinsic density and exact change-of-variables
+  formulae for curvature −1 hyperbolic area and area gain between arbitrary
+  sphere pole charts.
+- `SphereHyperbolicArea.lean`: defines curvature −1 hyperbolic area and area
+  gain intrinsically for sphere domains, and proves independence of the pole
+  chart and omitted-point anchors.
+- `SpherePointRemoval.lean`: proves that deleting any one point from an
+  arbitrary hyperbolic sphere domain gains at most `2π` of curvature −1 area.
+- `SphereCompactRemoval.lean`: proves the requested fully uniform sphere
+  theorem. For disjoint compact sphere sets `K,L`, one finite constant is
+  chosen independently of the original hyperbolic sphere domain, and bounds
+  the area gained on `L` after deleting `K`.
 - `SphericalEscape.lean`: an unbounded complex sequence has a strictly
   increasing subsequence converging to infinity in the sphere.
 - `SphericalSingularUnbounded.lean`: applies the registered unconditional
@@ -94,23 +105,14 @@ Their printed axiom lists contain only `propext`, `Classical.choice`, and
 
 ## Essential missing work
 
-1. Transfer the proved plane point-removal estimate to *sphere* domains
-   through a suitable Möbius chart; prove conformal invariance of the
-   integral and handle the chart pole correctly. The plane statement is
-   unconditional, whereas the arbitrary sphere statement has not been
-   checked.
-2. Transfer the proved **anchor-free** planar compact-removal theorem to
-   all hyperbolic sphere domains. Choose a sphere chart pole outside both
-   fixed compact sets, prove Möbius-coordinate invariance of the hyperbolic
-   area integral, and handle an old domain containing the chart pole.
-3. Connect both area bounds to the **bounded-singular-set** dynamical
-   iteration argument. In
-   particular formalise the relevant Fatou component and singular-set facts,
-   covering dynamics, and prove that a wandering point orbit eventually
-   enters every spherical neighbourhood of the derived singular set.
-   The topological deduction from that assertion to the demanded
-   subsequence is already checked.
-4. Only after the genuine unconditional theorem is checked, add it as a new
+1. Connect the two completed sphere area bounds to the
+   **bounded-singular-set** dynamical iteration argument. In particular,
+   formalise the relevant Fatou component and singular-set facts, covering
+   dynamics, and prove that a wandering point orbit eventually enters every
+   spherical neighbourhood of the derived singular set. The unbounded branch,
+   finite-exception step, and final topological subsequence deduction are
+   already checked.
+2. Only after the genuine unconditional theorem is checked, add it as a new
    Palomar Challenge declaration and update the comparator and public
    metadata. Existing registered challenge declarations remain untouched.
 
@@ -126,6 +128,11 @@ PATH=/tmp/lean-4.35.0-rc2-linux/bin:$PATH LEAN_NUM_THREADS=4 lake build \
   BoundedWanderingDomains.AreaAnchorFree \
   BoundedWanderingDomains.SpherePole \
   BoundedWanderingDomains.SphereChartCompact \
+  BoundedWanderingDomains.ConformalDensityInvariance \
+  BoundedWanderingDomains.SphereChartTransition \
+  BoundedWanderingDomains.SphereHyperbolicArea \
+  BoundedWanderingDomains.SpherePointRemoval \
+  BoundedWanderingDomains.SphereCompactRemoval \
   BoundedWanderingDomains.SphericalEscape \
   BoundedWanderingDomains.SphericalSingularUnbounded \
   BoundedWanderingDomains.FiniteExceptionalComponents \

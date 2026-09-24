@@ -33,6 +33,92 @@ structure SphereHyperbolicMetricData (A : Set (OnePoint ℂ)) where
   anchorOne_mem : anchorOne ∈ (spherePoleChart pole) ⁻¹' A
   anchorTwo_mem : anchorTwo ∈ (spherePoleChart pole) ⁻¹' A
 
+/-- The same coordinate witnesses remain valid after enlarging the closed
+complement. -/
+def SphereHyperbolicMetricData.mono
+    {A B : Set (OnePoint ℂ)} (D : SphereHyperbolicMetricData A)
+    (hAB : A ⊆ B) : SphereHyperbolicMetricData B where
+  pole := D.pole
+  pole_mem := hAB D.pole_mem
+  anchorOne := D.anchorOne
+  anchorTwo := D.anchorTwo
+  anchor_ne := D.anchor_ne
+  anchorOne_mem := hAB D.anchorOne_mem
+  anchorTwo_mem := hAB D.anchorTwo_mem
+
+private noncomputable def metricDataWithPoleOfTwoPoints
+    {A : Set (OnePoint ℂ)} (p s t : OnePoint ℂ)
+    (hp : p ∈ A) (hs : s ∈ A) (ht : t ∈ A)
+    (hst : s ≠ t) (hsp : s ≠ p) (htp : t ≠ p) :
+    SphereHyperbolicMetricData A where
+  pole := p
+  pole_mem := hp
+  anchorOne := (spherePoleChart p).symm s
+  anchorTwo := (spherePoleChart p).symm t
+  anchor_ne := by
+    intro he
+    have hsTarget : s ∈ (spherePoleChart p).target := by
+      rw [spherePoleChart_target]
+      exact hsp
+    have htTarget : t ∈ (spherePoleChart p).target := by
+      rw [spherePoleChart_target]
+      exact htp
+    apply hst
+    rw [← (spherePoleChart p).right_inv hsTarget,
+      ← (spherePoleChart p).right_inv htTarget, he]
+  anchorOne_mem := by
+    change spherePoleChart p ((spherePoleChart p).symm s) ∈ A
+    rw [(spherePoleChart p).right_inv (by
+      rw [spherePoleChart_target]
+      exact hsp)]
+    exact hs
+  anchorTwo_mem := by
+    change spherePoleChart p ((spherePoleChart p).symm t) ∈ A
+    rw [(spherePoleChart p).right_inv (by
+      rw [spherePoleChart_target]
+      exact htp)]
+    exact ht
+
+/-- Inserting any point into the complement supplies metric data whose pole
+is that inserted point. -/
+noncomputable def SphereHyperbolicMetricData.insertAt
+    {A : Set (OnePoint ℂ)} (D : SphereHyperbolicMetricData A)
+    (p : OnePoint ℂ) : SphereHyperbolicMetricData (A ∪ {p}) := by
+  let x := spherePoleChart D.pole D.anchorOne
+  let y := spherePoleChart D.pole D.anchorTwo
+  have hxr : x ≠ D.pole := by
+    rw [← mem_compl_singleton_iff, ← spherePoleChart_target]
+    exact (spherePoleChart D.pole).map_source (by simp)
+  have hyr : y ≠ D.pole := by
+    rw [← mem_compl_singleton_iff, ← spherePoleChart_target]
+    exact (spherePoleChart D.pole).map_source (by simp)
+  have hxy : x ≠ y := by
+    intro he
+    apply D.anchor_ne
+    exact (spherePoleChart D.pole).injOn (by simp) (by simp) he
+  have hxA : x ∈ A := D.anchorOne_mem
+  have hyA : y ∈ A := D.anchorTwo_mem
+  classical
+  by_cases hpr : p = D.pole
+  · exact metricDataWithPoleOfTwoPoints p x y (Or.inr rfl)
+      (Or.inl hxA) (Or.inl hyA) hxy (hpr ▸ hxr) (hpr ▸ hyr)
+  · by_cases hpx : p = x
+    · exact metricDataWithPoleOfTwoPoints p D.pole y (Or.inr rfl)
+        (Or.inl D.pole_mem) (Or.inl hyA) hyr.symm (fun h => hpr h.symm)
+        (hpx ▸ hxy.symm)
+    · exact metricDataWithPoleOfTwoPoints p D.pole x (Or.inr rfl)
+        (Or.inl D.pole_mem) (Or.inl hxA) hxr.symm (fun h => hpr h.symm)
+        (fun h => hpx h.symm)
+
+@[simp] theorem SphereHyperbolicMetricData.insertAt_pole
+    {A : Set (OnePoint ℂ)} (D : SphereHyperbolicMetricData A)
+    (p : OnePoint ℂ) : (D.insertAt p).pole = p := by
+  unfold SphereHyperbolicMetricData.insertAt
+  dsimp only
+  split
+  · rfl
+  · split <;> rfl
+
 /-- Curvature −1 hyperbolic area, computed in one pole chart. -/
 noncomputable def sphereHyperbolicArea
     (A : Set (OnePoint ℂ)) (hA : IsClosed A)
