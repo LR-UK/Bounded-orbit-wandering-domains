@@ -254,6 +254,64 @@ criterion above therefore applies even though K \ F need not be compact
 in S \ F. Add the at-most-6π auxiliary puncture cost. Finite K of at most
 two points is handled directly by the puncture theorem.
 
+### Extension: disjoint accumulation sets of ends
+
+**Theorem.** Let S be a connected, Hausdorff, second-countable Riemann
+surface without boundary. Let K and L be disjoint closed subsets of S.
+Suppose that no Freudenthal end belongs to both the closure of K and the
+closure of L in the end compactification of S. Then there is a finite
+constant C(S,K,L), independent of the open set Ω, such that
+
+    ∫_(L∩Ω) (dA_(Ω\K) - dA_Ω) ≤ C(S,K,L),
+
+whenever the components of Ω are hyperbolic. Both K and L may be
+noncompact. As throughout, this is the integral of the nonnegative
+density difference, not a subtraction of infinite areas.
+
+A concrete equivalent separation condition is that there is a compact
+set B ⊂ S such that no component of S \ B meets both K and L. One may
+enlarge B to a compact smoothly bordered subsurface. To see why the end
+condition supplies B, use an exhaustion by compact smoothly bordered
+subsurfaces with finitely many complementary components. If at every
+stage a complementary component met both sets, the finite-branching
+tree of these components would have a nested infinite branch. It would
+define an end accumulated on by both K and L, a contradiction. Conversely,
+such a compact separator gives every end a neighbourhood missing at
+least one of the sets. The compact-surface case is immediate.
+
+Assign value zero to each exterior component meeting K and value one to
+each meeting L; components meeting neither can be assigned either value.
+After enlarging the compact transition region, smooth interpolation
+inside that region gives
+
+    0 ≤ χ ≤ 1,  χ = 0 near K,  χ = 1 near L,
+    supp(dχ) compact.
+
+For clarity about this interpolation, there are only finitely many
+exterior components. Outside a larger compact subsurface their assigned
+constant values are compatible with the prescribed values on K and L.
+The resulting closed zero and one sets are disjoint; smooth separation
+on the intervening compact region preserves those prescribed values.
+
+Apply the preceding compactly supported differential criterion. If S is
+hyperbolic, put T = supp(Δ_S χ). For nonempty T and K choose
+0 < δ ≤ dist_S(T,K). The explicit bound is
+
+    C(S,K,L) = log coth(δ/2) ∫_S |Δ_S χ| dA_S.
+
+Empty T or K gives zero directly. The Schwarz comparison is needed only
+on T; the integration over the possibly infinite-area set L is justified
+by the smoothly bordered exhaustion already given above. For a
+nonhyperbolic ambient surface, the same auxiliary-puncture reduction
+applies: χ is zero near the selected punctures in K, so its differential
+remains compactly supported on the punctured surface. Add at most 6π.
+
+Thus the effective hypothesis is a compact transition region, rather
+than compactness of either individual set. Separation of their end
+accumulation sets guarantees precisely such a region. No converse about
+finiteness of area gain is asserted: sets sharing an end may still have
+finite gain for other reasons.
+
 ### Closed K and closed L without compactness: counterexample
 
 Take S = Ω = H = {x + iy : y > 0}, with
@@ -272,6 +330,11 @@ Thus even positive hyperbolic separation does not replace all compactness
 or localisation assumptions. A finite set of punctures has finite global
 cost; an unbounded removed set can create the same positive gain along
 infinitely much of the measured region.
+
+This example does not satisfy the end-separation hypothesis: H is
+homeomorphic to the plane and has a single Freudenthal end, accumulated
+on by both K and L. Freudenthal ends must not be confused with individual
+points on a conformal or visual boundary.
 
 ## 4. What must be formalised
 
@@ -303,3 +366,11 @@ https://mtaylor.web.unc.edu/wp-content/uploads/sites/16915/2018/04/unif7.pdf
 
 The area-gain deductions in this note are the argument proposed here,
 not a claim that the cited paper states these two area-gain theorems.
+
+For the standard end-compactification language and separation of closed
+sets of ends by a compact region, see Simone Cecchini, Daniel Räde and
+Rudolf Zeidler, *Nonnegative scalar curvature on manifolds with at least
+two ends*, Journal of Topology 16 (2023):
+https://londmathsoc.onlinelibrary.wiley.com/doi/full/10.1112/topo.12303
+The area estimate and its application to end-separated sets are the
+deductions in this note, not results attributed to that paper.
