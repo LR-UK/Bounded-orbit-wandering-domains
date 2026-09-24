@@ -43,3 +43,9 @@ globs = ["RiemannDynamics.+"]
 
 [[lean_lib]]
 name = "RMT4"
+
+[[lean_lib]]
+name = "EremenkoLyubichConstant"
+
+[[lean_lib]]
+name = "Ray"
