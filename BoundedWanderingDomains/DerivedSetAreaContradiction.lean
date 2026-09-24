@@ -9,7 +9,7 @@ import BoundedWanderingDomains.DerivedSetDiscControl
 /-! # The area contradiction for a singular-set-free cluster set
 
 This is the dynamical assembly step. Normalised Riemann charts and finite
-forward-invariant models recovering the components remain explicit inputs;
+models with finitely many forward exceptions recovering the components remain explicit inputs;
 their construction for entire functions is a separate classical obligation.
 -/
 
@@ -19,7 +19,7 @@ open scoped Topology ENNReal
 namespace AreaDeficit
 open BoundedWanderingDomains
 
-theorem not_disjoint_cluster_singularDerivedSet_of_finite_models
+theorem not_disjoint_cluster_singularDerivedSet_of_finite_models_with_exceptions
     {f : ℂ → ℂ} (hf : Differentiable ℂ f)
     {U : ℕ → Set ℂ} {u : ℕ → ℂ → ℂ} {z : ℕ → ℂ}
     (hU : ∀ n, IsOpen (U n))
@@ -31,28 +31,32 @@ theorem not_disjoint_cluster_singularDerivedSet_of_finite_models
     (hdis : Pairwise (fun n m => Disjoint (U n) (U m)))
     {P : ℕ → Finset ℂ} (hP : Monotone P)
     {a b : ℂ} (hab : a ≠ b) (ha : a ∈ P 0) (hb : b ∈ P 0)
-    (hforward : ∀ j, MapsTo f (↑(P j) : Set ℂ) (↑(P j) : Set ℂ))
+    (Q : Finset ℂ)
+    (hforward : ∀ j, MapsTo f (↑(P j) : Set ℂ) ((↑(P j) : Set ℂ) ∪ (↑Q : Set ℂ)))
     (hcomp : ∀ n, connectedComponentIn
       (closure (⋃ j, (↑(P j) : Set ℂ)))ᶜ (z n) = U n) :
     ¬ Disjoint (sphericalDerivedSet (ComplexDynamics.singularValues f))
       (sphericalClusterSet (fun n => (z n : OnePoint ℂ))) := by
   classical
   intro hsep
-  let S := ComplexDynamics.singularValues f
-  have hS : IsClosed S := ComplexDynamics.isClosed_singularValues f
+  let S₀ := ComplexDynamics.singularValues f
+  let S := S₀ ∪ (↑Q : Set ℂ)
+  have hS : IsClosed S := (ComplexDynamics.isClosed_singularValues f).union Q.finite_toSet.isClosed
   obtain ⟨K, L, hK, hL, hKL, hDK, hCL⟩ :=
     exists_disjoint_compact_sphere_neighborhoods
-      (isCompact_univ.of_isClosed_subset (isClosed_sphericalDerivedSet S) (subset_univ _))
+      (isCompact_univ.of_isClosed_subset (isClosed_sphericalDerivedSet S₀) (subset_univ _))
       (isCompact_sphericalClusterSet _) hsep
-  let ES := {w : ℂ | w ∈ S ∧ (w : OnePoint ℂ) ∉ interior K}
+  let ES := {w : ℂ | w ∈ S₀ ∧ (w : OnePoint ℂ) ∉ interior K}
   have hES : ES.Finite :=
-    finite_planar_outside_spherical_derived_neighbourhood S (interior K) isOpen_interior hDK
-  let E := hES.toFinset
+    finite_planar_outside_spherical_derived_neighbourhood S₀ (interior K) isOpen_interior hDK
+  let E := hES.toFinset ∪ Q
   have hSE : ∀ w ∈ S, (w : OnePoint ℂ) ∈ K ∨ w ∈ E := by
     intro w hw
-    by_cases hwK : (w : OnePoint ℂ) ∈ interior K
-    · exact Or.inl (interior_subset hwK)
-    · exact Or.inr (hES.mem_toFinset.mpr ⟨hw, hwK⟩)
+    rcases hw with hw | hwQ
+    · by_cases hwK : (w : OnePoint ℂ) ∈ interior K
+      · exact Or.inl (interior_subset hwK)
+      · exact Or.inr (Finset.mem_union_left Q (hES.mem_toFinset.mpr ⟨hw, hwK⟩))
+    · exact Or.inr (Finset.mem_union_right hES.toFinset hwQ)
   obtain ⟨C, hC, hgain⟩ := uniform_singular_gain_finite_models hK hL hKL E hS hSE
   let H := ENNReal.ofReal (2 * Real.pi) * C
   have hH : H ≠ ⊤ := ENNReal.mul_ne_top ENNReal.ofReal_ne_top hC
@@ -135,10 +139,10 @@ theorem not_disjoint_cluster_singularDerivedSet_of_finite_models
     intro j
     have hfj : IsCoveringMapOn f ((↑(P j) : Set ℂ) ∪ S)ᶜ :=
       (ComplexDynamics.isCoveringMapOn_compl_singularValues f).mono
-        (compl_subset_compl.mpr subset_union_right)
+        (compl_subset_compl.mpr (subset_union_left.trans subset_union_right))
     apply finite_model_area_bound (P j) ((P j).finite_toSet.isClosed.union hS)
       subset_union_left hab (hP (Nat.zero_le j) ha) (hP (Nat.zero_le j) hb)
-      hf hfj (fun w hw => Or.inl (hforward j hw))
+      hf hfj (fun w hw => (hforward j hw).elim Or.inl (fun h => Or.inr (Or.inr h)))
       (hDo N).measurableSet hWo.measurableSet hBW hiW himage
     · intro w hw
       have hfw := (himage ⟨w, hw, rfl⟩).1
@@ -162,4 +166,4 @@ theorem not_disjoint_cluster_singularDerivedSet_of_finite_models
 
 end AreaDeficit
 
-#print axioms AreaDeficit.not_disjoint_cluster_singularDerivedSet_of_finite_models
+#print axioms AreaDeficit.not_disjoint_cluster_singularDerivedSet_of_finite_models_with_exceptions
