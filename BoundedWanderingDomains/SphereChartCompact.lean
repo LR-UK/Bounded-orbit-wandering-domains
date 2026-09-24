@@ -55,6 +55,15 @@ noncomputable def spherePoleChart (p : OnePoint ℂ) :
   | infty => rfl
   | coe a => exact RiemannSphere.omittedPointParam_target a
 
+/-- Closed omitted sets in a sphere domain remain closed in a pole chart. -/
+theorem closed_sphere_set_in_pole_chart {A : Set (OnePoint ℂ)}
+    (hA : IsClosed A) (p : OnePoint ℂ) :
+    IsClosed ((spherePoleChart p) ⁻¹' A) := by
+  have hcont : Continuous (spherePoleChart p) :=
+    continuousOn_univ.mp (by simpa [spherePoleChart_source] using
+      (spherePoleChart p).continuousOn)
+  exact hA.preimage hcont
+
 /-- A compact sphere set avoiding the pole has compact planar coordinates. -/
 theorem compact_sphere_set_in_pole_chart {K : Set (OnePoint ℂ)}
     (hK : IsCompact K) {p : OnePoint ℂ} (hp : p ∉ K) :
