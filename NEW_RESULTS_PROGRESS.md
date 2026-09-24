@@ -70,6 +70,18 @@ registration on this branch.
   planar sets, and applies the uniform planar area bound in that chart.
   This does **not** yet identify the coordinate integral with an intrinsically
   defined area integral on a sphere domain.
+- `SphericalEscape.lean`: an unbounded complex sequence has a strictly
+  increasing subsequence converging to infinity in the sphere.
+- `SphericalSingularUnbounded.lean`: applies the registered unconditional
+  bounded-orbit theorem to settle the **unbounded singular-set branch** of
+  the requested derived-set theorem. Its set parameter is any unbounded
+  planar set, so it can be instantiated with the finite singular set when
+  that set has been defined.
+- `FiniteExceptionalComponents.lean`: any finite set meets only finitely
+  many members of a pairwise disjoint sequence of components.
+- `SphereCompactSeparation.lean`: disjoint compact spherical sets admit
+  disjoint compact neighbourhoods, each containing the original in its
+  interior.
 
 These modules compile with the pinned Lean toolchain and mathlib.
 Their printed axiom lists contain only `propext`, `Classical.choice`, and
@@ -86,7 +98,8 @@ Their printed axiom lists contain only `propext`, `Classical.choice`, and
    all hyperbolic sphere domains. Choose a sphere chart pole outside both
    fixed compact sets, prove Möbius-coordinate invariance of the hyperbolic
    area integral, and handle an old domain containing the chart pole.
-3. Connect both area bounds to the dynamical iteration argument. In
+3. Connect both area bounds to the **bounded-singular-set** dynamical
+   iteration argument. In
    particular formalise the relevant Fatou component and singular-set facts,
    covering dynamics, and prove that a wandering point orbit eventually
    enters every spherical neighbourhood of the derived singular set.
@@ -108,6 +121,10 @@ PATH=/tmp/lean-4.35.0-rc2-linux/bin:$PATH LEAN_NUM_THREADS=4 lake build \
   BoundedWanderingDomains.AreaAnchorFree \
   BoundedWanderingDomains.SpherePole \
   BoundedWanderingDomains.SphereChartCompact \
+  BoundedWanderingDomains.SphericalEscape \
+  BoundedWanderingDomains.SphericalSingularUnbounded \
+  BoundedWanderingDomains.FiniteExceptionalComponents \
+  BoundedWanderingDomains.SphereCompactSeparation \
   BoundedWanderingDomains.SphericalDerivedSet
 ```
 
