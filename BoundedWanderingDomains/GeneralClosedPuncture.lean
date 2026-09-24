@@ -63,6 +63,46 @@ theorem exists_finite_exhaustion_closed (A : Set ℂ) (hA : IsClosed A)
       exact union_subset hTA (by simpa [Set.insert_subset_iff] using And.intro ha hb)
       exact hA
 
+/-- A closed planar set, including the empty set, is the closure of a
+countable increasing union of finite subsets of itself. -/
+theorem exists_finite_exhaustion_closed_unanchored (K : Set ℂ) (hK : IsClosed K) :
+    ∃ Q : ℕ → Finset ℂ, Monotone Q ∧
+      K = closure (⋃ n, (↑(Q n) : Set ℂ)) := by
+  classical
+  by_cases hKn : K.Nonempty
+  · obtain ⟨T, hTK, hTc, hKT⟩ :=
+      (TopologicalSpace.IsSeparable.of_separableSpace K).exists_countable_dense_subset
+    have hTne : T.Nonempty := by
+      by_contra h
+      have hT0 : T = ∅ := not_nonempty_iff_eq_empty.mp h
+      obtain ⟨z, hz⟩ := hKn
+      have hh := hKT hz
+      simp [hT0] at hh
+    obtain ⟨f, hf⟩ := hTc.exists_eq_range hTne
+    let Q : ℕ → Finset ℂ := fun n => (Finset.range n).image f
+    refine ⟨Q, ?_, ?_⟩
+    · intro i j hij
+      exact Finset.image_subset_image (Finset.range_mono hij)
+    · have hQT : (⋃ n, (↑(Q n) : Set ℂ)) = T := by
+        ext z
+        constructor
+        · intro hz
+          obtain ⟨n, hn⟩ := mem_iUnion.mp hz
+          obtain ⟨i, _, rfl⟩ := Finset.mem_image.mp hn
+          exact hf.symm ▸ mem_range_self i
+        · intro hz
+          rw [hf] at hz
+          obtain ⟨i, rfl⟩ := hz
+          exact mem_iUnion.mpr ⟨i + 1,
+            Finset.mem_image.mpr ⟨i, Finset.mem_range.mpr (Nat.lt_succ_self i), rfl⟩⟩
+      rw [hQT]
+      exact Set.Subset.antisymm hKT (closure_minimal hTK hK)
+  · have hK0 : K = ∅ := not_nonempty_iff_eq_empty.mp hKn
+    refine ⟨fun _ => ∅, ?_, ?_⟩
+    · intro i j hij
+      exact Finset.empty_subset _
+    · simp [hK0]
+
 /-- Removing a point increases the normalised hyperbolic area by at most
 one, integrated over the smaller domain. Thus the curvature −1 area gain
 is at most `2π`. This formulation applies to arbitrary closed planar

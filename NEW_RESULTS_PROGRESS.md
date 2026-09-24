@@ -28,26 +28,41 @@ registration on this branch.
   point costs at most one unit of normalised area (at most 2π in curvature −1
   area). The integral is over the *new* domain, so there is no subtraction of
   infinite total areas.
+- `UnconditionalPointRemoval.lean`: **closes that condition** using the
+  existing theorems `exists_disc_covering_finitely_punctured_plane` and
+  `IsHolomorphicDiscCovering.total_area`. Removing one point costs at most
+  2π; removing a finite set `E` costs at most `2π * E.card` on arbitrary
+  hyperbolic plane domains (those with at least two omitted planar points).
+- `GeneralMetricDeficit.lean`: the logarithm of the ratio of two intrinsic
+  hyperbolic densities is nonnegative and its Laplacian is the difference of
+  squared densities. A direct cutoff bound from these identities is checked,
+  provided a bound on the logarithmic gain is supplied. This does not depend
+  on the total-area formula.
+- `AnchoredCompactComparison.lean`: Schottky confinement supplies a
+  logarithmic density comparison uniform over *both* sets of finite
+  punctures, provided the old set contains two fixed omitted values.
+- `AnchoredCompactArea.lean`: a smooth cutoff and Fatou's lemma give an
+  unconditional **finite** area-gain bound for two disjoint compact planar
+  sets. The bound is chosen before the old closed obstacle and applies to
+  every obstacle containing the same two fixed omitted values. It includes
+  existence of the separating cutoff, rather than assuming one as input.
 
-All six modules compile together with the pinned Lean toolchain and mathlib.
+These modules compile with the pinned Lean toolchain and mathlib.
 Their printed axiom lists contain only `propext`, `Classical.choice`, and
 `Quot.sound`; there are no `sorry`, `admit`, or declared axioms in these files.
 
 ## Essential missing work
 
-1. `FinitePunctureMetricInput` is an **uninstantiated structure** in the base
-   repository. Its fields include the finite-puncture density, curvature,
-   Schwarz extremal property, and total-area formula. Although the new
-   point-removal result is a valid Lean theorem from these fields, the
-   geometric point-removal theorem is **not yet unconditional**. Construct
-   these fields from the uniformisation development and prove the finite
-   total-area formula to close this gap. Do not present the result as the
-   unconditional 2π theorem before this is done.
-2. Formalise the compact-removal area estimate for arbitrary hyperbolic
-   sphere domains, uniformly over the domain and away from the removed compact
-   set. The existing local metric comparison lemmas do not give this theorem
-   with the required quantifier order. Check the behaviour at the point at
-   infinity when using plane charts.
+1. Transfer the proved plane point-removal estimate to *sphere* domains
+   through a suitable Möbius chart; prove conformal invariance of the
+   integral and handle the chart pole correctly. The plane statement is
+   unconditional, whereas the arbitrary sphere statement has not been
+   checked.
+2. Extend the proved compact-removal bound from closed planar obstacles
+   containing two *fixed* omitted values to all hyperbolic sphere domains.
+   The existing finite-point removal bound can pay for inserting two fixed
+   anchors into the old obstacle; this transfer and the Möbius-coordinate
+   invariance of the hyperbolic area integral are not yet formalised.
 3. Connect both area bounds to the dynamical iteration argument. In
    particular formalise the relevant Fatou component and singular-set facts,
    covering dynamics, and spherical accumulation, and prove the derived-set
@@ -61,7 +76,9 @@ Build in this branch:
 
 ```sh
 PATH=/tmp/lean-4.35.0-rc2-linux/bin:$PATH LEAN_NUM_THREADS=4 lake build \
-  BoundedWanderingDomains.GeneralClosedPuncture \
+  BoundedWanderingDomains.UnconditionalPointRemoval \
+  BoundedWanderingDomains.GeneralMetricDeficit \
+  BoundedWanderingDomains.AnchoredCompactArea \
   BoundedWanderingDomains.SphericalDerivedSet
 ```
 
