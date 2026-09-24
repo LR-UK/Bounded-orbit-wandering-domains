@@ -20,6 +20,22 @@ open scoped ENNReal Topology
 
 namespace AreaDeficit
 
+/-- The extremal characterisation identifies any valid finite-puncture
+input with the intrinsic density. This follows by applying recovery to a
+constant exhaustion. -/
+theorem FinitePunctureMetricInput.density_eq_closedComplement
+    (G : FinitePunctureMetricInput) (P : Finset ℂ)
+    {a b z : ℂ} (hab : a ≠ b) (ha : a ∈ P) (hb : b ∈ P) (hz : z ∉ P) :
+    G.density P z = closedComplementDensity (↑P : Set ℂ)
+      P.finite_toSet.isClosed hab ha hb z := by
+  have ht := G.density_tendsto_closedComplement (P := fun _ => P)
+    (fun _ _ _ => Finset.Subset.refl P) hab ha hb
+    (by simpa only [iUnion_const, P.finite_toSet.isClosed.closure_eq, Finset.mem_coe] using hz)
+  have ht' : Filter.Tendsto (fun _ : ℕ => G.density P z) Filter.atTop
+      (𝓝 (closedComplementDensity (↑P : Set ℂ) P.finite_toSet.isClosed hab ha hb z)) := by
+    simpa only [iUnion_const, P.finite_toSet.isClosed.closure_eq] using ht
+  exact tendsto_nhds_unique tendsto_const_nhds ht'
+
 private theorem finite_complement_connectedComponentIn
     (P : Finset ℂ) {z : ℂ} (hz : z ∉ P) :
     connectedComponentIn ((↑P : Set ℂ)ᶜ) z = ((↑P : Set ℂ)ᶜ) := by
