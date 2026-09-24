@@ -1,78 +1,46 @@
-# Verification of the local point-orbit update
+# Verification of completed formalisation — 24 September 2026
 
-This file records checks of project version 1.1.0, prepared 23 September 2026.
-The submission uses Lean 4.35.0-rc2 and Mathlib
-`065356127b1dc0016f66b7283ce0ce2c4055aa55`; the toolchain and dependency pins
-are unchanged from version 1.0.0. The previous submission remains separate.
+The combined Lean build passed: **4,459 Lake jobs**. The three new results,
+the local theorem without simple connectivity, and the existing bounded-orbit
+theorem are checked together. Toolchain: Lean 4.35.0-rc2; Mathlib commit
+`065356127b1dc0016f66b7283ce0ce2c4055aa55`.
 
-The build and diagnostic audit **passed**. The authoritative local report is
-`verification/submission.json`; the final Lake output is `verification/build.log`.
-
-| Check | Actual result |
+| Check | Result |
 | --- | --- |
-| Submission, Challenge, supporting library and covering entry point | Build passed; 4,187 Lake jobs |
-| Local modules in the submission dependency graph | 397 compiled |
-| Public theorem types | 2 matched in independent environments |
+| Full supporting library, Submission, Challenge, CoveringSolution, NewResults | Passed |
+| Final declarations audited transitively | 7; only propext, Classical.choice, Quot.sound |
+| Independent Challenge/Solution theorem types | 2 matched |
 | Supporting definition types and bodies | 7 matched |
-| Transitive axiom reports | 51 checked; only the three standard axioms |
-| Main project Lean source scan | 142 files; no extra axioms, native_decide or proof holes outside Challenge |
-| Challenge | 135 lines; two intentional placeholders; Mathlib-only direct imports |
-| Unexpected build warnings | None |
-| Palomar metadata contract | Passed |
-| Palomar Comparator configuration validation | Passed |
-| Attribution audit | Passed |
-| Official Comparator, NanoDa and con-ron replay | Pending for this version; required CI check supplied |
+| Main project and imported EL/Ray source scan | 283 Lean files; no holes or extra axioms outside Challenge |
+| Challenge placeholders | Exactly 2, intentional; not imported by Solution |
+| Metadata contract | Passed |
+| Existing attribution packaging check | Passed; EL/Ray provenance also retained separately |
+| Official Comparator and independent-kernel replay | Not run for this snapshot |
 
-The new local point-orbit theorem and both final public theorems use only
-`propext`, `Classical.choice` and `Quot.sound`. The local statement now assumes
-only point-orbit containment in K; eventual injectivity is derived. Its exact
-scope is described in `LOCAL_THEOREM_UPDATE.md` and `Challenge.lean`.
+The machine-readable report is `verification/completion.json`; corresponding
+build, declaration-export and axiom logs have the `completion-` prefix.
 
-A comparison with version 1.0.0 confirms that the entire-function theorem's
-elaborated type and all seven retained definition types/bodies are unchanged.
-The new local type differs as intended. All dependency sources, licence texts
-and third-party notices are unchanged. These checks are recorded in
-`verification/local-orbit-regression.json`. The main Lean source changes are
-also available as `verification/local-orbit-source.patch`.
+There are 83 dependency deprecation/linter warnings in the build, in addition
+to the two expected Challenge warnings. These do not represent proof holes.
+The historical `verify_submission.py` demands a warning-free dependency build
+and is not claimed to pass for this snapshot. It remains unchanged.
+`verify_completion.py` records all warnings explicitly, while treating build
+errors, proof holes, additional axioms and declaration mismatches as failures.
 
-## Checks and their scope
+Reproduce:
 
-- `scripts/verify_submission.py` builds the submitted development, compares
-  the two theorem types and seven supporting definition types/bodies in
-  separate environments, scans project proof source, and checks transitive
-  axiom reports. Its expression comparison is diagnostic, not the official
-  Comparator. Only binder display names and nonsemantic metadata are erased.
-- `scripts/verify_metadata.py` runs the unmodified mechanical metadata contract
-  from PalomarSubmission commit `e48a86d0495356b5131a92c9406aa6e27cf99e56`.
-- The current comparator.json passes that verifier's `load_comparator_config`
-  validation. Configuration validation does not run Comparator.
-- `scripts/audit_attribution.py` checks included licence texts, retained source
-  headers and attribution records. It is a packaging check.
-- `scripts/verify-comparator.sh` runs Palomar's bundled Comparator and the
-  NanoDa and con-ron kernels through the protected configuration.
+```sh
+LEAN_NUM_THREADS=4 python3 scripts/verify_completion.py
+python3 scripts/verify_metadata.py
+python3 scripts/audit_attribution.py
+```
 
-The version 1.0.0 Comparator attempt failed before comparison because this
-environment does not allow bubblewrap to create its user-namespace mapping
-(`Operation not permitted`). The original log is retained under
-`history/version-1.0.0/comparator.log`. It was not rerun for version 1.1.0 in
-this same environment. No successful official Comparator or independent-kernel
-replay is claimed for the new version. The supplied GitHub Actions workflow
-runs that check on a Linux runner with bubblewrap; this remains a required
-gate for the final submission snapshot. No sandbox check is disabled.
+All seven final axiom reports use only Lean's three standard axioms. The source
+scan includes the project, RiemannDynamics, RMT4, EremenkoLyubichConstant and Ray.
+Transitive axiom checking also covers imported proof dependencies.
 
-## Reproduce
-
-Run the commands in README.md from the repository root. Cache retrieval walks
-local proof imports before requesting the required Mathlib caches. All active
-path dependencies are contained in this package; external Git dependencies
-are pinned in lake-manifest.json.
-
-Challenge has two deliberate theorem placeholders and imports only Mathlib.
-Solution does not import Challenge. No independent human review, public
-submission or registry acceptance of this version is claimed.
-
-The archive's verification/package-sources.json records SHA-256 hashes of all
-included files except itself. It detects changes to the prepared package;
-it is not a public Git commit or a registry verification result. Historical
-logs and the earlier toolchain-port report describe their recorded baselines,
-not an additional check of version 1.1.0.
+The three new results are proved but are not yet included in the independent
+Palomar Challenge/comparator configuration. No official registry replay,
+publication, acceptance or independent human review is claimed. The earlier
+verification narrative is preserved in `history/verification-before-singular-limits.md`;
+older JSON/log reports describe their historical snapshots, not this update.

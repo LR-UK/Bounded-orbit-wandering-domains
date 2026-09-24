@@ -2,7 +2,7 @@
   "result": "passed",
   "validator_repository": "https://github.com/PalomarRegistry/PalomarSubmission",
   "validator_commit": "e48a86d0495356b5131a92c9406aa6e27cf99e56",
-  "metadata_sha256": "50a052e46082234c4214c1e609268e71bf6ebe2d855a643bd376ef2660c6881c",
+  "metadata_sha256": "b15f03d34a1dca27426f6ac6e96814c47550f1128eebef8486d89951384c345a",
   "provenance": {
     "result_origin": "original",
     "repository_role": "substantive-development",
@@ -13,7 +13,7 @@
     ],
     "mathematical_sources": [
       {
-        "title": "Bounded-orbit wandering domains: working proof and manuscript",
+        "title": "Absence of bounded-orbit wandering domains",
         "authors": [
           {
             "name": "Nikolai Prochorov"
@@ -36,8 +36,8 @@
             "role": "AI-assisted Lean proof construction, compatibility work and verification"
           }
         ],
-        "location": "Working manuscript and formalisation, September 2026",
-        "note": "The manuscript is being drafted separately by the authors. The precise formalised claims are the two declarations in Challenge.lean; their local dynamical hypotheses are explicit. No independent human review or registry acceptance is claimed.",
+        "location": "https://github.com/LR-UK/Bounded-orbit-wandering-domains/tree/main/paper/Absence_of_bounded_orbit_wandering_domains-1.pdf",
+        "note": "The manuscript was drafted separately by the authors. The precise formalised claims are the declarations in Solution.lean and NewResults.lean; only the two in Challenge.lean are independently compared. No independent human review or registry acceptance is claimed.",
         "type": "original-proof"
       },
       {
@@ -145,6 +145,11 @@
         "identifier": "https://github.com/will1491/RMT4/tree/7e092cd5e347a1ee01afb165dd6ab043082e0f4d",
         "relationship": "adapts",
         "note": "The cindex and has_sqrt modules are included with their original attribution and Apache 2.0 licence; compatibility adaptations are recorded."
+      },
+      {
+        "identifier": "EremenkoLyubichConstant",
+        "relationship": "builds-on",
+        "note": "User-supplied streamlined snapshot; tract simple connectivity and logarithmic transform. See RECOVERY_PORT.md and retained licences."
       }
     ]
   },

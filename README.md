@@ -2,15 +2,15 @@
 
 We prove that transcendental entire functions do not have bounded-orbit wandering domains.
 
-This answers a major open question in the field. The proof builds upon Zihao Ye's new proof of Sullivan's No Wandering Domains theorem, and was obtained with assistance by generative AI. We also formalise a stronger theorem, which shows that locally defined holomorphic functions do not have orbits of simply connected wandering domains.
+This answers a major open question in the field. The proof builds upon Zihao Ye's new proof of Sullivan's No Wandering Domains theorem, and was obtained with assistance by generative AI. We also formalise a stronger theorem, which shows that locally defined holomorphic functions do not have wandering trapped-component orbits with one point orbit compactly contained in the iteration domain.
 
 This is an unconditional formalisation, prepared with the use of Generative AI for submission to Palomar. In order to achieve an unconditional formalisation, a number of classical results had to be newly (auto-)formalised, including results concerning the hyperbolic metric for a finitely punctured sphere, and its area.  
 
 The accompanying [paper (PDF)](paper/Absence_of_bounded_orbit_wandering_domains-1.pdf)
 contains the mathematical statements and proofs.
 
-Both public results are in [Solution.lean](Solution.lean). Their independent
-statements are in [Challenge.lean](Challenge.lean), using only Mathlib imports. The statements of the challenge theorems have been checked by the authors.
+The two bounded-orbit results are in [Solution.lean](Solution.lean). Their independent
+statements are in [Challenge.lean](Challenge.lean), using only Mathlib imports. The local statement has been strengthened by removing simple connectivity in this working branch.
 
 ## Exact statements
 
@@ -19,16 +19,21 @@ statements are in [Challenge.lean](Challenge.lean), using only Mathlib imports. 
    of the union of the components is not assumed. Simple connectivity and
    eventual injectivity are derived for auxiliary trapped components.
 2. **Local functions.** The function is analytic near the compact closure of
-   an open set V and has no constant germ there. The relevant simply connected
-   trapped components lie in one compact subset of V and satisfy eventual
-   injectivity on each fixed intrinsic disc. Such a component orbit cannot
-   be pairwise disjoint. These dynamical hypotheses remain explicit.
+   an open set V and has no constant germ there. Only one point orbit must
+   stay in a compact subset of V. The actual trapped-component orbit cannot
+   be pairwise disjoint. Simple connectivity, whole-component confinement
+   and eventual injectivity are not assumptions.
 
 
 The definition of the Fatou set, using normality, uses subsequential locally uniform convergence of sphere-valued iterates into the one-point compactification of ℂ. 
 Transcendental entire means complex differentiability everywhere and inequality to every complex polynomial.
 
-The eight short supporting definitions are included in the comparison.
+The seven short supporting definitions are included in the comparison.
+
+The three additional proved results are exposed by [NewResults.lean](NewResults.lean):
+uniform compact-deletion area gain on the sphere, the 2π-per-puncture bound,
+and locally uniform derived singular accumulation for entire wandering components.
+See [NEW_RESULTS_PROGRESS.md](NEW_RESULTS_PROGRESS.md) for precise names and scope.
 
 ## Build and verification
 
@@ -37,7 +42,8 @@ The toolchain is `leanprover/lean4:v4.35.0-rc2`. Mathlib is pinned to
 
 ```sh
 python3 scripts/fetch_cache.py
-python3 scripts/verify_submission.py
+lake build BoundedWanderingDomains Submission Challenge CoveringSolution NewResults
+python3 scripts/verify_completion.py
 python3 scripts/verify_metadata.py
 python3 scripts/audit_attribution.py
 ./scripts/verify-comparator.sh
@@ -57,6 +63,7 @@ Solution's dependency closure.
 - `BoundedWanderingDomains/`: analytic, dynamical and area arguments.
 - `RiemannDynamics/`: attributed uniformisation port and the final bridge.
 - `RMT4/`: attributed supporting analytic source.
+- `EremenkoLyubichConstant/` and `Ray/`: attributed tract-theorem dependency.
 - `dependencies/`: four contained source dependencies and vendored Schoenflies.
 - `verification/`: reproducible audit scripts' outputs and supporting exporters.
 - `history/`: clearly separated earlier-stage documents and logs.

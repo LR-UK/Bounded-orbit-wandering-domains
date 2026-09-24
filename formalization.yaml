@@ -8,7 +8,7 @@ project:
     The proof builds upon Zihao Ye's new proof of Sullivan's No Wandering Domains theorem, and
     was obtained with assistance by generative AI. 
     We also formalise a stronger theorem, which shows that locally defined holomorphic functions
-    do not have orbits of simply connected wandering domains.
+    do not have wandering trapped-component orbits with one compactly contained point orbit.
     The formalisation includes a number of classical results that were
     implemented as auxiliary results, including results concerning the hyperbolic metric
     for a finitely punctured sphere, and its area.
@@ -44,7 +44,7 @@ sources:
     role: AI-assisted Lean proof construction, compatibility work and verification
   location: "https://github.com/LR-UK/Bounded-orbit-wandering-domains/tree/main/paper/Absence_of_bounded_orbit_wandering_domains-1.pdf"
   note: The manuscript was drafted separately by the authors. The precise formalised claims are the
-    two declarations in Challenge.lean; their local dynamical hypotheses are explicit. No independent
+    declarations in Solution.lean and NewResults.lean; only the two in Challenge.lean are independently compared. No independent
     human review or registry acceptance is claimed.
 - title: A new proof of no-wandering domain theorems without quasiconformal techniques
   authors:
@@ -149,15 +149,19 @@ related_formalizations:
   relationship: adapts
   note: The cindex and has_sqrt modules are included with their original attribution and Apache 2.0 licence;
     compatibility adaptations are recorded.
+- title: Eremenko–Lyubich constant project
+  id: EremenkoLyubichConstant
+  relationship: builds-on
+  note: User-supplied streamlined snapshot; tract simple connectivity and logarithmic transform. See RECOVERY_PORT.md and retained licences.
 status:
-  scope: The entire-function theorem rules out a pairwise disjoint forward orbit of actual Fatou components
-    when one point in the initial component has a bounded forward orbit. No boundedness of the union of
-    Fatou components is assumed. Simple connectivity and eventual intrinsic-disc injectivity are derived
-    for auxiliary trapped components in the entire proof. They remain explicit hypotheses only in the
-    local theorem, alongside compact containment in an analytic neighbourhood. The former classical hyperbolic
-    metric input is now proved from formalised uniformisation, covering theory, cusp estimates, Green's
-    identity and the total-area formula. The derived-singular-set statement is not included. Challenge.lean
-    has two intentional theorem holes and is not imported by Solution.
+  scope: >-
+    The bounded-orbit theorem assumes one bounded point orbit in an entire Fatou
+    component. The local theorem assumes one point orbit compactly contained in
+    an analytic iteration domain; simple connectivity and injectivity are not
+    hypotheses. NewResults also proves uniform compact-deletion area gain on the
+    sphere, the 2*pi-per-puncture bound, and a locally uniform subsequence on every
+    entire wandering component converging to a derived spherical singular value.
+    The two independent Challenge placeholders are not imported by Solution.
   sorry_count: 0
   sorry_in_definitions: 0
   axioms:
@@ -174,6 +178,27 @@ status:
     - Quot.sound
   - declaration: BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire
     file: Solution.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - declaration: AreaDeficit.uniform_compact_gain_sphere
+    file: BoundedWanderingDomains/SphereCompactRemoval.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - declaration: AreaDeficit.sphere_finite_puncture_gain_le_two_pi_mul_card
+    file: BoundedWanderingDomains/SphereFiniteRemoval.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - declaration: BoundedWanderingDomains.wandering_orbit_locallyUniform_spherical_singular_derivedSet
+    file: BoundedWanderingDomains/LocallyUniformSingularLimits.lean
     sorry_count: 0
     axioms:
     - propext
@@ -201,13 +226,15 @@ automation:
     and submission files. Library contributions are credited separately; a successful kernel check is
     not independent mathematical review.
 fidelity:
-  divergences: There is no remaining metric-existence or area-formula hypothesis. Curvature is minus one
-    and area is divided by 2*pi. The local theorem treats total functions on C required analytic near
-    closure(V); its simply connected trapped-component orbit lies in one compact subset of V and satisfies
-    radius-dependent eventual injectivity. The entire theorem assumes only one bounded point orbit and
-    derives the auxiliary properties needed for its proof. Fatou normality is formulated by locally uniform
-    subsequential convergence into the one-point compactification of C, with its compact Hausdorff uniformity;
-    the map itself is never evaluated at infinity. The short supporting definitions are compared explicitly.
+  divergences: >-
+    Covering existence and the area formula are proved. New sphere area bounds
+    use curvature minus one without dividing by 2*pi. The local theorem concerns
+    plane maps analytic near compact closure(V), with one compactly contained
+    point orbit; no simple connectivity is assumed. Singular limits are on the
+    sphere, including infinity. No meromorphic extension or positive-area-set
+    theorem is claimed. Only the two bounded-orbit theorems are independently
+    compared by the current Challenge configuration.
+
 review:
   status: self-assessed
   reviewers: []
@@ -218,11 +245,11 @@ review:
 alignment:
   namespace: BoundedWanderingDomains
   statements:
-  - source: Local absence theorem with eventual intrinsic-disc injectivity
+  - source: Local absence theorem without simple connectivity
     lean: BoundedWanderingDomains.no_local_bounded_wandering_domains
     module: Solution
     status: proved
-    note: Analyticity only near closure(V); compactly contained trapped-component orbit.
+    note: Analyticity near closure(V); one compactly contained point orbit.
   - source: Absence of a wandering Fatou component containing a bounded point orbit
     lean: BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire
     module: Solution

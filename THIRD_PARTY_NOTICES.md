@@ -189,3 +189,14 @@ It is development tooling and is not part of the Lean proof's assumptions.
 The Comparator runner is adapted from PalomarTemplate at the commit recorded
 in its header; the template is Apache-2.0 licensed. The local adaptation limits
 Mathlib cache retrieval to the submitted modules' imported dependencies.
+
+## Eremenko–Lyubich constant project and additional Ray modules
+
+The September 2026 singular-limit proof imports the user-supplied streamlined
+Eremenko–Lyubich constant project, principally its tract simple-connectivity
+theorem. Original source headers, THIRD_PARTY_NOTICES and Ray licence are
+retained under `EremenkoLyubichConstant/`. Exact archive provenance, the imported
+source closure and compatibility changes are recorded in
+`EremenkoLyubichConstant/RECOVERY_PORT.md`. The additional `Ray/` modules retain
+Geoffrey Irving's original attribution. Their internal one-dimensional namespace
+was renamed to avoid a collision with the independently vendored sphere atlas.

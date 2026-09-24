@@ -1,6 +1,6 @@
 name = "area_deficit"
 version = "1.1.0"
-defaultTargets = ["Submission", "Challenge"]
+defaultTargets = ["Submission", "Challenge", "NewResults"]
 
 [[require]]
 name = "complexApproximation"
@@ -49,3 +49,6 @@ name = "EremenkoLyubichConstant"
 
 [[lean_lib]]
 name = "Ray"
+
+[[lean_lib]]
+name = "NewResults"

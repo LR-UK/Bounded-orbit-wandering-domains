@@ -3,7 +3,7 @@ import BoundedWanderingDomains.EntireFatouBridge
 import BoundedWanderingDomains.TrappedComponentCovering
 import BoundedWanderingDomains.TrappedSimpleConnectivity
 import BoundedWanderingDomains.BoundedPointWandering
-import BoundedWanderingDomains.LocalBoundedPoint
+import BoundedWanderingDomains.LocalBoundedPointGeneral
 
 /-! Both dynamical theorems with only disc-covering existence and its area
 formula as classical input. The local theorem requires only one compactly contained point orbit. -/
@@ -46,15 +46,14 @@ theorem no_local_bounded_wandering_domains_of_coveringsAndArea
     (hK : IsCompact K) (hKV : K ⊆ V)
     (hz : z ∈ trappedInterior f V)
     (hU : ∀ n, U n = connectedComponentIn (trappedInterior f V) (f^[n] z))
-    (hsc : ∀ n, IsSimplyConnected (U n))
     (hbounded : ∀ n, f^[n] z ∈ K) :
     ¬ Pairwise (fun n m : ℕ => Disjoint (U n) (U m)) := by
   obtain ⟨G⟩ := covering_metric_input_exists hcover
   intro hdisj
   have hi := AreaDeficit.trapped_interior_forward (AreaDeficit.analytic_locally_open
     (hf.mono subset_closure) (fun x hx => hn x (subset_closure hx)))
-  exact G.no_wandering_local_orbit_of_compact_point hV hVc hf hn hK hKV
+  exact G.no_wandering_local_orbit_of_compact_point_general hV hVc hf hn hK hKV
     (fun n => hi.iterate n hz) hU (fun n => by simp [iterate_succ_apply'])
-    hsc hbounded hdisj
+    hbounded hdisj
 
 end BoundedWanderingDomains

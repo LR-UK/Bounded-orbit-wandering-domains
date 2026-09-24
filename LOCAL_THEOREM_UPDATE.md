@@ -1,81 +1,36 @@
-# Local theorem update — project version 1.1.0
+# Local theorem: simple connectivity removed
 
-The public theorem `BoundedWanderingDomains.no_local_bounded_wandering_domains`
-has been strengthened in both `Challenge.lean` and `Solution.lean`.
+`BoundedWanderingDomains.no_local_bounded_wandering_domains`, in both the
+independent Challenge and proved Solution, assumes only one compactly contained
+point orbit. It has no simple-connectivity or injectivity hypothesis.
 
-| Hypothesis | Version 1.0.0 | Version 1.1.0 |
-| --- | --- | --- |
-| Compact containment in V | Every component U n is contained in K | Only f^[n] z belongs to K |
-| Eventual injectivity on intrinsic discs | Assumed | Proved |
-| Simple connectivity of U n | Assumed | Assumed, as in the paper's local theorem |
-| Classical hyperbolic metric facts | Proved | Proved |
-
-The new boundedness hypothesis is exactly:
-
-```lean
-(hbounded : ∀ n, f^[n] z ∈ K)
-```
-
-Together with `IsCompact K` and `K ⊆ V`, this says that one forward point orbit
-is compactly contained in V. It imposes no common compact subset of V on the
-whole component orbit. There is no injectivity hypothesis in the public local
-theorem. The entire-function theorem has the same statement and proof as before.
+The function is analytic near the compact closure of an open planar set V and
+has no constant germ there. The U_n are the actual components of the interior
+of the set trapped in V, through f^[n](z). If all these marked points lie in a
+fixed compact K contained in V, the U_n cannot be pairwise disjoint.
 
 ## Proof
 
-The new module `BoundedWanderingDomains/LocalBoundedPoint.lean` assembles the
-existing analytic ingredients for the local setting:
+`LocalBoundedPointGeneral.lean` assembles the following argument.
 
-1. Choose normalised Riemann charts in the simply connected components.
-2. Choose a positive closed thickening L of the compact orbit set K, with L
-   still contained in V. This L is fixed independently of intrinsic radius.
-3. In a hypothetical wandering orbit, every fixed intrinsic disc shrinks
-   about its marked point, so these discs eventually lie in L.
-4. Local power coordinates near K, together with simple connectivity and
-   eventual avoidance of finitely many branch values, give eventual
-   injectivity on each fixed intrinsic disc.
-5. Apply the existing area contradiction for eventually compact intrinsic
-   discs, with the classical metric input supplied by the proved covering and
-   total-area theorems.
+1. Choose normalised holomorphic disc coverings of the components.
+2. Under the wandering assumption, images of each fixed closed subdisc shrink
+   around their marked points. One fixed compact thickening of K confines them.
+3. Fill the images of these subdiscs. Local openness implies that filling
+   commutes with forward mapping in the required inclusion direction. The fills
+   stay trapped and hence lie in the same components. This is the Baker step.
+4. Simply connected neighbourhoods of the filled images, together with covering
+   theory, prove eventual embedding of each fixed covering disc.
+5. Local power coordinates and avoidance of finitely many branch values give
+   eventual injectivity of f on these discs.
+6. The finite-puncture hyperbolic area contradiction applies. Covering existence,
+   metric properties, and the area formula are all proved.
 
-The times in steps 3 and 4 may depend on the intrinsic radius. This is enough
-because the area bound uses the same compact L for every radius.
+The relevant times may depend on the disc radius; the compact thickening and
+area bound do not. Whole components need not lie in K, and need not be simply
+connected. The older simply connected helper theorem remains available.
 
-The now-unused injectivity definition has been removed from the independent
-Challenge and its comparison list; it remains in the development for older
-helper theorems. Seven supporting definitions are compared in this version.
-
-## Scope relative to the paper
-
-This update addresses both requested hypothesis changes in the bounded
-plane-valued case of Theorem 1.3(1). It assumes that f is analytic near the
-compact plane closure of V and has no locally constant germ there. Simple
-connectivity remains a local hypothesis.
-
-It does not claim the paper's general spherical/meromorphic formulation,
-its separately stated boundary-approaching subsequence conclusion, or
-Theorem 1.3(2) about measurable sets of positive area. Those distinctions are
-recorded in the Challenge, README and metadata. No derived-singular-set result
-is included.
-
-## Documentation and application
-
-Your recovered introductory wording and attribution are retained, with the
-local-theorem sentence updated to remove its obsolete univalence restriction.
-The detailed scope in README and formalization.yaml has been updated as well.
-All existing licence texts and third-party notices are retained.
-
-This package is a separate copy for the next submission. Keep the current
-version and its running build intact. After that build/submission finishes,
-copy this package into a new working copy or apply its source changes to a new
-Git branch. Preserve any subsequent personal edits to README or metadata.
-The toolchain and dependency pins are unchanged, so existing caches can be
-reused. Run the documented checks on the final committed snapshot.
-
-If the previous version has been registered, Palomar accepts a new version
-under the existing Palomar ID, using a new full commit SHA. See
-[Palomar's submission instructions](https://palomar-registry.org/how-to-submit).
-No publication or submission has been made from this working copy.
-
-See `VERIFICATION.md` for actual validation results and the remaining official
-Comparator/independent-kernel gate.
+The statement concerns plane-valued maps analytic near compact closure(V).
+It does not assert the paper's general meromorphic formulation or the separate
+positive-area-set result. See `NEW_RESULTS_PROGRESS.md` for the additional entire
+singular-limit theorem and sphere area bounds proved in this update.

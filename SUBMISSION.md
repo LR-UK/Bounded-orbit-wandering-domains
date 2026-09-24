@@ -1,5 +1,9 @@
 # Prepared Palomar submission
 
+The configuration below compares the two bounded-orbit results. The three new
+results in `NewResults.lean` are proved but have not been added to this registry
+configuration. See `NEW_RESULTS_PROGRESS.md`.
+
 ## Form values
 
 | Field | Prepared value |
@@ -27,9 +31,9 @@ only `propext`, `Classical.choice` and `Quot.sound`.
 We formalise the absence of wandering Fatou components containing a point
 with bounded forward orbit for transcendental entire functions. The result
 requires boundedness only of one point orbit. We also prove a local absence
-theorem for simply connected trapped components when only one point orbit is
+theorem for trapped components when only one point orbit is
 compactly contained in the iteration domain. Whole-component compact containment
-and eventual injectivity are no longer hypotheses. This local statement covers
+simple connectivity and eventual injectivity are no longer hypotheses. This local statement covers
 plane-valued maps analytic near compact closure(V). The former classical hyperbolic metric
 assumption is now proved: the submission includes disc-covering existence,
 the curvature −1 metric and the total-area formula. The independently stated

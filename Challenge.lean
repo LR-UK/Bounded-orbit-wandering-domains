@@ -20,7 +20,7 @@ including disc-covering existence and the total-area formula. Neither theorem
 assumes a metric-existence, covering-existence or area-formula hypothesis.
 
 Two results are stated:
-1. For a locally defined analytic map, a simply connected trapped-component
+1. For a locally defined analytic map, a trapped-component
    orbit containing one point whose forward orbit stays in a compact subset
    of V cannot be wandering. The whole components need not lie in that compact
    set. No univalence or eventual-injectivity hypothesis is imposed.
@@ -28,8 +28,7 @@ Two results are stated:
    with bounded forward orbit cannot be wandering. No boundedness of whole
    components, simple connectivity or injectivity is assumed in this theorem.
 
-Simple connectivity remains a hypothesis only in (1), as in the local result
-of the paper. The local statement here concerns plane-valued maps analytic
+Neither result assumes simple connectivity. The local statement here concerns plane-valued maps analytic
 near a compact plane closure(V); the paper's general spherical/meromorphic
 setting and positive-area-set result are outside this submission.
 
@@ -48,7 +47,7 @@ those same declarations in the Solution. No value of f at infinity is used.
 Mathematical direction: Lasse Rempe. AI-assisted formalisation: OpenAI
 ChatGPT/Codex. The proof dependencies retain their separate attribution.
 This is the substantive development, not a wrapper around a previously
-registered theorem. Global derived-singular-set statements are not claimed.
+registered theorem. The additional results are exposed separately in NewResults.lean.
 -/
 
 open Set Metric Function Filter
@@ -100,7 +99,7 @@ end BoundedWanderingDomains
 namespace BoundedWanderingDomains
 
 /-- LOCAL THEOREM. Analyticity is needed only near closure(V). The U_n are
-simply connected components of the maximal trapped open set through f^[n](z).
+components of the maximal trapped open set through f^[n](z).
 Only the points f^[n](z) must lie in a fixed compact K inside V. The component
 orbit cannot be pairwise disjoint; no injectivity hypothesis is required. -/
 theorem no_local_bounded_wandering_domains
@@ -111,7 +110,6 @@ theorem no_local_bounded_wandering_domains
     (hK : IsCompact K) (hKV : K ⊆ V)
     (hz : z ∈ trappedInterior f V)
     (hU : ∀ n, U n = connectedComponentIn (trappedInterior f V) (f^[n] z))
-    (hsc : ∀ n, IsSimplyConnected (U n))
     (hbounded : ∀ n, f^[n] z ∈ K) :
     ¬ Pairwise (fun n m : ℕ => Disjoint (U n) (U m)) := by
   sorry

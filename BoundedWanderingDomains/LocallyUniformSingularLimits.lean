@@ -22,7 +22,7 @@ theorem wandering_orbit_locallyUniform_spherical_singular_derivedSet
     ∃ a ∈ derivedSet (ComplexDynamics.sphericalSingularValues f), ∃ φ : ℕ → ℕ,
       StrictMono φ ∧ TendstoLocallyUniformlyOn
         (fun k w => ((f^[φ k]) w : OnePoint ℂ)) (fun _ => a) atTop (U 0) := by
-  letI : UniformSpace (OnePoint ℂ) := (inferInstance : MetricSpace (OnePoint ℂ)).toUniformSpace
+  let : UniformSpace (OnePoint ℂ) := (inferInstance : MetricSpace (OnePoint ℂ)).toUniformSpace
   obtain ⟨a, ha, φ, hφ, hlim⟩ :=
     wandering_orbit_subsequence_spherical_singular_derivedSet hf htrans hU hz hforward hdis
   have hUo : IsOpen (U 0) := by

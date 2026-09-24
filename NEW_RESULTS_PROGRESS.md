@@ -1,145 +1,54 @@
-# New results: formalisation checkpoint (24 September 2026)
+# Completed new results — 24 September 2026
 
-This branch is an additive working branch based on public commit `d57bf72`. It
-contains no change to the existing Palomar Challenge, Solution, comparator,
-README, or metadata. None of the three proposed challenge results is ready for
-registration on this branch.
+All three results are proved. Build `lake build NewResults Submission Challenge`.
+The public entry point `NewResults.lean` imports:
 
-## What Lean checks
+1. `AreaDeficit.uniform_compact_gain_sphere`: for disjoint compact sphere sets
+   K,L, a finite bound on the hyperbolic area gain on L upon deleting K,
+   uniform over the original hyperbolic sphere domain.
+2. `AreaDeficit.sphere_finite_puncture_gain_le_two_pi_mul_card`: deleting any
+   finite sphere set E, including infinity, gains at most 2π times its cardinality.
+3. `BoundedWanderingDomains.wandering_orbit_locallyUniform_spherical_singular_derivedSet`:
+   a subsequence of iterates on every wandering Fatou component of a transcendental
+   entire function converges locally uniformly to a point in the derived set of
+   its spherical singular values. The pointwise version is
+   `wandering_orbit_subsequence_spherical_singular_derivedSet`.
 
-- `SphericalDerivedSet.lean`: derived sets and subsequential limits are taken
-  in `OnePoint ℂ` (the Riemann sphere model used in this project). In particular,
-  infinity is in the spherical derived set of a set precisely when the set is
-  unbounded in the plane. The **final topological deduction** is now proved:
-  eventual entry into every open sphere neighbourhood of the derived set
-  produces a strictly increasing subsequence converging to a derived value.
-- `GeneralDomainCovering.lean`: a disc covering of every component of the
-  complement of a closed planar set with two distinct omitted points, and
-  independence of the hyperbolic density from the chosen covering.
-- `GeneralDensityLimit.lean`: convergence of finite-puncture densities to the
-  covering density of the limiting component.
-- `GeneralDomainMetric.lean`: an intrinsic density on these planar domains,
-  positivity, monotonicity under removal of more points, local smoothness,
-  the curvature equation, measurability, and pointwise convergence of
-  finite-puncture models. The intrinsic density and area monotonicity proofs
-  do not assume `FinitePunctureMetricInput`.
-- `GeneralPunctureCost.lean`: the finite-puncture gain bound and its transfer
-  to closed exhaustions through Fatou's lemma.
-- `GeneralClosedPuncture.lean`: every closed obstacle admits an increasing
-  finite exhaustion; conditional on `FinitePunctureMetricInput`, removing a
-  point costs at most one unit of normalised area (at most 2π in curvature −1
-  area). The integral is over the *new* domain, so there is no subtraction of
-  infinite total areas.
-- `UnconditionalPointRemoval.lean`: **closes that condition** using the
-  existing theorems `exists_disc_covering_finitely_punctured_plane` and
-  `IsHolomorphicDiscCovering.total_area`. Removing one point costs at most
-  2π; removing a finite set `E` costs at most `2π * E.card` on arbitrary
-  hyperbolic plane domains (those with at least two omitted planar points).
-- `GeneralMetricDeficit.lean`: the logarithm of the ratio of two intrinsic
-  hyperbolic densities is nonnegative and its Laplacian is the difference of
-  squared densities. A direct cutoff bound from these identities is checked,
-  provided a bound on the logarithmic gain is supplied. This does not depend
-  on the total-area formula.
-- `AnchoredCompactComparison.lean`: Schottky confinement supplies a
-  logarithmic density comparison uniform over *both* sets of finite
-  punctures, provided the old set contains two fixed omitted values.
-- `AnchoredCompactArea.lean`: a smooth cutoff and Fatou's lemma give an
-  unconditional **finite** area-gain bound for two disjoint compact planar
-  sets. The bound is chosen before the old closed obstacle and applies to
-  every obstacle containing the same two fixed omitted values. It includes
-  existence of the separating cutoff, rather than assuming one as input.
-  The integral is the actual curvature −1 hyperbolic area.
-- `UnnormalisedPointRemoval.lean`: exposes the old finite-puncture bounds
-  in curvature −1 hyperbolic area, as requested: one point costs at most
-  `2π` and `E` costs at most `2π * E.card`. The older divided-by-`2π`
-  quantity is now used only internally in transferring its proof.
-- `AreaGainSubadditivity.lean` and `AreaAnchorIndependence.lean`: a
-  subtraction/integration inequality, invariance of the intrinsic metric
-  under changes of omitted-point anchors, and nullity of finite inserted
-  punctures. These prepare the removal of the fixed-anchor hypothesis.
-- `AreaAnchorFree.lean`: **removes that hypothesis completely in the plane**.
-  Given disjoint compact planar sets `W,K`, one finite bound is chosen before
-  the old closed obstacle `A`; for every hyperbolic complement of `A`, the
-  curvature −1 hyperbolic area gain on `W ∩ Aᶜ` from removing `K` obeys
-  the bound. It combines the anchored cutoff theorem with the `2π`-per-point
-  estimate, without assuming that the total old area is finite.
-- `SpherePole.lean`: for disjoint nonempty compact subsets of the connected
-  sphere, there is a point outside both that can serve as a fixed chart pole.
-- `SphereChartCompact.lean`: constructs a Möbius chart omitting **any**
-  sphere point, proves compact sets avoiding the pole pull back to compact
-  planar sets, and applies the uniform planar area bound in that chart.
-- `ConformalDensityInvariance.lean` and `SphereChartTransition.lean`: prove
-  conformal covariance of the intrinsic density and exact change-of-variables
-  formulae for curvature −1 hyperbolic area and area gain between arbitrary
-  sphere pole charts.
-- `SphereHyperbolicArea.lean`: defines curvature −1 hyperbolic area and area
-  gain intrinsically for sphere domains, and proves independence of the pole
-  chart and omitted-point anchors.
-- `SpherePointRemoval.lean`: proves that deleting any one point from an
-  arbitrary hyperbolic sphere domain gains at most `2π` of curvature −1 area.
-- `SphereCompactRemoval.lean`: proves the requested fully uniform sphere
-  theorem. For disjoint compact sphere sets `K,L`, one finite constant is
-  chosen independently of the original hyperbolic sphere domain, and bounds
-  the area gained on `L` after deleting `K`.
-- `SphericalEscape.lean`: an unbounded complex sequence has a strictly
-  increasing subsequence converging to infinity in the sphere.
-- `SphericalSingularUnbounded.lean`: applies the registered unconditional
-  bounded-orbit theorem to settle the **unbounded singular-set branch** of
-  the requested derived-set theorem. Its set parameter is any unbounded
-  planar set, so it can be instantiated with the finite singular set when
-  that set has been defined.
-- `FiniteExceptionalComponents.lean`: any finite set meets only finitely
-  many members of a pairwise disjoint sequence of components.
-- `SphereCompactSeparation.lean`: disjoint compact spherical sets admit
-  disjoint compact neighbourhoods, each containing the original in its
-  interior.
-- `DerivedSetExceptionalAvoidance.lean`: for any open spherical neighbourhood
-  of the derived singular set, every sufficiently late member of a pairwise
-  disjoint sequence avoids all singular values outside that neighbourhood.
-  This is the finite-exception step in the bounded-singular-set argument,
-  stated for an arbitrary set of complex values.
+Area has curvature −1 and is not divided by 2π in these statements. Area gain
+is the integral of the difference of density squares, without subtracting
+possibly infinite total areas. Intrinsic sphere area is independent of charts.
 
-These modules compile with the pinned Lean toolchain and mathlib.
-Their printed axiom lists contain only `propext`, `Classical.choice`, and
-`Quot.sound`; there are no `sorry`, `admit`, or declared axioms in these files.
+## Dynamics and local strengthening
 
-## Essential missing work
+The singular set includes infinity. Infinity is derived precisely when the
+finite singular set is unbounded. No simple-connectivity hypothesis is present
+in the entire theorem. The bounded-singular-set branch proves simple connectivity
+of wandering components by extending constant normal-family limits across filled
+continua, using the Eremenko–Lyubich tract theorem. The unbounded branch uses the
+bounded-point-orbit theorem and a subsequence converging to infinity.
+`no_escaping_wandering_orbit_of_classB` is then a corollary of derived accumulation.
 
-1. Connect the two completed sphere area bounds to the
-   **bounded-singular-set** dynamical iteration argument. In particular,
-   formalise the relevant Fatou component and singular-set facts, covering
-   dynamics, and prove that a wandering point orbit eventually enters every
-   spherical neighbourhood of the derived singular set. The unbounded branch,
-   finite-exception step, and final topological subsequence deduction are
-   already checked.
-2. Only after the genuine unconditional theorem is checked, add it as a new
-   Palomar Challenge declaration and update the comparator and public
-   metadata. Existing registered challenge declarations remain untouched.
+The local theorem in both Challenge and Solution now also has no
+simple-connectivity hypothesis. Baker filling proves eventual embedding of each
+fixed covering disc. Compact confinement and eventual injectivity follow, then
+the area contradiction applies. Only one point orbit must remain in a compact
+subset of the analytic iteration domain. See `LOCAL_THEOREM_UPDATE.md`.
 
-Build in this branch:
+Local models use backward images of two points. No density theorem for repelling
+periodic points is used. The Eremenko–Lyubich source import, licence and compatibility
+changes are documented in `EremenkoLyubichConstant/RECOVERY_PORT.md`.
 
-```sh
-PATH=/tmp/lean-4.35.0-rc2-linux/bin:$PATH LEAN_NUM_THREADS=4 lake build \
-  BoundedWanderingDomains.UnconditionalPointRemoval \
-  BoundedWanderingDomains.UnnormalisedPointRemoval \
-  BoundedWanderingDomains.GeneralMetricDeficit \
-  BoundedWanderingDomains.AnchoredCompactArea \
-  BoundedWanderingDomains.AreaAnchorIndependence \
-  BoundedWanderingDomains.AreaAnchorFree \
-  BoundedWanderingDomains.SpherePole \
-  BoundedWanderingDomains.SphereChartCompact \
-  BoundedWanderingDomains.ConformalDensityInvariance \
-  BoundedWanderingDomains.SphereChartTransition \
-  BoundedWanderingDomains.SphereHyperbolicArea \
-  BoundedWanderingDomains.SpherePointRemoval \
-  BoundedWanderingDomains.SphereCompactRemoval \
-  BoundedWanderingDomains.SphericalEscape \
-  BoundedWanderingDomains.SphericalSingularUnbounded \
-  BoundedWanderingDomains.FiniteExceptionalComponents \
-  BoundedWanderingDomains.DerivedSetExceptionalAvoidance \
-  BoundedWanderingDomains.SphereCompactSeparation \
-  BoundedWanderingDomains.SphericalDerivedSet
-```
+## Verification and scope
 
-The `/tmp` path names this working environment's local toolchain; use the
-repository's `lean-toolchain` with `elan` on another machine.
+`verification/NewResultsAxioms.lean` audits all final declarations. Only
+`propext`, `Classical.choice`, and `Quot.sound` occur transitively. No proof
+holes or additional axioms occur in their dependency closure.
+`verification/completion.json` records the combined build, source scan, transitive
+axioms, and independent comparison of the two existing Challenge/Solution
+statements and seven supporting definitions.
+
+The three new results are exposed as proved declarations through NewResults;
+they have not been added to the independent Palomar comparator configuration.
+No public push, registry submission, official Comparator replay, or independent
+human review is claimed. No meromorphic extension is claimed; in particular,
+the multiply connected meromorphic question remains outside this work.
