@@ -1,5 +1,7 @@
 import BoundedWanderingDomains.RiemannMappingFull
 import TauCeti.Analysis.Complex.Conformal.Inverse.Function
+import TauCeti.Analysis.Complex.Conformal.ImageSimplyConnected
+import Mathlib.Analysis.Normed.Module.Connected
 
 open Set Metric Function
 open scoped Topology
@@ -13,6 +15,45 @@ def chartDisc (u : ℂ → ℂ) (U : Set ℂ) (r : ℝ) : Set ℂ := U ∩ u ⁻
 theorem chartDisc_isOpen {u : ℂ → ℂ} {U : Set ℂ}
     (hU : IsOpen U) (hu : DifferentiableOn ℂ u U) (r : ℝ) : IsOpen (chartDisc u U r) :=
   hu.continuousOn.isOpen_inter_preimage hU isOpen_ball
+
+/-- A disc in a Riemann coordinate is simply connected. -/
+theorem chartDisc_isSimplyConnected {u : ℂ → ℂ} {U : Set ℂ}
+    (hU : IsOpen U) (hu : DifferentiableOn ℂ u U)
+    (hub : BijOn u U (ball 0 1)) {r : ℝ} (hr : 0 < r) (hr1 : r < 1) :
+    IsSimplyConnected (chartDisc u U r) := by
+  let p : ℂ → ℂ := invFunOn u U
+  have hrsub : ball (0 : ℂ) r ⊆ ball 0 1 := ball_subset_ball hr1.le
+  have hpm : MapsTo p (ball (0 : ℂ) 1) U := by
+    intro w hw
+    exact invFunOn_mem (hub.surjOn hw)
+  have hpd : DifferentiableOn ℂ p (ball (0 : ℂ) 1) := by
+    simpa only [hub.image_eq] using hu.invFunOn hU hub.injOn
+  have hpi : InjOn p (ball (0 : ℂ) r) := by
+    intro x hx y hy heq
+    have hx1 := hrsub hx
+    have hy1 := hrsub hy
+    calc
+      x = u (p x) := (hub.surjOn.rightInvOn_invFunOn hx1).symm
+      _ = u (p y) := congrArg u heq
+      _ = y := hub.surjOn.rightInvOn_invFunOn hy1
+  have himage : p '' ball (0 : ℂ) r = chartDisc u U r := by
+    ext x
+    constructor
+    · rintro ⟨w, hw, rfl⟩
+      have hw1 := hrsub hw
+      exact ⟨hpm hw1, by
+        change u (p w) ∈ ball (0 : ℂ) r
+        rwa [hub.surjOn.rightInvOn_invFunOn hw1]⟩
+    · rintro ⟨hxU, hxu⟩
+      refine ⟨u x, hxu, ?_⟩
+      exact hub.injOn.leftInvOn_invFunOn hxU
+  have hsc : IsSimplyConnected (ball (0 : ℂ) r) := by
+    have : ContractibleSpace (ball (0 : ℂ) r) := Metric.contractibleSpace_ball hr
+    change SimplyConnectedSpace (ball (0 : ℂ) r)
+    infer_instance
+  rw [← himage]
+  exact TauCeti.isSimplyConnected_image_of_differentiableOn_of_injOn
+    isOpen_ball hsc (hpd.mono hrsub) hpi
 
 /-- Forward inclusion of equal-radius intrinsic discs is proved by
 Schwarz's lemma in the normalized Riemann coordinates. -/
