@@ -242,6 +242,16 @@ The moving-puncture/cardinality gap has now been closed for a
 - `uniform_compact_finite_remote_removal_gain`;
 - `uniform_compact_finite_remote_area`.
 
+Cardinality-at-most variants have now also been proved and checked:
+
+- `uniform_compact_finite_removal_gain_le`;
+- `uniform_compact_finite_remote_removal_gain_le`;
+- `uniform_compact_finite_remote_area_le`;
+- `uniform_compact_finite_remote_removal_gain_le_all_covers`.
+
+These use `E.card ≤ q`, matching the manuscript rather than the earlier
+exact-cardinality interface.
+
 The proof uses finitely many nested chart cores near the measured compact
 set, the sharp chart-local 2π estimate, and a fixed remote deletion bound.
 It gives a constant independent of the old open domain, the exceptional
@@ -260,3 +270,13 @@ connected open subdomain of a disc-covered surface is disc-covered. Thus the
 new result already gives the requested estimate whenever X has one fixed disc
 cover. Do not cite it as the full arbitrary-ambient lemma until uniformity
 over hyperbolic U inside a possibly nonhyperbolic X is proved.
+
+The author's finite-anchor reduction should be used for the remaining case:
+choose a fixed finite set `P`, away from the measured compact set, for which
+`X \ P` is hyperbolic; compare `U` first with `U \ P`, and then work in the
+fixed hyperbolic ambient `X \ P`. The second comparison is supplied by the
+theorems above. The precise outstanding input is an ambient-independent
+finite-puncture estimate for the first comparison (the sharp expected bound
+is `2π * P.card`) together with the finite-hyperbolisation statement for an
+arbitrary connected Riemann surface. This is a reduction of the remaining
+analytic issue, not an assumption to insert into the final theorem.
