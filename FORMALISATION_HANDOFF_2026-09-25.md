@@ -472,3 +472,14 @@ and `exists_boundaryPunctureSequence`, then feed the resulting normality
 components into the intrinsic finite-model cancellation and
 `DomainAreaBlowup`.  The missing work is now the area-transport assembly, not
 uniformisation or Montel.
+
+The fixed-anchor compact-tail package is now checked as
+`LocalMap.IsWanderingComponent.exists_compact_hyperbolic_restricted_tail`.
+It retains a compact tail for the restricted orbit inside one disc-covered
+anchor complement.  The final positive-area Fatou contradiction has also
+been isolated and checked as
+`SurfaceDynamics.false_of_positive_area_finite_model_bounds`: positive chart
+area is impossible once the boundary puncture exhaustion is dense on the
+measured set and all finite-puncture model areas have one finite uniform
+bound.  Thus the unresolved positive-area core is precisely the dynamical
+proof of that uniform model-area bound.

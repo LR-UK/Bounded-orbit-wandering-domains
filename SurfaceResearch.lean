@@ -41,6 +41,7 @@ import BoundedWanderingDomains.Surfaces.LocalBarrierComponents
 import BoundedWanderingDomains.Surfaces.RestrictedBarrierComponents
 import BoundedWanderingDomains.Surfaces.BoundaryBarrierPackage
 import BoundedWanderingDomains.Surfaces.WanderingCompactTail
+import BoundedWanderingDomains.Surfaces.PositiveAreaContradiction
 import SurfaceGeometry
 import SurfaceFiniteRemoval
 import SurfaceKernel
