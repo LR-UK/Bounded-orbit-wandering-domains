@@ -292,3 +292,45 @@ def WanderingLocallyUniformInfinityClaim : Prop :=
         (fun _ => (∞ : OnePoint ℂ)) atTop (U 0)
 
 end MeromorphicDynamics
+
+/-! ## Revised-paper challenge declarations
+
+These six declarations are the independent Palomar-facing statement layer.
+Their proofs are intentionally omitted in the challenge file.  A completed
+solution must prove these exact propositions without importing this module. -/
+
+namespace BoundedWanderingDomains
+
+theorem theorem_1_2_entire : wandering_orbit_locallyUniform_inftyClaim := by
+  sorry
+
+theorem theorem_1_4 :
+    wandering_orbit_pointwise_spherical_singular_derivedSetClaim := by
+  sorry
+
+end BoundedWanderingDomains
+
+namespace MeromorphicDynamics
+
+theorem theorem_1_2_meromorphic : WanderingLocallyUniformInfinityClaim := by
+  sorry
+
+end MeromorphicDynamics
+
+namespace SurfaceDynamics
+
+variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
+  [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X]
+  [ConnectedSpace X] [IsManifold 𝓘(ℂ) 1 X]
+
+theorem theorem_1_3_orbit : NoCompactWanderingOrbitClaim (X := X) := by
+  sorry
+
+theorem theorem_1_3_positive_area [MeasurableSpace X] [BorelSpace X] :
+    NoCompactPositiveAreaWanderingSetClaim (X := X) := by
+  sorry
+
+theorem theorem_1_5 : WanderingDerivedSingularLimitClaim (X := X) := by
+  sorry
+
+end SurfaceDynamics

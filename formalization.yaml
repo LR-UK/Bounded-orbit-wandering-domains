@@ -266,20 +266,38 @@ review:
     status is recorded there separately. No independent human review, Palomar acceptance or public submission
     is claimed.
 alignment:
-  namespace: BoundedWanderingDomains
+  namespace: Revised paper challenge
   statements:
-  - source: Local absence theorem without simple connectivity
-    lean: BoundedWanderingDomains.no_local_bounded_wandering_domains
-    module: Solution
+  - source: Theorem 1.2, entire case
+    lean: BoundedWanderingDomains.theorem_1_2_entire
+    module: PaperChallenge
     status: proved
-    note: Analyticity near closure(V); one compactly contained point orbit.
-  - source: Absence of a wandering Fatou component containing a bounded point orbit
-    lean: BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire
-    module: Solution
+    note: The independent challenge statement has a proved source theorem giving locally uniform escape.
+  - source: Theorem 1.2, meromorphic case
+    lean: MeromorphicDynamics.theorem_1_2_meromorphic
+    module: PaperChallenge
+    status: proposed
+    note: Intended as a corollary of Theorem 1.3(1), after the meromorphic-to-surface bridge.
+  - source: Theorem 1.3(1), compact avoidance on a Riemann surface
+    lean: SurfaceDynamics.theorem_1_3_orbit
+    module: PaperChallenge
+    status: proposed
+    note: Every orbit in a wandering component leaves each compact subset of the actual source O.
+  - source: Theorem 1.3(2), positive-area wandering set
+    lean: SurfaceDynamics.theorem_1_3_positive_area
+    module: PaperChallenge
+    status: proposed
+    note: The forward saturation is not contained in a compact subset of O.
+  - source: Theorem 1.4, entire derived singular accumulation
+    lean: BoundedWanderingDomains.theorem_1_4
+    module: PaperChallenge
     status: proved
-    note: BoundedWanderingDomains/PointOrbitBridge.lean supplies Schottky confinement; TrappedSimpleConnectivity.lean
-      supplies simple connectivity; LocalDiscInjectivity.lean proves the local inverse-branch step; BoundedPointWandering.lean
-      assembles the theorem.
+    note: A stronger locally uniform source theorem is already proved.
+  - source: Theorem 1.5, surface derived singular accumulation or compact escape
+    lean: SurfaceDynamics.theorem_1_5
+    module: PaperChallenge
+    status: proposed
+    note: Simple connectivity is assumed only for normality components met by the orbit.
 acknowledgements: Mathlib contributors; the Tau Ceti contributors; Chris Birkbeck; Yury Kudryashov; Geoffrey
   Irving; Will (Ziang) Li and Yusheng Luo; D. Cureton; Álvaro Begué; the attributed FunctionTheory, ComplexDynamics,
   ComplexApproximation and EremenkosConjecture sources. See the included notices. The RiemannDynamics

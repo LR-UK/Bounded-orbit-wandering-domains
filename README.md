@@ -20,17 +20,40 @@ infinity, pointwise and locally uniform derived-singular-value accumulation,
 and the previously proved bounded local singular-limit result.
 [Solution.lean](Solution.lean) supplies all six proofs.
 
-## Exact statements
+## Current revised-paper challenge statements
 
-1. **Entire functions.** A pairwise disjoint forward orbit of actual Fatou
-   components cannot contain a point with bounded forward orbit. Boundedness
-   of the union of the components is not assumed. Simple connectivity and
-   eventual injectivity are derived for auxiliary trapped components.
-2. **Local functions.** The function is analytic near the compact closure of
-   an open set V and has no constant germ there. Only one point orbit must
-   stay in a compact subset of V. The actual trapped-component orbit cannot
-   be pairwise disjoint. Simple connectivity, whole-component confinement
-   and eventual injectivity are not assumptions.
+The independent [PaperChallenge.lean](PaperChallenge.lean) records all six
+targets from the current introduction:
+
+1. **Theorem 1.2, entire case.** For a transcendental entire function and a
+   wandering Fatou component, some strictly increasing subsequence of the
+   iterates converges locally uniformly on that component to infinity in the
+   Riemann sphere.
+2. **Theorem 1.2, meromorphic case.** The same conclusion holds for a
+   transcendental meromorphic function, with poles allowed and iteration
+   restricted to pole-avoiding Fatou neighbourhoods. This is intended as a
+   corollary of the surface theorem.
+3. **Theorem 1.3(1).** If f:O→X is open and holomorphic on a Riemann surface
+   and U is a wandering component of its normality locus, then every orbit
+   starting in U eventually leaves each compact subset of O.
+4. **Theorem 1.3(2).** A measurable positive-area subset of T(f)\Ω(f), with
+   pairwise disjoint forward images and injective forward saturation, cannot
+   have its saturation contained in a compact subset of O.
+5. **Theorem 1.4.** For a transcendental entire function, every point in a
+   wandering Fatou component has a subsequence converging in the sphere to a
+   point of the derived set of S(f)∪{∞}.
+6. **Theorem 1.5.** On a Riemann surface, if every normality component met by
+   the orbit of a wandering component is simply connected, then every point
+   has a subsequence which either leaves every compact subset of X or
+   converges to a point of the derived set S(f)'.
+
+The corresponding named declarations are `theorem_1_2_entire`,
+`theorem_1_2_meromorphic`, `theorem_1_3_orbit`,
+`theorem_1_3_positive_area`, `theorem_1_4`, and `theorem_1_5`.
+The compact set in Theorem 1.3(2) is a compact subset of O, as corrected by
+the author. The six declarations are challenge placeholders; the two entire
+targets have proved source theorems, while the general surface and
+meromorphic proof connections remain on the research branch.
 
 
 The definition of the Fatou set, using normality, uses subsequential locally uniform convergence of sphere-valued iterates into the one-point compactification of ℂ. 

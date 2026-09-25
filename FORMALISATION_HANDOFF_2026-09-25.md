@@ -228,3 +228,35 @@ compiler feedback; the remaining analytic design and uniformity questions
 may still need stronger reasoning or author input. Start with a focused
 lemma and retain the lighter model if it makes reliable progress. Availability
 and usage accounting must be checked in the app; no saving is guaranteed.
+
+## Local continuation checkpoint
+
+The moving-puncture/cardinality gap has now been closed for a
+**disc-covered ambient surface** in
+`Surfaces/UniformFiniteRemoval.lean`. The new checked declarations are:
+
+- `domainAreaGain_mono_right_on`;
+- `compact_point_removal_gain_on_core`;
+- `uniform_compact_point_removal_gain`;
+- `uniform_compact_finite_removal_gain`;
+- `uniform_compact_finite_remote_removal_gain`;
+- `uniform_compact_finite_remote_area`.
+
+The proof uses finitely many nested chart cores near the measured compact
+set, the sharp chart-local 2π estimate, and a fixed remote deletion bound.
+It gives a constant independent of the old open domain, the exceptional
+points, and their locations, depending on the cardinality bound only through
+iteration of one uniform point budget. The focused module build passes.
+
+This does **not** by itself remove the ambient hypothesis
+`p : DiscCover X`. The manuscript formulation starts with an arbitrary
+Riemann surface X and only assumes that the varying U is hyperbolic. A
+remaining bridge must show that the constant is independent of the separately
+chosen disc cover of each varying U, or formalise the Lemma 2.2/Lemma 2.6
+argument directly on U. Cover existence itself is not missing:
+`nonempty_discCover_of_isHyperbolic` converts the uniformisation predicate
+to a concrete cover, and `DiscCover.nonempty_subdomain` proves that every
+connected open subdomain of a disc-covered surface is disc-covered. Thus the
+new result already gives the requested estimate whenever X has one fixed disc
+cover. Do not cite it as the full arbitrary-ambient lemma until uniformity
+over hyperbolic U inside a possibly nonhyperbolic X is proved.
