@@ -1,5 +1,6 @@
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
 import BoundedWanderingDomains.Surfaces.AreaNullSets
+import BoundedWanderingDomains.Surfaces.HyperbolicAreaFinite
 import BoundedWanderingDomains.Surfaces.Statements
 
 /-! # Positive chart area implies positive intrinsic hyperbolic area
@@ -13,7 +14,7 @@ open scoped Manifold
 namespace SurfaceDynamics
 
 variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
-  [IsManifold 𝓘(ℂ) 1 X] [MeasurableSpace X] [BorelSpace X]
+  [IsManifold 𝓘(ℂ) 1 X] [T2Space X] [MeasurableSpace X] [BorelSpace X]
   [SecondCountableTopology X]
 
 theorem HasPositiveChartArea.hyperbolicArea_pos {A : Set X}
@@ -30,5 +31,19 @@ theorem HasPositiveChartArea.hyperbolicArea_pos {A : Set X}
   have hpos : 0 < p.hyperbolicArea (A ∩ c.source) :=
     (p.hyperbolicArea_pos_iff_chart hc hAc inter_subset_right).2 hx
   exact lt_of_lt_of_le hpos (measure_mono inter_subset_left)
+
+/-- Countable exceptional sets have zero intrinsic hyperbolic area. -/
+theorem hyperbolicArea_countable_zero
+    (p : AreaDeficit.Surfaces.DiscCover X) {S : Set X}
+    (hS : S.Countable) : p.hyperbolicArea S = 0 := by
+  let : NullSingletonClass p.hyperbolicArea := p.hyperbolicArea_noAtoms
+  exact hS.measure_zero p.hyperbolicArea
+
+/-- Removing the countable backward exceptional set used in the dynamical
+area argument preserves intrinsic area and hence positivity. -/
+theorem hyperbolicArea_diff_countable
+    (p : AreaDeficit.Surfaces.DiscCover X) (A : Set X) {S : Set X}
+    (hS : S.Countable) : p.hyperbolicArea (A \ S) = p.hyperbolicArea A := by
+  rw [measure_sdiff_null (hyperbolicArea_countable_zero p hS)]
 
 end SurfaceDynamics
