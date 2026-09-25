@@ -39,3 +39,28 @@ Focused build: lake build BoundedWanderingDomains.Surfaces.DensityRegularity
 (success: 3712 jobs). Full audit follows at the next checkpoint.
 
 Full audit passed: 91 distinct axiom reports, 311 sources, 8 theorem and 26 definition comparisons.
+
+## Workspace recovery, 25 September morning
+
+Execution workspace was replaced, losing the old repository/cache under
+/workspace/scratch/b0e1bbb36193. The saved ZIP is intact and has been restored
+to /workspace/scratch/bcaaac34f9c3/bounded-orbit-work. The standalone bundle
+was truncated after reset; use the intact ZIP's embedded bundle.
+
+Ten subsequent modules were reconstructed from the complete tool-call text:
+CoordinateChainRule, SurfaceSchwarz, DensityCoordinateChange, ChartArea,
+LocalAreaMeasure, CountableChartPartition, HyperbolicArea, SubdomainDensity,
+LogDensityRatio, DensityRatioInvariance. They had each compiled successfully
+before the workspace replacement. The second full audit was running when
+the environment changed; its completion was not observed. Recheck restored
+sources. No new proofs or altered hypotheses were introduced in recovery.
+
+These prove coordinate-invariant hyperbolic area independent of chart
+partition and disc cover, Schwarz–Pick, subdomain monotonicity, and the
+log-ratio area-gain equation. Full puncture/remote-removal bounds and the
+three arbitrary-surface dynamical claims remain outstanding.
+
+Next: continuous intrinsic density ratio, area-gain integral and coordinate
+formula, surface Green/cutoff estimates, puncture/kernel convergence, then
+dynamical statements. Preserve stable release refs, do not stop at checkpoints.
+Current saved archive version: 5 (c6a9399); newer recovery save will follow.

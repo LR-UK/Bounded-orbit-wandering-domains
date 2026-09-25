@@ -31,3 +31,21 @@ import SurfaceResearch
 #print axioms AreaDeficit.Surfaces.DiscCover.local_density_expression
 #print axioms AreaDeficit.Surfaces.DiscCover.chartDensity_contDiffAt
 #print axioms AreaDeficit.Surfaces.DiscCover.chartDensity_curvature
+
+#print axioms AreaDeficit.Surfaces.coordinate_deriv_comp
+#print axioms AreaDeficit.Surfaces.DiscCover.density_schwarz_disc
+#print axioms AreaDeficit.Surfaces.DiscCover.density_schwarz
+#print axioms AreaDeficit.Surfaces.DiscCover.density_coordinate_change
+#print axioms AreaDeficit.Surfaces.DiscCover.chartArea_coordinate_change
+#print axioms AreaDeficit.Surfaces.DiscCover.coordinateArea_eq
+#print axioms AreaDeficit.Surfaces.DiscCover.localArea_overlap
+#print axioms AreaDeficit.Surfaces.exists_chartPartition
+#print axioms AreaDeficit.Surfaces.DiscCover.areaUsing_independent
+#print axioms AreaDeficit.Surfaces.DiscCover.hyperbolicArea_apply_chart
+#print axioms AreaDeficit.Surfaces.DiscCover.hyperbolicArea_independent
+#print axioms AreaDeficit.Surfaces.DiscCover.density_subdomain_le
+#print axioms AreaDeficit.Surfaces.DiscCover.chartLogRatio_contDiffAt
+#print axioms AreaDeficit.Surfaces.DiscCover.chartLogRatio_laplacian
+#print axioms AreaDeficit.Surfaces.DiscCover.chartLogRatio_laplacian_nonneg
+#print axioms AreaDeficit.Surfaces.DiscCover.density_ratio_coordinate_independent
+#print axioms AreaDeficit.Surfaces.DiscCover.one_le_densityRatio
