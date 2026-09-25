@@ -41,6 +41,19 @@ variable [MeasurableSpace M] [BorelSpace M]
 noncomputable def domainArea (p : DiscCover M) (U : TopologicalSpace.Opens M) : Measure M :=
   p.hyperbolicArea.withDensity (fun x => ENNReal.ofReal ((p.domainDensityRatio U x)^2))
 
+/-- Shrinking the hyperbolic model increases its intrinsic area on sets that
+remain inside the smaller domain. -/
+theorem domainArea_mono_on (p : DiscCover M)
+    {U V : TopologicalSpace.Opens M} (hVU : V ≤ U)
+    {A : Set M} (hA : MeasurableSet A) (hAV : A ⊆ V) :
+    p.domainArea U A ≤ p.domainArea V A := by
+  simp only [domainArea, withDensity_apply _ hA]
+  apply setLIntegral_mono' hA
+  intro x hx
+  have hr := p.domainDensityRatio_mono hVU (hAV hx)
+  exact ENNReal.ofReal_le_ofReal ((sq_le_sq₀
+    (p.domainDensityRatio_nonneg U x) (p.domainDensityRatio_nonneg V x)).2 hr)
+
 theorem domainArea_independent (p q : DiscCover M) (U : TopologicalSpace.Opens M) :
     p.domainArea U = q.domainArea U := by
   unfold domainArea
