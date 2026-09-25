@@ -59,6 +59,32 @@ theorem exists_boundaryBarrierPackage_in_subsurface
     (subset_trans subset_closure hVsource) hVcompact hVO
     isClosed_closure hfront (fun y hy => hback (y : X) y.property hy) hdis hx
 
+/-- Finset-valued form of the boundary package, ready for the intrinsic
+finite-puncture area models. -/
+theorem exists_boundaryBarrierFinsetPackage_in_subsurface
+    (f : LocalMap X) (hf : IsOpenHolomorphic f)
+    (O : TopologicalSpace.Opens X) (p : DiscCover O)
+    (hsourceO : (f.source : Set X) ⊆ O)
+    {K : Set X} (hK : IsCompact K) (hKsource : K ⊆ f.source) :
+    ∃ (V : TopologicalSpace.Opens X)
+      (hVsource : closure (V : Set X) ⊆ f.source) (P : ℕ → Finset X),
+      K ⊆ V ∧ IsCompact (closure (V : Set X)) ∧ Monotone P ∧
+      let g := f.restrictSource V (subset_trans subset_closure hVsource)
+      g.trapped \ g.omega ⊆ closure (⋃ n, ((P n : Finset X) : Set X)) := by
+  classical
+  obtain ⟨V, hVsource, R, hKV, hVcompact, hRmono, hRfinite,
+      hfront, hdis, hbad, hcomp⟩ :=
+    f.exists_boundaryBarrierPackage_in_subsurface hf O p hsourceO hK hKsource
+  let P : ℕ → Finset X := fun n => (hRfinite n).toFinset
+  have hcoe : ∀ n, ((P n : Finset X) : Set X) = R n :=
+    fun n => (hRfinite n).coe_toFinset
+  refine ⟨V, hVsource, P, hKV, hVcompact, ?_, ?_⟩
+  · intro n m hnm
+    intro x hx
+    apply (hRfinite m).mem_toFinset.mpr
+    exact hRmono hnm ((hRfinite n).mem_toFinset.mp hx)
+  · simpa only [hcoe] using hbad
+
 end SurfaceDynamics.LocalMap
 
 #print axioms SurfaceDynamics.LocalMap.exists_boundaryBarrierPackage_in_subsurface
