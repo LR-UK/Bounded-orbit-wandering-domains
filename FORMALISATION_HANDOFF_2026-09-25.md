@@ -444,3 +444,31 @@ when all iterates stay in the relatively compact working domain, followed by
 Arzela--Ascoli in the one-point compactification.  After that, assemble the
 one-step intrinsic area cancellation from `PaperAreaLemma`, pullback equality,
 and the already checked `DomainAreaBlowup`.
+
+That item (4) normality and topology bridge is now complete.  The new checked
+declarations are:
+
+- `DiscCover.exists_normal_lift_subsequence` and
+  `DiscCover.exists_normal_disc_subsequence`, deriving surface Montel directly
+  from the ordinary bounded unit-disc theorem through the universal cover;
+- `CoordDisk.mdifferentiable_param` and `CoordDisk.isOpenEmbedding_param`,
+  identifying a centred coordinate neighbourhood with the unit disc;
+- `LocalMap.mdifferentiable_orbitOn`;
+- `LocalMap.mem_omega_of_compact_orbit`;
+- `DiscCover.exists_normal_disc_subsequence_compact_range` and
+  `LocalMap.mem_omega_of_compact_orbits_in_subsurface`, which allow the fixed
+  disc cover of the anchor-disk complement while retaining convergence in the
+  original surface;
+- `LocalMap.omega_restrictSource_eq_interior_trapped`, proving that on a
+  relatively compact working source contained in that covered complement the
+  normality locus is exactly the interior trapped set;
+- `LocalMap.trappedSet_totalize_eq_trapped` and
+  `LocalMap.barrier_component_eq_omega_component`, transporting the existing
+  barrier-component theorem to open-source local maps.
+
+All of these focused modules compile with standard axioms.  The next step is
+to instantiate them simultaneously with `exists_hyperbolic_restricted_tail`
+and `exists_boundaryPunctureSequence`, then feed the resulting normality
+components into the intrinsic finite-model cancellation and
+`DomainAreaBlowup`.  The missing work is now the area-transport assembly, not
+uniformisation or Montel.
