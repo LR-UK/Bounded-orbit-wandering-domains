@@ -39,6 +39,7 @@ import BoundedWanderingDomains.Surfaces.RestrictedOmega
 import BoundedWanderingDomains.Surfaces.LocalMapTotalization
 import BoundedWanderingDomains.Surfaces.LocalBarrierComponents
 import BoundedWanderingDomains.Surfaces.RestrictedBarrierComponents
+import BoundedWanderingDomains.Surfaces.BoundaryBarrierPackage
 import SurfaceGeometry
 import SurfaceFiniteRemoval
 import SurfaceKernel
