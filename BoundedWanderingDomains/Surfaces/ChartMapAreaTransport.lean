@@ -1,0 +1,113 @@
+/- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
+import BoundedWanderingDomains.Surfaces.HyperbolicArea
+import BoundedWanderingDomains.HolomorphicTransport
+
+/-! # Area transport for a surface map in one pair of charts -/
+
+open Set Function MeasureTheory
+open scoped Manifold ENNReal
+
+namespace AreaDeficit.Surfaces.DiscCover
+
+variable {M N : Type*} [TopologicalSpace M] [ChartedSpace ℂ M]
+  [IsManifold 𝓘(ℂ) 1 M] [MeasurableSpace M] [BorelSpace M]
+  [SecondCountableTopology M]
+  [TopologicalSpace N] [ChartedSpace ℂ N]
+  [IsManifold 𝓘(ℂ) 1 N] [MeasurableSpace N] [BorelSpace N]
+  [SecondCountableTopology N]
+
+/-- The planar Jacobian theorem transports an integrated density deficit to
+the corresponding intrinsic surface-area comparison whenever the measured
+set and its image lie in one source/target chart pair. -/
+theorem chart_area_advance_of_density_deficit
+    (p : DiscCover M) (q : DiscCover N)
+    {c : OpenPartialHomeomorph M ℂ} {d : OpenPartialHomeomorph N ℂ}
+    (hc : MDifferentiableOn 𝓘(ℂ) 𝓘(ℂ) c c.source)
+    (hd : MDifferentiableOn 𝓘(ℂ) 𝓘(ℂ) d d.source)
+    {f : M → N} {W : Set M} (hW : MeasurableSet W)
+    (hWc : W ⊆ c.source) (hfWd : f '' W ⊆ d.source)
+    (hfW : MeasurableSet (f '' W)) (hinj : InjOn f W)
+    (hhol : ∀ z ∈ c '' W,
+      HasDerivAt (d ∘ f ∘ c.symm) (deriv (d ∘ f ∘ c.symm) z) z)
+    {C : ℝ≥0∞}
+    (hdef : (∫⁻ z in c '' W,
+      ENNReal.ofReal ((p.chartDensity c z)^2) -
+      ENNReal.ofReal ((‖deriv (d ∘ f ∘ c.symm) z‖ *
+        q.chartDensity d ((d ∘ f ∘ c.symm) z))^2)) ≤ C) :
+    p.hyperbolicArea W ≤ q.hyperbolicArea (f '' W) + C := by
+  classical
+  let g : ℂ → ℂ := d ∘ f ∘ c.symm
+  have hA : MeasurableSet (c '' W) :=
+    chart_image_measurable c (p.projection ⟨0, by simp [unitDisc]⟩) hW hWc
+  have hginj : InjOn g (c '' W) := by
+    rintro z ⟨x, hx, rfl⟩ z' ⟨y, hy, rfl⟩ heq
+    have hfx : f x ∈ d.source := hfWd ⟨x, hx, rfl⟩
+    have hfy : f y ∈ d.source := hfWd ⟨y, hy, rfl⟩
+    have hxy : f x = f y := d.injOn hfx hfy (by
+      simpa only [g, comp_apply, c.left_inv (hWc hx), c.left_inv (hWc hy)] using heq)
+    have : x = y := hinj hx hy hxy
+    subst y
+    rfl
+  have himage : g '' (c '' W) = d '' (f '' W) := by
+    ext z
+    constructor
+    · rintro ⟨_, ⟨x, hx, rfl⟩, rfl⟩
+      exact ⟨f x, ⟨x, hx, rfl⟩, by simp [g, c.left_inv (hWc hx)]⟩
+    · rintro ⟨_, ⟨x, hx, rfl⟩, rfl⟩
+      exact ⟨c x, ⟨x, hx, rfl⟩, by simp [g, c.left_inv (hWc hx)]⟩
+  have hgtarget : ∀ z ∈ c '' W, g z ∈ d.target := by
+    rintro _ ⟨x, hx, rfl⟩
+    simpa only [g, comp_apply, c.left_inv (hWc hx)] using
+      d.map_source (hfWd ⟨x, hx, rfl⟩)
+  let rho : ℂ → ℝ := d.target.piecewise (q.chartDensity d) (fun _ => 0)
+  have hrho : Measurable rho := by
+    have hcont : ContinuousOn (q.chartDensity d) d.target :=
+      fun z hz => (q.chartDensity_contDiffAt hd hz).continuousAt.continuousWithinAt
+    exact hcont.measurable_piecewise continuousOn_const d.open_target.measurableSet
+  have hrho_g : ∀ z ∈ c '' W, rho (g z) = q.chartDensity d (g z) := by
+    intro z hz
+    simp [rho, hgtarget z hz]
+  have hdef' : (∫⁻ z in c '' W,
+      ENNReal.ofReal ((p.chartDensity c z)^2) -
+      ENNReal.ofReal ((‖deriv g z‖ * rho (g z))^2)) ≤ C := by
+    calc
+      _ = (∫⁻ z in c '' W,
+          ENNReal.ofReal ((p.chartDensity c z)^2) -
+          ENNReal.ofReal ((‖deriv g z‖ * q.chartDensity d (g z))^2)) := by
+        apply setLIntegral_congr_fun hA
+        intro z hz
+        change ENNReal.ofReal ((p.chartDensity c z)^2) -
+          ENNReal.ofReal ((‖deriv g z‖ * rho (g z))^2) =
+          ENNReal.ofReal ((p.chartDensity c z)^2) -
+          ENNReal.ofReal ((‖deriv g z‖ * q.chartDensity d (g z))^2)
+        rw [hrho_g z hz]
+      _ ≤ C := by simpa only [g] using hdef
+  have hgder : ∀ z ∈ c '' W, HasDerivAt g (deriv g z) z := by
+    intro z hz
+    simpa only [g] using hhol z hz
+  have hplane := AreaDeficit.holomorphic_area_advance_of_density_deficit
+    (f := g) (d := fun z => deriv g z) (a := p.chartDensity c)
+    (rho := rho) (C := C) hA hgder hginj hrho hdef'
+  have hgmeas : MeasurableSet (g '' (c '' W)) :=
+    hA.image_of_continuousOn_injOn
+      (fun z hz => (hhol z hz).continuousAt.continuousWithinAt) hginj
+  rw [p.hyperbolicArea_apply_chart hc hW hWc,
+    q.hyperbolicArea_apply_chart hd hfW hfWd]
+  unfold coordinateArea
+  rw [← himage]
+  rw [withDensity_apply _ hA, withDensity_apply _ hgmeas] at hplane
+  calc
+    (∫⁻ z in c '' W, ENNReal.ofReal ((p.chartDensity c z)^2)) ≤
+        (∫⁻ z in g '' (c '' W), ENNReal.ofReal ((rho z)^2)) + C := hplane
+    _ = (∫⁻ z in g '' (c '' W),
+          ENNReal.ofReal ((q.chartDensity d z)^2)) + C := by
+      congr 1
+      apply setLIntegral_congr_fun hgmeas
+      rintro z ⟨w, hw, rfl⟩
+      change ENNReal.ofReal ((rho (g w))^2) =
+        ENNReal.ofReal ((q.chartDensity d (g w))^2)
+      rw [hrho_g w hw]
+
+end AreaDeficit.Surfaces.DiscCover
+
+#print axioms AreaDeficit.Surfaces.DiscCover.chart_area_advance_of_density_deficit

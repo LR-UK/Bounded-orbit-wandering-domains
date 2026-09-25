@@ -46,6 +46,7 @@ import BoundedWanderingDomains.Surfaces.BackwardExceptionalPackage
 import BoundedWanderingDomains.Surfaces.FinitePunctureInsertion
 import BoundedWanderingDomains.Surfaces.FiniteModelCancellation
 import BoundedWanderingDomains.Surfaces.PositiveAreaAdvanceReduction
+import BoundedWanderingDomains.Surfaces.ChartMapAreaTransport
 import SurfaceGeometry
 import SurfaceFiniteRemoval
 import SurfaceKernel
