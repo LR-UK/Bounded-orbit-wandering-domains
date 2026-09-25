@@ -16,6 +16,7 @@ import BoundedWanderingDomains.Surfaces.AreaGain
 import BoundedWanderingDomains.Surfaces.ChartGainCutoff
 import BoundedWanderingDomains.Surfaces.RemoteDensityBound
 import BoundedWanderingDomains.Surfaces.RemoteChartGain
+import BoundedWanderingDomains.Surfaces.RemoteChartCompact
 import BoundedWanderingDomains.Surfaces.AreaNullSets
 import BoundedWanderingDomains.Surfaces.PositiveAreaBridge
 import BoundedWanderingDomains.Surfaces.UniformizationBridge

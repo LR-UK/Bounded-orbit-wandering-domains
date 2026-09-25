@@ -116,3 +116,11 @@ treated as theorems.
 one chart has positive intrinsic hyperbolic area. Its focused build passed.
 This is the exact measure bridge for the positive-area dynamical target; it
 does not establish the target itself.
+
+`RemoteChartCompact` now converts the uniform density-ratio/cutoff bound to
+an actual bound on intrinsic area gain over a compact set in one chart. Its
+constant is independent of the disc cover chosen on the smaller domain.
+The focused Lean build passed without warnings. Remaining for the full
+compact-set estimate: choose finitely many such chart patches to cover a
+compact set, prove finite subadditivity of intrinsic gain, then remove
+compactness of the measured set by the reverse-cutoff/exhaustion argument.
