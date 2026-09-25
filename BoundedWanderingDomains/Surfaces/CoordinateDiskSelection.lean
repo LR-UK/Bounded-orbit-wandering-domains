@@ -50,6 +50,31 @@ theorem exists_coordDisk_closedCarrier_subset_diff {U : Set X}
   rintro x ⟨y, hy, rfl⟩
   exact (hclosed hy).2
 
+/-- A prescribed point has a closed coordinate disk centred at that point
+and contained in any given open neighbourhood. -/
+theorem exists_coordDisk_center_closedCarrier_subset {U : Set X}
+    (hU : IsOpen U) {z : X} (hz : z ∈ U) :
+    ∃ D : RiemannDynamics.CoordDisk X,
+      D.center = z ∧ D.closedCarrier ⊆ U := by
+  let e := chartAt ℂ z
+  have hopen : IsOpen (e.target ∩ e.symm ⁻¹' U) :=
+    e.isOpen_inter_preimage_symm hU
+  have hzsource : z ∈ e.source := mem_chart_source ℂ z
+  have hzmem : e z ∈ e.target ∩ e.symm ⁻¹' U := by
+    refine ⟨e.map_source hzsource, ?_⟩
+    rw [Set.mem_preimage, e.left_inv hzsource]
+    exact hz
+  obtain ⟨r, hr, hrsub⟩ := Metric.isOpen_iff.mp hopen (e z) hzmem
+  have hr2 : 0 < r / 2 := by linarith
+  have hclosed : closedBall (e z) (r / 2) ⊆ e.target ∩ e.symm ⁻¹' U :=
+    (Metric.closedBall_subset_ball (by linarith)).trans hrsub
+  let D : RiemannDynamics.CoordDisk X :=
+    ⟨z, r / 2, hr2, fun y hy => (hclosed hy).1⟩
+  refine ⟨D, rfl, ?_⟩
+  rintro x ⟨y, hy, rfl⟩
+  exact (hclosed hy).2
+
 end SurfaceDynamics
 
 #print axioms SurfaceDynamics.exists_coordDisk_closedCarrier_subset_diff
+#print axioms SurfaceDynamics.exists_coordDisk_center_closedCarrier_subset
