@@ -2,6 +2,7 @@
 import BoundedWanderingDomains.Surfaces.DiscCover
 import RiemannDynamics.Uniformization.HyperbolicSurface
 import RiemannDynamics.Uniformization.PuncturedPlaneBridge
+import RiemannDynamics.Uniformization.Perron.BipolarGreen.Pieces
 
 /-! # Disc-cover data from the uniformisation interface
 Uses Will (Ziang) Li's path-cover and hyperbolicity formalisation, with the
@@ -34,4 +35,21 @@ theorem nonempty_discCover_of_isHyperbolic (h : RiemannDynamics.IsHyperbolic M) 
     change RiemannDynamics.pathCoverProj x₀ (e.symm (e w)) = y
     rw [e.symm_apply_apply]
     rfl
+
+/-- Removing one closed coordinate disk always leaves a hyperbolic surface,
+and hence supplies the disc cover used by the intrinsic-area argument.  This
+is the fixed-anchor reduction needed when the original ambient surface is
+parabolic or compact. -/
+theorem nonempty_discCover_coordDisk_compl [T2Space M]
+    [SecondCountableTopology M] (D : RiemannDynamics.CoordDisk M) :
+    Nonempty (DiscCover D.compl) := by
+  letI : ConnectedSpace D.compl :=
+    Subtype.connectedSpace (RiemannDynamics.isConnected_coordDisk_compl D)
+  letI : NoncompactSpace D.compl :=
+    RiemannDynamics.noncompactSpace_coordDisk_compl D
+  let p : D.compl := Classical.choice (inferInstance : Nonempty D.compl)
+  have hG : RiemannDynamics.HasGreenFunction p :=
+    RiemannDynamics.hasGreenFunction_coordDisk_compl D p p.property
+  exact nonempty_discCover_of_isHyperbolic
+    (RiemannDynamics.isHyperbolic_of_hasGreenFunction hG)
 end AreaDeficit.Surfaces
