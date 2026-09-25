@@ -15,6 +15,14 @@ import SurfaceResearch
 #print axioms AreaDeficit.Surfaces.DiscCover.remote_finite_models_chart_cutoff
 #print axioms AreaDeficit.Surfaces.DiscCover.remote_domain_chart_cutoff
 #print axioms AreaDeficit.Surfaces.DiscCover.remote_domain_chart_compact_gain
+#print axioms AreaDeficit.Surfaces.DiscCover.domainDensityRatio_independent
+#print axioms AreaDeficit.Surfaces.DiscCover.domainDensityRatio_continuousOn
+#print axioms AreaDeficit.Surfaces.DiscCover.domainDensityRatio_measurable
+#print axioms AreaDeficit.Surfaces.DiscCover.domainAreaGain_independent
+#print axioms AreaDeficit.Surfaces.DiscCover.domainAreaGain_coordinate_formula
+#print axioms AreaDeficit.Surfaces.DiscCover.domainAreaGain_compl
+#print axioms AreaDeficit.Surfaces.DiscCover.remote_domain_intrinsic_chart_gain
+#print axioms AreaDeficit.Surfaces.DiscCover.remote_compact_domainAreaGain
 
 #print axioms AreaDeficit.Surfaces.DiscCover.density_nested_subdomains
 #print axioms AreaDeficit.Surfaces.DiscCover.density_sequence_bounded_by_subdomain

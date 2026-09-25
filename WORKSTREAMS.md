@@ -10,7 +10,7 @@ arbitrary-Riemann-surface extension. Curvature is −1 throughout.
 | Target | Contents | Remaining work |
 | --- | --- | --- |
 | `SurfaceGeometry` | Intrinsic density, curvature, Schwarz–Pick, area, null sets, positive chart area | Geometric inputs on exceptional ambient surfaces |
-| `SurfaceFiniteRemoval` | Uniform compact chart remote-removal bound for arbitrary open subdomains | Intrinsic global assembly; point-removal cost and noncompact cutoffs |
+| `SurfaceFiniteRemoval` | Uniform intrinsic compact remote-removal bound for arbitrary open subdomains | Point-removal cost and noncompact cutoffs |
 | `SurfaceKernel` | Finite-puncture density convergence, with all component covers constructed | No remaining pointwise-convergence blocker; locally uniform statement optional |
 | `SurfaceDynamicsTargets` | Partial iteration, normality, compact escape, exact target propositions | All three named surface dynamical claims remain unproved |
 | `SurfaceResearch` | Assembles all surface workstreams | Final complete geometric and dynamical audit |
@@ -61,31 +61,39 @@ not an implemented intrinsic-distance formula for alpha and beta.
   domain, uniformly over every closed old complement. No connectedness,
   positive distance from the old complement, or finite total area is assumed.
 
-`lake build SurfaceResearch` passed (3990 jobs). The surface axiom audit
+- `DomainAreaGain` constructs the intrinsic gain measure on arbitrary open
+  domains. It is independent of the ambient cover, is supported on the
+  smaller domain, and has the expected difference-of-squares coordinate
+  formula.
+- `DomainRemoteArea.remote_compact_domainAreaGain` assembles the fixed finite
+  chart cover. It proves one finite intrinsic bound on a fixed compact L
+  disjoint from closed K, uniform in every old closed complement A.
+  This closes the compact remote-removal estimate for hyperbolic ambient S.
+
+`lake build SurfaceResearch` passed (3992 jobs). The surface axiom audit
 reports only `propext`, `Classical.choice`, and `Quot.sound`.
 `verification/surface-continuation.json` records this continuation's checks;
 older submission metadata does not assert completion of the surface targets.
 
 ## Exact remaining obligations
 
-1. Identify the new componentwise chart gain with the intrinsic gain measure
-   and assemble the fixed finite chart cover into the global compact estimate.
-   The chart estimate and its limit passage are proved.
-2. Prove the curvature −1 point-removal bound of at most `2 * pi`, then
+1. Prove the curvature −1 point-removal bound of at most `2 * pi`, then
    the finite-point bound on arbitrary surfaces. The existing sphere/plane
    bound does not settle this general case. Give the boundary or exhaustion
    justification in the actual proof, rather than assuming the area bound.
-3. Establish the remote estimate for a cutoff with compactly supported
+2. Establish the remote estimate for a cutoff with compactly supported
    differential but possibly noncompact support. Compact-support integration
    alone does not justify this case.
-4. Treat nonhyperbolic ambient surfaces, including auxiliary punctures and
+3. Treat nonhyperbolic ambient surfaces, including auxiliary punctures and
    their area cost. Current componentwise geometry starts with an ambient
    disc cover.
-5. Prove `NoCompactWanderingOrbitClaim`,
+4. Prove `NoCompactWanderingOrbitClaim`,
    `NoCompactPositiveAreaWanderingSetClaim`, and
    `WanderingDerivedSingularLimitClaim` with their exact recorded hypotheses.
-   Compact containment is inside the actual source `O`.
-6. Run the final complete build, axiom audit, independent declaration
+   Compact containment is inside the actual source `O`. This also requires
+   the density-divergence half of paper Lemma 2.4 for the positive-area
+   branch; the off-complement density-convergence half is already checked.
+5. Run the final complete build, axiom audit, independent declaration
    comparison, metadata and attribution checks. The essentially-thick
    extension remains deferred by agreement.
 

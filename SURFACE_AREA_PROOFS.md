@@ -6,6 +6,15 @@ surface analysis; they are **not yet unconditional Lean theorems in this
 repository**. In particular, the surface boundary and cusp lemmas used
 below have not yet been ported. The stable 1.3.0 release is unchanged.
 
+Update, 25 September: intrinsic metrics/area, component covers, comparison
+in covering-disc form, finite-puncture convergence, and the compact remote
+estimate in a hyperbolic ambient surface are now checked. See
+`DomainRemoteArea.remote_compact_domainAreaGain` and `WORKSTREAMS.md`.
+The point-removal and noncompact-cutoff parts below remain proof notes.
+The user directs us to the intrinsic comparison in Lemmas 2.2–2.4 of the
+paper (Mihaljević–Rempe/Minda); the alternative normal-family proof below
+is retained in Lean but should not become a further convergence project.
+
 All hyperbolic metrics have curvature -1. No simple-connectivity, genus,
 finite-connectivity or finite-total-area assumption is imposed.
 

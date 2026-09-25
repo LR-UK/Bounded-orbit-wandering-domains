@@ -1,22 +1,19 @@
-ℹ [2947/2957] Replayed BoundedWanderingDomains.Surfaces.DiscCover
+ℹ [2947/3304] Replayed BoundedWanderingDomains.Surfaces.DiscCover
 info: BoundedWanderingDomains/Surfaces/DiscCover.lean:51:0: 'AreaDeficit.Surfaces.unitDisc_simplyConnected' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3534/3732] Replayed BoundedWanderingDomains.Surfaces.GeometricArea
+ℹ [3534/3660] Replayed BoundedWanderingDomains.Surfaces.GeometricArea
 info: BoundedWanderingDomains/Surfaces/GeometricArea.lean:58:0: 'AreaDeficit.Surfaces.exists_eventually_large_area' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: BoundedWanderingDomains/Surfaces/GeometricArea.lean:59:0: 'AreaDeficit.Surfaces.no_uniform_finite_area_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3898/3990] Replayed BoundedWanderingDomains.AreaDeficitCore
+ℹ [3898/3992] Replayed BoundedWanderingDomains.AreaDeficitCore
 info: BoundedWanderingDomains/AreaDeficitCore.lean:221:0: 'AreaDeficitCore.curvature_sign' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: BoundedWanderingDomains/AreaDeficitCore.lean:222:0: 'AreaDeficitCore.primitive_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: BoundedWanderingDomains/AreaDeficitCore.lean:223:0: 'AreaDeficitCore.slope_scaled_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: BoundedWanderingDomains/AreaDeficitCore.lean:224:0: 'AreaDeficitCore.smooth_cutoff_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: BoundedWanderingDomains/AreaDeficitCore.lean:225:0: 'AreaDeficitCore.fatou_uniform_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: BoundedWanderingDomains/AreaDeficitCore.lean:226:0: 'AreaDeficitCore.positive_part_area_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3904/3990] Replayed BoundedWanderingDomains.DiscSchwarzPick
+ℹ [3904/3992] Replayed BoundedWanderingDomains.DiscSchwarzPick
 info: BoundedWanderingDomains/DiscSchwarzPick.lean:57:0: 'AreaDeficit.disc_schwarz_centre' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3905/3990] Replayed BoundedWanderingDomains.ConformalLaplacian
+ℹ [3905/3992] Replayed BoundedWanderingDomains.ConformalLaplacian
 info: BoundedWanderingDomains/ConformalLaplacian.lean:113:0: 'AreaDeficit.pullback_density_curvature' depends on axioms: [propext, Classical.choice, Quot.sound]
-✔ [3984/3990] Built SurfaceKernel (1.9s)
-✔ [3986/3990] Built SurfaceGeometry (1.0s)
-✔ [3987/3990] Built BoundedWanderingDomains.Surfaces.DomainCompactGain (2.4s)
-✔ [3988/3990] Built SurfaceFiniteRemoval (1.0s)
-✔ [3989/3990] Built SurfaceResearch (1.9s)
-Build completed successfully (3990 jobs).
+✔ [3990/3992] Built SurfaceFiniteRemoval (2.0s)
+✔ [3991/3992] Built SurfaceResearch (1.0s)
+Build completed successfully (3992 jobs).

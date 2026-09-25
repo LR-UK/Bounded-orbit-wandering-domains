@@ -2,8 +2,8 @@
   "date": "2026-09-25",
   "build": "lake build SurfaceResearch",
   "result": "passed",
-  "jobs": 3990,
-  "axiom_reports": 74,
+  "jobs": 3992,
+  "axiom_reports": 82,
   "allowed_axioms": [
     "propext",
     "Classical.choice",

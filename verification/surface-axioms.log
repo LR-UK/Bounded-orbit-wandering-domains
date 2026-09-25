@@ -31,6 +31,26 @@
 'AreaDeficit.Surfaces.DiscCover.remote_domain_chart_compact_gain' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.domainDensityRatio_independent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.domainDensityRatio_continuousOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.domainDensityRatio_measurable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.domainAreaGain_independent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.domainAreaGain_coordinate_formula' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.domainAreaGain_compl' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.remote_domain_intrinsic_chart_gain' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.remote_compact_domainAreaGain' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
 'AreaDeficit.Surfaces.DiscCover.density_nested_subdomains' depends on axioms: [propext, Classical.choice, Quot.sound]
 'AreaDeficit.Surfaces.DiscCover.density_sequence_bounded_by_subdomain' depends on axioms: [propext,
  Classical.choice,
