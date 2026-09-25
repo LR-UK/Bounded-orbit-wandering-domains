@@ -24,6 +24,33 @@ noncomputable def finiteSphereOpens : TopologicalSpace.Opens (OnePoint ℂ) :=
   rw [RiemannDynamics.sphereChartFinite_source]
   exact OnePoint.coe_ne_infty z
 
+/-- The finite source of the sphere model is globally the complex plane. -/
+noncomputable def finiteSphereHomeomorph : ℂ ≃ₜ finiteSphereOpens where
+  toFun z := ⟨(z : OnePoint ℂ), coe_mem_finiteSphereOpens z⟩
+  invFun z := RiemannDynamics.sphereChartFinite (z : OnePoint ℂ)
+  left_inv z := by simp
+  right_inv z := by
+    apply Subtype.ext
+    have hzfin : (z : OnePoint ℂ) ∈ finiteSphereOpens := z.property
+    have hz : (z : OnePoint ℂ) ∈ RiemannDynamics.sphereChartFinite.source := by
+      change (z : OnePoint ℂ) ∈ RiemannDynamics.sphereChartFinite.source at hzfin
+      exact hzfin
+    simpa only [RiemannDynamics.sphereChartFinite_symm_apply] using
+      RiemannDynamics.sphereChartFinite.left_inv hz
+  continuous_toFun := continuous_coe.subtype_mk (fun z => coe_mem_finiteSphereOpens z)
+  continuous_invFun := by
+    rw [continuous_iff_continuousAt]
+    intro z
+    have hzfin : (z : OnePoint ℂ) ∈ finiteSphereOpens := z.property
+    have hz : (z : OnePoint ℂ) ∈ RiemannDynamics.sphereChartFinite.source := by
+      change (z : OnePoint ℂ) ∈ RiemannDynamics.sphereChartFinite.source at hzfin
+      exact hzfin
+    exact (RiemannDynamics.sphereChartFinite.continuousAt hz).comp
+      continuous_subtype_val.continuousAt
+
+@[simp] theorem finiteSphereHomeomorph_apply (z : ℂ) :
+    (finiteSphereHomeomorph z : OnePoint ℂ) = (z : OnePoint ℂ) := rfl
+
 /-- A meromorphic function is a local self-map of the sphere whose source is
 the finite chart. Poles are mapped to the genuine point at infinity. -/
 noncomputable def surfaceModel (f : ℂ → ℂ) :
