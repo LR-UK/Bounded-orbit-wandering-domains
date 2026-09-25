@@ -148,3 +148,12 @@ it is imported into `SurfaceResearch`. Next assemble finite chart cover of
 a compact measured subset of `M \ K`, identify coordinate integrals with
 intrinsic area gain on punctured models (ignoring finite null sets), then
 prove limit over puncture exhaustions and the full dynamical results.
+
+`FinitePunctureAreaBridge` now compiles without warnings: finite chart
+exceptional values are null, inverse-chart images of measurable sets are
+measurable, and a fixed compact chart patch has a single *intrinsic* gain
+bound for every finite puncture model. This is a genuinely uniform metric
+area estimate, though only for one compact chart patch and only on the part
+surviving the punctures. Next prove finite chart covering/subadditivity of
+an arbitrary compact remote set, then pass to derived-set/infinite-puncture
+limits and prove the three dynamical statements. No full surface result yet.
