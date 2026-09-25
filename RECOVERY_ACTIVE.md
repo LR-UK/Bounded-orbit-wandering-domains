@@ -120,7 +120,22 @@ does not establish the target itself.
 `RemoteChartCompact` now converts the uniform density-ratio/cutoff bound to
 an actual bound on intrinsic area gain over a compact set in one chart. Its
 constant is independent of the disc cover chosen on the smaller domain.
-The focused Lean build passed without warnings. Remaining for the full
-compact-set estimate: choose finitely many such chart patches to cover a
-compact set, prove finite subadditivity of intrinsic gain, then remove
-compactness of the measured set by the reverse-cutoff/exhaustion argument.
+The focused Lean build passed without warnings. **Important limitation:** its
+cutoff must be supported inside the *variable old domain* `V`. Hence its
+constant can depend on `V`, and a finite chart cover alone cannot establish
+the needed uniformity over all old domains. For finite puncture models,
+extend the bounded logarithmic density ratio subharmonically through the
+punctures and integrate against a fixed ambient cutoff. Then use finite
+chart patches, finite subadditivity and kernel/exhaustion convergence. This
+is the next genuine analytic obstacle; do not claim the uniform compact
+removal theorem from `RemoteChartCompact` alone.
+
+The existing proved planar `density_deficit_cutoff` handles a finite set of
+exceptional points inside a fixed cutoff's support. The new surface modules
+`FinitePunctureChartCutoff` and `FinitePunctureRemoteChart` transport that
+result to chart densities. The latter gives one logarithmic bound from
+ambient compact separation for all old domains and all finite exceptional
+sets; the cutoff can pass through those exceptional points. Focused builds
+passed; an unused-binder warning was subsequently removed. Next connect
+an ambient chart restricted to the complement of a finite point set to this
+interface, then use fixed ambient chart cutoffs in the finite covering step.
