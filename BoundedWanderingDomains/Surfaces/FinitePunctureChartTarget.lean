@@ -9,6 +9,27 @@ open scoped Manifold
 namespace AreaDeficit.Surfaces
 variable {M : Type*} [TopologicalSpace M]
 
+/-- Coordinates of punctures lying in the source of a partial chart. -/
+noncomputable def chartPunctures (c : OpenPartialHomeomorph M ℂ)
+    (P : Finset M) : Finset ℂ := by
+  classical
+  exact (P.filter (fun x => x ∈ c.source)).image c
+
+theorem mem_chartPunctures_iff (c : OpenPartialHomeomorph M ℂ)
+    (P : Finset M) {z : ℂ} (hz : z ∈ c.target) :
+    z ∈ chartPunctures c P ↔ c.symm z ∈ P := by
+  classical
+  constructor
+  · intro hzP
+    obtain ⟨x,hx,hxz⟩ := Finset.mem_image.mp hzP
+    have hx' := (Finset.mem_filter.mp hx)
+    have heq : c.symm z = x := by
+      rw [← hxz, c.left_inv hx'.2]
+    exact heq ▸ hx'.1
+  · intro hx
+    exact Finset.mem_image.mpr ⟨c.symm z,
+      Finset.mem_filter.mpr ⟨hx,c.map_target hz⟩, c.right_inv hz⟩
+
 /-- An ambient chart point away from a finite set and a closed obstacle is
 in the chart obtained by restricting first to the punctured old domain and
 then to the new domain. -/
@@ -19,14 +40,11 @@ theorem finite_puncture_restricted_chart_target
     (W : TopologicalSpace.Opens U)
     (hW : ∀ x : U, x ∈ W ↔ (x : M) ∉ K) (hWN : Nonempty W)
     (c : OpenPartialHomeomorph M ℂ) {z : ℂ}
-    (hz : z ∈ c.target) (hzF : z ∉ P.image c)
+    (hz : z ∈ c.target) (hzF : z ∉ chartPunctures c P)
     (hzC : c.symm z ∈ C) :
     z ∈ ((c.subtypeRestr hUN).subtypeRestr hWN).target := by
-  have hxP : c.symm z ∉ (↑P : Set M) := by
-    intro hp
-    apply hzF
-    have hmem : c (c.symm z) ∈ P.image c := Finset.mem_image.mpr ⟨c.symm z,hp,rfl⟩
-    simpa only [c.right_inv hz] using hmem
+  have hxP : c.symm z ∉ (↑P : Set M) :=
+    fun hp => hzF ((mem_chartPunctures_iff c P hz).mpr hp)
   let x : U := ⟨c.symm z,(hU _).mpr hxP⟩
   let d := c.subtypeRestr hUN
   have hxsource : x ∈ d.source := by
@@ -65,7 +83,7 @@ theorem ambient_chart_gain_finite_punctures (p : DiscCover M) {K C : Set M}
       ContDiff ℝ 2 chi → HasCompactSupport chi →
       (∀ z, 0 ≤ chi z) → tsupport chi ⊆ D →
       (∫⁻ z, ENNReal.ofReal (chi z *
-        (if z ∈ P.image c then 0 else
+        (if z ∈ AreaDeficit.Surfaces.chartPunctures c P then 0 else
           (s.chartDensity ((c.subtypeRestr hUN).subtypeRestr hWN) z)^2 -
             (r.chartDensity (c.subtypeRestr hUN) z)^2))) ≤
         ENNReal.ofReal (B * ∫ z, |Δ chi z|) := by
@@ -73,7 +91,8 @@ theorem ambient_chart_gain_finite_punctures (p : DiscCover M) {K C : Set M}
   refine ⟨B, hB, ?_⟩
   intro P U hU hUN r W hW hWN s chi hchi hcomp hchi0 hsupp
   apply hbound U r W s hW hWN (c.subtypeRestr hUN)
-    (mdifferentiableOn_subtypeRestr hUN hc) (P.image c) D hD
+    (mdifferentiableOn_subtypeRestr hUN hc)
+    (AreaDeficit.Surfaces.chartPunctures c P) D hD
   · intro z hz hzF
     exact AreaDeficit.Surfaces.finite_puncture_restricted_chart_target
       P U hU hUN hCK W hW hWN c (hDc hz) hzF (hDC z hz)
@@ -111,7 +130,7 @@ theorem ambient_chart_compact_gain_finite_punctures (p : DiscCover M)
       (_hW : ∀ x : U, x ∈ W ↔ (x : M) ∉ K) (hWN : Nonempty W)
       (s : DiscCover W),
       (∫⁻ z in A, ENNReal.ofReal
-        (if z ∈ P.image c then 0 else
+        (if z ∈ AreaDeficit.Surfaces.chartPunctures c P then 0 else
           (s.chartDensity ((c.subtypeRestr hUN).subtypeRestr hWN) z)^2 -
             (r.chartDensity (c.subtypeRestr hUN) z)^2)) ≤ ENNReal.ofReal R := by
   obtain ⟨B, _hB, hbound⟩ := p.ambient_chart_gain_finite_punctures
@@ -122,7 +141,7 @@ theorem ambient_chart_compact_gain_finite_punctures (p : DiscCover M)
   intro P U hU hUN r W hW hWN s
   let d := c.subtypeRestr hUN
   let e := d.subtypeRestr hWN
-  let F := P.image c
+  let F := AreaDeficit.Surfaces.chartPunctures c P
   calc
     (∫⁻ z in A, ENNReal.ofReal
       (if z ∈ F then 0 else (s.chartDensity e z)^2 -

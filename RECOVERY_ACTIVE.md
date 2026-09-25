@@ -157,3 +157,16 @@ area estimate, though only for one compact chart patch and only on the part
 surviving the punctures. Next prove finite chart covering/subadditivity of
 an arbitrary compact remote set, then pass to derived-set/infinite-puncture
 limits and prove the three dynamical statements. No full surface result yet.
+
+`FinitePatchAssembly` and `CompactChartPatches` now close the entire
+finite-puncture remote compact bound for a hyperbolic ambient surface:
+`DiscCover.remote_compact_gain_finite_puncture_models` derives a finite
+constant from compact separation, independent of the finite puncture set
+and both old/new covers. A key correction is `chartPunctures`: filter
+punctures by chart source before taking chart coordinates, since the
+underlying partial chart function has arbitrary values outside its source.
+The finite patch cover proof uses the exact source-filtered exceptional set.
+Focused builds passed without warnings. Next: kernel convergence as finite
+punctures become dense in the complement of an arbitrary open domain;
+then full remote bound, 2π point-removal bound, exceptional ambient surfaces,
+and three dynamical claims. No full-surface theorem is claimed yet.

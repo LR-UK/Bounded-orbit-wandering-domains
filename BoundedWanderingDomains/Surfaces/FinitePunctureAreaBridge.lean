@@ -73,7 +73,7 @@ theorem ambient_chart_compact_gain_all_punctures (p : DiscCover M)
   refine ⟨R, ?_⟩
   intro P U hU hUN r W hW hWN s
   rw [← AreaDeficit.Surfaces.finite_exception_chart_integral
-    (P.image c) hA.measurableSet]
+    (AreaDeficit.Surfaces.chartPunctures c P) hA.measurableSet]
   exact hR P U hU hUN r W hW hWN s
 
 end AreaDeficit.Surfaces.DiscCover
@@ -98,14 +98,15 @@ theorem ambient_intrinsic_chart_gain_finite_punctures (p : DiscCover M)
       (_hW : ∀ x : U, x ∈ W ↔ (x : M) ∉ K) (hWN : Nonempty W)
       (s : DiscCover W),
       r.areaGain s (((c.subtypeRestr hUN).subtypeRestr hWN).symm ''
-        (A \ (↑(P.image c) : Set ℂ))) ≤ ENNReal.ofReal R := by
+        (A \ (↑(AreaDeficit.Surfaces.chartPunctures c P) : Set ℂ))) ≤
+          ENNReal.ofReal R := by
   obtain ⟨R, hR⟩ := p.ambient_chart_compact_gain_all_punctures
     hK hC hCK c hc hA hD hAD hDc hDC
   refine ⟨R, ?_⟩
   intro P U hU hUN r W hW hWN s
   let d := c.subtypeRestr hUN
   let e := d.subtypeRestr hWN
-  let F := P.image c
+  let F := AreaDeficit.Surfaces.chartPunctures c P
   let A' : Set ℂ := A \ (↑F : Set ℂ)
   have hA' : MeasurableSet A' := hA.measurableSet.diff F.finite_toSet.measurableSet
   have hAt : A' ⊆ e.target := by
