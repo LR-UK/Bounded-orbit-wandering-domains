@@ -185,9 +185,10 @@ theorem uniform_compact_finite_removal_gain (p : DiscCover M)
   refine (hfinite E U).trans ?_
   gcongr
 
-/-- Uniform form of the paper's compact area-gain lemma: after deleting a
-fixed remote compact obstacle and at most q further points, the gain on
-L is bounded independently of the old open domain and of the points. -/
+/-- Fixed-hyperbolic-ambient form of the paper's compact area-gain lemma:
+after deleting a fixed remote compact obstacle and at most q further points,
+the gain on L is bounded independently of the old open domain and of the
+points.  The supplied ambient disc cover is fixed before the constant. -/
 theorem uniform_compact_finite_remote_removal_gain (p : DiscCover M)
     (q : ℕ) {K L : Set M} (hK : IsCompact K) (hL : IsCompact L)
     (hLK : Disjoint L K) :
