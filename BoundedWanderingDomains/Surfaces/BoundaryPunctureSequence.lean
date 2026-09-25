@@ -175,12 +175,16 @@ theorem exists_boundaryPunctureSequence (f : LocalMap X)
       IsOpen V ∧ K ⊆ V ∧ IsCompact (closure V) ∧
       Monotone P ∧ (∀ n, (P n).Finite) ∧
       frontier V ⊆ closure (⋃ n, P n) ∧
+      (∀ hVo : IsOpen V,
+        Disjoint (closure (⋃ n, P n))
+          (f.restrictSource ⟨V, hVo⟩
+            (subset_trans subset_closure hVsource)).omega) ∧
       (∀ x (hx : x ∈ V),
         f.map ⟨x, hVsource (subset_closure hx)⟩ ∈
             closure (⋃ n, P n) → x ∈ closure (⋃ n, P n)) := by
   obtain ⟨V, hVopen, hKV, hVsource, hVcompact⟩ :=
     exists_open_between_and_isCompact_closure hK f.source.isOpen hKsource
-  obtain ⟨Q, hQmono, _, hQclosure⟩ :=
+  obtain ⟨Q, hQmono, hQfront, hQclosure⟩ :=
     AreaDeficit.Surfaces.closed_set_dense_finite_exhaustion
       (A := frontier V) isClosed_frontier
   let R : ℕ → Set X := fun n => f.boundaryBackwardTree V hVsource (Q n) n
@@ -199,8 +203,15 @@ theorem exists_boundaryPunctureSequence (f : LocalMap X)
     obtain ⟨n, hxn⟩ := mem_iUnion.mp hx
     exact mem_iUnion.mpr ⟨n,
       f.roots_subset_boundaryBackwardTree V hVsource (Q n) n hxn⟩
+  have hnormal : ∀ hVo : IsOpen V,
+      Disjoint (closure (⋃ n, R n))
+        (f.restrictSource ⟨V, hVo⟩
+          (subset_trans subset_closure hVsource)).omega := by
+    intro hVo
+    exact f.boundaryBackwardTree_closure_disjoint_restricted_omega
+      ⟨V, hVo⟩ hVsource hQfront
   refine ⟨V, hVsource, R, hVopen, hKV, hVcompact,
-    hRmono, hRfinite, hfront, ?_⟩
+    hRmono, hRfinite, hfront, hnormal, ?_⟩
   intro x hxV hfx
   have hstageBack : ∀ n, ∀ y (hy : y ∈ V),
       f.map ⟨y, hVsource (subset_closure hy)⟩ ∈ R n → y ∈ R (n + 1) := by
