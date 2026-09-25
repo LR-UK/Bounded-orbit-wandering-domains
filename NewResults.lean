@@ -8,6 +8,7 @@ import BoundedWanderingDomains.SphereCombinedRemoval
 import BoundedWanderingDomains.PlaneUniformFiniteRemoval
 import BoundedWanderingDomains.LocallyUniformSingularLimits
 import BoundedWanderingDomains.LocalUniformSingularLimits
+import BoundedWanderingDomains.MeromorphicSphereHolomorphic
 
 /-!
 # Sphere area and derived singular limits
@@ -34,3 +35,4 @@ Area uses curvature −1 without dividing by 2π.
 #print axioms BoundedWanderingDomains.no_escaping_wandering_orbit_of_classB
 
 #print axioms BoundedWanderingDomains.local_wandering_orbit_locallyUniform_singular_derivedSet
+#print axioms FunctionTheory.MeromorphicNFOn.sphereHolomorphicOn_meromorphicSphereValue

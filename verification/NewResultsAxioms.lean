@@ -14,3 +14,4 @@ import Solution
 #print axioms BoundedWanderingDomains.local_wandering_orbit_subsequence_spherical_singular_derivedSet
 #print axioms BoundedWanderingDomains.local_wandering_orbit_locallyUniform_singular_derivedSet
 #print axioms ComplexDynamics.singularValuesOn_congr
+#print axioms FunctionTheory.MeromorphicNFOn.sphereHolomorphicOn_meromorphicSphereValue
