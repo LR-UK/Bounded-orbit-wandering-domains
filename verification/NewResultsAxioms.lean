@@ -16,3 +16,5 @@ import Solution
 #print axioms ComplexDynamics.singularValuesOn_congr
 #print axioms FunctionTheory.MeromorphicNFOn.sphereHolomorphicOn_meromorphicSphereValue
 #print axioms FunctionTheory.MeromorphicNFOn.mdifferentiable_meromorphicSphereValue
+#print axioms MeromorphicDynamics.surfaceModel_mdifferentiable
+#print axioms MeromorphicDynamics.surfaceModel_iterate_coe_of_analytic
