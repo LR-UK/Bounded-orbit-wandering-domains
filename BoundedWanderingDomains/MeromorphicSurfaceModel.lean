@@ -181,10 +181,34 @@ theorem surfaceModel_iterate_coe_of_analytic
       simpa only [Function.iterate_succ_apply] using
         h (j + 1) (Nat.succ_lt_succ hj)
 
+/-- Points whose ordinary forward orbit never meets a pole. -/
+def poleAvoidingSet (f : ℂ → ℂ) : Set ℂ :=
+  {z | ∀ n : ℕ, AnalyticAt ℂ f ((f^[n]) z)}
+
+/-- A pole-avoiding ordinary orbit is a trapped orbit of the sphere model. -/
+theorem poleAvoiding_mem_surfaceModel_trapped {f : ℂ → ℂ} {z : ℂ}
+    (hz : z ∈ poleAvoidingSet f) :
+    (z : OnePoint ℂ) ∈ (surfaceModel f).trapped := by
+  intro n
+  refine ⟨((f^[n]) z : OnePoint ℂ), coe_mem_finiteSphereOpens _, ?_⟩
+  exact surfaceModel_iterate_coe_of_analytic f n z
+    (fun j hj => hz j)
+
+/-- On a pole-avoiding orbit the compactified local iterate is precisely the
+usual meromorphic iterate included in the sphere. -/
+theorem surfaceModel_compactifiedIterate_coe_of_poleAvoiding
+    (f : ℂ → ℂ) (n : ℕ) {z : ℂ} (hz : z ∈ poleAvoidingSet f) :
+    (surfaceModel f).compactifiedIterate n (z : OnePoint ℂ) =
+      ((((f^[n]) z : ℂ) : OnePoint ℂ) : OnePoint (OnePoint ℂ)) := by
+  rw [SurfaceDynamics.LocalMap.compactifiedIterate]
+  rw [surfaceModel_iterate_coe_of_analytic f n z (fun j hj => hz j)]
+
 end MeromorphicDynamics
 
 #print axioms MeromorphicDynamics.surfaceModel_mdifferentiable
 #print axioms MeromorphicDynamics.rational_of_meromorphicSphereValue_eventuallyEq
 #print axioms MeromorphicDynamics.not_eventuallyEq_meromorphicSphereValue_const
 #print axioms MeromorphicDynamics.surfaceModel_isOpenHolomorphic
+#print axioms MeromorphicDynamics.poleAvoiding_mem_surfaceModel_trapped
+#print axioms MeromorphicDynamics.surfaceModel_compactifiedIterate_coe_of_poleAvoiding
 #print axioms MeromorphicDynamics.surfaceModel_iterate_coe_of_analytic
