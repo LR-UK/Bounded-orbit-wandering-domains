@@ -139,6 +139,13 @@ def fatouSet (f : ℂ → ℂ) : Set ℂ :=
     ComplexDynamics.IsNormalSequenceOn
       (ComplexDynamics.sphericalIterate f) W}
 
+theorem isOpen_fatouSet (f : ℂ → ℂ) : IsOpen (fatouSet f) := by
+  rw [isOpen_iff_forall_mem_open]
+  rintro z ⟨W, hWo, hzW, hWp, hWN⟩
+  refine ⟨W, ?_, hWo, hzW⟩
+  intro w hw
+  exact ⟨W, hWo, hw, hWp, hWN⟩
+
 /-- An actual connected component of the pole-avoiding meromorphic Fatou
 set. -/
 def IsFatouComponent (f : ℂ → ℂ) (U : Set ℂ) : Prop :=

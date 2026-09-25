@@ -67,6 +67,25 @@ theorem normal_family_of_normalSequenceOn {X Y : Type*}
       exact Filter.Eventually.of_forall fun _ _ _ => refl_le_uniformity hV rfl
     exact ht.tendstoLocallyUniformlyOn.congr fun n x _ => congrFun (hconst n).symm x
 
+/-- Normality of an indexed family passes simultaneously to a subsequence
+and to restriction to an arbitrary subtype of the domain. -/
+theorem normal_family_restrict_subsequence {X Y : Type*}
+    [TopologicalSpace X] [UniformSpace Y] {F : ℕ → X → Y} {W S : Set X}
+    (h : NoWanderingDomains.IsNormal (range F) W) (σ : ℕ → ℕ) :
+    NoWanderingDomains.IsNormal
+      (range (fun n (z : S) => F (σ n) z))
+      (((↑) : S → X) ⁻¹' W) := by
+  classical
+  intro seq
+  choose u hu using fun n => (seq n).property
+  let seqX : ℕ → range F := fun n => ⟨F (σ (u n)), mem_range_self _⟩
+  obtain ⟨φ, hφ, g, hg⟩ := h seqX
+  refine ⟨φ, hφ, g ∘ Subtype.val, ?_⟩
+  have hcomp := hg.comp ((↑) : S → X)
+    (fun _ hz => hz) continuous_subtype_val.continuousOn
+  exact hcomp.congr fun n z _ => by
+    exact congrFun (hu (φ n)) z
+
 theorem mem_fatouSet_of_two_omitted_values
     {f : ℂ → ℂ} (hf : Differentiable ℂ f) {a b : ℂ} (hab : a ≠ b)
     {U : Set ℂ} (hU : IsOpen U)
@@ -139,3 +158,4 @@ end BoundedWanderingDomains
 
 #print axioms BoundedWanderingDomains.backwardOrbit_complement_subset_fatouSet
 #print axioms BoundedWanderingDomains.normal_family_of_normalSequenceOn
+#print axioms BoundedWanderingDomains.normal_family_restrict_subsequence
