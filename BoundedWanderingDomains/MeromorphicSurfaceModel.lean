@@ -194,6 +194,42 @@ theorem poleAvoiding_mem_surfaceModel_trapped {f : ℂ → ℂ} {z : ℂ}
   exact surfaceModel_iterate_coe_of_analytic f n z
     (fun j hj => hz j)
 
+/-- Conversely, a finite point is trapped by the sphere model only when its
+ordinary orbit avoids every pole. -/
+theorem poleAvoiding_of_mem_surfaceModel_trapped {f : ℂ → ℂ} {z : ℂ}
+    (hz : (z : OnePoint ℂ) ∈ (surfaceModel f).trapped) :
+    z ∈ poleAvoidingSet f := by
+  have analytic_of_trapped (w : ℂ)
+      (hw : (w : OnePoint ℂ) ∈ (surfaceModel f).trapped) :
+      AnalyticAt ℂ f w := by
+    by_contra hwa
+    have hforward := (surfaceModel f).trapped_forward hw
+    have hsource := (surfaceModel f).trapped_subset_source hforward
+    rw [surfaceModel_map_coe] at hsource
+    change FunctionTheory.meromorphicSphereValue f w ∈ finiteSphereOpens at hsource
+    rw [FunctionTheory.meromorphicSphereValue_of_not_analytic hwa] at hsource
+    change (∞ : OnePoint ℂ) ∈ RiemannDynamics.sphereChartFinite.source at hsource
+    rw [RiemannDynamics.sphereChartFinite_source] at hsource
+    exact hsource rfl
+  have htrapped (n : ℕ) :
+      (((f^[n]) z : ℂ) : OnePoint ℂ) ∈ (surfaceModel f).trapped := by
+    induction n with
+    | zero => simpa using hz
+    | succ n ih =>
+        have hforward := (surfaceModel f).trapped_forward ih
+        have han := analytic_of_trapped ((f^[n]) z) ih
+        rw [surfaceModel_map_coe] at hforward
+        rw [FunctionTheory.meromorphicSphereValue_of_analytic han] at hforward
+        simpa only [Function.iterate_succ_apply'] using hforward
+  intro n
+  exact analytic_of_trapped ((f^[n]) z) (htrapped n)
+
+theorem poleAvoiding_iff_mem_surfaceModel_trapped {f : ℂ → ℂ} {z : ℂ} :
+    z ∈ poleAvoidingSet f ↔
+      (z : OnePoint ℂ) ∈ (surfaceModel f).trapped :=
+  ⟨poleAvoiding_mem_surfaceModel_trapped,
+    poleAvoiding_of_mem_surfaceModel_trapped⟩
+
 /-- On a pole-avoiding orbit the compactified local iterate is precisely the
 usual meromorphic iterate included in the sphere. -/
 theorem surfaceModel_compactifiedIterate_coe_of_poleAvoiding
@@ -210,5 +246,6 @@ end MeromorphicDynamics
 #print axioms MeromorphicDynamics.not_eventuallyEq_meromorphicSphereValue_const
 #print axioms MeromorphicDynamics.surfaceModel_isOpenHolomorphic
 #print axioms MeromorphicDynamics.poleAvoiding_mem_surfaceModel_trapped
+#print axioms MeromorphicDynamics.poleAvoiding_iff_mem_surfaceModel_trapped
 #print axioms MeromorphicDynamics.surfaceModel_compactifiedIterate_coe_of_poleAvoiding
 #print axioms MeromorphicDynamics.surfaceModel_iterate_coe_of_analytic
