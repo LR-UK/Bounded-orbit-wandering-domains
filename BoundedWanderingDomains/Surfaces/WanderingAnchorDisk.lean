@@ -5,12 +5,13 @@ import BoundedWanderingDomains.Surfaces.WanderingOrbitStructure
 /-! # A fixed hyperbolic anchor inside the first wandering component -/
 
 open Set Function
-open scoped Manifold Topology
+open scoped Manifold Topology ContDiff
 
 namespace SurfaceDynamics
 
 variable {X : Type*} [TopologicalSpace X] [T2Space X]
   [LocallyCompactSpace X] [SecondCountableTopology X]
+  [ConnectedSpace X]
   [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ) 1 X]
 
 /-- Delete a small closed coordinate disk in the initial wandering component,
@@ -41,6 +42,28 @@ theorem LocalMap.IsWanderingComponent.exists_anchorDisk_orbit_components
   have hxU : x ∈ U := (hD hxD).1
   have hxV0 : x ∈ V 0 := by rw [hV0]; exact hxU
   exact Set.disjoint_left.mp (hdis (Nat.ne_of_lt hn)) hxV0 hxV
+
+/-- The deleted disk supplies a concrete universal disc cover of the fixed
+ambient surface containing every later wandering component. -/
+theorem LocalMap.IsWanderingComponent.exists_hyperbolicAnchor_orbit_components
+    (f : LocalMap X) {U : Set X} (hU : f.IsWanderingComponent U)
+    {z : X} (hz : z ∈ U) :
+    ∃ (V : ℕ → Set X) (hztrapped : z ∈ f.trapped)
+      (D : RiemannDynamics.CoordDisk X)
+      (p : AreaDeficit.Surfaces.DiscCover D.compl),
+      V 0 = U ∧
+      (∀ n, f.IsComponent (V n)) ∧
+      (∀ n, f.orbit n ⟨z, hztrapped⟩ ∈ V n) ∧
+      Pairwise (fun n m => Disjoint (V n) (V m)) ∧
+      D.closedCarrier ⊆ U \ {z} ∧
+      (∀ n, 0 < n → V n ⊆ (D.compl : Set X)) := by
+  obtain ⟨V, hztrapped, D, hV0, hcomp, horbit, hdis, hD, htail⟩ :=
+    hU.exists_anchorDisk_orbit_components f hz
+  letI : IsManifold 𝓘(ℂ) ω X :=
+    AreaDeficit.Surfaces.isManifold_analytic_of_complex
+  let p : AreaDeficit.Surfaces.DiscCover D.compl :=
+    Classical.choice (AreaDeficit.Surfaces.nonempty_discCover_coordDisk_compl D)
+  exact ⟨V, hztrapped, D, p, hV0, hcomp, horbit, hdis, hD, htail⟩
 
 end SurfaceDynamics
 
