@@ -119,4 +119,5 @@ import BoundedWanderingDomains.MeromorphicSurfaceModel
 #print axioms MeromorphicDynamics.surfaceModel_mdifferentiable
 #print axioms MeromorphicDynamics.rational_of_meromorphicSphereValue_eventuallyEq
 #print axioms MeromorphicDynamics.not_eventuallyEq_meromorphicSphereValue_const
+#print axioms MeromorphicDynamics.surfaceModel_isOpenHolomorphic
 #print axioms MeromorphicDynamics.surfaceModel_iterate_coe_of_analytic

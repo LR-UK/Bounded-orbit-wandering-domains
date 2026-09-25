@@ -1,6 +1,7 @@
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
 import BoundedWanderingDomains.MeromorphicSphereHolomorphic
 import BoundedWanderingDomains.Surfaces.LocalDynamics
+import BoundedWanderingDomains.Surfaces.OpenMapping
 import BoundedWanderingDomains.Surfaces.PlaneReading
 import FunctionTheory.Meromorphic.RationalInfinity
 
@@ -111,6 +112,49 @@ theorem not_eventuallyEq_meromorphicSphereValue_const
   intro hconst
   exact htrans (rational_of_meromorphicSphereValue_eventuallyEq hf hconst)
 
+/-- The sphere model of a transcendental meromorphic function is open. -/
+theorem surfaceModel_isOpenMap {f : ℂ → ℂ}
+    (hf : MeromorphicNFOn f Set.univ)
+    (htrans : ¬ FunctionTheory.IsRationalMeromorphic f) :
+    IsOpenMap (surfaceModel f).map := by
+  apply SurfaceDynamics.isOpenMap_of_mdifferentiable_of_locally_nonconstant
+    (surfaceModel_mdifferentiable hf)
+  intro x hconst
+  let z : ℂ := RiemannDynamics.sphereChartFinite (x : OnePoint ℂ)
+  let ι : ℂ → (surfaceModel f).source := fun w =>
+    ⟨(w : OnePoint ℂ), coe_mem_finiteSphereOpens w⟩
+  have hι : Continuous ι :=
+    continuous_coe.subtype_mk (fun w => coe_mem_finiteSphereOpens w)
+  have hxfin : (x : OnePoint ℂ) ∈ finiteSphereOpens := by
+    exact x.property
+  have hxsrc : (x : OnePoint ℂ) ∈ RiemannDynamics.sphereChartFinite.source := by
+    change (x : OnePoint ℂ) ∈ RiemannDynamics.sphereChartFinite.source at hxfin
+    exact hxfin
+  have hιz : ι z = x := by
+    apply Subtype.ext
+    simpa only [ι, z, RiemannDynamics.sphereChartFinite_symm_apply] using
+      RiemannDynamics.sphereChartFinite.left_inv hxsrc
+  have hιt : Filter.Tendsto ι (𝓝 z) (𝓝 x) := by
+    rw [← hιz]
+    exact hι.tendsto z
+  have hc := hconst.comp_tendsto hιt
+  have hsphere : FunctionTheory.meromorphicSphereValue f =ᶠ[𝓝 z]
+      fun _ => FunctionTheory.meromorphicSphereValue f z := by
+    filter_upwards [hc] with w hw
+    change (surfaceModel f).map (ι w) = (surfaceModel f).map x at hw
+    rw [← hιz] at hw
+    simpa only [ι, surfaceModel_map_coe] using hw
+  exact not_eventuallyEq_meromorphicSphereValue_const hf htrans z
+    (FunctionTheory.meromorphicSphereValue f z) hsphere
+
+/-- The local sphere model supplies exactly the open-holomorphic structure
+required by the surface dynamics theorems. -/
+theorem surfaceModel_isOpenHolomorphic {f : ℂ → ℂ}
+    (hf : MeromorphicNFOn f Set.univ)
+    (htrans : ¬ FunctionTheory.IsRationalMeromorphic f) :
+    SurfaceDynamics.IsOpenHolomorphic (surfaceModel f) :=
+  ⟨surfaceModel_isOpenMap hf htrans, surfaceModel_mdifferentiable hf⟩
+
 @[simp] theorem surfaceModel_step_coe (f : ℂ → ℂ) (z : ℂ) :
     (surfaceModel f).step (z : OnePoint ℂ) =
       Option.some (FunctionTheory.meromorphicSphereValue f z) := by
@@ -142,4 +186,5 @@ end MeromorphicDynamics
 #print axioms MeromorphicDynamics.surfaceModel_mdifferentiable
 #print axioms MeromorphicDynamics.rational_of_meromorphicSphereValue_eventuallyEq
 #print axioms MeromorphicDynamics.not_eventuallyEq_meromorphicSphereValue_const
+#print axioms MeromorphicDynamics.surfaceModel_isOpenHolomorphic
 #print axioms MeromorphicDynamics.surfaceModel_iterate_coe_of_analytic

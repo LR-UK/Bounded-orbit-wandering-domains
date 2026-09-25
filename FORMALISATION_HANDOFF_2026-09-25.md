@@ -295,3 +295,12 @@ argument, whose natural conclusion is that the cluster set meets the derived
 singular set. The checked implication
 `wanderingDerivedSingularLimitClaim_of_clusterMeetsDerived` converts this
 exact core directly into the paper's escape-or-derived-limit conclusion.
+
+The open-mapping bridge has also been completed.  The checked theorem
+`SurfaceDynamics.isOpenMap_of_mdifferentiable_of_locally_nonconstant` lifts
+the complex open-mapping theorem through analytic-surface charts.  Together
+with the meromorphic identity principle, it proves
+`MeromorphicDynamics.surfaceModel_isOpenHolomorphic`: every transcendental
+meromorphic map, read honestly as a sphere-valued local map with finite-chart
+source, satisfies the exact open-holomorphic hypothesis of the surface
+statements.  This includes local nonconstancy and openness at poles.
