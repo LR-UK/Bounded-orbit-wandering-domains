@@ -223,4 +223,20 @@ theorem uniform_compact_finite_remote_area (p : DiscCover M)
   exact (p.domainArea_le_add_gain U _ hA).trans
     (add_le_add_right ((measure_mono hAL).trans (hgain E hEq U)) _)
 
+/-- On one fixed hyperbolic ambient surface the constant is independent of
+the chosen universal disc cover. -/
+theorem uniform_compact_finite_remote_removal_gain_all_covers
+    (p₀ : DiscCover M) (q : ℕ) {K L : Set M}
+    (hK : IsCompact K) (hL : IsCompact L) (hLK : Disjoint L K) :
+    ∃ B : ℝ≥0∞, B ≠ ⊤ ∧ ∀ (p : DiscCover M) (E : Finset M), E.card ≤ q →
+      ∀ U : TopologicalSpace.Opens M,
+        p.domainAreaGain U
+          (finiteRemovalDomain U E ⊓ ⟨Kᶜ,hK.isClosed.isOpen_compl⟩) L ≤ B := by
+  obtain ⟨B,hB,hbound⟩ :=
+    p₀.uniform_compact_finite_remote_removal_gain q hK hL hLK
+  refine ⟨B,hB,?_⟩
+  intro p E hEq U
+  rw [p.domainAreaGain_independent p₀]
+  exact hbound E hEq U
+
 end AreaDeficit.Surfaces.DiscCover
