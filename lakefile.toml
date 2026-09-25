@@ -61,3 +61,15 @@ name = "SingularLimitsSolution"
 
 [[lean_lib]]
 name = "SurfaceResearch"
+
+[[lean_lib]]
+name = "SurfaceGeometry"
+
+[[lean_lib]]
+name = "SurfaceFiniteRemoval"
+
+[[lean_lib]]
+name = "SurfaceKernel"
+
+[[lean_lib]]
+name = "SurfaceDynamicsTargets"

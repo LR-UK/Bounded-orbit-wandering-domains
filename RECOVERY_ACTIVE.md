@@ -1,5 +1,30 @@
 # Active continuation — do not stop at checkpoints
 
+## Current continuation: kernel convergence checked, 25 September
+
+Recovered archive version 15 into
+`/workspace/scratch/5c43666a9327/bounded-orbit-work`.
+The runtime and compressed Mathlib cache survived; package source checkouts
+were restored at the pinned revisions. See `WORKSTREAMS.md` for the current
+complete status and independent target commands.
+
+`KernelDomains`, `KernelNormal`, and `KernelConvergence` now compile.
+`lake build SurfaceKernel` passed (3736 jobs). The new theorem is
+`DiscCover.density_tendsto_of_dense_punctures`: actual density convergence
+on the covered limiting component, proved using extremal lifts and Hurwitz.
+The older small-disc lemmas were strengthened to allow radius one.
+The `KernelLift` import of the entire remote-area chain was unnecessary
+and has been removed. Four separate workstream entry points now exist.
+
+Next: instantiate the kernel theorem for the geometric puncture models and
+transfer chart gains. Do not overlook disconnected complements: a single
+DiscCover cannot cover all of a disconnected removal domain. Point-removal
+2π, noncompact cutoff/exhaustion, exceptional ambient surfaces, and all
+three named surface dynamical targets still need proofs.
+
+The chronological notes below describe earlier checkpoints, not newer
+status. Continue autonomously; do not stop after saving a checkpoint.
+
 User explicitly instructed autonomous continuation until the full formalisation
 is done or their input is genuinely required. A checkpoint is not completion.
 Stable refs remain at 4a2c4b75c71541f569b7ae34bde616bcca66c07a.

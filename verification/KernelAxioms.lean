@@ -1,0 +1,6 @@
+import SurfaceKernel
+
+#print axioms AreaDeficit.Surfaces.DiscCover.density_nested_subdomains
+#print axioms AreaDeficit.Surfaces.DiscCover.density_sequence_bounded_by_subdomain
+#print axioms AreaDeficit.Surfaces.normal_lift_limit_maps_disc
+#print axioms AreaDeficit.Surfaces.DiscCover.density_tendsto_of_dense_punctures

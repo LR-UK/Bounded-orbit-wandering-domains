@@ -29,3 +29,7 @@ import BoundedWanderingDomains.Surfaces.KernelNonconstant
 import BoundedWanderingDomains.Surfaces.AreaNullSets
 import BoundedWanderingDomains.Surfaces.PositiveAreaBridge
 import BoundedWanderingDomains.Surfaces.UniformizationBridge
+import SurfaceGeometry
+import SurfaceFiniteRemoval
+import SurfaceKernel
+import SurfaceDynamicsTargets

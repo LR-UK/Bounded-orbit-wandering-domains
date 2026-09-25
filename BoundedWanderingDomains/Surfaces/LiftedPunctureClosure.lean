@@ -59,7 +59,7 @@ theorem ambient_hurwitz_avoidance (p : DiscCover M)
     (h : ℕ → unitDisc → unitDisc)
     (hh : ∀ n, MDifferentiable 𝓘(ℂ) 𝓘(ℂ) (h n))
     (havoid : ∀ n (v : unitDisc), p.projection (h n v) ∉ (↑(P n) : Set M))
-    {r : ℝ} (_hr : 0 < r) (hr1 : r < 1)
+    {r : ℝ} (_hr : 0 < r) (hr1 : r ≤ 1)
     {φ : ℕ → ℕ} (hφ : StrictMono φ) {g : ℂ → ℂ}
     (hl : TendstoLocallyUniformlyOn
       (fun n => planeExtension (fun v => (h (φ n) v : ℂ))) g atTop (ball 0 r))
@@ -74,7 +74,7 @@ theorem ambient_hurwitz_avoidance (p : DiscCover M)
     intro n
     exact (planeExtension_differentiableOn
       ((mdifferentiable_subtype_val unitDisc).comp (hh (φ n)))).mono
-        (ball_subset_ball hr1.le)
+        (ball_subset_ball hr1)
   have homit : ∀ a ∈ S, ∀ᶠ n in atTop,
       ∀ z ∈ ball (0 : ℂ) r,
         planeExtension (fun v => (h (φ n) v : ℂ)) z ≠ a := by
@@ -82,7 +82,7 @@ theorem ambient_hurwitz_avoidance (p : DiscCover M)
     obtain ⟨v,hv,rfl⟩ := ha
     obtain ⟨k,hvk⟩ := Set.mem_iUnion.mp hv
     filter_upwards [hφ.tendsto_atTop.eventually (eventually_ge_atTop k)] with n hn z hz
-    have hz1 : z ∈ ball (0 : ℂ) 1 := (ball_subset_ball hr1.le) hz
+    have hz1 : z ∈ ball (0 : ℂ) 1 := (ball_subset_ball hr1) hz
     intro he
     have hval : planeExtension (fun v => (h (φ n) v : ℂ)) z =
         (h (φ n) ⟨z,hz1⟩ : ℂ) :=

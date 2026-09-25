@@ -5,7 +5,7 @@ Lake's ordinary full target and dependency-hash validation. Cached-file hints
 here never substitute for that final check.
 """
 from pathlib import Path
-import importlib.util, re, subprocess, os, concurrent.futures, json, shutil
+import importlib.util, re, subprocess, os, concurrent.futures, json, shutil, sys
 R=Path(__file__).resolve().parents[1]
 B=[R,*(R/'dependencies'/n for n in ('FunctionTheory','ComplexDynamics','ComplexApproximation','EremenkosConjecture')),R/'dependencies/EremenkosConjecture/vendor/schoenflies']
 spec=importlib.util.spec_from_file_location('v',R/'dependencies/FunctionTheory/scripts/verify.py');v=importlib.util.module_from_spec(spec);spec.loader.exec_module(v)
@@ -20,7 +20,8 @@ def visit(m):
     ds=[x for l in re.findall(r'^\s*(?:public\s+)?import\s+(?:all\s+)?([^\n]+)',code,re.M) for x in l.split() if x.split('.')[0] not in SKIP]
     graph[m]=set(ds);locations[m]=b
     for d in ds: visit(d)
-for m in ('Solution','Challenge','BoundedWanderingDomains','CoveringSolution','NewResults','SingularLimitsChallenge','SingularLimitsSolution', 'SurfaceResearch'):visit(m)
+targets = sys.argv[1:] or ['Solution','Challenge','BoundedWanderingDomains','CoveringSolution','NewResults','SingularLimitsChallenge','SingularLimitsSolution', 'SurfaceResearch']
+for m in targets: visit(m)
 def cached(m):
     b=locations[m]/'.lake/build/lib/lean'/Path(*m.split('.'))
     return b.with_suffix('.olean').is_file() and b.with_suffix('.trace').is_file()

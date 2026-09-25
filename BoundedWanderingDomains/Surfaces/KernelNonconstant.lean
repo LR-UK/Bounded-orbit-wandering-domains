@@ -52,7 +52,7 @@ normalized ambient lifts from collapsing to a constant. -/
 theorem extremal_lift_limit_deriv_ne_zero
     (h : ℕ → unitDisc → unitDisc)
     (hh : ∀ n, MDifferentiable 𝓘(ℂ) 𝓘(ℂ) (h n))
-    {r : ℝ} (hr : 0 < r) (hr1 : r < 1)
+    {r : ℝ} (hr : 0 < r) (hr1 : r ≤ 1)
     {φ : ℕ → ℕ} {g : ℂ → ℂ}
     (hl : TendstoLocallyUniformlyOn
       (fun n => planeExtension (fun v => (h (φ n) v : ℂ))) g atTop (ball 0 r))
@@ -67,7 +67,7 @@ theorem extremal_lift_limit_deriv_ne_zero
     intro n
     exact (planeExtension_differentiableOn
       ((mdifferentiable_subtype_val unitDisc).comp (hh (φ n)))).mono
-        (ball_subset_ball hr1.le)
+        (ball_subset_ball hr1)
   have hd := (hl.deriv (Eventually.of_forall hdiff) isOpen_ball).tendsto_at hzero
   have hdn : Tendsto (fun n => ‖deriv
       (planeExtension (fun v => (h (φ n) v : ℂ))) 0‖)

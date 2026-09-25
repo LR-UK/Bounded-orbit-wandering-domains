@@ -1,5 +1,4 @@
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.GainFatou
 import BoundedWanderingDomains.Surfaces.HolomorphicLifting
 import BoundedWanderingDomains.Surfaces.SubtypeHolomorphic
 import BoundedWanderingDomains.Surfaces.ExtremalDisc
@@ -43,7 +42,7 @@ holomorphic subsequential limit on every smaller disc. -/
 theorem ambient_disc_lifts_normal_subdisc
     (h : ℕ → unitDisc → unitDisc)
     (hh : ∀ n, MDifferentiable 𝓘(ℂ) 𝓘(ℂ) (h n))
-    {r : ℝ} (_hr : 0 < r) (hr1 : r < 1) :
+    {r : ℝ} (_hr : 0 < r) (hr1 : r ≤ 1) :
     ∃ (φ : ℕ → ℕ) (g : ℂ → ℂ), StrictMono φ ∧
       TendstoLocallyUniformlyOn
         (fun n => planeExtension (fun z => (h (φ n) z : ℂ))) g atTop (ball 0 r) ∧
@@ -56,9 +55,9 @@ theorem ambient_disc_lifts_normal_subdisc
   · intro n
     exact (planeExtension_differentiableOn
       ((mdifferentiable_subtype_val unitDisc).comp (hh n))).mono
-        (ball_subset_ball hr1.le)
+        (ball_subset_ball hr1)
   · intro n z hz
-    have hz1 : z ∈ ball (0 : ℂ) 1 := (ball_subset_ball hr1.le) hz
+    have hz1 : z ∈ ball (0 : ℂ) 1 := (ball_subset_ball hr1) hz
     change ‖planeExtension (fun v => (h n v : ℂ)) z‖ ≤ 1
     rw [show planeExtension (fun v => (h n v : ℂ)) z =
       (h n ⟨z,hz1⟩ : ℂ) from planeExtension_coe _ ⟨z,hz1⟩]
@@ -111,7 +110,7 @@ theorem ambient_disc_lifts_normal_at_centre
     (h : ℕ → unitDisc → unitDisc)
     (hh : ∀ n, MDifferentiable 𝓘(ℂ) 𝓘(ℂ) (h n))
     (w : unitDisc) (h0 : ∀ n, h n discZero = w)
-    {r : ℝ} (hr : 0 < r) (hr1 : r < 1) :
+    {r : ℝ} (hr : 0 < r) (hr1 : r ≤ 1) :
     ∃ (φ : ℕ → ℕ) (g : ℂ → ℂ), StrictMono φ ∧
       TendstoLocallyUniformlyOn
         (fun n => planeExtension (fun z => (h (φ n) z : ℂ))) g atTop (ball 0 r) ∧
