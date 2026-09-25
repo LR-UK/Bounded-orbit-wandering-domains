@@ -96,3 +96,23 @@ Current repository: /workspace/scratch/bcaaac34f9c3/bounded-orbit-work.
 Next: log-ratio bridge, coordinate cutoff assembly / surface Green;
 point-removal bound, kernel convergence and surface dynamics still needed.
 The arbitrary-surface dynamical claims are NOT proved yet.
+
+## Continuation, 25 September: checked chart bridge
+
+Focused builds passed for four previously untracked modules:
+`UniformizationBridge` (hyperbolic uniformisation supplies the disc cover),
+`LogRatioBound`, `RemoteChartGain` (uniform chart cutoff estimate from compact
+separation), and `AreaNullSets` (intrinsic area and chart area have the same
+null sets). The deprecated alias warning in `AreaNullSets` was removed and its
+focused rebuild passed without warnings. These are imported by `SurfaceResearch`.
+They have not yet assembled into the global removal estimate. The point
+removal bound, exhaustion/kernel convergence and dynamical claims remain.
+Next: turn the chart cutoff estimate into a bound on compact measured sets
+uniformly in the open domain, then handle the noncompact measured region via
+the reverse cutoff and an exhaustion argument. No new hypotheses are being
+treated as theorems.
+
+`PositiveAreaBridge` now proves that a measurable set with positive area in
+one chart has positive intrinsic hyperbolic area. Its focused build passed.
+This is the exact measure bridge for the positive-area dynamical target; it
+does not establish the target itself.
