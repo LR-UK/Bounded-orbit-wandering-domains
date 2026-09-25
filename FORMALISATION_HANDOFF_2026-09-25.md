@@ -493,3 +493,11 @@ contained in the interior trapped set.  Its local-map wrapper is
 `LocalMap.trapped_diff_omega_subset_barrier`.  Both compile with standard
 axioms.  This discharges the density-blowup containment used for the set
 `A*` in the manuscript; transport/cancellation is the next obligation.
+
+`LocalMap.exists_backwardExceptionalFinsets` now enlarges any increasing
+finite puncture sequence by a fixed finite exceptional set and all local
+backward iterates.  It returns increasing finite stages whose union is
+backward invariant in the working domain.  The accompanying hyperbolic-area
+lemmas show that deleting this countable union preserves intrinsic area.
+This formalises the manuscript passage from `A` to `A*`; the remaining core
+is the uniform one-step metric transport/cancellation estimate.
