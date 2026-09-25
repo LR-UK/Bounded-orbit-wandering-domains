@@ -5,6 +5,7 @@ Released under Apache 2.0 licence; see LICENSE.
 import BoundedWanderingDomains.BackwardOrbitModels
 import FunctionTheory.NormalFamilies.ZalcmanMontel
 import ComplexDynamics.Basic
+import Mathlib.Order.OrderIsoNat
 
 /-! # Montel normality off the closure of a two-point backward orbit -/
 
@@ -21,6 +22,50 @@ theorem normalSequenceOn_of_normal_family {X Y : Type*}
   obtain ⟨ψ, hψ, g, hg⟩ := h (fun n => ⟨F (φ n), mem_range_self _⟩)
   exact ⟨ψ, hψ, g ∘ Subtype.val,
     tendstoLocallyUniformlyOn_iff_tendstoLocallyUniformly_comp_coe.mp hg⟩
+
+/-- For a sequence indexed by the natural numbers, the sequential normality
+used by `ComplexDynamics` is equivalent to normality of its range as a
+family.  An arbitrary sequence drawn from the range either has a subsequence
+whose original indices strictly increase, or has an eventually constant
+subsequence. -/
+theorem normal_family_of_normalSequenceOn {X Y : Type*}
+    [TopologicalSpace X] [UniformSpace Y] {F : ℕ → X → Y} {U : Set X}
+    (h : ComplexDynamics.IsNormalSequenceOn F U) :
+    NoWanderingDomains.IsNormal (range F) U := by
+  classical
+  intro seq
+  choose u hu using fun n => (seq n).property
+  have hseq (n : ℕ) : (seq n : X → Y) = F (u n) := (hu n).symm
+  obtain ⟨e, he | he⟩ := exists_increasing_or_nonincreasing_subseq (· < ·) u
+  · have hue : StrictMono (u ∘ e) := fun m n hmn => he m n hmn
+    obtain ⟨ψ, hψ, g, hg⟩ := h (u ∘ e) hue
+    let G : X → Y := fun x => if hx : x ∈ U then g ⟨x, hx⟩ else F 0 x
+    refine ⟨e ∘ ψ, e.strictMono.comp hψ, G, ?_⟩
+    have hgG : TendstoLocallyUniformly
+        (fun n (z : U) => F ((u ∘ e) (ψ n)) z) (G ∘ Subtype.val) atTop :=
+      hg.congr_right fun z => by simp [G, z.property]
+    have hgU : TendstoLocallyUniformlyOn
+        (fun n x => F ((u ∘ e) (ψ n)) x) G atTop U :=
+      tendstoLocallyUniformlyOn_iff_tendstoLocallyUniformly_comp_coe.mpr hgG
+    exact hgU.congr fun n x _ => by
+      exact congrFun (hseq ((e ∘ ψ) n)).symm x
+  · have hue : Antitone (u ∘ e) := by
+      intro m n hmn
+      rcases hmn.eq_or_lt with rfl | hlt
+      · exact le_rfl
+      · exact Nat.le_of_not_gt (he m n hlt)
+    obtain ⟨N, hN⟩ := WellFoundedLT.antitone_chain_condition hue
+    let φ : ℕ → ℕ := fun n => e (N + n)
+    have hφ : StrictMono φ := e.strictMono.comp (strictMono_nat_of_lt_succ fun n => by omega)
+    refine ⟨φ, hφ, F (u (e N)), ?_⟩
+    have hconst (n : ℕ) : (seq (φ n) : X → Y) = F (u (e N)) := by
+      rw [hseq]
+      exact congr_arg F (hN (N + n) (Nat.le_add_right N n)).symm
+    have ht : TendstoUniformlyOn (fun _ : ℕ => F (u (e N)))
+        (F (u (e N))) atTop U := by
+      intro V hV
+      exact Filter.Eventually.of_forall fun _ _ _ => refl_le_uniformity hV rfl
+    exact ht.tendstoLocallyUniformlyOn.congr fun n x _ => congrFun (hconst n).symm x
 
 theorem mem_fatouSet_of_two_omitted_values
     {f : ℂ → ℂ} (hf : Differentiable ℂ f) {a b : ℂ} (hab : a ≠ b)
@@ -93,3 +138,4 @@ theorem backwardOrbit_complement_component
 end BoundedWanderingDomains
 
 #print axioms BoundedWanderingDomains.backwardOrbit_complement_subset_fatouSet
+#print axioms BoundedWanderingDomains.normal_family_of_normalSequenceOn
