@@ -9,14 +9,15 @@ open scoped Manifold Topology
 
 namespace SurfaceDynamics
 
-variable {X : Type*} [TopologicalSpace X] [T2Space X]
-  [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ) 1 X]
+variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
+  [T2Space X] [T2Space Y] [ChartedSpace ℂ X] [ChartedSpace ℂ Y]
+  [IsManifold 𝓘(ℂ) 1 X] [IsManifold 𝓘(ℂ) 1 Y]
 
 /-- The inverse image of a finite set, restricted to a compact set, is finite
 for an open holomorphic surface map. -/
-theorem finite_compact_inter_preimage_of_finite {f : X → X}
+theorem finite_compact_inter_preimage_of_finite {f : X → Y}
     (hopen : IsOpenMap f) (hf : MDifferentiable 𝓘(ℂ) 𝓘(ℂ) f)
-    {K S : Set X} (hK : IsCompact K) (hS : S.Finite) :
+    {K : Set X} {S : Set Y} (hK : IsCompact K) (hS : S.Finite) :
     (K ∩ f ⁻¹' S).Finite := by
   induction S, hS using Set.Finite.induction_on with
   | empty => simp
@@ -29,6 +30,11 @@ theorem finite_compact_inter_preimage_of_finite {f : X → X}
       rcases hx with hxy | hxS
       · exact Or.inl ⟨hxK, hxy⟩
       · exact Or.inr ⟨hxK, hxS⟩
+
+section SelfMap
+
+variable {X : Type*} [TopologicalSpace X] [T2Space X]
+  [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ) 1 X]
 
 /-- Every stage of the local backward tree is finite on a compact working
 set. -/
@@ -50,6 +56,8 @@ theorem localPunctures_countable {f : X → X} {V K : Set X}
     (⋃ n : ℕ, AreaDeficit.localPunctures f V Q n).Countable :=
   countable_iUnion (fun n =>
     (localPunctures_finite hVK hK hopen hf hQ n).countable)
+
+end SelfMap
 
 end SurfaceDynamics
 
