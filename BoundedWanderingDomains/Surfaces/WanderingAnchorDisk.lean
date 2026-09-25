@@ -1,0 +1,47 @@
+/- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
+import BoundedWanderingDomains.Surfaces.CoordinateDiskSelection
+import BoundedWanderingDomains.Surfaces.WanderingOrbitStructure
+
+/-! # A fixed hyperbolic anchor inside the first wandering component -/
+
+open Set Function
+open scoped Manifold Topology
+
+namespace SurfaceDynamics
+
+variable {X : Type*} [TopologicalSpace X] [T2Space X]
+  [LocallyCompactSpace X] [SecondCountableTopology X]
+  [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ) 1 X]
+
+/-- Delete a small closed coordinate disk in the initial wandering component,
+away from the marked point.  Every later component, and hence the marked tail
+orbit, lies in the resulting fixed hyperbolic surface. -/
+theorem LocalMap.IsWanderingComponent.exists_anchorDisk_orbit_components
+    (f : LocalMap X) {U : Set X} (hU : f.IsWanderingComponent U)
+    {z : X} (hz : z ∈ U) :
+    ∃ (V : ℕ → Set X) (hztrapped : z ∈ f.trapped)
+      (D : RiemannDynamics.CoordDisk X),
+      V 0 = U ∧
+      (∀ n, f.IsComponent (V n)) ∧
+      (∀ n, f.orbit n ⟨z, hztrapped⟩ ∈ V n) ∧
+      Pairwise (fun n m => Disjoint (V n) (V m)) ∧
+      D.closedCarrier ⊆ U \ {z} ∧
+      (∀ n, 0 < n → V n ⊆ (D.compl : Set X)) := by
+  obtain ⟨V, hztrapped, hV0, hcomp, horbit, hdis⟩ :=
+    hU.exists_orbit_components f hz
+  obtain ⟨w, hwomega, hVw⟩ := hcomp 0
+  letI : LocallyPathConnectedSpace X :=
+    ChartedSpace.locallyPathConnectedSpace ℂ X
+  have hUopen : IsOpen U := by
+    rw [← hV0, hVw]
+    exact f.isOpen_omega.connectedComponentIn
+  obtain ⟨D, hD⟩ := exists_coordDisk_closedCarrier_subset_diff hUopen hz
+  refine ⟨V, hztrapped, D, hV0, hcomp, horbit, hdis, hD, ?_⟩
+  intro n hn x hxV hxD
+  have hxU : x ∈ U := (hD hxD).1
+  have hxV0 : x ∈ V 0 := by rw [hV0]; exact hxU
+  exact Set.disjoint_left.mp (hdis (Nat.ne_of_lt hn)) hxV0 hxV
+
+end SurfaceDynamics
+
+#print axioms SurfaceDynamics.LocalMap.IsWanderingComponent.exists_anchorDisk_orbit_components
