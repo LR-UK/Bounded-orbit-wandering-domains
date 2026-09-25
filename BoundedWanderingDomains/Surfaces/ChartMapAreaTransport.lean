@@ -16,6 +16,23 @@ variable {M N : Type*} [TopologicalSpace M] [ChartedSpace ℂ M]
   [IsManifold 𝓘(ℂ) 1 N] [MeasurableSpace N] [BorelSpace N]
   [SecondCountableTopology N]
 
+/-- A holomorphic surface map, written in holomorphic source and target
+charts, has the expected ordinary complex derivative. -/
+theorem hasDerivAt_writtenInCharts
+    {c : OpenPartialHomeomorph M ℂ} {d : OpenPartialHomeomorph N ℂ}
+    (hc : MDifferentiableOn 𝓘(ℂ) 𝓘(ℂ) c c.source)
+    (hd : MDifferentiableOn 𝓘(ℂ) 𝓘(ℂ) d d.source)
+    {f : M → N} (hf : MDifferentiable 𝓘(ℂ) 𝓘(ℂ) f)
+    {x : M} (hxc : x ∈ c.source) (hfd : f x ∈ d.source) :
+    HasDerivAt (d ∘ f ∘ c.symm) (deriv (d ∘ f ∘ c.symm) (c x)) (c x) := by
+  have hci := (mdifferentiableOn_symm hc _ (c.map_source hxc)).mdifferentiableAt
+    (c.open_target.mem_nhds (c.map_source hxc))
+  have hfi := (hf (c.symm (c x))).comp (c x) hci
+  have hfd' : f (c.symm (c x)) ∈ d.source := by
+    rwa [c.left_inv hxc]
+  have hdi := (hd _ hfd').mdifferentiableAt (d.open_source.mem_nhds hfd')
+  exact (hdi.comp (c x) hfi).differentiableAt.hasDerivAt
+
 /-- The planar Jacobian theorem transports an integrated density deficit to
 the corresponding intrinsic surface-area comparison whenever the measured
 set and its image lie in one source/target chart pair. -/
@@ -107,6 +124,28 @@ theorem chart_area_advance_of_density_deficit
       change ENNReal.ofReal ((rho (g w))^2) =
         ENNReal.ofReal ((q.chartDensity d (g w))^2)
       rw [hrho_g w hw]
+
+/-- Holomorphic form of `chart_area_advance_of_density_deficit`. -/
+theorem chart_area_advance_of_density_deficit_holomorphic
+    (p : DiscCover M) (q : DiscCover N)
+    {c : OpenPartialHomeomorph M ℂ} {d : OpenPartialHomeomorph N ℂ}
+    (hc : MDifferentiableOn 𝓘(ℂ) 𝓘(ℂ) c c.source)
+    (hd : MDifferentiableOn 𝓘(ℂ) 𝓘(ℂ) d d.source)
+    {f : M → N} (hf : MDifferentiable 𝓘(ℂ) 𝓘(ℂ) f)
+    {W : Set M} (hW : MeasurableSet W)
+    (hWc : W ⊆ c.source) (hfWd : f '' W ⊆ d.source)
+    (hfW : MeasurableSet (f '' W)) (hinj : InjOn f W)
+    {C : ℝ≥0∞}
+    (hdef : (∫⁻ z in c '' W,
+      ENNReal.ofReal ((p.chartDensity c z)^2) -
+      ENNReal.ofReal ((‖deriv (d ∘ f ∘ c.symm) z‖ *
+        q.chartDensity d ((d ∘ f ∘ c.symm) z))^2)) ≤ C) :
+    p.hyperbolicArea W ≤ q.hyperbolicArea (f '' W) + C := by
+  apply p.chart_area_advance_of_density_deficit q hc hd hW hWc hfWd hfW hinj
+  · rintro _ ⟨x, hx, rfl⟩
+    simpa only [c.left_inv (hWc hx)] using
+      hasDerivAt_writtenInCharts hc hd hf (hWc hx) (hfWd ⟨x, hx, rfl⟩)
+  · exact hdef
 
 end AreaDeficit.Surfaces.DiscCover
 
