@@ -38,6 +38,7 @@ import BoundedWanderingDomains.Surfaces.CompactOrbitNormal
 import BoundedWanderingDomains.Surfaces.RestrictedOmega
 import BoundedWanderingDomains.Surfaces.LocalMapTotalization
 import BoundedWanderingDomains.Surfaces.LocalBarrierComponents
+import BoundedWanderingDomains.Surfaces.RestrictedBarrierComponents
 import SurfaceGeometry
 import SurfaceFiniteRemoval
 import SurfaceKernel
