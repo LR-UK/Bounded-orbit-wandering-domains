@@ -43,6 +43,7 @@ import BoundedWanderingDomains.Surfaces.BoundaryBarrierPackage
 import BoundedWanderingDomains.Surfaces.WanderingCompactTail
 import BoundedWanderingDomains.Surfaces.PositiveAreaContradiction
 import BoundedWanderingDomains.Surfaces.BackwardExceptionalPackage
+import BoundedWanderingDomains.Surfaces.FinitePunctureInsertion
 import SurfaceGeometry
 import SurfaceFiniteRemoval
 import SurfaceKernel
