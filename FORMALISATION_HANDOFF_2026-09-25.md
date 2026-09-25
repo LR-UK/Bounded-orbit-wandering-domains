@@ -513,3 +513,12 @@ with puncture density blow-up and positive chart area.  Its sole analytic
 input is now the uniform one-step area-advance configuration in each finite
 model.  Proving that input by coordinate change of variables plus the local
 density-deficit estimate is the remaining positive-area core.
+
+The coordinate-change half of that input is now checked.
+`DiscCover.chart_area_advance_of_density_deficit_holomorphic` turns a
+single-chart integrated pullback-density deficit into intrinsic surface area
+advance, deriving the ordinary complex derivative directly from surface
+holomorphicity.  `AreaDeficit.Surfaces.finite_patch_area_advance` adds such
+comparisons over a finite measurable partition; injectivity gives disjoint
+image patches.  The remaining analytic task is therefore to instantiate the
+local integrated deficit uniformly on those compact chart patches.
