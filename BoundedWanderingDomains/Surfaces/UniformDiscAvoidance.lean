@@ -31,7 +31,8 @@ theorem unitDisc_displacement {h : unitDisc → unitDisc}
     rw [hwv,h0]
     have hn1 : ‖(h ⟨w,hw⟩ : ℂ)‖ < 1 := mem_ball_zero_iff.mp (h ⟨w,hw⟩).2
     have hn0 : ‖(h discZero : ℂ)‖ < 1 := mem_ball_zero_iff.mp (h discZero).2
-    exact (dist_le_norm_add _ _).trans (by linarith)
+    rw [dist_eq_norm_sub]
+    exact (norm_sub_le _ _).trans (by linarith)
   have hs := Complex.dist_le_div_mul_dist_of_mapsTo_ball hd hm z.2
   change dist (h z : ℂ) (h discZero : ℂ) ≤ _
   have hz : g z = (h z : ℂ) := planeExtension_coe _ z

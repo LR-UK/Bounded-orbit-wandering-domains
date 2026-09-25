@@ -13,3 +13,5 @@ import BoundedWanderingDomains.Surfaces.SmoothSurface
 import BoundedWanderingDomains.Surfaces.DensityRegularity
 import BoundedWanderingDomains.Surfaces.DensityRatioInvariance
 import BoundedWanderingDomains.Surfaces.AreaGain
+import BoundedWanderingDomains.Surfaces.ChartGainCutoff
+import BoundedWanderingDomains.Surfaces.RemoteDensityBound

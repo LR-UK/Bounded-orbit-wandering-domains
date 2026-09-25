@@ -49,3 +49,12 @@ import SurfaceResearch
 #print axioms AreaDeficit.Surfaces.DiscCover.chartLogRatio_laplacian_nonneg
 #print axioms AreaDeficit.Surfaces.DiscCover.density_ratio_coordinate_independent
 #print axioms AreaDeficit.Surfaces.DiscCover.one_le_densityRatio
+
+#print axioms AreaDeficit.Surfaces.DiscCover.densityRatio_continuous
+#print axioms AreaDeficit.Surfaces.DiscCover.hyperbolicArea_setLIntegral
+#print axioms AreaDeficit.Surfaces.DiscCover.areaGain_coordinate_formula
+#print axioms AreaDeficit.Surfaces.DiscCover.chart_gain_cutoff
+#print axioms AreaDeficit.Surfaces.DiscCover.compact_uniform_disc_avoidance
+#print axioms AreaDeficit.Surfaces.DiscCover.density_extremal_disc
+#print axioms AreaDeficit.Surfaces.DiscCover.densityRatio_le_of_disc_avoidance
+#print axioms AreaDeficit.Surfaces.DiscCover.remote_densityRatio_bound

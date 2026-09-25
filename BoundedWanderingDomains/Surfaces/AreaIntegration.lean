@@ -12,13 +12,14 @@ namespace AreaDeficit.Surfaces.DiscCover
 variable {M : Type*} [TopologicalSpace M] [ChartedSpace ℂ M]
   [IsManifold 𝓘(ℂ) 1 M] [MeasurableSpace M] [BorelSpace M]
 
+omit [MeasurableSpace M] [BorelSpace M] in
 theorem chartDensity_sq_aemeasurable (p : DiscCover M) {c : OpenPartialHomeomorph M ℂ}
     (hc : MDifferentiableOn 𝓘(ℂ) 𝓘(ℂ) c c.source) :
     AEMeasurable (fun z => ENNReal.ofReal ((p.chartDensity c z)^2))
       (volume.restrict c.target) := by
   have hcont : ContinuousOn (p.chartDensity c) c.target :=
     fun z hz => (p.chartDensity_contDiffAt hc hz).continuousAt.continuousWithinAt
-  exact (hcont.pow 2).ennreal_ofReal.aemeasurable c.open_target.measurableSet
+  exact (ENNReal.continuous_ofReal.comp_continuousOn (hcont.pow 2)).aemeasurable c.open_target.measurableSet
 
 theorem localArea_setLIntegral (p : DiscCover M) {c : OpenPartialHomeomorph M ℂ}
     (hc : MDifferentiableOn 𝓘(ℂ) 𝓘(ℂ) c c.source)
@@ -30,8 +31,10 @@ theorem localArea_setLIntegral (p : DiscCover M) {c : OpenPartialHomeomorph M �
   let e := chartInverseExtension c x₀
   have he : Measurable e := chartInverseExtension_measurable c x₀
   change (∫⁻ x in A, b x ∂Measure.map e _) = _
-  rw [setLIntegral_map hA hb he,
-    setLIntegral_withDensity_eq_lintegral_mul₀ (p.chartDensity_sq_aemeasurable hc)
+  rw [setLIntegral_map hA hb he]
+  change (∫⁻ x in e ⁻¹' A, (b ∘ e) x ∂(volume.restrict c.target).withDensity
+    (fun z => ENNReal.ofReal ((p.chartDensity c z)^2))) = _
+  rw [setLIntegral_withDensity_eq_lintegral_mul₀ (p.chartDensity_sq_aemeasurable hc)
       ((hb.comp he).aemeasurable) (he hA),Measure.restrict_restrict (he hA)]
   have hset : e ⁻¹' A ∩ c.target = c '' A := by
     ext z
@@ -49,7 +52,7 @@ theorem localArea_setLIntegral (p : DiscCover M) {c : OpenPartialHomeomorph M �
   rw [hset]
   apply setLIntegral_congr_fun (chart_image_measurable c x₀ hA hAc)
   rintro z ⟨x,hx,rfl⟩
-  dsimp only [Pi.mul_apply]
+  dsimp only [Pi.mul_apply,Function.comp_apply]
   rw [show e (c x) = c.symm (c x) from chartInverseExtension_eq c x₀ (c.map_source (hAc hx))]
 
 variable [SecondCountableTopology M]

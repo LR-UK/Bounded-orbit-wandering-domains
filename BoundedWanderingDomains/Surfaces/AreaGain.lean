@@ -29,6 +29,7 @@ theorem gainWeight_bounds (p : DiscCover M) {U : TopologicalSpace.Opens M}
 
 variable [MeasurableSpace M] [BorelSpace M] [SecondCountableTopology M]
 
+omit [SecondCountableTopology M] in
 theorem gainWeight_measurable (p : DiscCover M) {U : TopologicalSpace.Opens M}
     (q : DiscCover U) : Measurable (p.gainWeight q) :=
   measurable_const.sub (((p.densityRatio_measurable q).inv).pow_const 2)
@@ -81,6 +82,5 @@ theorem areaGain_coordinate_formula (p : DiscCover M) {U : TopologicalSpace.Open
   have hqn : q.density d x ≠ 0 := ne_of_gt hqpos
   change (q.density d x)^2 * (1 - (p.density c x / q.density d x)^2) = _
   field_simp
-  <;> ring
 
 end AreaDeficit.Surfaces.DiscCover

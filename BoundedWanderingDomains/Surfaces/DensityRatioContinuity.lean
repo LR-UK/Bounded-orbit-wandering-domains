@@ -24,8 +24,9 @@ theorem densityRatio_continuous (p : DiscCover M) {U : TopologicalSpace.Opens M}
   have hx : (x : M) ∈ c.source := mem_chart_source ℂ (x : M)
   have hxd : x ∈ d.source := by
     simpa only [d,OpenPartialHomeomorph.subtypeRestr_source,mem_preimage] using hx
-  have hpc := (p.chartDensity_contDiffAt hc (c.map_source hx)).continuousAt.comp
-    (c.continuousAt hx |>.comp continuous_subtype_val.continuousAt)
+  have hpc : ContinuousAt (fun y : U => p.chartDensity c (c y)) x :=
+    ((p.chartDensity_contDiffAt hc (c.map_source hx)).continuousAt.comp
+      (c.continuousAt hx)).comp continuous_subtype_val.continuousAt
   have hqc := (q.chartDensity_contDiffAt hd (d.map_source hxd)).continuousAt.comp
     (d.continuousAt hxd)
   have hpn : p.chartDensity c (c x) ≠ 0 := ne_of_gt (p.chartDensity_pos hc (c.map_source hx))

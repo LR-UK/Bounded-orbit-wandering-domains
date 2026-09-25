@@ -45,7 +45,7 @@ theorem chart_gain_cutoff (p : DiscCover M) {U : TopologicalSpace.Opens M}
         (p.chartDensity c z)^2 := by
       rw [← p.chartLogRatio_laplacian q hU hc (hVc (hsupp hz))]
       exact p.chartLogRatio_laplacian_nonneg q hU hc (hVc (hsupp hz))
-    simp only [Finset.notMem_empty,if_false,max_eq_left hnonneg]
+    simp only [Finset.notMem_empty,ite_false,max_eq_left hnonneg]
   · simp [image_eq_zero_of_notMem_tsupport hz]
 
 end AreaDeficit.Surfaces.DiscCover

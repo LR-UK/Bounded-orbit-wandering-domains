@@ -80,3 +80,19 @@ Current rebuild has passed >340 local modules without failure. It will reach
 new AreaGain through SurfaceResearch. ChartGainCutoff and ExtremalDisc need
 separate builds/imports after the staged run because its graph was fixed
 before their creation. Do not count draft scripts as checked results.
+
+## Continuation: checked area gain and uniform remote density bound
+All reconstructed modules and the seven WIP modules now individually compile.
+New DiscDilation, DiscAvoidanceRatio and RemoteDensityBound compile too.
+RemoteDensityBound derives a uniform density-ratio bound over all covered
+open subdomains of a covered ambient surface, with centres in a compact set
+and any disjoint closed removed set. This is an actual geometric bound,
+not an assumed area estimate. ChartGainCutoff still takes its explicit
+log-ratio hypothesis; assembly into full remote area bounds remains.
+All are imported by SurfaceResearch and principal axioms added to audit.
+The initial restored staged build stopped at AreaIntegration; fixed now.
+Full submission audit is being restarted at /tmp/continued-audit.log.
+Current repository: /workspace/scratch/bcaaac34f9c3/bounded-orbit-work.
+Next: log-ratio bridge, coordinate cutoff assembly / surface Green;
+point-removal bound, kernel convergence and surface dynamics still needed.
+The arbitrary-surface dynamical claims are NOT proved yet.
