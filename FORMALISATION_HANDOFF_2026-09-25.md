@@ -501,3 +501,15 @@ backward invariant in the working domain.  The accompanying hyperbolic-area
 lemmas show that deleting this countable union preserves intrinsic area.
 This formalises the manuscript passage from `A` to `A*`; the remaining core
 is the uniform one-step metric transport/cancellation estimate.
+
+The cancellation side of that estimate is now complete.  The checked
+theorems `finite_area_cancellation_le`,
+`DiscCover.uniform_finitePuncture_insertion_area_le`, and
+`DiscCover.finite_model_cancellation_of_area_advance` handle Schwarz--Pick
+inequalities, finite model area, and the uniform cost of adjoining boundedly
+many exceptional punctures.  Finally,
+`SurfaceDynamics.false_of_positive_area_area_advances` combines those facts
+with puncture density blow-up and positive chart area.  Its sole analytic
+input is now the uniform one-step area-advance configuration in each finite
+model.  Proving that input by coordinate change of variables plus the local
+density-deficit estimate is the remaining positive-area core.
