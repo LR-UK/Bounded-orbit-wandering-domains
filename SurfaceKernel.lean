@@ -1,5 +1,6 @@
-/- Kernel-convergence workstream. The full convergence theorem is unfinished. -/
+/- Checked finite-puncture convergence, including disconnected complements. -/
 import BoundedWanderingDomains.Surfaces.KernelNonconstant
 import BoundedWanderingDomains.Surfaces.KernelDomains
 import BoundedWanderingDomains.Surfaces.KernelNormal
 import BoundedWanderingDomains.Surfaces.KernelConvergence
+import BoundedWanderingDomains.Surfaces.DomainChartKernel

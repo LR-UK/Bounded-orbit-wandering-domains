@@ -1,3 +1,4 @@
-/- Uniform remote gain for finite-puncture models; no arbitrary-domain claim. -/
+/- Uniform compact chart gain for arbitrary open subdomains. -/
 import BoundedWanderingDomains.Surfaces.CompactChartPatches
 import BoundedWanderingDomains.Surfaces.GainFatou
+import BoundedWanderingDomains.Surfaces.DomainCompactGain

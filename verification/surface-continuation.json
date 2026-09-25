@@ -1,0 +1,13 @@
+{
+  "date": "2026-09-25",
+  "build": "lake build SurfaceResearch",
+  "result": "passed",
+  "jobs": 3990,
+  "axiom_reports": 74,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "surface_dynamical_claims_proved": false
+}

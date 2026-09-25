@@ -1,3 +1,44 @@
+'AreaDeficit.Surfaces.isManifold_analytic_of_complex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.nonempty_subdomain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.domainDensity_eq_on_component' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.domainDensity_tendsto_finite_punctures' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.domainChartDensity_contDiffAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.domainChartDensity_curvature' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.domainChartDensity_measurable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.domainChartDensity_tendsto_finite_punctures' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.domainDensity_mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.domainDensity_schwarz_disc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.domainDensity_ratio_le_of_disc_avoidance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.remote_domainDensity_ratio_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.remote_finite_models_chart_cutoff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.remote_domain_chart_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.remote_domain_chart_compact_gain' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.density_nested_subdomains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.density_sequence_bounded_by_subdomain' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'AreaDeficit.Surfaces.normal_lift_limit_maps_disc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.density_tendsto_of_dense_punctures' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
 'RiemannDynamics.exists_hyperbolicMetric' depends on axioms: [propext, Classical.choice, Quot.sound]
 'RiemannDynamics.exists_hyperbolicMetric_of_diffeomorph' depends on axioms: [propext, Classical.choice, Quot.sound]
 'AreaDeficit.Surfaces.exists_smooth_separating_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -32,3 +73,36 @@
 'AreaDeficit.Surfaces.DiscCover.local_density_expression' depends on axioms: [propext, Classical.choice, Quot.sound]
 'AreaDeficit.Surfaces.DiscCover.chartDensity_contDiffAt' depends on axioms: [propext, Classical.choice, Quot.sound]
 'AreaDeficit.Surfaces.DiscCover.chartDensity_curvature' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.coordinate_deriv_comp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.density_schwarz_disc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.density_schwarz' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.density_coordinate_change' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.chartArea_coordinate_change' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.coordinateArea_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.localArea_overlap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.exists_chartPartition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.areaUsing_independent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.hyperbolicArea_apply_chart' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.hyperbolicArea_independent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.density_subdomain_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.chartLogRatio_contDiffAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.chartLogRatio_laplacian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.chartLogRatio_laplacian_nonneg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.density_ratio_coordinate_independent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.one_le_densityRatio' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.densityRatio_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.hyperbolicArea_setLIntegral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.areaGain_coordinate_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.chart_gain_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.compact_uniform_disc_avoidance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.density_extremal_disc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.densityRatio_le_of_disc_avoidance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.remote_densityRatio_bound' depends on axioms: [propext, Classical.choice, Quot.sound]

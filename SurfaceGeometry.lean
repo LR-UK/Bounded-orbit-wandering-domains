@@ -5,3 +5,6 @@ import BoundedWanderingDomains.Surfaces.AreaGain
 import BoundedWanderingDomains.Surfaces.AreaNullSets
 import BoundedWanderingDomains.Surfaces.PositiveAreaBridge
 import BoundedWanderingDomains.Surfaces.UniformizationBridge
+import BoundedWanderingDomains.Surfaces.SubdomainCover
+import BoundedWanderingDomains.Surfaces.DomainChartDensity
+import BoundedWanderingDomains.Surfaces.DomainSchwarz

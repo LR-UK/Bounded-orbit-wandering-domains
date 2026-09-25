@@ -1,5 +1,21 @@
 import SurfaceResearch
 
+#print axioms AreaDeficit.Surfaces.isManifold_analytic_of_complex
+#print axioms AreaDeficit.Surfaces.DiscCover.nonempty_subdomain
+#print axioms AreaDeficit.Surfaces.DiscCover.domainDensity_eq_on_component
+#print axioms AreaDeficit.Surfaces.DiscCover.domainDensity_tendsto_finite_punctures
+#print axioms AreaDeficit.Surfaces.DiscCover.domainChartDensity_contDiffAt
+#print axioms AreaDeficit.Surfaces.DiscCover.domainChartDensity_curvature
+#print axioms AreaDeficit.Surfaces.DiscCover.domainChartDensity_measurable
+#print axioms AreaDeficit.Surfaces.DiscCover.domainChartDensity_tendsto_finite_punctures
+#print axioms AreaDeficit.Surfaces.DiscCover.domainDensity_mono
+#print axioms AreaDeficit.Surfaces.DiscCover.domainDensity_schwarz_disc
+#print axioms AreaDeficit.Surfaces.DiscCover.domainDensity_ratio_le_of_disc_avoidance
+#print axioms AreaDeficit.Surfaces.DiscCover.remote_domainDensity_ratio_bound
+#print axioms AreaDeficit.Surfaces.DiscCover.remote_finite_models_chart_cutoff
+#print axioms AreaDeficit.Surfaces.DiscCover.remote_domain_chart_cutoff
+#print axioms AreaDeficit.Surfaces.DiscCover.remote_domain_chart_compact_gain
+
 #print axioms AreaDeficit.Surfaces.DiscCover.density_nested_subdomains
 #print axioms AreaDeficit.Surfaces.DiscCover.density_sequence_bounded_by_subdomain
 #print axioms AreaDeficit.Surfaces.normal_lift_limit_maps_disc
