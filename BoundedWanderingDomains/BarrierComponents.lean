@@ -7,11 +7,12 @@ namespace AreaDeficit
 /-- The puncture barrier has the same complementary components as the
 interior trapped set at every interior trapped point. -/
 theorem barrier_component_eq_trapped_component
-    {f : ℂ → ℂ} {V A : Set ℂ} (hV : IsOpen V) (hA : IsClosed A)
+    {α : Type*} [TopologicalSpace α] [LocallyConnectedSpace α]
+    {f : α → α} {V A : Set α} (hV : IsOpen V) (hA : IsClosed A)
     (hf : ContinuousOn f V) (hfront : frontier V ⊆ A)
     (hback : V ∩ f ⁻¹' A ⊆ A)
     (havoid : interior (trappedSet f V) ⊆ Aᶜ)
-    {x : ℂ} (hx : x ∈ interior (trappedSet f V)) :
+    {x : α} (hx : x ∈ interior (trappedSet f V)) :
     connectedComponentIn Aᶜ x = connectedComponentIn (interior (trappedSet f V)) x := by
   let C := connectedComponentIn Aᶜ x
   have hxC : x ∈ C := mem_connectedComponentIn (havoid hx)
