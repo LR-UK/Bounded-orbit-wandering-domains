@@ -185,6 +185,41 @@ theorem uniform_compact_finite_removal_gain (p : DiscCover M)
   refine (hfinite E U).trans ?_
   gcongr
 
+/-- Cardinality-at-most form of the uniform finite-removal theorem.  This is
+the quantifier used in the paper: one constant works for every exceptional
+set containing at most `q` points. -/
+theorem uniform_compact_finite_removal_gain_le (p : DiscCover M)
+    (q : ℕ) {L : Set M} (hL : IsCompact L) :
+    ∃ B : ℝ≥0∞, B ≠ ∞ ∧ ∀ (E : Finset M), E.card ≤ q →
+      ∀ U : TopologicalSpace.Opens M,
+        p.domainAreaGain U (finiteRemovalDomain U E) L ≤ B := by
+  classical
+  obtain ⟨C,hC,hpoint⟩ := p.uniform_compact_point_removal_gain hL
+  have hfinite : ∀ (E : Finset M) (U : TopologicalSpace.Opens M),
+      p.domainAreaGain U (finiteRemovalDomain U E) L ≤ (E.card : ℝ≥0∞) * C := by
+    intro E
+    induction E using Finset.induction_on with
+    | empty =>
+        intro U
+        simp
+    | @insert a E ha ih =>
+        intro U
+        rw [finiteRemovalDomain_insert]
+        calc
+          p.domainAreaGain U (punctureDomain (finiteRemovalDomain U E) a) L ≤
+              p.domainAreaGain U (finiteRemovalDomain U E) L +
+                p.domainAreaGain (finiteRemovalDomain U E)
+                  (punctureDomain (finiteRemovalDomain U E) a) L :=
+            p.domainAreaGain_triangle U _ (finiteRemovalDomain U E) hL.measurableSet
+          _ ≤ (E.card : ℝ≥0∞) * C + C :=
+            add_le_add (ih U) (hpoint a (finiteRemovalDomain U E))
+          _ = ((insert a E).card : ℝ≥0∞) * C := by
+            rw [Finset.card_insert_of_notMem ha, Nat.cast_add, Nat.cast_one, add_mul,
+              one_mul]
+  refine ⟨(q : ℝ≥0∞) * C, ENNReal.mul_ne_top (ENNReal.natCast_ne_top q) hC, ?_⟩
+  intro E hEq U
+  exact (hfinite E U).trans (mul_le_mul_right' (ENNReal.natCast_le_natCast.mpr hEq) C)
+
 /-- Fixed-hyperbolic-ambient form of the paper's compact area-gain lemma:
 after deleting a fixed remote compact obstacle and at most q further points,
 the gain on L is bounded independently of the old open domain and of the
@@ -197,6 +232,25 @@ theorem uniform_compact_finite_remote_removal_gain (p : DiscCover M)
         p.domainAreaGain U
           (finiteRemovalDomain U E ⊓ ⟨Kᶜ,hK.isClosed.isOpen_compl⟩) L ≤ B := by
   obtain ⟨B,hB,hfinite⟩ := p.uniform_compact_finite_removal_gain q hL
+  obtain ⟨C,hC,hremote⟩ := p.compact_localization_domainAreaGain
+    ⟨Kᶜ,hK.isClosed.isOpen_compl⟩ hL
+      (fun x hxL hxK => disjoint_left.mp hLK hxL hxK)
+  refine ⟨B + C, ENNReal.add_ne_top.mpr ⟨hB,hC⟩, ?_⟩
+  intro E hEq U
+  exact (p.domainAreaGain_triangle U _ (finiteRemovalDomain U E)
+    hL.measurableSet).trans (add_le_add (hfinite E hEq U)
+      (hremote (finiteRemovalDomain U E)))
+
+/-- Fixed-hyperbolic-ambient compact removal with at most `q` additional
+punctures. -/
+theorem uniform_compact_finite_remote_removal_gain_le (p : DiscCover M)
+    (q : ℕ) {K L : Set M} (hK : IsCompact K) (hL : IsCompact L)
+    (hLK : Disjoint L K) :
+    ∃ B : ℝ≥0∞, B ≠ ∞ ∧ ∀ (E : Finset M), E.card ≤ q →
+      ∀ U : TopologicalSpace.Opens M,
+        p.domainAreaGain U
+          (finiteRemovalDomain U E ∩ ⟨Kᶜ,hK.isClosed.isOpen_compl⟩) L ≤ B := by
+  obtain ⟨B,hB,hfinite⟩ := p.uniform_compact_finite_removal_gain_le q hL
   obtain ⟨C,hC,hremote⟩ := p.compact_localization_domainAreaGain
     ⟨Kᶜ,hK.isClosed.isOpen_compl⟩ hL
       (fun x hxL hxK => disjoint_left.mp hLK hxL hxK)
@@ -223,6 +277,23 @@ theorem uniform_compact_finite_remote_area (p : DiscCover M)
   exact (p.domainArea_le_add_gain U _ hA).trans
     (add_le_add_right ((measure_mono hAL).trans (hgain E hEq U)) _)
 
+/-- Area-mass formulation for exceptional sets of cardinality at most `q`. -/
+theorem uniform_compact_finite_remote_area_le (p : DiscCover M)
+    (q : ℕ) {K L : Set M} (hK : IsCompact K) (hL : IsCompact L)
+    (hLK : Disjoint L K) :
+    ∃ B : ℝ≥0∞, B ≠ ∞ ∧ ∀ (E : Finset M), E.card ≤ q →
+      ∀ (U : TopologicalSpace.Opens M) (A : Set M), MeasurableSet A →
+        A ⊆ L →
+        p.domainArea
+          (finiteRemovalDomain U E ∩ ⟨Kᶜ,hK.isClosed.isOpen_compl⟩) A ≤
+          p.domainArea U A + B := by
+  obtain ⟨B,hB,hgain⟩ :=
+    p.uniform_compact_finite_remote_removal_gain_le q hK hL hLK
+  refine ⟨B,hB,?_⟩
+  intro E hEq U A hA hAL
+  exact (p.domainArea_le_add_gain U _ hA).trans
+    (add_le_add_right ((measure_mono hAL).trans (hgain E hEq U)) _)
+
 /-- On one fixed hyperbolic ambient surface the constant is independent of
 the chosen universal disc cover. -/
 theorem uniform_compact_finite_remote_removal_gain_all_covers
@@ -237,6 +308,21 @@ theorem uniform_compact_finite_remote_removal_gain_all_covers
   refine ⟨B,hB,?_⟩
   intro p E hEq U
   rw [p.domainAreaGain_independent p₀]
+  exact hbound E hEq U
+
+/-- Cover-independent version with the paper's `E.card ≤ q` quantifier. -/
+theorem uniform_compact_finite_remote_removal_gain_le_all_covers
+    (p0 : DiscCover M) (q : ℕ) {K L : Set M}
+    (hK : IsCompact K) (hL : IsCompact L) (hLK : Disjoint L K) :
+    ∃ B : ℝ≥0∞, B ≠ ∞ ∧ ∀ (p : DiscCover M) (E : Finset M), E.card ≤ q →
+      ∀ U : TopologicalSpace.Opens M,
+        p.domainAreaGain U
+          (finiteRemovalDomain U E ∩ ⟨Kᶜ,hK.isClosed.isOpen_compl⟩) L ≤ B := by
+  obtain ⟨B,hB,hbound⟩ :=
+    p0.uniform_compact_finite_remote_removal_gain_le q hK hL hLK
+  refine ⟨B,hB,?_⟩
+  intro p E hEq U
+  rw [p.domainAreaGain_independent p0]
   exact hbound E hEq U
 
 end AreaDeficit.Surfaces.DiscCover
