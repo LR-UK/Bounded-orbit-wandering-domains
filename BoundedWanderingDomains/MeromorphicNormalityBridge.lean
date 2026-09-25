@@ -200,9 +200,27 @@ theorem mem_fatouSet_iff_coe_mem_surfaceModel_omega (f : ℂ → ℂ) (z : ℂ) 
     exact mapsTo_fatouSet_surfaceModel_omega f hz
   · exact mem_fatouSet_of_coe_mem_surfaceModel_omega
 
+/-- Set-level form of the finite-chart normality equivalence. -/
+theorem surfaceModel_omega_eq_finiteImage_fatouSet (f : ℂ → ℂ) :
+    (surfaceModel f).omega = finiteImage (fatouSet f) := by
+  apply Set.Subset.antisymm
+  · intro y hy
+    have hysource : y ∈ finiteSphereOpens :=
+      (surfaceModel f).omega_subset_source hy
+    let z : ℂ := RiemannDynamics.sphereChartFinite y
+    have hzy : (z : OnePoint ℂ) = y := by
+      change y ∈ RiemannDynamics.sphereChartFinite.source at hysource
+      simpa only [z, RiemannDynamics.sphereChartFinite_symm_apply] using
+        RiemannDynamics.sphereChartFinite.left_inv hysource
+    refine ⟨z, ?_, hzy⟩
+    exact (mem_fatouSet_iff_coe_mem_surfaceModel_omega f z).2 (hzy ▸ hy)
+  · rintro _ ⟨z, hz, rfl⟩
+    exact (mem_fatouSet_iff_coe_mem_surfaceModel_omega f z).1 hz
+
 end MeromorphicDynamics
 
 #print axioms MeromorphicDynamics.surfaceModel_isNormalOn_of_normalSequence
 #print axioms MeromorphicDynamics.normalSequence_of_surfaceModel_isNormalOn
 #print axioms MeromorphicDynamics.mapsTo_fatouSet_surfaceModel_omega
 #print axioms MeromorphicDynamics.mem_fatouSet_iff_coe_mem_surfaceModel_omega
+#print axioms MeromorphicDynamics.surfaceModel_omega_eq_finiteImage_fatouSet
