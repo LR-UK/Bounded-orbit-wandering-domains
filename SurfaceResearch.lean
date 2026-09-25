@@ -40,6 +40,7 @@ import BoundedWanderingDomains.Surfaces.LocalMapTotalization
 import BoundedWanderingDomains.Surfaces.LocalBarrierComponents
 import BoundedWanderingDomains.Surfaces.RestrictedBarrierComponents
 import BoundedWanderingDomains.Surfaces.BoundaryBarrierPackage
+import BoundedWanderingDomains.Surfaces.WanderingCompactTail
 import SurfaceGeometry
 import SurfaceFiniteRemoval
 import SurfaceKernel

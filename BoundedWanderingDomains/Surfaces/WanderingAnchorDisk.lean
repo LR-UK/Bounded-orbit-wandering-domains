@@ -81,6 +81,7 @@ theorem LocalMap.IsWanderingComponent.exists_hyperbolic_restricted_tail
       let z₁ : f.trapped := f.trappedMap ⟨z, hztrapped⟩
       V 0 = U ∧
       (∀ n, f.IsComponent (V n)) ∧
+      (∀ n, f.orbit n ⟨z, hztrapped⟩ ∈ V n) ∧
       Pairwise (fun n m => Disjoint (V n) (V m)) ∧
       D.closedCarrier ⊆ U \ {z} ∧
       (∀ n, 0 < n → V n ⊆ (D.compl : Set X)) ∧
@@ -101,7 +102,7 @@ theorem LocalMap.IsWanderingComponent.exists_hyperbolic_restricted_tail
       htail (n + 1) hn (horbit (n + 1))⟩
   have hz₁restricted : (z₁ : X) ∈ (f.restrictSource W hW).trapped :=
     f.restrictSource_mem_trapped_of_orbit_mem W hW z₁.property hstay
-  refine ⟨V, hztrapped, D, p, hV0, hcomp, hdis, hD, htail,
+  refine ⟨V, hztrapped, D, p, hV0, hcomp, horbit, hdis, hD, htail,
     hz₁restricted, ?_⟩
   intro n
   rw [f.restrictSource_iterate_eq_some_orbit W hW z₁.property hstay n,
