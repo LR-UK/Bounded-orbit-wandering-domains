@@ -324,6 +324,23 @@ Thus the remaining meromorphic work is the locally-uniform promotion after
 applying the still-outstanding surface escape theorem; no further comparison
 of Fatou sets or components is needed.
 
+That promotion is now complete in `MeromorphicEscape.lean`.  The checked
+declarations are:
+
+- `wandering_orbit_unbounded_of_surface_theorem`;
+- `wandering_orbit_locallyUniform_infty_of_unbounded`;
+- `wanderingLocallyUniformInfinityClaim_of_surface_theorem`.
+
+The first turns a hypothetically bounded ordinary orbit into a compact subset
+of the finite sphere chart and contradicts the surface theorem.  The second
+uses local meromorphic normality on the Fatou-component subtype, the generic
+Arzela--Ascoli extraction, and disjoint spherical images to promote a marked
+escape subsequence to locally uniform convergence to infinity.  The auxiliary
+bridges `normal_family_of_normalSequenceOn` and
+`normal_family_restrict_subsequence` are also checked.  Consequently Theorem
+1.2 (meromorphic) is now a formal corollary of Theorem 1.3(1), with no
+remaining meromorphic-specific gap.
+
 The nonhyperbolic ambient reduction has also advanced.  The checked theorem
 `nonempty_discCover_coordDisk_compl` proves that deleting one closed
 coordinate disk from any analytic surface produces a disc-covered hyperbolic
