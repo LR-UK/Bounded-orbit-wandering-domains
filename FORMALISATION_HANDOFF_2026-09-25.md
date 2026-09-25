@@ -280,3 +280,9 @@ finite-puncture estimate for the first comparison (the sharp expected bound
 is `2π * P.card`) together with the finite-hyperbolisation statement for an
 arbitrary connected Riemann surface. This is a reduction of the remaining
 analytic issue, not an assumption to insert into the final theorem.
+
+The author additionally confirmed that these fixed anchors may be inserted
+when the original surface is nonhyperbolic: their area contribution on the
+remote compact set should be charged once by a constant. Thus the general
+proof needs finite hyperbolisation and the uniform finite-puncture estimate;
+it does not require a disc cover of the unpunctured nonhyperbolic surface.

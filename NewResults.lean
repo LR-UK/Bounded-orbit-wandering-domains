@@ -36,3 +36,4 @@ Area uses curvature −1 without dividing by 2π.
 
 #print axioms BoundedWanderingDomains.local_wandering_orbit_locallyUniform_singular_derivedSet
 #print axioms FunctionTheory.MeromorphicNFOn.sphereHolomorphicOn_meromorphicSphereValue
+#print axioms FunctionTheory.MeromorphicNFOn.mdifferentiable_meromorphicSphereValue
