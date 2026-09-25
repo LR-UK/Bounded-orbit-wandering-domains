@@ -170,3 +170,20 @@ Focused builds passed without warnings. Next: kernel convergence as finite
 punctures become dense in the complement of an arbitrary open domain;
 then full remote bound, 2π point-removal bound, exceptional ambient surfaces,
 and three dynamical claims. No full-surface theorem is claimed yet.
+
+`DenseFinitePunctures` proves the needed topological exhaustion: any
+closed subset of a second countable surface is the closure of an
+increasing union of finite subsets. Its focused Lean build passed.
+Still missing: convergence of intrinsic Poincaré density on the
+punctured-domain sequence (normal-family/Hurwitz step), a Fatou transfer,
+point-removal 2π and full surface dynamics.
+
+`GainFatou` supplies the checked measure-theoretic transfer: measurable
+chart integrands with pointwise convergence on a fixed measurable chart
+set inherit any uniform finite integral bound. The geometric kernel
+convergence and its chart measurability hypotheses remain unproved. The
+planar `InteriorDensityLimit` proves an analogous limit using bounded
+holomorphic subsequences and omission/Hurwitz, but that proof is typed
+for planar finite-puncture metric inputs and must be adapted to the
+ambient disc-cover lift on an arbitrary surface. Do not treat this as
+an assumption satisfied by the surface metrics.
