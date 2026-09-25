@@ -74,4 +74,13 @@ theorem domainAreaGain_triangle (p : DiscCover M)
     p.domainAreaGain U V E ≤ p.domainAreaGain U W E + p.domainAreaGain W V E :=
   p.domainAreaGain_localize U V W V le_rfl hE inter_subset_right
 
+/-- If the set being measured survives a smaller comparison domain, then
+shrinking the target domain can only increase the area gain there. -/
+theorem domainAreaGain_mono_right_on (p : DiscCover M)
+    (U V W : TopologicalSpace.Opens M) (hVW : V ≤ W)
+    {E : Set M} (hE : MeasurableSet E) (hEV : E ∩ W ⊆ V) :
+    p.domainAreaGain U W E ≤ p.domainAreaGain U V E := by
+  simpa [p.domainAreaGain_self] using
+    p.domainAreaGain_localize U W U V hVW hE hEV
+
 end AreaDeficit.Surfaces.DiscCover

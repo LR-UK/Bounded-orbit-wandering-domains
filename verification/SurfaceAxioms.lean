@@ -96,6 +96,10 @@ import SurfaceResearch
 #print axioms AreaDeficit.Surfaces.DiscCover.compact_point_removal_gain
 #print axioms AreaDeficit.Surfaces.DiscCover.compact_finite_removal_gain
 #print axioms AreaDeficit.Surfaces.DiscCover.compact_finite_remote_removal_gain
+#print axioms AreaDeficit.Surfaces.DiscCover.uniform_compact_point_removal_gain
+#print axioms AreaDeficit.Surfaces.DiscCover.uniform_compact_finite_removal_gain
+#print axioms AreaDeficit.Surfaces.DiscCover.uniform_compact_finite_remote_removal_gain
+#print axioms AreaDeficit.Surfaces.DiscCover.uniform_compact_finite_remote_area
 
 #print axioms AreaDeficit.Surfaces.DiscCover.domainDensity_tendsto_atTop_finite_punctures
 #print axioms AreaDeficit.Surfaces.DiscCover.hyperbolicArea_compact_finite

@@ -28,6 +28,7 @@ import BoundedWanderingDomains.Surfaces.LiftedPunctureClosure
 import BoundedWanderingDomains.Surfaces.KernelNonconstant
 import BoundedWanderingDomains.Surfaces.AreaNullSets
 import BoundedWanderingDomains.Surfaces.PositiveAreaBridge
+import BoundedWanderingDomains.Surfaces.UniformFiniteRemoval
 import BoundedWanderingDomains.Surfaces.UniformizationBridge
 import SurfaceGeometry
 import SurfaceFiniteRemoval
