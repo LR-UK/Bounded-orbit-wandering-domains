@@ -1,4 +1,5 @@
 import SurfaceResearch
+import BoundedWanderingDomains.MeromorphicSurfaceModel
 
 #print axioms AreaDeficit.Surfaces.isManifold_analytic_of_complex
 #print axioms AreaDeficit.Surfaces.DiscCover.nonempty_subdomain
@@ -115,3 +116,7 @@ import SurfaceResearch
 #print axioms SurfaceDynamics.escape_or_subsequence_tendsto_mem
 #print axioms SurfaceDynamics.LocalMap.IsWanderingComponent.subset_trapped
 #print axioms SurfaceDynamics.wanderingDerivedSingularLimitClaim_of_clusterMeetsDerived
+#print axioms MeromorphicDynamics.surfaceModel_mdifferentiable
+#print axioms MeromorphicDynamics.rational_of_meromorphicSphereValue_eventuallyEq
+#print axioms MeromorphicDynamics.not_eventuallyEq_meromorphicSphereValue_const
+#print axioms MeromorphicDynamics.surfaceModel_iterate_coe_of_analytic

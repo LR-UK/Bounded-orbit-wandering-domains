@@ -2,6 +2,7 @@
 import BoundedWanderingDomains.MeromorphicSphereHolomorphic
 import BoundedWanderingDomains.Surfaces.LocalDynamics
 import BoundedWanderingDomains.Surfaces.PlaneReading
+import FunctionTheory.Meromorphic.RationalInfinity
 
 /-! # A meromorphic plane map as a local map of the sphere -/
 
@@ -56,6 +57,60 @@ theorem continuous_surfaceModel_map {f : ℂ → ℂ}
     (hf : MeromorphicNFOn f Set.univ) : Continuous (surfaceModel f).map :=
   (surfaceModel_mdifferentiable hf).continuous
 
+/-- If the honest sphere-valued realization of a meromorphic function is
+locally constant, then the meromorphic function is rational (indeed
+constant). This is the identity principle needed for the open-mapping
+bridge. -/
+theorem rational_of_meromorphicSphereValue_eventuallyEq
+    {f : ℂ → ℂ} (hf : MeromorphicNFOn f Set.univ)
+    {a : ℂ} {v : OnePoint ℂ}
+    (hv : FunctionTheory.meromorphicSphereValue f =ᶠ[𝓝 a] fun _ => v) :
+    FunctionTheory.IsRationalMeromorphic f := by
+  cases v with
+  | infty =>
+      have ha := (hf (mem_univ a)).meromorphicAt.eventually_analyticAt
+      have hv' := hv.filter_mono
+        (nhdsWithin_le_nhds : 𝓝[≠] a ≤ 𝓝 a)
+      have hfalse : ∀ᶠ z in 𝓝[≠] a, False := by
+        filter_upwards [ha, hv'] with z hzA hzv
+        rw [FunctionTheory.meromorphicSphereValue_of_analytic hzA] at hzv
+        exact OnePoint.coe_ne_infty _ hzv
+      obtain ⟨z, hz⟩ := hfalse.exists
+      exact hz.elim
+  | coe c =>
+      let g : ℂ → ℂ := fun z => f z - c
+      have hg : MeromorphicOn g Set.univ := fun z _ =>
+        (hf (mem_univ z)).meromorphicAt.sub (analyticAt_const.meromorphicAt)
+      have hzero : g =ᶠ[𝓝 a] 0 := by
+        filter_upwards [hv] with z hzv
+        by_cases hzA : AnalyticAt ℂ f z
+        · rw [FunctionTheory.meromorphicSphereValue_of_analytic hzA] at hzv
+          exact sub_eq_zero.mpr (OnePoint.coe_eq_coe.mp hzv)
+        · rw [FunctionTheory.meromorphicSphereValue_of_not_analytic hzA] at hzv
+          exact (OnePoint.infty_ne_coe c hzv).elim
+      have htopa : meromorphicOrderAt g a = ⊤ :=
+        meromorphicOrderAt_eq_top_iff.mpr
+          (hzero.filter_mono (nhdsWithin_le_nhds : 𝓝[≠] a ≤ 𝓝 a))
+      have htop (z : ℂ) : meromorphicOrderAt g z = ⊤ :=
+        hg.meromorphicOrderAt_eq_top_of_isPreconnected isPreconnected_univ
+          (mem_univ a) (mem_univ z) htopa
+      refine ⟨Polynomial.C c, 1, one_ne_zero, ?_⟩
+      intro z
+      filter_upwards [meromorphicOrderAt_eq_top_iff.mp (htop z)] with w hw
+      simp only [g] at hw
+      simpa only [Polynomial.eval_C, Polynomial.eval_one, div_one] using
+        sub_eq_zero.mp hw
+
+/-- A transcendental meromorphic function is locally nonconstant when read
+honestly as a sphere-valued map, including at its poles. -/
+theorem not_eventuallyEq_meromorphicSphereValue_const
+    {f : ℂ → ℂ} (hf : MeromorphicNFOn f Set.univ)
+    (htrans : ¬ FunctionTheory.IsRationalMeromorphic f) (a : ℂ)
+    (v : OnePoint ℂ) :
+    ¬ FunctionTheory.meromorphicSphereValue f =ᶠ[𝓝 a] fun _ => v := by
+  intro hconst
+  exact htrans (rational_of_meromorphicSphereValue_eventuallyEq hf hconst)
+
 @[simp] theorem surfaceModel_step_coe (f : ℂ → ℂ) (z : ℂ) :
     (surfaceModel f).step (z : OnePoint ℂ) =
       Option.some (FunctionTheory.meromorphicSphereValue f z) := by
@@ -85,4 +140,6 @@ theorem surfaceModel_iterate_coe_of_analytic
 end MeromorphicDynamics
 
 #print axioms MeromorphicDynamics.surfaceModel_mdifferentiable
+#print axioms MeromorphicDynamics.rational_of_meromorphicSphereValue_eventuallyEq
+#print axioms MeromorphicDynamics.not_eventuallyEq_meromorphicSphereValue_const
 #print axioms MeromorphicDynamics.surfaceModel_iterate_coe_of_analytic
