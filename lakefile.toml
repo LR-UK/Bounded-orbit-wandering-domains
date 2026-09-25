@@ -76,3 +76,6 @@ name = "SurfaceDynamicsTargets"
 
 [[lean_lib]]
 name = "PaperChallenge"
+
+[[lean_lib]]
+name = "PaperSolution"

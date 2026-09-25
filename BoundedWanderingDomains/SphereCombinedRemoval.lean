@@ -67,7 +67,7 @@ theorem uniform_compact_finite_gain_sphere
 theorem uniform_compact_finite_gain_sphere_le
     (q : ℕ) {K L : Set (OnePoint ℂ)} (hK : IsCompact K) (hL : IsCompact L)
     (hKL : Disjoint K L) :
-    ∃ C : ℝ≥0∞, C ≠ ∞ ∧
+    ∃ C : ℝ≥0∞, C ≠ ⊤ ∧
       ∀ (E : Finset ℂ) (A : Set (OnePoint ℂ)) (hA : IsClosed A)
         (D : SphereHyperbolicMetricData A), E.card ≤ q →
         D.pole = (∞ : OnePoint ℂ) →
@@ -103,7 +103,9 @@ theorem uniform_compact_finite_gain_sphere_le
             apply lintegral_mono_set
             intro z hz
             exact ⟨Set.mem_univ _, hz.2⟩
-      _ ≤ cost := mul_le_mul_right' (ENNReal.natCast_le_natCast.mpr hEq) _
+      _ ≤ cost := by
+        dsimp only [cost]
+        gcongr
   have htrans := sphereHyperbolicAreaGain_trans hA hB hC
     subset_union_left subset_union_left D (W := L)
   change sphereHyperbolicAreaGain A hA C hC
