@@ -114,4 +114,4 @@ import SurfaceResearch
 #print axioms AreaDeficit.Surfaces.DiscCover.measure_zero_of_finite_model_area_bounds
 #print axioms SurfaceDynamics.escape_or_subsequence_tendsto_mem
 #print axioms SurfaceDynamics.LocalMap.IsWanderingComponent.subset_trapped
-#print axioms SurfaceDynamics.wanderingDerivedSingularLimitClaim_of_finiteLimits
+#print axioms SurfaceDynamics.wanderingDerivedSingularLimitClaim_of_clusterMeetsDerived

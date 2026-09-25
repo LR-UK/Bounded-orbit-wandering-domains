@@ -286,3 +286,12 @@ when the original surface is nonhyperbolic: their area contribution on the
 remote compact set should be charged once by a constant. Thus the general
 proof needs finite hyperbolisation and the uniform finite-puncture estimate;
 it does not require a disc cover of the unpunctured nonhyperbolic surface.
+
+For Theorem 1.5 the right analytic core is now recorded as
+`WanderingOrbitClusterMeetsDerivedClaim`: it asks for one subsequential orbit
+limit in the derived singular set. Requiring every finite subsequential limit
+to lie there is stronger than the paper and stronger than the existing area
+argument, whose natural conclusion is that the cluster set meets the derived
+singular set. The checked implication
+`wanderingDerivedSingularLimitClaim_of_clusterMeetsDerived` converts this
+exact core directly into the paper's escape-or-derived-limit conclusion.
