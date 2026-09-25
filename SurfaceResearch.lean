@@ -8,6 +8,7 @@ import BoundedWanderingDomains.Surfaces.CompactSeparation
 import BoundedWanderingDomains.Surfaces.SeparatingCutoff
 import BoundedWanderingDomains.Surfaces.ChartLaplacianSupport
 import BoundedWanderingDomains.Surfaces.Statements
+import BoundedWanderingDomains.Surfaces.DerivedLimitReduction
 import RiemannDynamics.Uniformization.HyperbolicSurface
 import BoundedWanderingDomains.Surfaces.SmoothSurface
 import BoundedWanderingDomains.Surfaces.DensityRegularity
