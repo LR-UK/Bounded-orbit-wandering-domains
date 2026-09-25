@@ -364,3 +364,32 @@ For Theorem 1.3(1), `exists_orbit_components` and
 orbit and its pairwise disjoint normality components.  The checked reduction
 `noCompactWanderingOrbitClaim_of_componentOrbitImpossible` leaves precisely
 `CompactComponentOrbitImpossibleClaim` as the analytic area core.
+
+The surface backward-puncture machinery has now been started and its first
+analytic obstruction is closed.  `Surfaces/OpenMapping.lean` proves that a
+complex one-dimensional manifold has no open singleton and hence an open
+surface map is nowhere locally constant.  It also exposes the corresponding
+nonconstancy statement in extended charts.  The new checked module
+`Surfaces/FiniteFibers.lean` combines this with isolated zeros to prove:
+
+- `isDiscrete_fiber_of_isOpenMap_of_mdifferentiable`;
+- `finite_compact_inter_fiber_of_isOpenMap_of_mdifferentiable`.
+
+Thus an open holomorphic surface map has discrete fibres, and every fibre
+meets a compact set finitely.  The new checked module
+`Surfaces/LocalPunctures.lean` then proves finite compact inverse images of
+finite sets and ports the planar finite backward-tree construction:
+
+- `finite_compact_inter_preimage_of_finite`;
+- `localPunctures_finite`;
+- `localPunctures_countable`.
+
+These results have standard axioms only.  They supply the exact finiteness and
+countability input needed to approximate a surface barrier by finite backward
+puncture sets.  What remains for Theorem 1.3 is to choose the compact working
+domain/barrier from a hypothetically compact wandering orbit, connect these
+puncture sets to the normality components, and apply the uniform area budget
+and kernel convergence to obtain the contradiction.  For Theorem 1.3(2), the
+same punctures must be combined with the countable-exception removal and the
+already checked density-divergence/Fatou argument.  Theorem 1.5 then still
+requires the corresponding singular-value area construction.
