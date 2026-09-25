@@ -139,3 +139,12 @@ sets; the cutoff can pass through those exceptional points. Focused builds
 passed; an unused-binder warning was subsequently removed. Next connect
 an ambient chart restricted to the complement of a finite point set to this
 interface, then use fixed ambient chart cutoffs in the finite covering step.
+
+`FinitePunctureChartTarget` now verifies the double chart restriction to
+the complement of arbitrary finite `P` and the remote domain, and proves a
+single fixed ambient chart cutoff and compact-chart gain estimate uniform
+over all such `P`, old covers and remote covers. Its focused build passed;
+it is imported into `SurfaceResearch`. Next assemble finite chart cover of
+a compact measured subset of `M \ K`, identify coordinate integrals with
+intrinsic area gain on punctured models (ignoring finite null sets), then
+prove limit over puncture exhaustions and the full dynamical results.
