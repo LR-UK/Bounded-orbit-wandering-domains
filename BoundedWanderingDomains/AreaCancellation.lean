@@ -8,6 +8,29 @@ open scoped ENNReal Topology
 
 namespace AreaDeficit
 
+/-- Inequality form of finite-area cancellation.  This is the natural form
+for Schwarz--Pick transport on a surface, where both the one-step comparison
+and the finite-removal cost are upper bounds. -/
+theorem finite_area_cancellation_le {a : Type*} [MeasurableSpace a]
+    {μ ν : Measure a} {f : a → a} {B W : Set a} {C D : ℝ≥0∞}
+    (hB : MeasurableSet B) (hBW : B ⊆ W) (hfinite : μ W ≠ ∞)
+    (himage : f '' W ⊆ W \ B)
+    (hadvance : μ W ≤ ν (f '' W) + C)
+    (hcost : ν (f '' W) ≤ μ (f '' W) + D) :
+    μ B ≤ D + C := by
+  have hrem : μ (W \ B) ≠ ∞ :=
+    ne_top_of_le_ne_top hfinite (measure_mono sdiff_subset)
+  have hsplit : μ B + μ (W \ B) = μ W := by
+    simpa only [inter_eq_right.mpr hBW] using measure_inter_add_sdiff W hB
+  have hmi : μ (f '' W) ≤ μ (W \ B) := measure_mono himage
+  apply (ENNReal.add_le_add_iff_right hrem).mp
+  rw [hsplit]
+  calc
+    μ W ≤ ν (f '' W) + C := hadvance
+    _ ≤ (μ (f '' W) + D) + C := by gcongr
+    _ ≤ (μ (W \ B) + D) + C := by gcongr
+    _ = (D + C) + μ (W \ B) := by ac_rfl
+
 /-- Cancellation is valid because the area of the forward union is finite.
 The two geometric area comparisons are exposed separately. -/
 theorem finite_area_cancellation {α : Type*} [MeasurableSpace α]
