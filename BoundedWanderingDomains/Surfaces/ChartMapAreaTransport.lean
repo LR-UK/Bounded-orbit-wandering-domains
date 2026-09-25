@@ -1,5 +1,6 @@
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
 import BoundedWanderingDomains.Surfaces.HyperbolicArea
+import BoundedWanderingDomains.Surfaces.CoveringMetricPullback
 import BoundedWanderingDomains.HolomorphicTransport
 
 /-! # Area transport for a surface map in one pair of charts -/
@@ -146,6 +147,48 @@ theorem chart_area_advance_of_density_deficit_holomorphic
     simpa only [c.left_inv (hWc hx)] using
       hasDerivAt_writtenInCharts hc hd hf (hWc hx) (hfWd ⟨x, hx, rfl⟩)
   · exact hdef
+
+/-- On a charted measurable set where a holomorphic covering is injective,
+hyperbolic area cannot decrease. -/
+theorem chart_hyperbolicArea_le_image_of_covering
+    (p : DiscCover M) (q : DiscCover N)
+    {c : OpenPartialHomeomorph M ℂ} {d : OpenPartialHomeomorph N ℂ}
+    (hc : MDifferentiableOn 𝓘(ℂ) 𝓘(ℂ) c c.source)
+    (hd : MDifferentiableOn 𝓘(ℂ) 𝓘(ℂ) d d.source)
+    {f : M → N} (hf : MDifferentiable 𝓘(ℂ) 𝓘(ℂ) f)
+    (hcov : IsCoveringMap f) {W : Set M} (hW : MeasurableSet W)
+    (hWc : W ⊆ c.source) (hfWd : f '' W ⊆ d.source)
+    (hfW : MeasurableSet (f '' W)) (hinj : InjOn f W) :
+    p.hyperbolicArea W ≤ q.hyperbolicArea (f '' W) := by
+  have hpull : ∀ z ∈ c '' W,
+      ‖deriv (d ∘ f ∘ c.symm) z‖ *
+          q.chartDensity d ((d ∘ f ∘ c.symm) z) =
+        p.chartDensity c z := by
+    rintro _ ⟨x, hx, rfl⟩
+    have hfd : f x ∈ d.source := hfWd ⟨x, hx, rfl⟩
+    have h := p.density_covering_pullback q hf hcov hc hd (hWc hx) hfd
+    simpa only [chartDensity, comp_apply, c.left_inv (hWc hx),
+      d.left_inv hfd, mul_comm] using h
+  have hA : MeasurableSet (c '' W) :=
+    chart_image_measurable c (p.projection ⟨0, by simp [unitDisc]⟩) hW hWc
+  have hdef0 : (∫⁻ z in c '' W,
+      ENNReal.ofReal ((p.chartDensity c z)^2) -
+      ENNReal.ofReal ((‖deriv (d ∘ f ∘ c.symm) z‖ *
+        q.chartDensity d ((d ∘ f ∘ c.symm) z))^2)) ≤ 0 := by
+    have heq : (∫⁻ z in c '' W,
+        ENNReal.ofReal ((p.chartDensity c z)^2) -
+        ENNReal.ofReal ((‖deriv (d ∘ f ∘ c.symm) z‖ *
+          q.chartDensity d ((d ∘ f ∘ c.symm) z))^2)) = 0 := by
+      apply setLIntegral_eq_zero hA
+      intro z hz
+      change ENNReal.ofReal ((p.chartDensity c z)^2) -
+        ENNReal.ofReal ((‖deriv (d ∘ f ∘ c.symm) z‖ *
+          q.chartDensity d ((d ∘ f ∘ c.symm) z))^2) = 0
+      rw [hpull z hz, tsub_self]
+    exact heq.le
+  simpa only [add_zero] using
+    p.chart_area_advance_of_density_deficit_holomorphic q hc hd hf
+      hW hWc hfWd hfW hinj hdef0
 
 end AreaDeficit.Surfaces.DiscCover
 
