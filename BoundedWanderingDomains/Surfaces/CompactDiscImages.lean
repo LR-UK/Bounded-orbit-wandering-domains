@@ -56,6 +56,21 @@ theorem unitDisc_closed_radius_compact {r : ℝ} (hr : r < 1) :
   rw [he]
   exact isCompact_closedBall _ _
 
+theorem unitDisc_closed_ball_compact {r : ℝ} (hr : r < 1) :
+    IsCompact {z : unitDisc | ‖(z : ℂ)‖ ≤ r} := by
+  apply Subtype.isCompact_iff.mpr
+  have he : (Subtype.val '' {z : unitDisc | ‖(z : ℂ)‖ ≤ r}) =
+      closedBall (0 : ℂ) r := by
+    ext z
+    constructor
+    · rintro ⟨w, hw, rfl⟩
+      exact mem_closedBall_zero_iff.mpr hw
+    · intro hz
+      have hn := mem_closedBall_zero_iff.mp hz
+      exact ⟨⟨z, mem_ball_zero_iff.mpr (hn.trans_lt hr)⟩, hn, rfl⟩
+  rw [he]
+  exact isCompact_closedBall _ _
+
 theorem unitDisc_maps_compact_radius {B : Set unitDisc} (hB : IsCompact B)
     {r : ℝ} (hr : r < 1) :
     ∃ C : Set unitDisc, IsCompact C ∧
@@ -83,6 +98,38 @@ theorem unitDisc_maps_compact_radius {B : Set unitDisc} (hB : IsCompact B)
   let v : unitDisc := ⟨mobiusDisk (h discZero : ℂ) (h z),
     mobiusDisk_mapsTo (h z).property (h discZero).property⟩
   refine ⟨(h discZero,v), ⟨hh0,hsp.trans hz⟩, ?_⟩
+  apply Subtype.ext
+  exact mobiusDisk_neg_mobiusDisk (h z).property (h discZero).property
+
+/-- The compact-centre control also holds simultaneously on a closed
+Euclidean subdisc. -/
+theorem unitDisc_maps_compact_closed_ball {B : Set unitDisc} (hB : IsCompact B)
+    {r : ℝ} (hr : r < 1) :
+    ∃ C : Set unitDisc, IsCompact C ∧
+      ∀ h : unitDisc → unitDisc, MDifferentiable 𝓘(ℂ) 𝓘(ℂ) h →
+        h discZero ∈ B → ∀ z : unitDisc, ‖(z : ℂ)‖ ≤ r → h z ∈ C := by
+  let T := {z : unitDisc | ‖(z : ℂ)‖ ≤ r}
+  let F := fun v : unitDisc × unitDisc => discMobiusFromZero v.1 v.2
+  refine ⟨F '' (B ×ˢ T),
+    (hB.prod (unitDisc_closed_ball_compact hr)).image
+      discMobiusFromZero_continuous, ?_⟩
+  intro h hh hh0 z hz
+  let g := planeExtension (fun v => (h v : ℂ))
+  have hd : DifferentiableOn ℂ g (ball 0 1) :=
+    planeExtension_differentiableOn ((mdifferentiable_subtype_val unitDisc).comp hh)
+  have hm : MapsTo g (ball 0 1) (ball 0 1) := by
+    intro u hu
+    rw [show g u = (h ⟨u, hu⟩ : ℂ) from planeExtension_coe _ ⟨u, hu⟩]
+    exact (h ⟨u, hu⟩).property
+  have hsp := schwarzPick_pseudo hd hm z.property discZero.property
+  have hg0 : g 0 = (h discZero : ℂ) := planeExtension_coe _ discZero
+  have hgz : g z = (h z : ℂ) := planeExtension_coe _ z
+  have hm0 : mobiusDisk 0 (z : ℂ) = z := by simp [mobiusDisk]
+  change ‖mobiusDisk (g 0) (g z)‖ ≤ ‖mobiusDisk 0 z‖ at hsp
+  rw [hg0, hgz, hm0] at hsp
+  let v : unitDisc := ⟨mobiusDisk (h discZero : ℂ) (h z),
+    mobiusDisk_mapsTo (h z).property (h discZero).property⟩
+  refine ⟨(h discZero, v), ⟨hh0, hsp.trans hz⟩, ?_⟩
   apply Subtype.ext
   exact mobiusDisk_neg_mobiusDisk (h z).property (h discZero).property
 
