@@ -187,3 +187,15 @@ holomorphic subsequences and omission/Hurwitz, but that proof is typed
 for planar finite-puncture metric inputs and must be adapted to the
 ambient disc-cover lift on an arbitrary surface. Do not treat this as
 an assumption satisfied by the surface metrics.
+
+`KernelLift` is now checked: covers of arbitrary open subdomains lift
+holomorphically to the fixed ambient disc; density-extremal discs lift
+with a prescribed ambient centre; any sequence of these lifts has a
+locally uniform holomorphic subsequence on a smaller disc, retaining
+the fixed centre. This prepares the nonconstant/Hurwitz argument but
+does not yet prove density convergence. To finish, establish a uniform
+upper bound for subdomain densities at the chosen centre from a disc
+inside the limiting domain, use the extremal derivative identity to
+show the ambient subsequential limit is nonconstant, prove avoidance
+of the closed complement by an appropriate surface Hurwitz lemma,
+and compare with the limiting domain's density via Schwarz-Pick.
