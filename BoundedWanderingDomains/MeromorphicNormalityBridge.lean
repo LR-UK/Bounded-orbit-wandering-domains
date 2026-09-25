@@ -217,6 +217,61 @@ theorem surfaceModel_omega_eq_finiteImage_fatouSet (f : ℂ → ℂ) :
   · rintro _ ⟨z, hz, rfl⟩
     exact (mem_fatouSet_iff_coe_mem_surfaceModel_omega f z).1 hz
 
+/-- Connected Fatou components are carried exactly to connected components
+of the sphere-model normality locus. -/
+theorem finiteImage_connectedComponentIn_fatouSet
+    (f : ℂ → ℂ) {z : ℂ} (hz : z ∈ fatouSet f) :
+    finiteImage (connectedComponentIn (fatouSet f) z) =
+      connectedComponentIn (surfaceModel f).omega (z : OnePoint ℂ) := by
+  let C := connectedComponentIn (fatouSet f) z
+  let D := connectedComponentIn (surfaceModel f).omega (z : OnePoint ℂ)
+  apply Set.Subset.antisymm
+  · have hpre : IsPreconnected (finiteImage C) := by
+      simpa only [finiteImage] using
+        (isPreconnected_connectedComponentIn.image
+          ((↑) : ℂ → OnePoint ℂ) OnePoint.continuous_coe.continuousOn)
+    apply hpre.subset_connectedComponentIn
+    · exact ⟨z, mem_connectedComponentIn hz, rfl⟩
+    · rintro _ ⟨w, hw, rfl⟩
+      rw [surfaceModel_omega_eq_finiteImage_fatouSet]
+      exact ⟨w, connectedComponentIn_subset _ _ hw, rfl⟩
+  · have hDsource : D ⊆ RiemannDynamics.sphereChartFinite.source := by
+      intro y hy
+      have hyomega : y ∈ (surfaceModel f).omega :=
+        connectedComponentIn_subset _ _ hy
+      have hysource := (surfaceModel f).omega_subset_source hyomega
+      exact hysource
+    have hpre : IsPreconnected (RiemannDynamics.sphereChartFinite '' D) :=
+      isPreconnected_connectedComponentIn.image _
+        (RiemannDynamics.sphereChartFinite.continuousOn.mono hDsource)
+    have hzimage : z ∈ RiemannDynamics.sphereChartFinite '' D := by
+      refine ⟨(z : OnePoint ℂ), mem_connectedComponentIn ?_, ?_⟩
+      · exact (mem_fatouSet_iff_coe_mem_surfaceModel_omega f z).1 hz
+      · exact RiemannDynamics.sphereChartFinite_coe z
+    have himage : RiemannDynamics.sphereChartFinite '' D ⊆ fatouSet f := by
+      rintro w ⟨y, hyD, rfl⟩
+      have hyomega : y ∈ (surfaceModel f).omega :=
+        connectedComponentIn_subset _ _ hyD
+      have hysource : y ∈ RiemannDynamics.sphereChartFinite.source := hDsource hyD
+      have heq :
+          ((RiemannDynamics.sphereChartFinite y : ℂ) : OnePoint ℂ) = y := by
+        simpa only [RiemannDynamics.sphereChartFinite_symm_apply] using
+          RiemannDynamics.sphereChartFinite.left_inv hysource
+      apply (mem_fatouSet_iff_coe_mem_surfaceModel_omega f _).2
+      rw [heq]
+      exact hyomega
+    have hsub : RiemannDynamics.sphereChartFinite '' D ⊆ C :=
+      hpre.subset_connectedComponentIn hzimage himage
+    intro y hyD
+    have hysource : y ∈ RiemannDynamics.sphereChartFinite.source := hDsource hyD
+    let w : ℂ := RiemannDynamics.sphereChartFinite y
+    have hwy : (w : OnePoint ℂ) = y := by
+      simpa only [w, RiemannDynamics.sphereChartFinite_symm_apply] using
+        RiemannDynamics.sphereChartFinite.left_inv hysource
+    refine ⟨w, ?_, hwy⟩
+    apply hsub
+    exact ⟨y, hyD, rfl⟩
+
 end MeromorphicDynamics
 
 #print axioms MeromorphicDynamics.surfaceModel_isNormalOn_of_normalSequence
@@ -224,3 +279,4 @@ end MeromorphicDynamics
 #print axioms MeromorphicDynamics.mapsTo_fatouSet_surfaceModel_omega
 #print axioms MeromorphicDynamics.mem_fatouSet_iff_coe_mem_surfaceModel_omega
 #print axioms MeromorphicDynamics.surfaceModel_omega_eq_finiteImage_fatouSet
+#print axioms MeromorphicDynamics.finiteImage_connectedComponentIn_fatouSet
