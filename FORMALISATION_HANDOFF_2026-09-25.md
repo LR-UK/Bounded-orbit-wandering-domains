@@ -422,3 +422,25 @@ This supersedes the earlier idea of using the complement of the normality
 locus as the primary roots.  The compact-exhaustion barrier modules remain
 valid auxiliary results, but the proof of the paper theorems should use the
 boundary-preimage sequence and the anchor disk described above.
+
+The local continuation now also proves the two missing compatibility facts.
+`LocalMapRestriction.lean` shows that restricting the source preserves every
+partial iterate of an orbit which remains in the smaller source, and preserves
+trappedness.  `exists_hyperbolic_restricted_tail` applies this to the deleted
+anchor disk: from time one, the restricted dynamics agrees exactly with the
+original wandering orbit on a hyperbolic ambient surface.
+
+`BoundaryPunctureSequence.lean` now proves that every finite-stage boundary
+preimage eventually reaches a chosen boundary root.  Consequently every
+stage is disjoint from the trapped set of the working-domain restriction, and
+the closure of their union is disjoint from its normality locus.  The main
+existence theorem exposes this normality separation in its conclusion.  This
+is item (3) of the manuscript's boundary-preimage lemma.
+
+The next analytic obligation is item (4): an open complementary component
+meeting the trapped set is a normality component.  The remaining Montel step
+should use Schwarz--Pick for the existing disc covers to get equicontinuity
+when all iterates stay in the relatively compact working domain, followed by
+Arzela--Ascoli in the one-point compactification.  After that, assemble the
+one-step intrinsic area cancellation from `PaperAreaLemma`, pullback equality,
+and the already checked `DomainAreaBlowup`.
