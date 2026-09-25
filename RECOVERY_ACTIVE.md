@@ -199,3 +199,16 @@ inside the limiting domain, use the extremal derivative identity to
 show the ambient subsequential limit is nonconstant, prove avoidance
 of the closed complement by an appropriate surface Hurwitz lemma,
 and compare with the limiting domain's density via Schwarz-Pick.
+
+`LiftedPunctureClosure` now proves that the inverse image of an increasing
+dense finite puncture exhaustion under the open ambient covering map is
+dense in the inverse image of the closed limit set. Via the planar Hurwitz
+theorem, a nonconstant locally uniform limit of ambient-disc lifts avoiding
+the finite punctures cannot meet the closed limiting complement wherever
+the limit stays inside the disc. `KernelLift` additionally proves the limit
+stays inside the ambient disc on a sufficiently small fixed source disc
+when all lifts share an interior centre (Schwarz–Pick displacement bound).
+The focused build passed; full entry-point build follows. Next show the
+limit is nonconstant from extremal derivatives and uniformly bounded
+subdomain density, then use connectedness and Schwarz–Pick to identify the
+limit density. These results do not yet establish kernel convergence.

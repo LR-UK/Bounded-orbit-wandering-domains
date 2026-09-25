@@ -68,6 +68,44 @@ end AreaDeficit.Surfaces
 
 namespace AreaDeficit.Surfaces
 
+/-- A limit of lifts with a fixed interior centre still maps a sufficiently
+small source disc into the ambient disc. -/
+theorem normal_lift_limit_maps_small_disc
+    (h : ℕ → unitDisc → unitDisc)
+    (hh : ∀ n, MDifferentiable 𝓘(ℂ) 𝓘(ℂ) (h n))
+    (w : unitDisc) (h0 : ∀ n, h n discZero = w)
+    {r : ℝ} (hr1 : r < 1) (hrsmall : ‖(w : ℂ)‖ + 2 * r < 1)
+    (φ : ℕ → ℕ) (g : ℂ → ℂ)
+    (hl : TendstoLocallyUniformlyOn
+      (fun n => planeExtension (fun z => (h (φ n) z : ℂ))) g atTop (ball 0 r)) :
+    ∀ z ∈ ball (0 : ℂ) r, g z ∈ ball (0 : ℂ) 1 := by
+  intro z hz
+  have hz1 : z ∈ ball (0 : ℂ) 1 := (ball_subset_ball hr1.le) hz
+  have hb (n : ℕ) : ‖planeExtension (fun v => (h (φ n) v : ℂ)) z‖ ≤
+      ‖(w : ℂ)‖ + 2 * ‖z‖ := by
+    have hd := unitDisc_displacement (hh (φ n)) ⟨z,hz1⟩
+    rw [h0 (φ n)] at hd
+    have hdist : ‖(h (φ n) ⟨z,hz1⟩ : ℂ) - (w : ℂ)‖ ≤ 2 * ‖z‖ := by
+      simpa only [Subtype.dist_eq,dist_eq_norm] using hd
+    rw [show planeExtension (fun v => (h (φ n) v : ℂ)) z =
+      (h (φ n) ⟨z,hz1⟩ : ℂ) from planeExtension_coe _ ⟨z,hz1⟩]
+    calc
+      ‖(h (φ n) ⟨z,hz1⟩ : ℂ)‖ =
+          ‖((h (φ n) ⟨z,hz1⟩ : ℂ) - w) + w‖ := by
+            rw [sub_add_cancel]
+      _ ≤ ‖(h (φ n) ⟨z,hz1⟩ : ℂ) - w‖ + ‖(w : ℂ)‖ := norm_add_le _ _
+      _ ≤ ‖(w : ℂ)‖ + 2 * ‖z‖ := by linarith
+  have hlim := (hl.tendsto_at hz).norm
+  have hbound : ‖g z‖ ≤ ‖(w : ℂ)‖ + 2 * ‖z‖ :=
+    le_of_tendsto hlim (Filter.Eventually.of_forall hb)
+  exact mem_ball_zero_iff.mpr (lt_of_le_of_lt hbound (by
+    have hzlt : ‖z‖ < r := mem_ball_zero_iff.mp hz
+    linarith))
+
+end AreaDeficit.Surfaces
+
+namespace AreaDeficit.Surfaces
+
 /-- Normalised lifts have subsequential limits retaining the same centre. -/
 theorem ambient_disc_lifts_normal_at_centre
     (h : ℕ → unitDisc → unitDisc)
