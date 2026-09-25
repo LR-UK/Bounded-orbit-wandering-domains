@@ -304,3 +304,9 @@ with the meromorphic identity principle, it proves
 meromorphic map, read honestly as a sphere-valued local map with finite-chart
 source, satisfies the exact open-holomorphic hypothesis of the surface
 statements.  This includes local nonconstancy and openness at poles.
+The same model now has the checked equivalence
+`poleAvoiding_iff_mem_surfaceModel_trapped`, and its compactified partial
+iterates agree with the usual meromorphic iterates on this set.  The remaining
+meromorphic specialization work is therefore the transport of normality and
+connected components through the finite-chart embedding, followed by the
+surface escape theorem.
