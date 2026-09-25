@@ -393,3 +393,32 @@ and kernel convergence to obtain the contradiction.  For Theorem 1.3(2), the
 same punctures must be combined with the countable-exception removal and the
 already checked density-divergence/Fatou argument.  Theorem 1.5 then still
 requires the corresponding singular-value area construction.
+
+The author clarified that the dynamical barrier should follow the manuscript
+literally: take dense finite subsets of the boundary of a relatively compact
+working domain and close them under successive preimages.  For a globally
+defined map, first remove a small closed coordinate disk in the initial
+wandering component.  The implementation has been redirected accordingly.
+
+The following new checked declarations implement this formulation:
+
+- `exists_coordDisk_closedCarrier_subset_diff` selects the small closed
+  coordinate disk inside a prescribed open set while avoiding the marked
+  point;
+- `exists_anchorDisk_orbit_components` proves that all later wandering
+  components avoid this disk;
+- `exists_hyperbolicAnchor_orbit_components` attaches the concrete universal
+  disc cover of the disk complement, so every tail component lies in one
+  fixed hyperbolic ambient surface;
+- `LocalMap.restrictSource` and
+  `isOpenHolomorphic_restrictSource` formalise restriction to a smaller open
+  source;
+- `LocalMap.boundaryBackwardTree`, its finiteness and backward-invariance
+  lemmas, and `LocalMap.exists_boundaryPunctureSequence` now construct the
+  increasing finite boundary-preimage sequence for a relatively compact
+  working domain whose closure lies in the actual source.
+
+This supersedes the earlier idea of using the complement of the normality
+locus as the primary roots.  The compact-exhaustion barrier modules remain
+valid auxiliary results, but the proof of the paper theorems should use the
+boundary-preimage sequence and the anchor disk described above.
