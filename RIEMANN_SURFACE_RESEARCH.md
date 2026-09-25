@@ -116,3 +116,13 @@ compares the six main Challenge declarations and the two legacy singular-limit
 declarations, and scans all project sources for unexpected holes. Passing this
 audit does not turn a named, unproved research proposition into a theorem.
 No official independent-kernel replay or registry acceptance is claimed.
+
+## Intrinsic density continuation (25 September)
+
+The supplied-disc-cover interface now has proved holomorphic lifting, the
+nonvanishing coordinate derivative, Schwarz–Pick on the disc, and an intrinsic
+positive chart density. Its value is independent of the fibre and of the
+cover. Its local inverse-branch formula proves C² regularity and the curvature
+−1 equation. See `Surfaces/DensityRegularity.lean` and its imports. These results
+are covered by the standard-axiom audit. Surface area-removal estimates and the
+three surface dynamical targets are still outstanding.

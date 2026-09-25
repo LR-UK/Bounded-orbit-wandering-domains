@@ -17,3 +17,17 @@ import SurfaceResearch
 
 #print axioms AreaDeficit.Surfaces.isManifold_real_of_complex
 #print axioms AreaDeficit.Surfaces.exists_surface_separating_cutoff
+
+#print axioms AreaDeficit.Surfaces.mdifferentiableOn_symm
+#print axioms AreaDeficit.Surfaces.mdifferentiable_lift
+#print axioms AreaDeficit.Surfaces.exists_holomorphic_lift
+#print axioms AreaDeficit.Surfaces.planeExtension_deriv_comp
+#print axioms AreaDeficit.Surfaces.disc_schwarz_at
+#print axioms AreaDeficit.Surfaces.unitDisc_schwarz
+#print axioms AreaDeficit.Surfaces.coordinate_deriv_ne_zero
+#print axioms AreaDeficit.Surfaces.DiscCover.fibreDensity_eq
+#print axioms AreaDeficit.Surfaces.DiscCover.density_independent
+#print axioms AreaDeficit.Surfaces.DiscCover.density_pos
+#print axioms AreaDeficit.Surfaces.DiscCover.local_density_expression
+#print axioms AreaDeficit.Surfaces.DiscCover.chartDensity_contDiffAt
+#print axioms AreaDeficit.Surfaces.DiscCover.chartDensity_curvature

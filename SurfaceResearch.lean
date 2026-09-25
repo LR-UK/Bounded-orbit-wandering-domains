@@ -10,3 +10,4 @@ import BoundedWanderingDomains.Surfaces.ChartLaplacianSupport
 import BoundedWanderingDomains.Surfaces.Statements
 import RiemannDynamics.Uniformization.HyperbolicSurface
 import BoundedWanderingDomains.Surfaces.SmoothSurface
+import BoundedWanderingDomains.Surfaces.DensityRegularity

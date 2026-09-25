@@ -106,6 +106,71 @@
       "Classical.choice",
       "Quot.sound"
     ],
+    "AreaDeficit.Surfaces.mdifferentiableOn_symm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "AreaDeficit.Surfaces.mdifferentiable_lift": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "AreaDeficit.Surfaces.exists_holomorphic_lift": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "AreaDeficit.Surfaces.planeExtension_deriv_comp": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "AreaDeficit.Surfaces.disc_schwarz_at": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "AreaDeficit.Surfaces.unitDisc_schwarz": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "AreaDeficit.Surfaces.coordinate_deriv_ne_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "AreaDeficit.Surfaces.DiscCover.fibreDensity_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "AreaDeficit.Surfaces.DiscCover.density_independent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "AreaDeficit.Surfaces.DiscCover.density_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "AreaDeficit.Surfaces.DiscCover.local_density_expression": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "AreaDeficit.Surfaces.DiscCover.chartDensity_contDiffAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "AreaDeficit.Surfaces.DiscCover.chartDensity_curvature": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
     "BoundedWanderingDomains.no_local_bounded_wandering_domains": [
       "propext",
       "Classical.choice",
@@ -412,7 +477,7 @@
       "Quot.sound"
     ]
   },
-  "project_lean_sources": 305,
+  "project_lean_sources": 311,
   "challenge_lines": 193,
   "challenge_bytes": 8138,
   "challenge_intentional_holes": 6,
@@ -580,9 +645,15 @@
     "BoundedWanderingDomains/Surfaces/ChartLaplacianSupport.lean": "f6d454ab5b7c92ff3f618595cf73c1f7e3e85a43e82f3cd1bc9994660994dbb6",
     "BoundedWanderingDomains/Surfaces/CompactSeparation.lean": "7c5430a7953b473ca4bc2255b5f28f34b98da929b0869a41e9c7b7af59c48254",
     "BoundedWanderingDomains/Surfaces/CompactificationEscape.lean": "bb53093810aad2d75881358d71117b6dcbfe81c0a017e9bac810753da9080f55",
+    "BoundedWanderingDomains/Surfaces/CoordinateDerivative.lean": "318f25451f2c2fa4edbb467cf0c4504e8d396a5f8ace40a48f66af552a8c8c2a",
+    "BoundedWanderingDomains/Surfaces/CoveringDensity.lean": "b619a3dbbd952ba0890b2e01ff19ef6ade8be02c0c30bc3b629e657537d1ff5e",
+    "BoundedWanderingDomains/Surfaces/DensityRegularity.lean": "bd05f581e3f8c6b40339b85598d865ae948dc23cf2b5b0a1ed496de405df94f9",
     "BoundedWanderingDomains/Surfaces/DiscCover.lean": "a3bfa3360a6ed616a14692cbeb0c384ed06d98f2b188e5e2ea6d0217435f9cfe",
+    "BoundedWanderingDomains/Surfaces/DiscSchwarz.lean": "2d36fb1d5937a0350e1253cd97497660f19a3d42470c1c669ea52694eae62423",
     "BoundedWanderingDomains/Surfaces/GeometricArea.lean": "fdb979e51068bf33655211093cffba690913a4f3815a3dccd6be7c5b2708c634",
+    "BoundedWanderingDomains/Surfaces/HolomorphicLifting.lean": "f781d1cd60739436d2f34bc7bde3a56b062b1265d7262f11b405a2a245d278be",
     "BoundedWanderingDomains/Surfaces/LocalDynamics.lean": "b0b20a2143944560dde597b89e1f980c95106937337f921f38493019ca054ed4",
+    "BoundedWanderingDomains/Surfaces/PlaneReading.lean": "9b14cdb92f56f307259e7d32b234d61d7e379e6c48d61ed88e76e8f566b26360",
     "BoundedWanderingDomains/Surfaces/SeparatingCutoff.lean": "e2c016f4a6a0993a6d6145317993708b0e192143a920fb96a17b531d7175d60f",
     "BoundedWanderingDomains/Surfaces/SmoothSurface.lean": "c6c8e5812644f4cbd3a9b57a55ae86290926ce52647414703a8d21a2d7227bf9",
     "BoundedWanderingDomains/Surfaces/Statements.lean": "7bbe3f115c0b479b6ef42102c2361275132290fb33421d82b158e630bfef6d92",
@@ -743,7 +814,7 @@
     "SingularLimitsChallenge.lean": "f7ce65e089948671d9360c90f089a751768b267537094c0085d0c3b816a17509",
     "SingularLimitsSolution.lean": "8c32d2db2c41d32ecf1c05b231530dd6466ffa0549db047b842b2dfe37d13935",
     "Solution.lean": "cf1da95d65426f0213e4ce0c3eb24365a7166a065effc23245d2a48d0f5a6704",
-    "SurfaceResearch.lean": "a730d0cb29b253166e9859a3c86748bc1d5a1ef66dc84d522e03041d97424b0e",
+    "SurfaceResearch.lean": "48aecbb35d0a2c3018fa83eeef14a31748863c310330f4a1a55df4ce0f276ad1",
     "comparator.json": "d95d79e2b9c5003c62de0660ee18e1dbb2238742c8d34c9f69c24069e13c8d03",
     "formalization.yaml": "a85b779f05b93b2672ab8aa3adaed2f44986db36f7f30f585507032813572f4b",
     "lakefile.toml": "b973d840f6ea27b9e58cace8d2714ed68e0c33e9db4a5bba56c33567e39f318e",
