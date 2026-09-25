@@ -1,5 +1,6 @@
 import SurfaceResearch
 import BoundedWanderingDomains.MeromorphicSurfaceModel
+import BoundedWanderingDomains.MeromorphicNormalityBridge
 
 #print axioms AreaDeficit.Surfaces.isManifold_analytic_of_complex
 #print axioms AreaDeficit.Surfaces.DiscCover.nonempty_subdomain
@@ -122,4 +123,5 @@ import BoundedWanderingDomains.MeromorphicSurfaceModel
 #print axioms MeromorphicDynamics.surfaceModel_isOpenHolomorphic
 #print axioms MeromorphicDynamics.poleAvoiding_iff_mem_surfaceModel_trapped
 #print axioms MeromorphicDynamics.surfaceModel_compactifiedIterate_coe_of_poleAvoiding
+#print axioms MeromorphicDynamics.surfaceModel_isNormalOn_of_normalSequence
 #print axioms MeromorphicDynamics.surfaceModel_iterate_coe_of_analytic

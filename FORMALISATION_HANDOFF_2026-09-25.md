@@ -307,6 +307,8 @@ statements.  This includes local nonconstancy and openness at poles.
 The same model now has the checked equivalence
 `poleAvoiding_iff_mem_surfaceModel_trapped`, and its compactified partial
 iterates agree with the usual meromorphic iterates on this set.  The remaining
-meromorphic specialization work is therefore the transport of normality and
-connected components through the finite-chart embedding, followed by the
-surface escape theorem.
+meromorphic specialization work has been reduced further: the checked theorem
+`surfaceModel_isNormalOn_of_normalSequence` transports every normal family on
+a pole-avoiding plane set to local-map normality on its finite-chart image.
+What remains on this side is the connected-component comparison and the use
+of the surface escape theorem.

@@ -10,6 +10,7 @@ import BoundedWanderingDomains.LocallyUniformSingularLimits
 import BoundedWanderingDomains.LocalUniformSingularLimits
 import BoundedWanderingDomains.MeromorphicSphereHolomorphic
 import BoundedWanderingDomains.MeromorphicSurfaceModel
+import BoundedWanderingDomains.MeromorphicNormalityBridge
 
 /-!
 # Sphere area and derived singular limits
