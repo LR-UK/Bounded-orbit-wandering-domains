@@ -6,6 +6,7 @@ import BoundedWanderingDomains.Surfaces.HolomorphicLifting
 /-! # Holomorphic parametrisation of a surface coordinate disc -/
 
 open Set Function Metric
+open Topology
 open AreaDeficit.Surfaces
 open scoped Manifold Topology
 
@@ -81,6 +82,41 @@ theorem injective_param (D : RiemannDynamics.CoordDisk X) :
     exact_mod_cast (ne_of_gt (half_pos D.radius_pos))
   apply Subtype.ext
   exact mul_left_cancel₀ hr (add_left_cancel he)
+
+/-- A centred coordinate-disc parametrisation identifies the unit disc
+with an open surface neighbourhood of its centre. -/
+theorem isOpenEmbedding_param (D : RiemannDynamics.CoordDisk X) :
+    IsOpenEmbedding D.param := by
+  apply IsOpenEmbedding.of_continuous_injective_isOpenMap
+  · exact D.mdifferentiable_param.continuous
+  · exact D.injective_param
+  · intro s hs
+    let a : ℂ := ((D.radius / 2 : ℝ) : ℂ)
+    let b : ℂ := chartAt ℂ D.center D.center
+    have ha : a ≠ 0 := by
+      dsimp [a]
+      exact_mod_cast (ne_of_gt (half_pos D.radius_pos))
+    let e : ℂ ≃ₜ ℂ := affineHomeomorph a b ha
+    let T : Set ℂ := e '' ((Subtype.val : unitDisc → ℂ) '' s)
+    have hval : IsOpen ((Subtype.val : unitDisc → ℂ) '' s) :=
+      (show IsOpenEmbedding (Subtype.val : unitDisc → ℂ) from
+        unitDisc.isOpen.isOpenEmbedding_subtypeVal).isOpenMap s hs
+    have hTopen : IsOpen T := e.isOpenMap _ hval
+    have hTtarget : T ⊆ (chartAt ℂ D.center).target := by
+      rintro y ⟨_, ⟨z, hz, rfl⟩, rfl⟩
+      simpa only [e, a, b, affineHomeomorph_apply, mul_comm, add_comm] using
+        D.param_argument_mem_target z
+    have hopen := (chartAt ℂ D.center).isOpen_image_symm_of_subset_target
+      hTopen hTtarget
+    convert hopen using 1
+    ext y
+    constructor
+    · rintro ⟨z, hz, rfl⟩
+      refine ⟨e (z : ℂ), ⟨(z : ℂ), ⟨z, hz, rfl⟩, rfl⟩, ?_⟩
+      simp only [param, e, a, b, affineHomeomorph_apply, mul_comm, add_comm]
+    · rintro ⟨_, ⟨_, ⟨z, hz, rfl⟩, rfl⟩, rfl⟩
+      refine ⟨z, hz, ?_⟩
+      simp only [param, e, a, b, affineHomeomorph_apply, mul_comm, add_comm]
 
 end RiemannDynamics.CoordDisk
 
