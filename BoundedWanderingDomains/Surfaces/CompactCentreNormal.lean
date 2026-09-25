@@ -163,6 +163,49 @@ theorem DiscCover.exists_normal_disc_subsequence [T2Space M]
   change (F (φ n) z : OnePoint M) = (p.projection (H n z) : OnePoint M)
   exact congrArg (fun y : M => (y : OnePoint M)) (congrFun (hfac n) z).symm
 
+/-- A disc cover of an open subdomain is enough for normality in the ambient
+surface when every value of the discs remains in one fixed compact subset of
+that subdomain. -/
+theorem DiscCover.exists_normal_disc_subsequence_compact_range
+    {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
+    [IsManifold 𝓘(ℂ) 1 X] [T2Space X] [LocallyCompactSpace X]
+    (O : TopologicalSpace.Opens X) (p : DiscCover O)
+    {C : Set O} (hC : IsCompact C) (F : ℕ → unitDisc → O)
+    (hF : ∀ n, MDifferentiable 𝓘(ℂ) 𝓘(ℂ) (F n))
+    (hrange : ∀ n z, F n z ∈ C) :
+    letI : UniformSpace (OnePoint X) := uniformSpaceOfCompactR1
+    ∃ (a : ℕ → ℕ) (G : unitDisc → OnePoint X), StrictMono a ∧
+      TendstoLocallyUniformly
+        (fun n z => (((F (a n) z : O) : X) : OnePoint X)) G atTop := by
+  letI : LocallyCompactSpace O := O.isOpen.locallyCompactSpace
+  letI : UniformSpace (OnePoint O) := uniformSpaceOfCompactR1
+  letI : UniformSpace (OnePoint X) := uniformSpaceOfCompactR1
+  obtain ⟨a, G, ha, hconv⟩ :=
+    p.exists_normal_disc_subsequence hC F hF (fun n => hrange n discZero)
+  let r : OnePoint O → OnePoint X := OnePoint.map (Subtype.val : O → X)
+  let S : Set (OnePoint O) := ((↑) : O → OnePoint O) '' C
+  have hS : IsCompact S := hC.image OnePoint.continuous_coe
+  have hrcont : ContinuousOn r S := by
+    rintro _ ⟨y, hy, rfl⟩
+    apply ContinuousAt.continuousWithinAt
+    apply (OnePoint.isOpenEmbedding_coe (X := O)).continuousAt_iff.mp
+    exact OnePoint.continuous_coe.continuousAt.comp
+      continuous_subtype_val.continuousAt
+  have hGS : ∀ z, G z ∈ S := by
+    intro z
+    apply hS.isClosed.mem_of_tendsto
+      ((tendstoLocallyUniformlyOn_univ.mpr hconv).tendsto_at (mem_univ z))
+    exact Eventually.of_forall fun n => ⟨F (a n) z, hrange (a n) z, rfl⟩
+  have hsource : ∀ n z, ((F (a n) z : O) : OnePoint O) ∈ S :=
+    fun n z => ⟨F (a n) z, hrange (a n) z, rfl⟩
+  have hdesc := UniformContinuousOn.comp_tendstoLocallyUniformly
+    (hS.uniformContinuousOn_of_continuous hrcont) hconv hGS
+    (Eventually.of_forall hsource)
+  refine ⟨a, r ∘ G, ha, ?_⟩
+  convert hdesc using 1
+  funext n z
+  rfl
+
 end AreaDeficit.Surfaces
 
 #print axioms AreaDeficit.Surfaces.DiscCover.exists_normal_lift_subsequence
