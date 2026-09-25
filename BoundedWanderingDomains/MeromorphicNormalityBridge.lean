@@ -139,6 +139,11 @@ def fatouSet (f : ℂ → ℂ) : Set ℂ :=
     ComplexDynamics.IsNormalSequenceOn
       (ComplexDynamics.sphericalIterate f) W}
 
+/-- An actual connected component of the pole-avoiding meromorphic Fatou
+set. -/
+def IsFatouComponent (f : ℂ → ℂ) (U : Set ℂ) : Prop :=
+  ∃ z ∈ fatouSet f, U = connectedComponentIn (fatouSet f) z
+
 /-- A meromorphic Fatou neighbourhood embeds into the normality locus of the
 local sphere model. -/
 theorem mapsTo_fatouSet_surfaceModel_omega (f : ℂ → ℂ) :
@@ -272,6 +277,64 @@ theorem finiteImage_connectedComponentIn_fatouSet
     apply hsub
     exact ⟨y, hyD, rfl⟩
 
+theorem fatouSet_subset_poleAvoidingSet (f : ℂ → ℂ) :
+    fatouSet f ⊆ poleAvoidingSet f := by
+  rintro z ⟨W, _, hzW, hWp, _⟩
+  exact hWp hzW
+
+/-- A meromorphic Fatou component becomes a normality component of the local
+sphere model after applying the finite inclusion. -/
+theorem surfaceModel_isComponent_finiteImage_of_isFatouComponent
+    {f : ℂ → ℂ} {U : Set ℂ} (hU : IsFatouComponent f U) :
+    (surfaceModel f).IsComponent (finiteImage U) := by
+  obtain ⟨z, hz, rfl⟩ := hU
+  refine ⟨(z : OnePoint ℂ),
+    (mem_fatouSet_iff_coe_mem_surfaceModel_omega f z).1 hz, ?_⟩
+  exact finiteImage_connectedComponentIn_fatouSet f hz
+
+/-- Ordinary images of a pole-avoiding set agree with local-model images in
+the finite chart. -/
+theorem surfaceModel_imageAt_finiteImage_subset
+    {f : ℂ → ℂ} {A B : Set ℂ} (hA : A ⊆ poleAvoidingSet f) (n : ℕ)
+    (hAB : MapsTo (f^[n]) A B) :
+    (surfaceModel f).imageAt n (finiteImage A) ⊆ finiteImage B := by
+  rintro y ⟨x, ⟨w, hwA, hwx⟩, hxy⟩
+  subst x
+  have hit := surfaceModel_iterate_coe_of_analytic f n w
+    (fun j _ => hA hwA j)
+  rw [hit] at hxy
+  injection hxy with hy
+  exact ⟨(f^[n]) w, hAB hwA, hy⟩
+
+/-- A sequence of pairwise distinct meromorphic Fatou components supplies a
+wandering component for the sphere local model. -/
+theorem surfaceModel_isWanderingComponent_of_fatouComponents
+    {f : ℂ → ℂ} {U : ℕ → Set ℂ}
+    (hU : ∀ n, IsFatouComponent f (U n))
+    (hforward : ∀ n, MapsTo f (U n) (U (n + 1)))
+    (hdis : Pairwise fun n m => Disjoint (U n) (U m)) :
+    (surfaceModel f).IsWanderingComponent (finiteImage (U 0)) := by
+  refine ⟨fun n => finiteImage (U n), rfl,
+    fun n => surfaceModel_isComponent_finiteImage_of_isFatouComponent (hU n),
+    ?_, ?_⟩
+  · intro n
+    have hU0p : U 0 ⊆ poleAvoidingSet f := by
+      obtain ⟨z, hz, heq⟩ := hU 0
+      rw [heq]
+      exact (connectedComponentIn_subset _ _).trans
+        (fatouSet_subset_poleAvoidingSet f)
+    have hit : MapsTo (f^[n]) (U 0) (U n) := by
+      induction n with
+      | zero => exact mapsTo_id _
+      | succ n ih =>
+          simpa only [Function.iterate_succ'] using (hforward n).comp ih
+    exact surfaceModel_imageAt_finiteImage_subset hU0p n hit
+  · intro n m hnm
+    apply disjoint_left.mpr
+    rintro y ⟨z, hzn, hzy⟩ ⟨w, hwm, hwy⟩
+    exact disjoint_left.mp (hdis hnm) hzn
+      (OnePoint.coe_injective (hzy.trans hwy.symm) ▸ hwm)
+
 end MeromorphicDynamics
 
 #print axioms MeromorphicDynamics.surfaceModel_isNormalOn_of_normalSequence
@@ -280,3 +343,4 @@ end MeromorphicDynamics
 #print axioms MeromorphicDynamics.mem_fatouSet_iff_coe_mem_surfaceModel_omega
 #print axioms MeromorphicDynamics.surfaceModel_omega_eq_finiteImage_fatouSet
 #print axioms MeromorphicDynamics.finiteImage_connectedComponentIn_fatouSet
+#print axioms MeromorphicDynamics.surfaceModel_isWanderingComponent_of_fatouComponents
