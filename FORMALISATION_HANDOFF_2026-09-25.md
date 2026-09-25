@@ -310,5 +310,40 @@ iterates agree with the usual meromorphic iterates on this set.  The remaining
 meromorphic specialization work has been reduced further: the checked theorem
 `surfaceModel_isNormalOn_of_normalSequence` transports every normal family on
 a pole-avoiding plane set to local-map normality on its finite-chart image.
-What remains on this side is the connected-component comparison and the use
-of the surface escape theorem.
+The connected-component comparison is now complete.  The checked reverse
+normality theorem, set equality, component equality, and wandering-component
+transport are:
+
+- `normalSequence_of_surfaceModel_isNormalOn`;
+- `mem_fatouSet_iff_coe_mem_surfaceModel_omega`;
+- `surfaceModel_omega_eq_finiteImage_fatouSet`;
+- `finiteImage_connectedComponentIn_fatouSet`;
+- `surfaceModel_isWanderingComponent_of_fatouComponents`.
+
+Thus the remaining meromorphic work is the locally-uniform promotion after
+applying the still-outstanding surface escape theorem; no further comparison
+of Fatou sets or components is needed.
+
+The nonhyperbolic ambient reduction has also advanced.  The checked theorem
+`nonempty_discCover_coordDisk_compl` proves that deleting one closed
+coordinate disk from any analytic surface produces a disc-covered hyperbolic
+surface, via the existing Green-function construction and uniformisation.
+This gives a formal fixed compact anchor without requiring classification of
+the original surface.  The checked theorem
+`uniform_remote_finite_area_budget_all_covers` records the paper's full
+uniform area budget on a fixed hyperbolic ambient: its single finite constant
+is independent of the open domain, all exceptional sets of cardinality at
+most `q`, the measurable subset of `L`, and the chosen universal disc cover.
+The bridge comparing the original domain with the anchored hyperbolic domain
+is still needed for a possibly nonhyperbolic ambient.
+
+`PaperSolution.lean` now exists and compiles.  It contains the exact
+independent proof declarations for Theorem 1.2 (entire) and Theorem 1.4, both
+with no `sorryAx`.  Do not add the four remaining declarations until their
+surface-dependent proofs compile.
+
+For Theorem 1.3(1), `exists_orbit_components` and
+`orbit_mem_of_compactifiedIterate_mem_image` now extract the genuine marked
+orbit and its pairwise disjoint normality components.  The checked reduction
+`noCompactWanderingOrbitClaim_of_componentOrbitImpossible` leaves precisely
+`CompactComponentOrbitImpossibleClaim` as the analytic area core.
