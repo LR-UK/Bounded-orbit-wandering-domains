@@ -4,3 +4,4 @@ import BoundedWanderingDomains.Surfaces.GainFatou
 import BoundedWanderingDomains.Surfaces.DomainCompactGain
 import BoundedWanderingDomains.Surfaces.DomainRemoteArea
 import BoundedWanderingDomains.Surfaces.CompactFiniteRemoval
+import BoundedWanderingDomains.Surfaces.FiniteModelArea

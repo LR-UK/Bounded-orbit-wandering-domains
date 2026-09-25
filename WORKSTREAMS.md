@@ -1,5 +1,18 @@
 # Surface extension: status and independent workstreams
 
+**Author update, 25 September:** the controlling statements are now mapped in
+`PAPER_STATEMENT_ALIGNMENT.md`, with a complete independent proposed
+`PaperChallenge.lean`. Read `FORMALISATION_HANDOFF_2026-09-25.md` before further
+proof work: use Lemma 2.6 for Theorem 1.3, derive the meromorphic Theorem 1.2
+as its corollary, and check the uniform-in-cardinality compact gain estimate
+for Theorem 1.5. The existing fixed-finite-set gain bound does not by itself
+establish uniformity over all point sets of bounded cardinality.
+The author's follow-up supplies the route: apply Lemma 2.6 to the logarithm
+of the metric quotient, use its boundary limit zero and controlled puncture
+growth, identify its Riesz measure with area gain, and obtain the uniform
+comparison from Lemma 2.2. The existing sharp 2π theorem is chart-local;
+the current general compact proof also has point-dependent localization costs.
+
 Recovered on 25 September 2026 from archive version 15, research commit
 `cdede188a8b5508f96e5c1b73af0b5b590f41968`. The stable entire-function
 derived-set results are already proved. The remaining objective is the

@@ -1,6 +1,7 @@
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
 import BoundedWanderingDomains.Surfaces.FinitePunctureRemoteChart
 import BoundedWanderingDomains.CompactCutoff
+import BoundedWanderingDomains.Surfaces.ChartPunctures
 
 /-! # Ambient charts restricted through finite point removals -/
 
@@ -8,27 +9,6 @@ open Set Function
 open scoped Manifold
 namespace AreaDeficit.Surfaces
 variable {M : Type*} [TopologicalSpace M]
-
-/-- Coordinates of punctures lying in the source of a partial chart. -/
-noncomputable def chartPunctures (c : OpenPartialHomeomorph M ℂ)
-    (P : Finset M) : Finset ℂ := by
-  classical
-  exact (P.filter (fun x => x ∈ c.source)).image c
-
-theorem mem_chartPunctures_iff (c : OpenPartialHomeomorph M ℂ)
-    (P : Finset M) {z : ℂ} (hz : z ∈ c.target) :
-    z ∈ chartPunctures c P ↔ c.symm z ∈ P := by
-  classical
-  constructor
-  · intro hzP
-    obtain ⟨x,hx,hxz⟩ := Finset.mem_image.mp hzP
-    have hx' := (Finset.mem_filter.mp hx)
-    have heq : c.symm z = x := by
-      rw [← hxz, c.left_inv hx'.2]
-    exact heq ▸ hx'.1
-  · intro hx
-    exact Finset.mem_image.mpr ⟨c.symm z,
-      Finset.mem_filter.mpr ⟨hx,c.map_target hz⟩, c.right_inv hz⟩
 
 /-- An ambient chart point away from a finite set and a closed obstacle is
 in the chart obtained by restricting first to the punctured old domain and

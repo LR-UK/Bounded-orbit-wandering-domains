@@ -154,7 +154,8 @@ theorem domainAreaGain_coordinate_formula (p : DiscCover M)
     (((p.domainDensityRatio_measurable V).pow_const 2).sub
       ((p.domainDensityRatio_measurable U).pow_const 2)).ennreal_ofReal
   rw [domainAreaGain,withDensity_apply _ hA,p.hyperbolicArea_setLIntegral hc hA hAc hm]
-  apply setLIntegral_congr_fun (chart_image_measurable c (p.projection discZero) hA hAc)
+  apply setLIntegral_congr_fun
+    (chart_image_measurable c (p.projection ⟨0,by simp [unitDisc]⟩) hA hAc)
   rintro z ⟨x,hx,rfl⟩
   dsimp only
   rw [c.left_inv (hAc hx),p.domainDensityRatio_chart U hc (hAc hx),

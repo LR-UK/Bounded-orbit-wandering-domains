@@ -9,3 +9,5 @@ import BoundedWanderingDomains.Surfaces.SubdomainCover
 import BoundedWanderingDomains.Surfaces.DomainChartDensity
 import BoundedWanderingDomains.Surfaces.DomainSchwarz
 import BoundedWanderingDomains.Surfaces.DiscComparisonInfinity
+import BoundedWanderingDomains.Surfaces.HyperbolicAreaFinite
+import BoundedWanderingDomains.Surfaces.DomainArea

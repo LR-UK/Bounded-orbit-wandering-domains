@@ -96,3 +96,10 @@ import SurfaceResearch
 #print axioms AreaDeficit.Surfaces.DiscCover.compact_point_removal_gain
 #print axioms AreaDeficit.Surfaces.DiscCover.compact_finite_removal_gain
 #print axioms AreaDeficit.Surfaces.DiscCover.compact_finite_remote_removal_gain
+
+#print axioms AreaDeficit.Surfaces.DiscCover.domainDensity_tendsto_atTop_finite_punctures
+#print axioms AreaDeficit.Surfaces.DiscCover.hyperbolicArea_compact_finite
+#print axioms AreaDeficit.Surfaces.DiscCover.hyperbolicArea_noAtoms
+#print axioms AreaDeficit.Surfaces.DiscCover.domainArea_coordinate_formula
+#print axioms AreaDeficit.Surfaces.DiscCover.finitePunctureDomain_area_compact_finite
+#print axioms AreaDeficit.Surfaces.DiscCover.measure_zero_of_finite_model_area_bounds

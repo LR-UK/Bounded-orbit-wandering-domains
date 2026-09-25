@@ -4,3 +4,5 @@ import BoundedWanderingDomains.Surfaces.KernelDomains
 import BoundedWanderingDomains.Surfaces.KernelNormal
 import BoundedWanderingDomains.Surfaces.KernelConvergence
 import BoundedWanderingDomains.Surfaces.DomainChartKernel
+import BoundedWanderingDomains.Surfaces.DomainDensityDivergence
+import BoundedWanderingDomains.Surfaces.DomainAreaBlowup

@@ -73,3 +73,6 @@ name = "SurfaceKernel"
 
 [[lean_lib]]
 name = "SurfaceDynamicsTargets"
+
+[[lean_lib]]
+name = "PaperChallenge"
