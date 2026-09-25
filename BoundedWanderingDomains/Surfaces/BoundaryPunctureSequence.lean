@@ -2,6 +2,7 @@
 import BoundedWanderingDomains.Surfaces.DenseFinitePunctures
 import BoundedWanderingDomains.Surfaces.LocalPunctures
 import BoundedWanderingDomains.Surfaces.LocalDynamics
+import BoundedWanderingDomains.Surfaces.LocalMapRestriction
 import Mathlib.Topology.Separation.Regular
 
 /-! # Finite backward punctures from the boundary of a working domain -/
@@ -105,6 +106,65 @@ theorem boundaryBackwardTree_closure_backward (f : LocalMap X)
   obtain ⟨y, ⟨z, hzW, rfl⟩, hyP⟩ :=
     mem_closure_iff.mp hfx _ himage hfxmem
   exact ⟨(z : X), hzW.1, hback z hzW.2 hyP⟩
+
+/-- Every point pulled back from the boundary reaches one of the chosen
+boundary roots in finitely many iterates of the map restricted to the
+working domain. -/
+theorem boundaryBackwardTree_eventually_hits_roots (f : LocalMap X)
+    (V : TopologicalSpace.Opens X) (hVsource : closure (V : Set X) ⊆ f.source)
+    {Q : Set X} {n : ℕ} {x : X}
+    (hx : x ∈ f.boundaryBackwardTree (V : Set X) hVsource Q n) :
+    ∃ k ≤ n, ∃ q ∈ Q,
+      (f.restrictSource V (subset_trans subset_closure hVsource)).iterate k x = some q := by
+  induction n generalizing x with
+  | zero =>
+      exact ⟨0, le_rfl, x, hx, rfl⟩
+  | succ n ih =>
+      rcases hx with hx | ⟨hxV, hfx⟩
+      · obtain ⟨k, hk, q, hq, heq⟩ := ih hx
+        exact ⟨k, hk.trans (Nat.le_succ n), q, hq, heq⟩
+      · obtain ⟨k, hk, q, hq, heq⟩ := ih hfx
+        refine ⟨k + 1, Nat.succ_le_succ hk, q, hq, ?_⟩
+        rw [(f.restrictSource V (subset_trans subset_closure hVsource)).iterate_succ
+          k x hxV]
+        exact heq
+
+/-- Consequently the boundary-preimage tree contains no point trapped by
+the restriction to the working domain. -/
+theorem boundaryBackwardTree_disjoint_restricted_trapped (f : LocalMap X)
+    (V : TopologicalSpace.Opens X) (hVsource : closure (V : Set X) ⊆ f.source)
+    {Q : Set X} (hQ : Q ⊆ frontier (V : Set X)) (n : ℕ) :
+    Disjoint (f.boundaryBackwardTree (V : Set X) hVsource Q n)
+      (f.restrictSource V (subset_trans subset_closure hVsource)).trapped := by
+  apply Set.disjoint_left.2
+  intro x hx htrap
+  obtain ⟨k, -, q, hq, heq⟩ :=
+    f.boundaryBackwardTree_eventually_hits_roots V hVsource hx
+  obtain ⟨y, hyV, hy⟩ := htrap k
+  have hqy : q = y := Option.some.inj (heq.symm.trans hy)
+  have hqV : q ∈ V := hqy ▸ hyV
+  exact Set.disjoint_left.mp (disjoint_frontier_iff_isOpen.mpr V.isOpen)
+    (hQ hq) hqV
+
+/-- The closure of all boundary preimages misses the normality locus of the
+restricted map.  This is item (3) of the boundary-preimage lemma in the
+paper. -/
+theorem boundaryBackwardTree_closure_disjoint_restricted_omega (f : LocalMap X)
+    (V : TopologicalSpace.Opens X) (hVsource : closure (V : Set X) ⊆ f.source)
+    {Q : ℕ → Set X} (hQ : ∀ n, Q n ⊆ frontier (V : Set X)) :
+    Disjoint (closure (⋃ n, f.boundaryBackwardTree (V : Set X) hVsource (Q n) n))
+      (f.restrictSource V (subset_trans subset_closure hVsource)).omega := by
+  let g := f.restrictSource V (subset_trans subset_closure hVsource)
+  apply Set.disjoint_left.2
+  intro x hxcl hxomega
+  obtain ⟨y, hyomega, hyunion⟩ := mem_closure_iff.mp hxcl g.omega
+    g.isOpen_omega hxomega
+  obtain ⟨n, hyn⟩ := mem_iUnion.mp hyunion
+  have hytrap : y ∈ g.trapped :=
+    g.omega_subset_trapped_interior.trans interior_subset hyomega
+  exact Set.disjoint_left.mp
+    (f.boundaryBackwardTree_disjoint_restricted_trapped V hVsource (hQ n) n)
+    hyn hytrap
 
 /-- A compact subset of the source admits exactly the boundary-preimage
 construction used in the paper. -/
