@@ -28,6 +28,7 @@ theorem exists_boundaryBarrierPackage_in_subsurface
       frontier (V : Set X) ⊆ closure (⋃ n, P n) ∧
       let g := f.restrictSource V (subset_trans subset_closure hVsource)
       Disjoint (closure (⋃ n, P n)) g.omega ∧
+      g.trapped \ g.omega ⊆ closure (⋃ n, P n) ∧
       (∀ x ∈ g.omega,
         connectedComponentIn (closure (⋃ n, P n))ᶜ x =
           connectedComponentIn g.omega x) := by
@@ -38,8 +39,21 @@ theorem exists_boundaryBarrierPackage_in_subsurface
   have hVO : closure (V : Set X) ⊆ O := hVsource.trans hsourceO
   let g := f.restrictSource V (subset_trans subset_closure hVsource)
   have hdis : Disjoint (closure (⋃ n, P n)) g.omega := hnormal hVopen
+  have homega : g.omega = interior g.trapped :=
+    f.omega_restrictSource_eq_interior_trapped hf O V p
+      (subset_trans subset_closure hVsource) hVcompact hVO
+  have hbad : g.trapped \ g.omega ⊆ closure (⋃ n, P n) := by
+    letI : LocallyPathConnectedSpace X :=
+      ChartedSpace.locallyPathConnectedSpace ℂ X
+    exact g.trapped_diff_omega_subset_barrier
+      (f.isOpenHolomorphic_restrictSource hf V
+        (subset_trans subset_closure hVsource)).2.continuous
+      isClosed_closure (by
+        change frontier (V : Set X) ⊆ closure (⋃ n, P n)
+        exact hfront)
+      (fun x hx => hback (x : X) x.property hx) homega
   refine ⟨V, hVsource, P, hKV, hVcompact, hPmono, hPfinite,
-    hfront, hdis, ?_⟩
+    hfront, hdis, hbad, ?_⟩
   intro x hx
   exact f.restricted_barrier_component_eq_omega hf O V p
     (subset_trans subset_closure hVsource) hVcompact hVO

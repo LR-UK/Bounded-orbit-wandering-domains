@@ -483,3 +483,13 @@ area is impossible once the boundary puncture exhaustion is dense on the
 measured set and all finite-puncture model areas have one finite uniform
 bound.  Thus the unresolved positive-area core is precisely the dynamical
 proof of that uniform model-area bound.
+
+The boundary package now also returns the manuscript inclusion
+`g.trapped \ g.omega ⊆ closure (⋃ n, P n)`.  This follows from the new
+generic theorem `AreaDeficit.mem_interior_trapped_of_not_mem_barrier`: the
+open complementary component of a trapped point outside a closed
+backward-invariant barrier stays in the source under every iterate, hence is
+contained in the interior trapped set.  Its local-map wrapper is
+`LocalMap.trapped_diff_omega_subset_barrier`.  Both compile with standard
+axioms.  This discharges the density-blowup containment used for the set
+`A*` in the manuscript; transport/cancellation is the next obligation.
