@@ -212,3 +212,11 @@ The focused build passed; full entry-point build follows. Next show the
 limit is nonconstant from extremal derivatives and uniformly bounded
 subdomain density, then use connectedness and Schwarz–Pick to identify the
 limit density. These results do not yet establish kernel convergence.
+
+`KernelNonconstant` now proves the chain-rule transfer of the subdomain
+extremal derivative identity to ambient-disc lifts and the normal-family
+noncollapse criterion: any uniform upper bound on the subdomain densities
+forces a nonzero derivative in a locally uniform limit. A nonzero derivative
+gives the exact nonconstancy required by `ambient_hurwitz_avoidance`.
+The missing link is the uniform upper density bound from the fixed limiting
+component, plus assembly of this lemma with the family of punctured covers.
