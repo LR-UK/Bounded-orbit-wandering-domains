@@ -1,6 +1,6 @@
 # Active continuation — do not stop at checkpoints
 
-## Current continuation: intrinsic compact area bound checked, 25 September
+## Current continuation: compact finite-removal budget checked, 25 September
 
 Authoritative current status: `WORKSTREAMS.md`. Read its user-correction
 section first: the paper's intrinsic comparison lemma already supplies the
@@ -12,18 +12,23 @@ comparison, finite-model cutoff bound, Fatou passage, and arbitrary-domain
 compact chart gain bound now all compile. The intrinsic gain measure and
 finite chart assembly are also checked: remote_compact_domainAreaGain is
 uniform over arbitrary open subdomains of a hyperbolic ambient surface.
-SurfaceResearch passes 3992 jobs; all 82 axiom reports contain only standard
-Lean axioms.
+New comparison-at-infinity, planar chart identification, localisation,
+chart-local sharp 2*pi, and compact point/finite-removal modules compile.
+compact_finite_remote_removal_gain supplies a finite compact budget for
+any fixed finite exceptional set plus a remote closed obstacle, uniform
+in every old open domain. SurfaceResearch passes 4056 jobs.
 
-Next: point-removal area cost, noncompact cutoff,
-exceptional ambient surfaces, and the exact three surface dynamical claims.
+Next: use the checked compact budgets in the dynamical area argument.
+Sharp global point-removal 2*pi, noncompact cutoff, exceptional ambient
+surfaces, density divergence on the limiting closed complement, and the
+exact three surface dynamical claims remain outstanding.
 These claims remain definitions of propositions, not proved theorems.
 Continue autonomously; a checkpoint is not completion.
 
 Current workspace: `/workspace/scratch/5c43666a9327/bounded-orbit-work`.
 Runtime: `/tmp/lean-4.35.0-rc2-linux/bin`; use `LEAN_NUM_THREADS=2`.
 Checkpoint identity: `libfile_0280ba24a16c81919e3cd8025b3792e9`.
-Latest saved version before this continuation's writeback: 17.
+Latest saved version before this continuation's writeback: 18.
 
 ## Historical notes (superseded where the status above differs)
 

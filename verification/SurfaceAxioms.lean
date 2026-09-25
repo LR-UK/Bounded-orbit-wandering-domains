@@ -87,3 +87,12 @@ import SurfaceResearch
 #print axioms AreaDeficit.Surfaces.DiscCover.density_extremal_disc
 #print axioms AreaDeficit.Surfaces.DiscCover.densityRatio_le_of_disc_avoidance
 #print axioms AreaDeficit.Surfaces.DiscCover.remote_densityRatio_bound
+
+#print axioms AreaDeficit.Surfaces.DiscCover.compact_disc_images
+#print axioms AreaDeficit.Surfaces.DiscCover.domainDensity_ratio_near_one_outside_compact
+#print axioms AreaDeficit.Surfaces.DiscCover.domainChartDensity_eq_planar
+#print axioms AreaDeficit.Surfaces.DiscCover.domainAreaGain_localize
+#print axioms AreaDeficit.Surfaces.DiscCover.chart_point_removal_gain
+#print axioms AreaDeficit.Surfaces.DiscCover.compact_point_removal_gain
+#print axioms AreaDeficit.Surfaces.DiscCover.compact_finite_removal_gain
+#print axioms AreaDeficit.Surfaces.DiscCover.compact_finite_remote_removal_gain

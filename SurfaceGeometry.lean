@@ -8,3 +8,4 @@ import BoundedWanderingDomains.Surfaces.UniformizationBridge
 import BoundedWanderingDomains.Surfaces.SubdomainCover
 import BoundedWanderingDomains.Surfaces.DomainChartDensity
 import BoundedWanderingDomains.Surfaces.DomainSchwarz
+import BoundedWanderingDomains.Surfaces.DiscComparisonInfinity

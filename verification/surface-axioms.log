@@ -126,3 +126,15 @@
  Classical.choice,
  Quot.sound]
 'AreaDeficit.Surfaces.DiscCover.remote_densityRatio_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.compact_disc_images' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.domainDensity_ratio_near_one_outside_compact' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.domainChartDensity_eq_planar' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.domainAreaGain_localize' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.chart_point_removal_gain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.compact_point_removal_gain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.compact_finite_removal_gain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AreaDeficit.Surfaces.DiscCover.compact_finite_remote_removal_gain' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

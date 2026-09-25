@@ -10,7 +10,7 @@ arbitrary-Riemann-surface extension. Curvature is −1 throughout.
 | Target | Contents | Remaining work |
 | --- | --- | --- |
 | `SurfaceGeometry` | Intrinsic density, curvature, Schwarz–Pick, area, null sets, positive chart area | Geometric inputs on exceptional ambient surfaces |
-| `SurfaceFiniteRemoval` | Uniform intrinsic compact remote-removal bound for arbitrary open subdomains | Point-removal cost and noncompact cutoffs |
+| `SurfaceFiniteRemoval` | Uniform compact remote, point and finite-removal bounds for arbitrary open subdomains | Sharp global point-removal cost and noncompact cutoffs |
 | `SurfaceKernel` | Finite-puncture density convergence, with all component covers constructed | No remaining pointwise-convergence blocker; locally uniform statement optional |
 | `SurfaceDynamicsTargets` | Partial iteration, normality, compact escape, exact target propositions | All three named surface dynamical claims remain unproved |
 | `SurfaceResearch` | Assembles all surface workstreams | Final complete geometric and dynamical audit |
@@ -70,17 +70,34 @@ not an implemented intrinsic-distance formula for alpha and beta.
   disjoint from closed K, uniform in every old closed complement A.
   This closes the compact remote-removal estimate for hyperbolic ambient S.
 
-`lake build SurfaceResearch` passed (3992 jobs). The surface axiom audit
+- `CompactDiscImages` and `DiscComparisonInfinity` prove that removing a
+  fixed compact set changes the density ratio by at most `1 + epsilon`
+  outside a compact set, uniformly over all old open domains. This is the
+  qualitative upper comparison in covering-disc form.
+- `DomainPlanarDensity` identifies intrinsic chart densities with the
+  checked planar densities. `ChartPointRemoval` transfers the sharp `2*pi`
+  bound to arbitrary domains contained in one chart.
+- `DomainGainOrder` proves intrinsic localisation and telescoping bounds.
+  `CompactPointRemoval` combines the local planar bound and remote gain
+  estimates to give a finite compact point-removal cost uniform in the old
+  domain. The compact measured set may meet the puncture and old complement.
+- `CompactFiniteRemoval` gives the same uniform compact budget for a fixed
+  finite set and a remote closed obstacle together. These compact estimates
+  can now be used in the dynamical argument without waiting for the sharp
+  global surface bound; that stronger bound remains a separate obligation.
+
+`lake build SurfaceResearch` passed (4056 jobs). The surface axiom audit
 reports only `propext`, `Classical.choice`, and `Quot.sound`.
 `verification/surface-continuation.json` records this continuation's checks;
 older submission metadata does not assert completion of the surface targets.
 
 ## Exact remaining obligations
 
-1. Prove the curvature −1 point-removal bound of at most `2 * pi`, then
-   the finite-point bound on arbitrary surfaces. The existing sphere/plane
-   bound does not settle this general case. Give the boundary or exhaustion
-   justification in the actual proof, rather than assuming the area bound.
+1. Prove the sharp global curvature −1 point-removal bound of at most
+   `2 * pi`, then the corresponding sharp finite-point bound. The uniform
+   finite bounds on compact measured sets are now proved for hyperbolic
+   ambient surfaces, but do not establish this sharp global statement.
+   Give the boundary or exhaustion justification in the actual proof.
 2. Establish the remote estimate for a cutoff with compactly supported
    differential but possibly noncompact support. Compact-support integration
    alone does not justify this case.

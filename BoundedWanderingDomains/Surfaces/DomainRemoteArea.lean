@@ -96,4 +96,22 @@ theorem remote_compact_domainAreaGain (p : DiscCover M)
   rw [← p.domainAreaGain_inter _ _ L]
   exact hbound A hA
 
+/-- Open-domain formulation: localisation inside a fixed neighbourhood
+has uniformly bounded gain on a compact subset of that neighbourhood. -/
+theorem compact_localization_domainAreaGain (p : DiscCover M)
+    (D : TopologicalSpace.Opens M) {L : Set M}
+    (hL : IsCompact L) (hLD : L ⊆ D) :
+    ∃ B : ℝ≥0∞, B ≠ ⊤ ∧ ∀ U : TopologicalSpace.Opens M,
+      p.domainAreaGain U (U ⊓ D) L ≤ B := by
+  obtain ⟨B,hB,hbound⟩ := p.remote_compact_domainAreaGain D.isOpen.isClosed_compl hL
+    (disjoint_left.mpr (fun _ hx hxD => hxD (hLD hx)))
+  refine ⟨B,hB,?_⟩
+  intro U
+  have hU : (⟨(U : Set M)ᶜᶜ,U.isOpen.isClosed_compl.isOpen_compl⟩ :
+      TopologicalSpace.Opens M) = U := by ext x; simp
+  have hV : (⟨((U : Set M)ᶜ ∪ (D : Set M)ᶜ)ᶜ,
+      (U.isOpen.isClosed_compl.union D.isOpen.isClosed_compl).isOpen_compl⟩ :
+      TopologicalSpace.Opens M) = U ⊓ D := by ext x; simp
+  simpa only [hU,hV] using hbound (U : Set M)ᶜ U.isOpen.isClosed_compl
+
 end AreaDeficit.Surfaces.DiscCover
