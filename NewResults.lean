@@ -4,6 +4,7 @@ Released under Apache 2.0 licence; see LICENSE.
 -/
 import BoundedWanderingDomains.SphereCompactRemoval
 import BoundedWanderingDomains.SphereFiniteRemoval
+import BoundedWanderingDomains.PlaneUniformFiniteRemoval
 import BoundedWanderingDomains.LocallyUniformSingularLimits
 import BoundedWanderingDomains.LocalUniformSingularLimits
 
@@ -26,6 +27,7 @@ Area uses curvature −1 without dividing by 2π.
 
 #print axioms AreaDeficit.uniform_compact_gain_sphere
 #print axioms AreaDeficit.sphere_finite_puncture_gain_le_two_pi_mul_card
+#print axioms AreaDeficit.uniform_compact_finite_gain_plane
 #print axioms BoundedWanderingDomains.wandering_orbit_locallyUniform_spherical_singular_derivedSet
 #print axioms BoundedWanderingDomains.no_escaping_wandering_orbit_of_classB
 
