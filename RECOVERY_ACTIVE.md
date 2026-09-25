@@ -64,3 +64,19 @@ Next: continuous intrinsic density ratio, area-gain integral and coordinate
 formula, surface Green/cutoff estimates, puncture/kernel convergence, then
 dynamical statements. Preserve stable release refs, do not stop at checkpoints.
 Current saved archive version: 5 (c6a9399); newer recovery save will follow.
+
+Active unverified additions after recovery: DensityRatioContinuity.lean,
+AreaIntegration.lean, AreaGain.lean, ChartGainCutoff.lean. These have proof
+scripts but await the restored build; do not claim they are checked yet.
+Cache restored successfully (3884 files). Staged full build running at
+/tmp/restored-build.log, exec session 95434. New runtime same /tmp path.
+Most recent durable checkpoint ec48c36, archive version 6.
+
+Further draft modules: UniformDiscAvoidance (local and compact uniform
+avoidance via covering lift and Schwarz lemma), ExtremalDisc (recentres the
+cover to realise the density). SubtypeHolomorphic is checked separately:
+/tmp/surface-subtype-holo.log, 2821 jobs, no warnings.
+Current rebuild has passed >340 local modules without failure. It will reach
+new AreaGain through SurfaceResearch. ChartGainCutoff and ExtremalDisc need
+separate builds/imports after the staged run because its graph was fixed
+before their creation. Do not count draft scripts as checked results.
