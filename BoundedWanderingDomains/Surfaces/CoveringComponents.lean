@@ -5,6 +5,15 @@ import Mathlib.Topology.Homotopy.Lifting
 
 open Set Function Topology unitInterval
 
+/-- A continuous map from a connected space stays in the connected component
+of the image of any chosen base point. -/
+theorem Continuous.mem_connectedComponent_image
+    {A E : Type*} [TopologicalSpace A] [ConnectedSpace A]
+    [TopologicalSpace E] {h : A → E} (hh : Continuous h)
+    (a₀ a : A) : h a ∈ connectedComponent (h a₀) := by
+  exact (isConnected_range hh).subset_connectedComponent
+    ⟨a₀, rfl⟩ ⟨a, rfl⟩
+
 /-- Every connected component of the source of a covering maps onto a
 path-connected target. -/
 theorem IsCoveringMap.surjective_connectedComponent
@@ -24,3 +33,4 @@ theorem IsCoveringMap.surjective_connectedComponent
   exact ⟨⟨Γ 1, hmem⟩, hΓ1⟩
 
 #print axioms IsCoveringMap.surjective_connectedComponent
+#print axioms Continuous.mem_connectedComponent_image
