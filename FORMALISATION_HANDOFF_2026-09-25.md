@@ -608,3 +608,11 @@ the connected components of arbitrary open source and target domains. It
 proves both the underlying-value formula and preservation of
 holomorphicity. This removes the subtype/component bookkeeping that had
 blocked the direct covering-lift proof of the componentwise metric identity.
+
+That direct proof is now checked as
+`DiscCover.domainDensity_covering_pullback`. For a holomorphic covering
+between possibly disconnected open domains, it lifts the extremal disc of
+the target component through the ambient covering, proves that the lift
+stays in the chosen source component, and obtains exact pullback of the two
+componentwise hyperbolic densities. No separate component-covering theorem
+or global uniformisation assumption is needed.
