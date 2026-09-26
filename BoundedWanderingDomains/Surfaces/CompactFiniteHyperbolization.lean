@@ -122,7 +122,40 @@ theorem DiscCover.nonempty_compl_finset_card_three (F : Finset X)
     exact DiscCover.nonempty_compl_three_of_pathCover_sphere
       x₀ e hab hac hbc
 
+/-- Once three anchors have been inserted, every larger finite puncture stage
+remains disc-covered.  This is the form used by backward-orbit exhaustions. -/
+theorem DiscCover.nonempty_compl_finset_of_three_le_card (F : Finset X)
+    (hF : 3 ≤ F.card) :
+    let U : Opens X :=
+      ⟨((↑F : Set X)ᶜ), F.finite_toSet.isClosed.isOpen_compl⟩
+    Nonempty (DiscCover U) := by
+  classical
+  obtain ⟨E, hEF, hEcard⟩ := Finset.exists_subset_card_eq hF
+  let V : Opens X :=
+    ⟨((↑E : Set X)ᶜ), E.finite_toSet.isClosed.isOpen_compl⟩
+  let U : Opens X :=
+    ⟨((↑F : Set X)ᶜ), F.finite_toSet.isClosed.isOpen_compl⟩
+  letI : ConnectedSpace U := Subtype.connectedSpace
+    (RiemannDynamics.isConnected_compl_finset F)
+  obtain ⟨p⟩ := DiscCover.nonempty_compl_finset_card_three E hEcard
+  apply DiscCover.nonempty_of_le_open V U p
+  intro x hx
+  exact fun hxE => hx (hEF hxE)
+
+/-- A finite backward stage containing a three-point anchor set is
+automatically a hyperbolic model. -/
+theorem DiscCover.nonempty_compl_finset_of_card_three_subset
+    (E F : Finset X) (hE : E.card = 3) (hEF : E ⊆ F) :
+    let U : Opens X :=
+      ⟨((↑F : Set X)ᶜ), F.finite_toSet.isClosed.isOpen_compl⟩
+    Nonempty (DiscCover U) := by
+  apply DiscCover.nonempty_compl_finset_of_three_le_card F
+  rw [← hE]
+  exact Finset.card_le_card hEF
+
 end AreaDeficit.Surfaces
 
 #print axioms AreaDeficit.Surfaces.DiscCover.exists_finite_hyperbolizing_punctures
 #print axioms AreaDeficit.Surfaces.DiscCover.nonempty_compl_finset_card_three
+#print axioms AreaDeficit.Surfaces.DiscCover.nonempty_compl_finset_of_three_le_card
+#print axioms AreaDeficit.Surfaces.DiscCover.nonempty_compl_finset_of_card_three_subset
