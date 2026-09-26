@@ -705,3 +705,16 @@ finset-valued boundary packages expose this property.  The compiled lemma
 subdomain obligation in the local area-advance theorem.  This is the precise
 reuse of the removed-disc/backward-orbit construction discussed with the
 author.
+
+The compiled theorem
+`exists_uniform_area_advance_of_local_compact_finite_models` now packages the
+whole finite-stage conclusion: from a forward-invariant boundary-puncture
+stage, a measurable injective set in the compact interior, and avoidance of
+the finite branch values and fixed compact obstacle, it produces the uniform
+one-step intrinsic-area inequality.  Membership in the ambient compact-cover
+domain is constructed internally.  The remaining issue is mathematical, not
+subtype plumbing: for Theorem 1.3 the paper's local deficit argument must be
+used without imposing positive separation between the compact orbit and the
+image of the artificial source boundary.  The surface cutoff, density-ratio,
+finite-puncture, and chart transport lemmas required for that direct version
+are already compiled; their final map-specific assembly remains.
