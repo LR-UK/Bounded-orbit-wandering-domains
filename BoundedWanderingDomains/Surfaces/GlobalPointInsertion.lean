@@ -119,6 +119,35 @@ theorem uniformGlobalPointInsertionBound_of_totalArea_increment
   rw [p.finitePunctureDomain_area_insert_eq_add_gain P a] at h
   exact ENNReal.le_of_add_le_add_left (hfinite P) h
 
+/-- Conversely, a global gain bound is already the corresponding total-area
+increment bound.  Thus, on finite-area finite-puncture models, the global
+one-point estimate and the Gauss--Bonnet-style total-area increment are
+equivalent formulations of the same remaining analytic statement. -/
+theorem totalArea_increment_of_uniformGlobalPointInsertionBound
+    (p : DiscCover M) {C : ℝ≥0∞}
+    (hpoint : p.UniformGlobalPointInsertionBound C) :
+    ∀ (P : Finset M) (a : M),
+      p.domainArea (finitePunctureDomain (insert a P)) Set.univ ≤
+        p.domainArea (finitePunctureDomain P) Set.univ + C := by
+  intro P a
+  rw [p.finitePunctureDomain_area_insert_eq_add_gain P a]
+  exact add_le_add_right (hpoint P a) _
+
+/-- Exact equivalence between the whole-surface point-removal estimate and
+the one-puncture total-area increment, when all old finite-puncture models
+have finite total area. -/
+theorem uniformGlobalPointInsertionBound_iff_totalArea_increment
+    (p : DiscCover M) {C : ℝ≥0∞}
+    (hfinite : ∀ P : Finset M,
+      p.domainArea (finitePunctureDomain P) Set.univ ≠ ⊤) :
+    p.UniformGlobalPointInsertionBound C ↔
+      ∀ (P : Finset M) (a : M),
+        p.domainArea (finitePunctureDomain (insert a P)) Set.univ ≤
+          p.domainArea (finitePunctureDomain P) Set.univ + C := by
+  constructor
+  · exact p.totalArea_increment_of_uniformGlobalPointInsertionBound
+  · exact p.uniformGlobalPointInsertionBound_of_totalArea_increment hfinite
+
 /-- A uniform one-point whole-surface estimate telescopes to a bound for
 inserting any finite set. -/
 theorem global_finitePuncture_gain_le_of_pointInsertion
@@ -176,3 +205,4 @@ end AreaDeficit.Surfaces.DiscCover
 
 #print axioms AreaDeficit.Surfaces.DiscCover.global_finitePuncture_gain_le_of_pointInsertion
 #print axioms AreaDeficit.Surfaces.DiscCover.uniform_global_finitePuncture_insertion_area_le_of_pointInsertion
+#print axioms AreaDeficit.Surfaces.DiscCover.uniformGlobalPointInsertionBound_iff_totalArea_increment
