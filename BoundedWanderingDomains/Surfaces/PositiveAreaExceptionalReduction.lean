@@ -47,6 +47,58 @@ theorem saturation_diff_disjoint_of_backward_invariant
             (f.orbit_succ k ⟨x, hxtrap⟩).symm]
   exact horbit n (hyorbit ▸ hys)
 
+/-- After deleting a countable backward-invariant exceptional set, the
+remaining forward saturation has exactly the measurable one-step wandering
+configuration used by area cancellation. -/
+theorem diff_backwardExceptional_wandering_configuration
+    (f : LocalMap X) (hf : IsOpenHolomorphic f) {A K S V : Set X}
+    (hAmeas : MeasurableSet A) (hApos : HasPositiveChartArea A)
+    (hAtrap : A ⊆ f.trapped)
+    (hdis : Pairwise
+      (fun n m : ℕ => Disjoint (f.imageAt n A) (f.imageAt m A)))
+    (hinj : f.InjectiveOnSaturation A)
+    (hsatK : f.saturation A ⊆ K) (hKV : K ⊆ V)
+    (hScount : S.Countable)
+    (hback : ∀ (x : f.source), (x : X) ∈ V →
+      f.map x ∈ S → (x : X) ∈ S) :
+    let Astar := A \ S
+    let Wstar := f.saturation Astar
+    MeasurableSet Astar ∧ HasPositiveChartArea Astar ∧
+      MeasurableSet Wstar ∧ Astar ⊆ Wstar ∧ Wstar ⊆ K ∧
+      InjOn f.totalize Wstar ∧ f.totalize '' Wstar = Wstar \ Astar ∧
+      Disjoint Wstar S := by
+  classical
+  let Astar := A \ S
+  let Wstar := f.saturation Astar
+  have hAstarsub : Astar ⊆ A := sdiff_subset
+  have hAstarmeas : MeasurableSet Astar := hAmeas.diff hScount.measurableSet
+  have hAstarpos : HasPositiveChartArea Astar := hApos.diff_countable hScount
+  have hAstartrap : Astar ⊆ f.trapped := hAstarsub.trans hAtrap
+  have hsatmono : Wstar ⊆ f.saturation A := by
+    intro x hx
+    obtain ⟨n, hn⟩ := mem_iUnion.mp hx
+    obtain ⟨y, hy, hxy⟩ := hn
+    exact mem_iUnion.mpr ⟨n, y, hAstarsub hy, hxy⟩
+  have hinjstar : f.InjectiveOnSaturation Astar :=
+    hinj.mono (fun x hx => hsatmono hx)
+  have hdistar : Pairwise
+      (fun n m : ℕ => Disjoint (f.imageAt n Astar) (f.imageAt m Astar)) := by
+    intro n m hnm
+    apply (hdis hnm).mono
+    · rintro x ⟨y, hy, hxy⟩
+      exact ⟨y, hAstarsub hy, hxy⟩
+    · rintro x ⟨y, hy, hxy⟩
+      exact ⟨y, hAstarsub hy, hxy⟩
+  have hWmeas : MeasurableSet Wstar :=
+    f.measurableSet_saturation hf.2.continuous hAstartrap hinjstar hAstarmeas
+  have hWdis : Disjoint Wstar S :=
+    f.saturation_diff_disjoint_of_backward_invariant V hAtrap
+      (hsatK.trans hKV) hback
+  exact ⟨hAstarmeas, hAstarpos, hWmeas, f.subset_saturation Astar,
+    hsatmono.trans hsatK,
+    f.totalize_injOn_saturation hAstartrap hinjstar,
+    f.totalize_image_saturation hAstartrap hdistar, hWdis⟩
+
 /-- Enlarge the boundary stages by finitely many exceptional values and all
 their backward iterates.  Deleting the resulting countable union preserves
 measurability and positive chart area, while retaining density in the new
