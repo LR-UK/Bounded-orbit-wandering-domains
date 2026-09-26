@@ -1,6 +1,7 @@
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
 import BoundedWanderingDomains.Surfaces.BackwardExceptionalPackage
 import BoundedWanderingDomains.Surfaces.PositiveAreaBridge
+import BoundedWanderingDomains.Surfaces.SaturationDynamics
 
 /-! # Removing backward exceptional points from a positive-area set -/
 
@@ -12,6 +13,39 @@ namespace SurfaceDynamics.LocalMap
 variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [IsManifold 𝓘(ℂ) 1 X] [T2Space X] [LocallyCompactSpace X]
   [SecondCountableTopology X] [MeasurableSpace X] [BorelSpace X]
+
+/-- A backward-invariant exceptional set cannot be met by an orbit which
+starts outside it, provided the whole orbit remains in the working source. -/
+theorem saturation_diff_disjoint_of_backward_invariant
+    (f : LocalMap X) (V : Set X) {A S : Set X}
+    (hAtrap : A ⊆ f.trapped) (hsatV : f.saturation A ⊆ V)
+    (hback : ∀ (x : f.source), (x : X) ∈ V →
+      f.map x ∈ S → (x : X) ∈ S) :
+    Disjoint (f.saturation (A \ S)) S := by
+  apply Set.disjoint_left.mpr
+  intro y hy hys
+  obtain ⟨n, hyn⟩ := mem_iUnion.mp hy
+  obtain ⟨x, hxA, hxy⟩ := hyn
+  have hxtrap : x ∈ f.trapped := hAtrap hxA.1
+  have hyorbit : y = f.orbit n ⟨x, hxtrap⟩ :=
+    Option.some.inj (hxy.symm.trans (f.iterate_eq_some_orbit n ⟨x, hxtrap⟩))
+  have horbit : ∀ k, f.orbit k ⟨x, hxtrap⟩ ∉ S := by
+    intro k
+    induction k with
+    | zero => simpa only [f.orbit_zero] using hxA.2
+    | succ k ih =>
+        intro hnext
+        apply ih
+        let w : f.source :=
+          ⟨f.orbit k ⟨x, hxtrap⟩, f.orbit_mem_source k ⟨x, hxtrap⟩⟩
+        apply hback w ?_ ?_
+        · apply hsatV
+          apply mem_iUnion.mpr
+          exact ⟨k, x, hxA.1, f.iterate_eq_some_orbit k ⟨x, hxtrap⟩⟩
+        · change f.map w ∈ S
+          rwa [show f.map w = f.orbit (k + 1) ⟨x, hxtrap⟩ from
+            (f.orbit_succ k ⟨x, hxtrap⟩).symm]
+  exact horbit n (hyorbit ▸ hys)
 
 /-- Enlarge the boundary stages by finitely many exceptional values and all
 their backward iterates.  Deleting the resulting countable union preserves
