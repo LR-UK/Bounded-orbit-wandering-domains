@@ -81,6 +81,31 @@ theorem domainArea_le_add_gain (p : DiscCover M) (U V : TopologicalSpace.Opens M
           ((p.domainDensityRatio V x)^2 - (p.domainDensityRatio U x)^2)) := by congr 1; ring
     _ ≤ _ := ENNReal.ofReal_add_le
 
+/-- On a measurable set contained in the smaller domain, area is exactly
+the old area plus the nonnegative intrinsic gain.  This is the finite-area
+identity needed to convert a Gauss--Bonnet total-area increment into a gain
+bound without any `∞ - ∞` subtraction. -/
+theorem domainArea_eq_add_gain_on (p : DiscCover M)
+    {U V : TopologicalSpace.Opens M} (hVU : V ≤ U)
+    {E : Set M} (hE : MeasurableSet E) (hEV : E ⊆ V) :
+    p.domainArea V E = p.domainArea U E + p.domainAreaGain U V E := by
+  have hm : Measurable (fun x => ENNReal.ofReal
+      ((p.domainDensityRatio U x)^2)) :=
+    ((p.domainDensityRatio_measurable U).pow_const 2).ennreal_ofReal
+  simp only [domainArea, domainAreaGain, withDensity_apply _ hE]
+  rw [← lintegral_add_left hm]
+  apply setLIntegral_congr_fun hE
+  intro x hx
+  have hr := p.domainDensityRatio_mono hVU (hEV hx)
+  have hU0 := p.domainDensityRatio_nonneg U x
+  have hV0 := p.domainDensityRatio_nonneg V x
+  have hsq : (p.domainDensityRatio U x)^2 ≤
+      (p.domainDensityRatio V x)^2 := (sq_le_sq₀ hU0 hV0).2 hr
+  dsimp only
+  rw [← ENNReal.ofReal_add (sq_nonneg _) (sub_nonneg.mpr hsq)]
+  congr 1
+  ring
+
 theorem domainArea_coordinate_formula (p : DiscCover M)
     (U : TopologicalSpace.Opens M) {c : OpenPartialHomeomorph M ℂ}
     (hc : MDifferentiableOn 𝓘(ℂ) 𝓘(ℂ) c c.source)
