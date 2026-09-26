@@ -686,3 +686,12 @@ backward-boundary construction and the already formalised boundary barrier
 package are the intended source of this separation.  Once connected, the
 existing saturation identities and uniform remote-removal theorem provide
 the finite-model area bound.
+
+`BoundedWanderingDomains/Surfaces/LocalCompactAreaAdvance.lean` now also
+compiles.  It composes the bridge with the uniform remote-removal estimate.
+For every old finite-puncture domain it yields the one-step area inequality
+as soon as (i) the backward-invariant punctures make the covering source a
+subdomain of the old model, (ii) the measured set lies in that source, and
+(iii) its image lies in the fixed compact set separated from the boundary
+obstacle.  These are now the only geometric/dynamical obligations before
+`false_of_positive_area_area_advances` applies.
