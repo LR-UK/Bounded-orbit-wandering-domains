@@ -543,3 +543,10 @@ change-of-variables portion of each injective patch. The next construction
 must obtain those component coverings uniformly after deleting the finite
 critical-value set and partition the wandering set among their source
 components.
+
+The singular-value covering bridge is now checked in
+`SurfaceSingularCovering.lean`.  The complement of the locally defined
+surface singular-value set is a covering target, and restriction to the
+preimage of any subset of regular values is a genuine covering map.  This
+will provide the component coverings above once the finite exceptional
+target has been chosen inside the regular-value set.

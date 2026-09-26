@@ -49,6 +49,7 @@ import BoundedWanderingDomains.Surfaces.PositiveAreaAdvanceReduction
 import BoundedWanderingDomains.Surfaces.ChartMapAreaTransport
 import BoundedWanderingDomains.Surfaces.DomainMapAreaTransport
 import BoundedWanderingDomains.Surfaces.DomainCoveringPullback
+import BoundedWanderingDomains.Surfaces.SurfaceSingularCovering
 import BoundedWanderingDomains.Surfaces.FinitePatchTransport
 import SurfaceGeometry
 import SurfaceFiniteRemoval
