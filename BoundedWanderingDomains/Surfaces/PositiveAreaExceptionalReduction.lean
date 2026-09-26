@@ -122,6 +122,8 @@ theorem exists_backwardExceptional_positive_remainder
       MeasurableSet (A \ (⋃ n, ((S n : Finset X) : Set X))) ∧
       HasPositiveChartArea (A \ (⋃ n, ((S n : Finset X) : Set X))) ∧
       A \ (⋃ n, ((S n : Finset X) : Set X)) ⊆
+        closure (⋃ n, ((P n : Finset X) : Set X)) ∧
+      A \ (⋃ n, ((S n : Finset X) : Set X)) ⊆
         closure (⋃ n, ((S n : Finset X) : Set X)) := by
   classical
   obtain ⟨S, hSmono, hcontain, hback⟩ :=
@@ -136,6 +138,7 @@ theorem exists_backwardExceptional_positive_remainder
     exact mem_iUnion.mpr ⟨n, (hcontain n).1 hxn⟩
   exact ⟨hAmeas.diff hScount.measurableSet,
     hApos.diff_countable hScount,
+    sdiff_subset.trans hAP,
     (sdiff_subset.trans hAP).trans (closure_mono hPS)⟩
 
 end SurfaceDynamics.LocalMap
