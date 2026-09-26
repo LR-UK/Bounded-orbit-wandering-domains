@@ -26,6 +26,8 @@ theorem exists_boundaryBarrierPackage_in_subsurface
       K ⊆ V ∧ IsCompact (closure (V : Set X)) ∧
       Monotone P ∧ (∀ n, (P n).Finite) ∧
       frontier (V : Set X) ⊆ closure (⋃ n, P n) ∧
+      (∀ n x (hx : x ∈ V), x ∈ P n →
+        f.map ⟨x, hVsource (subset_closure hx)⟩ ∈ P n) ∧
       let g := f.restrictSource V (subset_trans subset_closure hVsource)
       Disjoint (closure (⋃ n, P n)) g.omega ∧
       g.trapped \ g.omega ⊆ closure (⋃ n, P n) ∧
@@ -33,7 +35,7 @@ theorem exists_boundaryBarrierPackage_in_subsurface
         connectedComponentIn (closure (⋃ n, P n))ᶜ x =
           connectedComponentIn g.omega x) := by
   obtain ⟨V0, hVsource, P, hVopen, hKV, hVcompact, hPmono, hPfinite,
-      hfront, hnormal, hback⟩ :=
+      hfront, hforward, hnormal, hback⟩ :=
     f.exists_boundaryPunctureSequence hf hK hKsource
   let V : TopologicalSpace.Opens X := ⟨V0, hVopen⟩
   have hVO : closure (V : Set X) ⊆ O := hVsource.trans hsourceO
@@ -53,7 +55,7 @@ theorem exists_boundaryBarrierPackage_in_subsurface
         exact hfront)
       (fun x hx => hback (x : X) x.property hx) homega
   refine ⟨V, hVsource, P, hKV, hVcompact, hPmono, hPfinite,
-    hfront, hdis, hbad, ?_⟩
+    hfront, hforward, hdis, hbad, ?_⟩
   intro x hx
   exact f.restricted_barrier_component_eq_omega hf O V p
     (subset_trans subset_closure hVsource) hVcompact hVO
@@ -69,20 +71,25 @@ theorem exists_boundaryBarrierFinsetPackage_in_subsurface
     ∃ (V : TopologicalSpace.Opens X)
       (hVsource : closure (V : Set X) ⊆ f.source) (P : ℕ → Finset X),
       K ⊆ V ∧ IsCompact (closure (V : Set X)) ∧ Monotone P ∧
+      (∀ n x (hx : x ∈ V), x ∈ P n →
+        f.map ⟨x, hVsource (subset_closure hx)⟩ ∈ P n) ∧
       let g := f.restrictSource V (subset_trans subset_closure hVsource)
       g.trapped \ g.omega ⊆ closure (⋃ n, ((P n : Finset X) : Set X)) := by
   classical
   obtain ⟨V, hVsource, R, hKV, hVcompact, hRmono, hRfinite,
-      hfront, hdis, hbad, hcomp⟩ :=
+      hfront, hforward, hdis, hbad, hcomp⟩ :=
     f.exists_boundaryBarrierPackage_in_subsurface hf O p hsourceO hK hKsource
   let P : ℕ → Finset X := fun n => (hRfinite n).toFinset
   have hcoe : ∀ n, ((P n : Finset X) : Set X) = R n :=
     fun n => (hRfinite n).coe_toFinset
-  refine ⟨V, hVsource, P, hKV, hVcompact, ?_, ?_⟩
+  refine ⟨V, hVsource, P, hKV, hVcompact, ?_, ?_, ?_⟩
   · intro n m hnm
     intro x hx
     apply (hRfinite m).mem_toFinset.mpr
     exact hRmono hnm ((hRfinite n).mem_toFinset.mp hx)
+  · intro n x hxV hxP
+    apply (hRfinite n).mem_toFinset.mpr
+    exact hforward n x hxV ((hRfinite n).mem_toFinset.mp hxP)
   · simpa only [hcoe] using hbad
 
 end SurfaceDynamics.LocalMap

@@ -695,3 +695,13 @@ subdomain of the old model, (ii) the measured set lies in that source, and
 (iii) its image lies in the fixed compact set separated from the boundary
 obstacle.  These are now the only geometric/dynamical obligations before
 `false_of_positive_area_area_advances` applies.
+
+The existing boundary tree has now been strengthened, rather than replaced:
+`boundaryBackwardTree_forward_invariant` proves that every finite stage is
+forward invariant at points inside the working domain (the roots lie on its
+frontier, and all other points are preimages).  The set-valued and
+finset-valued boundary packages expose this property.  The compiled lemma
+`localCompactCoverDomain_le_finitePunctureDomain` uses it to discharge the
+subdomain obligation in the local area-advance theorem.  This is the precise
+reuse of the removed-disc/backward-orbit construction discussed with the
+author.

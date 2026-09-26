@@ -15,6 +15,36 @@ variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [SecondCountableTopology X] [LocallyCompactSpace X] [T2Space X]
   [DecidableEq X]
 
+/-- Forward invariance of an old finite puncture set inside the working
+domain is exactly what makes the compact covering source a subdomain of the
+old punctured model. -/
+theorem localCompactCoverDomain_le_finitePunctureDomain
+    (f : LocalMap X) (hf : Continuous f.map)
+    (V : TopologicalSpace.Opens X) (hVsource : (V : Set X) ⊆ f.source)
+    {K : Set X} (hKV : K ⊆ V)
+    (P E : Finset X)
+    (hforward : ∀ x (hx : x ∈ V), x ∈ P →
+      f.map ⟨x, hVsource hx⟩ ∈ P)
+    (H : Set X) (hH : IsClosed H) :
+    let U := AreaDeficit.Surfaces.finitePunctureDomain P
+    let S := AreaDeficit.Surfaces.finiteRemovalDomain U E ⊓
+      (⟨Hᶜ, hH.isOpen_compl⟩ : TopologicalSpace.Opens X)
+    f.localCompactCoverDomain K S hf ≤ U := by
+  dsimp only
+  intro x hx
+  obtain ⟨w, hw, heq⟩ := hx
+  have hwK : (w : X) ∈ K := by
+    have hwKs : w ∈ f.sourceCompact K := interior_subset hw.1
+    exact hwKs
+  have hwV : (w : X) ∈ V := hKV hwK
+  have hfwP : f.map w ∉ P := hw.2.1.1
+  change (x : X) ∉ P
+  intro hxP
+  have hwP : (w : X) ∈ P := heq ▸ hxP
+  apply hfwP
+  have h := hforward (w : X) hwV hwP
+  simpa only using h
+
 /-- The compact local covering construction and the uniform remote-removal
 estimate combine into the exact one-step inequality used in finite-model
 cancellation.  Backward invariance of the old punctures appears only as the

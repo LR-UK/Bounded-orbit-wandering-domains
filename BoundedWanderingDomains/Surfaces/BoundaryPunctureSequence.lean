@@ -77,6 +77,25 @@ theorem boundaryBackwardTree_finite (f : LocalMap X) (hf : IsOpenHolomorphic f)
   | succ n ih =>
       exact ih.union (f.finite_working_preimage hf hVcompact hVsource ih)
 
+/-- A boundary-rooted finite tree is forward invariant at every point which
+still lies in the open working domain.  Roots cannot occur there, and each
+remaining node was inserted as a preimage of an earlier node. -/
+theorem boundaryBackwardTree_forward_invariant (f : LocalMap X)
+    {V Q : Set X} (hVopen : IsOpen V)
+    (hVsource : closure V ⊆ f.source) (hQ : Q ⊆ frontier V) (n : ℕ) :
+    ∀ x (hxV : x ∈ V), x ∈ f.boundaryBackwardTree V hVsource Q n →
+      f.map ⟨x, hVsource (subset_closure hxV)⟩ ∈
+        f.boundaryBackwardTree V hVsource Q n := by
+  intro x hxV hx
+  induction n generalizing x with
+  | zero =>
+      exact False.elim (Set.disjoint_left.mp
+        (disjoint_frontier_iff_isOpen.mpr hVopen) (hQ hx) hxV)
+  | succ n ih =>
+      rcases hx with hx | ⟨hxV', hfx⟩
+      · exact Or.inl (ih x hxV hx)
+      · exact Or.inl hfx
+
 theorem boundaryBackwardTree_union_backward (f : LocalMap X)
     {V Q : Set X} (hVsource : closure V ⊆ f.source) :
     ∀ x (hx : x ∈ V),
@@ -175,6 +194,8 @@ theorem exists_boundaryPunctureSequence (f : LocalMap X)
       IsOpen V ∧ K ⊆ V ∧ IsCompact (closure V) ∧
       Monotone P ∧ (∀ n, (P n).Finite) ∧
       frontier V ⊆ closure (⋃ n, P n) ∧
+      (∀ n x (hx : x ∈ V), x ∈ P n →
+        f.map ⟨x, hVsource (subset_closure hx)⟩ ∈ P n) ∧
       (∀ hVo : IsOpen V,
         Disjoint (closure (⋃ n, P n))
           (f.restrictSource ⟨V, hVo⟩
@@ -210,8 +231,13 @@ theorem exists_boundaryPunctureSequence (f : LocalMap X)
     intro hVo
     exact f.boundaryBackwardTree_closure_disjoint_restricted_omega
       ⟨V, hVo⟩ hVsource hQfront
+  have hforward : ∀ n x (hx : x ∈ V), x ∈ R n →
+      f.map ⟨x, hVsource (subset_closure hx)⟩ ∈ R n := by
+    intro n x hxV hxR
+    exact f.boundaryBackwardTree_forward_invariant hVopen hVsource
+      (hQfront n) n x hxV hxR
   refine ⟨V, hVsource, R, hVopen, hKV, hVcompact,
-    hRmono, hRfinite, hfront, hnormal, ?_⟩
+    hRmono, hRfinite, hfront, hforward, hnormal, ?_⟩
   intro x hxV hfx
   have hstageBack : ∀ n, ∀ y (hy : y ∈ V),
       f.map ⟨y, hVsource (subset_closure hy)⟩ ∈ R n → y ∈ R (n + 1) := by
