@@ -663,3 +663,9 @@ Cantor pairing of their indices. Consequently
 `exists_uniform_area_advance_of_remote_covering` needs only the covering,
 measurability, injectivity, and compact-containment data; no finite chart
 cover is left for the dynamical proof to supply.
+
+The combined `SurfaceResearch` module compiles after these additions. The
+local totalisation is also now proved Borel measurable by applying the
+piecewise-continuity theorem on the open source and its complement, so it can
+serve directly as the ambient representative in the automatic chart
+transport theorem.

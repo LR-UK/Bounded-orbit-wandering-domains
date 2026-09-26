@@ -106,7 +106,8 @@ theorem measurable_totalize (f : LocalMap X) (hf : Continuous f.map) :
   have hout : ContinuousOn f.totalize (f.source : Set X)ᶜ := by
     apply continuousOn_id.congr
     intro x hx
-    simp only [totalize, dite_eq_right (not_mem_of_mem_compl hx)]
+    have hx' : x ∉ f.source := hx
+    simp only [totalize, dif_neg hx', id_eq]
   have hpiece := (f.continuousOn_totalize hf).measurable_piecewise hout
     f.source.isOpen.measurableSet
   simpa only [Set.piecewise_same] using hpiece
