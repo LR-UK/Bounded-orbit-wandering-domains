@@ -616,3 +616,12 @@ the target component through the ambient covering, proves that the lift
 stays in the chosen source component, and obtains exact pullback of the two
 componentwise hyperbolic densities. No separate component-covering theorem
 or global uniformisation assumption is needed.
+
+`OpenDomainAreaTransport.lean` now completes the local change-of-variables
+bridge. A holomorphic covering between open surface domains preserves the
+intrinsic domain area of every injective measurable chart patch. The ambient
+representative of the map is required to agree with the covering only on the
+open source, so this applies directly to a `LocalMap`; no global holomorphic
+totalisation is assumed. The proof combines the exact componentwise density
+pullback with the planar Jacobian theorem and explicitly identifies the
+component-chart derivative with the ambient coordinate derivative.
