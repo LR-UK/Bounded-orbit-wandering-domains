@@ -531,3 +531,15 @@ patch. The remaining local analytic obligation is now geometric: derive that
 density identity from the covering obtained after deleting the finite
 exceptional values, then compare its smaller target domain with the global
 finite-puncture model using the checked uniform remote-gain estimate.
+
+The pointwise geometric part is now checked too.
+`DiscCover.domainDensity_covering_pullback_components` starts with the
+explicit universal disc covers chosen for the connected source and target
+components. If the holomorphic restriction between those components is a
+covering, it proves the exact pullback identity for their componentwise
+hyperbolic densities. Together with
+`chart_domainArea_eq_image_of_pullback`, this closes the metric and
+change-of-variables portion of each injective patch. The next construction
+must obtain those component coverings uniformly after deleting the finite
+critical-value set and partition the wandering set among their source
+components.
