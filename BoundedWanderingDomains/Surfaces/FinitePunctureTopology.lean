@@ -1,11 +1,13 @@
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
 import RiemannDynamics.Uniformization.Perron.GreensFunction.Basic
 import BoundedWanderingDomains.Surfaces.SubdomainCover
+import BoundedWanderingDomains.Surfaces.LegacyDiscCoverBridge
+import BoundedWanderingDomains.Surfaces.SubtypeHolomorphic
 
 /-! # Topology of finitely punctured analytic surfaces -/
 
 open Set Topology TopologicalSpace
-open scoped Manifold
+open scoped Manifold ContDiff
 
 namespace RiemannDynamics
 
@@ -99,6 +101,48 @@ variable {M : Type*} [TopologicalSpace M] [ChartedSpace ℂ M]
   [IsManifold 𝓘(ℂ) 1 M] [T2Space M] [SecondCountableTopology M]
   [ConnectedSpace M] [Infinite M]
 
+/-- A disc cover on an ambient open set restricts to any connected open set
+of the original surface contained in it. -/
+theorem nonempty_of_le_open (V U : TopologicalSpace.Opens M)
+    (p : DiscCover V) (hUV : U ≤ V) [ConnectedSpace U] :
+    Nonempty (DiscCover U) := by
+  let O : TopologicalSpace.Opens V :=
+    ⟨Subtype.val ⁻¹' (U : Set M), U.isOpen.preimage continuous_subtype_val⟩
+  let F : O → U := fun x => ⟨(x : V), x.property⟩
+  let G : U → O := fun x =>
+    ⟨⟨(x : M), hUV x.property⟩, x.property⟩
+  have hF : ContMDiff 𝓘(ℂ) 𝓘(ℂ) ω F := by
+    intro x
+    have hcomp : ContMDiffAt 𝓘(ℂ) 𝓘(ℂ) ω (Subtype.val ∘ F) x :=
+      ((contMDiff_subtype_val (I := 𝓘(ℂ)) (n := ω)).comp
+        (contMDiff_subtype_val (I := 𝓘(ℂ)) (n := ω))).contMDiffAt
+    rw [contMDiffAt_iff_target]
+    exact ⟨IsInducing.subtypeVal.continuousAt_iff.mpr hcomp.continuousAt,
+      (contMDiffAt_iff_target.mp hcomp).2⟩
+  have hG : ContMDiff 𝓘(ℂ) 𝓘(ℂ) ω G := by
+    intro x
+    have hcomp : ContMDiffAt 𝓘(ℂ) 𝓘(ℂ) ω (Subtype.val ∘ G) x := by
+      rw [contMDiffAt_iff_target]
+      have hbase : ContMDiffAt 𝓘(ℂ) 𝓘(ℂ) ω
+          (Subtype.val : U → M) x :=
+        (contMDiff_subtype_val (I := 𝓘(ℂ)) (n := ω)).contMDiffAt
+      exact ⟨IsInducing.subtypeVal.continuousAt_iff.mpr hbase.continuousAt,
+        (contMDiffAt_iff_target.mp hbase).2⟩
+    rw [contMDiffAt_iff_target]
+    exact ⟨IsInducing.subtypeVal.continuousAt_iff.mpr hcomp.continuousAt,
+      (contMDiffAt_iff_target.mp hcomp).2⟩
+  let e : O ≃ₘ^ω⟮𝓘(ℂ), 𝓘(ℂ)⟯ U :=
+    { toFun := F
+      invFun := G
+      left_inv := fun x => Subtype.ext rfl
+      right_inv := fun x => Subtype.ext rfl
+      contMDiff_toFun := hF
+      contMDiff_invFun := hG }
+  letI : ConnectedSpace O :=
+    (e.toHomeomorph.connectedSpace_iff).mpr inferInstance
+  obtain ⟨q⟩ := p.nonempty_subdomain O
+  exact ⟨q.transDiffeomorph e⟩
+
 /-- Finite punctures of a disc-covered surface inherit a concrete universal
 cover by the disc. -/
 theorem nonempty_finitePuncture (p : DiscCover M) (F : Finset M) :
@@ -116,3 +160,4 @@ end AreaDeficit.Surfaces.DiscCover
 #print axioms RiemannDynamics.isConnected_compl_finset
 #print axioms RiemannDynamics.noncompact_compl_finset
 #print axioms AreaDeficit.Surfaces.DiscCover.nonempty_finitePuncture
+#print axioms AreaDeficit.Surfaces.DiscCover.nonempty_of_le_open
