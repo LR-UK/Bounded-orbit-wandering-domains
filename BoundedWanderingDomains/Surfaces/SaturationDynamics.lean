@@ -94,6 +94,24 @@ theorem totalize_image_saturation (f : LocalMap X) {A : Set X}
         obtain ⟨w, hw, rfl⟩ := hn
         exact ⟨w, mem_iUnion.mpr ⟨n, hw⟩, rfl⟩
 
+/-- The closure of a trapped forward saturation is forward invariant as
+soon as it still lies in the source. -/
+theorem totalize_mapsTo_closure_saturation (f : LocalMap X)
+    [T2Space X] {A : Set X} (hf : Continuous f.map)
+    (hA : A ⊆ f.trapped)
+    (hsource : closure (f.saturation A) ⊆ f.source) :
+    MapsTo f.totalize (closure (f.saturation A))
+      (closure (f.saturation A)) := by
+  have hsat : MapsTo f.totalize (f.saturation A) (f.saturation A) := by
+    intro x hx
+    obtain ⟨n, hn⟩ := mem_iUnion.mp hx
+    apply mem_iUnion.mpr
+    refine ⟨n + 1, ?_⟩
+    rw [← f.totalize_image_imageAt hA n]
+    exact ⟨x, hn, rfl⟩
+  apply hsat.closure_of_continuousOn
+  exact (f.continuousOn_totalize hf).mono hsource
+
 section Measurable
 
 variable [MeasurableSpace X] [BorelSpace X] [T2Space X]

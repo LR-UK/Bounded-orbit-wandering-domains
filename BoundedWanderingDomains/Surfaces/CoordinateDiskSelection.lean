@@ -5,7 +5,7 @@ import BoundedWanderingDomains.Surfaces.UniformizationBridge
 /-! # Selecting a coordinate disk inside an open surface set -/
 
 open Set Function Metric
-open scoped Manifold Topology
+open scoped Manifold Topology ContDiff
 
 namespace SurfaceDynamics
 
@@ -74,7 +74,33 @@ theorem exists_coordDisk_center_closedCarrier_subset {U : Set X}
   rintro x ⟨y, hy, rfl⟩
   exact (hclosed hy).2
 
+/-- Every proper closed set is contained in a fixed disc-covered open
+subsurface.  The deleted coordinate disk can be chosen wholly in its
+complement. -/
+theorem exists_discCovered_coordDisk_compl_of_isClosed
+    [SecondCountableTopology X] [ConnectedSpace X]
+    {K : Set X} (hK : IsClosed K)
+    (hKne : K ≠ Set.univ) :
+    ∃ (D : RiemannDynamics.CoordDisk X)
+      (p : AreaDeficit.Surfaces.DiscCover D.compl),
+      K ⊆ (D.compl : Set X) := by
+  obtain ⟨x, hx⟩ : ∃ x : X, x ∉ K := by
+    by_contra h
+    push Not at h
+    exact hKne (eq_univ_iff_forall.mpr h)
+  obtain ⟨D, hDcenter, hD⟩ :=
+    exists_coordDisk_center_closedCarrier_subset hK.isOpen_compl hx
+  letI : IsManifold 𝓘(ℂ) ω X :=
+    AreaDeficit.Surfaces.isManifold_analytic_of_complex
+  let p : AreaDeficit.Surfaces.DiscCover D.compl :=
+    Classical.choice
+      (AreaDeficit.Surfaces.nonempty_discCover_coordDisk_compl D)
+  refine ⟨D, p, ?_⟩
+  intro y hyK hyD
+  exact (hD hyD) hyK
+
 end SurfaceDynamics
 
 #print axioms SurfaceDynamics.exists_coordDisk_closedCarrier_subset_diff
 #print axioms SurfaceDynamics.exists_coordDisk_center_closedCarrier_subset
+#print axioms SurfaceDynamics.exists_discCovered_coordDisk_compl_of_isClosed

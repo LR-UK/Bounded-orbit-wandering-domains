@@ -1,5 +1,7 @@
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
 import BoundedWanderingDomains.Surfaces.LocalCompactModelPatches
+import BoundedWanderingDomains.Surfaces.InvariantSubsurface
+import BoundedWanderingDomains.Surfaces.LocalMapSubsurface
 import BoundedWanderingDomains.Surfaces.PositiveAreaFinalReduction
 import BoundedWanderingDomains.Surfaces.UniformizationBridge
 import Mathlib.Order.Disjointed
@@ -163,8 +165,131 @@ theorem noCompactPositiveAreaWanderingSetClaim_of_isHyperbolic
     (Classical.choice
       (AreaDeficit.Surfaces.nonempty_discCover_of_isHyperbolic hX))
 
+/-- The arbitrary-surface positive-area theorem when the hypothetical
+compact saturation is a proper subset of the surface. -/
+theorem noProperCompactPositiveAreaWanderingSet
+    (f : LocalMap X) (hf : IsOpenHolomorphic f)
+    (A : Set X) (hAmeas : MeasurableSet A)
+    (hAbad : A ⊆ f.trapped \ f.omega)
+    (hdis : Pairwise
+      (fun n m : ℕ => Disjoint (f.imageAt n A) (f.imageAt m A)))
+    (hinj : f.InjectiveOnSaturation A) (hApos : HasPositiveChartArea A) :
+    ¬ ∃ K : Set X, IsCompact K ∧ K ≠ Set.univ ∧
+      K ⊆ f.source ∧ f.saturation A ⊆ K := by
+  rintro ⟨K, hK, hKne, hKsource, hsatK⟩
+  obtain ⟨D, p, V, hVsource, hCV, hVO, hmap, hVcompact⟩ :=
+    f.exists_invariant_hyperbolic_neighborhood_of_compact_saturation hf
+      (fun x hx => (hAbad hx).1) hK hKne hKsource hsatK
+  have hsatV : f.saturation A ⊆ V := subset_closure.trans hCV
+  let hVs : (V : Set X) ⊆ f.source :=
+    subset_trans subset_closure hVsource
+  let r := f.restrictSource V hVs
+  let O := D.compl
+  let hsourceO : (r.source : Set X) ⊆ O :=
+    fun _ hx => hVO (subset_closure hx)
+  let g := r.restrictAmbient O hsourceO hmap
+  let AO : Set O := (↑) ⁻¹' A
+  letI : LocallyCompactSpace O := O.isOpen.locallyCompactSpace
+  letI : ConnectedSpace O :=
+    Subtype.connectedSpace (RiemannDynamics.isConnected_coordDisk_compl D)
+  have hAO : A ⊆ O := by
+    intro x hx
+    exact hVO (subset_closure (hsatV (f.subset_saturation A hx)))
+  have himageAO : ((↑) : O → X) '' AO = A := by
+    ext x
+    constructor
+    · rintro ⟨y, hy, rfl⟩
+      exact hy
+    · intro hx
+      exact ⟨⟨x, hAO hx⟩, hx, rfl⟩
+  have hAOmeas : MeasurableSet AO :=
+    hAmeas.preimage continuous_subtype_val.measurable
+  have hrbad : A ⊆ r.trapped \ r.omega :=
+    f.subset_restrictSource_trapped_diff_omega_of_saturation_subset
+      V hVs hAbad hsatV
+  have hgbad : AO ⊆ g.trapped \ g.omega := by
+    intro x hx
+    refine ⟨?_, ?_⟩
+    · exact (r.mem_restrictAmbient_trapped_iff O hsourceO hmap x).mpr
+        (hrbad hx).1
+    · intro hxomega
+      exact (hAbad hx).2
+        (f.omega_restrictAmbient_restrictSource_subset hf O V p hVs
+          hVcompact hVO hmap ⟨x, hxomega, rfl⟩)
+  have hsateq : r.saturation A = f.saturation A :=
+    f.restrictSource_saturation_eq_of_saturation_subset V hVs
+      (fun x hx => (hAbad hx).1) hsatV
+  have hdisg : Pairwise
+      (fun n m : ℕ => Disjoint (g.imageAt n AO) (g.imageAt m AO)) := by
+    apply r.pairwise_disjoint_imageAt_restrictAmbient O hsourceO hmap AO
+    have hdisr : Pairwise
+        (fun n m : ℕ => Disjoint (r.imageAt n A) (r.imageAt m A)) := by
+      intro n m hnm
+      rw [f.restrictSource_imageAt_eq_of_saturation_subset V hVs
+          (fun x hx => (hAbad hx).1) hsatV n,
+        f.restrictSource_imageAt_eq_of_saturation_subset V hVs
+          (fun x hx => (hAbad hx).1) hsatV m]
+      exact hdis hnm
+    simpa only [himageAO] using hdisr
+  have hinjg : g.InjectiveOnSaturation AO := by
+    apply r.injectiveOnSaturation_restrictAmbient O hsourceO hmap AO
+    have hinjr : r.InjectiveOnSaturation A :=
+      f.injectiveOnSaturation_restrictSource V hVs
+        (fun x hx => (hAbad hx).1) hsatV hinj
+    simpa only [himageAO] using hinjr
+  have hAOarea : 0 < p.hyperbolicArea AO :=
+    hApos.hyperbolicArea_pos_openSubtype hAmeas O hAO p
+  have hg : IsOpenHolomorphic g := by
+    apply r.isOpenHolomorphic_restrictAmbient
+      (f.isOpenHolomorphic_restrictSource hf V hVs) O hsourceO hmap
+  have hnoc :=
+    noCompactPositiveHyperbolicAreaWanderingSet_of_discCover_areaAdvance
+      p (compactLocalAreaAdvanceClaim (X := O)) g hg AO hAOmeas hgbad
+      hdisg hinjg hAOarea
+  apply hnoc
+  let C : Set X := closure (f.saturation A)
+  let CO : Set O := (↑) ⁻¹' C
+  have hCK : C ⊆ K := closure_minimal hsatK hK.isClosed
+  have hCcompact : IsCompact C :=
+    hK.of_isClosed_subset isClosed_closure hCK
+  have hCO : C ⊆ O :=
+    hCV.trans (fun _ hx => hVO (subset_closure hx))
+  have hCOcompact : IsCompact CO := by
+    rw [Topology.IsEmbedding.subtypeVal.isCompact_iff]
+    rw [image_preimage_eq_inter_range]
+    convert hCcompact using 1
+    apply inter_eq_left.mpr
+    intro x hx
+    exact ⟨⟨x, hCO hx⟩, rfl⟩
+  have hCOsource : CO ⊆ g.source := by
+    intro x hx
+    change (x : X) ∈ V
+    exact hCV hx
+  have hgsat : g.saturation AO ⊆ CO := by
+    intro x hx
+    change (x : X) ∈ C
+    apply subset_closure
+    have hx' : (x : X) ∈ r.saturation A := by
+      rw [← himageAO,
+        ← r.image_restrictAmbient_saturation O hsourceO hmap AO]
+      exact ⟨x, hx, rfl⟩
+    rwa [hsateq] at hx'
+  exact ⟨CO, hCOcompact, hCOsource, hgsat⟩
+
+/-- On a noncompact Riemann surface every compact candidate is proper, so
+the preceding reduction proves the exact positive-area target. -/
+theorem noCompactPositiveAreaWanderingSetClaim_of_noncompact
+    [NoncompactSpace X] :
+    NoCompactPositiveAreaWanderingSetClaim (X := X) := by
+  intro f hf A hAmeas hAbad hdis hinj hApos
+  rintro ⟨K, hK, hKsource, hsatK⟩
+  exact noProperCompactPositiveAreaWanderingSet f hf A hAmeas hAbad
+    hdis hinj hApos ⟨K, hK, hK.ne_univ, hKsource, hsatK⟩
+
 end SurfaceDynamics
 
 #print axioms SurfaceDynamics.compactLocalAreaAdvanceClaim
 #print axioms SurfaceDynamics.noCompactPositiveAreaWanderingSetClaim_of_discCover
 #print axioms SurfaceDynamics.noCompactPositiveAreaWanderingSetClaim_of_isHyperbolic
+#print axioms SurfaceDynamics.noProperCompactPositiveAreaWanderingSet
+#print axioms SurfaceDynamics.noCompactPositiveAreaWanderingSetClaim_of_noncompact

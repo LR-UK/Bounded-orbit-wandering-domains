@@ -14,6 +14,82 @@ variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [IsManifold 𝓘(ℂ) 1 X] [T2Space X] [LocallyCompactSpace X]
   [SecondCountableTopology X] [MeasurableSpace X] [BorelSpace X]
 
+/-- The wandering configuration after deleting a countable backward
+exceptional set, without making any assertion about positivity of the
+remaining set. -/
+theorem diff_backwardExceptional_wandering_configuration_basic
+    (f : LocalMap X) (hf : IsOpenHolomorphic f) {A K S V : Set X}
+    (hAmeas : MeasurableSet A)
+    (hAtrap : A ⊆ f.trapped)
+    (hdis : Pairwise
+      (fun n m : ℕ => Disjoint (f.imageAt n A) (f.imageAt m A)))
+    (hinj : f.InjectiveOnSaturation A)
+    (hsatK : f.saturation A ⊆ K) (hKV : K ⊆ V)
+    (hScount : S.Countable)
+    (hback : ∀ (x : f.source), (x : X) ∈ V →
+      f.map x ∈ S → (x : X) ∈ S) :
+    let Astar := A \ S
+    let Wstar := f.saturation Astar
+    MeasurableSet Astar ∧ MeasurableSet Wstar ∧ Astar ⊆ Wstar ∧
+      Wstar ⊆ K ∧ InjOn f.totalize Wstar ∧
+      f.totalize '' Wstar = Wstar \ Astar ∧ Disjoint Wstar S := by
+  classical
+  let Astar := A \ S
+  let Wstar := f.saturation Astar
+  have hAstarsub : Astar ⊆ A := sdiff_subset
+  have hAstarmeas : MeasurableSet Astar :=
+    hAmeas.diff hScount.measurableSet
+  have hAstartrap : Astar ⊆ f.trapped := hAstarsub.trans hAtrap
+  have hsatmono : Wstar ⊆ f.saturation A := by
+    intro x hx
+    obtain ⟨n, hn⟩ := mem_iUnion.mp hx
+    obtain ⟨y, hy, hxy⟩ := hn
+    exact mem_iUnion.mpr ⟨n, y, hAstarsub hy, hxy⟩
+  have hinjstar : f.InjectiveOnSaturation Astar :=
+    hinj.mono (fun x hx => hsatmono hx)
+  have hdistar : Pairwise
+      (fun n m : ℕ => Disjoint (f.imageAt n Astar) (f.imageAt m Astar)) := by
+    intro n m hnm
+    apply (hdis hnm).mono
+    · rintro x ⟨y, hy, hxy⟩
+      exact ⟨y, hAstarsub hy, hxy⟩
+    · rintro x ⟨y, hy, hxy⟩
+      exact ⟨y, hAstarsub hy, hxy⟩
+  have hWmeas : MeasurableSet Wstar :=
+    f.measurableSet_saturation hf.2.continuous hAstartrap hinjstar hAstarmeas
+  have hWdis : Disjoint Wstar S := by
+    apply Set.disjoint_left.mpr
+    intro y hy hys
+    obtain ⟨n, hyn⟩ := mem_iUnion.mp hy
+    obtain ⟨x, hxA, hxy⟩ := hyn
+    have hxtrap : x ∈ f.trapped := hAtrap (hAstarsub hxA)
+    have hyorbit : y = f.orbit n ⟨x, hxtrap⟩ :=
+      Option.some.inj
+        (hxy.symm.trans (f.iterate_eq_some_orbit n ⟨x, hxtrap⟩))
+    have horbit : ∀ k, f.orbit k ⟨x, hxtrap⟩ ∉ S := by
+      intro k
+      induction k with
+      | zero => simpa only [f.orbit_zero] using hxA.2
+      | succ k ih =>
+          intro hnext
+          apply ih
+          let w : f.source :=
+            ⟨f.orbit k ⟨x, hxtrap⟩, f.orbit_mem_source k ⟨x, hxtrap⟩⟩
+          apply hback w ?_ ?_
+          · apply hKV
+            apply hsatK
+            apply mem_iUnion.mpr
+            exact ⟨k, x, hAstarsub hxA,
+              f.iterate_eq_some_orbit k ⟨x, hxtrap⟩⟩
+          · change f.map w ∈ S
+            rwa [show f.map w = f.orbit (k + 1) ⟨x, hxtrap⟩ from
+              (f.orbit_succ k ⟨x, hxtrap⟩).symm]
+    exact horbit n (hyorbit ▸ hys)
+  exact ⟨hAstarmeas, hWmeas, f.subset_saturation Astar,
+    hsatmono.trans hsatK,
+    f.totalize_injOn_saturation hAstartrap hinjstar,
+    f.totalize_image_saturation hAstartrap hdistar, hWdis⟩
+
 /-- A backward-invariant exceptional set cannot be met by an orbit which
 starts outside it, provided the whole orbit remains in the working source. -/
 theorem saturation_diff_disjoint_of_backward_invariant
