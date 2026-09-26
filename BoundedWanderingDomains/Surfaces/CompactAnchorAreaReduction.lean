@@ -62,6 +62,28 @@ theorem anchorComplement_globalFinitePunctureAreaPackage_of_pointInsertion
   exact p.globalFinitePunctureAreaPackage_of_pointInsertion q
     (anchorComplement_hyperbolicArea_lt_top E p) hC hpoint
 
+/-- On a compact surface with fixed hyperbolising anchors, the last global
+point-removal input is exactly the total-area increase caused by inserting
+one further puncture.  Finiteness of every stage is discharged internally. -/
+theorem anchorComplement_pointInsertion_iff_totalArea_increment
+    [CompactSpace X] (E : Finset X)
+    (p : AreaDeficit.Surfaces.DiscCover
+      (AreaDeficit.Surfaces.anchorComplement E)) {C : ℝ≥0∞} :
+    p.UniformGlobalPointInsertionBound C ↔
+      ∀ (P : Finset (AreaDeficit.Surfaces.anchorComplement E))
+        (a : AreaDeficit.Surfaces.anchorComplement E),
+        p.domainArea
+            (AreaDeficit.Surfaces.finitePunctureDomain (insert a P)) Set.univ ≤
+          p.domainArea
+            (AreaDeficit.Surfaces.finitePunctureDomain P) Set.univ + C := by
+  letI : LocallyCompactSpace
+      (AreaDeficit.Surfaces.anchorComplement E) :=
+    (AreaDeficit.Surfaces.anchorComplement E).isOpen.locallyCompactSpace
+  apply p.uniformGlobalPointInsertionBound_iff_totalArea_increment
+  intro P
+  exact (p.finitePunctureDomain_area_univ_finite_of_hyperbolicArea_univ_finite
+    P (anchorComplement_hyperbolicArea_lt_top E p)).ne
+
 /-- Transfer the global finite-area contradiction to a fixed complement of
 compact-surface anchors.  Ambient finite stages are restricted to the open
 subsurface; their density at the measured set is preserved. -/
@@ -164,3 +186,4 @@ end SurfaceDynamics
 #print axioms SurfaceDynamics.anchorComplement_hyperbolicArea_lt_top
 #print axioms SurfaceDynamics.anchorComplement_finiteStage_area_lt_top
 #print axioms SurfaceDynamics.anchorComplement_globalFinitePunctureAreaPackage_of_pointInsertion
+#print axioms SurfaceDynamics.anchorComplement_pointInsertion_iff_totalArea_increment
