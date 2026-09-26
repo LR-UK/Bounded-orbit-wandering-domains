@@ -718,3 +718,34 @@ used without imposing positive separation between the compact orbit and the
 image of the artificial source boundary.  The surface cutoff, density-ratio,
 finite-puncture, and chart transport lemmas required for that direct version
 are already compiled; their final map-specific assembly remains.
+
+# Checkpoint 2026-09-26: compact anchor complements and global cancellation
+
+The compact universal-cover trichotomy is now connected to the dynamical
+backward tree. `CompactFiniteHyperbolization.lean` proves that every prescribed
+three-point set on a compact Riemann surface has disc-covered complement and
+that every larger finite stage remains disc-covered. The plane branch uses the
+user-specified torus mechanism: the plane universal cover, two distinct lifts
+of one puncture, and Little Picard. The sphere branch uses three omitted values.
+
+`CompactGlobalAnchors.lean` now produces one increasing backward-invariant
+finite sequence containing the same three positive-area anchors, a disc cover
+of every stage complement, and the positive measurable wandering remainder
+with its injectivity, image-minus-first-piece, and disjointness identities.
+
+`AnchorComplementModels.lean` restricts those ambient stages to one fixed
+three-anchor complement, preserves monotonicity, and transfers closure density
+to the subtype. `PositiveAreaAdvanceReduction.lean` and
+`CompactAnchorAreaReduction.lean` provide the global finite-area cancellation
+route, avoiding the false requirement that the wandering union be compact in
+the punctured subtype.
+
+`GlobalFinitePunctureArea.lean` isolates the remaining finite-type geometric
+input as `GlobalFinitePunctureAreaPackage`: finite total area for every finite
+model and a uniform cost for inserting boundedly many punctures. It proves the
+package for compact hyperbolic ambients from the existing compact estimates.
+For the compact nonhyperbolic anchor complement, the remaining construction is
+the finite-type cusp-area/Gauss--Bonnet bridge (especially the plane-cover or
+torus branch), followed by instantiation of the already compiled global
+cancellation reducer. The existing sharp 2*pi planar/spherical puncture bounds
+and cusp-density estimates are the intended inputs.
