@@ -522,3 +522,12 @@ holomorphicity.  `AreaDeficit.Surfaces.finite_patch_area_advance` adds such
 comparisons over a finite measurable partition; injectivity gives disjoint
 image patches.  The remaining analytic task is therefore to instantiate the
 local integrated deficit uniformly on those compact chart patches.
+
+The domain-metric change-of-variables layer is now also checked as
+`DiscCover.chart_domainArea_eq_image_of_pullback`. Given the pointwise
+pullback identity for two componentwise hyperbolic subdomain densities, it
+proves exact intrinsic-area transport on every measurable injective chart
+patch. The remaining local analytic obligation is now geometric: derive that
+density identity from the covering obtained after deleting the finite
+exceptional values, then compare its smaller target domain with the global
+finite-puncture model using the checked uniform remote-gain estimate.
