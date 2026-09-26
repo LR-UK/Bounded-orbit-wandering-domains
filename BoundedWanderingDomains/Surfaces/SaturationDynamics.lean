@@ -100,6 +100,17 @@ variable [MeasurableSpace X] [BorelSpace X] [T2Space X]
   [SecondCountableTopology X] [LocallyCompactSpace X]
   [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ) 1 X]
 
+theorem measurable_totalize (f : LocalMap X) (hf : Continuous f.map) :
+    Measurable f.totalize := by
+  classical
+  have hout : ContinuousOn f.totalize (f.source : Set X)ᶜ := by
+    apply continuousOn_id.congr
+    intro x hx
+    simp only [totalize, dite_eq_right (not_mem_of_mem_compl hx)]
+  have hpiece := (f.continuousOn_totalize hf).measurable_piecewise hout
+    f.source.isOpen.measurableSet
+  simpa only [Set.piecewise_same] using hpiece
+
 theorem measurableSet_imageAt (f : LocalMap X) {A : Set X}
     (hf : Continuous f.map) (hA : A ⊆ f.trapped)
     (hinj : f.InjectiveOnSaturation A) (hm : MeasurableSet A) (n : ℕ) :

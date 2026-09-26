@@ -654,3 +654,12 @@ one finite area-advance constant valid for every old open-domain model. This
 is the precise formal version of the author's Lemma 2.6 note: the compact
 obstacle and bounded finite punctures contribute a uniform amount, while the
 covering part has zero loss.
+
+The chart bookkeeping is now automatic. `CountablePatchTransport.lean`
+sums exact local covering equalities over countably many disjoint measurable
+patches, and `ChartPartitionCoveringTransport.lean` constructs those patches
+from independent countable source and target chart partitions using the
+Cantor pairing of their indices. Consequently
+`exists_uniform_area_advance_of_remote_covering` needs only the covering,
+measurability, injectivity, and compact-containment data; no finite chart
+cover is left for the dynamical proof to supply.
