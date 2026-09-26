@@ -749,3 +749,18 @@ the finite-type cusp-area/Gauss--Bonnet bridge (especially the plane-cover or
 torus branch), followed by instantiation of the already compiled global
 cancellation reducer. The existing sharp 2*pi planar/spherical puncture bounds
 and cusp-density estimates are the intended inputs.
+
+## 2026-09-26: cusp area integrability
+
+`BoundedWanderingDomains/CuspAreaIntegrability.lean` now proves the analytic
+end estimate needed for finite-type surface area.  The logarithmic cusp
+majorant is integrable in polar coordinates, and the existing pointwise
+covering-density estimate therefore gives finite curvature-minus-one area on
+a smaller punctured disc.  The proved endpoint is
+`IsHolomorphicDiscCovering.lintegral_density_sq_cusp_lt_top`; it uses only the
+standard axioms accepted by the audit.  The next bridge is to apply the same
+test-disc argument to `DiscCover.chartDensity` in an ambient surface chart,
+then cover a compact surface minus finitely many points by a compact core and
+these finitely many cusp neighbourhoods.  This supplies the finite-total-area
+half of `GlobalFinitePunctureAreaPackage`; the uniform insertion half should
+then use the recorded Lemma 2.6 / 2π-per-puncture estimate.

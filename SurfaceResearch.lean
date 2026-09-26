@@ -93,3 +93,4 @@ import SurfaceDynamicsTargets
 import BoundedWanderingDomains.Surfaces.AnchorComplementModels
 import BoundedWanderingDomains.Surfaces.CompactAnchorAreaReduction
 import BoundedWanderingDomains.Surfaces.GlobalFinitePunctureArea
+import BoundedWanderingDomains.CuspAreaIntegrability
