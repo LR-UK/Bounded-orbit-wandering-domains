@@ -550,3 +550,11 @@ surface singular-value set is a covering target, and restriction to the
 preimage of any subset of regular values is a genuine covering map.  This
 will provide the component coverings above once the finite exceptional
 target has been chosen inside the regular-value set.
+
+`ChartCriticalValues.lean` now supplies the finite branch-value input on a
+single compact source/target chart pair. It proves that fixed-coordinate
+readings of a holomorphic surface map are analytic, that openness rules out
+constant germs, and hence that both the critical points and their images in
+a compact chart patch are finite. The next step is a finite source/target
+chart refinement of the compact working set, followed by taking the finite
+union of these chartwise branch-value sets.
