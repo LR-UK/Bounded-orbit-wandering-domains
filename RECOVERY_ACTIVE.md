@@ -277,3 +277,11 @@ forces a nonzero derivative in a locally uniform limit. A nonzero derivative
 gives the exact nonconstancy required by `ambient_hurwitz_avoidance`.
 The missing link is the uniform upper density bound from the fixed limiting
 component, plus assembly of this lemma with the family of punctured covers.
+
+## Local checkpoint 2026-09-26: arbitrary noncompact and proper-source positive-area theorem
+
+Commit `1d578aa` (building on `6c26b70`) contains the checked coordinate-disk-complement reduction. `noProperCompactPositiveAreaWanderingSet` transports the full wandering configuration, injectivity, normality exclusion and positive chart area to a relatively compact invariant neighbourhood in a disc-covered open subsurface, then invokes the completed compact local area-advance contradiction. Consequently `noCompactPositiveAreaWanderingSetClaim_of_noncompact` proves the exact Theorem 1.3(2) target on every noncompact Riemann surface, while `noCompactPositiveAreaWanderingSet_of_source_ne_top` proves it for every local map with proper source on any ambient surface. The full project build and transitive axiom audit passed after this work, with no `sorryAx` in these declarations.
+
+The only positive-area case not covered by those theorems is a globally defined self-map of a compact nonhyperbolic surface. Compact hyperbolic surfaces are already handled by `noCompactPositiveAreaWanderingSetClaim_of_isHyperbolic`. `CompactGlobalAnchors.lean` now constructs three distinct anchors in the positive-area set and deletes their countable backward tree, preserving positive chart area and all measurable wandering/cancellation identities while forcing the remaining saturation to avoid the anchors. The next analytic step is the global finite-anchor area budget (the surface analogue of the finitely punctured sphere cancellation estimate), after which the existing density-divergence contradiction applies.
+
+The current bundle `../derived-set-local-checkpoint-2026-09-26.bundle` includes commit `1d578aa`; refresh it after committing `CompactGlobalAnchors.lean`.
