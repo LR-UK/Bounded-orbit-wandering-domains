@@ -636,3 +636,11 @@ every image and of the saturation in a Polish presentation. A remaining
 topological bookkeeping task is to install the standard Polish presentation
 of a second-countable locally compact Hausdorff surface from the challenge's
 existing assumptions (or to use a chartwise measurable-image proof).
+
+`OpenDomainFinitePatchTransport.lean` now assembles the local covering
+equalities over an arbitrary finite measurable chart partition. It proves
+the global one-step inequality between the two intrinsic domain-area
+measures, with zero analytic loss. Thus the remaining positive-area work is
+to construct the finite chart-pair partition of the compact saturation and
+instantiate the compact-interior covering after deleting the finite branch
+values and the current puncture stage.

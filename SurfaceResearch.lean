@@ -61,6 +61,7 @@ import BoundedWanderingDomains.Surfaces.CoveringComponents
 import BoundedWanderingDomains.Surfaces.DomainComponentMap
 import BoundedWanderingDomains.Surfaces.DomainCoveringMetricPullback
 import BoundedWanderingDomains.Surfaces.OpenDomainAreaTransport
+import BoundedWanderingDomains.Surfaces.OpenDomainFinitePatchTransport
 import BoundedWanderingDomains.Surfaces.FinitePatchTransport
 import SurfaceGeometry
 import SurfaceFiniteRemoval
