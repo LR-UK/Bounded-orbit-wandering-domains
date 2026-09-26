@@ -1,6 +1,7 @@
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
 import BoundedWanderingDomains.Surfaces.CuspAreaFinite
 import BoundedWanderingDomains.Surfaces.CoordinateDiskSelection
+import BoundedWanderingDomains.Surfaces.ComponentDomains
 
 /-! # Finite area of compact surfaces with finitely many punctures -/
 
@@ -142,6 +143,15 @@ theorem hyperbolicArea_compl_finset_lt_top (F : Finset M)
     apply Subtype.ext
     simpa only [Function.comp_apply] using hs.trans hzy
 
+/-- Canonical-open-set form of the compact finite-puncture area theorem. -/
+theorem hyperbolicArea_finitePunctureDomain_lt_top (F : Finset M)
+    (p : DiscCover (finitePunctureDomain F)) :
+    p.hyperbolicArea Set.univ < ⊤ := by
+  apply hyperbolicArea_compl_finset_lt_top F (finitePunctureDomain F)
+    (fun _ => Iff.rfl)
+  exact ⟨p.projection discZero⟩
+
 end AreaDeficit.Surfaces.DiscCover
 
 #print axioms AreaDeficit.Surfaces.DiscCover.hyperbolicArea_compl_finset_lt_top
+#print axioms AreaDeficit.Surfaces.DiscCover.hyperbolicArea_finitePunctureDomain_lt_top

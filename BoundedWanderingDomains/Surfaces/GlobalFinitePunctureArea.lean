@@ -40,6 +40,24 @@ theorem globalFinitePunctureAreaPackage_of_compact [CompactSpace M]
   · intro P E hEq A hA
     exact hinsert P E hEq A hA (subset_univ A)
 
+/-- On any finite-area hyperbolic surface, the total-area part of the global
+package is automatic.  Thus only the uniform insertion estimate remains to
+be supplied. -/
+theorem globalFinitePunctureAreaPackage_of_finite_total
+    (p : DiscCover M) (q : ℕ)
+    (htotal : p.hyperbolicArea Set.univ < ⊤)
+    (hinsert : ∃ D : ℝ≥0∞, D ≠ ⊤ ∧
+      ∀ (P E : Finset M), E.card ≤ q →
+        ∀ A : Set M, MeasurableSet A →
+          p.domainArea (finitePunctureDomain (P ∪ E)) A ≤
+            p.domainArea (finitePunctureDomain P) A + D) :
+    p.GlobalFinitePunctureAreaPackage q := by
+  obtain ⟨D, hD, hcost⟩ := hinsert
+  refine ⟨D, hD, ?_, hcost⟩
+  intro P
+  exact (p.finitePunctureDomain_area_univ_finite_of_hyperbolicArea_univ_finite
+    P htotal).ne
+
 end AreaDeficit.Surfaces.DiscCover
 
 namespace SurfaceDynamics
@@ -97,3 +115,4 @@ end SurfaceDynamics
 #print axioms SurfaceDynamics.false_of_positive_area_global_package
 #print axioms SurfaceDynamics.false_of_positive_hyperbolicArea_global_package
 #print axioms AreaDeficit.Surfaces.DiscCover.globalFinitePunctureAreaPackage_of_compact
+#print axioms AreaDeficit.Surfaces.DiscCover.globalFinitePunctureAreaPackage_of_finite_total

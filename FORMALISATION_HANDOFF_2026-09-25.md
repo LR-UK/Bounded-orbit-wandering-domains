@@ -787,3 +787,10 @@ The finite measure assembly is also compiled as `hyperbolicArea_univ_lt_top_of_f
 - The latter proof avoids flattening nested subtypes. It combines compact local finiteness with the already-formalised metric comparison outside a compact set.
 - Together with `hyperbolicArea_compl_finset_lt_top`, this supplies the total-area half of the global finite-puncture package for the compact-surface anchor model.
 - Remaining package input is the global uniform insertion cost. The sharp one-chart theorem already gives `2π` per puncture; the next step is its compact-surface/global assembly (or removal of the unnecessarily global reduction if the working sets are compact away from the anchors).
+## 2026-09-26 local checkpoint: anchor-stage total area
+
+- Added the canonical finite-puncture corollary `hyperbolicArea_finitePunctureDomain_lt_top`.
+- Added `anchorComplement_hyperbolicArea_lt_top` and `anchorComplement_finiteStage_area_lt_top`.
+- Added `globalFinitePunctureAreaPackage_of_finite_total`, so the global package now reduces to its uniform insertion-cost half whenever the ambient hyperbolic area is finite.
+- This discharges finite total mass for the fixed three-anchor complement and every finite backward stage on a compact surface.
+- The remaining analytic input is the global surface version of the sharp point insertion estimate (uniform `2π` per inserted puncture). The one-chart sharp theorem and compact remote Lemma 2.6 form are already compiled.

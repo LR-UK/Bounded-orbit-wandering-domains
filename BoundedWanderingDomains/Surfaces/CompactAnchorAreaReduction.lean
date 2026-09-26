@@ -3,6 +3,7 @@ import BoundedWanderingDomains.Surfaces.AnchorComplementModels
 import BoundedWanderingDomains.Surfaces.PositiveAreaAdvanceReduction
 import BoundedWanderingDomains.Surfaces.PositiveAreaBridge
 import BoundedWanderingDomains.Surfaces.GlobalFinitePunctureArea
+import BoundedWanderingDomains.Surfaces.CompactFinitePunctureArea
 
 /-! # Compact anchor-complement area reduction -/
 
@@ -15,6 +16,34 @@ variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [IsManifold 𝓘(ℂ) 1 X] [T2Space X] [SecondCountableTopology X]
   [LocallyCompactSpace X] [MeasurableSpace X] [BorelSpace X]
   [DecidableEq X]
+
+/-- A fixed finite anchor complement in a compact surface has finite total
+hyperbolic area. -/
+theorem anchorComplement_hyperbolicArea_lt_top [CompactSpace X]
+    (E : Finset X)
+    (p : AreaDeficit.Surfaces.DiscCover
+      (AreaDeficit.Surfaces.anchorComplement E)) :
+    p.hyperbolicArea Set.univ < ⊤ := by
+  exact AreaDeficit.Surfaces.DiscCover.hyperbolicArea_compl_finset_lt_top
+    E (AreaDeficit.Surfaces.anchorComplement E) (fun _ => Iff.rfl)
+      ⟨p.projection AreaDeficit.Surfaces.discZero⟩ p
+
+/-- Every further finite stage inside the anchor complement also has finite
+total domain area. -/
+theorem anchorComplement_finiteStage_area_lt_top [CompactSpace X]
+    (E F : Finset X)
+    (p : AreaDeficit.Surfaces.DiscCover
+      (AreaDeficit.Surfaces.anchorComplement E)) :
+    p.domainArea
+      (AreaDeficit.Surfaces.finitePunctureDomain
+        (AreaDeficit.Surfaces.finiteStageOnAnchorComplement E F))
+      Set.univ < ⊤ := by
+  letI : LocallyCompactSpace
+      (AreaDeficit.Surfaces.anchorComplement E) :=
+    (AreaDeficit.Surfaces.anchorComplement E).isOpen.locallyCompactSpace
+  exact p.finitePunctureDomain_area_univ_finite_of_hyperbolicArea_univ_finite
+    (AreaDeficit.Surfaces.finiteStageOnAnchorComplement E F)
+    (anchorComplement_hyperbolicArea_lt_top E p)
 
 /-- Transfer the global finite-area contradiction to a fixed complement of
 compact-surface anchors.  Ambient finite stages are restricted to the open
@@ -115,3 +144,5 @@ end SurfaceDynamics
 
 #print axioms SurfaceDynamics.false_of_anchorComplement_global_area_advances
 #print axioms SurfaceDynamics.false_of_anchorComplement_global_package
+#print axioms SurfaceDynamics.anchorComplement_hyperbolicArea_lt_top
+#print axioms SurfaceDynamics.anchorComplement_finiteStage_area_lt_top
