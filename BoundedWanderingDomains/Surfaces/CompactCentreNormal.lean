@@ -163,6 +163,80 @@ theorem DiscCover.exists_normal_disc_subsequence [T2Space M]
   change (F (φ n) z : OnePoint M) = (p.projection (H n z) : OnePoint M)
   exact congrArg (fun y : M => (y : OnePoint M)) (congrFun (hfac n) z).symm
 
+/-- Descend normalised lifts into the one-point compactification of an
+ambient surface.  This version applies to a disc cover of an open subsurface
+without requiring the disc images to remain in a fixed compact set. -/
+theorem DiscCover.exists_normal_disc_subsequence_ambient
+    {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
+    [IsManifold 𝓘(ℂ) 1 X] [T2Space X] [LocallyCompactSpace X]
+    (O : TopologicalSpace.Opens X) (p : DiscCover O)
+    {K : Set O} (hK : IsCompact K) (F : ℕ → unitDisc → O)
+    (hF : ∀ n, MDifferentiable 𝓘(ℂ) 𝓘(ℂ) (F n))
+    (hcentre : ∀ n, F n discZero ∈ K) :
+    letI : UniformSpace (OnePoint X) := uniformSpaceOfCompactR1
+    ∃ (φ : ℕ → ℕ) (G : unitDisc → OnePoint X), StrictMono φ ∧
+      TendstoLocallyUniformly
+        (fun n z => (((F (φ n) z : O) : X) : OnePoint X)) G atTop := by
+  letI : UniformSpace (OnePoint X) := uniformSpaceOfCompactR1
+  obtain ⟨φ, H, g, w, B, hφ, hB, hHcentre, hHdiff, hfac, hlim, hg0, hgmap⟩ :=
+    p.exists_normal_lift_subsequence hK F hF hcentre
+  let G₀ : unitDisc → unitDisc := fun z => ⟨g (z : ℂ), hgmap z.property⟩
+  have hliftVal : TendstoLocallyUniformly
+      (fun n z => (H n z : ℂ)) (fun z => (G₀ z : ℂ)) atTop := by
+    intro u hu z
+    obtain ⟨t, ht, hevent⟩ := hlim u hu (z : ℂ) z.property
+    have ht' : t ∈ 𝓝 (z : ℂ) := by
+      rwa [isOpen_ball.nhdsWithin_eq z.property] at ht
+    refine ⟨Subtype.val ⁻¹' t, continuous_subtype_val.continuousAt ht', ?_⟩
+    filter_upwards [hevent] with n hn
+    intro y hy
+    simpa only [G₀, planeExtension_coe] using hn (y : ℂ) hy
+  have hlift : TendstoLocallyUniformly H G₀ atTop :=
+    tendstoLocallyUniformly_subtype_of_val hliftVal
+  let q : unitDisc → OnePoint X := fun z =>
+    (((p.projection z : O) : X) : OnePoint X)
+  have hqcont : Continuous q :=
+    OnePoint.continuous_coe.comp (continuous_subtype_val.comp p.continuous)
+  have hdesc : TendstoLocallyUniformly (q ∘ H ·) (q ∘ G₀) atTop := by
+    intro u hu x
+    have hxnorm : ‖(x : ℂ)‖ < 1 := mem_ball_zero_iff.mp x.property
+    let r : ℝ := (‖(x : ℂ)‖ + 1) / 2
+    have hxr : ‖(x : ℂ)‖ < r := by dsimp [r]; linarith
+    have hr : r < 1 := by dsimp [r]; linarith
+    obtain ⟨C, hC, hcontrol⟩ := unitDisc_maps_compact_closed_ball hB hr
+    let S : Set unitDisc := {z | ‖(z : ℂ)‖ < r}
+    have hSopen : IsOpen S := by
+      have hSeq : S = Subtype.val ⁻¹' ball (0 : ℂ) r := by
+        ext z
+        simp only [S, mem_setOf_eq, mem_preimage, mem_ball_zero_iff]
+      rw [hSeq]
+      exact isOpen_ball.preimage continuous_subtype_val
+    have hxS : x ∈ S := hxr
+    have hHS : ∀ n, MapsTo (H n) S C := by
+      intro n z hz
+      exact hcontrol (H n) (hHdiff n) (hHcentre n) z (le_of_lt hz)
+    have hG₀S : MapsTo G₀ S C := by
+      intro z hz
+      apply hC.isClosed.mem_of_tendsto
+        ((tendstoLocallyUniformlyOn_univ.mpr hlift).tendsto_at (mem_univ z))
+      exact Eventually.of_forall (fun n => hHS n hz)
+    have hqu : UniformContinuousOn q C :=
+      hC.uniformContinuousOn_of_continuous hqcont.continuousOn
+    have hc := hqu.comp_tendstoLocallyUniformlyOn
+      (show TendstoLocallyUniformlyOn H G₀ atTop S from
+        (tendstoLocallyUniformlyOn_univ.mpr hlift).mono (subset_univ S))
+      hG₀S (Eventually.of_forall hHS)
+    obtain ⟨t, ht, hevent⟩ := hc u hu x hxS
+    rw [hSopen.nhdsWithin_eq hxS] at ht
+    exact ⟨t, ht, hevent⟩
+  refine ⟨φ, q ∘ G₀, hφ, ?_⟩
+  convert hdesc using 1
+  funext n z
+  change (((F (φ n) z : O) : X) : OnePoint X) =
+    (((p.projection (H n z) : O) : X) : OnePoint X)
+  exact congrArg (fun y : O => (((y : O) : X) : OnePoint X))
+    (congrFun (hfac n) z).symm
+
 /-- A disc cover of an open subdomain is enough for normality in the ambient
 surface when every value of the discs remains in one fixed compact subset of
 that subdomain. -/

@@ -52,6 +52,60 @@ theorem restrictSource_iterate_eq_of_stays (f : LocalMap X)
       refine ⟨y, hyV', ?_⟩
       simpa only [f.iterate_succ k x (hV hyV)] using hy
 
+/-- Every partial iterate of a point trapped after source restriction agrees
+with the corresponding iterate of the original local map. -/
+theorem restrictSource_iterate_eq_of_restricted_trapped (f : LocalMap X)
+    (V : TopologicalSpace.Opens X) (hV : (V : Set X) ⊆ f.source)
+    {x : X} (hx : x ∈ (f.restrictSource V hV).trapped) (n : ℕ) :
+    (f.restrictSource V hV).iterate n x = f.iterate n x := by
+  induction n using Nat.strong_induction_on with
+  | h n ih =>
+      apply f.restrictSource_iterate_eq_of_stays V hV x n
+      intro k hk
+      obtain ⟨y, hyV, hgy⟩ := hx k
+      refine ⟨y, hyV, ?_⟩
+      rw [← ih k hk]
+      exact hgy
+
+/-- Restricting an open source can only decrease the trapped set. -/
+theorem restrictSource_trapped_subset (f : LocalMap X)
+    (V : TopologicalSpace.Opens X) (hV : (V : Set X) ⊆ f.source) :
+    (f.restrictSource V hV).trapped ⊆ f.trapped := by
+  intro x hx n
+  obtain ⟨y, hyV, hgy⟩ := hx n
+  exact ⟨y, hV hyV,
+    (f.restrictSource_iterate_eq_of_restricted_trapped V hV hx n).symm.trans hgy⟩
+
+/-- Normality on a neighbourhood trapped after restriction is also
+normality for the original local map, because all partial iterates agree. -/
+theorem restrictSource_isNormalOn_imp (f : LocalMap X)
+    [T2Space X] [LocallyCompactSpace X]
+    (V : TopologicalSpace.Opens X) (hV : (V : Set X) ⊆ f.source)
+    {W : Set X} (hW : W ⊆ (f.restrictSource V hV).trapped)
+    (hn : (f.restrictSource V hV).IsNormalOn W) : f.IsNormalOn W := by
+  intro φ hφ
+  obtain ⟨ψ, hψ, g, hg⟩ := hn φ hφ
+  refine ⟨ψ, hψ, g, ?_⟩
+  have heq : (fun n (z : W) => f.compactifiedIterate (φ (ψ n)) z) =
+      (fun n (z : W) =>
+        (f.restrictSource V hV).compactifiedIterate (φ (ψ n)) z) := by
+    funext n z
+    unfold compactifiedIterate
+    rw [f.restrictSource_iterate_eq_of_restricted_trapped V hV (hW z.property)]
+  rw [heq]
+  exact hg
+
+/-- The normality locus of a source restriction is contained in the original
+normality locus. -/
+theorem restrictSource_omega_subset (f : LocalMap X)
+    [T2Space X] [LocallyCompactSpace X]
+    (V : TopologicalSpace.Opens X) (hV : (V : Set X) ⊆ f.source) :
+    (f.restrictSource V hV).omega ⊆ f.omega := by
+  rintro x ⟨W, hWo, hxW, hWtrap, hnormal⟩
+  exact ⟨W, hWo, hxW,
+    hWtrap.trans (f.restrictSource_trapped_subset V hV),
+    f.restrictSource_isNormalOn_imp V hV hWtrap hnormal⟩
+
 /-- An orbit which remains in the smaller source is still a trapped orbit
 after restriction. -/
 theorem restrictSource_mem_trapped_of_orbit_mem (f : LocalMap X)
