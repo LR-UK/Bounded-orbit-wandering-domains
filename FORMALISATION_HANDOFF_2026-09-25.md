@@ -780,3 +780,10 @@ The finite measure assembly is also compiled as `hyperbolicArea_univ_lt_top_of_f
 - Proved `DiscCover.hyperbolicArea_compl_finset_lt_top`: a supplied disc cover of the complement of a finite set in a compact Riemann surface has finite total hyperbolic area.
 - The proof selects puncture-avoiding coordinate disks, applies the compiled cusp integral estimate at every puncture, and covers the remainder by one compact core.
 - Next bridge: identify the ambient `domainArea` of a connected finite-puncture domain with the intrinsic hyperbolic area of its subtype, then feed the result into `GlobalFinitePunctureAreaPackage`.
+## 2026-09-26 local checkpoint: finite area of every puncture stage
+
+- Added `DomainAreaSubtype.lean`, proving local and total agreement between ambient `domainArea` and intrinsic subtype area on connected open domains.
+- Strengthened `FiniteModelArea.lean`: if the ambient hyperbolic surface has finite total area, every further finite-puncture model has finite total area.
+- The latter proof avoids flattening nested subtypes. It combines compact local finiteness with the already-formalised metric comparison outside a compact set.
+- Together with `hyperbolicArea_compl_finset_lt_top`, this supplies the total-area half of the global finite-puncture package for the compact-surface anchor model.
+- Remaining package input is the global uniform insertion cost. The sharp one-chart theorem already gives `2π` per puncture; the next step is its compact-surface/global assembly (or removal of the unnecessarily global reduction if the working sets are compact away from the anchors).

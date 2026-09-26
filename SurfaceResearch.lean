@@ -97,3 +97,4 @@ import BoundedWanderingDomains.CuspAreaIntegrability
 import BoundedWanderingDomains.Surfaces.CuspDensityBounds
 import BoundedWanderingDomains.Surfaces.CuspAreaFinite
 import BoundedWanderingDomains.Surfaces.CompactFinitePunctureArea
+import BoundedWanderingDomains.Surfaces.DomainAreaSubtype
