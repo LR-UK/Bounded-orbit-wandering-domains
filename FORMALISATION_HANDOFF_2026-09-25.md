@@ -602,3 +602,9 @@ component of a covering maps onto a path-connected target. The proof is by
 lifting a path from the image of the chosen source point to an arbitrary
 target point. It will be paired with the inherited local sheet structure to
 obtain the component covering used by the density pullback theorem.
+
+`DomainComponentMap.lean` now constructs the induced holomorphic map between
+the connected components of arbitrary open source and target domains. It
+proves both the underlying-value formula and preservation of
+holomorphicity. This removes the subtype/component bookkeeping that had
+blocked the direct covering-lift proof of the componentwise metric identity.
