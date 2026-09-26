@@ -2,6 +2,7 @@
 import BoundedWanderingDomains.Surfaces.PositiveAreaAdvanceReduction
 import BoundedWanderingDomains.Surfaces.PositiveAreaBarrierReduction
 import BoundedWanderingDomains.Surfaces.PositiveAreaExceptionalReduction
+import BoundedWanderingDomains.Surfaces.TopDiscCover
 
 /-! # Final reduction of the positive-area theorem to local metric comparison -/
 
@@ -45,7 +46,6 @@ the source.  All boundary, exceptional-set, measurability, and cancellation
 steps are discharged here. -/
 theorem noCompactPositiveAreaWanderingSetClaim_of_discCover_areaAdvance
     (p : AreaDeficit.Surfaces.DiscCover X)
-    (pTop : AreaDeficit.Surfaces.DiscCover (⊤ : TopologicalSpace.Opens X))
     (hadvance : CompactLocalAreaAdvanceClaim (X := X)) :
     NoCompactPositiveAreaWanderingSetClaim (X := X) := by
   intro f hf A hAmeas hAbad hdis hinj hApos
@@ -53,7 +53,7 @@ theorem noCompactPositiveAreaWanderingSetClaim_of_discCover_areaAdvance
   let O : TopologicalSpace.Opens X := ⊤
   obtain ⟨V, hVsource, P, hKV, hVcompact, hPmono, hPforward,
       hArestrict, hAP⟩ :=
-    f.exists_positiveArea_boundaryBarrier hf O pTop (fun _ _ => trivial)
+    f.exists_positiveArea_boundaryBarrier hf O p.top (fun _ _ => trivial)
       hAbad hK hKsource hsatK
   obtain ⟨E, C, hC, hstep⟩ :=
     hadvance p f hf V hVcompact hVsource K hK hKV

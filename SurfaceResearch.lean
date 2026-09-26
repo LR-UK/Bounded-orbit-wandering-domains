@@ -1,6 +1,7 @@
 /- Research entry point. The surface dynamical claims in Statements are
 named propositions awaiting proofs, not established theorems. -/
 import BoundedWanderingDomains.Surfaces.DiscCover
+import BoundedWanderingDomains.Surfaces.TopDiscCover
 import BoundedWanderingDomains.Surfaces.GeometricArea
 import BoundedWanderingDomains.Surfaces.LocalDynamics
 import BoundedWanderingDomains.Surfaces.CompactificationEscape
