@@ -5,6 +5,7 @@ Released under Apache 2.0 licence; see LICENSE.
 import BoundedWanderingDomains.GlobalLimitStatements
 import BoundedWanderingDomains.MeromorphicNormalityBridge
 import BoundedWanderingDomains.Surfaces.DerivedLimitReduction
+import BoundedWanderingDomains.Surfaces.CompactLocalAreaAdvance
 
 /-! # Proofs of the revised paper statements
 
@@ -47,5 +48,31 @@ theorem theorem_1_4 :
 
 end BoundedWanderingDomains
 
+namespace SurfaceDynamics
+
+variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
+  [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X]
+  [ConnectedSpace X] [IsManifold 𝓘(ℂ) 1 X]
+  [MeasurableSpace X] [BorelSpace X]
+
+/-- The exact positive-area statement of Theorem 1.3(2) for every
+noncompact Riemann surface. -/
+theorem theorem_1_3_positive_area_noncompact [NoncompactSpace X] :
+    NoCompactPositiveAreaWanderingSetClaim (X := X) := by
+  letI : DecidableEq X := Classical.decEq X
+  exact noCompactPositiveAreaWanderingSetClaim_of_noncompact
+
+/-- The exact positive-area statement of Theorem 1.3(2) for every
+hyperbolic Riemann surface, including compact ones. -/
+theorem theorem_1_3_positive_area_hyperbolic
+    (hX : RiemannDynamics.IsHyperbolic X) :
+    NoCompactPositiveAreaWanderingSetClaim (X := X) := by
+  letI : DecidableEq X := Classical.decEq X
+  exact noCompactPositiveAreaWanderingSetClaim_of_isHyperbolic hX
+
+end SurfaceDynamics
+
 #print axioms BoundedWanderingDomains.theorem_1_2_entire
 #print axioms BoundedWanderingDomains.theorem_1_4
+#print axioms SurfaceDynamics.theorem_1_3_positive_area_noncompact
+#print axioms SurfaceDynamics.theorem_1_3_positive_area_hyperbolic
