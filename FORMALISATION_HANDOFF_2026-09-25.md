@@ -764,3 +764,11 @@ then cover a compact surface minus finitely many points by a compact core and
 these finitely many cusp neighbourhoods.  This supplies the finite-total-area
 half of `GlobalFinitePunctureAreaPackage`; the uniform insertion half should
 then use the recorded Lemma 2.6 / 2π-per-puncture estimate.
+
+That chart bridge is now also complete.  `Surfaces/CuspDensityBounds.lean`
+proves the exponential-test-disc upper estimate directly for
+`DiscCover.chartDensity`, and `Surfaces/CuspAreaFinite.lean` proves that the
+inverse image of the smaller punctured chart disc has finite intrinsic area.
+The remaining finite-total-area step is purely the finite-cover assembly:
+choose one such chart around each member of the finite puncture set and use
+local finiteness on the compact core.
