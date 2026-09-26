@@ -50,6 +50,22 @@ noncomputable def localCompactCoverDomainHomeomorph (f : LocalMap X)
       IsEmbedding.subtypeVal).homeomorphImage
         (compactCoverDomain (f.sourceCompact K) S f.map hf : Set f.source)
 
+/-- A point in the ambient interior of the compact source model whose image
+lies in the target open set belongs to the ambient compact-cover domain. -/
+theorem mem_localCompactCoverDomain_of_mem_interior
+    (f : LocalMap X) {K : Set X} (S : TopologicalSpace.Opens X)
+    (hf : Continuous f.map) (hKsource : K ⊆ f.source) {x : X}
+    (hxK : x ∈ interior K)
+    (hfx : f.map ⟨x, hKsource (interior_subset hxK)⟩ ∈ S) :
+    x ∈ f.localCompactCoverDomain K S hf := by
+  let xs : f.source := ⟨x, hKsource (interior_subset hxK)⟩
+  have hxsint : xs ∈ interior (f.sourceCompact K) := by
+    apply preimage_interior_subset_interior_preimage continuous_subtype_val
+    exact hxK
+  refine ⟨xs, ⟨hxsint, ?_⟩, rfl⟩
+  change f.map xs ∈ S
+  simpa only [xs] using hfx
+
 /-- Away from finitely many branch values and the compact image of the
 source boundary, a local holomorphic map is a covering between ambient open
 surface domains.  This is the precise bridge needed by the area-advance
