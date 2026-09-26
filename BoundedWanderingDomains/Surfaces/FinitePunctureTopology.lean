@@ -1,5 +1,6 @@
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
 import RiemannDynamics.Uniformization.Perron.GreensFunction.Basic
+import BoundedWanderingDomains.Surfaces.SubdomainCover
 
 /-! # Topology of finitely punctured analytic surfaces -/
 
@@ -90,5 +91,28 @@ theorem finitePuncture_instances [ConnectedSpace M] [Infinite M]
 
 end RiemannDynamics
 
+namespace AreaDeficit.Surfaces.DiscCover
+
+open RiemannDynamics
+
+variable {M : Type*} [TopologicalSpace M] [ChartedSpace ℂ M]
+  [IsManifold 𝓘(ℂ) 1 M] [T2Space M] [SecondCountableTopology M]
+  [ConnectedSpace M] [Infinite M]
+
+/-- Finite punctures of a disc-covered surface inherit a concrete universal
+cover by the disc. -/
+theorem nonempty_finitePuncture (p : DiscCover M) (F : Finset M) :
+    let O : Opens M :=
+      ⟨(↑F : Set M)ᶜ, F.finite_toSet.isClosed.isOpen_compl⟩
+    Nonempty (DiscCover O) := by
+  let O : Opens M := ⟨(↑F : Set M)ᶜ,
+    F.finite_toSet.isClosed.isOpen_compl⟩
+  letI : ConnectedSpace O :=
+    Subtype.connectedSpace (RiemannDynamics.isConnected_compl_finset F)
+  exact p.nonempty_subdomain O
+
+end AreaDeficit.Surfaces.DiscCover
+
 #print axioms RiemannDynamics.isConnected_compl_finset
 #print axioms RiemannDynamics.noncompact_compl_finset
+#print axioms AreaDeficit.Surfaces.DiscCover.nonempty_finitePuncture
