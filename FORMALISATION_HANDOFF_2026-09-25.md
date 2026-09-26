@@ -645,3 +645,12 @@ measures, with zero analytic loss. Thus the remaining positive-area work is
 to construct the finite chart-pair partition of the compact saturation and
 instantiate the compact-interior covering after deleting the finite branch
 values and the current puncture stage.
+
+`RemoteCoveringAreaAdvance.lean` now combines all analytic parts of that
+configuration. If the step map becomes a covering after deleting a fixed
+remote compact obstacle and at most `q` values, then exact finite-patch area
+transport, domain monotonicity, and the uniform compact-removal lemma give
+one finite area-advance constant valid for every old open-domain model. This
+is the precise formal version of the author's Lemma 2.6 note: the compact
+obstacle and bounded finite punctures contribute a uniform amount, while the
+covering part has zero loss.
