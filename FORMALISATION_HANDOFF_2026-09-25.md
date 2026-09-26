@@ -774,3 +774,9 @@ choose one such chart around each member of the finite puncture set and use
 local finiteness on the compact core.
 
 The finite measure assembly is also compiled as `hyperbolicArea_univ_lt_top_of_finite_cusp_cover`: a compact core plus finitely many cusp patches has finite total intrinsic area.
+## 2026-09-26 local checkpoint: compact finite-puncture area
+
+- Added `CompactFinitePunctureArea.lean`.
+- Proved `DiscCover.hyperbolicArea_compl_finset_lt_top`: a supplied disc cover of the complement of a finite set in a compact Riemann surface has finite total hyperbolic area.
+- The proof selects puncture-avoiding coordinate disks, applies the compiled cusp integral estimate at every puncture, and covers the remainder by one compact core.
+- Next bridge: identify the ambient `domainArea` of a connected finite-puncture domain with the intrinsic hyperbolic area of its subtype, then feed the result into `GlobalFinitePunctureAreaPackage`.
