@@ -43,6 +43,7 @@ import BoundedWanderingDomains.Surfaces.LocalMapSubsurface
 import BoundedWanderingDomains.Surfaces.CoordinateDiskSelection
 import BoundedWanderingDomains.Surfaces.InvariantSubsurface
 import BoundedWanderingDomains.Surfaces.CompactGlobalAnchors
+import BoundedWanderingDomains.Surfaces.FinitePunctureTopology
 import BoundedWanderingDomains.Surfaces.SurfacePolish
 import BoundedWanderingDomains.Surfaces.SaturationDynamics
 import BoundedWanderingDomains.Surfaces.LocalBarrierComponents
