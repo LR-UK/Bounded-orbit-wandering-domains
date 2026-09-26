@@ -595,3 +595,10 @@ compact analytic covering lemma used in the existing proof.
 open domain `interior K ∩ f ⁻¹' S` and proves that its map to the open target
 `S` is a genuine covering. This supplies manifolds on both sides, so the
 componentwise hyperbolic-metric pullback theorem can be applied directly.
+
+The first component restriction lemma is checked as
+`IsCoveringMap.surjective_connectedComponent`: every connected source
+component of a covering maps onto a path-connected target. The proof is by
+lifting a path from the image of the chosen source point to an arbitrary
+target point. It will be paired with the inherited local sheet structure to
+obtain the component covering used by the density pullback theorem.

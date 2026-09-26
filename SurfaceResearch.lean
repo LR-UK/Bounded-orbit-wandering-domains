@@ -56,6 +56,7 @@ import BoundedWanderingDomains.Surfaces.CompactBranchValues
 import BoundedWanderingDomains.Surfaces.SurfaceLocalBranching
 import BoundedWanderingDomains.Surfaces.CompactSurfaceCovering
 import BoundedWanderingDomains.Surfaces.CompactInteriorCover
+import BoundedWanderingDomains.Surfaces.CoveringComponents
 import BoundedWanderingDomains.Surfaces.FinitePatchTransport
 import SurfaceGeometry
 import SurfaceFiniteRemoval
