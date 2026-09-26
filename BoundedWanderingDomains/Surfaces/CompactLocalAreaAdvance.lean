@@ -1,12 +1,13 @@
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
 import BoundedWanderingDomains.Surfaces.LocalCompactModelPatches
 import BoundedWanderingDomains.Surfaces.PositiveAreaFinalReduction
+import BoundedWanderingDomains.Surfaces.UniformizationBridge
 import Mathlib.Order.Disjointed
 
 /-! # Compact local area advance from finitely many proper patches -/
 
 open Set Function MeasureTheory Topology
-open scoped Manifold Topology ENNReal
+open scoped Manifold Topology ENNReal ContDiff
 
 namespace SurfaceDynamics
 
@@ -151,7 +152,19 @@ theorem noCompactPositiveAreaWanderingSetClaim_of_discCover
   noCompactPositiveAreaWanderingSetClaim_of_discCover_areaAdvance p
     compactLocalAreaAdvanceClaim
 
+/-- The same conclusion in the existing universal-cover definition of a
+hyperbolic Riemann surface. -/
+theorem noCompactPositiveAreaWanderingSetClaim_of_isHyperbolic
+    (hX : RiemannDynamics.IsHyperbolic X) :
+    NoCompactPositiveAreaWanderingSetClaim (X := X) := by
+  letI : IsManifold 𝓘(ℂ) ω X :=
+    AreaDeficit.Surfaces.isManifold_analytic_of_complex
+  exact noCompactPositiveAreaWanderingSetClaim_of_discCover
+    (Classical.choice
+      (AreaDeficit.Surfaces.nonempty_discCover_of_isHyperbolic hX))
+
 end SurfaceDynamics
 
 #print axioms SurfaceDynamics.compactLocalAreaAdvanceClaim
 #print axioms SurfaceDynamics.noCompactPositiveAreaWanderingSetClaim_of_discCover
+#print axioms SurfaceDynamics.noCompactPositiveAreaWanderingSetClaim_of_isHyperbolic
