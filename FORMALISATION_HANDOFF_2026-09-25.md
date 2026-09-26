@@ -625,3 +625,14 @@ open source, so this applies directly to a `LocalMap`; no global holomorphic
 totalisation is assumed. The proof combines the exact componentwise density
 pullback with the planar Jacobian theorem and explicitly identifies the
 component-chart derivative with the ambient coordinate derivative.
+
+`SaturationDynamics.lean` now proves the dynamical set identities needed by
+the cancellation argument. For a trapped starting set, every partial image
+and the full forward saturation remain trapped; the harmless totalisation
+sends the nth image exactly to the next image; the challenge's injectivity
+hypothesis gives injectivity on the saturation; and pairwise wandering gives
+`totalize '' saturation = saturation \ A`. It also proves measurability of
+every image and of the saturation in a Polish presentation. A remaining
+topological bookkeeping task is to install the standard Polish presentation
+of a second-countable locally compact Hausdorff surface from the challenge's
+existing assumptions (or to use a chartwise measurable-image proof).
