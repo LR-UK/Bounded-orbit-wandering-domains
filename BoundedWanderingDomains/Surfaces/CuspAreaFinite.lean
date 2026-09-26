@@ -1,6 +1,7 @@
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
 import BoundedWanderingDomains.Surfaces.CuspDensityBounds
 import BoundedWanderingDomains.Surfaces.FinitePunctureAreaBridge
+import BoundedWanderingDomains.Surfaces.HyperbolicAreaFinite
 
 /-! # Finite intrinsic area near an isolated surface puncture -/
 
@@ -10,7 +11,7 @@ open scoped Manifold Topology ENNReal
 namespace AreaDeficit.Surfaces.DiscCover
 
 variable {M : Type*} [TopologicalSpace M] [ChartedSpace ℂ M]
-  [IsManifold 𝓘(ℂ) 1 M] [MeasurableSpace M] [BorelSpace M]
+  [IsManifold 𝓘(ℂ) 1 M] [T2Space M] [MeasurableSpace M] [BorelSpace M]
   [SecondCountableTopology M]
 
 /-- The inverse image of a small punctured coordinate disc has finite
@@ -49,6 +50,25 @@ theorem hyperbolicArea_cusp_chart_finite (p : DiscCover M)
   rw [himage]
   exact p.lintegral_chartDensity_sq_cusp_lt_top hd hR hball
 
+/-- A compact core together with finitely many finite-area cusp patches has
+finite total area.  This isolates the final set-theoretic assembly needed for
+a compact surface with finitely many punctures. -/
+theorem hyperbolicArea_univ_lt_top_of_finite_cusp_cover
+    {ι : Type*} (p : DiscCover M) (I : Finset ι)
+    (L : Set M) (A : ι → Set M)
+    (hL : IsCompact L)
+    (hA : ∀ i ∈ I, p.hyperbolicArea (A i) < ⊤)
+    (hcover : (Set.univ : Set M) ⊆ L ∪ ⋃ i ∈ I, A i) :
+    p.hyperbolicArea Set.univ < ⊤ := by
+  apply lt_of_le_of_lt (measure_mono hcover)
+  apply lt_of_le_of_lt (measure_union_le _ _)
+  apply lt_of_le_of_lt (add_le_add le_rfl
+    (measure_biUnion_finset_le I A))
+  exact ENNReal.add_lt_top.mpr
+    ⟨p.hyperbolicArea_compact_finite hL,
+      ENNReal.sum_lt_top.mpr (fun i hi => hA i hi)⟩
+
 end AreaDeficit.Surfaces.DiscCover
 
 #print axioms AreaDeficit.Surfaces.DiscCover.hyperbolicArea_cusp_chart_finite
+#print axioms AreaDeficit.Surfaces.DiscCover.hyperbolicArea_univ_lt_top_of_finite_cusp_cover

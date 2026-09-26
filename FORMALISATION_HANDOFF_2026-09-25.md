@@ -772,3 +772,5 @@ inverse image of the smaller punctured chart disc has finite intrinsic area.
 The remaining finite-total-area step is purely the finite-cover assembly:
 choose one such chart around each member of the finite puncture set and use
 local finiteness on the compact core.
+
+The finite measure assembly is also compiled as `hyperbolicArea_univ_lt_top_of_finite_cusp_cover`: a compact core plus finitely many cusp patches has finite total intrinsic area.
