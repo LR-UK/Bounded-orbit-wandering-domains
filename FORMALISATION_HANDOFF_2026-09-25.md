@@ -632,10 +632,11 @@ and the full forward saturation remain trapped; the harmless totalisation
 sends the nth image exactly to the next image; the challenge's injectivity
 hypothesis gives injectivity on the saturation; and pairwise wandering gives
 `totalize '' saturation = saturation \ A`. It also proves measurability of
-every image and of the saturation in a Polish presentation. A remaining
-topological bookkeeping task is to install the standard Polish presentation
-of a second-countable locally compact Hausdorff surface from the challenge's
-existing assumptions (or to use a chartwise measurable-image proof).
+every image and of the saturation under exactly the challenge's surface
+hypotheses. `SurfacePolish.lean` supplies the needed Polish presentation: it
+builds a countable basis for the one-point compactification from a compact
+exhaustion, metrises the resulting compact Hausdorff space, and transfers the
+Polish structure back through the canonical open embedding.
 
 `OpenDomainFinitePatchTransport.lean` now assembles the local covering
 equalities over an arbitrary finite measurable chart partition. It proves

@@ -1,6 +1,7 @@
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
 import BoundedWanderingDomains.Surfaces.LocalMapTotalization
 import BoundedWanderingDomains.Surfaces.Statements
+import BoundedWanderingDomains.Surfaces.SurfacePolish
 
 /-! # Measurable forward saturations for local surface dynamics -/
 
@@ -96,12 +97,14 @@ theorem totalize_image_saturation (f : LocalMap X) {A : Set X}
 section Measurable
 
 variable [MeasurableSpace X] [BorelSpace X] [T2Space X]
-  [PolishSpace X]
+  [SecondCountableTopology X] [LocallyCompactSpace X]
+  [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ) 1 X]
 
 theorem measurableSet_imageAt (f : LocalMap X) {A : Set X}
     (hf : Continuous f.map) (hA : A ⊆ f.trapped)
     (hinj : f.InjectiveOnSaturation A) (hm : MeasurableSet A) (n : ℕ) :
     MeasurableSet (f.imageAt n A) := by
+  letI : PolishSpace X := AreaDeficit.Surfaces.surfacePolishSpace
   induction n with
   | zero => simpa using hm
   | succ n ih =>
@@ -116,6 +119,7 @@ theorem measurableSet_saturation (f : LocalMap X) {A : Set X}
     (hf : Continuous f.map) (hA : A ⊆ f.trapped)
     (hinj : f.InjectiveOnSaturation A) (hm : MeasurableSet A) :
     MeasurableSet (f.saturation A) := by
+  letI : PolishSpace X := AreaDeficit.Surfaces.surfacePolishSpace
   exact MeasurableSet.iUnion (f.measurableSet_imageAt hf hA hinj hm)
 
 end Measurable
