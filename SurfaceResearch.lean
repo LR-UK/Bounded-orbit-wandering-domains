@@ -51,6 +51,7 @@ import BoundedWanderingDomains.Surfaces.DomainMapAreaTransport
 import BoundedWanderingDomains.Surfaces.DomainCoveringPullback
 import BoundedWanderingDomains.Surfaces.SurfaceSingularCovering
 import BoundedWanderingDomains.Surfaces.ChartCriticalValues
+import BoundedWanderingDomains.Surfaces.FiniteChartCriticalCover
 import BoundedWanderingDomains.Surfaces.FinitePatchTransport
 import SurfaceGeometry
 import SurfaceFiniteRemoval

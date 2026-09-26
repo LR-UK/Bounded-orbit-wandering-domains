@@ -558,3 +558,10 @@ constant germs, and hence that both the critical points and their images in
 a compact chart patch are finite. The next step is a finite source/target
 chart refinement of the compact working set, followed by taking the finite
 union of these chartwise branch-value sets.
+
+`exists_finite_chart_branch_values` now performs that finite union for any
+supplied finite compact chart-pair cover. It returns an actual `Finset` of
+target branch values and proves that every covered point mapping outside the
+set lies in a patch where the coordinate derivative is nonzero. What remains
+in this substep is to instantiate the abstract cover using compact chart
+patches for the working compact set and its compact image.
