@@ -565,3 +565,11 @@ target branch values and proves that every covered point mapping outside the
 set lies in a patch where the coordinate derivative is nonzero. What remains
 in this substep is to instantiate the abstract cover using compact chart
 patches for the working compact set and its compact image.
+
+That instantiation is now checked as
+`exists_finite_branch_values_on_compact`. Compact source and image sets are
+covered by finitely many compact coordinate patches; their pairwise
+refinement gives one finite target `Finset` containing every branch value
+arising on the working compact set. Outside it, the theorem returns explicit
+source and target charts with nonzero coordinate derivative. This completes
+the finiteness input for the bounded-cardinality puncture insertion.
