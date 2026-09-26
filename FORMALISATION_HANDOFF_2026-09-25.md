@@ -573,3 +573,12 @@ refinement gives one finite target `Finset` containing every branch value
 arising on the working compact set. Outside it, the theorem returns explicit
 source and target charts with nonzero coordinate derivative. This completes
 the finiteness input for the bounded-cardinality puncture insertion.
+
+`SurfaceLocalBranching.lean` now turns the nonzero coordinate derivative
+into an actual local-homeomorphism statement, using local injectivity of the
+analytic coordinate reading together with openness of the surface map. Its
+compact corollary produces a finite target set `E` such that the map is a
+local homeomorphism on the working compact set away from `f ⁻¹' E`. The next
+step is the proper/compact restriction argument upgrading this to a covering
+over target sets whose fibres remain in the interior of the working compact
+set.

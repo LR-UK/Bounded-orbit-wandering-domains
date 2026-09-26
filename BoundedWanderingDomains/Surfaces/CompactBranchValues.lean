@@ -25,6 +25,8 @@ theorem exists_finite_branch_values_on_compact
     (hopen : IsOpenMap f) {L : Set M} (hL : IsCompact L) :
     ∃ E : Finset N, ∀ x ∈ L, f x ∉ E →
       ∃ (c : OpenPartialHomeomorph M ℂ) (d : OpenPartialHomeomorph N ℂ),
+        MDifferentiableOn 𝓘(ℂ) 𝓘(ℂ) c c.source ∧
+        MDifferentiableOn 𝓘(ℂ) 𝓘(ℂ) d d.source ∧
         x ∈ c.source ∧ f x ∈ d.source ∧
           deriv (d ∘ f ∘ c.symm) (c x) ≠ 0 := by
   obtain ⟨I, A, D, hA, _hD, hAD, hDc, _hDC, hcover⟩ :=
@@ -73,7 +75,10 @@ theorem exists_finite_branch_values_on_compact
   refine ⟨F, ?_⟩
   intro x hx hxF
   obtain ⟨a, _haQ, hxa, hder⟩ := hF x hx hxF
-  exact ⟨c a, d a, hKc a hxa, hfKd a ⟨x, hxa, rfl⟩, hder⟩
+  exact ⟨c a, d a,
+    (mdifferentiable_chart (I := 𝓘(ℂ)) (a.1 : M)).1,
+    (mdifferentiable_chart (I := 𝓘(ℂ)) (a.2 : N)).1,
+    hKc a hxa, hfKd a ⟨x, hxa, rfl⟩, hder⟩
 
 end SurfaceDynamics
 
