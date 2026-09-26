@@ -669,3 +669,20 @@ local totalisation is also now proved Borel measurable by applying the
 piecewise-continuity theorem on the open source and its complement, so it can
 serve directly as the ambient representative in the automatic chart
 transport theorem.
+# Checkpoint 2026-09-26: local compact-covering bridge
+
+`BoundedWanderingDomains/Surfaces/LocalCompactCovering.lean` now compiles.  It
+applies the compact branch-value theorem to the genuine open-source map
+`f.map : f.source → X`, converts the resulting nested subtype domain back to
+an ambient open subset of `X`, and proves that its covering map agrees there
+with `f.totalize`.  The excluded target consists of a finite branch-value set
+and the compact image of the compact source boundary.  This closes the type
+and topology gap between local maps and `RemoteCoveringAreaAdvance`.
+
+The remaining geometric input for the area contradiction is to select the
+compact covering model (or its relevant sheets) so that its boundary-image
+obstacle is disjoint from the compact forward saturation.  The manuscript's
+backward-boundary construction and the already formalised boundary barrier
+package are the intended source of this separation.  Once connected, the
+existing saturation identities and uniform remote-removal theorem provide
+the finite-model area bound.
