@@ -286,6 +286,31 @@ theorem noCompactPositiveAreaWanderingSetClaim_of_noncompact
   exact noProperCompactPositiveAreaWanderingSet f hf A hAmeas hAbad
     hdis hinj hApos ⟨K, hK, hK.ne_univ, hKsource, hsatK⟩
 
+/-- The exact conclusion also holds on a compact ambient surface whenever
+the local map has a proper open source. -/
+theorem noCompactPositiveAreaWanderingSet_of_source_ne_top
+    (f : LocalMap X) (hf : IsOpenHolomorphic f)
+    (hsource : f.source ≠ ⊤)
+    (A : Set X) (hAmeas : MeasurableSet A)
+    (hAbad : A ⊆ f.trapped \ f.omega)
+    (hdis : Pairwise
+      (fun n m : ℕ => Disjoint (f.imageAt n A) (f.imageAt m A)))
+    (hinj : f.InjectiveOnSaturation A) (hApos : HasPositiveChartArea A) :
+    ¬ ∃ K : Set X, IsCompact K ∧ K ⊆ f.source ∧
+      f.saturation A ⊆ K := by
+  rintro ⟨K, hK, hKsource, hsatK⟩
+  have hKne : K ≠ Set.univ := by
+    intro hKuniv
+    apply hsource
+    ext x
+    constructor
+    · intro _
+      trivial
+    · intro _
+      exact hKsource (hKuniv ▸ Set.mem_univ x)
+  exact noProperCompactPositiveAreaWanderingSet f hf A hAmeas hAbad
+    hdis hinj hApos ⟨K, hK, hKne, hKsource, hsatK⟩
+
 end SurfaceDynamics
 
 #print axioms SurfaceDynamics.compactLocalAreaAdvanceClaim
@@ -293,3 +318,4 @@ end SurfaceDynamics
 #print axioms SurfaceDynamics.noCompactPositiveAreaWanderingSetClaim_of_isHyperbolic
 #print axioms SurfaceDynamics.noProperCompactPositiveAreaWanderingSet
 #print axioms SurfaceDynamics.noCompactPositiveAreaWanderingSetClaim_of_noncompact
+#print axioms SurfaceDynamics.noCompactPositiveAreaWanderingSet_of_source_ne_top

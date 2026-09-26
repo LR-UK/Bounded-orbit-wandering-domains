@@ -116,5 +116,38 @@ theorem HasPositiveChartArea.diff_countable {A S : Set X}
   rw [heq, measure_sdiff_null hBzero]
   exact hx
 
+/-- A set of positive chart area is nonempty. -/
+theorem HasPositiveChartArea.nonempty {A : Set X}
+    (hA : HasPositiveChartArea A) : A.Nonempty := by
+  obtain ⟨x, hx⟩ := hA
+  by_contra h
+  rw [Set.not_nonempty_iff_eq_empty.mp h] at hx
+  simpa using hx
+
+/-- A set of positive chart area cannot be finite. -/
+theorem HasPositiveChartArea.infinite {A : Set X}
+    (hA : HasPositiveChartArea A) : A.Infinite := by
+  intro hAfinite
+  have hdiff : HasPositiveChartArea (A \ A) :=
+    hA.diff_countable hAfinite.countable
+  simpa using hdiff.nonempty
+
+/-- Positive chart area supplies three distinct anchor points. -/
+theorem HasPositiveChartArea.exists_three {A : Set X}
+    (hA : HasPositiveChartArea A) :
+    ∃ a ∈ A, ∃ b ∈ A, b ≠ a ∧ ∃ c ∈ A, c ≠ a ∧ c ≠ b := by
+  obtain ⟨a, ha⟩ := hA.nonempty
+  have haPos : HasPositiveChartArea (A \ {a}) :=
+    hA.diff_countable (Set.countable_singleton a)
+  obtain ⟨b, hbA, hba⟩ := haPos.nonempty
+  have habCount : ({a, b} : Set X).Countable := Set.toFinite {a, b} |>.countable
+  have habPos : HasPositiveChartArea (A \ {a, b}) :=
+    hA.diff_countable habCount
+  obtain ⟨c, hcA, hcab⟩ := habPos.nonempty
+  refine ⟨a, ha, b, hbA, ?_, c, hcA, ?_, ?_⟩
+  · exact fun h => hba (by simpa [h])
+  · exact fun h => hcab (by simp [h])
+  · exact fun h => hcab (by simp [h])
+
 end SurfaceDynamics
 
