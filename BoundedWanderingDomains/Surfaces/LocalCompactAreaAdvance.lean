@@ -86,6 +86,55 @@ theorem exists_uniform_area_advance_of_local_compact_model
   exact hadvance E le_rfl U T hTU F hF hcov f.totalize
     (f.measurable_totalize hf.2.continuous) hFeq W hW hWT hinj hfWL
 
+/-- Finite-puncture form of the compact local-model estimate.  The covering
+domain and its inclusion in the old punctured model are constructed
+internally from forward invariance of the boundary-puncture stage. -/
+theorem exists_uniform_area_advance_of_local_compact_finite_models
+    (p : AreaDeficit.Surfaces.DiscCover X)
+    (f : LocalMap X) (hf : IsOpenHolomorphic f)
+    (V : TopologicalSpace.Opens X) (hVsource : (V : Set X) ⊆ f.source)
+    {K L : Set X} (hK : IsCompact K) (hKsource : K ⊆ f.source)
+    (hKV : K ⊆ V) (hL : IsCompact L) :
+    ∃ (E : Finset X) (H : Set X) (hH : IsCompact H),
+      Disjoint L H → ∃ C : ℝ≥0∞, C ≠ ⊤ ∧
+        ∀ (P : Finset X),
+          (∀ x (hx : x ∈ V), x ∈ P → f.map ⟨x, hVsource hx⟩ ∈ P) →
+          ∀ W : Set X, MeasurableSet W → W ⊆ interior K →
+            InjOn f.totalize W → f.totalize '' W ⊆ L →
+            (∀ x ∈ W, f.totalize x ∉ P ∪ E ∧ f.totalize x ∉ H) →
+            p.domainArea (AreaDeficit.Surfaces.finitePunctureDomain P) W ≤
+              p.domainArea (AreaDeficit.Surfaces.finitePunctureDomain P)
+                (f.totalize '' W) + C := by
+  obtain ⟨E, H, hH, hcore⟩ :=
+    f.exists_uniform_area_advance_of_local_compact_model p hf hK hKsource hL
+  refine ⟨E, H, hH, ?_⟩
+  intro hLH
+  obtain ⟨C, hC, hadvance⟩ := hcore hLH
+  refine ⟨C, hC, ?_⟩
+  intro P hforward W hW hWK hinj himage havoid
+  let U := AreaDeficit.Surfaces.finitePunctureDomain P
+  let S := AreaDeficit.Surfaces.finiteRemovalDomain U E ⊓
+    (⟨Hᶜ, hH.isClosed.isOpen_compl⟩ : TopologicalSpace.Opens X)
+  let T := f.localCompactCoverDomain K S hf.2.continuous
+  have hTU : T ≤ U :=
+    f.localCompactCoverDomain_le_finitePunctureDomain hf.2.continuous
+      V hVsource hKV P E hforward H hH.isClosed
+  have hWT : W ⊆ T := by
+    intro x hx
+    apply f.mem_localCompactCoverDomain_of_mem_interior S hf.2.continuous
+      hKsource (hWK hx)
+    have hxsource : x ∈ f.source := hKsource (interior_subset (hWK hx))
+    have htotal := f.totalize_eq hxsource
+    have ha := havoid x hx
+    refine ⟨⟨?_, ?_⟩, ?_⟩
+    · change f.map ⟨x, hxsource⟩ ∉ P
+      simpa only [htotal] using fun hp => ha.1 (Finset.mem_union_left E hp)
+    · change f.map ⟨x, hxsource⟩ ∉ E
+      simpa only [htotal] using fun he => ha.1 (Finset.mem_union_right P he)
+    · change f.map ⟨x, hxsource⟩ ∉ H
+      simpa only [htotal] using ha.2
+  exact hadvance U hTU W hW hWT hinj himage
+
 end SurfaceDynamics.LocalMap
 
 #print axioms SurfaceDynamics.LocalMap.exists_uniform_area_advance_of_local_compact_model
