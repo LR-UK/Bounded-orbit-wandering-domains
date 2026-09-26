@@ -582,3 +582,11 @@ local homeomorphism on the working compact set away from `f ⁻¹' E`. The next
 step is the proper/compact restriction argument upgrading this to a covering
 over target sets whose fibres remain in the interior of the working compact
 set.
+
+The compact restriction upgrade is now checked in
+`CompactSurfaceCovering.lean`. A continuous map from a compact restriction
+is a covering over any target set whose fibres stay in the compact interior
+and on which the ambient map is locally a homeomorphism. Combining this with
+the finite branch-value theorem gives one finite `E` that works for every
+such target set disjoint from `E`. This is the surface version of the planar
+compact analytic covering lemma used in the existing proof.

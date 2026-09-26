@@ -54,6 +54,7 @@ import BoundedWanderingDomains.Surfaces.ChartCriticalValues
 import BoundedWanderingDomains.Surfaces.FiniteChartCriticalCover
 import BoundedWanderingDomains.Surfaces.CompactBranchValues
 import BoundedWanderingDomains.Surfaces.SurfaceLocalBranching
+import BoundedWanderingDomains.Surfaces.CompactSurfaceCovering
 import BoundedWanderingDomains.Surfaces.FinitePatchTransport
 import SurfaceGeometry
 import SurfaceFiniteRemoval
