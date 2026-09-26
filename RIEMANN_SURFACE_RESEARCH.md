@@ -126,3 +126,39 @@ cover. Its local inverse-branch formula proves C² regularity and the curvature
 −1 equation. See `Surfaces/DensityRegularity.lean` and its imports. These results
 are covered by the standard-axiom audit. Surface area-removal estimates and the
 three surface dynamical targets are still outstanding.
+
+## Local recovery checkpoint (26 September 2026)
+
+The earlier outstanding-work list is obsolete: the intrinsic density, curvature,
+area measure, puncture insertion bound, remote-removal estimate (including the
+paper's all-covers formulation), finite chart transport, boundary-preimage tree,
+restricted normality components, and finite-model cancellation are now proved
+and compiled. `PaperAreaLemma.lean` gives the uniform remote finite-area budget
+with a constant independent of the old domain, the moving set of at most `q`
+punctures, the measured subset, and the chosen disc cover.
+
+The compact-saturation topology is now closed: source restriction preserves
+partial iterates of trapped points, its normality locus is contained in the old
+normality locus, and a set whose saturation lies in the restricted source stays
+inside `trapped \ omega`. `PositiveAreaBarrierReduction.lean` combines this with
+the boundary package to place the original positive-area set in the closure of
+an increasing finite forward-invariant puncture sequence. The remaining step
+for Theorem 1.3(2) is the direct local one-step area advance for the holomorphic
+map on that compact working source. The provisional compact-cover theorem is
+insufficient because it deletes a compact boundary-image set which need not be
+disjoint from the compact orbit set; the paper's density-quotient/Lemma 2.6
+argument must avoid that extra hypothesis.
+
+For Theorem 1.3(1), deleting a coordinate disk in the first wandering component
+and passing to its disc-covered complement is compiled. Ambient Montel descent
+from this cover is now proved with compact control only at the disc centres.
+Ordinary normality of the tail is not itself contradictory (the tail already
+lies in `omega`); the existing planar hyperbolic-area growth/cancellation
+argument still has to be transported through the finite surface chart patches.
+
+For Theorem 1.5, the topological compactification reduction is complete and the
+surface singular-value covering theorem is complete. Its remaining analytic
+core is the finite-model area contradiction showing that the orbit cluster set
+meets `derivedSet f.singularValues`. Once Theorems 1.3(1) and 1.5 compile, the
+meromorphic Theorem 1.2 wrapper is already implemented conditionally on the
+surface orbit theorem.
