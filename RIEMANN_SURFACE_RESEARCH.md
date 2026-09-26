@@ -162,3 +162,17 @@ core is the finite-model area contradiction showing that the orbit cluster set
 meets `derivedSet f.singularValues`. Once Theorems 1.3(1) and 1.5 compile, the
 meromorphic Theorem 1.2 wrapper is already implemented conditionally on the
 surface orbit theorem.
+
+The positive-area proof is now formally reduced by
+`PositiveAreaFinalReduction.lean` to the single proposition
+`CompactLocalAreaAdvanceClaim`. This is the intrinsic surface analogue of the
+already-proved planar `local_area_advance`: after removing one finite branch-value
+set, it bounds the one-step loss uniformly over every forward-invariant finite
+puncture model. Assuming this proposition and a disc cover of the ambient
+surface, `noCompactPositiveAreaWanderingSetClaim_of_discCover_areaAdvance` proves
+the full compact-saturation contradiction. `TopDiscCover.lean` removes the
+otherwise annoying distinction between a surface and its top open subtype.
+Thus no further dynamical, measurability, exceptional-set, or Fatou-limit work
+remains for the hyperbolic version of Theorem 1.3(2); only the density-ratio /
+Riesz-measure estimate and the finite-puncture hyperbolisation of a general
+ambient surface remain.
