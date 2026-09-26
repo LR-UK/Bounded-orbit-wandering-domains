@@ -590,3 +590,8 @@ and on which the ambient map is locally a homeomorphism. Combining this with
 the finite branch-value theorem gives one finite `E` that works for every
 such target set disjoint from `E`. This is the surface version of the planar
 compact analytic covering lemma used in the existing proof.
+
+`compact_interior_isCoveringMap` now replaces the compact subtype by the
+open domain `interior K ∩ f ⁻¹' S` and proves that its map to the open target
+`S` is a genuine covering. This supplies manifolds on both sides, so the
+componentwise hyperbolic-metric pullback theorem can be applied directly.
