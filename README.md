@@ -51,9 +51,11 @@ The corresponding named declarations are `theorem_1_2_entire`,
 `theorem_1_2_meromorphic`, `theorem_1_3_orbit`,
 `theorem_1_3_positive_area`, `theorem_1_4`, and `theorem_1_5`.
 The compact set in Theorem 1.3(2) is a compact subset of O, as corrected by
-the author. The six declarations are challenge placeholders; the two entire
-targets have proved source theorems, while the general surface and
-meromorphic proof connections remain on the research branch.
+the author. The six declarations are challenge placeholders.  The two entire
+targets have proved source theorems, and the complete positive-area proof is
+now compiled for every disc-covered Riemann surface.  The finite-puncture
+reduction from an arbitrary ambient surface, the other surface conclusions,
+and the meromorphic wrapper remain on the research branch.
 
 
 The definition of the Fatou set, using normality, uses subsequential locally uniform convergence of sphere-valued iterates into the one-point compactification of ℂ. 

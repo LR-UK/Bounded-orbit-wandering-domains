@@ -53,19 +53,28 @@ theorem exists_uniform_area_advance_of_local_compact_model
     (p : AreaDeficit.Surfaces.DiscCover X)
     (f : LocalMap X) (hf : IsOpenHolomorphic f) {K L : Set X}
     (hK : IsCompact K) (hKsource : K ⊆ f.source) (hL : IsCompact L) :
-    ∃ (E : Finset X) (H : Set X) (hH : IsCompact H),
-      Disjoint L H → ∃ C : ℝ≥0∞, C ≠ ⊤ ∧
+    ∃ (E : Finset X),
+      IsCompact (f.map '' frontier (f.sourceCompact K)) ∧
+      (Disjoint L (f.map '' frontier (f.sourceCompact K)) →
+      ∃ C : ℝ≥0∞, C ≠ ⊤ ∧
         ∀ U : TopologicalSpace.Opens X,
           let S := AreaDeficit.Surfaces.finiteRemovalDomain U E ⊓
-            (⟨Hᶜ, hH.isClosed.isOpen_compl⟩ :
+            (⟨(f.map '' frontier (f.sourceCompact K))ᶜ, (by
+              have hKs := f.sourceCompact_isCompact hK hKsource
+              have hfront : IsCompact (frontier (f.sourceCompact K)) := by
+                apply hKs.of_isClosed_subset isClosed_frontier
+                simpa only [hKs.isClosed.closure_eq] using
+                  (frontier_subset_closure : frontier (f.sourceCompact K) ⊆ _)
+              exact (hfront.image hf.2.continuous).isClosed.isOpen_compl)⟩ :
               TopologicalSpace.Opens X)
           let T := f.localCompactCoverDomain K S hf.2.continuous
           T ≤ U → ∀ W : Set X, MeasurableSet W → W ⊆ T →
             InjOn f.totalize W → f.totalize '' W ⊆ L →
-            p.domainArea U W ≤ p.domainArea U (f.totalize '' W) + C := by
-  obtain ⟨E, H, hH, hcover⟩ :=
+            p.domainArea U W ≤ p.domainArea U (f.totalize '' W) + C) := by
+  obtain ⟨E, hH, hcover⟩ :=
     f.exists_finite_branch_values_local_compact_covering hf hK hKsource
-  refine ⟨E, H, hH, ?_⟩
+  let H : Set X := f.map '' frontier (f.sourceCompact K)
+  refine ⟨E, hH, ?_⟩
   intro hLH
   obtain ⟨C, hC, hadvance⟩ :=
     p.exists_uniform_area_advance_of_remote_covering E.card hH hL hLH
@@ -95,19 +104,23 @@ theorem exists_uniform_area_advance_of_local_compact_finite_models
     (V : TopologicalSpace.Opens X) (hVsource : (V : Set X) ⊆ f.source)
     {K L : Set X} (hK : IsCompact K) (hKsource : K ⊆ f.source)
     (hKV : K ⊆ V) (hL : IsCompact L) :
-    ∃ (E : Finset X) (H : Set X) (hH : IsCompact H),
-      Disjoint L H → ∃ C : ℝ≥0∞, C ≠ ⊤ ∧
+    ∃ (E : Finset X),
+      IsCompact (f.map '' frontier (f.sourceCompact K)) ∧
+      (Disjoint L (f.map '' frontier (f.sourceCompact K)) →
+      ∃ C : ℝ≥0∞, C ≠ ⊤ ∧
         ∀ (P : Finset X),
           (∀ x (hx : x ∈ V), x ∈ P → f.map ⟨x, hVsource hx⟩ ∈ P) →
           ∀ W : Set X, MeasurableSet W → W ⊆ interior K →
             InjOn f.totalize W → f.totalize '' W ⊆ L →
-            (∀ x ∈ W, f.totalize x ∉ P ∪ E ∧ f.totalize x ∉ H) →
+            (∀ x ∈ W, f.totalize x ∉ P ∪ E ∧
+              f.totalize x ∉ f.map '' frontier (f.sourceCompact K)) →
             p.domainArea (AreaDeficit.Surfaces.finitePunctureDomain P) W ≤
               p.domainArea (AreaDeficit.Surfaces.finitePunctureDomain P)
-                (f.totalize '' W) + C := by
-  obtain ⟨E, H, hH, hcore⟩ :=
+                (f.totalize '' W) + C) := by
+  obtain ⟨E, hH, hcore⟩ :=
     f.exists_uniform_area_advance_of_local_compact_model p hf hK hKsource hL
-  refine ⟨E, H, hH, ?_⟩
+  let H : Set X := f.map '' frontier (f.sourceCompact K)
+  refine ⟨E, hH, ?_⟩
   intro hLH
   obtain ⟨C, hC, hadvance⟩ := hcore hLH
   refine ⟨C, hC, ?_⟩

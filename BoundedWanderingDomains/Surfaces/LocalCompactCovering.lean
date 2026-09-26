@@ -73,9 +73,11 @@ argument: the resulting map agrees with the harmless ambient totalisation. -/
 theorem exists_finite_branch_values_local_compact_covering
     (f : LocalMap X) (hf : IsOpenHolomorphic f) {K : Set X}
     (hK : IsCompact K) (hKsource : K ⊆ f.source) :
-    ∃ (E : Finset X) (H : Set X), IsCompact H ∧
+    ∃ (E : Finset X),
+      IsCompact (f.map '' frontier (f.sourceCompact K)) ∧
       ∀ (S : TopologicalSpace.Opens X),
-        (S : Set X) ⊆ (E : Set X)ᶜ → (S : Set X) ⊆ Hᶜ →
+        (S : Set X) ⊆ (E : Set X)ᶜ →
+        (S : Set X) ⊆ (f.map '' frontier (f.sourceCompact K))ᶜ →
         ∃ F : f.localCompactCoverDomain K S hf.2.continuous → S,
           MDifferentiable 𝓘(ℂ) 𝓘(ℂ) F ∧ IsCoveringMap F ∧
           (fun x : f.localCompactCoverDomain K S hf.2.continuous =>
@@ -90,7 +92,7 @@ theorem exists_finite_branch_values_local_compact_covering
     apply hKs.of_isClosed_subset isClosed_frontier
     simpa only [hKs.isClosed.closure_eq] using (frontier_subset_closure : frontier Ks ⊆ closure Ks)
   have hH : IsCompact H := hfront.image hf.2.continuous
-  refine ⟨E, H, hH, ?_⟩
+  refine ⟨E, hH, ?_⟩
   intro S hSE hSH
   have hint : ∀ z ∈ Ks, f.map z ∈ S → z ∈ interior Ks := by
     intro z hzK hfzS
