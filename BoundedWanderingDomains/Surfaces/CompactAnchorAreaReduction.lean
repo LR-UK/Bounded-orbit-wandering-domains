@@ -45,6 +45,23 @@ theorem anchorComplement_finiteStage_area_lt_top [CompactSpace X]
     (AreaDeficit.Surfaces.finiteStageOnAnchorComplement E F)
     (anchorComplement_hyperbolicArea_lt_top E p)
 
+/-- For a compact surface, the full anchor-complement package now follows
+from just the uniform one-point insertion estimate.  The finite-total-area
+half is supplied by the cusp calculation above, while finite insertion is
+obtained by telescoping the one-point bound. -/
+theorem anchorComplement_globalFinitePunctureAreaPackage_of_pointInsertion
+    [CompactSpace X] (E : Finset X)
+    (p : AreaDeficit.Surfaces.DiscCover
+      (AreaDeficit.Surfaces.anchorComplement E))
+    (q : ℕ) {C : ℝ≥0∞} (hC : C ≠ ⊤)
+    (hpoint : p.UniformGlobalPointInsertionBound C) :
+    p.GlobalFinitePunctureAreaPackage q := by
+  letI : LocallyCompactSpace
+      (AreaDeficit.Surfaces.anchorComplement E) :=
+    (AreaDeficit.Surfaces.anchorComplement E).isOpen.locallyCompactSpace
+  exact p.globalFinitePunctureAreaPackage_of_pointInsertion q
+    (anchorComplement_hyperbolicArea_lt_top E p) hC hpoint
+
 /-- Transfer the global finite-area contradiction to a fixed complement of
 compact-surface anchors.  Ambient finite stages are restricted to the open
 subsurface; their density at the measured set is preserved. -/
@@ -146,3 +163,4 @@ end SurfaceDynamics
 #print axioms SurfaceDynamics.false_of_anchorComplement_global_package
 #print axioms SurfaceDynamics.anchorComplement_hyperbolicArea_lt_top
 #print axioms SurfaceDynamics.anchorComplement_finiteStage_area_lt_top
+#print axioms SurfaceDynamics.anchorComplement_globalFinitePunctureAreaPackage_of_pointInsertion

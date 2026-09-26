@@ -1,5 +1,6 @@
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
 import BoundedWanderingDomains.Surfaces.PositiveAreaAdvanceReduction
+import BoundedWanderingDomains.Surfaces.GlobalPointInsertion
 
 /-! # Global finite-puncture area packages -/
 
@@ -57,6 +58,17 @@ theorem globalFinitePunctureAreaPackage_of_finite_total
   intro P
   exact (p.finitePunctureDomain_area_univ_finite_of_hyperbolicArea_univ_finite
     P htotal).ne
+
+/-- Finite total ambient area together with a uniform global one-point cost
+supplies the complete global finite-puncture package. -/
+theorem globalFinitePunctureAreaPackage_of_pointInsertion
+    (p : DiscCover M) (q : ℕ) {C : ℝ≥0∞}
+    (htotal : p.hyperbolicArea Set.univ < ⊤) (hC : C ≠ ⊤)
+    (hpoint : p.UniformGlobalPointInsertionBound C) :
+    p.GlobalFinitePunctureAreaPackage q := by
+  apply p.globalFinitePunctureAreaPackage_of_finite_total q htotal
+  exact p.uniform_global_finitePuncture_insertion_area_le_of_pointInsertion
+    q hC hpoint
 
 end AreaDeficit.Surfaces.DiscCover
 
@@ -116,3 +128,4 @@ end SurfaceDynamics
 #print axioms SurfaceDynamics.false_of_positive_hyperbolicArea_global_package
 #print axioms AreaDeficit.Surfaces.DiscCover.globalFinitePunctureAreaPackage_of_compact
 #print axioms AreaDeficit.Surfaces.DiscCover.globalFinitePunctureAreaPackage_of_finite_total
+#print axioms AreaDeficit.Surfaces.DiscCover.globalFinitePunctureAreaPackage_of_pointInsertion

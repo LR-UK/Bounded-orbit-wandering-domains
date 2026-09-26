@@ -794,3 +794,10 @@ The finite measure assembly is also compiled as `hyperbolicArea_univ_lt_top_of_f
 - Added `globalFinitePunctureAreaPackage_of_finite_total`, so the global package now reduces to its uniform insertion-cost half whenever the ambient hyperbolic area is finite.
 - This discharges finite total mass for the fixed three-anchor complement and every finite backward stage on a compact surface.
 - The remaining analytic input is the global surface version of the sharp point insertion estimate (uniform `2π` per inserted puncture). The one-chart sharp theorem and compact remote Lemma 2.6 form are already compiled.
+
+## 2026-09-26 local checkpoint: one-point global insertion reduction
+
+- Added `Surfaces/GlobalPointInsertion.lean`.
+- A whole-surface bound for inserting one point into an arbitrary finite-puncture model now telescopes to the bounded-cardinality estimate `q * C`, directly at the level of nonnegative area-gain measures.
+- Combined this with finite total area in `globalFinitePunctureAreaPackage_of_pointInsertion` and with the compact anchor complement in `anchorComplement_globalFinitePunctureAreaPackage_of_pointInsertion`.
+- Consequently the compact global positive-area argument has one geometric input left: `UniformGlobalPointInsertionBound (ENNReal.ofReal (2 * Real.pi))`. No separate finite-set or cancellation argument remains.
