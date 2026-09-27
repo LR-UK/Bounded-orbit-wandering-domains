@@ -874,3 +874,11 @@ distinct anchors give `GlobalFinitePunctureAreaPackage q` for every `q`; the
 proof merely feeds the sharp sphere insertion theorem into the existing
 finite-area/telescoping theorem, so no parallel area argument is introduced.
 The focused build passes.
+
+`BoundedWanderingDomains/LogGrowthCutoff.lean` now packages the missing
+quantitative end estimate.  If `|f(z)| <= C + L |log|z-a||` on a logarithmic
+transition annulus, its pairing with the cutoff Laplacian is bounded by an
+explicit decaying bounded-part term plus a uniform logarithmic term.  A
+specialized `[-2t,-t]` corollary has constants independent of the depth `t`.
+The focused module build passes.  This is designed to be applied to the log
+of the quotient of the punctured and unpunctured hyperbolic densities.
