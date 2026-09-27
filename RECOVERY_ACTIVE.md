@@ -374,3 +374,12 @@ Commit target: intrinsic global Green reduction.
 - Proved raw end integrability, normalized intrinsic pairing bounds, and finite total area gain for one insertion in a finite-puncture model of an anchor complement.
 - Next: connect this finite insertion theorem to the compact-surface reduction and finish the remaining PaperSolution theorem targets.
 
+
+## 2026-09-27 uniform compactification insertion checkpoint
+- Replaced the normalized cutoff comparison by an unnormalized intrinsic Green identity for restricted surface log cutoffs.
+- Proved compact support of the restricted cutoff's intrinsic Laplacian and that this Laplacian avoids every centre in the finite disjoint family.
+- Made the new puncture estimate explicit: `3 * (2*pi*integral |transitionSecond|)` independently of stage and insertion point.
+- Propagated the explicit estimate through nested covers and compactification ends; old ends contribute the universal eventual allowance `1`.
+- `compactification_pointInsertion_areaGain_finite` now has the stage-independent explicit bound `1 + 3 * (2*pi*integral |transitionSecond|)`.
+- Compiling modules: PunctureBoundaryMass, NestedBoundaryMass, CompactificationInsertionEnds, CompactificationCutoffGreen, CompactificationInsertionRiesz.
+- Next: package this as `UniformGlobalPointInsertionBound`, feed CompactAnchorAreaReduction, then close arbitrary compact positive-area theorem and audit remaining orbit/derived statements.

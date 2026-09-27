@@ -15,24 +15,22 @@ variable {M : Type*} [TopologicalSpace M] [ChartedSpace ℂ M]
 /-- The log-density ratio at one newly inserted puncture has a uniformly
 bounded Riesz boundary contribution.  This is the direct formal version of
 the new-puncture part of Lemma 2.6. -/
-theorem eventually_bounded_new_puncture_boundary_mass
+theorem eventually_bounded_new_puncture_boundary_mass_explicit
     (p : DiscCover M) {U : TopologicalSpace.Opens M} (q : DiscCover U)
     (hU : Nonempty U) {d : OpenPartialHomeomorph M ℂ}
     (hd : MDifferentiableOn 𝓘(ℂ) 𝓘(ℂ) d d.source)
     {a : ℂ} (ha : a ∈ d.target) {R : ℝ} (hR : 0 < R)
     (hball : ball a R \ {a} ⊆ (d.subtypeRestr hU).target) :
-    ∃ B : ℝ, 0 ≤ B ∧ ∀ᶠ t : ℝ in atTop,
+    ∀ᶠ t : ℝ in atTop,
       |∫ z : ℂ, p.chartLogRatio q hU d z *
-        Δ (AreaDeficit.logCutoff a (-2 * t) (-t)) z| ≤ B := by
+        Δ (AreaDeficit.logCutoff a (-2 * t) (-t)) z| ≤
+          3 * (2 * Real.pi * ∫ s : ℝ, |AreaDeficit.transitionSecond s|) := by
   obtain ⟨r, hr, hrR, C, hC, hgrowth⟩ :=
     p.exists_chartLogRatio_le_const_sub_log_norm q hU hd ha hR hball
   let H : ℝ := 2 * Real.pi * ∫ s : ℝ, |AreaDeficit.transitionSecond s|
-  have hH : 0 ≤ H := by dsimp [H]; positivity
-  let B : ℝ := C * H + 2 * H
-  have hB : 0 ≤ B := by dsimp [B]; positivity
-  refine ⟨B, hB, ?_⟩
+  let B : ℝ := 3 * H
   filter_upwards [eventually_gt_atTop (-Real.log r),
-    eventually_gt_atTop (1 : ℝ)] with t htr ht1
+    eventually_gt_atTop (1 : ℝ), eventually_gt_atTop C] with t htr ht1 htC
   have ht : 0 < t := lt_trans zero_lt_one ht1
   have hmain := AreaDeficit.integral_mul_laplacian_logCutoff_neg_two_neg_one_le
     (f := p.chartLogRatio q hU d) a ht hC (by norm_num : (0 : ℝ) ≤ 1)
@@ -48,16 +46,34 @@ theorem eventually_bounded_new_puncture_boundary_mass
         have hupper := hgrowth z hza hzr
         rw [abs_of_nonneg hnonneg, abs_of_neg (hzB.trans (by linarith))]
         linarith)
-  have hHt : H / t ≤ H := div_le_self hH (by linarith)
+  have hCt : C / t ≤ 1 := (div_le_one (by linarith)).mpr htC.le
   calc
     |∫ z : ℂ, p.chartLogRatio q hU d z *
         Δ (AreaDeficit.logCutoff a (-2 * t) (-t)) z| ≤
         C * (H / t) + 2 * H := by
           convert hmain using 1 <;> simp only [H] <;> ring
-    _ ≤ C * H + 2 * H := by
-      gcongr
-    _ = B := rfl
+    _ = (C / t) * H + 2 * H := by ring
+    _ ≤ 1 * H + 2 * H := by gcongr
+    _ = 3 * (2 * Real.pi * ∫ s : ℝ,
+        |AreaDeficit.transitionSecond s|) := by dsimp [B, H]; ring
+
+/-- Existential form of the explicit universal new-puncture estimate. -/
+theorem eventually_bounded_new_puncture_boundary_mass
+    (p : DiscCover M) {U : TopologicalSpace.Opens M} (q : DiscCover U)
+    (hU : Nonempty U) {d : OpenPartialHomeomorph M ℂ}
+    (hd : MDifferentiableOn 𝓘(ℂ) 𝓘(ℂ) d d.source)
+    {a : ℂ} (ha : a ∈ d.target) {R : ℝ} (hR : 0 < R)
+    (hball : ball a R \ {a} ⊆ (d.subtypeRestr hU).target) :
+    ∃ B : ℝ, 0 ≤ B ∧ ∀ᶠ t : ℝ in atTop,
+      |∫ z : ℂ, p.chartLogRatio q hU d z *
+        Δ (AreaDeficit.logCutoff a (-2 * t) (-t)) z| ≤ B := by
+  let B : ℝ := 3 *
+    (2 * Real.pi * ∫ s : ℝ, |AreaDeficit.transitionSecond s|)
+  refine ⟨B, by dsimp [B]; positivity, ?_⟩
+  simpa only [B] using
+    p.eventually_bounded_new_puncture_boundary_mass_explicit q hU hd ha hR hball
 
 end AreaDeficit.Surfaces.DiscCover
 
 #print axioms AreaDeficit.Surfaces.DiscCover.eventually_bounded_new_puncture_boundary_mass
+

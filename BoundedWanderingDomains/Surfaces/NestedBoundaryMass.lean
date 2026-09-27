@@ -126,13 +126,14 @@ theorem eventually_bounded_domainChart_new_boundary_mass
     {R : ℝ} (hR : 0 < R)
     (hball : ball a R \ {a} ⊆
       ((c.subtypeRestr hUN).subtypeRestr hWN).target) :
-    ∃ B : ℝ, 0 ≤ B ∧ ∀ᶠ t : ℝ in atTop,
+    ∀ᶠ t : ℝ in atTop,
       |∫ z : ℂ, p.domainChartLogRatio U V c z *
-        Δ (AreaDeficit.logCutoff a (-2 * t) (-t)) z| ≤ B := by
-  obtain ⟨B, hB, hbound⟩ :=
-    q.eventually_bounded_new_puncture_boundary_mass s hWN
+        Δ (AreaDeficit.logCutoff a (-2 * t) (-t)) z| ≤
+          3 * (2 * Real.pi * ∫ u : ℝ,
+            |AreaDeficit.transitionSecond u|) := by
+  have hbound :=
+    q.eventually_bounded_new_puncture_boundary_mass_explicit s hWN
       (mdifferentiableOn_subtypeRestr hUN hc) ha hR hball
-  refine ⟨B, hB, ?_⟩
   have heq := p.eventually_domainChart_boundary_eq_nested hVU hUN q W hW
     hWN s hc hR hball
   filter_upwards [hbound, heq] with t ht he

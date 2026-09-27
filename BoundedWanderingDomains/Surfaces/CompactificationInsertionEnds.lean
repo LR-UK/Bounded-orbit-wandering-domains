@@ -166,12 +166,14 @@ theorem DiscCover.eventually_bounded_compactification_newEnd_boundary
     let V := finitePunctureDomain (insert a0 P)
     let j : ↑(compactificationInsertionEnds E O P a0) :=
       ⟨a0, new_mem_compactificationInsertionEnds E O P a0⟩
-    ∃ B : ℝ, 0 ≤ B ∧ ∀ᶠ t : ℝ in atTop,
+    ∀ᶠ t : ℝ in atTop,
       |∫ z : ℂ, p.domainChartLogRatio U V
         ((chartAt ℂ (D.disc j).center).subtypeRestr hON) z *
         Δ (AreaDeficit.logCutoff
           (chartAt ℂ (D.disc j).center (D.disc j).center)
-          (-2 * t) (-t)) z| ≤ B := by
+          (-2 * t) (-t)) z| ≤
+            3 * (2 * Real.pi * ∫ u : ℝ,
+              |AreaDeficit.transitionSecond u|) := by
   let U := finitePunctureDomain P
   let a : U := ⟨a0, ha0⟩
   let W := finitePunctureDomain ({a} : Finset U)
@@ -240,13 +242,15 @@ theorem DiscCover.eventually_bounded_compactification_boundary_sum
     (D : FinitePunctureDiscs (compactificationInsertionEnds E O P a0)) :
     let U := finitePunctureDomain P
     let V := finitePunctureDomain (insert a0 P)
-    ∃ B : ℝ, 0 ≤ B ∧ ∀ᶠ t : ℝ in atTop,
+    ∀ᶠ t : ℝ in atTop,
       |∑ i : ↑(compactificationInsertionEnds E O P a0), ∫ z : ℂ,
         p.domainChartLogRatio U V
           ((chartAt ℂ (D.disc i).center).subtypeRestr hON) z *
           Δ (AreaDeficit.logCutoff
             (chartAt ℂ (D.disc i).center (D.disc i).center)
-            (-2 * t) (-t)) z| ≤ B := by
+            (-2 * t) (-t)) z| ≤
+        1 + 3 * (2 * Real.pi * ∫ u : ℝ,
+          |AreaDeficit.transitionSecond u|) := by
   let U := finitePunctureDomain P
   let V := finitePunctureDomain (insert a0 P)
   let F := compactificationInsertionEnds E O P a0
@@ -257,7 +261,10 @@ theorem DiscCover.eventually_bounded_compactification_boundary_sum
       Δ (AreaDeficit.logCutoff
         (chartAt ℂ (D.disc i).center (D.disc i).center)
         (-2 * t) (-t)) z
-  obtain ⟨B, hB, hnew⟩ :=
+  let B : ℝ := 3 * (2 * Real.pi * ∫ u : ℝ,
+    |AreaDeficit.transitionSecond u|)
+  have hB : 0 ≤ B := by dsimp [B]; positivity
+  have hnew :=
     AreaDeficit.Surfaces.FinitePunctureDiscs.DiscCover.eventually_bounded_compactification_newEnd_boundary
       E O hO hON p P a0 ha0 q s D
   have hold : ∀ i ∈ (Finset.univ.erase j),
@@ -279,8 +286,7 @@ theorem DiscCover.eventually_bounded_compactification_boundary_sum
     exact hnew
   have hsum := eventually_bounded_old_new_boundary_sum
     (Finset.univ.erase j) ({j} : Finset ↑F) u u (fun _ => B) hold hnew'
-  refine ⟨1 + B, by linarith, ?_⟩
-  simpa only [u, F, U, V, Finset.sum_singleton,
+  simpa only [u, F, U, V, B, Finset.sum_singleton,
     Finset.sum_erase_add _ _ (Finset.mem_univ j)] using hsum
 
 /-- For all sufficiently deep readings, every raw end pairing in the finite
@@ -371,6 +377,7 @@ end FinitePunctureDiscs
 end AreaDeficit.Surfaces
 
 #print axioms AreaDeficit.Surfaces.FinitePunctureDiscs.DiscCover.tendsto_compactification_oldEnd_boundary_zero
+
 
 
 

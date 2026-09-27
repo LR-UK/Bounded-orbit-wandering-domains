@@ -16,8 +16,8 @@ variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
 
 namespace FinitePunctureDiscs
 
-/-- The intrinsic Green pairings of the compactification cutoffs are
-eventually bounded for a one-point insertion. -/
+/-- The intrinsic Green pairings of the compactification cutoffs have the
+same universal bound at every finite puncture stage. -/
 theorem DiscCover.eventually_bounded_compactification_intrinsicGreen
     (E : Finset X) (O : Opens X)
     (hO : ∀ x : X, x ∈ O ↔ x ∉ E) (hON : Nonempty O)
@@ -30,59 +30,54 @@ theorem DiscCover.eventually_bounded_compactification_intrinsicGreen
     (D : FinitePunctureDiscs (compactificationInsertionEnds E O P a0)) :
     let U := finitePunctureDomain P
     let V := finitePunctureDomain (insert a0 P)
-    ∃ B : ℝ, 0 ≤ B ∧ ∀ᶠ t : ℝ in atTop,
+    ∀ᶠ t : ℝ in atTop,
       D.Admissible t ∧
       |∫ x, p.domainLogRatio U V x *
         p.intrinsicLaplacian (D.restrictedCutoff O t) x
-          ∂p.hyperbolicArea| ≤ B := by
+          ∂p.hyperbolicArea| ≤
+        1 + 3 * (2 * Real.pi * ∫ u : ℝ,
+          |AreaDeficit.transitionSecond u|) := by
   let F := compactificationInsertionEnds E O P a0
   let U := finitePunctureDomain P
+  let a : U := ⟨a0, ha0⟩
+  let W := finitePunctureDomain ({a} : Finset U)
   let V := finitePunctureDomain (insert a0 P)
+  have hUN : Nonempty U := ⟨a⟩
+  have hWN : Nonempty W := ⟨s.projection discZero⟩
   have hVU : V ≤ U := by
     intro x hx hxP
     exact hx (Finset.mem_insert_of_mem hxP)
-  have hEF : E ⊆ F := left_mem_compactificationInsertionEnds E O P a0
-  let raw : ↑F → ℝ → ℝ := fun i t => ∫ z : ℂ,
-    p.domainChartLogRatio U V
-      ((chartAt ℂ (D.disc i).center).subtypeRestr hON) z *
-      Δ (AreaDeficit.logCutoff
-        (chartAt ℂ (D.disc i).center (D.disc i).center)
-        (-2 * t) (-t)) z
-  obtain ⟨Braw, hBraw, hraw⟩ :=
+  have hraw :=
     AreaDeficit.Surfaces.FinitePunctureDiscs.DiscCover.eventually_bounded_compactification_boundary_sum
       E O hO hON p P a0 ha0 q s D
-  have hint :=
-    AreaDeficit.Surfaces.FinitePunctureDiscs.DiscCover.eventually_integrable_compactification_boundary
-      E O hO hON p P a0 ha0 q s D
-  obtain ⟨r, hr, hir⟩ : ∃ r : ℝ, D.Admissible r ∧
-      ∀ i : ↑F, Integrable (fun z : ℂ =>
-        p.domainChartLogRatio U V
-          ((chartAt ℂ (D.disc i).center).subtypeRestr hON) z *
-          Δ (AreaDeficit.logCutoff
-            (chartAt ℂ (D.disc i).center (D.disc i).center)
-            (-2 * r) (-r)) z) :=
-    (D.eventually_admissible.and hint).exists
-  let G : ℝ → ℝ := fun t => ∫ x, p.domainLogRatio U V x *
-    p.intrinsicLaplacian (D.restrictedCutoff O t) x ∂p.hyperbolicArea
-  let C : ℝ := |G r| + |∑ i : ↑F, raw i r|
-  refine ⟨Braw + C, by dsimp [C]; positivity, ?_⟩
-  filter_upwards [hraw, D.eventually_admissible, hint] with t htbound ht hit
+  have hrad : ∀ᶠ t : ℝ in atTop,
+      ∀ i : ↑F, -Real.log (D.disc i).radius < t :=
+    ((Filter.eventually_all_finite Set.finite_univ).2 fun i _ =>
+      eventually_gt_atTop (-Real.log (D.disc i).radius)).mono
+        (fun _ h i => h i (mem_univ i))
+  filter_upwards [hraw, D.eventually_admissible, hrad] with t htbound ht hrt
   refine ⟨ht, ?_⟩
-  have hcutV : ∀ {v : ℝ}, D.Admissible v →
-      tsupport (D.restrictedCutoff O v) ⊆ V := by
-    intro v hv x hx
-    have hxF := D.restrictedCutoff_tsupport_avoids O hv hx
-    change x ∉ insert a0 P
-    intro hxinsert
-    rw [Finset.mem_insert] at hxinsert
-    rcases hxinsert with hxa | hxP
-    · exact hxF (hxa ▸ new_mem_compactificationInsertionEnds E O P a0)
-    · exact hxF (old_mem_compactificationInsertionEnds E O P a0 hxP)
+  have hball : ∀ i : ↑F,
+      ball (chartAt ℂ (D.disc i).center (D.disc i).center)
+          (D.disc i).radius \
+        {chartAt ℂ (D.disc i).center (D.disc i).center} ⊆
+          ((chartAt ℂ (D.disc i).center).subtypeRestr hON).target := by
+    intro i z hz
+    have hzdeep := D.puncturedBall_subset_three_restricted_targets i E
+      (left_mem_compactificationInsertionEnds E O P a0) O hO hON P
+      (fun x hx => old_mem_compactificationInsertionEnds E O P a0 hx)
+      hUN a (new_mem_compactificationInsertionEnds E O P a0) hWN hz
+    have hzmid :=
+      (((chartAt ℂ (D.disc i).center).subtypeRestr hON).subtypeRestr hUN).subtypeRestr_target_subset
+        hWN hzdeep
+    exact ((chartAt ℂ (D.disc i).center).subtypeRestr hON).subtypeRestr_target_subset
+      hUN hzmid
   have hetaV : ∀ i : ↑F, tsupport (p.intrinsicLaplacian
-      (restrictedSurfaceLogCutoffDiff (D.disc i) O t r)) ⊆ V := by
+      (restrictedSurfaceLogCutoff (D.disc i) O t)) ⊆ V := by
     intro i x hx
-    have hxeta := p.tsupport_intrinsicLaplacian_subset _ hx
-    have hxF := D.restrictedSurfaceLogCutoffDiff_tsupport_avoids i O ht hr hxeta
+    have hxF :=
+      AreaDeficit.Surfaces.FinitePunctureDiscs.DiscCover.tsupport_intrinsicLaplacian_restrictedSurfaceLogCutoff_subset
+        p D ht i hx
     change x ∉ insert a0 P
     intro hxinsert
     rw [Finset.mem_insert] at hxinsert
@@ -90,116 +85,10 @@ theorem DiscCover.eventually_bounded_compactification_intrinsicGreen
     · exact hxF (hxa ▸ new_mem_compactificationInsertionEnds E O P a0)
     · exact hxF (old_mem_compactificationInsertionEnds E O P a0 hxP)
   have hgreen :=
-    AreaDeficit.Surfaces.FinitePunctureDiscs.DiscCover.intrinsicGreen_restrictedCutoff_sub
-      hON p hVU D E hO hEF ht hr hetaV
-  have hsmooth_t := D.restrictedCutoff_contMDiff O ht
-  have hsmooth_r := D.restrictedCutoff_contMDiff O hr
-  have hcompact_t := D.restrictedCutoff_hasCompactSupport_of_compl_finset
-    O E hO hEF ht
-  have hcompact_r := D.restrictedCutoff_hasCompactSupport_of_compl_finset
-    O E hO hEF hr
-  have hint_t := p.integrable_domainLogRatio_mul_intrinsicLaplacian hVU
-    hsmooth_t hcompact_t
-      ((p.tsupport_intrinsicLaplacian_subset _).trans (hcutV ht))
-  have hint_r := p.integrable_domainLogRatio_mul_intrinsicLaplacian hVU
-    hsmooth_r hcompact_r
-      ((p.tsupport_intrinsicLaplacian_subset _).trans (hcutV hr))
-  have hleft : (∫ x, p.domainLogRatio U V x *
-      p.intrinsicLaplacian (D.restrictedCutoff O t -
-        D.restrictedCutoff O r) x ∂p.hyperbolicArea) = G t - G r := by
-    rw [show (fun x => p.domainLogRatio U V x *
-        p.intrinsicLaplacian (D.restrictedCutoff O t -
-          D.restrictedCutoff O r) x) =
-        (fun x => p.domainLogRatio U V x *
-          p.intrinsicLaplacian (D.restrictedCutoff O t) x) -
-        (fun x => p.domainLogRatio U V x *
-          p.intrinsicLaplacian (D.restrictedCutoff O r) x) by
-      funext x
-      rw [p.intrinsicLaplacian_sub hsmooth_t hsmooth_r x]
-      simp only [Pi.sub_apply]
-      ring]
-    change (∫ x, (p.domainLogRatio U V x *
-      p.intrinsicLaplacian (D.restrictedCutoff O t) x) -
-      (p.domainLogRatio U V x *
-      p.intrinsicLaplacian (D.restrictedCutoff O r) x)
-        ∂p.hyperbolicArea) = G t - G r
-    rw [integral_sub hint_t hint_r]
-  have hright : (∑ i : ↑F, ∫ z,
-      p.domainChartLogRatio U V
-        ((chartAt ℂ (D.disc i).center).subtypeRestr hON) z *
-      Δ (AreaDeficit.logCutoff
-          (chartAt ℂ (D.disc i).center (D.disc i).center)
-          (-2 * t) (-t) -
-        AreaDeficit.logCutoff
-          (chartAt ℂ (D.disc i).center (D.disc i).center)
-          (-2 * r) (-r)) z) =
-      (∑ i : ↑F, raw i t) - ∑ i : ↑F, raw i r := by
-    rw [← Finset.sum_sub_distrib]
-    apply Finset.sum_congr rfl
-    intro i _
-    rw [show (fun z => p.domainChartLogRatio U V
-        ((chartAt ℂ (D.disc i).center).subtypeRestr hON) z *
-        Δ (AreaDeficit.logCutoff
-            (chartAt ℂ (D.disc i).center (D.disc i).center)
-            (-2 * t) (-t) -
-          AreaDeficit.logCutoff
-            (chartAt ℂ (D.disc i).center (D.disc i).center)
-            (-2 * r) (-r)) z) =
-        (fun z => p.domainChartLogRatio U V
-          ((chartAt ℂ (D.disc i).center).subtypeRestr hON) z *
-          Δ (AreaDeficit.logCutoff
-            (chartAt ℂ (D.disc i).center (D.disc i).center)
-            (-2 * t) (-t)) z) -
-        (fun z => p.domainChartLogRatio U V
-          ((chartAt ℂ (D.disc i).center).subtypeRestr hON) z *
-          Δ (AreaDeficit.logCutoff
-            (chartAt ℂ (D.disc i).center (D.disc i).center)
-            (-2 * r) (-r)) z) by
-      funext z
-      have hct : ContDiffAt ℝ 2 (AreaDeficit.logCutoff
-          (chartAt ℂ (D.disc i).center (D.disc i).center)
-          (-2 * t) (-t)) z :=
-        (AreaDeficit.logCutoff_contDiff _ (by linarith [ht.1])).contDiffAt.of_le
-          (by norm_num)
-      have hcr : ContDiffAt ℝ 2 (AreaDeficit.logCutoff
-          (chartAt ℂ (D.disc i).center (D.disc i).center)
-          (-2 * r) (-r)) z :=
-        (AreaDeficit.logCutoff_contDiff _ (by linarith [hr.1])).contDiffAt.of_le
-          (by norm_num)
-      rw [hct.laplacian_sub hcr]
-      simp only [Pi.sub_apply]
-      ring]
-    change (∫ z, (p.domainChartLogRatio U V
-      ((chartAt ℂ (D.disc i).center).subtypeRestr hON) z *
-      Δ (AreaDeficit.logCutoff
-        (chartAt ℂ (D.disc i).center (D.disc i).center)
-        (-2 * t) (-t)) z) -
-      (p.domainChartLogRatio U V
-      ((chartAt ℂ (D.disc i).center).subtypeRestr hON) z *
-      Δ (AreaDeficit.logCutoff
-        (chartAt ℂ (D.disc i).center (D.disc i).center)
-        (-2 * r) (-r)) z)) = raw i t - raw i r
-    rw [integral_sub (hit i) (hir i)]
-  rw [hleft, hright] at hgreen
-  have hG : G t = -(∑ i : ↑F, raw i t) +
-      (G r + ∑ i : ↑F, raw i r) := by linarith [hgreen]
-  have htbound' : |∑ i : ↑F, raw i t| ≤ Braw := by
-    simpa only [raw, F, U, V] using htbound
-  change |G t| ≤ Braw + C
-  rw [hG]
-  calc
-    |-∑ i : ↑F, raw i t + (G r + ∑ i : ↑F, raw i r)| ≤
-        |∑ i : ↑F, raw i t| + (|G r| + |∑ i : ↑F, raw i r|) := by
-      calc
-        _ ≤ |-∑ i : ↑F, raw i t| + |G r + ∑ i : ↑F, raw i r| := abs_add_le _ _
-        _ ≤ |∑ i : ↑F, raw i t| + (|G r| + |∑ i : ↑F, raw i r|) := by
-          rw [abs_neg]
-          gcongr
-          exact abs_add_le _ _
-    _ ≤ Braw + C := by
-      dsimp only [C]
-      linarith [htbound']
-
+    AreaDeficit.Surfaces.FinitePunctureDiscs.DiscCover.intrinsicGreen_restrictedCutoff
+      hON p hVU D ht hrt hball hetaV
+  rw [hgreen, abs_neg]
+  simpa only [F, U, V] using htbound
 /-- Inserting one point into a finite-puncture model of a compactification
 has finite total domain-area gain. -/
 theorem DiscCover.compactification_pointInsertion_areaGain_finite
@@ -212,9 +101,10 @@ theorem DiscCover.compactification_pointInsertion_areaGain_finite
     (s : DiscCover (finitePunctureDomain
       ({(⟨a0, ha0⟩ : finitePunctureDomain P)} : Finset _)))
     (D : FinitePunctureDiscs (compactificationInsertionEnds E O P a0)) :
-    ∃ C : ℝ, 0 ≤ C ∧
-      p.domainAreaGain (finitePunctureDomain P)
-        (finitePunctureDomain (insert a0 P)) Set.univ ≤ ENNReal.ofReal C := by
+    p.domainAreaGain (finitePunctureDomain P)
+        (finitePunctureDomain (insert a0 P)) Set.univ ≤
+      ENNReal.ofReal (1 + 3 * (2 * Real.pi * ∫ u : ℝ,
+        |AreaDeficit.transitionSecond u|)) := by
   let F := compactificationInsertionEnds E O P a0
   let U := finitePunctureDomain P
   let V := finitePunctureDomain (insert a0 P)
@@ -223,7 +113,10 @@ theorem DiscCover.compactification_pointInsertion_areaGain_finite
     intro x hx hxP
     exact hx (Finset.mem_insert_of_mem hxP)
   have hEF : E ⊆ F := left_mem_compactificationInsertionEnds E O P a0
-  obtain ⟨B, hB, hbound⟩ :=
+  let B : ℝ := 1 + 3 * (2 * Real.pi * ∫ u : ℝ,
+    |AreaDeficit.transitionSecond u|)
+  have hB : 0 ≤ B := by dsimp [B]; positivity
+  have hbound :=
     AreaDeficit.Surfaces.FinitePunctureDiscs.DiscCover.eventually_bounded_compactification_intrinsicGreen
       E O hO hON p P a0 ha0 q s D
   have hadmNat : ∀ᶠ n : ℕ in atTop, D.Admissible (n : ℝ) :=
@@ -288,14 +181,15 @@ theorem DiscCover.compactification_pointInsertion_areaGain_finite
   have hboundNat : ∀ᶠ n : ℕ in atTop, |boundary n| ≤ B := by
     have hreal := (htime.eventually hbound).mono (fun _ h => h.2)
     simpa only [boundary, U, V] using hreal
-  refine ⟨B, hB, ?_⟩
-  exact measure_univ_le_of_eventually_bounded_riesz_cutoffs μ chi hchi
-    hlim boundary hgreen hB hboundNat
+  simpa only [B] using
+    (measure_univ_le_of_eventually_bounded_riesz_cutoffs μ chi hchi
+      hlim boundary hgreen hB hboundNat)
 
 end FinitePunctureDiscs
 end AreaDeficit.Surfaces
 
 #print axioms AreaDeficit.Surfaces.FinitePunctureDiscs.DiscCover.eventually_bounded_compactification_intrinsicGreen
+
 
 
 
