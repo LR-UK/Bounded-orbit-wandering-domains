@@ -882,3 +882,14 @@ explicit decaying bounded-part term plus a uniform logarithmic term.  A
 specialized `[-2t,-t]` corollary has constants independent of the depth `t`.
 The focused module build passes.  This is designed to be applied to the log
 of the quotient of the punctured and unpunctured hyperbolic densities.
+
+`Surfaces/PunctureLogRatioBound.lean` proves the surface-chart growth input at
+a newly removed point.  The cusp upper bound for the new hyperbolic metric
+and local positivity/continuity of the old one give constants `r > 0` and
+`C >= 0` such that the chart log-density ratio is at most
+`C - log ‖z-a‖` for `0 < ‖z-a‖ < r`.  The focused build passes with no
+`sorryAx`.  Combined with `LogGrowthCutoff.lean`, this gives a uniform finite
+boundary contribution from every new puncture.  The complementary old-end
+input is convergence of the density ratio to one, after which
+`CutoffError.tendsto_integral_cutoff` makes those boundary contributions
+vanish.
