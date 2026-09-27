@@ -893,3 +893,12 @@ boundary contribution from every new puncture.  The complementary old-end
 input is convergence of the density ratio to one, after which
 `CutoffError.tendsto_integral_cutoff` makes those boundary contributions
 vanish.
+
+`Surfaces/DiscComparisonInfinity.lean` now contains the intrinsic old-end
+statement missing from the Riesz argument.  If points in the punctured domain
+escape every compact subset of the old ambient hyperbolic surface, then the
+new/old density ratio tends to one, and its logarithm tends to zero.  The
+proof is uniform in the chosen disc covers and uses the existing compact-disc
+avoidance theorem.  This deliberately distinguishes old ends from the newly
+removed points, where `PunctureLogRatioBound` supplies logarithmic growth.
+The focused build passes.

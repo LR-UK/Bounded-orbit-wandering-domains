@@ -1,6 +1,7 @@
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
 import BoundedWanderingDomains.Surfaces.CompactDiscImages
 import BoundedWanderingDomains.Surfaces.DomainSchwarz
+import BoundedWanderingDomains.Surfaces.DiscAvoidanceRatio
 
 /-! # Uniform metric comparison tending to one outside compact sets
 
@@ -75,5 +76,51 @@ theorem domainDensity_ratio_near_one_outside_compact (p : DiscCover M)
   · apply (le_div_iff₀ (p.domainDensity_pos U hc (x := ⟨(x : M),hVU x.property⟩) hxc)).mpr
     simpa only [one_mul] using p.domainDensity_mono hVU hc (x := x) hxc
   · simpa only [one_div_one_div] using hbound U V hVU hVK c hc x hxC hxc
+
+/-- Along any specified old end, removing a fixed compact set changes the
+hyperbolic density by a factor tending to one.  The hypothesis is deliberately
+phrased as escape in the old ambient surface: it excludes convergence to one
+of the newly removed points, where the quotient instead has logarithmic
+growth. -/
+theorem densityRatio_tendsto_one_of_tendsto_cocompact
+    (p : DiscCover M) {K : Set M} (hK : IsCompact K)
+    {U : TopologicalSpace.Opens M} (hU : ∀ y : M, y ∈ U ↔ y ∉ K)
+    (q : DiscCover U) {ι : Type*} {l : Filter ι} (x : ι → U)
+    (hx : Tendsto (fun i => (x i : M)) l (cocompact M)) :
+    Tendsto (fun i => p.densityRatio q (x i)) l (𝓝 1) := by
+  apply Metric.tendsto_nhds.mpr
+  intro ε hε
+  let δ : ℝ := ε / 2
+  have hδ : 0 < δ := by dsimp [δ]; linarith
+  let r : ℝ := 1 / (1 + δ)
+  have hr : 0 < r := one_div_pos.mpr (by dsimp [δ]; linarith)
+  have hr1 : r < 1 := (div_lt_one (by dsimp [δ]; linarith)).mpr (by linarith)
+  obtain ⟨C, hC, havoid⟩ := p.compact_uniform_avoidance_outside hK hr1
+  filter_upwards [hx.eventually hC.compl_mem_cocompact] with i hi
+  have hupper : p.densityRatio q (x i) ≤ 1 + δ := by
+    have h := p.densityRatio_le_of_disc_avoidance q hr hr1.le
+      (fun g hg hg0 z hz => by
+        apply (hU _).mpr
+        exact havoid g hg (hg0.symm ▸ hi) z hz.le)
+    simpa only [r, one_div_one_div] using h
+  have hlower : 1 ≤ p.densityRatio q (x i) := p.one_le_densityRatio q _
+  rw [Real.dist_eq]
+  have habs : |p.densityRatio q (x i) - 1| = p.densityRatio q (x i) - 1 :=
+    abs_of_nonneg (sub_nonneg.mpr hlower)
+  rw [habs]
+  dsimp only [δ] at hupper
+  linarith
+
+/-- Logarithmic form of the old-end comparison. -/
+theorem log_densityRatio_tendsto_zero_of_tendsto_cocompact
+    (p : DiscCover M) {K : Set M} (hK : IsCompact K)
+    {U : TopologicalSpace.Opens M} (hU : ∀ y : M, y ∈ U ↔ y ∉ K)
+    (q : DiscCover U) {ι : Type*} {l : Filter ι} (x : ι → U)
+    (hx : Tendsto (fun i => (x i : M)) l (cocompact M)) :
+    Tendsto (fun i => Real.log (p.densityRatio q (x i))) l (𝓝 0) := by
+  change Tendsto (Real.log ∘ fun i => p.densityRatio q (x i)) l (𝓝 0)
+  simpa only [Real.log_one] using
+    (Real.continuousAt_log one_ne_zero).tendsto.comp
+    (p.densityRatio_tendsto_one_of_tendsto_cocompact hK hU q x hx)
 
 end AreaDeficit.Surfaces.DiscCover
