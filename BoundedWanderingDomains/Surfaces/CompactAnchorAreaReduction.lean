@@ -4,6 +4,7 @@ import BoundedWanderingDomains.Surfaces.PositiveAreaAdvanceReduction
 import BoundedWanderingDomains.Surfaces.PositiveAreaBridge
 import BoundedWanderingDomains.Surfaces.GlobalFinitePunctureArea
 import BoundedWanderingDomains.Surfaces.CompactFinitePunctureArea
+import BoundedWanderingDomains.Surfaces.SphereGlobalPointInsertion
 
 /-! # Compact anchor-complement area reduction -/
 
@@ -61,6 +62,24 @@ theorem anchorComplement_globalFinitePunctureAreaPackage_of_pointInsertion
     (AreaDeficit.Surfaces.anchorComplement E).isOpen.locallyCompactSpace
   exact p.globalFinitePunctureAreaPackage_of_pointInsertion q
     (anchorComplement_hyperbolicArea_lt_top E p) hC hpoint
+
+/-- On a compact surface biholomorphic to the sphere, three distinct anchors
+give the complete finite-puncture area package, with the sharp one-point cost
+`2π`.  This is the compact sphere branch of the global area reduction. -/
+theorem anchorComplement_globalFinitePunctureAreaPackage_of_diffeomorph_sphere
+    [CompactSpace X] [IsManifold 𝓘(ℂ) ⊤ X]
+    {a b c : X} (hab : a ≠ b) (hac : a ≠ c) (hbc : b ≠ c)
+    (e : X ≃ₘ^⊤⟮𝓘(ℂ), 𝓘(ℂ)⟯ ℂ̂)
+    (p : AreaDeficit.Surfaces.DiscCover
+      (AreaDeficit.Surfaces.anchorComplement ({a, b, c} : Finset X)))
+    (q : ℕ) :
+    p.GlobalFinitePunctureAreaPackage q := by
+  apply anchorComplement_globalFinitePunctureAreaPackage_of_pointInsertion
+      ({a, b, c} : Finset X) p q
+      (ENNReal.ofReal_ne_top : ENNReal.ofReal (2 * Real.pi) ≠ ⊤)
+  exact p.uniformGlobalPointInsertionBound_of_diffeomorph_sphere
+    hab hac hbc e _
+      (by intro x; simp [AreaDeficit.Surfaces.anchorComplement])
 
 /-- On a compact surface with fixed hyperbolising anchors, the last global
 point-removal input is exactly the total-area increase caused by inserting

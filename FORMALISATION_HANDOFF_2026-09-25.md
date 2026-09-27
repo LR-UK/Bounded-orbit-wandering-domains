@@ -867,3 +867,10 @@ constant.  The focused module build passes.  The next analytic package should
 combine this estimate with the existing positive-part cutoff and chart
 Laplacian identities to bound the Riesz mass contributed by each newly removed
 point.
+
+The compact sphere branch is now connected to the generic anchor-complement
+package.  For a compact surface smoothly biholomorphic to the sphere, three
+distinct anchors give `GlobalFinitePunctureAreaPackage q` for every `q`; the
+proof merely feeds the sharp sphere insertion theorem into the existing
+finite-area/telescoping theorem, so no parallel area argument is introduced.
+The focused build passes.
