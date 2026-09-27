@@ -811,3 +811,16 @@ The finite measure assembly is also compiled as `hyperbolicArea_univ_lt_top_of_f
 The previously formalised coordinate-disk removal does close the noncompact and proper-source branches, but does not by itself close the compact globally-defined positive-area case: after deleting finite anchors, the reduced saturation can accumulate at those anchors and need not be compact in the punctured surface. The finite-total-area/global insertion route remains necessary for that branch unless a separate compact-surface dynamics classification is formalised.
 
 The anchor-complement specialization now proves the same equivalence with all finite-stage area finiteness discharged from compactness and the cusp theorem. Its focused build passed (4055 jobs). The exact remaining geometric statement on a fixed anchor complement is therefore: inserting one point raises total hyperbolic area by at most one finite uniform constant (sharply, 2π).
+
+## 27 September local continuation: normalized sphere insertion bound
+
+`Surfaces/SphereGlobalPointInsertion.lean` proves the sharp uniform global
+one-point insertion estimate with constant `2π` on the normalized
+three-punctured sphere.  The proof restricts the finite Riemann-sphere chart,
+checks holomorphy in both directions, and invokes the existing planar
+point-removal theorem.  `SubdomainDensity.lean` now includes the reusable
+inverse-chart restriction lemma needed for this construction.  The focused
+build passed (4045 modules), with no `sorryAx` in the new theorem.  The next
+sphere step is transport from the normalized punctures to arbitrary three
+anchors; the remaining compact non-sphere step is still the intrinsic global
+point-insertion estimate (equivalently, the one-puncture total-area increment).

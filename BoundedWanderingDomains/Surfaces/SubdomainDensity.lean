@@ -1,5 +1,6 @@
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
 import BoundedWanderingDomains.Surfaces.HyperbolicArea
+import BoundedWanderingDomains.Surfaces.SubtypeHolomorphic
 open Set Function Filter Metric MeasureTheory
 open scoped Manifold Topology ENNReal
 namespace AreaDeficit.Surfaces
@@ -15,6 +16,27 @@ theorem mdifferentiableOn_subtypeRestr {U : TopologicalSpace.Opens M} (hU : None
   have hd := ((hc _ hxc).mdifferentiableAt (c.open_source.mem_nhds hxc)).comp x
     (mdifferentiable_subtype_val U x)
   exact hd.mdifferentiableWithinAt
+
+omit [IsManifold 𝓘(ℂ) 1 M] in
+/-- The inverse of a holomorphic chart remains holomorphic after restricting
+its source to an open subtype. -/
+theorem mdifferentiableOn_subtypeRestr_symm
+    {U : TopologicalSpace.Opens M} (hU : Nonempty U)
+    {c : OpenPartialHomeomorph M ℂ}
+    (hci : MDifferentiableOn 𝓘(ℂ) 𝓘(ℂ) c.symm c.target) :
+    MDifferentiableOn 𝓘(ℂ) 𝓘(ℂ) (c.subtypeRestr hU).symm
+      (c.subtypeRestr hU).target := by
+  intro z hz
+  apply ((mdifferentiableAt_subtypeVal_comp_iff U
+    (c.subtypeRestr hU).symm z).mp ?_).mdifferentiableWithinAt
+  have hzt : z ∈ c.target := (c.subtypeRestr_target_subset hU) hz
+  have hd := (hci z hzt).mdifferentiableAt (c.open_target.mem_nhds hzt)
+  apply hd.congr_of_eventuallyEq
+  exact Filter.EventuallyEq.filter_mono
+    (Filter.eventuallyEq_of_mem
+      ((c.subtypeRestr hU).open_target.mem_nhds hz)
+      (c.subtypeRestr_symm_eqOn hU).symm)
+    le_rfl
 namespace DiscCover
 theorem density_subdomain_le (p : DiscCover M) {U : TopologicalSpace.Opens M}
     (q : DiscCover U) (hU : Nonempty U) {c : OpenPartialHomeomorph M ℂ}
