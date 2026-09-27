@@ -98,6 +98,3 @@ theorem uniform_compact_gain_in_pole_chart
     (compact_sphere_set_in_pole_chart hK hpK) hLKchart
 
 end AreaDeficit
-
-#print axioms AreaDeficit.compact_sphere_set_in_pole_chart
-#print axioms AreaDeficit.uniform_compact_gain_in_pole_chart

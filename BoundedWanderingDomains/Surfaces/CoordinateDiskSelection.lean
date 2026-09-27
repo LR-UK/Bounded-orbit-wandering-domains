@@ -100,7 +100,3 @@ theorem exists_discCovered_coordDisk_compl_of_isClosed
   exact (hD hyD) hyK
 
 end SurfaceDynamics
-
-#print axioms SurfaceDynamics.exists_coordDisk_closedCarrier_subset_diff
-#print axioms SurfaceDynamics.exists_coordDisk_center_closedCarrier_subset
-#print axioms SurfaceDynamics.exists_discCovered_coordDisk_compl_of_isClosed

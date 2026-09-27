@@ -98,6 +98,3 @@ theorem eventually_injOn_chartDisc_of_cluster_disjoint_singularDerivedSet
     (ComplexDynamics.singularValues f) hU hu hub hz hu0 hdis hsep hr hr1
 
 end AreaDeficit
-
-#print axioms AreaDeficit.eventually_chartDisc_avoid_of_cluster_disjoint_sphericalDerivedSet
-#print axioms AreaDeficit.eventually_injOn_chartDisc_of_cluster_disjoint_singularDerivedSet

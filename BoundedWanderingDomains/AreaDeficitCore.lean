@@ -1,7 +1,8 @@
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 import Mathlib.Analysis.SpecialFunctions.Exp
-import Mathlib.Tactic
-
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Positivity
 /-!
 # The regularisation-to-area-bound implication
 
@@ -217,10 +218,3 @@ theorem positive_part_area_bound
       (hsrc n) (hrest n) (hprod n) hL (green n)
 
 end AreaDeficitCore
-
-#print axioms AreaDeficitCore.curvature_sign
-#print axioms AreaDeficitCore.primitive_bounds
-#print axioms AreaDeficitCore.slope_scaled_tendsto
-#print axioms AreaDeficitCore.smooth_cutoff_bound
-#print axioms AreaDeficitCore.fatou_uniform_bound
-#print axioms AreaDeficitCore.positive_part_area_bound

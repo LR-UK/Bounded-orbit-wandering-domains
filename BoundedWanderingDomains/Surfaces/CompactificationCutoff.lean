@@ -285,6 +285,3 @@ theorem chartZeroExtensionIn_restrictedSurfaceLogCutoffDiff
 
 end FinitePunctureDiscs
 end AreaDeficit.Surfaces
-
-#print axioms AreaDeficit.Surfaces.FinitePunctureDiscs.restrictedCutoff_hasCompactSupport
-

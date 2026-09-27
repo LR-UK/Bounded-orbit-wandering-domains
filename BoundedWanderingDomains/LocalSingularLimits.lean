@@ -101,5 +101,3 @@ theorem local_wandering_orbit_subsequence_spherical_singular_derivedSet
   rwa [ComplexDynamics.derivedSet_sphericalSingularValuesOn]
 
 end BoundedWanderingDomains
-
-#print axioms BoundedWanderingDomains.local_wandering_orbit_subsequence_spherical_singular_derivedSet

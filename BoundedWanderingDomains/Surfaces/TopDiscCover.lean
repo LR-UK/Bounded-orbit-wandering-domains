@@ -32,5 +32,3 @@ noncomputable def DiscCover.top (p : DiscCover X) :
     exact ⟨z, Subtype.ext hz⟩
 
 end AreaDeficit.Surfaces
-
-#print axioms AreaDeficit.Surfaces.DiscCover.top

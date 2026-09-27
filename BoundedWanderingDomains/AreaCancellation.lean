@@ -39,17 +39,7 @@ theorem finite_area_cancellation {α : Type*} [MeasurableSpace α]
     (himage : f '' W ⊆ W \ B)
     (hadvance : μ W ≤ ν (f '' W) + C)
     (hcost : ν (f '' W) ≤ μ (f '' W) + D) : μ B ≤ D + C := by
-  have hrem : μ (W \ B) ≠ ∞ := ne_top_of_le_ne_top hfinite (measure_mono sdiff_subset)
-  have hsplit : μ B + μ (W \ B) = μ W := by
-    simpa only [inter_eq_right.mpr hBW] using measure_inter_add_sdiff W hB
-  have hh : μ B + μ (W \ B) ≤ (D + C) + μ (W \ B) := by
-    calc
-      μ B + μ (W \ B) = μ W := hsplit
-      _ ≤ ν (f '' W) + C := hadvance
-      _ ≤ (μ (f '' W) + D) + C := by gcongr
-      _ ≤ (μ (W \ B) + D) + C := by gcongr
-      _ = (D + C) + μ (W \ B) := by ac_rfl
-  exact (ENNReal.add_le_add_iff_right hrem).mp hh
+  exact finite_area_cancellation_le hB hBW hfinite himage hadvance hcost
 
 theorem wandering_area_bound {α : Type*} [MeasurableSpace α]
     {μ ν : Measure α} {f : α → α} {B : Set α} {C D : ℝ≥0∞}

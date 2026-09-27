@@ -1,10 +1,10 @@
 # Proof dependency audit
 
-PaperSolution imports 773 local source modules transitively.
+PaperSolution imports 770 local source modules transitively.
 
 | Source group | Modules |
 |---|---:|
-| BoundedWanderingDomains | 360 |
+| BoundedWanderingDomains | 357 |
 | CoveringSolution.lean | 1 |
 | EremenkoLyubichConstant | 18 |
 | PaperSolution.lean | 1 |
@@ -16,16 +16,8 @@ PaperSolution imports 773 local source modules transitively.
 | dependencies/EremenkosConjecture | 139 |
 | dependencies/FunctionTheory | 120 |
 
-Each module and its source hash is listed in paper-submission.json.
-The graph excludes pinned Mathlib/core modules from local counts.
-
-Contained FunctionTheory, ComplexDynamics, ComplexApproximation and
-EremenkosConjecture dependencies remain in the checked import closure.
-Planar filling and Jordan-domain topology use the approximation/topology
-packages; normal-family and sphere foundations use the other attributed
-libraries. Package removal has therefore not been inferred from a name
-or from whether its main advertised theorem appears in the final statement.
-
-The old unused CompactComplementCovering and CheckCovering experiments
-were removed from the delivered source and preserved in local scratch.
-Earlier proved entry points remain separate and continue to compile.
+Each module and its normalized source hash is listed in paper-submission.json.
+Pinned Mathlib and Lean/core modules are excluded from these local counts.
+The import audit removed unused local modules from the paper closure;
+they remain checked by the optional full build. All four active local dependency
+packages are needed by the proof. See BUILD_AUDIT.md for the full audit.

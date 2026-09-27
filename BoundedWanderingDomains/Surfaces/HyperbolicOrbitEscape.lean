@@ -189,5 +189,3 @@ theorem compactComponentOrbitImpossibleClaim_of_discCover
       fun w hw => hx w (le_of_lt hw)⟩
 
 end SurfaceDynamics
-
-#print axioms SurfaceDynamics.compactComponentOrbitImpossibleClaim_of_discCover

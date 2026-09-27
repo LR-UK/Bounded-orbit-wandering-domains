@@ -94,5 +94,3 @@ theorem finitePunctureDomain_area_univ_finite_of_hyperbolicArea_univ_finite
     (ENNReal.add_lt_top.mpr ⟨hinfin, houtfin⟩)
 
 end AreaDeficit.Surfaces.DiscCover
-
-#print axioms AreaDeficit.Surfaces.DiscCover.finitePunctureDomain_area_univ_finite_of_hyperbolicArea_univ_finite

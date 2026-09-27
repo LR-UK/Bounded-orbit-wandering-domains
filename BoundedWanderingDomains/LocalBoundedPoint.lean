@@ -104,5 +104,3 @@ theorem no_wandering_local_orbit_of_compact_point (G : FinitePunctureMetricInput
     hV hVc hf hn hL hδV hab ha hb hz hU hnext hdis hu hub hu0 hcompact hinj
 
 end AreaDeficit.FinitePunctureMetricInput
-
-#print axioms AreaDeficit.FinitePunctureMetricInput.no_wandering_local_orbit_of_compact_point

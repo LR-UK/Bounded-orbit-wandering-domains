@@ -91,5 +91,3 @@ theorem exists_finite_backward_orbit_models (f : ℂ → ℂ) (a b : ℂ) :
       exact mem_iUnion.mpr ⟨i, hchainP i i le_rfl (hchain i 0 (Nat.zero_le _))⟩
 
 end BoundedWanderingDomains
-
-#print axioms BoundedWanderingDomains.exists_finite_backward_orbit_models

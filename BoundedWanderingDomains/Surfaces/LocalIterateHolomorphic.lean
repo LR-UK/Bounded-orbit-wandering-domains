@@ -60,5 +60,3 @@ theorem mdifferentiable_orbitOn (f : LocalMap X) (hf : IsOpenHolomorphic f)
       exact f.orbitOn_succ W hW n x
 
 end SurfaceDynamics.LocalMap
-
-#print axioms SurfaceDynamics.LocalMap.mdifferentiable_orbitOn

@@ -154,5 +154,3 @@ theorem isOpenHolomorphic_restrictSource (f : LocalMap X)
 
 end LocalMap
 end SurfaceDynamics
-
-#print axioms SurfaceDynamics.LocalMap.isOpenHolomorphic_restrictSource

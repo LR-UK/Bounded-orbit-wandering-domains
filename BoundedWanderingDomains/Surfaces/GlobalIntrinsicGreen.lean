@@ -135,8 +135,3 @@ theorem domainAreaGain_lintegral_eq_intrinsic
   exact p.finite_chart_green_eq_intrinsic hVU P hchi hcompact hchiV
 
 end AreaDeficit.Surfaces.DiscCover
-
-#print axioms AreaDeficit.Surfaces.DiscCover.finite_chart_green_eq_intrinsic
-#print axioms AreaDeficit.Surfaces.DiscCover.domainAreaGain_lintegral_eq_intrinsic
-
-

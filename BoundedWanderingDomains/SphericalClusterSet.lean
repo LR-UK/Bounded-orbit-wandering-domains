@@ -85,6 +85,3 @@ theorem sphericalClusterSet_disjoint_initial
   exact (sphericalClusterSet_subset_of_eventually_mem _ hclosed hev ha) hUa
 
 end BoundedWanderingDomains
-
-#print axioms BoundedWanderingDomains.eventually_mem_of_sphericalClusterSet_subset
-#print axioms BoundedWanderingDomains.sphericalClusterSet_disjoint_initial

@@ -384,29 +384,29 @@
       "title": "FiniteOrbitLocalDegree",
       "imports": [
         "Mathlib.Analysis.Analytic.Order",
-        "Mathlib.Logic.Function.Iterate",
-        "Mathlib.Tactic"
+        "Mathlib.Analysis.Complex.Basic",
+        "Mathlib.Logic.Function.Iterate"
       ],
       "declarations": [
         {
           "kind": "theorem",
           "name": "iterate_eq_of_finite_orbit_values",
-          "line": 14
+          "line": 13
         },
         {
           "kind": "theorem",
           "name": "analyticAt_iterate_of_finite_orbit",
-          "line": 26
+          "line": 25
         },
         {
           "kind": "theorem",
           "name": "centered_local_degree_comp",
-          "line": 38
+          "line": 37
         },
         {
           "kind": "theorem",
           "name": "iterate_value_and_local_degree_eq_of_finite_orbit_data",
-          "line": 50
+          "line": 49
         }
       ]
     },
@@ -1168,13 +1168,15 @@
       "imports": [
         "Mathlib.Analysis.Complex.Basic",
         "Mathlib.Topology.Order.Compact",
-        "Mathlib.Tactic"
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.NormNum",
+        "Mathlib.Tactic.Ring"
       ],
       "declarations": [
         {
           "kind": "theorem",
           "name": "exists_bloch_selection",
-          "line": 15
+          "line": 16
         }
       ]
     },
@@ -1583,7 +1585,8 @@
       "imports": [
         "Mathlib.Analysis.SpecialFunctions.Trigonometric.DerivHyp",
         "Mathlib.Analysis.Complex.Norm",
-        "Mathlib.Tactic"
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.Ring"
       ],
       "declarations": [
         {
@@ -1606,7 +1609,8 @@
       "imports": [
         "TauCeti.Analysis.Complex.BranchLogRoot",
         "Mathlib.Analysis.Complex.Trigonometric",
-        "Mathlib.Tactic"
+        "Mathlib.Tactic.NormNum",
+        "Mathlib.Tactic.Ring"
       ],
       "declarations": [
         {
@@ -3343,28 +3347,31 @@
         "Mathlib.Analysis.Real.Pi.Bounds",
         "Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic",
         "Mathlib.Analysis.Complex.Norm",
-        "Mathlib.Tactic"
+        "Mathlib.Tactic.FieldSimp",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.NormNum",
+        "Mathlib.Tactic.Ring"
       ],
       "declarations": [
         {
           "kind": "theorem",
           "name": "arcosh_add_one_le",
-          "line": 13
+          "line": 15
         },
         {
           "kind": "theorem",
           "name": "exists_nearby_integer_cosh",
-          "line": 32
+          "line": 34
         },
         {
           "kind": "theorem",
           "name": "exists_nearby_integer_cosine",
-          "line": 74
+          "line": 76
         },
         {
           "kind": "theorem",
           "name": "no_ball_subset_double_cosine_lift_image",
-          "line": 103
+          "line": 105
         }
       ]
     },
@@ -5040,28 +5047,28 @@
         "Mathlib.Analysis.Analytic.Polynomial",
         "Mathlib.Analysis.Normed.Field.Lemmas",
         "Mathlib.Algebra.Polynomial.Roots",
-        "Mathlib.Tactic"
+        "Mathlib.Tactic.FunProp"
       ],
       "declarations": [
         {
           "kind": "def",
           "name": "IsRationalMeromorphic",
-          "line": 16
+          "line": 15
         },
         {
           "kind": "theorem",
           "name": "rational_limit_at_infinity",
-          "line": 33
+          "line": 32
         },
         {
           "kind": "theorem",
           "name": "rational_meromorphic_limit_at_infinity",
-          "line": 49
+          "line": 48
         },
         {
           "kind": "theorem",
           "name": "not_rational_meromorphic_of_two_sequences",
-          "line": 73
+          "line": 72
         }
       ]
     },
@@ -5228,298 +5235,302 @@
         "Mathlib.Analysis.Analytic.Constructions",
         "Mathlib.Analysis.Normed.Field.Lemmas",
         "Mathlib.Geometry.Manifold.Algebra.LieGroup",
-        "Mathlib.Tactic"
+        "Mathlib.Tactic.Cases",
+        "Mathlib.Tactic.Convert",
+        "Mathlib.Tactic.Ext",
+        "Mathlib.Tactic.Linarith",
+        "Aesop"
       ],
       "declarations": [
         {
           "kind": "abbrev",
           "name": "OneDimension.I",
-          "line": 21
+          "line": 24
         },
         {
           "kind": "def",
           "name": "OnePoint.toComplex",
-          "line": 50
+          "line": 53
         },
         {
           "kind": "theorem",
           "name": "coe_zero",
-          "line": 60
+          "line": 63
         },
         {
           "kind": "theorem",
           "name": "coe_eq_coe",
-          "line": 61
+          "line": 64
         },
         {
           "kind": "theorem",
           "name": "coe_eq_zero",
-          "line": 62
+          "line": 65
         },
         {
           "kind": "theorem",
           "name": "injective_coe",
-          "line": 66
-        },
-        {
-          "kind": "theorem",
-          "name": "continuous_coe",
           "line": 69
         },
         {
           "kind": "theorem",
-          "name": "rec_coe",
+          "name": "continuous_coe",
           "line": 72
         },
         {
           "kind": "theorem",
+          "name": "rec_coe",
+          "line": 75
+        },
+        {
+          "kind": "theorem",
           "name": "rec_inf",
-          "line": 74
+          "line": 77
         },
         {
           "kind": "theorem",
           "name": "map_rec",
-          "line": 76
+          "line": 79
         },
         {
           "kind": "theorem",
           "name": "inf_ne_coe",
-          "line": 83
+          "line": 86
         },
         {
           "kind": "theorem",
           "name": "inf_ne_zero",
-          "line": 85
-        },
-        {
-          "kind": "theorem",
-          "name": "zero_ne_inf",
-          "line": 87
-        },
-        {
-          "kind": "theorem",
-          "name": "coe_ne_inf",
           "line": 88
         },
         {
           "kind": "theorem",
-          "name": "coe_eq_inf_iff",
-          "line": 89
+          "name": "zero_ne_inf",
+          "line": 90
         },
         {
           "kind": "theorem",
-          "name": "toComplex_coe",
+          "name": "coe_ne_inf",
+          "line": 91
+        },
+        {
+          "kind": "theorem",
+          "name": "coe_eq_inf_iff",
           "line": 92
         },
         {
           "kind": "theorem",
+          "name": "toComplex_coe",
+          "line": 95
+        },
+        {
+          "kind": "theorem",
           "name": "toComplex_inf",
-          "line": 93
+          "line": 96
         },
         {
           "kind": "theorem",
           "name": "coe_toComplex",
-          "line": 94
+          "line": 97
         },
         {
           "kind": "lemma",
           "name": "toComplex_zero",
-          "line": 98
+          "line": 101
         },
         {
           "kind": "lemma",
           "name": "toComplex_eq_zero",
-          "line": 99
+          "line": 102
         },
         {
           "kind": "theorem",
           "name": "continuousAt_toComplex",
-          "line": 103
+          "line": 106
         },
         {
           "kind": "theorem",
           "name": "continuousOn_toComplex",
-          "line": 105
+          "line": 108
         },
         {
           "kind": "lemma",
           "name": "toComplex_inj",
-          "line": 111
+          "line": 114
         },
         {
           "kind": "def",
           "name": "inv",
-          "line": 118
+          "line": 121
         },
         {
           "kind": "theorem",
           "name": "inv_def",
-          "line": 120
+          "line": 123
         },
         {
           "kind": "lemma",
           "name": "inv_zero'",
-          "line": 131
+          "line": 134
         },
         {
           "kind": "theorem",
           "name": "inv_coe",
-          "line": 132
+          "line": 135
         },
         {
           "kind": "lemma",
           "name": "inv_eq_inf",
-          "line": 136
+          "line": 139
         },
         {
           "kind": "lemma",
           "name": "inv_eq_zero",
-          "line": 140
+          "line": 143
         },
         {
           "kind": "theorem",
           "name": "toComplex_inv",
-          "line": 147
+          "line": 150
         },
         {
           "kind": "theorem",
           "name": "coe_tendsto_inf",
-          "line": 155
+          "line": 158
         },
         {
           "kind": "theorem",
           "name": "coe_tendsto_inf'",
-          "line": 160
+          "line": 163
         },
         {
           "kind": "lemma",
           "name": "map_some_cobounded",
-          "line": 169
+          "line": 172
         },
         {
           "kind": "theorem",
           "name": "continuous_inv",
-          "line": 173
+          "line": 176
         },
         {
           "kind": "def",
           "name": "invEquiv",
-          "line": 209
+          "line": 212
         },
         {
           "kind": "def",
           "name": "invHomeomorph",
-          "line": 216
+          "line": 219
         },
         {
           "kind": "lemma",
           "name": "invEquiv_apply",
-          "line": 220
+          "line": 223
         },
         {
           "kind": "lemma",
           "name": "invEquiv_symm",
-          "line": 222
+          "line": 225
         },
         {
           "kind": "lemma",
           "name": "invHomeomorph_apply",
-          "line": 224
+          "line": 227
         },
         {
           "kind": "lemma",
           "name": "invHomeomorph_symm",
-          "line": 227
+          "line": 230
         },
         {
           "kind": "def",
           "name": "coePartialEquiv",
-          "line": 233
+          "line": 236
         },
         {
           "kind": "def",
           "name": "coeOpenPartialHomeomorph",
-          "line": 245
+          "line": 248
         },
         {
           "kind": "def",
           "name": "invCoeOpenPartialHomeomorph",
-          "line": 253
-        },
-        {
-          "kind": "lemma",
-          "name": "coePartialEquiv_target",
           "line": 256
         },
         {
           "kind": "lemma",
-          "name": "coeOpenPartialHomeomorph_target",
-          "line": 257
-        },
-        {
-          "kind": "lemma",
-          "name": "invCoeOpenPartialHomeomorph_target",
+          "name": "coePartialEquiv_target",
           "line": 259
         },
         {
           "kind": "lemma",
+          "name": "coeOpenPartialHomeomorph_target",
+          "line": 260
+        },
+        {
+          "kind": "lemma",
+          "name": "invCoeOpenPartialHomeomorph_target",
+          "line": 262
+        },
+        {
+          "kind": "lemma",
           "name": "coePartialEquiv_apply",
-          "line": 265
-        },
-        {
-          "kind": "lemma",
-          "name": "coePartialEquiv_symm_apply",
-          "line": 266
-        },
-        {
-          "kind": "lemma",
-          "name": "invCoeOpenPartialHomeomorph_apply",
           "line": 268
         },
         {
           "kind": "lemma",
+          "name": "coePartialEquiv_symm_apply",
+          "line": 269
+        },
+        {
+          "kind": "lemma",
+          "name": "invCoeOpenPartialHomeomorph_apply",
+          "line": 271
+        },
+        {
+          "kind": "lemma",
           "name": "invCoeOpenPartialHomeomorph_symm_apply",
-          "line": 270
+          "line": 273
         },
         {
           "kind": "theorem",
           "name": "two_charts",
-          "line": 291
+          "line": 294
         },
         {
           "kind": "lemma",
           "name": "chartAt_coe",
-          "line": 295
+          "line": 298
         },
         {
           "kind": "lemma",
           "name": "chartAt_inf",
-          "line": 296
+          "line": 299
         },
         {
           "kind": "theorem",
           "name": "extChartAt_coe",
-          "line": 297
+          "line": 300
         },
         {
           "kind": "theorem",
           "name": "extChartAt_zero",
-          "line": 301
+          "line": 304
         },
         {
           "kind": "theorem",
           "name": "extChartAt_inf",
-          "line": 303
+          "line": 306
         },
         {
           "kind": "theorem",
           "name": "extChartAt_inf_apply",
-          "line": 335
+          "line": 338
         },
         {
           "kind": "theorem",
           "name": "riemannSphere_isManifold",
-          "line": 374
+          "line": 377
         }
       ]
     },
@@ -7954,12 +7965,12 @@
       "external": true
     },
     {
-      "from": "Mathlib.Logic.Function.Iterate",
+      "from": "Mathlib.Analysis.Complex.Basic",
       "to": "FunctionTheory.Analytic.FiniteOrbitLocalDegree",
       "external": true
     },
     {
-      "from": "Mathlib.Tactic",
+      "from": "Mathlib.Logic.Function.Iterate",
       "to": "FunctionTheory.Analytic.FiniteOrbitLocalDegree",
       "external": true
     },
@@ -8399,7 +8410,17 @@
       "external": true
     },
     {
-      "from": "Mathlib.Tactic",
+      "from": "Mathlib.Tactic.Linarith",
+      "to": "FunctionTheory.Conformal.BlochSelection",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Tactic.NormNum",
+      "to": "FunctionTheory.Conformal.BlochSelection",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Tactic.Ring",
       "to": "FunctionTheory.Conformal.BlochSelection",
       "external": true
     },
@@ -8599,7 +8620,12 @@
       "external": true
     },
     {
-      "from": "Mathlib.Tactic",
+      "from": "Mathlib.Tactic.Linarith",
+      "to": "FunctionTheory.Conformal.CosineBounds",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Tactic.Ring",
       "to": "FunctionTheory.Conformal.CosineBounds",
       "external": true
     },
@@ -8614,7 +8640,12 @@
       "external": true
     },
     {
-      "from": "Mathlib.Tactic",
+      "from": "Mathlib.Tactic.NormNum",
+      "to": "FunctionTheory.Conformal.CosineLift",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Tactic.Ring",
       "to": "FunctionTheory.Conformal.CosineLift",
       "external": true
     },
@@ -9499,7 +9530,22 @@
       "external": true
     },
     {
-      "from": "Mathlib.Tactic",
+      "from": "Mathlib.Tactic.FieldSimp",
+      "to": "FunctionTheory.Conformal.SchottkyGrid",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Tactic.Linarith",
+      "to": "FunctionTheory.Conformal.SchottkyGrid",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Tactic.NormNum",
+      "to": "FunctionTheory.Conformal.SchottkyGrid",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Tactic.Ring",
       "to": "FunctionTheory.Conformal.SchottkyGrid",
       "external": true
     },
@@ -10309,7 +10355,7 @@
       "external": true
     },
     {
-      "from": "Mathlib.Tactic",
+      "from": "Mathlib.Tactic.FunProp",
       "to": "FunctionTheory.Meromorphic.RationalInfinity",
       "external": true
     },
@@ -10424,7 +10470,27 @@
       "external": true
     },
     {
-      "from": "Mathlib.Tactic",
+      "from": "Mathlib.Tactic.Cases",
+      "to": "FunctionTheory.RiemannSphere.Basic",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Tactic.Convert",
+      "to": "FunctionTheory.RiemannSphere.Basic",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Tactic.Ext",
+      "to": "FunctionTheory.RiemannSphere.Basic",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Tactic.Linarith",
+      "to": "FunctionTheory.RiemannSphere.Basic",
+      "external": true
+    },
+    {
+      "from": "Aesop",
       "to": "FunctionTheory.RiemannSphere.Basic",
       "external": true
     },

@@ -8,7 +8,9 @@ Extracted unchanged from Dynamics/JuliaFatou/RepellingCycles.lean at
 -/
 import NoWanderingDomains.NormalFamilies.Spherical
 import NoWanderingDomains.Sphere.MobiusAction
-import Mathlib.Tactic
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Positivity
+import Mathlib.Tactic.Ring
 open OnePoint Polynomial Filter Topology Metric Function
 namespace NoWanderingDomains
 

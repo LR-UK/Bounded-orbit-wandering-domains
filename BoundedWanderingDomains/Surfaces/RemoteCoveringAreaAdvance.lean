@@ -102,5 +102,3 @@ theorem exists_uniform_area_advance_of_remote_covering
   exact hsource.trans (htransport.le.trans (hremote E hEq U (f '' W) hfW hfWL))
 
 end AreaDeficit.Surfaces.DiscCover
-
-#print axioms AreaDeficit.Surfaces.DiscCover.exists_uniform_area_advance_of_remote_coverings

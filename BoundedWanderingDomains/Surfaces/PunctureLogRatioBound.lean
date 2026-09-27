@@ -120,6 +120,3 @@ theorem exists_chartLogRatio_le_const_sub_log_norm
       (sub_le_sub_right (le_max_left _ _) _)
 
 end AreaDeficit.Surfaces.DiscCover
-
-#print axioms AreaDeficit.Surfaces.DiscCover.chartLogRatio_le_const_sub_log_norm
-#print axioms AreaDeficit.Surfaces.DiscCover.exists_chartLogRatio_le_const_sub_log_norm

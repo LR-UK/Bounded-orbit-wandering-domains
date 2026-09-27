@@ -119,5 +119,3 @@ theorem no_wandering_chart_orbit_with_eventual_compact_discs (G : FinitePuncture
 
 
 end AreaDeficit.FinitePunctureMetricInput
-
-#print axioms AreaDeficit.FinitePunctureMetricInput.no_wandering_chart_orbit_with_eventual_compact_discs

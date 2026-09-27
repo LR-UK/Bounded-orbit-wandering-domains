@@ -78,6 +78,3 @@ theorem MeromorphicNFOn.mdifferentiable_meromorphicSphereValue
   exact (MeromorphicNFOn.sphereHolomorphicOn_meromorphicSphereValue hf).mdifferentiableOn
 
 end FunctionTheory
-
-#print axioms FunctionTheory.MeromorphicNFOn.sphereHolomorphicOn_meromorphicSphereValue
-#print axioms FunctionTheory.MeromorphicNFOn.mdifferentiable_meromorphicSphereValue

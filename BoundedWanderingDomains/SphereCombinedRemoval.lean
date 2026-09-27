@@ -113,6 +113,3 @@ theorem uniform_compact_finite_gain_sphere_le
   exact htrans.trans (add_le_add hcompact hfiniteL)
 
 end AreaDeficit
-
-#print axioms AreaDeficit.uniform_compact_finite_gain_sphere
-#print axioms AreaDeficit.uniform_compact_finite_gain_sphere_le

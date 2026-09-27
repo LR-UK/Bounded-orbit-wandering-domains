@@ -60,5 +60,3 @@ theorem localPunctures_countable {f : X → X} {V K : Set X}
 end SelfMap
 
 end SurfaceDynamics
-
-#print axioms SurfaceDynamics.localPunctures_countable

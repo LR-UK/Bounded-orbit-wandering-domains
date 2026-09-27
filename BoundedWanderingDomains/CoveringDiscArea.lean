@@ -46,5 +46,3 @@ theorem covering_area_bound (G : FinitePunctureMetricInput)
       exact mul_le_mul_right (hbound n) _
 
 end AreaDeficit.FinitePunctureMetricInput
-
-#print axioms AreaDeficit.FinitePunctureMetricInput.covering_area_bound

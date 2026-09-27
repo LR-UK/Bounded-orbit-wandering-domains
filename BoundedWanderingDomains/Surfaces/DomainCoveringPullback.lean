@@ -79,5 +79,3 @@ theorem domainDensity_covering_pullback_components
   exact hpull
 
 end AreaDeficit.Surfaces.DiscCover
-
-#print axioms AreaDeficit.Surfaces.DiscCover.domainDensity_covering_pullback_components

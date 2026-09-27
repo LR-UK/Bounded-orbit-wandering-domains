@@ -79,6 +79,3 @@ theorem singular_covering_injOn_domain {f : ℂ → ℂ} {U W : Set ℂ} {z : �
   exact covering_injOn_domain hU hUc hW hWc hz (subset_univ U) hf hm hcov
 
 end AreaDeficit
-
-#print axioms ComplexDynamics.isCoveringMapOn_compl_singularValues
-#print axioms AreaDeficit.singular_covering_injOn_domain

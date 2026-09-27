@@ -158,5 +158,3 @@ theorem wanderingDerivedSingularLimitClaim : WanderingDerivedSingularLimitClaim 
     nonEscapingWanderingOrbitClusterMeetsDerivedClaim
 
 end SurfaceDynamics
-
-#print axioms SurfaceDynamics.wanderingDerivedSingularLimitClaim

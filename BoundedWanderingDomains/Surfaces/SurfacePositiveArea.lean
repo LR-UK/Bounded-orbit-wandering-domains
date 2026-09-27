@@ -31,5 +31,3 @@ theorem noCompactPositiveAreaWanderingSetClaim :
       ⟨K, hK, hKuniv, hKs, hsatK⟩
 
 end SurfaceDynamics
-
-#print axioms SurfaceDynamics.noCompactPositiveAreaWanderingSetClaim

@@ -34,5 +34,3 @@ theorem tendsto_cocompact_openSubtype_of_tendsto_boundary
   exact hi ⟨x i, hxi, rfl⟩
 
 end AreaDeficit.Surfaces
-
-#print axioms AreaDeficit.Surfaces.tendsto_cocompact_openSubtype_of_tendsto_boundary

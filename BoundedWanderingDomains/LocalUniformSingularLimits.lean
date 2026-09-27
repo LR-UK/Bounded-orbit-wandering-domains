@@ -89,5 +89,3 @@ theorem local_wandering_orbit_locallyUniform_singular_derivedSet
   exact hg.congr_right (fun w hw => OnePoint.coe_injective (hconst w hw))
 
 end BoundedWanderingDomains
-
-#print axioms BoundedWanderingDomains.local_wandering_orbit_locallyUniform_singular_derivedSet

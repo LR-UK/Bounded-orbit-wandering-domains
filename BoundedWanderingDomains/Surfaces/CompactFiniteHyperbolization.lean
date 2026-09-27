@@ -154,8 +154,3 @@ theorem DiscCover.nonempty_compl_finset_of_card_three_subset
   exact Finset.card_le_card hEF
 
 end AreaDeficit.Surfaces
-
-#print axioms AreaDeficit.Surfaces.DiscCover.exists_finite_hyperbolizing_punctures
-#print axioms AreaDeficit.Surfaces.DiscCover.nonempty_compl_finset_card_three
-#print axioms AreaDeficit.Surfaces.DiscCover.nonempty_compl_finset_of_three_le_card
-#print axioms AreaDeficit.Surfaces.DiscCover.nonempty_compl_finset_of_card_three_subset

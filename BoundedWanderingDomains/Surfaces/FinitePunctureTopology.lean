@@ -156,8 +156,3 @@ theorem nonempty_finitePuncture (p : DiscCover M) (F : Finset M) :
   exact p.nonempty_subdomain O
 
 end AreaDeficit.Surfaces.DiscCover
-
-#print axioms RiemannDynamics.isConnected_compl_finset
-#print axioms RiemannDynamics.noncompact_compl_finset
-#print axioms AreaDeficit.Surfaces.DiscCover.nonempty_finitePuncture
-#print axioms AreaDeficit.Surfaces.DiscCover.nonempty_of_le_open

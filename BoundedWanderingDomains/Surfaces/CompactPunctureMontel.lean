@@ -50,5 +50,3 @@ theorem DiscCover.exists_normal_disc_subsequence_finite_complement
       hφ.comp (by intro n m hnm; exact Nat.add_lt_add_right (hψ hnm) N), hconv⟩
 
 end AreaDeficit.Surfaces
-
-#print axioms AreaDeficit.Surfaces.DiscCover.exists_normal_disc_subsequence_finite_complement

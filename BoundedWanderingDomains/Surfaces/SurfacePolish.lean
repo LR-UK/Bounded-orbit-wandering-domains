@@ -82,5 +82,3 @@ noncomputable def surfacePolishSpace : PolishSpace X := by
   exact OnePoint.isOpenEmbedding_coe.toIsEmbedding.toHomeomorph.isClosedEmbedding.polishSpace
 
 end AreaDeficit.Surfaces
-
-#print axioms AreaDeficit.Surfaces.surfacePolishSpace

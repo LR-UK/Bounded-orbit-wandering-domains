@@ -45,5 +45,3 @@ theorem infty_mem_derivedSet_sphericalSingularValues_iff (f : ℂ → ℂ) :
   rfl
 
 end ComplexDynamics
-
-#print axioms ComplexDynamics.infty_mem_derivedSet_sphericalSingularValues_iff

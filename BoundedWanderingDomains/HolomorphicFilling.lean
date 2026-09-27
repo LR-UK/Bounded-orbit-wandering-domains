@@ -61,5 +61,3 @@ theorem norm_le_on_fill {g : ℂ → ℂ} {K : Set ℂ} {M : ℝ}
     (fun w hw => hb w (hfront hw)) (subset_closure (mem_connectedComponentIn hzK))
 
 end AreaDeficit
-
-#print axioms AreaDeficit.image_fill_subset_fill_image

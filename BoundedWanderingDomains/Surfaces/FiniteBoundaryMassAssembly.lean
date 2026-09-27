@@ -107,9 +107,3 @@ theorem measure_univ_le_of_eventually_bounded_riesz_cutoffs
     exact (le_abs_self (boundary (n + N))).trans (hN _ (Nat.le_add_left N n))
 
 end AreaDeficit.Surfaces
-
-#print axioms AreaDeficit.Surfaces.tendsto_finset_sum_zero
-#print axioms AreaDeficit.Surfaces.eventually_abs_finset_sum_le
-#print axioms AreaDeficit.Surfaces.eventually_bounded_old_new_boundary_sum
-#print axioms AreaDeficit.Surfaces.measure_univ_le_of_cutoff_lintegrals
-#print axioms AreaDeficit.Surfaces.measure_univ_le_of_eventually_bounded_riesz_cutoffs

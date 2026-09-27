@@ -70,5 +70,3 @@ theorem fatou_orbit_eq_trapped_components {f : ℂ → ℂ} {U : ℕ → Set ℂ
     exact connectedComponentIn_mono _ (trapped_interior_subset_fatou hf hn hV)
 
 end AreaDeficit
-
-#print axioms AreaDeficit.fatou_orbit_eq_trapped_components

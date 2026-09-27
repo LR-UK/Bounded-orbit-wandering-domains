@@ -66,5 +66,3 @@ theorem IsWanderingComponent.exists_compact_hyperbolic_restricted_tail
     (horbit (n + 1)) hmemV0
 
 end SurfaceDynamics.LocalMap
-
-#print axioms SurfaceDynamics.LocalMap.IsWanderingComponent.exists_compact_hyperbolic_restricted_tail

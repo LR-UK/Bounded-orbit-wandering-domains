@@ -172,6 +172,3 @@ theorem domain_chart_green_nonneg
   · simp [image_eq_zero_of_notMem_tsupport hz]
 
 end AreaDeficit.Surfaces.DiscCover
-
-#print axioms AreaDeficit.Surfaces.DiscCover.domainAreaGain_lintegral_eq_chart_green
-#print axioms AreaDeficit.Surfaces.DiscCover.domain_chart_green_nonneg

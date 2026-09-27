@@ -1,6 +1,7 @@
 import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
-import Mathlib.Tactic
-
+import Mathlib.Tactic.Choose
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.NormNum
 open Set Filter Function
 open scoped Topology
 

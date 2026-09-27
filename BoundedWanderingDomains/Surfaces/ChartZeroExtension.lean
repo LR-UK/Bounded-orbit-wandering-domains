@@ -142,5 +142,3 @@ theorem hasCompactSupport_chartZeroExtension
       hK.isClosed
 
 end AreaDeficit.Surfaces
-
-#print axioms AreaDeficit.Surfaces.contDiff_chartZeroExtension

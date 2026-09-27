@@ -43,6 +43,3 @@ theorem false_of_positive_area_finite_model_bounds
     p P hP hA hpos hAP hC hbound
 
 end SurfaceDynamics
-
-#print axioms SurfaceDynamics.false_of_positive_area_finite_model_bounds
-#print axioms SurfaceDynamics.false_of_positive_hyperbolicArea_finite_model_bounds

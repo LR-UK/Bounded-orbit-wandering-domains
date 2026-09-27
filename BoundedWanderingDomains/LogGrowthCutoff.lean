@@ -118,7 +118,3 @@ theorem tendsto_integral_mul_laplacian_logCutoff_zero
     simpa only [H, one_mul, zero_mul, zero_add, add_zero] using hsmall)
 
 end AreaDeficit
-
-#print axioms AreaDeficit.integral_mul_laplacian_logCutoff_le_of_log_growth
-#print axioms AreaDeficit.integral_mul_laplacian_logCutoff_neg_two_neg_one_le
-#print axioms AreaDeficit.tendsto_integral_mul_laplacian_logCutoff_zero

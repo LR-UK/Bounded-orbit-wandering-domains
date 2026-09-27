@@ -262,13 +262,3 @@ theorem omega_restrictAmbient_restrictSource_subset
   exact f.restrictSource_omega_subset V hVsource hxro
 
 end SurfaceDynamics.LocalMap
-
-#print axioms SurfaceDynamics.LocalMap.isOpenHolomorphic_restrictAmbient
-#print axioms SurfaceDynamics.LocalMap.restrictAmbient_iterate_val
-#print axioms SurfaceDynamics.LocalMap.mem_restrictAmbient_trapped_iff
-#print axioms SurfaceDynamics.LocalMap.image_restrictAmbient_saturation
-#print axioms SurfaceDynamics.LocalMap.pairwise_disjoint_imageAt_restrictAmbient
-#print axioms SurfaceDynamics.LocalMap.injectiveOnSaturation_restrictAmbient
-#print axioms SurfaceDynamics.LocalMap.omega_restrictAmbient_restrictSource_subset
-
-

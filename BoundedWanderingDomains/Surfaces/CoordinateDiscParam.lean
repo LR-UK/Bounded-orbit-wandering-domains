@@ -119,5 +119,3 @@ theorem isOpenEmbedding_param (D : RiemannDynamics.CoordDisk X) :
       simp only [param, e, a, b, affineHomeomorph_apply, mul_comm, add_comm]
 
 end RiemannDynamics.CoordDisk
-
-#print axioms RiemannDynamics.CoordDisk.mdifferentiable_param

@@ -125,5 +125,3 @@ def EventuallyInjectiveOnLargeDiscs (f : ℂ → ℂ) (U : ℕ → Set ℂ) (z :
       InjOn f (chartDisc u (U n) r)
 
 end AreaDeficit
-
-#print axioms AreaDeficit.mapsTo_chartDisc

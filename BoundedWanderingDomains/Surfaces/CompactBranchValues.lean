@@ -81,5 +81,3 @@ theorem exists_finite_branch_values_on_compact
     hKc a hxa, hfKd a ⟨x, hxa, rfl⟩, hder⟩
 
 end SurfaceDynamics
-
-#print axioms SurfaceDynamics.exists_finite_branch_values_on_compact

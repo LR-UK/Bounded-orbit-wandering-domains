@@ -53,5 +53,3 @@ theorem mem_interior_trapped_restrict_of_compact_orbit
   exact ((D.isOpenEmbedding_param.isOpenMap _ hR).subset_interior_iff.mpr himage) hximage
 
 end SurfaceDynamics.LocalMap
-
-#print axioms SurfaceDynamics.LocalMap.mem_interior_trapped_restrict_of_compact_orbit

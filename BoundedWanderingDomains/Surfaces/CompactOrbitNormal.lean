@@ -187,5 +187,3 @@ theorem mem_omega_of_compact_orbits_in_subsurface
   exact Subtype.ext he
 
 end SurfaceDynamics.LocalMap
-
-#print axioms SurfaceDynamics.LocalMap.mem_omega_of_compact_orbit

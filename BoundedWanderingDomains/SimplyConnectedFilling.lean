@@ -59,5 +59,3 @@ theorem fill_subset_of_isSimplyConnected {K U : Set ℂ}
     hKL hLc.isPreconnected hLu).trans hLU
 
 end AreaDeficit
-
-#print axioms AreaDeficit.fill_subset_of_isSimplyConnected

@@ -144,5 +144,3 @@ theorem eventually_covering_disc_embedded
   simpa only [image_univ, range_domRestrict] using hh
 
 end AreaDeficit.Surfaces
-
-#print axioms AreaDeficit.Surfaces.eventually_covering_disc_embedded

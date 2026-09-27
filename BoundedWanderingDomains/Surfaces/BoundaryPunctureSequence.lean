@@ -281,5 +281,3 @@ theorem exists_boundaryPunctureSequence (f : LocalMap X)
 
 end LocalMap
 end SurfaceDynamics
-
-#print axioms SurfaceDynamics.LocalMap.exists_boundaryPunctureSequence

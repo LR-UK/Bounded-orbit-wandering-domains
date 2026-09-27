@@ -73,6 +73,3 @@ theorem mem_closure_iUnion_finiteStageOnAnchorComplement
     (mem_finiteStageOnAnchorComplement E (P n) yO).mpr hyn⟩
 
 end AreaDeficit.Surfaces
-
-#print axioms AreaDeficit.Surfaces.finiteStageOnAnchorComplement_monotone
-#print axioms AreaDeficit.Surfaces.mem_closure_iUnion_finiteStageOnAnchorComplement

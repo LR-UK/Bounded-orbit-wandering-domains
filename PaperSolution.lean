@@ -3,12 +3,9 @@ Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
 import BoundedWanderingDomains.GlobalLimitStatements
-import BoundedWanderingDomains.MeromorphicNormalityBridge
 import BoundedWanderingDomains.MeromorphicEscape
 import BoundedWanderingDomains.Surfaces.SurfaceOrbitEscape
-import BoundedWanderingDomains.Surfaces.DerivedLimitReduction
 import BoundedWanderingDomains.Surfaces.SurfaceDerivedLimits
-import BoundedWanderingDomains.Surfaces.CompactLocalAreaAdvance
 import BoundedWanderingDomains.Surfaces.SurfacePositiveArea
 
 /-! # Proofs of the revised paper statements
@@ -114,12 +111,3 @@ theorem theorem_1_3_positive_area_hyperbolic
   exact noCompactPositiveAreaWanderingSetClaim_of_isHyperbolic hX
 
 end SurfaceDynamics
-
-#print axioms BoundedWanderingDomains.theorem_1_2_entire
-#print axioms BoundedWanderingDomains.theorem_1_4
-#print axioms MeromorphicDynamics.theorem_1_2_meromorphic
-#print axioms SurfaceDynamics.theorem_1_3_orbit
-#print axioms SurfaceDynamics.theorem_1_5
-#print axioms SurfaceDynamics.theorem_1_3_positive_area
-#print axioms SurfaceDynamics.theorem_1_3_positive_area_noncompact
-#print axioms SurfaceDynamics.theorem_1_3_positive_area_hyperbolic

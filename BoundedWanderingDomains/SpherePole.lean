@@ -47,5 +47,3 @@ theorem exists_sphere_pole_avoiding_compacts
   exact Set.disjoint_left.mp hKL (hKuniv.symm ▸ Set.mem_univ p) hp
 
 end AreaDeficit
-
-#print axioms AreaDeficit.exists_sphere_pole_avoiding_compacts

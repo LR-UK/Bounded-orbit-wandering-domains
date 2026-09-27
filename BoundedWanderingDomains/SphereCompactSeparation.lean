@@ -40,5 +40,3 @@ theorem exists_disjoint_compact_sphere_neighborhoods
   · exact hDV.trans (hV.subset_interior_iff.mpr subset_closure)
 
 end BoundedWanderingDomains
-
-#print axioms BoundedWanderingDomains.exists_disjoint_compact_sphere_neighborhoods

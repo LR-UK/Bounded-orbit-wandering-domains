@@ -82,6 +82,3 @@ theorem exists_invariant_hyperbolic_neighborhood_of_compact_saturation
     exact hxT.2
 
 end SurfaceDynamics.LocalMap
-
-#print axioms SurfaceDynamics.LocalMap.exists_invariant_hyperbolic_neighborhood_of_compact_saturation
-

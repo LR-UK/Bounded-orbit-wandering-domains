@@ -65,5 +65,3 @@ theorem sphereHyperbolicAreaGain_trans
   exact hsplit.trans (add_le_add le_rfl hmono) |>.trans_eq (add_comm _ _)
 
 end AreaDeficit
-
-#print axioms AreaDeficit.sphereHyperbolicAreaGain_trans

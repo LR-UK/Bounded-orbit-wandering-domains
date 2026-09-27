@@ -115,5 +115,3 @@ theorem density_limit_lower (G : FinitePunctureMetricInput)
   linarith
 
 end AreaDeficit.FinitePunctureMetricInput
-
-#print axioms AreaDeficit.FinitePunctureMetricInput.density_limit_lower

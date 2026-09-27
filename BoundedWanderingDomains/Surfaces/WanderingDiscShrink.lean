@@ -89,5 +89,3 @@ theorem disjoint_disc_images_eventually_in_cover
   simpa only [hfac'] using hh
 
 end AreaDeficit.Surfaces.DiscCover
-
-#print axioms AreaDeficit.Surfaces.DiscCover.disjoint_disc_images_eventually_in_cover

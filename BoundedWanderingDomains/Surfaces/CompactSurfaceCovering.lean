@@ -52,6 +52,3 @@ theorem exists_finite_branch_values_compact_covering
   exact ⟨hzK, hSE hfzS⟩
 
 end SurfaceDynamics
-
-#print axioms SurfaceDynamics.compact_surface_covering
-#print axioms SurfaceDynamics.exists_finite_branch_values_compact_covering

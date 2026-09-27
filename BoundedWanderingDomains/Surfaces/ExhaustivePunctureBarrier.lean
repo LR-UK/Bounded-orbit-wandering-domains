@@ -133,5 +133,3 @@ theorem exists_exhaustive_finitePuncture_barrier {f : X → X} {A O : Set X}
     exhaustiveBackwardTree_disjoint_forwardInvariant hRO hO hfO⟩
 
 end SurfaceDynamics
-
-#print axioms SurfaceDynamics.exists_exhaustive_finitePuncture_barrier

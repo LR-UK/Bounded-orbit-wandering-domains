@@ -3,6 +3,7 @@ Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
 import BoundedWanderingDomains.Surfaces.ChartLaplacianSupport
+import BoundedWanderingDomains.Surfaces.SeparatingCutoff
 import Mathlib.Analysis.Complex.CauchyIntegral
 
 /-! # Smooth localisation on an arbitrary Riemann surface

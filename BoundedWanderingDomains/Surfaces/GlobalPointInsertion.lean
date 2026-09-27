@@ -202,7 +202,3 @@ theorem uniform_global_finitePuncture_insertion_area_le_of_pointInsertion
   exact add_le_add_right hgain _
 
 end AreaDeficit.Surfaces.DiscCover
-
-#print axioms AreaDeficit.Surfaces.DiscCover.global_finitePuncture_gain_le_of_pointInsertion
-#print axioms AreaDeficit.Surfaces.DiscCover.uniform_global_finitePuncture_insertion_area_le_of_pointInsertion
-#print axioms AreaDeficit.Surfaces.DiscCover.uniformGlobalPointInsertionBound_iff_totalArea_increment

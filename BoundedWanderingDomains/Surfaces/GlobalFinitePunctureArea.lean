@@ -123,9 +123,3 @@ theorem false_of_positive_area_global_package
     (hApos.hyperbolicArea_pos hA p) hAP hC hadvance
 
 end SurfaceDynamics
-
-#print axioms SurfaceDynamics.false_of_positive_area_global_package
-#print axioms SurfaceDynamics.false_of_positive_hyperbolicArea_global_package
-#print axioms AreaDeficit.Surfaces.DiscCover.globalFinitePunctureAreaPackage_of_compact
-#print axioms AreaDeficit.Surfaces.DiscCover.globalFinitePunctureAreaPackage_of_finite_total
-#print axioms AreaDeficit.Surfaces.DiscCover.globalFinitePunctureAreaPackage_of_pointInsertion

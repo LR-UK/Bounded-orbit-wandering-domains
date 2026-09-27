@@ -123,5 +123,3 @@ theorem no_wandering_covering_orbit_with_eventual_embedded_discs (G : FinitePunc
 
 
 end AreaDeficit.FinitePunctureMetricInput
-
-#print axioms AreaDeficit.FinitePunctureMetricInput.no_wandering_covering_orbit_with_eventual_embedded_discs

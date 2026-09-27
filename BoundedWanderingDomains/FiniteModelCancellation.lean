@@ -67,5 +67,3 @@ theorem finite_model_area_bound
   simpa only [add_zero, μ, withDensity_apply _ hB] using h
 
 end AreaDeficit
-
-#print axioms AreaDeficit.finite_model_area_bound

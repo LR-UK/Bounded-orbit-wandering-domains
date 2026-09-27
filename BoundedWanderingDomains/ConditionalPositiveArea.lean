@@ -120,6 +120,3 @@ theorem null_local_wandering_set (G : FinitePunctureMetricInput)
   linarith
 
 end AreaDeficit.FinitePunctureMetricInput
-
-#print axioms AreaDeficit.FinitePunctureMetricInput.null_local_wandering_set_with_anchors
-#print axioms AreaDeficit.FinitePunctureMetricInput.null_local_wandering_set

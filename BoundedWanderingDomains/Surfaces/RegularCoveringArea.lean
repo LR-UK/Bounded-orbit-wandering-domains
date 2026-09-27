@@ -100,5 +100,3 @@ theorem exists_uniform_singular_area_advance
       add_le_add le_rfl ((measure_mono himageL).trans (hgain U))
 
 end SurfaceDynamics.LocalMap
-
-#print axioms SurfaceDynamics.LocalMap.exists_uniform_singular_area_advance

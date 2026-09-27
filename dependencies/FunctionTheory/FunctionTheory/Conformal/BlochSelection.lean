@@ -1,7 +1,8 @@
 import Mathlib.Analysis.Complex.Basic
 import Mathlib.Topology.Order.Compact
-import Mathlib.Tactic
-
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Ring
 open Set Metric
 
 namespace FunctionTheory

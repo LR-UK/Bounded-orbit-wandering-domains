@@ -60,5 +60,3 @@ theorem areaGain_setLIntegral_coordinate_formula
   field_simp
 
 end AreaDeficit.Surfaces.DiscCover
-
-#print axioms AreaDeficit.Surfaces.DiscCover.areaGain_setLIntegral_coordinate_formula

@@ -145,5 +145,3 @@ theorem surfaceLogCutoff_eventually_zero
       simp [surfaceLogCutoff, chartPullbackExtension, hxs]
 
 end AreaDeficit.Surfaces
-
-#print axioms AreaDeficit.Surfaces.surfaceLogCutoff_contMDiff

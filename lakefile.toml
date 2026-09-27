@@ -1,6 +1,6 @@
 name = "area_deficit"
-version = "1.4.0"
-defaultTargets = ["PaperSolution", "PaperChallenge", "Submission", "Challenge", "NewResults", "SingularLimitsChallenge", "SingularLimitsSolution", "SurfaceResearch"]
+version = "1.4.1"
+defaultTargets = ["PaperSolution", "PaperChallenge"]
 
 [[require]]
 name = "complexApproximation"

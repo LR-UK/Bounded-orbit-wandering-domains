@@ -58,5 +58,3 @@ theorem image_connected_trapped_open_subset_omega_of_compact_orbit
   exact hyL n
 
 end SurfaceDynamics.LocalMap
-
-#print axioms SurfaceDynamics.LocalMap.image_connected_trapped_open_subset_omega_of_compact_orbit

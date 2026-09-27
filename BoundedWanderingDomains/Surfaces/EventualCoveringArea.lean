@@ -120,5 +120,3 @@ theorem false_of_eventual_wandering_covering_discs
   rwa [ENNReal.ofReal_toReal hH]
 
 end SurfaceDynamics.LocalMap
-
-#print axioms SurfaceDynamics.LocalMap.false_of_eventual_wandering_covering_discs

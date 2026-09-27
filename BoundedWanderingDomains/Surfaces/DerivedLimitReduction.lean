@@ -115,7 +115,3 @@ theorem wanderingDerivedSingularLimitClaim_of_nonEscapingClusterMeetsDerived
 
 end Manifold
 end SurfaceDynamics
-
-#print axioms SurfaceDynamics.escape_or_subsequence_tendsto_mem
-#print axioms SurfaceDynamics.wanderingDerivedSingularLimitClaim_of_clusterMeetsDerived
-#print axioms SurfaceDynamics.wanderingDerivedSingularLimitClaim_of_nonEscapingClusterMeetsDerived

@@ -135,6 +135,3 @@ theorem FinitePunctureMetricInput.point_removal_gain_le_one
   simp
 
 end AreaDeficit
-
-#print axioms AreaDeficit.exists_finite_exhaustion_closed
-#print axioms AreaDeficit.FinitePunctureMetricInput.point_removal_gain_le_one

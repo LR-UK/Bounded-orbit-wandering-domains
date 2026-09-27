@@ -40,7 +40,4 @@ theorem no_local_bounded_wandering_domains
   Unconditional.no_local_bounded_wandering_domains
     hV hVc hf hn hK hKV hz hU hbounded
 
-#print axioms no_local_bounded_wandering_domains
-#print axioms no_bounded_wandering_domains_transcendental_entire
-
 end BoundedWanderingDomains

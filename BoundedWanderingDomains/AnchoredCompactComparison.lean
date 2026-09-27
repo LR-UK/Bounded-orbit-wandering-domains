@@ -97,6 +97,3 @@ theorem FinitePunctureMetricInput.uniform_log_gain_away_from_compact
   exact max_le_max hlog le_rfl
 
 end AreaDeficit
-
-#print axioms AreaDeficit.exists_uniform_disc_radius_avoiding_compact
-#print axioms AreaDeficit.FinitePunctureMetricInput.uniform_log_gain_away_from_compact

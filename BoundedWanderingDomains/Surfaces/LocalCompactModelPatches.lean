@@ -80,5 +80,3 @@ theorem exists_local_compact_model_patch (f : LocalMap X)
   · exact Set.disjoint_left.mpr fun y hyL hyH => hLH hyL hyH
 
 end SurfaceDynamics.LocalMap
-
-#print axioms SurfaceDynamics.LocalMap.exists_local_compact_model_patch

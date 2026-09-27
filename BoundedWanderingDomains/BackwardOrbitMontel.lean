@@ -155,7 +155,3 @@ theorem backwardOrbit_complement_component
     exact hc.subset_connectedComponentIn hz hUC
 
 end BoundedWanderingDomains
-
-#print axioms BoundedWanderingDomains.backwardOrbit_complement_subset_fatouSet
-#print axioms BoundedWanderingDomains.normal_family_of_normalSequenceOn
-#print axioms BoundedWanderingDomains.normal_family_restrict_subsequence

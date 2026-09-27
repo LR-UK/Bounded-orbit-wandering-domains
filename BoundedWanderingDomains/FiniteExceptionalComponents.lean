@@ -47,5 +47,3 @@ theorem eventually_components_avoid_finite_set
   exact (not_le_of_gt hn) (hN n ⟨x, hxU, hxE⟩)
 
 end BoundedWanderingDomains
-
-#print axioms BoundedWanderingDomains.eventually_components_avoid_finite_set

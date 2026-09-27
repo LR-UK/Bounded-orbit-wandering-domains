@@ -1,0 +1,96 @@
+{
+  "baseline_commit": "bd33758d645a9e48cec3e8d2c9abd9d0dfbba0dd",
+  "result": "passed",
+  "tracked_lean_source_files": 1371,
+  "paper_local_modules": {
+    "before": 773,
+    "after": 770
+  },
+  "full_build_local_modules": {
+    "before": 795,
+    "after": 795
+  },
+  "paper_imported_artifacts": {
+    "before": 4653,
+    "after": 4271
+  },
+  "paper_embedded_diagnostics": {
+    "before": 393,
+    "after": 0
+  },
+  "diagnostic_commands_removed_from_project_sources": 498,
+  "broad_tactic_imports_replaced": 22,
+  "duplicate_proof_bodies_consolidated": 8,
+  "aggregator_direct_imports": {
+    "PaperSolution": {
+      "before": 8,
+      "after": 5
+    },
+    "SurfaceResearch": {
+      "before": 102,
+      "after": 12
+    }
+  },
+  "full_build_jobs": 4326,
+  "full_build_proof_sources_scanned": 792,
+  "compiled_theorem_comparison": {
+    "before_unique_theorems": 8635,
+    "after_unique_theorems": 8644,
+    "missing": [],
+    "changed_types": [
+      "FunctionTheory.rational_meromorphic_limit_at_infinity",
+      "FunctionTheory.centered_local_degree_comp",
+      "FunctionTheory.not_rational_meromorphic_of_two_sequences",
+      "FunctionTheory.analyticAt_iterate_of_finite_orbit",
+      "FunctionTheory.iterate_value_and_local_degree_eq_of_finite_orbit_data"
+    ],
+    "method": "Canonical compiled expression hashes; supplementary to Lean checking and the exact 42-declaration comparison. For each of the five hash differences, the original compiled type expression was recreated and matched against its pre-audit hash; the Lean kernel then accepted the current theorem as a proof of that original type.",
+    "kernel_compatible_changed_types": [
+      "FunctionTheory.analyticAt_iterate_of_finite_orbit",
+      "FunctionTheory.centered_local_degree_comp",
+      "FunctionTheory.iterate_value_and_local_degree_eq_of_finite_orbit_data",
+      "FunctionTheory.rational_meromorphic_limit_at_infinity",
+      "FunctionTheory.not_rational_meromorphic_of_two_sequences"
+    ],
+    "unresolved_type_changes": []
+  },
+  "semantic_source_comparison": {
+    "changed_lean_files": 283,
+    "differences_after_removing_comments_imports_diagnostics_whitespace": [
+      "BoundedWanderingDomains/AreaCancellation.lean",
+      "BoundedWanderingDomains/BarrierComponents.lean",
+      "BoundedWanderingDomains/Surfaces/CompactDiscImages.lean",
+      "BoundedWanderingDomains/Surfaces/UniformFiniteRemoval.lean"
+    ],
+    "note": "Only the eight intentionally consolidated proof bodies differ; all theorem statements are retained."
+  },
+  "timings": [
+    {
+      "action": "default",
+      "before_seconds": 27.671589999983553,
+      "after_seconds": 20.674149300000863,
+      "reduction_percent": 25.2874543890931,
+      "before_log_bytes": 258252,
+      "after_log_bytes": 164196
+    },
+    {
+      "action": "solution",
+      "before_seconds": 76.27311259999988,
+      "after_seconds": 71.47488269998576,
+      "reduction_percent": 6.290853665796414,
+      "before_log_bytes": 1501,
+      "after_log_bytes": 680
+    },
+    {
+      "action": "challenge",
+      "before_seconds": 57.479210499994224,
+      "after_seconds": 57.21062389999861,
+      "reduction_percent": 0.4672760771403439,
+      "before_log_bytes": 366,
+      "after_log_bytes": 366
+    }
+  ],
+  "timing_method": "One local measurement per command before and after, same pinned toolchain and two Lean workers; warm cache, no concurrent Lean build during measurements. Default target scope intentionally changed. Not a clean-build benchmark.",
+  "standalone_functiontheory_check": "Attempted; dependency fetch failed with SSL certificate error before compilation. The root build checked its active imported modules.",
+  "external_checks": "Official Linux Comparator and independent kernel replay not run in this Windows session; current metadata checker needs unavailable PyYAML."
+}

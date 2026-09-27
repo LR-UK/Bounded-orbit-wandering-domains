@@ -185,6 +185,3 @@ theorem DiscCover.nonempty_compl_singleton_of_pathCover_plane
     π hπ hcov hsurj huv hu hv
 
 end AreaDeficit.Surfaces
-
-#print axioms AreaDeficit.Surfaces.DiscCover.nonempty_compl_singleton_of_plane_cover
-#print axioms AreaDeficit.Surfaces.DiscCover.nonempty_compl_singleton_of_pathCover_plane

@@ -32,5 +32,3 @@ theorem eventually_components_avoid_outside_spherical_derived_neighbourhood
     (eventually_components_avoid_finite_set U hU hE.toFinset)
 
 end BoundedWanderingDomains
-
-#print axioms BoundedWanderingDomains.eventually_components_avoid_outside_spherical_derived_neighbourhood

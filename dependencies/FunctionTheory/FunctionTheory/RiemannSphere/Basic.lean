@@ -15,8 +15,11 @@ public import Mathlib.Geometry.Manifold.ContMDiff.Atlas
 import Mathlib.Analysis.Analytic.Constructions
 import Mathlib.Analysis.Normed.Field.Lemmas
 import Mathlib.Geometry.Manifold.Algebra.LieGroup
-import Mathlib.Tactic
-
+import Mathlib.Tactic.Cases
+import Mathlib.Tactic.Convert
+import Mathlib.Tactic.Ext
+import Mathlib.Tactic.Linarith
+import Aesop
 /-- Same model abbreviation as Ray.Manifold.Defs. -/
 public noncomputable abbrev OneDimension.I := modelWithCornersSelf ℂ ℂ
 

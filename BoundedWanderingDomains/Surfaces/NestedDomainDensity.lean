@@ -175,6 +175,3 @@ theorem domainChartLogRatio_eq_nested
   rw [hV, hU, hWdens, hdsymm, hesymm]
 
 end AreaDeficit.Surfaces.DiscCover
-
-#print axioms AreaDeficit.Surfaces.DiscCover.domainDensity_nested_open
-#print axioms AreaDeficit.Surfaces.DiscCover.domainChartLogRatio_eq_nested

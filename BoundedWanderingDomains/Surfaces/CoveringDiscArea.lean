@@ -71,5 +71,3 @@ theorem hyperbolicArea_image_radius (p : DiscCover M)
   field_simp
 
 end AreaDeficit.Surfaces.DiscCover
-
-#print axioms AreaDeficit.Surfaces.DiscCover.hyperbolicArea_image_radius

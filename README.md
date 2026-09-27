@@ -21,7 +21,7 @@ precise hypotheses and [PAPER_PROOF_GUIDE.md](PAPER_PROOF_GUIDE.md) for the proo
 
 The six theorem types and 36 supporting declarations match the independent
 challenge. The transitive axiom audit reports only `propext`, `Classical.choice`,
-and `Quot.sound`; 773 local proof modules were scanned for holes and shortcuts.
+and `Quot.sound`; 770 local proof modules were scanned for holes and shortcuts.
 The complete build also verifies the retained earlier results.
 
 ## Build and check
@@ -32,10 +32,14 @@ Lean: `leanprover/lean4:v4.35.0-rc2`. Mathlib:
 ```sh
 python3 scripts/fetch_cache.py
 lake build
-python3 scripts/verify_paper.py
+python3 scripts/verify_paper.py --all
 python3 scripts/verify_metadata.py
 python3 scripts/audit_attribution.py
 ```
+
+`lake build` builds the two paper entry points. The `--all` audit also builds
+the retained earlier and research results. See [BUILD_AUDIT.md](BUILD_AUDIT.md)
+for the import, duplication and performance audit.
 
 The metadata checker requires PyYAML. On Windows, use UTF-8 Python mode for
 the older attribution script (`python -X utf8 scripts/audit_attribution.py`).

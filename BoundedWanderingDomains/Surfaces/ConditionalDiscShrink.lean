@@ -41,5 +41,3 @@ theorem eventually_avoids_closed_of_centre
   · exact hb z hz
 
 end AreaDeficit.Surfaces.DiscCover
-
-#print axioms AreaDeficit.Surfaces.DiscCover.eventually_avoids_closed_of_centre

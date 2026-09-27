@@ -47,5 +47,3 @@ theorem intrinsic_chart_area_bound
   exact div_le_self (sq_nonneg _) (by linarith [Real.pi_gt_three])
 
 end AreaDeficit
-
-#print axioms AreaDeficit.intrinsic_chart_area_bound

@@ -84,5 +84,3 @@ theorem exists_backwardExceptionalFinsets
       (hQmono (Nat.le_succ n)) n hn
 
 end SurfaceDynamics.LocalMap
-
-#print axioms SurfaceDynamics.LocalMap.exists_backwardExceptionalFinsets

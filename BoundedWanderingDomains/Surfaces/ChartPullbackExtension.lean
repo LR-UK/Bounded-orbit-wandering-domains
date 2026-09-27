@@ -94,5 +94,3 @@ theorem chartZeroExtensionIn_chartPullbackExtension
     simp [chartZeroExtensionIn, hz, hg]
 
 end AreaDeficit.Surfaces
-
-#print axioms AreaDeficit.Surfaces.contMDiff_chartPullbackExtension

@@ -86,5 +86,3 @@ theorem mapsTo_component_of_imageAt (f : LocalMap X) (hf : IsOpenHolomorphic f)
     _ = S (n + 1) := (connectedComponentIn_eq (hSb ▸ hznext)).symm.trans hSb.symm
 
 end SurfaceDynamics.LocalMap
-
-#print axioms SurfaceDynamics.LocalMap.totalize_mapsTo_omega

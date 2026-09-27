@@ -126,5 +126,3 @@ theorem closedComplementDensity_conformal_equiv
       mul_le_mul_of_nonneg_right hle_reverse (norm_nonneg _)
 
 end AreaDeficit
-
-#print axioms AreaDeficit.closedComplementDensity_conformal_equiv

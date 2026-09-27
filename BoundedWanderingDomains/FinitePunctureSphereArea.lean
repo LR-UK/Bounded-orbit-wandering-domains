@@ -75,5 +75,3 @@ theorem finiteSphereMetricData_total_area (P : Finset ℂ) (hP : 2 ≤ P.card)
   exact finite_puncture_hyperbolicArea P hP hab ha hb
 
 end AreaDeficit
-
-#print axioms AreaDeficit.finiteSphereMetricData_total_area

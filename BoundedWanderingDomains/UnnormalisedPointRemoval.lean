@@ -127,6 +127,3 @@ theorem finite_removal_gain_le_two_pi_mul_card
         (finite_removal_gain_le_card A hA E hab ha hb) (bot_le : (0 : ℝ≥0∞) ≤ c)
 
 end AreaDeficit
-
-#print axioms AreaDeficit.point_removal_gain_le_two_pi
-#print axioms AreaDeficit.finite_removal_gain_le_two_pi_mul_card

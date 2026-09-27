@@ -36,5 +36,3 @@ theorem lintegral_gain_le_gain_add_gain
           (∫⁻ x, h x - k x ∂μ) := lintegral_add_left' hgh _
 
 end AreaDeficit
-
-#print axioms AreaDeficit.lintegral_gain_le_gain_add_gain

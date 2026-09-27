@@ -143,7 +143,3 @@ theorem local_cancellation_bound (G : FinitePunctureMetricInput)
   exact (G.insertion_area_cost hP hfW).trans (add_le_add le_rfl hd)
 
 end AreaDeficit.FinitePunctureMetricInput
-
-#print axioms AreaDeficit.FinitePunctureMetricInput.local_integrated_deficit
-#print axioms AreaDeficit.FinitePunctureMetricInput.local_area_advance
-#print axioms AreaDeficit.FinitePunctureMetricInput.local_cancellation_bound

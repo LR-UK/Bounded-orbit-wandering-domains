@@ -55,5 +55,3 @@ theorem IsHolomorphicDiscCovering.total_area {P : Finset ℂ} {p : ℂ → ℂ}
   simpa using h
 
 end AreaDeficit
-
-#print axioms AreaDeficit.IsHolomorphicDiscCovering.total_area

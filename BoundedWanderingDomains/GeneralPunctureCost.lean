@@ -177,8 +177,3 @@ theorem puncture_gain_bound_closed_exhaustion (G : FinitePunctureMetricInput)
 
 end FinitePunctureMetricInput
 end AreaDeficit
-
-#print axioms AreaDeficit.limiting_gain_bound
-#print axioms AreaDeficit.FinitePunctureMetricInput.finite_puncture_gain_bound
-#print axioms AreaDeficit.FinitePunctureMetricInput.areaWeight_tendsto_component_cover
-#print axioms AreaDeficit.FinitePunctureMetricInput.puncture_gain_bound_of_metric_limits

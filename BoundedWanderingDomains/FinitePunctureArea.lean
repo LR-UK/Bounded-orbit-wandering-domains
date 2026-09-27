@@ -106,6 +106,3 @@ theorem finite_puncture_hyperbolicArea_ne_top
     ENNReal.ofReal_ne_top
 
 end AreaDeficit
-
-#print axioms AreaDeficit.finite_puncture_hyperbolicArea
-#print axioms AreaDeficit.finite_puncture_hyperbolicArea_ne_top

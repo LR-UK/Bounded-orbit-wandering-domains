@@ -157,5 +157,3 @@ theorem false_of_compact_global_positive_area_wandering
       (hforward n) hWOm hWs hginj (havoid n)
 
 end SurfaceDynamics
-
-#print axioms SurfaceDynamics.false_of_compact_global_positive_area_wandering

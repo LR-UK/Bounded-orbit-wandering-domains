@@ -124,5 +124,3 @@ theorem eventually_injOn_wandering_discs
   exact congrArg Subtype.val (hinj hx hy hgxy)
 
 end SurfaceDynamics.LocalMap
-
-#print axioms SurfaceDynamics.LocalMap.eventually_injOn_wandering_discs

@@ -69,6 +69,3 @@ theorem exists_finite_branch_values_isLocalHomeomorphOn
   exact hE x hx.1 hx.2
 
 end SurfaceDynamics
-
-#print axioms SurfaceDynamics.isLocalHomeomorphOn_of_chart_deriv_ne_zero
-#print axioms SurfaceDynamics.exists_finite_branch_values_isLocalHomeomorphOn

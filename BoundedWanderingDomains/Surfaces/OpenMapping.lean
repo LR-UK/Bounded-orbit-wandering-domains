@@ -173,5 +173,3 @@ theorem isOpenMap_of_mdifferentiable_of_locally_nonconstant
   rw [Filter.map_congr hfun]
 
 end SurfaceDynamics
-
-#print axioms SurfaceDynamics.isOpenMap_of_mdifferentiable_of_locally_nonconstant

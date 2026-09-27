@@ -82,9 +82,3 @@ theorem restrict_complement_union_finite
   simp [hz]
 
 end AreaDeficit
-
-#print axioms AreaDeficit.closedComplementDensity_anchor_independent
-#print axioms AreaDeficit.closedComplementAreaWeight_anchor_independent
-#print axioms AreaDeficit.closedComplementHyperbolicAreaWeight_anchor_independent
-#print axioms AreaDeficit.hyperbolicAreaWeight_mono_any
-#print axioms AreaDeficit.restrict_complement_union_finite

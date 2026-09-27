@@ -165,6 +165,3 @@ theorem cutoff_eventually_one {F : Finset M}
 
 end FinitePunctureDiscs
 end AreaDeficit.Surfaces
-
-#print axioms AreaDeficit.Surfaces.exists_finitePunctureDiscs
-#print axioms AreaDeficit.Surfaces.FinitePunctureDiscs.cutoff_tsupport_avoids

@@ -218,5 +218,3 @@ theorem exists_backwardExceptional_positive_remainder
     (sdiff_subset.trans hAP).trans (closure_mono hPS)⟩
 
 end SurfaceDynamics.LocalMap
-
-#print axioms SurfaceDynamics.LocalMap.exists_backwardExceptional_positive_remainder

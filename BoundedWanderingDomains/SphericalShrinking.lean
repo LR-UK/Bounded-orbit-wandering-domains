@@ -397,6 +397,3 @@ theorem eventually_chartDisc_subset_cluster_neighbourhood
   exact hi (by simpa only [mem_ball, dist_comm] using hdist)
 
 end AreaDeficit
-
-#print axioms AreaDeficit.inverse_riemann_maps_shrink
-#print axioms AreaDeficit.eventually_chartDisc_subset_cluster_neighbourhood

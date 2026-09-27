@@ -29,6 +29,3 @@ theorem isCoveringMap_restrictPreimage_regular (f : LocalMap X)
     simpa only [singularValues, compl_compl] using hS)
 
 end SurfaceDynamics.LocalMap
-
-#print axioms SurfaceDynamics.LocalMap.isCoveringMapOn_compl_singularValues
-#print axioms SurfaceDynamics.LocalMap.isCoveringMap_restrictPreimage_regular

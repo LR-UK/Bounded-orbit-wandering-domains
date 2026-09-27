@@ -51,5 +51,3 @@ theorem exists_smooth_compact_exhaustion :
       (compactCovering_subset M hn hxN)
 
 end AreaDeficit.Surfaces
-
-#print axioms AreaDeficit.Surfaces.exists_smooth_compact_exhaustion

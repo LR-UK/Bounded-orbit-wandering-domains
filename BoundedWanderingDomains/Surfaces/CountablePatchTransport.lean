@@ -58,5 +58,3 @@ theorem domainArea_eq_image_of_openDomain_covering_countable_patches
       rw [← measure_iUnion hdisImage hfiA, hcoverImage]
 
 end AreaDeficit.Surfaces.DiscCover
-
-#print axioms AreaDeficit.Surfaces.DiscCover.domainArea_eq_image_of_openDomain_covering_countable_patches

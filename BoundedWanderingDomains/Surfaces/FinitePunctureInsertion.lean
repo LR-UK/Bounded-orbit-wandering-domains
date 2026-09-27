@@ -36,5 +36,3 @@ theorem uniform_finitePuncture_insertion_area_le (p : DiscCover M)
         (hgain E hEq (finitePunctureDomain P))) _)
 
 end AreaDeficit.Surfaces.DiscCover
-
-#print axioms AreaDeficit.Surfaces.DiscCover.uniform_finitePuncture_insertion_area_le

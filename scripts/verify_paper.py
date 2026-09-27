@@ -1,5 +1,6 @@
 """Build and audit the six revised-paper statements (not official Comparator)."""
 from pathlib import Path
+import argparse
 import hashlib
 import importlib.util
 import json
@@ -7,6 +8,7 @@ import os
 import re
 import shutil
 import subprocess
+import time
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'verification'
@@ -18,16 +20,28 @@ CONFIG = json.loads((ROOT / 'comparator-paper.json').read_text(encoding='utf-8')
 ALLOWED = {'propext', 'Classical.choice', 'Quot.sound'}
 ENV = dict(os.environ)
 ENV.setdefault('LEAN_NUM_THREADS', '2')
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--all', action='store_true', help='Also build the retained legacy and research entry points.')
+args = parser.parse_args()
+timings = []
+report_path = OUT / 'paper-submission.json'
+if report_path.exists():
+    report_path.unlink()  # A failed recheck must not leave a stale success report.
 
 def run(args, filename):
     print('Checking ' + filename, flush=True)
+    started = time.perf_counter()
     with (OUT / filename).open('w', encoding='utf-8') as log:
         result = subprocess.run([LAKE, *args], cwd=ROOT, env=ENV, stdout=log, stderr=subprocess.STDOUT)
     if result.returncode:
         raise RuntimeError(f'{args} failed; see verification/{filename}')
+    timings.append({'command': args, 'seconds': time.perf_counter() - started})
 
-run(['build', 'PaperSolution', 'PaperChallenge', 'SurfaceResearch'], 'paper-build.log')
-run(['env', 'lean', 'verification/PaperAxioms.lean'], 'paper-axioms.log')
+targets = ['PaperSolution', 'PaperChallenge']
+if args.all:
+    targets += ['SurfaceResearch', 'Submission', 'Challenge', 'CoveringSolution',
+                'NewResults', 'SingularLimitsChallenge', 'SingularLimitsSolution']
+run(['build', *targets], 'paper-build.log')
 for module in ['PaperChallenge', 'PaperSolution']:
     run(['env', 'lean', f'verification/Export{module}.lean'], module.lower() + '-declarations.log')
 
@@ -42,6 +56,17 @@ def declarations(module):
 
 challenge, solution = declarations('PaperChallenge'), declarations('PaperSolution')
 assert set(challenge) == set(solution), 'Missing compared declarations'
+claim_names = [
+    'BoundedWanderingDomains.wandering_orbit_locallyUniform_inftyClaim',
+    'BoundedWanderingDomains.wandering_orbit_pointwise_spherical_singular_derivedSetClaim',
+    'MeromorphicDynamics.WanderingLocallyUniformInfinityClaim',
+    'SurfaceDynamics.NoCompactWanderingOrbitClaim',
+    'SurfaceDynamics.NoCompactPositiveAreaWanderingSetClaim',
+    'SurfaceDynamics.WanderingDerivedSingularLimitClaim',
+]
+expected_declarations = set(CONFIG['theorem_names'] + CONFIG['definition_names'] +
+                            claim_names + ['SurfaceDynamics.LocalMap'])
+assert set(challenge) == expected_declarations, 'Missing or unexpected declaration in comparison'
 mismatches = {name: [key for key in set(challenge[name]) | set(solution[name])
                      if challenge[name].get(key) != solution[name].get(key)]
               for name in challenge if challenge[name] != solution[name]}
@@ -49,11 +74,16 @@ if mismatches:
     (OUT / 'paper-declaration-mismatches.json').write_text(json.dumps(mismatches, indent=2), encoding='utf-8')
     raise AssertionError('Independent declaration mismatch: ' + repr(mismatches))
 
-audit_text = (OUT / 'paper-axioms.log').read_text(encoding='utf-8')
+# The solution exporter also prints the six transitive axiom reports. Keeping
+# these checks in the same Lean process avoids loading the large proof
+# environment a second time. PaperAxioms.lean remains a standalone audit.
+audit_text = (OUT / 'papersolution-declarations.log').read_text(encoding='utf-8')
 axioms = dict(re.findall(r"'([^']+)' depends on axioms:\s*\[([^\]]*)\]", audit_text))
 assert set(CONFIG['theorem_names']) == set(axioms), 'Missing theorem axiom reports'
 axioms = {name: [s.strip() for s in values.split(',') if s.strip()] for name, values in axioms.items()}
 assert all(set(values) <= ALLOWED for values in axioms.values()), 'Unexpected axiom'
+(OUT / 'paper-axioms.log').write_text(''.join(
+    f"'{name}' depends on axioms: [{', '.join(values)}]\n" for name, values in axioms.items()), encoding='utf-8')
 
 spec = importlib.util.spec_from_file_location('source_audit', ROOT / 'dependencies/FunctionTheory/scripts/verify.py')
 source_audit = importlib.util.module_from_spec(spec)
@@ -85,15 +115,24 @@ def visit(module):
         visit(dependency)
 
 visit('PaperSolution')
+paper_visited = dict(visited)
+if args.all:
+    for module in ['SurfaceResearch', 'Solution', 'CoveringSolution', 'NewResults',
+                   'SingularLimitsSolution']:
+        visit(module)
 report = {
     'result': 'passed', 'scope': 'Local Lean build, independent declaration equality, source closure and transitive axioms',
     'official_comparator': 'Not run by this script; use scripts/verify-comparator.sh comparator-paper.json on Linux',
     'theorems_compared': len(CONFIG['theorem_names']),
     'supporting_declarations_compared': len(challenge) - len(CONFIG['theorem_names']),
-    'local_proof_modules_scanned': len(visited), 'axioms': axioms,
+    'local_proof_modules_scanned': len(paper_visited), 'axioms': axioms,
+    'built_all_entry_points': args.all,
+    'all_local_proof_modules_scanned': len(visited),
     'source_hash_encoding': 'UTF-8 with LF line endings',
     'declarations_sha256': hashlib.sha256(json.dumps(challenge, sort_keys=True).encode()).hexdigest(),
-    'proof_imports': visited,
+    'proof_imports': paper_visited,
+    'additional_proof_imports': {n: v for n, v in visited.items() if n not in paper_visited},
 }
-(OUT / 'paper-submission.json').write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')
+report_path.write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')
+(OUT / 'paper-check-timings.json').write_text(json.dumps(timings, indent=2) + '\n', encoding='utf-8')
 print(json.dumps({k: report[k] for k in ['result', 'theorems_compared', 'supporting_declarations_compared', 'local_proof_modules_scanned']}))

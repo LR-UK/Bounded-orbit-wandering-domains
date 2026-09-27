@@ -53,5 +53,3 @@ theorem disc_schwarz_centre {g : ℂ → ℂ} {r : ℝ} (hr : 0 < r)
     _ = 2 / r := by ring
 
 end AreaDeficit
-
-#print axioms AreaDeficit.disc_schwarz_centre

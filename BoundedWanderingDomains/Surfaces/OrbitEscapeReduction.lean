@@ -38,5 +38,3 @@ theorem noCompactWanderingOrbitClaim_of_componentOrbitImpossible
   exact f.orbit_mem_of_compactifiedIterate_mem_image hztrapped hescape
 
 end SurfaceDynamics
-
-#print axioms SurfaceDynamics.noCompactWanderingOrbitClaim_of_componentOrbitImpossible

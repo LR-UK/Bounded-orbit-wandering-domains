@@ -91,6 +91,3 @@ theorem domainArea_component (p : DiscCover M) (U : TopologicalSpace.Opens M)
     (mem_componentDomain (hBU hy)) (hBU hy) hyc).symm
 
 end AreaDeficit.Surfaces.DiscCover
-
-#print axioms AreaDeficit.Surfaces.DiscCover.domainArea_le_of_finite_model_bounds
-#print axioms AreaDeficit.Surfaces.DiscCover.domainArea_component

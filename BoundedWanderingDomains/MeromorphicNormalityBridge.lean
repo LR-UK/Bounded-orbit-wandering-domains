@@ -343,11 +343,3 @@ theorem surfaceModel_isWanderingComponent_of_fatouComponents
       (OnePoint.coe_injective (hzy.trans hwy.symm) ▸ hwm)
 
 end MeromorphicDynamics
-
-#print axioms MeromorphicDynamics.surfaceModel_isNormalOn_of_normalSequence
-#print axioms MeromorphicDynamics.normalSequence_of_surfaceModel_isNormalOn
-#print axioms MeromorphicDynamics.mapsTo_fatouSet_surfaceModel_omega
-#print axioms MeromorphicDynamics.mem_fatouSet_iff_coe_mem_surfaceModel_omega
-#print axioms MeromorphicDynamics.surfaceModel_omega_eq_finiteImage_fatouSet
-#print axioms MeromorphicDynamics.finiteImage_connectedComponentIn_fatouSet
-#print axioms MeromorphicDynamics.surfaceModel_isWanderingComponent_of_fatouComponents

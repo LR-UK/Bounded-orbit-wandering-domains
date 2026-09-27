@@ -40,5 +40,3 @@ theorem finite_model_cancellation_of_area_advance
     hadvance hcost
 
 end AreaDeficit.Surfaces.DiscCover
-
-#print axioms AreaDeficit.Surfaces.DiscCover.finite_model_cancellation_of_area_advance

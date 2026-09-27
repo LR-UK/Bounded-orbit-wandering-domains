@@ -46,5 +46,3 @@ theorem uniformGlobalPointInsertionBound_of_riesz
     μ χ hχ hlim boundary hgreen h.1 hbound
 
 end AreaDeficit.Surfaces.DiscCover
-
-#print axioms AreaDeficit.Surfaces.DiscCover.uniformGlobalPointInsertionBound_of_riesz

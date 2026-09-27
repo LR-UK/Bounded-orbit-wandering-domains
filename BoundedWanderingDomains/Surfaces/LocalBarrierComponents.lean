@@ -62,5 +62,3 @@ theorem barrier_component_eq_omega_component
   rwa [f.trappedSet_totalize_eq_trapped, ← homega] at h
 
 end SurfaceDynamics.LocalMap
-
-#print axioms SurfaceDynamics.LocalMap.barrier_component_eq_omega_component

@@ -43,5 +43,3 @@ theorem finite_defect_domainArea_advance (f : LocalMap X) (hf : IsOpenHolomorphi
         (f.measurable_totalize hf.2.continuous) hW hWT hinj
 
 end SurfaceDynamics.LocalMap
-
-#print axioms SurfaceDynamics.LocalMap.finite_defect_domainArea_advance

@@ -66,5 +66,3 @@ theorem domainComponentMap_mdifferentiable
       DiscCover.componentPoint V ⟨F x, (F x).property⟩ := Subtype.ext rfl
 
 end AreaDeficit.Surfaces
-
-#print axioms AreaDeficit.Surfaces.domainComponentMap_mdifferentiable

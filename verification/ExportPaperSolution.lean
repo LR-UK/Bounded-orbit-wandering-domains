@@ -39,3 +39,11 @@ run_cmd do
             fields := fields ++ [(ctor.toString, Json.str (reprStr (canonicalExpr c.type)))]
         | _ => throwError "Missing definition body {name}"
     logInfo s!"PALOMAR_DECL {(Json.mkObj fields).compress}"
+
+-- Share the imported proof environment with the declaration comparison.
+#print axioms BoundedWanderingDomains.theorem_1_2_entire
+#print axioms MeromorphicDynamics.theorem_1_2_meromorphic
+#print axioms SurfaceDynamics.theorem_1_3_orbit
+#print axioms SurfaceDynamics.theorem_1_3_positive_area
+#print axioms BoundedWanderingDomains.theorem_1_4
+#print axioms SurfaceDynamics.theorem_1_5

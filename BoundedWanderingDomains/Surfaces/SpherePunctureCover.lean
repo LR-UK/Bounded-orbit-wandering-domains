@@ -310,9 +310,3 @@ theorem DiscCover.nonempty_compl_three_of_pathCover_sphere
     exact (by simpa [U, P] using haU)
 
 end AreaDeficit.Surfaces
-
-#print axioms AreaDeficit.Surfaces.DiscCover.nonempty_normalizedThricePuncturedSphere
-#print axioms AreaDeficit.Surfaces.DiscCover.nonempty_sphere_compl_three
-#print axioms AreaDeficit.Surfaces.DiscCover.nonempty_compl_three_of_diffeomorph_sphere
-#print axioms AreaDeficit.Surfaces.sphere_map_eq_const_of_three_omitted
-#print axioms AreaDeficit.Surfaces.DiscCover.nonempty_compl_three_of_pathCover_sphere

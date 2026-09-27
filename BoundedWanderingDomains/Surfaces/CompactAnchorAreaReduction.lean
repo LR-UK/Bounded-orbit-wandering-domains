@@ -217,11 +217,3 @@ theorem false_of_anchorComplement_global_package
     p q hp Q hQmono hAOmeas hAOarea hAOQ hC hadvance
 
 end SurfaceDynamics
-
-#print axioms SurfaceDynamics.false_of_anchorComplement_global_area_advances
-#print axioms SurfaceDynamics.false_of_anchorComplement_global_package
-#print axioms SurfaceDynamics.anchorComplement_hyperbolicArea_lt_top
-#print axioms SurfaceDynamics.anchorComplement_finiteStage_area_lt_top
-#print axioms SurfaceDynamics.anchorComplement_globalFinitePunctureAreaPackage_of_pointInsertion
-#print axioms SurfaceDynamics.anchorComplement_pointInsertion_iff_totalArea_increment
-#print axioms SurfaceDynamics.anchorComplement_globalFinitePunctureAreaPackage

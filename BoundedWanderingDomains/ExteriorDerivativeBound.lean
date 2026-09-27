@@ -58,5 +58,3 @@ theorem not_bounded_of_doubling {q : ℕ → ℝ} (h0 : 0 < q 0)
   nlinarith
 
 end AreaDeficit
-
-#print axioms AreaDeficit.logarithmic_derivative_bound_of_exterior

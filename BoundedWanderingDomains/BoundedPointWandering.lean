@@ -126,5 +126,3 @@ theorem no_wandering_fatou_orbit_of_bounded_point (G : FinitePunctureMetricInput
     hznT (fun _ => rfl) (fun n => by simp [iterate_succ_apply']) hWd hu hub hu0 hcompact hinj
 
 end AreaDeficit.FinitePunctureMetricInput
-
-#print axioms AreaDeficit.FinitePunctureMetricInput.no_wandering_fatou_orbit_of_bounded_point

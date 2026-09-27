@@ -1,0 +1,33 @@
+[
+  {
+    "command": [
+      "build",
+      "PaperSolution",
+      "PaperChallenge",
+      "SurfaceResearch",
+      "Submission",
+      "Challenge",
+      "CoveringSolution",
+      "NewResults",
+      "SingularLimitsChallenge",
+      "SingularLimitsSolution"
+    ],
+    "seconds": 2758.606889000017
+  },
+  {
+    "command": [
+      "env",
+      "lean",
+      "verification/ExportPaperChallenge.lean"
+    ],
+    "seconds": 65.01145570000517
+  },
+  {
+    "command": [
+      "env",
+      "lean",
+      "verification/ExportPaperSolution.lean"
+    ],
+    "seconds": 77.09907910000766
+  }
+]

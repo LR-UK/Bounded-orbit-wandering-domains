@@ -216,6 +216,3 @@ theorem noCompactPositiveHyperbolicAreaWanderingSet_of_discCover_areaAdvance
     V hVsource P hKV hVcompact hPmono hPforward hAP
 
 end SurfaceDynamics
-
-#print axioms SurfaceDynamics.noCompactPositiveAreaWanderingSetClaim_of_discCover_areaAdvance
-#print axioms SurfaceDynamics.false_of_positiveArea_boundaryBarrier

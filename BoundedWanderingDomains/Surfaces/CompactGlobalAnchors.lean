@@ -206,7 +206,3 @@ theorem exists_three_anchor_positive_wandering_hyperbolic_models
     hAstarmeas, hAstarpos, hWmeas, hAstarW, hWinj, himage, hWdis⟩
 
 end SurfaceDynamics.LocalMap
-
-#print axioms SurfaceDynamics.LocalMap.exists_three_anchor_backward_hyperbolic_models
-#print axioms SurfaceDynamics.LocalMap.exists_three_anchor_positive_wandering_configuration
-#print axioms SurfaceDynamics.LocalMap.exists_three_anchor_positive_wandering_hyperbolic_models

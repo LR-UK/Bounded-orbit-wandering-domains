@@ -35,5 +35,3 @@ theorem uniform_remote_finite_area_budget_all_covers
     (add_le_add_right ((measure_mono hAL).trans (hgain p E hEq U)) _)
 
 end AreaDeficit.Surfaces.DiscCover
-
-#print axioms AreaDeficit.Surfaces.DiscCover.uniform_remote_finite_area_budget_all_covers

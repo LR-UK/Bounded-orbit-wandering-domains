@@ -67,5 +67,3 @@ theorem sphere_point_removal_gain_le_two_pi
   simpa only [preimage_compl, hpre] using hplane
 
 end AreaDeficit
-
-#print axioms AreaDeficit.sphere_point_removal_gain_le_two_pi

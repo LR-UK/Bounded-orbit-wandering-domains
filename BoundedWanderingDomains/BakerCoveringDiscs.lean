@@ -98,5 +98,3 @@ theorem eventually_covering_disc_embedded
     isOpen_ball hsc ((hp n).holo.mono (ball_subset_ball hr1.le)) hi⟩
 
 end AreaDeficit
-
-#print axioms AreaDeficit.eventually_covering_disc_embedded

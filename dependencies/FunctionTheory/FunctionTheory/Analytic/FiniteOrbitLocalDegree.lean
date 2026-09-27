@@ -1,7 +1,6 @@
 import Mathlib.Analysis.Analytic.Order
+import Mathlib.Analysis.Complex.Basic
 import Mathlib.Logic.Function.Iterate
-import Mathlib.Tactic
-
 open Set Filter
 open scoped Topology
 

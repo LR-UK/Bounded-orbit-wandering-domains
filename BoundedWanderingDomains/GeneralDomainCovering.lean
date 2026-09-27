@@ -75,7 +75,3 @@ theorem IsHolomorphicDiscCovering.coveringDensity_eq
   exact le_antisymm (compare hp hq) (compare hq hp)
 
 end AreaDeficit
-
-#print axioms RiemannDynamics.exists_disc_covering_open_domain
-#print axioms RiemannDynamics.exists_disc_covering_complement_component
-#print axioms AreaDeficit.IsHolomorphicDiscCovering.coveringDensity_eq

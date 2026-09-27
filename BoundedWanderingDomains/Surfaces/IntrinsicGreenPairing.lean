@@ -272,6 +272,3 @@ theorem domainChartLaplacianIntegral_eq_intrinsic
     simp [hz, hzero]
 
 end AreaDeficit.Surfaces.DiscCover
-
-#print axioms AreaDeficit.Surfaces.DiscCover.domainChartGreen_eq_intrinsic
-

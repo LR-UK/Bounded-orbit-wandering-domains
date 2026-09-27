@@ -2,8 +2,10 @@ import Mathlib.Analysis.SpecialFunctions.Arcosh
 import Mathlib.Analysis.Real.Pi.Bounds
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Analysis.Complex.Norm
-import Mathlib.Tactic
-
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Ring
 open Set Metric
 namespace FunctionTheory
 set_option autoImplicit false

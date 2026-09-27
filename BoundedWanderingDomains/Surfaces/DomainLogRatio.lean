@@ -129,5 +129,3 @@ theorem domainChartLogRatio_laplacian_nonneg (p : DiscCover M)
   nlinarith
 
 end AreaDeficit.Surfaces.DiscCover
-
-#print axioms AreaDeficit.Surfaces.DiscCover.domainChartLogRatio_laplacian

@@ -95,5 +95,3 @@ theorem DiscCover.eventually_maps_radius_into_end_neighborhood
   exact ⟨⟨z, mem_ball_zero_iff.mpr hz⟩, rfl⟩
 
 end AreaDeficit.Surfaces
-
-#print axioms AreaDeficit.Surfaces.DiscCover.eventually_maps_radius_into_end_neighborhood

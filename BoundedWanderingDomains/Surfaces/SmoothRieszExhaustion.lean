@@ -82,6 +82,3 @@ theorem areaGain_univ_le_of_smoothRieszExhaustion
   · simpa only [boundary] using hbound
 
 end AreaDeficit.Surfaces.DiscCover
-
-#print axioms AreaDeficit.Surfaces.DiscCover.areaGain_univ_le_of_smoothRieszExhaustion
-#print axioms AreaDeficit.Surfaces.DiscCover.exists_smoothRiesz_exhaustion_data

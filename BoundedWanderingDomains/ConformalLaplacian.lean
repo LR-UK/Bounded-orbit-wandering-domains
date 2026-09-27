@@ -109,5 +109,3 @@ theorem pullback_density_contDiffAt {rho : ℂ → ℝ} {f : ℂ → ℂ} {x : �
     (hr.comp x (hf.contDiffAt.restrict_scalars ℝ))
 
 end AreaDeficit
-
-#print axioms AreaDeficit.pullback_density_curvature

@@ -1,7 +1,6 @@
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
 import BoundedWanderingDomains.Surfaces.CompactificationCutoff
 import BoundedWanderingDomains.Surfaces.GlobalIntrinsicGreen
-import BoundedWanderingDomains.Surfaces.SurfaceChartPartition
 import BoundedWanderingDomains.CutoffEndLimits
 
 /-! # Green pairings for compactification end cutoffs -/
@@ -463,9 +462,3 @@ theorem DiscCover.intrinsicGreen_restrictedCutoff_sub
 
 end FinitePunctureDiscs
 end AreaDeficit.Surfaces
-
-#print axioms AreaDeficit.Surfaces.FinitePunctureDiscs.DiscCover.domainChartGreen_restrictedSurfaceLogCutoffDiff
-
-
-
-

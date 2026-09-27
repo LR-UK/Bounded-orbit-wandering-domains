@@ -39,5 +39,3 @@ theorem no_escaping_simplyConnected_wandering_orbit_of_classB
     (wandering_orbit_subsequence_singularDerivedSet_of_simplyConnected hf hU hz hforward hdis hsc)
 
 end BoundedWanderingDomains
-
-#print axioms BoundedWanderingDomains.no_escaping_simplyConnected_wandering_orbit_of_classB

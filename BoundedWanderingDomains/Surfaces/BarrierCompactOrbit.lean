@@ -106,5 +106,3 @@ theorem barrier_component_subset_omega_of_compact_orbit
     ⟨x, mem_componentDomain hxA⟩ hK hxK
 
 end SurfaceDynamics.LocalMap
-
-#print axioms SurfaceDynamics.LocalMap.barrier_component_subset_omega_of_compact_orbit

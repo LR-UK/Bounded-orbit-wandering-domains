@@ -154,7 +154,3 @@ theorem domainArea_univ_eq_hyperbolicArea_univ_connected
       rw [← hprecover, measure_iUnion hpredis hpremeas]
 
 end AreaDeficit.Surfaces.DiscCover
-
-#print axioms AreaDeficit.Surfaces.DiscCover.domainDensity_eq_connected
-#print axioms AreaDeficit.Surfaces.DiscCover.domainArea_eq_hyperbolicArea_preimage_of_subset_chart
-#print axioms AreaDeficit.Surfaces.DiscCover.domainArea_univ_eq_hyperbolicArea_univ_connected

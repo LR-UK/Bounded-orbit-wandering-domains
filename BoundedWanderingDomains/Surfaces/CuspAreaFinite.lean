@@ -69,6 +69,3 @@ theorem hyperbolicArea_univ_lt_top_of_finite_cusp_cover
       ENNReal.sum_lt_top.mpr (fun i hi => hA i hi)⟩
 
 end AreaDeficit.Surfaces.DiscCover
-
-#print axioms AreaDeficit.Surfaces.DiscCover.hyperbolicArea_cusp_chart_finite
-#print axioms AreaDeficit.Surfaces.DiscCover.hyperbolicArea_univ_lt_top_of_finite_cusp_cover

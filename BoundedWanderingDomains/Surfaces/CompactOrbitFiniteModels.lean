@@ -50,5 +50,3 @@ theorem exists_finite_models_of_compact_normal_orbit
     exact fun x hx hxA => disjoint_left.mp hdis hxA hx
 
 end SurfaceDynamics.LocalMap
-
-#print axioms SurfaceDynamics.LocalMap.exists_finite_models_of_compact_normal_orbit

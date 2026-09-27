@@ -162,7 +162,3 @@ theorem exists_subsequence_of_eventually_near_sphericalDerivedSet
     (cluster_points_in_sphericalDerivedSet_of_eventually_near S u h)
 
 end BoundedWanderingDomains
-
-#print axioms BoundedWanderingDomains.infty_mem_sphericalDerivedSet_iff
-#print axioms BoundedWanderingDomains.exists_subsequence_tendsto_sphericalDerivedSet
-#print axioms BoundedWanderingDomains.exists_subsequence_of_eventually_near_sphericalDerivedSet

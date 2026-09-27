@@ -20,5 +20,3 @@ theorem bounded_region_subset_trapped_interior {f : ℂ → ℂ} {D : Set ℂ} {
     (mem_ball_zero_iff.mp (hfront hw n)))
 
 end AreaDeficit
-
-#print axioms AreaDeficit.bounded_region_subset_trapped_interior

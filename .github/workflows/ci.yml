@@ -28,7 +28,7 @@ jobs:
       - name: Fetch the required Mathlib cache
         run: python3 scripts/fetch_cache.py
       - name: Build, compare declarations and audit axioms
-        run: python3 scripts/verify_paper.py
+        run: python3 scripts/verify_paper.py --all
       - name: Validate metadata and attribution
         run: |
           python3 scripts/verify_metadata.py

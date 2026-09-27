@@ -93,5 +93,3 @@ theorem chart_domainArea_eq_image_of_pullback
   · exact hpull
 
 end AreaDeficit.Surfaces.DiscCover
-
-#print axioms AreaDeficit.Surfaces.DiscCover.chart_domainArea_eq_image_of_pullback

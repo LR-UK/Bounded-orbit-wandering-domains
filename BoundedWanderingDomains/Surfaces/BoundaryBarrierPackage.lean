@@ -93,5 +93,3 @@ theorem exists_boundaryBarrierFinsetPackage_in_subsurface
   · simpa only [hcoe] using hbad
 
 end SurfaceDynamics.LocalMap
-
-#print axioms SurfaceDynamics.LocalMap.exists_boundaryBarrierPackage_in_subsurface

@@ -375,9 +375,3 @@ theorem DiscCover.eventually_integrable_compactification_boundary
 
 end FinitePunctureDiscs
 end AreaDeficit.Surfaces
-
-#print axioms AreaDeficit.Surfaces.FinitePunctureDiscs.DiscCover.tendsto_compactification_oldEnd_boundary_zero
-
-
-
-

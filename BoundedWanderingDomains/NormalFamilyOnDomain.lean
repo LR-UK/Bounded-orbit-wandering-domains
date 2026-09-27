@@ -110,5 +110,3 @@ theorem spherical_subsequence_of_local_normality {U : Set ℂ} (hU : IsOpen U)
     exact ⟨univ, isCompact_univ, fun _ _ => mem_univ _⟩
 
 end AreaDeficit
-
-#print axioms AreaDeficit.subsequence_of_local_normality

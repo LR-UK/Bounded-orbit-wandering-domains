@@ -94,5 +94,3 @@ theorem exists_local_puncture_sequence
       (fun x hx => hn x (hVL hx)) hR
 
 end AreaDeficit
-
-#print axioms AreaDeficit.exists_local_puncture_sequence

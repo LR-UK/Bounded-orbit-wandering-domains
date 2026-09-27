@@ -1,7 +1,7 @@
-# Verification — completed formalisation, 27 September 2026
+# Verification — audited completed formalisation, 27 September 2026
 
-The complete local build passed (4,705 targets). The pinned compiler is
-Lean 4.35.0-rc2; Mathlib is pinned to
+The complete retained local build passed (4,326 Lake jobs; 795 local modules).
+The pinned compiler is Lean 4.35.0-rc2; Mathlib is pinned to
 `065356127b1dc0016f66b7283ce0ce2c4055aa55`.
 
 The dedicated revised-paper audit passed:
@@ -12,10 +12,12 @@ The dedicated revised-paper audit passed:
   nonsemantic expression metadata are erased by the local comparison.
 - Every target's transitive axioms are contained in
   `propext`, `Classical.choice`, and `Quot.sound`.
-- 773 local modules in PaperSolution's import closure were scanned; no `sorry`,
+- 770 local modules in PaperSolution's import closure were scanned; no `sorry`,
   `admit`, `native_decide`, custom axioms or challenge imports occur there.
-- The retained legacy entry points also compile. An old malformed finite-removal
-  statement and an obsolete multiplication lemma were repaired during this check.
+  With `--all`, all 792 local proof modules in the retained build passed this scan.
+- The retained legacy entry points also compile. The earlier completion check
+  repaired an old malformed finite-removal statement and an obsolete
+  multiplication lemma. This build audit preserves all theorem statements.
 
 `verification/paper-submission.json` is the machine-readable audit report.
 The corresponding build, axiom and independent declaration logs are in
@@ -24,8 +26,11 @@ The corresponding build, axiom and independent declaration logs are in
 and style lints are permitted; challenge proof-placeholder warnings are expected.
 Saved build logs have trailing whitespace normalized.
 
-Reproduce the main audit with `python3 scripts/verify_paper.py`. The source
-dependency inventory is also summarized in `verification/paper-dependencies.md`.
+Reproduce the main audit with `python3 scripts/verify_paper.py`; use `--all`
+to include the retained earlier and research entry points. BUILD_AUDIT.md records
+the import and duplication audit, supplementary type checks and measured timings.
+The source dependency inventory is also summarized in
+`verification/paper-dependencies.md`.
 The attribution audit is supplied as `scripts/audit_attribution.py`.
 
 ## Separate external checks

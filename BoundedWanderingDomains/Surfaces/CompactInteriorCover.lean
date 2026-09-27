@@ -40,5 +40,3 @@ theorem compact_interior_isCoveringMap
   rfl
 
 end SurfaceDynamics
-
-#print axioms SurfaceDynamics.compact_interior_isCoveringMap

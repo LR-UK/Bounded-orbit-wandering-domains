@@ -89,5 +89,3 @@ theorem compl_omega_subset_closure_backward_anchors
   exact hx (f.mem_omega_of_omits_finite_anchors hf E O hO p W hWtrap hWO ⟨x, hn⟩)
 
 end SurfaceDynamics.LocalMap
-
-#print axioms SurfaceDynamics.LocalMap.mem_omega_of_omits_finite_anchors

@@ -132,5 +132,3 @@ theorem domainDensity_covering_pullback
   simpa only [mul_assoc] using hs'.trans_eq he.symm
 
 end AreaDeficit.Surfaces.DiscCover
-
-#print axioms AreaDeficit.Surfaces.DiscCover.domainDensity_covering_pullback

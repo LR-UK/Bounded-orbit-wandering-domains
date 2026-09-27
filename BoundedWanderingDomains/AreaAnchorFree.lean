@@ -137,5 +137,3 @@ theorem uniform_compact_gain_plane
     _ ≤ T + cost := hgain
 
 end AreaDeficit
-
-#print axioms AreaDeficit.uniform_compact_gain_plane

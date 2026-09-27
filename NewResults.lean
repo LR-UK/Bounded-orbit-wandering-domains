@@ -28,16 +28,3 @@ The third statement has no simple-connectivity hypothesis. Its pointwise form
 and the class-B no-escaping-wandering-orbit corollary are also imported here.
 Area uses curvature −1 without dividing by 2π.
 -/
-
-#print axioms AreaDeficit.uniform_compact_gain_sphere
-#print axioms AreaDeficit.sphere_finite_puncture_gain_le_two_pi_mul_card
-#print axioms AreaDeficit.uniform_compact_finite_gain_plane
-#print axioms AreaDeficit.uniform_compact_finite_gain_sphere_le
-#print axioms BoundedWanderingDomains.wandering_orbit_locallyUniform_spherical_singular_derivedSet
-#print axioms BoundedWanderingDomains.no_escaping_wandering_orbit_of_classB
-
-#print axioms BoundedWanderingDomains.local_wandering_orbit_locallyUniform_singular_derivedSet
-#print axioms FunctionTheory.MeromorphicNFOn.sphereHolomorphicOn_meromorphicSphereValue
-#print axioms FunctionTheory.MeromorphicNFOn.mdifferentiable_meromorphicSphereValue
-#print axioms MeromorphicDynamics.surfaceModel_mdifferentiable
-#print axioms MeromorphicDynamics.surfaceModel_iterate_coe_of_analytic

@@ -71,5 +71,3 @@ theorem trappedSet_totalize_eq_trapped (f : LocalMap X) :
   · exact f.trapped_subset_trappedSet_totalize
 
 end SurfaceDynamics.LocalMap
-
-#print axioms SurfaceDynamics.LocalMap.trappedSet_totalize_eq_trapped

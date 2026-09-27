@@ -173,5 +173,3 @@ theorem noCompactWanderingOrbitClaim : NoCompactWanderingOrbitClaim (X := X) := 
   exact haC n
 
 end SurfaceDynamics
-
-#print axioms SurfaceDynamics.noCompactWanderingOrbitClaim

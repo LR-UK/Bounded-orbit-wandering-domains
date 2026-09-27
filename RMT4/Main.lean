@@ -73,5 +73,3 @@ theorem RMT (h1 : IsOpen U) (h2 : IsConnected U) (h3 : U ≠ univ) (h4 : has_pri
   have : good_domain U := ⟨h1, h2.1, h2.2, h3, (h4.has_logs h1 h2.isPreconnected).has_sqrt⟩
   obtain ⟨f, hf : f ∈ 𝓘 U, hfU⟩ := main (U := U)
   exact ⟨f, hf.1.1, hf.2, hfU⟩
-
-#print axioms RMT

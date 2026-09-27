@@ -40,6 +40,3 @@ theorem LocalMap.orbit_mem_of_compactifiedIterate_mem_image
   exact OnePoint.coe_injective hw ▸ hwK
 
 end SurfaceDynamics
-
-#print axioms SurfaceDynamics.LocalMap.IsWanderingComponent.exists_orbit_components
-#print axioms SurfaceDynamics.LocalMap.orbit_mem_of_compactifiedIterate_mem_image

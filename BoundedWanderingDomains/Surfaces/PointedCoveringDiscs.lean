@@ -125,6 +125,3 @@ theorem unitDisc_closed_radius_connected {r : ℝ} (hr : 0 ≤ r) (hr1 : r < 1) 
   exact heq.symm ▸ (convex_closedBall (0 : ℂ) r).isPreconnected
 
 end AreaDeficit.Surfaces
-
-#print axioms AreaDeficit.Surfaces.DiscCover.mapsTo_closed_radius
-#print axioms AreaDeficit.Surfaces.covering_injOn_simplyConnected

@@ -74,6 +74,3 @@ theorem eventually_bounded_new_puncture_boundary_mass
     p.eventually_bounded_new_puncture_boundary_mass_explicit q hU hd ha hR hball
 
 end AreaDeficit.Surfaces.DiscCover
-
-#print axioms AreaDeficit.Surfaces.DiscCover.eventually_bounded_new_puncture_boundary_mass
-

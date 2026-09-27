@@ -69,5 +69,3 @@ theorem wandering_orbit_subsequence_singularDerivedSet_of_simplyConnected
   exact ⟨c, hcS, fun k => φ k + 1, fun i j hij => Nat.add_lt_add_right (hφ hij) 1, hlim⟩
 
 end BoundedWanderingDomains
-
-#print axioms BoundedWanderingDomains.wandering_orbit_subsequence_singularDerivedSet_of_simplyConnected

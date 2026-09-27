@@ -116,5 +116,3 @@ theorem exists_simplyConnected_neighborhood_of_compactFill_subset
     exact (hJT (interior_subset hz)).2
 
 end AreaDeficit.Surfaces
-
-#print axioms AreaDeficit.Surfaces.exists_simplyConnected_neighborhood_of_compactFill_subset

@@ -21,7 +21,7 @@ CACHE = {'Mathlib', 'Batteries', 'Aesop', 'Qq', 'ProofWidgets', 'LeanSearchClien
          'ImportGraph', 'Plausible'}
 CORE = {'Init', 'Lean', 'Std', 'Lake'}
 seen, imports = set(), set()
-pending = ['Solution', 'Challenge', 'BoundedWanderingDomains', 'CoveringSolution', 'NewResults', 'SingularLimitsChallenge', 'SingularLimitsSolution', 'SurfaceResearch']
+pending = ['PaperSolution', 'PaperChallenge', 'Solution', 'Challenge', 'CoveringSolution', 'NewResults', 'SingularLimitsChallenge', 'SingularLimitsSolution', 'SurfaceResearch']
 while pending:
     module = pending.pop()
     if module in seen:
@@ -37,7 +37,7 @@ while pending:
     matches = [base / rel for base in BASES if (base / rel).is_file()]
     if len(matches) != 1 and not (ROOT / rel).is_file():
         raise RuntimeError(f'Module {module}: expected one contained source, found {matches}')
-    code = lexer.without_lean_comments(matches[0].read_text())
+    code = lexer.without_lean_comments(matches[0].read_text(encoding='utf-8'))
     for line in re.findall(r'^\s*(?:public\s+)?import\s+(?:all\s+)?([^\n]+)', code, re.M):
         pending.extend(line.split())
 lake = shutil.which('lake') or str(Path.home() / '.elan/bin/lake')

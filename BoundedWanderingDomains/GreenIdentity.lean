@@ -1,8 +1,8 @@
 import Mathlib.Analysis.Calculus.LineDeriv.IntegrationByParts
 import Mathlib.Analysis.InnerProductSpace.Laplacian
 import Mathlib.MeasureTheory.Function.LocallyIntegrable
-import Mathlib.Tactic
-
+import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Ring
 open MeasureTheory Filter Set InnerProductSpace Laplacian
 open scoped Topology ContDiff
 

@@ -50,5 +50,3 @@ theorem SphereHolomorphicOn.mdifferentiableOn
     exact RiemannDynamics.sphereChartInfty_eqOn (hne w hw)
 
 end NoWanderingDomains
-
-#print axioms NoWanderingDomains.SphereHolomorphicOn.mdifferentiableOn

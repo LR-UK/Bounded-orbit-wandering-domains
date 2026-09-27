@@ -152,6 +152,3 @@ theorem hyperbolicArea_finitePunctureDomain_lt_top (F : Finset M)
   exact ⟨p.projection discZero⟩
 
 end AreaDeficit.Surfaces.DiscCover
-
-#print axioms AreaDeficit.Surfaces.DiscCover.hyperbolicArea_compl_finset_lt_top
-#print axioms AreaDeficit.Surfaces.DiscCover.hyperbolicArea_finitePunctureDomain_lt_top

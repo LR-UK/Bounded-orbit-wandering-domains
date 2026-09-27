@@ -67,5 +67,3 @@ theorem exists_finitePuncture_barrier {f : X → X} {V K A O : Set X}
   exact ⟨P, hPmono, hPfinite, hAP, hback, hdisj⟩
 
 end SurfaceDynamics
-
-#print axioms SurfaceDynamics.exists_finitePuncture_barrier

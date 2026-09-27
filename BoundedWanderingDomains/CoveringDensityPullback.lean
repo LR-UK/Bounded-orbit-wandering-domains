@@ -200,7 +200,3 @@ theorem hyperbolicArea_le_image_of_covering
   nlinarith [norm_nonneg (deriv f z)]
 
 end AreaDeficit
-
-#print axioms AreaDeficit.closedComplementDensity_covering_pullback
-#print axioms AreaDeficit.closedComplementDensity_le_covering_pullback
-#print axioms AreaDeficit.hyperbolicArea_le_image_of_covering

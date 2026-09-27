@@ -138,6 +138,3 @@ theorem trapped_component_injOn {f : ℂ → ℂ} {V K : Set ℂ} {z : ℂ}
     subset_closure (hfa.continuousOn.mono subset_closure) hm hcov
 
 end AreaDeficit
-
-#print axioms AreaDeficit.eventually_deriv_ne_zero_on_disjoint_domains
-#print axioms AreaDeficit.closure_component_preimage_trapped

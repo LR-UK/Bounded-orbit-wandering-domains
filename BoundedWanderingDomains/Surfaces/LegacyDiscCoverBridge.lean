@@ -78,7 +78,3 @@ theorem DiscCover.nonempty_finitelyPuncturedPlane (P : Finset ℂ)
   exact ⟨DiscCover.ofPlaneCovering U p hp⟩
 
 end AreaDeficit.Surfaces
-
-#print axioms AreaDeficit.Surfaces.DiscCover.ofPlaneCovering
-#print axioms AreaDeficit.Surfaces.DiscCover.nonempty_finitelyPuncturedPlane
-#print axioms AreaDeficit.Surfaces.DiscCover.transDiffeomorph

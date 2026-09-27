@@ -45,5 +45,3 @@ theorem compact_range_of_no_escaping_subsequence (u : ℕ → X)
   exact fun hu => hφout n (K.subset hn (hm hu))
 
 end SurfaceDynamics
-
-#print axioms SurfaceDynamics.compact_range_of_no_escaping_subsequence

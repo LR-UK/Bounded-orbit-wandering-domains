@@ -47,5 +47,3 @@ theorem domainArea_le_image_of_openDomain_covering_finite_patches
     hA hfiA hsub hdis hcover hinj hlocal
 
 end AreaDeficit.Surfaces.DiscCover
-
-#print axioms AreaDeficit.Surfaces.DiscCover.domainArea_le_image_of_openDomain_covering_finite_patches

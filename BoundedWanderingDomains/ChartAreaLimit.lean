@@ -95,6 +95,3 @@ theorem chart_disc_area {u : ℂ → ℂ} {U : Set ℂ}
   rw [← ENNReal.ofReal_mul (sq_nonneg _), mul_pow]
 
 end AreaDeficit
-
-#print axioms AreaDeficit.FinitePunctureMetricInput.chart_area_bound
-#print axioms AreaDeficit.chart_disc_area

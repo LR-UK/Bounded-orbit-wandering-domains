@@ -48,5 +48,3 @@ theorem local_dynamical_area_bound (G : FinitePunctureMetricInput)
     · exact hw.2 (hback ⟨hKV (hWK hw.1), hES hwe⟩)
 
 end AreaDeficit.FinitePunctureMetricInput
-
-#print axioms AreaDeficit.FinitePunctureMetricInput.local_dynamical_area_bound

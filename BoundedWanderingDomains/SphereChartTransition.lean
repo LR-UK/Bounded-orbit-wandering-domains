@@ -224,9 +224,3 @@ theorem sphere_chart_hyperbolic_gain_image
       mul_comm ‖deriv (sphereChartTransition p q) z‖, hρA]
 
 end AreaDeficit
-
-#print axioms AreaDeficit.sphereChartTransition_differentiableOn_compl
-#print axioms AreaDeficit.sphereChartTransition_leftInverse_on_compl
-#print axioms AreaDeficit.sphere_chart_density_transform
-#print axioms AreaDeficit.sphere_chart_hyperbolic_area_image
-#print axioms AreaDeficit.sphere_chart_hyperbolic_gain_image

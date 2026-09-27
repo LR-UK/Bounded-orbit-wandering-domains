@@ -47,5 +47,3 @@ theorem DiscCover.isOpenMap (p : DiscCover M) : IsOpenMap p.projection :=
   p.covering.isOpenMap
 
 end AreaDeficit.Surfaces
-
-#print axioms AreaDeficit.Surfaces.unitDisc_simplyConnected

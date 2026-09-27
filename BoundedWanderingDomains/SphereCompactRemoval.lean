@@ -252,5 +252,3 @@ theorem uniform_compact_gain_sphere
   exact hmain.trans (add_le_add hauxF le_rfl)
 
 end AreaDeficit
-
-#print axioms AreaDeficit.uniform_compact_gain_sphere

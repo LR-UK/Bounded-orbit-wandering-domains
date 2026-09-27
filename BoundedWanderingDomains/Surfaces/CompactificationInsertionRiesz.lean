@@ -220,10 +220,3 @@ theorem DiscCover.compactification_uniformGlobalPointInsertionBound
 
 end FinitePunctureDiscs
 end AreaDeficit.Surfaces
-
-#print axioms AreaDeficit.Surfaces.FinitePunctureDiscs.DiscCover.eventually_bounded_compactification_intrinsicGreen
-
-
-
-
-

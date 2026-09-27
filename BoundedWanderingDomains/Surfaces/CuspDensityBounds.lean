@@ -171,6 +171,3 @@ theorem lintegral_chartDensity_sq_cusp_lt_top (p : DiscCover M)
       (ae_of_all _ (fun _ => sq_nonneg _))).mpr hi)
 
 end AreaDeficit.Surfaces.DiscCover
-
-#print axioms AreaDeficit.Surfaces.DiscCover.chartDensity_upper_cusp
-#print axioms AreaDeficit.Surfaces.DiscCover.lintegral_chartDensity_sq_cusp_lt_top

@@ -111,5 +111,3 @@ theorem components_restrictAmbient_restrictSource_of_compact_orbit
   exact Subset.antisymm hRsub hCsub
 
 end SurfaceDynamics.LocalMap
-
-#print axioms SurfaceDynamics.LocalMap.components_restrictAmbient_restrictSource_of_compact_orbit

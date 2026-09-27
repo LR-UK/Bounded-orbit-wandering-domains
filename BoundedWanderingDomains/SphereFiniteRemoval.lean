@@ -102,6 +102,3 @@ theorem sphere_finite_puncture_gain_le_two_pi_mul_card
       _ = _ := by rw [Finset.card_insert_of_notMem hw]; simp [add_mul]
 
 end AreaDeficit
-
-#print axioms AreaDeficit.sphere_finite_removal_gain_le_two_pi_mul_card
-#print axioms AreaDeficit.sphere_finite_puncture_gain_le_two_pi_mul_card

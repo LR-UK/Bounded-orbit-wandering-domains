@@ -66,5 +66,3 @@ theorem sum_active_mul (P : AmbientChartPartition M)
 
 end AmbientChartPartition
 end AreaDeficit.Surfaces
-
-#print axioms AreaDeficit.Surfaces.exists_ambientChartPartition

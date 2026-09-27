@@ -148,5 +148,3 @@ theorem exists_source_finitePuncture_barrier (f : LocalMap X)
 
 end LocalMap
 end SurfaceDynamics
-
-#print axioms SurfaceDynamics.LocalMap.exists_source_finitePuncture_barrier

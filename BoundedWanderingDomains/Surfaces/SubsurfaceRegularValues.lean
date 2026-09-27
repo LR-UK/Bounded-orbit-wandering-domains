@@ -117,5 +117,3 @@ theorem singularValues_restrictAmbient_restrictSource_subset
   · exact ⟨⟨yo.property, hyr⟩, hyB⟩
 
 end SurfaceDynamics.LocalMap
-
-#print axioms SurfaceDynamics.LocalMap.regularValues_restrictAmbient_restrictSource

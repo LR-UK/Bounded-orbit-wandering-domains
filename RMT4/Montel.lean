@@ -80,7 +80,5 @@ theorem montel (hU : IsOpen U) (h1 : UniformlyBoundedOn F U) (h2 : ∀ i, Differ
   have l1 : range F ⊆ 𝓑 U Q := by rintro f ⟨i, rfl⟩ ; exact ⟨h2 i, fun K hK => hQ2 K hK i⟩
   exact TotallyBounded.subset l1 <| (isCompact_𝓑 hU hQ1).totallyBounded
 
-#print axioms montel
-
 lemma isCompact_𝓜 (hU : IsOpen U) : IsCompact (𝓜 U) := by
   simpa only [𝓑_const, 𝓜] using isCompact_𝓑 hU (fun _ _ => isCompact_closedBall 0 1)

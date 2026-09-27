@@ -190,11 +190,3 @@ theorem closedComplementAreaWeight_mono (A B : Set ℂ)
   nlinarith
 
 end AreaDeficit
-
-#print axioms AreaDeficit.closedComplementDensity_eq_cover
-#print axioms AreaDeficit.closedComplementDensity_pos
-#print axioms AreaDeficit.closedComplementDensity_mono
-#print axioms AreaDeficit.closedComplementDensity_contDiffAt
-#print axioms AreaDeficit.closedComplementDensity_curvature
-#print axioms AreaDeficit.measurable_closedComplementDensity
-#print axioms AreaDeficit.FinitePunctureMetricInput.density_tendsto_closedComplement

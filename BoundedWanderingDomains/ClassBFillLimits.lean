@@ -99,5 +99,3 @@ theorem uniform_spherical_constant_on_fill {f : ℂ → ℂ}
   | coe a => exact uniform_spherical_finite_on_fill hK (fun n => hf.1.iterate (ns n + 1)) hlim
 
 end AreaDeficit
-
-#print axioms AreaDeficit.uniform_spherical_constant_on_fill

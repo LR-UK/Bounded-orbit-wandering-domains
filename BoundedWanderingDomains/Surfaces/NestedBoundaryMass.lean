@@ -141,7 +141,3 @@ theorem eventually_bounded_domainChart_new_boundary_mass
   exact ht
 
 end AreaDeficit.Surfaces.DiscCover
-
-#print axioms AreaDeficit.Surfaces.DiscCover.tendsto_domainChart_old_boundary_mass_zero
-#print axioms AreaDeficit.Surfaces.DiscCover.eventually_bounded_domainChart_new_boundary_mass
-

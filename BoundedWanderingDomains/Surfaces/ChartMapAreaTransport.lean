@@ -191,5 +191,3 @@ theorem chart_hyperbolicArea_le_image_of_covering
       hW hWc hfWd hfW hinj hdef0
 
 end AreaDeficit.Surfaces.DiscCover
-
-#print axioms AreaDeficit.Surfaces.DiscCover.chart_area_advance_of_density_deficit

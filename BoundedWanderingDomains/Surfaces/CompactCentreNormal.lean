@@ -281,5 +281,3 @@ theorem DiscCover.exists_normal_disc_subsequence_compact_range
   rfl
 
 end AreaDeficit.Surfaces
-
-#print axioms AreaDeficit.Surfaces.DiscCover.exists_normal_lift_subsequence

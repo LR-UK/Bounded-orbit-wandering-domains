@@ -5,8 +5,8 @@ Released under Apache 2.0 licence; see LICENSE.
 import Mathlib.MeasureTheory.Constructions.HaarToSphere
 import Mathlib.MeasureTheory.Measure.Lebesgue.VolumeOfBalls
 import Mathlib.MeasureTheory.Integral.IntegralEqImproper
-import Mathlib.Tactic
-
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Ring
 open Set MeasureTheory
 
 namespace AreaDeficit

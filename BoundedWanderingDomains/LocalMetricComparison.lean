@@ -134,5 +134,3 @@ theorem compact_log_comparison (G : FinitePunctureMetricInput)
     (Finset.single_le_sum (fun w _ => hM w) hxt)
 
 end AreaDeficit.FinitePunctureMetricInput
-
-#print axioms AreaDeficit.FinitePunctureMetricInput.compact_log_comparison

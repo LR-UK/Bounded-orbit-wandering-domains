@@ -93,5 +93,3 @@ theorem fill_subset_interior_of_fill_subset {K F : Set ℂ} (hK : IsClosed K)
   exact (connectedComponentIn_eq hw) ▸ hz
 
 end AreaDeficit
-
-#print axioms AreaDeficit.fill_subset_trapped_of_forward_fillings

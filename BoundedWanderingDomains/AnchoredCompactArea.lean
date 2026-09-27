@@ -232,7 +232,3 @@ theorem uniform_closed_compact_gain_anchored
     chi hchi hc hchi0 hsupp hchiW
 
 end AreaDeficit
-
-#print axioms AreaDeficit.FinitePunctureMetricInput.uniform_finite_compact_gain
-#print axioms AreaDeficit.FinitePunctureMetricInput.uniform_closed_compact_gain
-#print axioms AreaDeficit.uniform_closed_compact_gain_anchored

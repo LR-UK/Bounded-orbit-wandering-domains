@@ -32,6 +32,4 @@ theorem exists_disc_covering_finitely_punctured_plane
   exact exists_disc_covering_of_models U x₀ P.finite_toSet.infinite_compl hab
     (fun h => h ha) (fun h => h hb) hmodels
 
-#print axioms exists_disc_covering_finitely_punctured_plane
-
 end RiemannDynamics

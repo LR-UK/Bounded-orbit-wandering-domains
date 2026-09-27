@@ -66,6 +66,3 @@ theorem bounded_fatou_orbit_simplyConnected {f : ℂ → ℂ} {U : ℕ → Set �
   exact trapped_closed_disc_component_simplyConnected hf (hzT n)
 
 end AreaDeficit
-
-#print axioms AreaDeficit.trapped_closed_disc_no_bounded_complement
-#print axioms AreaDeficit.bounded_fatou_orbit_simplyConnected

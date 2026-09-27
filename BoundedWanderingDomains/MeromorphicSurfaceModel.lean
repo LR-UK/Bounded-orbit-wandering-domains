@@ -267,12 +267,3 @@ theorem surfaceModel_compactifiedIterate_coe_of_poleAvoiding
   rw [surfaceModel_iterate_coe_of_analytic f n z (fun j hj => hz j)]
 
 end MeromorphicDynamics
-
-#print axioms MeromorphicDynamics.surfaceModel_mdifferentiable
-#print axioms MeromorphicDynamics.rational_of_meromorphicSphereValue_eventuallyEq
-#print axioms MeromorphicDynamics.not_eventuallyEq_meromorphicSphereValue_const
-#print axioms MeromorphicDynamics.surfaceModel_isOpenHolomorphic
-#print axioms MeromorphicDynamics.poleAvoiding_mem_surfaceModel_trapped
-#print axioms MeromorphicDynamics.poleAvoiding_iff_mem_surfaceModel_trapped
-#print axioms MeromorphicDynamics.surfaceModel_compactifiedIterate_coe_of_poleAvoiding
-#print axioms MeromorphicDynamics.surfaceModel_iterate_coe_of_analytic

@@ -61,5 +61,3 @@ theorem wandering_orbit_subsequence_spherical_singular_derivedSet
   exact wandering_orbit_subsequence_singularDerivedSet hf htrans hU hz hforward hdis
 
 end BoundedWanderingDomains
-
-#print axioms BoundedWanderingDomains.wandering_orbit_subsequence_spherical_singular_derivedSet

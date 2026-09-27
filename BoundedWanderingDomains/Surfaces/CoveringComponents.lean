@@ -31,6 +31,3 @@ theorem IsCoveringMap.surjective_connectedComponent
     apply pathComponent_subset_component e
     refine ⟨⟨Γ, hΓ0, rfl⟩⟩
   exact ⟨⟨Γ 1, hmem⟩, hΓ1⟩
-
-#print axioms IsCoveringMap.surjective_connectedComponent
-#print axioms Continuous.mem_connectedComponent_image

@@ -45,5 +45,3 @@ theorem laplacian_coordinate_change
   simpa only [g, comp_apply, c.left_inv hxc] using hchain
 
 end AreaDeficit.Surfaces
-
-#print axioms AreaDeficit.Surfaces.laplacian_coordinate_change

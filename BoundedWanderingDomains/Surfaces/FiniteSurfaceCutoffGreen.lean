@@ -174,6 +174,3 @@ theorem DiscCover.intrinsicGreen_finitePunctureCutoff
 
 end FinitePunctureDiscs
 end AreaDeficit.Surfaces
-
-#print axioms AreaDeficit.Surfaces.FinitePunctureDiscs.tsupport_intrinsicLaplacian_surfaceLogCutoff_subset
-#print axioms AreaDeficit.Surfaces.FinitePunctureDiscs.domainChartGreen_surfaceLogCutoff

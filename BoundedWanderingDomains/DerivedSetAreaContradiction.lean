@@ -3,6 +3,7 @@ Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
 import BoundedWanderingDomains.SingularAreaGain
+import BoundedWanderingDomains.FiniteModelCancellation
 import BoundedWanderingDomains.IntrinsicChartAreaLimit
 import BoundedWanderingDomains.DerivedSetDiscControl
 
@@ -165,5 +166,3 @@ theorem not_disjoint_cluster_singularDerivedSet_of_finite_models_with_exceptions
   exact harea
 
 end AreaDeficit
-
-#print axioms AreaDeficit.not_disjoint_cluster_singularDerivedSet_of_finite_models_with_exceptions

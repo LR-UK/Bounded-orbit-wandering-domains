@@ -58,5 +58,3 @@ theorem finite_compact_inter_fiber_of_isOpenMap_of_mdifferentiable
     ((isDiscrete_fiber_of_isOpenMap_of_mdifferentiable hopen hf y).mono inter_subset_right)
 
 end SurfaceDynamics
-
-#print axioms SurfaceDynamics.finite_compact_inter_fiber_of_isOpenMap_of_mdifferentiable

@@ -10,11 +10,10 @@ import Mathlib.Topology.DerivedSet
 
 /-! # Exact surface targets for the paper
 
-These are named propositions awaiting proofs, NOT established theorems or
-assumptions of the proved results. They record the agreed statements without
-adding an area estimate, infinite-area limit, or injectivity hypothesis to
-hide an outstanding mathematical obligation. The entire-function results
-are proved separately and appear in the main independent Challenge file.
+These named propositions record the exact surface statements. Their completed
+proofs are exported by PaperSolution. This definition layer adds no auxiliary
+area estimate, infinite-area limit, or injectivity hypothesis. The independent
+PaperChallenge repeats the definitions and all six introductory statements.
 -/
 
 open Set Function Filter MeasureTheory OnePoint

@@ -51,5 +51,3 @@ theorem omega_restrictSource_eq_interior_trapped
     exact subset_closure (horbitV n y)
 
 end SurfaceDynamics.LocalMap
-
-#print axioms SurfaceDynamics.LocalMap.omega_restrictSource_eq_interior_trapped

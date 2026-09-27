@@ -54,6 +54,3 @@ theorem no_uniform_finite_area_bound
   exact (not_lt_of_ge hn') hn
 
 end AreaDeficit.Surfaces
-
-#print axioms AreaDeficit.Surfaces.exists_eventually_large_area
-#print axioms AreaDeficit.Surfaces.no_uniform_finite_area_bound

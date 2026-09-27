@@ -214,5 +214,3 @@ theorem compactFill_iterates_mem_of_forward
       simpa only [Nat.add_succ, Function.iterate_succ_apply'] using hm (n + k) ih
 
 end AreaDeficit.Surfaces
-
-#print axioms AreaDeficit.Surfaces.image_compactFill_subset_compactFill_image_local

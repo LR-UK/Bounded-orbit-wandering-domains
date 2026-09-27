@@ -2,8 +2,7 @@ import FunctionTheory.Meromorphic.Sphere
 import Mathlib.Analysis.Analytic.Polynomial
 import Mathlib.Analysis.Normed.Field.Lemmas
 import Mathlib.Algebra.Polynomial.Roots
-import Mathlib.Tactic
-
+import Mathlib.Tactic.FunProp
 open Set Filter Polynomial Bornology
 open scoped Topology
 

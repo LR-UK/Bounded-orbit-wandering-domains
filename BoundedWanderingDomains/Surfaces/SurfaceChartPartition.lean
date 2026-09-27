@@ -86,6 +86,3 @@ theorem sum_active_mul (P : RestrictedChartPartition U hU)
 
 end RestrictedChartPartition
 end AreaDeficit.Surfaces
-
-#print axioms AreaDeficit.Surfaces.exists_restrictedChartPartition
-#print axioms AreaDeficit.Surfaces.RestrictedChartPartition.sum_active_mul

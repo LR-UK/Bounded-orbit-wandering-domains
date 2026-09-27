@@ -168,6 +168,3 @@ theorem no_wandering_component_orbit (G : FinitePunctureMetricInput)
   exact hvi
 
 end AreaDeficit.FinitePunctureMetricInput
-
-#print axioms AreaDeficit.FinitePunctureMetricInput.no_wandering_chart_orbit_with_anchors
-#print axioms AreaDeficit.FinitePunctureMetricInput.no_wandering_component_orbit

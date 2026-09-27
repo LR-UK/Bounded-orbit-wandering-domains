@@ -90,6 +90,3 @@ theorem no_escaping_wandering_orbit_of_classB
     (wandering_orbit_subsequence_singularDerivedSet hf htrans hU hz hforward hdis)
 
 end BoundedWanderingDomains
-
-#print axioms BoundedWanderingDomains.wandering_orbit_locallyUniform_spherical_singular_derivedSet
-#print axioms BoundedWanderingDomains.no_escaping_wandering_orbit_of_classB

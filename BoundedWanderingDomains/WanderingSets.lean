@@ -1,7 +1,7 @@
 import Mathlib.Dynamics.FixedPoints.Basic
 import Mathlib.Data.Set.Pairwise.Basic
-import Mathlib.Tactic
-
+import Mathlib.Data.Set.Lattice
+import Mathlib.Tactic.Ext
 open Set Function
 
 namespace AreaDeficit

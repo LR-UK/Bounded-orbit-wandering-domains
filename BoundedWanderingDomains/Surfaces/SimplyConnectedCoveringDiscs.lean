@@ -59,6 +59,3 @@ theorem injOn_of_simplyConnected_regular_image
   exact congrArg Subtype.val (hi (x₁ := ⟨x, hDs hx⟩) (x₂ := ⟨y, hDs hy⟩) hx hy he')
 
 end SurfaceDynamics.LocalMap
-
-#print axioms AreaDeficit.Surfaces.DiscCover.injective_of_simplyConnected
-#print axioms SurfaceDynamics.LocalMap.injOn_of_simplyConnected_regular_image

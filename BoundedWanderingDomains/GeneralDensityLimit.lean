@@ -177,6 +177,3 @@ theorem exists_cover_and_density_limit (G : FinitePunctureMetricInput)
   exact ⟨q, hq, G.density_tendsto_component_cover hP hab ha hb hz hq⟩
 
 end AreaDeficit.FinitePunctureMetricInput
-
-#print axioms AreaDeficit.FinitePunctureMetricInput.density_tendsto_component_cover
-#print axioms AreaDeficit.FinitePunctureMetricInput.exists_cover_and_density_limit

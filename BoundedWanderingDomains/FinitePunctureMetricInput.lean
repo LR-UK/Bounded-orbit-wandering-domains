@@ -1,14 +1,18 @@
 import BoundedWanderingDomains.DiscMetric
 import BoundedWanderingDomains.TotalAreaCost
 import Mathlib.Analysis.Complex.Schwarz
-import Mathlib.Tactic
-
+import Mathlib.Tactic.FunProp
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Positivity
 /-!
 # Classical input for finite-puncture hyperbolic geometry
 
 This file defines a *parameter structure*, not an axiom or an instance.
-An inhabitant must eventually be constructed from classical uniformisation
-and Gauss–Bonnet. Until then, theorems taking this structure are conditional.
+Theorems in this file take an inhabitant as an explicit argument. The completed
+development constructs one from disc coverings and the proved area formula;
+see `BoundedWanderingDomains.Unconditional.classicalHyperbolicMetrics` in
+`RiemannDynamics.BoundedWanderingSolution`.
 
 Only classical geometry is assumed here: positive smooth curvature −1
 densities, the sharp disc Schwarz property, and normalised total area.
@@ -140,6 +144,3 @@ theorem insertion_area_cost {P E : Finset ℂ} (hP : 2 ≤ P.card)
 
 end FinitePunctureMetricInput
 end AreaDeficit
-
-#print axioms AreaDeficit.FinitePunctureMetricInput.density_mono
-#print axioms AreaDeficit.FinitePunctureMetricInput.insertion_area_cost

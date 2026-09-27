@@ -149,5 +149,3 @@ theorem exists_uniform_area_advance_of_local_compact_finite_models
   exact hadvance U hTU W hW hWT hinj himage
 
 end SurfaceDynamics.LocalMap
-
-#print axioms SurfaceDynamics.LocalMap.exists_uniform_area_advance_of_local_compact_model

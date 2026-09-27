@@ -89,7 +89,3 @@ theorem point_removal_gain_le_two_pi_normalised
   canonicalFinitePunctureMetricInput.point_removal_gain_le_one A hA hab ha hb
 
 end AreaDeficit
-
-#print axioms AreaDeficit.canonicalFinitePunctureMetricInput
-#print axioms AreaDeficit.finite_removal_gain_le_card
-#print axioms AreaDeficit.point_removal_gain_le_two_pi_normalised

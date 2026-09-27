@@ -1,7 +1,7 @@
 import TauCeti.Analysis.Complex.BranchLogRoot
 import Mathlib.Analysis.Complex.Trigonometric
-import Mathlib.Tactic
-
+import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Ring
 open Set Function
 
 namespace FunctionTheory

@@ -312,10 +312,3 @@ theorem noCompactPositiveAreaWanderingSet_of_source_ne_top
     hdis hinj hApos ⟨K, hK, hKne, hKsource, hsatK⟩
 
 end SurfaceDynamics
-
-#print axioms SurfaceDynamics.compactLocalAreaAdvanceClaim
-#print axioms SurfaceDynamics.noCompactPositiveAreaWanderingSetClaim_of_discCover
-#print axioms SurfaceDynamics.noCompactPositiveAreaWanderingSetClaim_of_isHyperbolic
-#print axioms SurfaceDynamics.noProperCompactPositiveAreaWanderingSet
-#print axioms SurfaceDynamics.noCompactPositiveAreaWanderingSetClaim_of_noncompact
-#print axioms SurfaceDynamics.noCompactPositiveAreaWanderingSet_of_source_ne_top

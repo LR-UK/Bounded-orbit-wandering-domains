@@ -56,9 +56,4 @@ theorem no_local_bounded_wandering_domains
   no_local_bounded_wandering_domains_of_coveringsAndArea classicalDiscCoveringsAndArea
     hV hVc hf hn hK hKV hz hU hbounded
 
-#print axioms classicalDiscCoveringsAndArea
-#print axioms classicalHyperbolicMetrics
-#print axioms no_bounded_wandering_domains_transcendental_entire
-#print axioms no_local_bounded_wandering_domains
-
 end BoundedWanderingDomains.Unconditional

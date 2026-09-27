@@ -118,6 +118,3 @@ theorem wandering_orbit_pointwise_spherical_singular_derivedSet
   exact ⟨a, ha, φ, hφ, hlim.tendsto_at hz⟩
 
 end BoundedWanderingDomains
-
-#print axioms BoundedWanderingDomains.wandering_orbit_locallyUniform_infty
-#print axioms BoundedWanderingDomains.wandering_orbit_pointwise_spherical_singular_derivedSet

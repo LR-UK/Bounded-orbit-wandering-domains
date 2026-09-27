@@ -52,5 +52,3 @@ theorem exists_finite_chart_branch_values
   exact ⟨x, ⟨hxi, hzero⟩, rfl⟩
 
 end SurfaceDynamics
-
-#print axioms SurfaceDynamics.exists_finite_chart_branch_values

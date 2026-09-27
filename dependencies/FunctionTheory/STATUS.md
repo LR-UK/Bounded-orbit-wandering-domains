@@ -1,3 +1,12 @@
+> **27 September 2026 import audit.** Fifteen imports of the complete Mathlib
+> tactic collection in the root paper closure were replaced by specific imports.
+> Missing mathematical and tactic dependencies are now explicit. Public theorem
+> statements and proof bodies are unchanged; the source maps were regenerated.
+> The standalone `scripts/verify.py` was attempted again, but fetching its separate
+> Mathlib checkout failed with an SSL certificate error before compilation. This
+> is not a standalone-audit pass. Root-project checking uses the existing pinned
+> cache; see the root VERIFICATION.md and BUILD_AUDIT.md for its verified scope.
+
 > **24 September 2026 compatibility update.** Deprecated names and unused tactics
 > in the active proof closure have been cleaned up without changing statements.
 > The module map was regenerated. The standalone `scripts/verify.py` was attempted,

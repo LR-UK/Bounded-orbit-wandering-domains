@@ -158,7 +158,3 @@ theorem IsHolomorphicDiscCovering.lintegral_density_sq_cusp_lt_top
       (ae_of_all _ (fun _ => sq_nonneg _))).mpr hi)
 
 end AreaDeficit
-
-#print axioms AreaDeficit.integrable_cusp_density_sq_majorant
-#print axioms AreaDeficit.IsHolomorphicDiscCovering.integrableOn_density_sq_cusp
-#print axioms AreaDeficit.IsHolomorphicDiscCovering.lintegral_density_sq_cusp_lt_top

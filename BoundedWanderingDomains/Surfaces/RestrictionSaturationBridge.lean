@@ -102,8 +102,3 @@ theorem injectiveOnSaturation_restrictSource
   exact congrArg (fun z : f.source => (z : X)) he
 
 end SurfaceDynamics.LocalMap
-
-#print axioms SurfaceDynamics.LocalMap.subset_restrictSource_trapped_diff_omega_of_saturation_subset
-#print axioms SurfaceDynamics.LocalMap.restrictSource_saturation_eq_of_saturation_subset
-#print axioms SurfaceDynamics.LocalMap.restrictSource_imageAt_eq_of_saturation_subset
-#print axioms SurfaceDynamics.LocalMap.injectiveOnSaturation_restrictSource

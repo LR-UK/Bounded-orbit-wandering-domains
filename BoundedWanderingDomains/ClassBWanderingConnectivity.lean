@@ -114,5 +114,3 @@ theorem classB_wandering_component_simplyConnected {f : ℂ → ℂ}
     (ComplexApproximation.subset_fill K).trans (N 0).contains, interior_subset.trans hNU⟩
 
 end AreaDeficit
-
-#print axioms AreaDeficit.classB_wandering_component_simplyConnected

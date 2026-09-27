@@ -169,5 +169,3 @@ theorem subtypeRestr_symm_tendsto_cocompact
 
 end FinitePunctureDiscs
 end AreaDeficit.Surfaces
-
-#print axioms AreaDeficit.Surfaces.FinitePunctureDiscs.puncturedBall_subset_three_restricted_targets

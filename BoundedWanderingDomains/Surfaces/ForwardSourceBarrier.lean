@@ -75,5 +75,3 @@ theorem exists_forward_source_finitePuncture_barrier (f : LocalMap X)
       (fun n => (hroots n).mono_right hRs) hRo hRs hRf
 
 end SurfaceDynamics.LocalMap
-
-#print axioms SurfaceDynamics.LocalMap.exists_forward_source_finitePuncture_barrier

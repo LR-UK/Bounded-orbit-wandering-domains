@@ -4,7 +4,6 @@ Released under Apache 2.0 licence; see LICENSE.
 -/
 import BoundedWanderingDomains.SphereCombinedRemoval
 import BoundedWanderingDomains.FinitePunctureSphereArea
-import BoundedWanderingDomains.FiniteModelCancellation
 
 /-! # Uniform singular-obstacle cost for finite dynamical models -/
 
@@ -79,5 +78,3 @@ theorem uniform_singular_gain_finite_models
       exact ⟨hWL z hz, hWQ hz⟩
 
 end AreaDeficit
-
-#print axioms AreaDeficit.uniform_singular_gain_finite_models

@@ -42,5 +42,3 @@ theorem tendsto_old_puncture_boundary_mass_zero
   exact AreaDeficit.tendsto_integral_mul_laplacian_logCutoff_zero a hzero
 
 end AreaDeficit.Surfaces.DiscCover
-
-#print axioms AreaDeficit.Surfaces.DiscCover.tendsto_old_puncture_boundary_mass_zero

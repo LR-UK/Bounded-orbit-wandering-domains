@@ -1,7 +1,7 @@
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.DerivHyp
 import Mathlib.Analysis.Complex.Norm
-import Mathlib.Tactic
-
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.Ring
 namespace FunctionTheory
 
 set_option autoImplicit false

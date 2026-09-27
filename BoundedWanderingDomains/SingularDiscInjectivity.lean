@@ -74,6 +74,3 @@ theorem eventually_injOn_chartDisc_of_avoid_singularValues
   exact hn.mono_left inter_subset_left
 
 end AreaDeficit
-
-#print axioms AreaDeficit.eventually_injOn_chartDisc_of_avoid_singularValues
-#print axioms AreaDeficit.eventually_injOn_chartDisc_of_chartDisc_avoid_singularValues

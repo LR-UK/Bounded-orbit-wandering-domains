@@ -93,6 +93,3 @@ theorem mapsTo_covering_open_radius (f : LocalMap X)
   exact ⟨w, hw, congrArg Subtype.val hwe⟩
 
 end SurfaceDynamics.LocalMap
-
-#print axioms AreaDeficit.Surfaces.DiscCover.exists_centred
-#print axioms SurfaceDynamics.LocalMap.mapsTo_covering_open_radius

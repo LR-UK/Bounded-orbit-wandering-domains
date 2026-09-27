@@ -109,3 +109,11 @@ were moved without mathematical changes to FunctionTheory/Smooth/Cutoff.lean.
 The old Runge imports and declaration names remain available through
 compatibility exports. This is a move of existing project development,
 not an additional independent formalisation of the same theorem.
+
+## 27 September 2026 submission import audit
+
+The submission copy replaces fifteen broad `Mathlib.Tactic` imports in active
+FunctionTheory and NoWanderingDomains modules with specific mathematical and
+tactic imports. No theorem statement, proof body, author header, licence or
+upstream pin was changed by this audit. The module map records the new imports.
+The root BUILD_AUDIT.md describes the checked scope and standalone-check limit.

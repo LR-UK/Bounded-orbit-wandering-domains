@@ -181,5 +181,3 @@ theorem not_disjoint_cluster_localSingularDerivedSet_of_finite_models
   exact harea
 
 end AreaDeficit
-
-#print axioms AreaDeficit.not_disjoint_cluster_localSingularDerivedSet_of_finite_models

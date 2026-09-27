@@ -168,7 +168,3 @@ theorem wanderingLocallyUniformInfinityClaim_of_surface_theorem
       hU hz hforward hdis)
 
 end MeromorphicDynamics
-
-#print axioms MeromorphicDynamics.wandering_orbit_unbounded_of_surface_theorem
-#print axioms MeromorphicDynamics.wandering_orbit_locallyUniform_infty_of_unbounded
-#print axioms MeromorphicDynamics.wanderingLocallyUniformInfinityClaim_of_surface_theorem

@@ -159,5 +159,3 @@ theorem compact_wandering_cluster_meets_derived_of_discCover
     exact ⟨chartAt ℂ x, (mdifferentiable_chart (I := 𝓘(ℂ)) x).1, fun w hw => hx w hw.le⟩
 
 end SurfaceDynamics
-
-#print axioms SurfaceDynamics.compact_wandering_cluster_meets_derived_of_discCover

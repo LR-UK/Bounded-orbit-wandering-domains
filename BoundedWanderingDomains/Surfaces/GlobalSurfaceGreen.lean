@@ -85,5 +85,3 @@ theorem areaGain_lintegral_eq_finite_chart_green
     _ = _ := by rfl
 
 end AreaDeficit.Surfaces.DiscCover
-
-#print axioms AreaDeficit.Surfaces.DiscCover.areaGain_lintegral_eq_finite_chart_green

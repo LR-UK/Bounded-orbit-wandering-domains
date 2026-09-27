@@ -208,5 +208,3 @@ theorem intrinsicLaplacian_finsetSum (p : DiscCover M)
         ih (fun j hj => hu j (Finset.mem_insert_of_mem hj))]
 
 end AreaDeficit.Surfaces.DiscCover
-
-#print axioms AreaDeficit.Surfaces.DiscCover.intrinsicLaplacian_eq_in_chart

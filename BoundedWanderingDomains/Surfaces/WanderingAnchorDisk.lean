@@ -109,5 +109,3 @@ theorem LocalMap.IsWanderingComponent.exists_hyperbolic_restricted_tail
     horbit_succ n]
 
 end SurfaceDynamics
-
-#print axioms SurfaceDynamics.LocalMap.IsWanderingComponent.exists_anchorDisk_orbit_components

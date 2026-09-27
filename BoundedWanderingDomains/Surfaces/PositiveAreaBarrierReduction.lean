@@ -99,6 +99,3 @@ theorem exists_positiveArea_hyperbolicAnchor_boundaryBarrier
     hVcompact, hPmono, hPforward, hAV, hAP⟩
 
 end SurfaceDynamics.LocalMap
-
-#print axioms SurfaceDynamics.LocalMap.exists_positiveArea_boundaryBarrier
-#print axioms SurfaceDynamics.LocalMap.exists_positiveArea_hyperbolicAnchor_boundaryBarrier

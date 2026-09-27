@@ -84,5 +84,3 @@ theorem uniform_compact_finite_gain_plane
   exact hsplit.trans ((add_le_add hfinite hremote).trans_eq (add_comm P C))
 
 end AreaDeficit
-
-#print axioms AreaDeficit.uniform_compact_finite_gain_plane

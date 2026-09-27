@@ -47,5 +47,3 @@ theorem exists_subsequence_tendsto_infty_of_unbounded
   exact ⟨φ, hφ, hlim⟩
 
 end BoundedWanderingDomains
-
-#print axioms BoundedWanderingDomains.exists_subsequence_tendsto_infty_of_unbounded

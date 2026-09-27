@@ -38,5 +38,3 @@ theorem exists_finite_singularValues_of_compact_global
     (by rw [hrange]; exact subset_univ _), hcov⟩
 
 end SurfaceDynamics.LocalMap
-
-#print axioms SurfaceDynamics.LocalMap.exists_finite_singularValues_of_compact_global

@@ -105,5 +105,3 @@ theorem finite_chart_critical_values
   (finite_chart_critical_points hc hd hf hopen hK hKc hfKd).image f
 
 end SurfaceDynamics
-
-#print axioms SurfaceDynamics.finite_chart_critical_values

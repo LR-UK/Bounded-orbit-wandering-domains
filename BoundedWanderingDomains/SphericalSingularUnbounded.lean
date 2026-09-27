@@ -11,7 +11,8 @@ import RiemannDynamics.BoundedWanderingSolution
 The previously formalised absence of bounded point orbits gives an unbounded
 wandering orbit. When the finite singular set is unbounded, infinity lies in
 its spherical derived set, and a subsequence of the orbit tends to infinity.
-This statement is independent of the as-yet unformalised singular-set API.
+This reusable statement accepts any unbounded set; the completed singular-value
+theorem instantiates it with the actual finite singular-value set.
 -/
 
 open Set Filter OnePoint
@@ -19,9 +20,8 @@ open scoped Topology
 
 namespace BoundedWanderingDomains
 
-/-- The complete unbounded-set branch of the proposed derived-set theorem.
-The parameter `S` can be instantiated with the finite singular set once
-its dynamical definition is available. -/
+/-- The unbounded-set branch of the derived-set theorem. The parameter `S`
+can be instantiated with the finite singular-value set. -/
 theorem wandering_orbit_subsequence_of_unbounded_set
     {f : ℂ → ℂ} (hf : Differentiable ℂ f)
     (htrans : ¬ ∃ p : Polynomial ℂ, ∀ z, f z = p.eval z)
@@ -43,5 +43,3 @@ theorem wandering_orbit_subsequence_of_unbounded_set
   exact ⟨∞, (infty_mem_sphericalDerivedSet_iff S).mpr hS, φ, hφ, hlim⟩
 
 end BoundedWanderingDomains
-
-#print axioms BoundedWanderingDomains.wandering_orbit_subsequence_of_unbounded_set

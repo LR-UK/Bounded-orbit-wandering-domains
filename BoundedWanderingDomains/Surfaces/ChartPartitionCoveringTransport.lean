@@ -94,5 +94,3 @@ theorem domainArea_eq_image_of_openDomain_covering
   · exact hinj
 
 end AreaDeficit.Surfaces.DiscCover
-
-#print axioms AreaDeficit.Surfaces.DiscCover.domainArea_eq_image_of_openDomain_covering

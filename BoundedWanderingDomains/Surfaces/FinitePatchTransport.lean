@@ -53,5 +53,3 @@ theorem finite_patch_area_advance
       rw [← measure_biUnion_finset hdisImage hfiA, hcoverImage]
 
 end AreaDeficit.Surfaces
-
-#print axioms AreaDeficit.Surfaces.finite_patch_area_advance

@@ -57,5 +57,3 @@ theorem exists_compact_cluster_singular_separation
       (fun n hn => subset_closure hn)
 
 end SurfaceDynamics
-
-#print axioms SurfaceDynamics.exists_compact_cluster_singular_separation

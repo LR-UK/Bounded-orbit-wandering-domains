@@ -76,5 +76,3 @@ theorem not_classB_of_surrounding_escaping_continua {f : ℂ → ℂ}
   exact (not_lt_of_ge hzR) (hnR z hz)
 
 end AreaDeficit
-
-#print axioms AreaDeficit.not_classB_of_surrounding_escaping_continua

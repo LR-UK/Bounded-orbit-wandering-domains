@@ -42,5 +42,3 @@ theorem restricted_barrier_component_eq_omega
     hback homega hdis hx
 
 end SurfaceDynamics.LocalMap
-
-#print axioms SurfaceDynamics.LocalMap.restricted_barrier_component_eq_omega

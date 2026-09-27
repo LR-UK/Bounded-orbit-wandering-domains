@@ -218,6 +218,3 @@ theorem sphereHyperbolicAreaGain_independent
   simpa only [sphereHyperbolicAreaGain, WE] using hgain
 
 end AreaDeficit
-
-#print axioms AreaDeficit.sphereHyperbolicArea_independent
-#print axioms AreaDeficit.sphereHyperbolicAreaGain_independent

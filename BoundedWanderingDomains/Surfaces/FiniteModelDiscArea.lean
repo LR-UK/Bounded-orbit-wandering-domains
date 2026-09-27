@@ -73,5 +73,3 @@ theorem disc_area_le_of_finite_model_bounds (p : DiscCover M)
   exact hlimit
 
 end AreaDeficit.Surfaces.DiscCover
-
-#print axioms AreaDeficit.Surfaces.DiscCover.disc_area_le_of_finite_model_bounds

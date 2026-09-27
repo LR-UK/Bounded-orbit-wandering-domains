@@ -152,5 +152,3 @@ theorem exists_finite_branch_values_local_compact_covering
   exact hx.symm
 
 end SurfaceDynamics.LocalMap
-
-#print axioms SurfaceDynamics.LocalMap.exists_finite_branch_values_local_compact_covering

@@ -110,8 +110,3 @@ theorem false_of_positive_area_global_area_advances
     p P hP hA (hApos.hyperbolicArea_pos hA p) hAP hC hD hadvance
 
 end SurfaceDynamics
-
-#print axioms SurfaceDynamics.false_of_positive_area_area_advances
-#print axioms SurfaceDynamics.false_of_positive_hyperbolicArea_area_advances
-#print axioms SurfaceDynamics.false_of_positive_area_global_area_advances
-#print axioms SurfaceDynamics.false_of_positive_hyperbolicArea_global_area_advances
