@@ -285,3 +285,26 @@ Commit `1d578aa` (building on `6c26b70`) contains the checked coordinate-disk-co
 The only positive-area case not covered by those theorems is a globally defined self-map of a compact nonhyperbolic surface. Compact hyperbolic surfaces are already handled by `noCompactPositiveAreaWanderingSetClaim_of_isHyperbolic`. `CompactGlobalAnchors.lean` now constructs three distinct anchors in the positive-area set and deletes their countable backward tree, preserving positive chart area and all measurable wandering/cancellation identities while forcing the remaining saturation to avoid the anchors. The next analytic step is the global finite-anchor area budget (the surface analogue of the finitely punctured sphere cancellation estimate), after which the existing density-divergence contradiction applies.
 
 The current bundle `../derived-set-local-checkpoint-2026-09-26.bundle` includes commit `1d578aa`; refresh it after committing `CompactGlobalAnchors.lean`.
+
+## Local checkpoint 2026-09-27: fixed ambient Green decomposition
+
+`AmbientChartPartition.lean` constructs one locally finite smooth partition
+subordinate to the preferred ambient charts and proves that only finitely
+many terms meet a compactly supported function. `GlobalDomainSurfaceGreen.lean`
+uses it to express the intrinsic area gain of a compact cutoff as an exact
+finite sum of coordinate Green pairings for nested ambient domains.
+`ChartPullbackExtension.lean` proves that a compactly supported planar
+function whose support lies in a chart target can be pulled back and
+extended by zero as a smooth compactly supported surface function. All
+three focused builds pass without `sorryAx`.
+
+The active task is the finite-puncture surface cutoff. Pull back the planar
+logarithmic cutoff in the preferred chart at each puncture, sum these over
+the finite puncture set, and subtract from one. For sufficiently small,
+pairwise disjoint chart discs this cutoff is in `[0,1]`, vanishes near every
+puncture, has compact support on a compact ambient surface, and converges
+pointwise to one off the punctures. Join its Green formula to the existing
+old-boundary vanishing and new-puncture mass estimates. This is the missing
+analytic input for global point insertion on finite-type surfaces; after it,
+assemble the compact global positive-area branch and derive the entire and
+meromorphic targets from the surface theorem.
