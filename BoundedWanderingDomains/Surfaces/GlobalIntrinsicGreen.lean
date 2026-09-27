@@ -14,17 +14,18 @@ variable {M : Type*} [TopologicalSpace M] [ChartedSpace ℂ M]
   [IsManifold 𝓘(ℂ) 1 M] [T2Space M]
   [MeasurableSpace M] [BorelSpace M] [SecondCountableTopology M]
 
-theorem integrable_domainLogRatio_mul_intrinsicLaplacian
+/-- Compact support of the intrinsic Laplacian itself is sufficient for the
+domain-log-ratio Green integrand to be integrable. -/
+theorem integrable_domainLogRatio_mul_intrinsicLaplacian_of_laplacian_compact
     (p : DiscCover M) {U V : TopologicalSpace.Opens M} (hVU : V ≤ U)
     {v : M → ℝ} (hv : ContMDiff 𝓘(ℝ, ℂ) 𝓘(ℝ) 2 v)
-    (hvcompact : HasCompactSupport v)
+    (hLcompact : HasCompactSupport (p.intrinsicLaplacian v))
     (hvV : tsupport (p.intrinsicLaplacian v) ⊆ V) :
     Integrable (fun x => p.domainLogRatio U V x *
       p.intrinsicLaplacian v x) p.hyperbolicArea := by
   letI : IsLocallyFiniteMeasure p.hyperbolicArea :=
     p.hyperbolicArea_locallyFinite
   have hLcont := p.intrinsicLaplacian_continuous hv
-  have hLsupport := p.tsupport_intrinsicLaplacian_subset v
   have hprod : Continuous (fun x => p.domainLogRatio U V x *
       p.intrinsicLaplacian v x) := by
     rw [continuous_iff_continuousAt]
@@ -36,10 +37,21 @@ theorem integrable_domainLogRatio_mul_intrinsicLaplacian
         continuousAt_const).congr_of_eventuallyEq
       filter_upwards [notMem_tsupport_iff_eventuallyEq.mp hx] with y hy
       simp [hy]
+  exact hprod.integrable_of_hasCompactSupport hLcompact.mul_left
+
+theorem integrable_domainLogRatio_mul_intrinsicLaplacian
+    (p : DiscCover M) {U V : TopologicalSpace.Opens M} (hVU : V ≤ U)
+    {v : M → ℝ} (hv : ContMDiff 𝓘(ℝ, ℂ) 𝓘(ℝ) 2 v)
+    (hvcompact : HasCompactSupport v)
+    (hvV : tsupport (p.intrinsicLaplacian v) ⊆ V) :
+    Integrable (fun x => p.domainLogRatio U V x *
+      p.intrinsicLaplacian v x) p.hyperbolicArea := by
+  have hLsupport := p.tsupport_intrinsicLaplacian_subset v
   have hLcompact : HasCompactSupport (p.intrinsicLaplacian v) :=
     hvcompact.of_isClosed_subset (isClosed_tsupport _)
-      (p.tsupport_intrinsicLaplacian_subset v)
-  exact hprod.integrable_of_hasCompactSupport hLcompact.mul_left
+      hLsupport
+  exact p.integrable_domainLogRatio_mul_intrinsicLaplacian_of_laplacian_compact
+    hVU hv hLcompact hvV
 
 /-- The finite ambient chart sum is independent of the chosen partition:
 all partition derivatives cancel in the intrinsic Laplacian. -/
@@ -126,4 +138,5 @@ end AreaDeficit.Surfaces.DiscCover
 
 #print axioms AreaDeficit.Surfaces.DiscCover.finite_chart_green_eq_intrinsic
 #print axioms AreaDeficit.Surfaces.DiscCover.domainAreaGain_lintegral_eq_intrinsic
+
 

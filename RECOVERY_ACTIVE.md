@@ -383,3 +383,8 @@ Commit target: intrinsic global Green reduction.
 - `compactification_pointInsertion_areaGain_finite` now has the stage-independent explicit bound `1 + 3 * (2*pi*integral |transitionSecond|)`.
 - Compiling modules: PunctureBoundaryMass, NestedBoundaryMass, CompactificationInsertionEnds, CompactificationCutoffGreen, CompactificationInsertionRiesz.
 - Next: package this as `UniformGlobalPointInsertionBound`, feed CompactAnchorAreaReduction, then close arbitrary compact positive-area theorem and audit remaining orbit/derived statements.
+
+## 2026-09-27 Astra handoff checkpoint
+- `DiscCover.compactification_uniformGlobalPointInsertionBound` now compiles and packages the universal compactification estimate for arbitrary finite stages, obtaining all nested disc covers automatically.
+- Immediate continuation is the anchor-complement compact positive-area theorem, followed by orbit escape/meromorphic wrapper and the derived-set theorem.
+- `ASTRA_HANDOFF.md` is the concise state/dependency/instruction router; `ASTRA_START_PROMPT.txt` is the new-task prompt; the current paper draft is copied under `handoff/reference/`.

@@ -1,6 +1,8 @@
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
 import BoundedWanderingDomains.Surfaces.CompactificationInsertionEnds
 import BoundedWanderingDomains.Surfaces.CompactificationCutoffGreen
+import BoundedWanderingDomains.Surfaces.FinitePunctureTopology
+import BoundedWanderingDomains.Surfaces.GlobalPointInsertion
 
 /-! # Riesz bound for one insertion on a compactification complement -/
 
@@ -185,10 +187,42 @@ theorem DiscCover.compactification_pointInsertion_areaGain_finite
     (measure_univ_le_of_eventually_bounded_riesz_cutoffs μ chi hchi
       hlim boundary hgreen hB hboundNat)
 
+/-- The compactification estimate supplies one common insertion bound for
+all finite puncture stages of the fixed finite-end complement. -/
+theorem DiscCover.compactification_uniformGlobalPointInsertionBound
+    (E : Finset X) (O : Opens X)
+    (hO : ∀ x : X, x ∈ O ↔ x ∉ E) (hON : Nonempty O)
+    [MeasurableSpace O] [BorelSpace O]
+    [ConnectedSpace O] [Infinite O]
+    (p : DiscCover O) :
+    p.UniformGlobalPointInsertionBound
+      (ENNReal.ofReal (1 + 3 * (2 * Real.pi * ∫ u : ℝ,
+        |AreaDeficit.transitionSecond u|))) := by
+  intro P a0
+  by_cases ha0 : a0 ∈ P
+  · rw [Finset.insert_eq_of_mem ha0]
+    simp
+  · let U := finitePunctureDomain P
+    let a : U := ⟨a0, ha0⟩
+    letI : ConnectedSpace U := Subtype.connectedSpace
+      (RiemannDynamics.isConnected_compl_finset P)
+    letI : Infinite U := Set.Infinite.to_subtype P.finite_toSet.infinite_compl
+    let q : DiscCover U := Classical.choice (p.nonempty_finitePuncture P)
+    let W := finitePunctureDomain ({a} : Finset U)
+    letI : ConnectedSpace W := Subtype.connectedSpace
+      (RiemannDynamics.isConnected_compl_finset ({a} : Finset U))
+    let s : DiscCover W := Classical.choice (q.nonempty_finitePuncture
+      ({a} : Finset U))
+    obtain ⟨D⟩ := exists_finitePunctureDiscs
+      (compactificationInsertionEnds E O P a0)
+    exact AreaDeficit.Surfaces.FinitePunctureDiscs.DiscCover.compactification_pointInsertion_areaGain_finite
+      E O hO hON p P a0 ha0 q s D
+
 end FinitePunctureDiscs
 end AreaDeficit.Surfaces
 
 #print axioms AreaDeficit.Surfaces.FinitePunctureDiscs.DiscCover.eventually_bounded_compactification_intrinsicGreen
+
 
 
 

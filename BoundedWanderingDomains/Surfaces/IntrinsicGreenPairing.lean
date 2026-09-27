@@ -185,6 +185,93 @@ theorem domainChartGreen_eq_intrinsic
       rw [hlaptest, hzero]
     simp [hlap, b, x, hLint]
 
+/-- Coordinate transport for an intrinsic Green integrand when only the
+Laplacian, rather than the test function, has compactly localised support.
+This is the form needed for cutoffs which tend to a constant at a deleted
+compactification point. -/
+theorem domainChartLaplacianIntegral_eq_intrinsic
+    (p : DiscCover M) {U V : TopologicalSpace.Opens M} (hVU : V ≤ U)
+    {c : OpenPartialHomeomorph M ℂ}
+    (hc : MDifferentiableOn 𝓘(ℂ) 𝓘(ℂ) c c.source)
+    {v : M → ℝ} (hv : ContMDiff 𝓘(ℝ, ℂ) 𝓘(ℝ) 2 v)
+    {w : ℂ → ℝ}
+    (hvsource : tsupport (p.intrinsicLaplacian v) ⊆ c.source)
+    (hvV : tsupport (p.intrinsicLaplacian v) ⊆ V)
+    (hw : ∀ z ∈ c.target, Δ w z = Δ (v ∘ c.symm) z)
+    (hwsupport : tsupport (Δ w) ⊆ c.target)
+    (hint : Integrable (fun x => p.domainLogRatio U V x *
+      p.intrinsicLaplacian v x) p.hyperbolicArea) :
+    (∫ z, p.domainChartLogRatio U V c z * Δ w z) =
+      ∫ x, p.domainLogRatio U V x * p.intrinsicLaplacian v x
+        ∂p.hyperbolicArea := by
+  let b : M → ℝ := fun x =>
+    p.domainLogRatio U V x * p.intrinsicLaplacian v x
+  have hb : Measurable b :=
+    (p.domainLogRatio_measurable U V).mul
+      (p.intrinsicLaplacian_continuous hv).measurable
+  have hbzero : ∀ x ∉ c.source, b x = 0 := by
+    intro x hxc
+    have hxnot : x ∉ tsupport (p.intrinsicLaplacian v) :=
+      fun hx => hxc (hvsource hx)
+    have hzero : p.intrinsicLaplacian v x = 0 := by
+      by_contra hne
+      exact hxnot (subset_closure hne)
+    simp [b, hzero]
+  have hglobal : (∫ x, b x ∂p.hyperbolicArea) =
+      ∫ x in c.source, b x ∂p.hyperbolicArea := by
+    rw [← integral_indicator c.open_source.measurableSet]
+    apply integral_congr_ae
+    filter_upwards with x
+    by_cases hx : x ∈ c.source
+    · simp [hx]
+    · simp [hx, hbzero x hx]
+  rw [show (∫ x, p.domainLogRatio U V x * p.intrinsicLaplacian v x
+      ∂p.hyperbolicArea) = ∫ x, b x ∂p.hyperbolicArea from rfl,
+    hglobal, p.hyperbolicArea_setIntegral_chart_source hc hb]
+  have htarget : (∫ z in c.target,
+      p.chartDensity c z ^ 2 * b (c.symm z)) =
+      ∫ z in c.target, p.domainChartLogRatio U V c z * Δ w z := by
+    apply setIntegral_congr_fun c.open_target.measurableSet
+    intro z hz
+    let x := c.symm z
+    have hxs : x ∈ c.source := c.map_target hz
+    have hcx : c x = z := c.right_inv hz
+    have hlap := p.intrinsicLaplacian_eq_in_chart_of_contMDiff hc hv hxs
+    have hdens : p.chartDensity c z = p.density c x := by rfl
+    by_cases hx : x ∈ tsupport (p.intrinsicLaplacian v)
+    · have hlog := p.domainLogRatio_eq_chart hVU hc (hvV hx) hxs
+      have hlogz : p.domainLogRatio U V x =
+          p.domainChartLogRatio U V c z := by
+        simpa only [hcx] using hlog
+      have hlapz : p.intrinsicLaplacian v x =
+          Δ (v ∘ c.symm) z / (p.density c x) ^ 2 := by
+        simpa only [hcx] using hlap
+      dsimp only [b]
+      rw [hlogz, hlapz, ← hw z hz, hdens]
+      have hdp : p.density c x ≠ 0 := ne_of_gt (p.density_pos hc hxs)
+      field_simp
+    · have hLint : p.intrinsicLaplacian v x = 0 := by
+        by_contra hne
+        exact hx (subset_closure hne)
+      have hzero : Δ (v ∘ c.symm) z = 0 := by
+        rw [hLint, hcx] at hlap
+        have hdp : p.density c x ≠ 0 := ne_of_gt (p.density_pos hc hxs)
+        field_simp [hdp] at hlap
+        simpa using hlap.symm
+      simp [b, x, hLint, hw z hz, hzero]
+  rw [htarget]
+  rw [← integral_indicator c.open_target.measurableSet]
+  apply integral_congr_ae
+  filter_upwards with z
+  by_cases hz : z ∈ c.target
+  · simp [hz]
+  · have hznot : z ∉ tsupport (Δ w) := fun h => hz (hwsupport h)
+    have hzero : Δ w z = 0 := by
+      by_contra hne
+      exact hznot (subset_closure hne)
+    simp [hz, hzero]
+
 end AreaDeficit.Surfaces.DiscCover
 
 #print axioms AreaDeficit.Surfaces.DiscCover.domainChartGreen_eq_intrinsic
+
