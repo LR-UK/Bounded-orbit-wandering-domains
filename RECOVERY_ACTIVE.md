@@ -346,3 +346,12 @@ Commit target: intrinsic global Green reduction.
 - Proved `domainChartLogRatio_eq_nested`: on a twice-restricted chart, the ambient quotient `domainChartLogRatio U V` is exactly the ordinary quotient for supplied disc covers of `U` and its nested subtype.
 - Focused module build passes without `sorryAx`.
 - Next: instantiate with `U = M \\ P`, `V = M \\ insert a P`, and the one-point deletion inside `U`; transport old-end vanishing and new-end boundedness into the finite ambient cutoff Green sum.
+
+## Checkpoint 2026-09-27: compactification-normalized Green cutoff
+
+- Added `CompactificationCutoff.lean`: finite ambient cutoffs restrict smoothly to an open anchor complement; if all missing anchors are among their centres, the restriction has compact support. Proved the same for the difference of two readings of each individual end cutoff.
+- The fixed-reading subtraction is the key normalization: both readings equal one near a missing end, so their difference vanishes there and is compactly supported on the punctured surface.
+- Proved restricted chart zero-extension agrees exactly with ambient zero-extension when the ambient support avoids the deleted anchors, and hence an end-cutoff difference reads as the corresponding difference of planar logarithmic cutoffs.
+- Added `CompactificationCutoffGreen.lean`: Green's identity for each normalized end term and the finite sum identity for the normalized full cutoff. This now works with a disc cover only on the anchor complement, so it covers the torus/plane branch as well as the sphere branch.
+- Focused builds pass without `sorryAx`.
+- Next: instantiate the ambient finite set as anchors plus old punctures plus the newly inserted point; apply old-end vanishing to anchors and old punctures, the new-puncture bound to the inserted point, add back the fixed normalization constant, and feed the resulting bound to the Riesz/Fatou package.
