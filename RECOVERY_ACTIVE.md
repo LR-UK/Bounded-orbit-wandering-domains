@@ -308,3 +308,17 @@ old-boundary vanishing and new-puncture mass estimates. This is the missing
 analytic input for global point insertion on finite-type surfaces; after it,
 assemble the compact global positive-area branch and derive the entire and
 meromorphic targets from the surface theorem.
+
+The puncture cutoff infrastructure now compiles. `SurfaceLogCutoff.lean`
+pulls the planar logarithmic cutoff through a coordinate disc, proves its
+smoothness, compact support, shrinking support, centre value and eventual
+vanishing away from the centre. `FiniteSurfacePunctureCutoff.lean` chooses
+pairwise disjoint coordinate discs around an arbitrary finite set and builds
+`1 - sum(inner cutoff)`. For all sufficiently large parameters it is smooth,
+compactly supported on a compact ambient surface, lies in `[0,1]`, has
+support in the finite-puncture domain, and converges pointwise to one there.
+Focused builds pass without `sorryAx`. The next step is the coordinate-change
+lemma identifying the finite ambient-partition Green sum with the sum of the
+pure logarithmic end pairings; then the already compiled old-end vanishing,
+new-end uniform bound, finite assembly and Fatou lemmas close global point
+insertion.
