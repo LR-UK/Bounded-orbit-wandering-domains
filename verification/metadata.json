@@ -1,6 +1,7 @@
 {
   "result": "not-run",
-  "metadata_sha256": "597b03b3975800fbdf91622483e5f11ceec4d2a82b904fb96b43d80ebf21d926",
+  "metadata_sha256": "a4741d2907d5e5a1f4c73cdbb5c22f4db5d4d36697958e6639dac0cd82b84867",
+  "metadata_hash_encoding": "UTF-8 with LF line endings",
   "reason": "PyYAML is not installed in this Python environment.",
   "next_step": "Install PyYAML and rerun python scripts/verify_metadata.py; Linux CI also runs it."
 }

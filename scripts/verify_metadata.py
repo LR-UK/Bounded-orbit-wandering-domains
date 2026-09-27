@@ -6,6 +6,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "verification/palomar-contract"))
 metadata = ROOT / "formalization.yaml"
+metadata_hash = hashlib.sha256(metadata.read_text(encoding="utf-8").encode("utf-8")).hexdigest()
 report_path = ROOT / "verification/metadata.json"
 report_path.unlink(missing_ok=True)  # Do not leave a stale success after a failed recheck.
 try:
@@ -15,7 +16,8 @@ except ModuleNotFoundError as error:
         raise
     report_path.write_text(json.dumps({
         "result": "not-run",
-        "metadata_sha256": hashlib.sha256(metadata.read_bytes()).hexdigest(),
+        "metadata_sha256": metadata_hash,
+        "metadata_hash_encoding": "UTF-8 with LF line endings",
         "reason": "PyYAML is not installed in this Python environment.",
         "next_step": "Install PyYAML and rerun python scripts/verify_metadata.py; Linux CI also runs it.",
     }, indent=2) + "\n", encoding="utf-8")
@@ -25,7 +27,8 @@ report = {
     "result": "passed",
     "validator_repository": "https://github.com/PalomarRegistry/PalomarSubmission",
     "validator_commit": "e48a86d0495356b5131a92c9406aa6e27cf99e56",
-    "metadata_sha256": hashlib.sha256(metadata.read_bytes()).hexdigest(),
+    "metadata_sha256": metadata_hash,
+    "metadata_hash_encoding": "UTF-8 with LF line endings",
     "provenance": normalized_provenance(data),
     "scope": "Mechanical metadata contract only; no independent policy review or registry acceptance",
 }
