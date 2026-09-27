@@ -1,5 +1,6 @@
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
 import BoundedWanderingDomains.Surfaces.SmoothSurface
+import BoundedWanderingDomains.Surfaces.ChartZeroExtension
 import Mathlib.Geometry.Manifold.ContMDiff.Atlas
 
 /-! # Compactly supported planar functions pulled back through a chart -/
@@ -76,6 +77,21 @@ theorem hasCompactSupport_chartPullbackExtension
     closure_minimal
       (support_chartPullbackExtension_subset.trans (image_mono subset_closure))
       hK.isClosed
+
+/-- Pulling a planar function back through a chart and then reading it in
+the same chart recovers the original zero-extended planar function. -/
+theorem chartZeroExtensionIn_chartPullbackExtension
+    {e : OpenPartialHomeomorph M ℂ} {g : ℂ → ℝ}
+    (hgtarget : tsupport g ⊆ e.target) :
+    chartZeroExtensionIn e (chartPullbackExtension e g) = g := by
+  funext z
+  by_cases hz : z ∈ e.target
+  · rw [chartZeroExtensionIn_eq hz,
+      chartPullbackExtension_eq (e.map_target hz), e.right_inv hz]
+  · have hg : g z = 0 := by
+      by_contra hgz
+      exact hz (hgtarget (subset_closure hgz))
+    simp [chartZeroExtensionIn, hz, hg]
 
 end AreaDeficit.Surfaces
 

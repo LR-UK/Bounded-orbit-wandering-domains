@@ -56,6 +56,14 @@ theorem surfaceLogCutoff_hasCompactSupport
   · exact AreaDeficit.logCutoff_hasCompactSupport _ (by linarith)
   · exact surfaceLogCutoff_planar_tsupport_subset D ht hr
 
+theorem chartZeroExtensionIn_surfaceLogCutoff
+    (D : RiemannDynamics.CoordDisk M) {t : ℝ} (ht : 0 < t)
+    (hr : -Real.log D.radius ≤ t) :
+    chartZeroExtensionIn (chartAt ℂ D.center) (surfaceLogCutoff D t) =
+      AreaDeficit.logCutoff (chartAt ℂ D.center D.center) (-2 * t) (-t) := by
+  exact chartZeroExtensionIn_chartPullbackExtension
+    (surfaceLogCutoff_planar_tsupport_subset D ht hr)
+
 theorem surfaceLogCutoff_tsupport_subset_closedCarrier
     (D : RiemannDynamics.CoordDisk M) {t : ℝ} (ht : 0 < t)
     (hr : -Real.log D.radius ≤ t) :

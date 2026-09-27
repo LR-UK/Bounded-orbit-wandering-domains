@@ -322,3 +322,12 @@ lemma identifying the finite ambient-partition Green sum with the sum of the
 pure logarithmic end pairings; then the already compiled old-end vanishing,
 new-end uniform bound, finite assembly and Fatou lemmas close global point
 insertion.
+
+## Checkpoint 2026-09-27: intrinsic Green cancellation
+
+Commit target: intrinsic global Green reduction.
+
+- Added the natural intrinsic Laplacian `chartLaplacian / density^2`, proved coordinate invariance, continuity, support control, and finite-sum linearity.
+- Added signed chart integration and proved coordinate Green pairings equal the intrinsic surface integral. The theorem now needs only the support of the intrinsic Laplacian to lie in the smaller domain, which permits logarithmic cutoffs that are constant at deleted punctures.
+- Proved the fixed finite ambient partition cancels exactly, so its chartwise Green sum is the single intrinsic integral. Focused build of `BoundedWanderingDomains.Surfaces.GlobalIntrinsicGreen` passes.
+- Next: specialize to `FinitePunctureDiscs.cutoff`; use intrinsic linearity and `chartZeroExtensionIn_surfaceLogCutoff` to identify its boundary with the negative finite sum of pure planar puncture boundary pairings, then apply old/new end estimates and Riesz exhaustion.
