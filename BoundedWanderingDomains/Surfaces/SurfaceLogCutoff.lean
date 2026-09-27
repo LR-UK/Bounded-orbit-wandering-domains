@@ -107,6 +107,19 @@ theorem surfaceLogCutoff_center
   apply surfaceLogCutoff_eq_one D ht (mem_chart_source ℂ D.center)
   simpa using (Real.exp_pos (-(2 * t))).le
 
+theorem surfaceLogCutoff_eventuallyEq_one_center
+    (D : RiemannDynamics.CoordDisk M) {t : ℝ} (ht : 0 < t) :
+    surfaceLogCutoff D t =ᶠ[𝓝 D.center] (fun _ => (1 : ℝ)) := by
+  have hs : D.center ∈ (chartAt ℂ D.center).source :=
+    mem_chart_source ℂ D.center
+  have hb : ball (chartAt ℂ D.center D.center) (Real.exp (-2 * t)) ∈
+      𝓝 (chartAt ℂ D.center D.center) :=
+    ball_mem_nhds _ (Real.exp_pos _)
+  filter_upwards [(chartAt ℂ D.center).open_source.mem_nhds hs,
+    (chartAt ℂ D.center).continuousAt hs hb] with x hxs hxb
+  exact surfaceLogCutoff_eq_one D ht hxs (by
+    simpa only [dist_eq_norm] using (mem_ball.mp hxb).le)
+
 theorem surfaceLogCutoff_eventually_zero
     (D : RiemannDynamics.CoordDisk M) {x : M} (hx : x ≠ D.center) :
     ∀ᶠ t : ℝ in atTop, surfaceLogCutoff D t x = 0 := by

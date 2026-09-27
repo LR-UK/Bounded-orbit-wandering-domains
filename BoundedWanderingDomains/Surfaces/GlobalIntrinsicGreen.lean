@@ -17,7 +17,8 @@ variable {M : Type*} [TopologicalSpace M] [ChartedSpace ℂ M]
 theorem integrable_domainLogRatio_mul_intrinsicLaplacian
     (p : DiscCover M) {U V : TopologicalSpace.Opens M} (hVU : V ≤ U)
     {v : M → ℝ} (hv : ContMDiff 𝓘(ℝ, ℂ) 𝓘(ℝ) 2 v)
-    (hvcompact : HasCompactSupport v) (hvV : tsupport v ⊆ V) :
+    (hvcompact : HasCompactSupport v)
+    (hvV : tsupport (p.intrinsicLaplacian v) ⊆ V) :
     Integrable (fun x => p.domainLogRatio U V x *
       p.intrinsicLaplacian v x) p.hyperbolicArea := by
   letI : IsLocallyFiniteMeasure p.hyperbolicArea :=
@@ -29,7 +30,7 @@ theorem integrable_domainLogRatio_mul_intrinsicLaplacian
     rw [continuous_iff_continuousAt]
     intro x
     by_cases hx : x ∈ tsupport (p.intrinsicLaplacian v)
-    · exact (p.domainLogRatio_continuousAt hVU (hvV (hLsupport hx))).mul
+    · exact (p.domainLogRatio_continuousAt hVU (hvV hx)).mul
         hLcont.continuousAt
     · apply (show ContinuousAt (fun _ : M => (0 : ℝ)) x from
         continuousAt_const).congr_of_eventuallyEq
@@ -73,7 +74,8 @@ theorem finite_chart_green_eq_intrinsic
       p.domainLogRatio U V x * p.intrinsicLaplacian (v i) x)
       p.hyperbolicArea := fun i _ =>
     p.integrable_domainLogRatio_mul_intrinsicLaplacian hVU
-      (hvSmooth i) (hvCompact i) (hvV i)
+      (hvSmooth i) (hvCompact i)
+      ((p.tsupport_intrinsicLaplacian_subset (v i)).trans (hvV i))
   calc
     (∑ i ∈ S, ∫ z, p.domainChartLogRatio U V (chartAt ℂ i) z *
         Δ (AreaDeficit.Surfaces.chartZeroExtensionIn

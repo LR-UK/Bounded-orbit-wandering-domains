@@ -331,3 +331,10 @@ Commit target: intrinsic global Green reduction.
 - Added signed chart integration and proved coordinate Green pairings equal the intrinsic surface integral. The theorem now needs only the support of the intrinsic Laplacian to lie in the smaller domain, which permits logarithmic cutoffs that are constant at deleted punctures.
 - Proved the fixed finite ambient partition cancels exactly, so its chartwise Green sum is the single intrinsic integral. Focused build of `BoundedWanderingDomains.Surfaces.GlobalIntrinsicGreen` passes.
 - Next: specialize to `FinitePunctureDiscs.cutoff`; use intrinsic linearity and `chartZeroExtensionIn_surfaceLogCutoff` to identify its boundary with the negative finite sum of pure planar puncture boundary pairings, then apply old/new end estimates and Riesz exhaustion.
+
+## Checkpoint 2026-09-27: finite cutoff Green reduction
+
+- Strengthened intrinsic integrability to require only Laplacian support in the smaller domain.
+- Proved a surface logarithmic cutoff is locally one at its centre.
+- Added `FiniteSurfaceCutoffGreen`: each cutoff Laplacian avoids the whole finite puncture set, its intrinsic Green integral is its planar chart pairing, and the global finite cutoff boundary is exactly the negative finite sum of pure puncture pairings. Focused build passes.
+- Next bridge: identify the ambient `domainChartLogRatio (M\\P) (M\\(insert a P))` with the intrinsic chart log ratio for the disc cover of the connected old finite-puncture subtype and its one-point subdomain. Then old-end vanishing and new-end boundedness apply verbatim.
