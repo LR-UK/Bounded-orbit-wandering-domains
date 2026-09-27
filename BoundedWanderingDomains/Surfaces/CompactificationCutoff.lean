@@ -197,6 +197,19 @@ theorem restrictedSurfaceLogCutoffDiff_hasCompactSupport [CompactSpace X]
   exact (hO x).mpr (fun hxE =>
     D.tsupport_surfaceLogCutoff_sub_subset_compl i ht hs hx (hEF hxE))
 
+/-- Restricting a normalized end cutoff difference preserves avoidance of
+every centre in the ambient finite family. -/
+theorem restrictedSurfaceLogCutoffDiff_tsupport_avoids
+    {F : Finset X} (D : FinitePunctureDiscs F) (i : ↑F)
+    (O : TopologicalSpace.Opens X) {t s : ℝ}
+    (ht : D.Admissible t) (hs : D.Admissible s) :
+    tsupport (restrictedSurfaceLogCutoffDiff (D.disc i) O t s) ⊆
+      (Subtype.val : O → X) ⁻¹' ((↑F : Set X)ᶜ) := by
+  exact (tsupport_comp_subset_preimage
+    (surfaceLogCutoff (D.disc i) t - surfaceLogCutoff (D.disc i) s)
+      continuous_subtype_val).trans
+    (preimage_mono (D.tsupport_surfaceLogCutoff_sub_subset_compl i ht hs))
+
 /-- Reading a restricted ambient function in the restricted chart gives the
 same zero extension as reading the ambient function, provided its support
 does not meet the deleted part of the surface. -/
@@ -274,3 +287,4 @@ end FinitePunctureDiscs
 end AreaDeficit.Surfaces
 
 #print axioms AreaDeficit.Surfaces.FinitePunctureDiscs.restrictedCutoff_hasCompactSupport
+

@@ -368,3 +368,9 @@ Commit target: intrinsic global Green reduction.
 - CompactificationInsertionEnds now proves vanishing at every old end, a uniform bound at the inserted end, and an eventual bound for the full finite raw boundary sum.
 - Next: subtract a fixed admissible reading, apply CompactificationCutoffGreen, identify the Riesz cutoff mass, then Fatou/global insertion.
 
+
+## 2026-09-27 compactification Riesz/Fatou closure
+- Added a direct domain-area-gain/intrinsic-Green identity.
+- Proved raw end integrability, normalized intrinsic pairing bounds, and finite total area gain for one insertion in a finite-puncture model of an anchor complement.
+- Next: connect this finite insertion theorem to the compact-surface reduction and finish the remaining PaperSolution theorem targets.
+

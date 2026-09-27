@@ -3,6 +3,7 @@ import BoundedWanderingDomains.Surfaces.CompactificationEndCharts
 import BoundedWanderingDomains.Surfaces.NestedBoundaryMass
 import BoundedWanderingDomains.Surfaces.FinitePunctureTopology
 import BoundedWanderingDomains.Surfaces.FiniteBoundaryMassAssembly
+import BoundedWanderingDomains.CutoffEndLimits
 
 /-! # The finite end set for one point insertion on an anchor complement -/
 
@@ -282,9 +283,94 @@ theorem DiscCover.eventually_bounded_compactification_boundary_sum
   simpa only [u, F, U, V, Finset.sum_singleton,
     Finset.sum_erase_add _ _ (Finset.mem_univ j)] using hsum
 
+/-- For all sufficiently deep readings, every raw end pairing in the finite
+compactification family is integrable. -/
+theorem DiscCover.eventually_integrable_compactification_boundary
+    (E : Finset X) (O : Opens X)
+    (hO : ∀ x : X, x ∈ O ↔ x ∉ E) (hON : Nonempty O)
+    [MeasurableSpace O] [BorelSpace O]
+    [ConnectedSpace O] [Infinite O]
+    (p : DiscCover O) (P : Finset O) (a0 : O) (ha0 : a0 ∉ P)
+    (q : DiscCover (finitePunctureDomain P))
+    (s : DiscCover (finitePunctureDomain
+      ({(⟨a0, ha0⟩ : finitePunctureDomain P)} : Finset _)))
+    (D : FinitePunctureDiscs (compactificationInsertionEnds E O P a0)) :
+    let U := finitePunctureDomain P
+    let V := finitePunctureDomain (insert a0 P)
+    ∀ᶠ t : ℝ in atTop,
+      ∀ i : ↑(compactificationInsertionEnds E O P a0), Integrable
+        (fun z : ℂ => p.domainChartLogRatio U V
+          ((chartAt ℂ (D.disc i).center).subtypeRestr hON) z *
+          Δ (AreaDeficit.logCutoff
+            (chartAt ℂ (D.disc i).center (D.disc i).center)
+            (-2 * t) (-t)) z) := by
+  let U := finitePunctureDomain P
+  let a : U := ⟨a0, ha0⟩
+  let W := finitePunctureDomain ({a} : Finset U)
+  let V := finitePunctureDomain (insert a0 P)
+  letI : ConnectedSpace U := Subtype.connectedSpace
+    (RiemannDynamics.isConnected_compl_finset P)
+  letI : Infinite U := Set.Infinite.to_subtype P.finite_toSet.infinite_compl
+  letI : ConnectedSpace W := Subtype.connectedSpace
+    (RiemannDynamics.isConnected_compl_finset ({a} : Finset U))
+  letI : ConnectedSpace V := Subtype.connectedSpace
+    (RiemannDynamics.isConnected_compl_finset (insert a0 P))
+  have hUN : Nonempty U := ⟨a⟩
+  have hWN : Nonempty W := ⟨s.projection discZero⟩
+  have hVU : V ≤ U := by
+    intro x hx hxP
+    exact hx (Finset.mem_insert_of_mem hxP)
+  have hWambient : ∀ x : U, x ∈ W ↔ (x : O) ∈ V := by
+    intro x
+    rw [show x ∈ W ↔ x ≠ a by
+      simp only [W, mem_finitePunctureDomain, Finset.mem_singleton]]
+    rw [show (x : O) ∈ V ↔ (x : O) ≠ a0 ∧ (x : O) ∉ P by
+      simp only [V, mem_finitePunctureDomain, Finset.mem_insert, not_or]]
+    constructor
+    · intro hxa
+      exact ⟨fun hx => hxa (Subtype.ext hx), x.property⟩
+    · intro hx hxa
+      exact hx.1 (congrArg Subtype.val hxa)
+  have hrad : ∀ᶠ t : ℝ in atTop,
+      ∀ i : ↑(compactificationInsertionEnds E O P a0),
+        -Real.log (D.disc i).radius < t :=
+    ((Filter.eventually_all_finite Set.finite_univ).2 fun i _ =>
+      eventually_gt_atTop (-Real.log (D.disc i).radius)).mono
+        (fun _ h i => h i (mem_univ i))
+  filter_upwards [eventually_gt_atTop (0 : ℝ), hrad] with t ht htr
+  intro i
+  have hball := D.puncturedBall_subset_three_restricted_targets i E
+    (left_mem_compactificationInsertionEnds E O P a0) O hO hON P
+    (fun x hx => old_mem_compactificationInsertionEnds E O P a0 hx)
+    hUN a (new_mem_compactificationInsertionEnds E O P a0) hWN
+  let c := (chartAt ℂ (D.disc i).center).subtypeRestr hON
+  have hc : MDifferentiableOn 𝓘(ℂ) 𝓘(ℂ) c c.source :=
+    mdifferentiableOn_subtypeRestr hON
+      (mdifferentiable_chart (I := 𝓘(ℂ)) (D.disc i).center).1
+  apply AreaDeficit.integrable_mul_laplacian_logCutoff
+    (chartAt ℂ (D.disc i).center (D.disc i).center) (by linarith)
+  intro z hzlower hzupper
+  apply (p.domainChartLogRatio_contDiffAt hVU hc ?_).continuousAt
+  apply AreaDeficit.Surfaces.DiscCover.mem_domainChartSet_of_mem_nested_target
+    hUN W hWambient hWN c
+  apply hball
+  constructor
+  · rw [mem_ball, dist_eq_norm]
+    calc
+      ‖z - chartAt ℂ (D.disc i).center (D.disc i).center‖
+          ≤ Real.exp (-t) := hzupper
+      _ < (D.disc i).radius := by
+        rw [← Real.exp_log (D.disc i).radius_pos]
+        exact Real.exp_lt_exp.mpr (by linarith [htr i])
+  · rw [mem_singleton_iff]
+    intro hz
+    rw [hz, sub_self, norm_zero] at hzlower
+    exact (not_le_of_gt (Real.exp_pos _)) hzlower
+
 end FinitePunctureDiscs
 end AreaDeficit.Surfaces
 
 #print axioms AreaDeficit.Surfaces.FinitePunctureDiscs.DiscCover.tendsto_compactification_oldEnd_boundary_zero
+
 
 

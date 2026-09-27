@@ -15,6 +15,32 @@ variable {M : Type*} [TopologicalSpace M] [ChartedSpace ℂ M]
   [IsManifold 𝓘(ℂ) 1 M] [T2Space M] [SecondCountableTopology M]
   [MeasurableSpace M] [BorelSpace M]
 
+/-- A point in a twice-restricted chart target lies in the ambient chart
+set of the corresponding nested domain. -/
+theorem mem_domainChartSet_of_mem_nested_target
+    {U V : TopologicalSpace.Opens M} (hUN : Nonempty U)
+    (W : TopologicalSpace.Opens U)
+    (hW : ∀ x : U, x ∈ W ↔ (x : M) ∈ V) (hWN : Nonempty W)
+    (c : OpenPartialHomeomorph M ℂ) {z : ℂ}
+    (hz : z ∈ ((c.subtypeRestr hUN).subtypeRestr hWN).target) :
+    z ∈ domainChartSet V c := by
+  let d := c.subtypeRestr hUN
+  let e := d.subtypeRestr hWN
+  have hzd : z ∈ d.target := d.subtypeRestr_target_subset hWN hz
+  have hzc : z ∈ c.target := c.subtypeRestr_target_subset hUN hzd
+  have he := d.subtypeRestr_symm_apply hWN hz
+  have hd := c.subtypeRestr_symm_apply hUN hzd
+  have he' : ((e.symm z : W) : U) = d.symm z := by
+    simpa only [e, Function.comp_apply] using he
+  have hd' : ((d.symm z : U) : M) = c.symm z := by
+    simpa only [d, Function.comp_apply] using hd
+  refine ⟨hzc, ?_⟩
+  change c.symm z ∈ V
+  rw [← hd']
+  apply (hW (d.symm z)).mp
+  rw [← he']
+  exact (e.symm z).property
+
 /-- On sufficiently small logarithmic annuli, the ambient componentwise
 boundary pairing is exactly the pairing of supplied covers of the two nested
 open subtypes. -/
@@ -117,3 +143,4 @@ end AreaDeficit.Surfaces.DiscCover
 
 #print axioms AreaDeficit.Surfaces.DiscCover.tendsto_domainChart_old_boundary_mass_zero
 #print axioms AreaDeficit.Surfaces.DiscCover.eventually_bounded_domainChart_new_boundary_mass
+

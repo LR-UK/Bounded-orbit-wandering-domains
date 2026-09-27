@@ -105,6 +105,25 @@ theorem finite_chart_green_eq_intrinsic
       rw [hfun] at hlap
       exact hlap.symm
 
+/-- A nonnegative smooth compactly supported cutoff converts domain-area
+gain directly into the intrinsic Green pairing. -/
+theorem domainAreaGain_lintegral_eq_intrinsic
+    (p : DiscCover M) {U V : TopologicalSpace.Opens M} (hVU : V ≤ U)
+    {chi : M → ℝ} (hchi : ContMDiff 𝓘(ℝ, ℂ) 𝓘(ℝ) 2 chi)
+    (hcompact : HasCompactSupport chi) (hnonneg : ∀ x, 0 ≤ chi x)
+    (hchiV : tsupport chi ⊆ V) :
+    (∫⁻ x, ENNReal.ofReal (chi x) ∂p.domainAreaGain U V) =
+      ENNReal.ofReal (∫ x, p.domainLogRatio U V x *
+        p.intrinsicLaplacian chi x ∂p.hyperbolicArea) := by
+  obtain ⟨P⟩ := (AreaDeficit.Surfaces.exists_ambientChartPartition :
+    Nonempty (AreaDeficit.Surfaces.AmbientChartPartition M))
+  rw [p.domainAreaGain_lintegral_eq_finite_chart_green hVU P hchi
+    hcompact hnonneg hchiV]
+  congr 1
+  exact p.finite_chart_green_eq_intrinsic hVU P hchi hcompact hchiV
+
 end AreaDeficit.Surfaces.DiscCover
 
 #print axioms AreaDeficit.Surfaces.DiscCover.finite_chart_green_eq_intrinsic
+#print axioms AreaDeficit.Surfaces.DiscCover.domainAreaGain_lintegral_eq_intrinsic
+
