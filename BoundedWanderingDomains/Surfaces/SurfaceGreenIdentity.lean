@@ -113,6 +113,55 @@ theorem areaGain_lintegral_eq_chart_green
   congr 1
   exact AreaDeficit.green_laplacian hf htest htestCompact
 
+/-- The chart Green boundary pairing above is nonnegative, because before
+integration by parts it is the integral of the nonnegative area-gain
+density. -/
+theorem chart_green_nonneg
+    (p : DiscCover M) {U : TopologicalSpace.Opens M}
+    (q : DiscCover U) (hU : Nonempty U) {c : OpenPartialHomeomorph M ℂ}
+    (hc : MDifferentiableOn 𝓘(ℂ) 𝓘(ℂ) c c.source)
+    {v : U → ℝ} (hv : ContMDiff 𝓘(ℝ, ℂ) 𝓘(ℝ) 2 v)
+    (hvcompact : HasCompactSupport v) (hvnonneg : ∀ x, 0 ≤ v x)
+    (hvsource : tsupport v ⊆ (c.subtypeRestr hU).source)
+    (hd : c.subtypeRestr hU ∈
+      IsManifold.maximalAtlas 𝓘(ℝ, ℂ) 2 U) :
+    0 ≤ ∫ z, p.chartLogRatio q hU c z *
+      Δ (AreaDeficit.Surfaces.chartZeroExtensionIn
+        (c.subtypeRestr hU) v) z := by
+  let d := c.subtypeRestr hU
+  let test := AreaDeficit.Surfaces.chartZeroExtensionIn d v
+  let f := p.chartLogRatio q hU c
+  have htest : ContDiff ℝ 2 test :=
+    AreaDeficit.Surfaces.contDiff_chartZeroExtensionIn
+      hv hvcompact hvsource hd
+  have htestCompact : HasCompactSupport test :=
+    AreaDeficit.Surfaces.hasCompactSupport_chartZeroExtensionIn
+      hvcompact hvsource
+  have hK : IsCompact (d '' tsupport v) :=
+    hvcompact.image_of_continuousOn (d.continuousOn.mono hvsource)
+  have htestSupport : tsupport test ⊆ d '' tsupport v :=
+    closure_minimal
+      (AreaDeficit.Surfaces.support_chartZeroExtensionIn_subset.trans
+        (image_mono subset_closure)) hK.isClosed
+  have htarget : tsupport test ⊆ d.target := by
+    rintro z hz
+    obtain ⟨x, hx, rfl⟩ := htestSupport hz
+    exact d.map_source (hvsource hx)
+  have hf : ∀ z ∈ tsupport test, ContDiffAt ℝ 2 f z :=
+    fun z hz => p.chartLogRatio_contDiffAt q hU hc (htarget hz)
+  change 0 ≤ ∫ z, f z * Δ test z
+  rw [← AreaDeficit.green_laplacian hf htest htestCompact]
+  apply integral_nonneg
+  intro z
+  change 0 ≤ test z * Δ f z
+  by_cases hz : z ∈ tsupport test
+  · rw [show test z = v (d.symm z) from
+      AreaDeficit.Surfaces.chartZeroExtensionIn_eq (htarget hz)]
+    exact mul_nonneg (hvnonneg _) (p.chartLogRatio_laplacian_nonneg
+      q hU hc (htarget hz))
+  · simp [image_eq_zero_of_notMem_tsupport hz]
+
 end AreaDeficit.Surfaces.DiscCover
 
 #print axioms AreaDeficit.Surfaces.DiscCover.areaGain_lintegral_eq_chart_green
+#print axioms AreaDeficit.Surfaces.DiscCover.chart_green_nonneg
