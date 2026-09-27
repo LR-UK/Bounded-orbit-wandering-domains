@@ -902,3 +902,10 @@ proof is uniform in the chosen disc covers and uses the existing compact-disc
 avoidance theorem.  This deliberately distinguishes old ends from the newly
 removed points, where `PunctureLogRatioBound` supplies logarithmic growth.
 The focused build passes.
+
+The old-end analytic bridge is also complete.  A real function tending to
+zero at a finite puncture has cutoff-Laplacian pairing tending to zero on the
+annuli `[-2t,-t]`.  Applying this to the log density ratio from the intrinsic
+old-end comparison eliminates every old-puncture boundary term.  Thus the two
+local ingredients of the proposed Riesz proof now compile separately: zero
+mass at old ends and uniformly bounded mass at new punctures.

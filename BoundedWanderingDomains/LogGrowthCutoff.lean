@@ -79,7 +79,46 @@ theorem integral_mul_laplacian_logCutoff_neg_two_neg_one_le
     (f := f) a hAB hC hL (Q := 2) hA hB hf
   convert h using 1 <;> ring
 
+/-- A function tending to zero at an old finite end contributes no boundary
+mass.  This is the analytic counterpart of the metric quotient tending to
+one there. -/
+theorem tendsto_integral_mul_laplacian_logCutoff_zero
+    {f : ℂ → ℝ} (a : ℂ) (hf : Tendsto f (𝓝[≠] a) (𝓝 0)) :
+    Tendsto (fun t : ℝ =>
+      ∫ z : ℂ, f z * Δ (logCutoff a (-2 * t) (-t)) z)
+      atTop (𝓝 0) := by
+  let H : ℝ := 2 * Real.pi * ∫ s : ℝ, |transitionSecond s|
+  have hH : 0 ≤ H := by
+    dsimp [H]
+    positivity
+  apply Metric.tendsto_nhds.mpr
+  intro ε hε
+  have he := hf.eventually (Metric.ball_mem_nhds 0 zero_lt_one)
+  obtain ⟨δ, hδ, hh⟩ := Metric.mem_nhdsWithin_iff.mp he
+  filter_upwards [eventually_gt_atTop (H / ε),
+    eventually_gt_atTop (-Real.log δ), eventually_gt_atTop (0 : ℝ)]
+      with t htH htδ ht
+  have hbound := integral_mul_laplacian_logCutoff_neg_two_neg_one_le
+    (f := f) a ht (by norm_num : (0 : ℝ) ≤ 1) (by norm_num : (0 : ℝ) ≤ 0)
+      (fun z hza _ hzB => by
+        have hr : 0 < ‖z - a‖ := norm_pos_iff.mpr (sub_ne_zero.mpr hza)
+        have hzδ : ‖z - a‖ < δ :=
+          (Real.log_lt_log_iff hr hδ).mp (hzB.trans (by linarith))
+        have hz := hh ⟨by simpa only [mem_ball, dist_eq_norm] using hzδ, hza⟩
+        have hzabs : |f z| < 1 := by
+          have hzdist : dist (f z) 0 < 1 := hz
+          simpa only [Real.dist_eq, sub_zero] using hzdist
+        simpa only [zero_mul, add_zero] using hzabs.le)
+  have hsmall : H / t < ε := by
+    apply (div_lt_iff₀ ht).mpr
+    have := (div_lt_iff₀ hε).mp htH
+    nlinarith
+  rw [Real.dist_eq, sub_zero]
+  exact hbound.trans_lt (by
+    simpa only [H, one_mul, zero_mul, zero_add, add_zero] using hsmall)
+
 end AreaDeficit
 
 #print axioms AreaDeficit.integral_mul_laplacian_logCutoff_le_of_log_growth
 #print axioms AreaDeficit.integral_mul_laplacian_logCutoff_neg_two_neg_one_le
+#print axioms AreaDeficit.tendsto_integral_mul_laplacian_logCutoff_zero
