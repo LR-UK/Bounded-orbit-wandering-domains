@@ -363,3 +363,8 @@ Commit target: intrinsic global Green reduction.
 - Added `NestedBoundaryMass.lean`: on sufficiently small logarithmic annuli the ambient componentwise density quotient is exactly the quotient of supplied covers of the nested subtypes. Consequently the completed old-end vanishing and new-end uniform bounds transport directly to the compactification Green sum.
 - Focused builds pass without `sorryAx`.
 - Next: define the ambient finite set `anchors ∪ old punctures ∪ {new point}`, classify its unique new end, assemble all end bounds, and construct the Riesz cutoff package giving the uniform global one-point insertion estimate.
+
+## 2026-09-27 compactification end assembly
+- CompactificationInsertionEnds now proves vanishing at every old end, a uniform bound at the inserted end, and an eventual bound for the full finite raw boundary sum.
+- Next: subtract a fixed admissible reading, apply CompactificationCutoffGreen, identify the Riesz cutoff mass, then Fatou/global insertion.
+
