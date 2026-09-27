@@ -79,6 +79,36 @@ theorem integral_log_norm_laplacian_logCutoff (a : ℂ) {A B : ℝ} (hAB : A < B
     (fun z : ℂ => Real.log ‖z‖ * (logKernel A B (Real.log ‖z‖) / ‖z‖ ^ 2)) a]
   exact integral_log_radial_logKernel hAB
 
+/-- The total variation of the Laplacian of a logarithmic cutoff is explicit.
+It decays like the reciprocal of the logarithmic transition width. -/
+theorem integrable_abs_laplacian_logCutoff (a : ℂ) {A B : ℝ} (hAB : A < B) :
+    Integrable (fun z : ℂ => |Δ (logCutoff a A B) z|) := by
+  have h := (integrable_log_radial (logKernel_integrable hAB).norm).comp_add_right (-a)
+  apply h.congr
+  filter_upwards with z
+  rw [laplacian_logCutoff_eq_kernel a z hAB]
+  simp only [sub_eq_add_neg, abs_div, abs_pow, sq_abs,
+    abs_norm, Real.norm_eq_abs]
+
+theorem integral_abs_laplacian_logCutoff (a : ℂ) {A B : ℝ} (hAB : A < B) :
+    (∫ z : ℂ, |Δ (logCutoff a A B) z|) =
+      2 * Real.pi * (∫ s : ℝ, |transitionSecond s|) / (B - A) := by
+  simp_rw [laplacian_logCutoff_eq_kernel a _ hAB]
+  rw [integral_sub_right_eq_self
+    (fun z : ℂ => |logKernel A B (Real.log ‖z‖) / ‖z‖ ^ 2|) a]
+  have he : (fun z : ℂ => |logKernel A B (Real.log ‖z‖) / ‖z‖ ^ 2|) =
+      (fun z : ℂ => |logKernel A B (Real.log ‖z‖)| / ‖z‖ ^ 2) := by
+    funext z
+    rw [abs_div, abs_of_nonneg (sq_nonneg ‖z‖)]
+  rw [he]
+  calc
+    (∫ z : ℂ, |logKernel A B (Real.log ‖z‖)| / ‖z‖ ^ 2) =
+        2 * Real.pi * ∫ s : ℝ, |logKernel A B s| :=
+      integral_log_radial (fun s : ℝ => |logKernel A B s|)
+    _ = 2 * Real.pi * (∫ s : ℝ, |transitionSecond s|) / (B - A) := by
+      rw [integral_abs_logKernel hAB]
+      ring
+
 theorem integral_abs_log_norm_laplacian_logCutoff_le (a : ℂ) {A B L : ℝ} (hAB : A < B)
     (hA : |A| ≤ L * (B - A)) (hB : |B| ≤ L * (B - A)) :
     (∫ z : ℂ, |Real.log ‖z - a‖ * Δ (logCutoff a A B) z|) ≤

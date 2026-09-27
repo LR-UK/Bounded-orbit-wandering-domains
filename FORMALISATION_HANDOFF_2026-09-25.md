@@ -853,3 +853,17 @@ compatibility proof.  `uniformGlobalPointInsertionBound_of_diffeomorph_sphere`
 now proves the sharp `2π` insertion bound on a three-anchor complement of any
 surface biholomorphic to the sphere, using the existing Möbius normalization.
 The focused build has no `sorryAx` in the new theorem.
+
+## 27 September local continuation: logarithmic cutoff mass
+
+`BoundedWanderingDomains/LogKernelBounds.lean` now proves that the absolute
+Laplacian of a logarithmic cutoff is integrable and computes its total mass
+exactly as
+`2 * π * (∫ s, |transitionSecond s|) / (B - A)`.
+This is the quantitative decay needed in the puncture argument: a logarithmic
+growth bound of size comparable with `|A|` can be paired with a transition of
+logarithmic width comparable with `|A|`, leaving a uniform boundary-error
+constant.  The focused module build passes.  The next analytic package should
+combine this estimate with the existing positive-part cutoff and chart
+Laplacian identities to bound the Riesz mass contributed by each newly removed
+point.
