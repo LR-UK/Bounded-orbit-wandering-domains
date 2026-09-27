@@ -63,7 +63,7 @@ theorem false_of_positiveHyperbolicArea_boundaryBarrier
     (hAP : A ⊆ closure (⋃ n, ((P n : Finset X) : Set X))) : False := by
   obtain ⟨E, C, hC, hstep⟩ :=
     hadvance p f hf V hVcompact hVsource K hK hKV
-  obtain ⟨S, hSmono, hcontain, hback⟩ :=
+  obtain ⟨S, hSmono, hcontain, _hforward, hback⟩ :=
     f.exists_backwardExceptionalFinsets hf V hVcompact hVsource
       P hPmono E
   let Sstar : Set X := ⋃ n, ((S n : Finset X) : Set X)

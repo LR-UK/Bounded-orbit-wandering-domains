@@ -202,7 +202,7 @@ theorem exists_backwardExceptional_positive_remainder
       A \ (⋃ n, ((S n : Finset X) : Set X)) ⊆
         closure (⋃ n, ((S n : Finset X) : Set X)) := by
   classical
-  obtain ⟨S, hSmono, hcontain, hback⟩ :=
+  obtain ⟨S, hSmono, hcontain, _hforward, hback⟩ :=
     f.exists_backwardExceptionalFinsets hf V hVcompact hVsource P hP E
   refine ⟨S, hSmono, hcontain, hback, ?_⟩
   let Sstar : Set X := ⋃ n, ((S n : Finset X) : Set X)

@@ -3,6 +3,7 @@ import BoundedWanderingDomains.Surfaces.DenseFinitePunctures
 import BoundedWanderingDomains.Surfaces.LocalPunctures
 import BoundedWanderingDomains.Surfaces.LocalDynamics
 import BoundedWanderingDomains.Surfaces.LocalMapRestriction
+import BoundedWanderingDomains.Surfaces.LocalMapTotalization
 import Mathlib.Topology.Separation.Regular
 
 /-! # Finite backward punctures from the boundary of a working domain -/
@@ -95,6 +96,26 @@ theorem boundaryBackwardTree_forward_invariant (f : LocalMap X)
       rcases hx with hx | ⟨hxV', hfx⟩
       · exact Or.inl (ih x hxV hx)
       · exact Or.inl hfx
+
+/-- Without a boundary hypothesis on the roots, the only possible failure of
+forward invariance is the image of a root.  In particular, a fixed finite
+root set costs only its finite image at every depth. -/
+theorem boundaryBackwardTree_forward_up_to_roots (f : LocalMap X)
+    {V Q : Set X} (hVsource : closure V ⊆ f.source) (n : ℕ) :
+    ∀ x (hxV : x ∈ V), x ∈ f.boundaryBackwardTree V hVsource Q n →
+      f.map ⟨x, hVsource (subset_closure hxV)⟩ ∈
+        f.boundaryBackwardTree V hVsource Q n ∪ f.totalize '' Q := by
+  intro x hxV hx
+  induction n generalizing x with
+  | zero =>
+      refine Or.inr ⟨x, hx, ?_⟩
+      exact f.totalize_eq (hVsource (subset_closure hxV))
+  | succ n ih =>
+      rcases hx with hx | ⟨hxV', hfx⟩
+      · rcases ih x hxV hx with htree | hroot
+        · exact Or.inl (Or.inl htree)
+        · exact Or.inr hroot
+      · exact Or.inl (Or.inl hfx)
 
 theorem boundaryBackwardTree_union_backward (f : LocalMap X)
     {V Q : Set X} (hVsource : closure V ⊆ f.source) :

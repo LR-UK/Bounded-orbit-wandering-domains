@@ -9,6 +9,7 @@ import BoundedWanderingDomains.Surfaces.SurfaceOrbitEscape
 import BoundedWanderingDomains.Surfaces.DerivedLimitReduction
 import BoundedWanderingDomains.Surfaces.SurfaceDerivedLimits
 import BoundedWanderingDomains.Surfaces.CompactLocalAreaAdvance
+import BoundedWanderingDomains.Surfaces.SurfacePositiveArea
 
 /-! # Proofs of the revised paper statements
 
@@ -22,7 +23,7 @@ open scoped Topology Manifold
 
 namespace BoundedWanderingDomains
 
-theorem theorem_1_2_entire :
+def wandering_orbit_locallyUniform_inftyClaim : Prop :=
     ∀ {f : ℂ → ℂ} (_hf : Differentiable ℂ f)
       (_htrans : ¬ ∃ p : Polynomial ℂ, ∀ z, f z = p.eval z)
       {U : ℕ → Set ℂ} {z : ℂ}
@@ -31,11 +32,13 @@ theorem theorem_1_2_entire :
       (_hdis : Pairwise (fun n m => Disjoint (U n) (U m))),
       ∃ φ : ℕ → ℕ, StrictMono φ ∧ TendstoLocallyUniformlyOn
         (fun k w => ((f^[φ k]) w : OnePoint ℂ))
-        (fun _ => (∞ : OnePoint ℂ)) atTop (U 0) := by
+        (fun _ => (∞ : OnePoint ℂ)) atTop (U 0)
+
+theorem theorem_1_2_entire : wandering_orbit_locallyUniform_inftyClaim := by
   intro f hf htrans U z hU hz hforward hdis
   exact wandering_orbit_locallyUniform_infty hf htrans hU hz hforward hdis
 
-theorem theorem_1_4 :
+def wandering_orbit_pointwise_spherical_singular_derivedSetClaim : Prop :=
     ∀ {f : ℂ → ℂ} (_hf : Differentiable ℂ f)
       (_htrans : ¬ ∃ p : Polynomial ℂ, ∀ z, f z = p.eval z)
       {U : ℕ → Set ℂ} {z : ℂ}
@@ -44,7 +47,9 @@ theorem theorem_1_4 :
       (_hdis : Pairwise (fun n m => Disjoint (U n) (U m))),
       ∃ a ∈ derivedSet (ComplexDynamics.sphericalSingularValues f), ∃ φ : ℕ → ℕ,
         StrictMono φ ∧ Tendsto
-          (fun k => ((f^[φ k]) z : OnePoint ℂ)) atTop (𝓝 a) := by
+          (fun k => ((f^[φ k]) z : OnePoint ℂ)) atTop (𝓝 a)
+
+theorem theorem_1_4 : wandering_orbit_pointwise_spherical_singular_derivedSetClaim := by
   intro f hf htrans U z hU hz hforward hdis
   exact wandering_orbit_pointwise_spherical_singular_derivedSet
     hf htrans hU hz hforward hdis
@@ -53,16 +58,23 @@ end BoundedWanderingDomains
 
 namespace MeromorphicDynamics
 
-theorem theorem_1_2_meromorphic :
+/-- The independent challenge's germ-based rationality convention. -/
+def IsRationalMeromorphic (f : ℂ → ℂ) : Prop :=
+  ∃ p q : Polynomial ℂ, q ≠ 0 ∧
+    ∀ a : ℂ, f =ᶠ[𝓝[≠] a] (fun z => p.eval z / q.eval z)
+
+def WanderingLocallyUniformInfinityClaim : Prop :=
     ∀ {f : ℂ → ℂ}, MeromorphicNFOn f univ →
-      ¬ FunctionTheory.IsRationalMeromorphic f →
+      ¬ IsRationalMeromorphic f →
       ∀ {U : ℕ → Set ℂ} {z : ℂ},
         (∀ n, IsFatouComponent f (U n)) → z ∈ U 0 →
         (∀ n, MapsTo f (U n) (U (n + 1))) →
         Pairwise (fun n m => Disjoint (U n) (U m)) →
         ∃ φ : ℕ → ℕ, StrictMono φ ∧ TendstoLocallyUniformlyOn
           (fun k w => ((f^[φ k]) w : OnePoint ℂ))
-          (fun _ => (∞ : OnePoint ℂ)) atTop (U 0) :=
+          (fun _ => (∞ : OnePoint ℂ)) atTop (U 0)
+
+theorem theorem_1_2_meromorphic : WanderingLocallyUniformInfinityClaim :=
   wanderingLocallyUniformInfinityClaim_of_surface_theorem
     SurfaceDynamics.noCompactWanderingOrbitClaim
 
@@ -82,6 +94,9 @@ theorem theorem_1_5 : WanderingDerivedSingularLimitClaim (X := X) :=
 
 variable
   [MeasurableSpace X] [BorelSpace X]
+
+theorem theorem_1_3_positive_area : NoCompactPositiveAreaWanderingSetClaim (X := X) :=
+  noCompactPositiveAreaWanderingSetClaim
 
 /-- The exact positive-area statement of Theorem 1.3(2) for every
 noncompact Riemann surface. -/
@@ -105,5 +120,6 @@ end SurfaceDynamics
 #print axioms MeromorphicDynamics.theorem_1_2_meromorphic
 #print axioms SurfaceDynamics.theorem_1_3_orbit
 #print axioms SurfaceDynamics.theorem_1_5
+#print axioms SurfaceDynamics.theorem_1_3_positive_area
 #print axioms SurfaceDynamics.theorem_1_3_positive_area_noncompact
 #print axioms SurfaceDynamics.theorem_1_3_positive_area_hyperbolic

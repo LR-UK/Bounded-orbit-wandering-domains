@@ -24,6 +24,10 @@ theorem exists_backwardExceptionalFinsets
     ∃ S : ℕ → Finset X, Monotone S ∧
       (∀ n, (P n : Set X) ⊆ (S n : Set X) ∧
         (E : Set X) ⊆ (S n : Set X)) ∧
+      (∀ n x (hx : x ∈ V), x ∈ S n →
+        f.map ⟨x, hVsource (subset_closure hx)⟩ ∈
+          (S n : Set X) ∪ f.totalize ''
+            ((P n : Set X) ∪ (E : Set X))) ∧
       (∀ x (hx : x ∈ V),
         f.map ⟨x, hVsource (subset_closure hx)⟩ ∈
             (⋃ n, ((S n : Finset X) : Set X)) →
@@ -47,7 +51,7 @@ theorem exists_backwardExceptionalFinsets
   let S : ℕ → Finset X := fun n => (hRfinite n).toFinset
   have hcoe : ∀ n, ((S n : Finset X) : Set X) = R n :=
     fun n => (hRfinite n).coe_toFinset
-  refine ⟨S, ?_, ?_, ?_⟩
+  refine ⟨S, ?_, ?_, ?_, ?_⟩
   · intro n m hnm x hx
     apply (hRfinite m).mem_toFinset.mpr
     exact hRmono hnm ((hRfinite n).mem_toFinset.mp hx)
@@ -61,6 +65,14 @@ theorem exists_backwardExceptionalFinsets
       apply (hRfinite n).mem_toFinset.mpr
       apply f.roots_subset_boundaryBackwardTree (V : Set X) hVsource (Q n) n
       exact Finset.mem_union_right (P n) hxE
+  · intro n x hxV hxS
+    change x ∈ (S n : Set X) at hxS
+    change f.map ⟨x, hVsource (subset_closure hxV)⟩ ∈
+      (S n : Set X) ∪ f.totalize ''
+        ((P n : Set X) ∪ (E : Set X))
+    rw [hcoe] at hxS ⊢
+    simpa only [R, Q, Finset.coe_union] using
+      f.boundaryBackwardTree_forward_up_to_roots hVsource n x hxV hxS
   · intro x hx hfx
     simp_rw [hcoe] at hfx ⊢
     obtain ⟨n, hn⟩ := mem_iUnion.mp hfx

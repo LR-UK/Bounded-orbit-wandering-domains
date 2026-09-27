@@ -15,13 +15,13 @@ theorem uniform_compact_finite_gain_plane
     (q : ℕ) {K L : Set ℂ} (hK : IsCompact K) (hL : IsCompact L)
     (hLK : Disjoint L K) :
     ∃ T : ℝ≥0∞, T ≠ ∞ ∧
-      ∀ (A : Set ℂ) (hA : IsClosed A) {c d : ℂ}, c ≠ d → c ∈ A → d ∈ A →
+      ∀ (A : Set ℂ) (hA : IsClosed A) {c d : ℂ} (hcd : c ≠ d) (hc : c ∈ A) (hd : d ∈ A),
         ∀ E : Finset ℂ, E.card ≤ q →
           (∫⁻ z in L ∩ (A ∪ K ∪ (↑E : Set ℂ))ᶜ,
             hyperbolicAreaWeight (A ∪ K ∪ (↑E : Set ℂ))
                 ((hA.union hK.isClosed).union E.finite_toSet.isClosed)
-                · (Or.inl (Or.inl ·)) (Or.inl (Or.inl ·)) z -
-              hyperbolicAreaWeight A hA · · · z) ≤ T := by
+                hcd (Or.inl (Or.inl hc)) (Or.inl (Or.inl hd)) z -
+              hyperbolicAreaWeight A hA hcd hc hd z) ≤ T := by
   obtain ⟨C,hC,hcompact⟩ := uniform_compact_gain_plane hL hK hLK
   let P : ℝ≥0∞ := (q : ℝ≥0∞) * ENNReal.ofReal (2 * Real.pi)
   have hP : P ≠ ∞ :=
@@ -64,7 +64,9 @@ theorem uniform_compact_finite_gain_plane
       _ ≤ (E.card : ℝ≥0∞) * ENNReal.ofReal (2 * Real.pi) := by
           simpa only [B, D] using
             finite_removal_gain_le_two_pi_mul_card B hB E hcd hBc hBd
-      _ ≤ P := mul_le_mul_right' (ENNReal.natCast_le_natCast.mpr hEq) _
+      _ ≤ P := by
+        dsimp only [P]
+        gcongr
   have hremote :
       (∫⁻ z in W, hyperbolicAreaWeight B hB hcd hBc hBd z -
           hyperbolicAreaWeight A hA hcd hc hd z) ≤ C := by

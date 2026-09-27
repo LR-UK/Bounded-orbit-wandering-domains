@@ -16,13 +16,13 @@ import Mathlib.Geometry.Manifold.IsManifold.Basic
 import Mathlib.MeasureTheory.Measure.Lebesgue.Complex
 import Mathlib.Analysis.Meromorphic.NormalForm
 
-/-! # Proposed challenge for the revised paper's introduction
+/-! # Independent challenge for the revised paper's introduction
 
 Six proposition targets: entire and meromorphic escape, the two local surface
 conclusions, entire derived-set accumulation, and surface derived-set/escape.
-These are specifications awaiting proof connections, not theorem declarations.
-Only Mathlib is imported: no solution theorem, proof hole or new axiom is used.
-The existing Challenge/Solution submission remains unchanged.
+The six theorem declarations at the end are independent statement placeholders.
+Their proofs are supplied by PaperSolution, which does not import this module.
+Only Mathlib is imported here; the placeholders are confined to this specification.
 
 Matched to no-bounded-WD-2.tex, supplied 25 September 2026. In the positive-area
 conclusion K is contained in O, as explicitly confirmed by the author. Both
@@ -266,6 +266,9 @@ def IsRationalMeromorphic (f : ℂ → ℂ) : Prop :=
   ∃ p q : Polynomial ℂ, q ≠ 0 ∧
     ∀ a : ℂ, f =ᶠ[𝓝[≠] a] (fun z => p.eval z / q.eval z)
 
+-- Match the canonical complex instances used by the meromorphic definitions.
+attribute [-instance] instCommCStarAlgebraComplex
+
 /-- Every iterate is a regular finite point of the meromorphic map. -/
 def poleAvoidingSet (f : ℂ → ℂ) : Set ℂ :=
   {z | ∀ n : ℕ, AnalyticAt ℂ f ((f^[n]) z)}
@@ -277,6 +280,8 @@ def fatouSet (f : ℂ → ℂ) : Set ℂ :=
 
 def IsFatouComponent (f : ℂ → ℂ) (U : Set ℂ) : Prop :=
   ∃ z ∈ fatouSet f, U = connectedComponentIn (fatouSet f) z
+
+attribute [instance] instCommCStarAlgebraComplex
 
 /-- The meromorphic part of thm:boundedorbitentire. No simple-connectivity
 or orbit-injectivity assumption. Convergence is locally uniform and spherical.

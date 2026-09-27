@@ -100,3 +100,6 @@ import BoundedWanderingDomains.Surfaces.CuspDensityBounds
 import BoundedWanderingDomains.Surfaces.CuspAreaFinite
 import BoundedWanderingDomains.Surfaces.CompactFinitePunctureArea
 import BoundedWanderingDomains.Surfaces.DomainAreaSubtype
+import BoundedWanderingDomains.Surfaces.SurfaceOrbitEscape
+import BoundedWanderingDomains.Surfaces.SurfaceDerivedLimits
+import BoundedWanderingDomains.Surfaces.SurfacePositiveArea

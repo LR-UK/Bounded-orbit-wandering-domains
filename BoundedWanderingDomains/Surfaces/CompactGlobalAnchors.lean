@@ -24,6 +24,8 @@ theorem exists_three_anchor_backward_hyperbolic_models
     ∃ E : Finset X, E.card = 3 ∧ (E : Set X) ⊆ A ∧
       ∃ P : ℕ → Finset X, Monotone P ∧
         (∀ n, E ⊆ P n) ∧
+        (∀ n x, x ∈ P n →
+          f.totalize x ∈ (P n : Set X) ∪ f.totalize '' (E : Set X)) ∧
         (∀ (x : f.source), f.map x ∈
             (⋃ n, ((P n : Finset X) : Set X)) →
           (x : X) ∈ (⋃ n, ((P n : Finset X) : Set X))) ∧
@@ -60,7 +62,7 @@ theorem exists_three_anchor_backward_hyperbolic_models
     simpa [V, hsource]
   let Q : ℕ → Finset X := fun _ => ∅
   have hQmono : Monotone Q := fun _ _ _ => by simp [Q]
-  obtain ⟨P, hPmono, hcontain, hback⟩ :=
+  obtain ⟨P, hPmono, hcontain, hforward, hback⟩ :=
     f.exists_backwardExceptionalFinsets hf V hVcompact hVsource Q hQmono E
   letI : Nontrivial X := ⟨⟨a, b, Ne.symm hba⟩⟩
   letI : Infinite X := Set.infinite_univ_iff.mp
@@ -69,7 +71,13 @@ theorem exists_three_anchor_backward_hyperbolic_models
         (subset_univ _))
   letI : IsManifold 𝓘(ℂ) ω X :=
     AreaDeficit.Surfaces.isManifold_analytic_of_complex
-  refine ⟨E, hEcard, hEA, P, hPmono, fun n => hcontain n |>.2, ?_, ?_⟩
+  refine ⟨E, hEcard, hEA, P, hPmono, fun n => hcontain n |>.2,
+    ?_, ?_, ?_⟩
+  · intro n x hxP
+    have hxsource : x ∈ f.source := by rw [hsource]; trivial
+    rw [f.totalize_eq hxsource]
+    have h := hforward n x (by trivial) hxP
+    simpa only [Q, Finset.coe_empty, empty_union] using h
   · intro x hx
     exact hback (x : X) (by trivial) hx
   · intro n
@@ -128,7 +136,7 @@ theorem exists_three_anchor_positive_wandering_configuration
     simpa [V, hsource]
   let P : ℕ → Finset X := fun _ => ∅
   have hPmono : Monotone P := fun _ _ _ => by simp [P]
-  obtain ⟨Sseq, hSmono, hcontain, hback⟩ :=
+  obtain ⟨Sseq, hSmono, hcontain, _hforward, hback⟩ :=
     f.exists_backwardExceptionalFinsets hf V hVcompact hVsource P hPmono E
   let S : Set X := ⋃ n, ((Sseq n : Finset X) : Set X)
   have hScount : S.Countable :=
@@ -162,6 +170,8 @@ theorem exists_three_anchor_positive_wandering_hyperbolic_models
     ∃ E : Finset X, E.card = 3 ∧ (E : Set X) ⊆ A ∧
       ∃ P : ℕ → Finset X, Monotone P ∧
         (∀ n, E ⊆ P n) ∧
+        (∀ n x, x ∈ P n →
+          f.totalize x ∈ (P n : Set X) ∪ f.totalize '' (E : Set X)) ∧
         (∀ (x : f.source), f.map x ∈
             (⋃ n, ((P n : Finset X) : Set X)) →
           (x : X) ∈ (⋃ n, ((P n : Finset X) : Set X))) ∧
@@ -179,7 +189,7 @@ theorem exists_three_anchor_positive_wandering_hyperbolic_models
           f.totalize '' Wstar = Wstar \ Astar ∧
           Disjoint Wstar S := by
   classical
-  obtain ⟨E, hEcard, hEA, P, hPmono, hEP, hback, hcover⟩ :=
+  obtain ⟨E, hEcard, hEA, P, hPmono, hEP, hforward, hback, hcover⟩ :=
     f.exists_three_anchor_backward_hyperbolic_models hf hsource hApos
   let S : Set X := ⋃ n, ((P n : Finset X) : Set X)
   have hScount : S.Countable :=
@@ -192,7 +202,7 @@ theorem exists_three_anchor_positive_wandering_hyperbolic_models
     f.diff_backwardExceptional_wandering_configuration hf hAmeas hApos
       hAtrap hdis hinj (subset_univ _) (subset_univ _) hScount
       (fun x _ hx => hback x hx)
-  exact ⟨E, hEcard, hEA, P, hPmono, hEP, hback, hcover,
+  exact ⟨E, hEcard, hEA, P, hPmono, hEP, hforward, hback, hcover,
     hAstarmeas, hAstarpos, hWmeas, hAstarW, hWinj, himage, hWdis⟩
 
 end SurfaceDynamics.LocalMap

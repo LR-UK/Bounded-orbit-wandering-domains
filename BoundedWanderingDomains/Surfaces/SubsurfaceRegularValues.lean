@@ -10,6 +10,32 @@ namespace SurfaceDynamics.LocalMap
 variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [IsManifold 𝓘(ℂ) 1 X]
 
+/-- Retain exactly those source points for which both the point and its
+image belong to the chosen open subsurface. -/
+theorem exists_full_restriction_to_open (f : LocalMap X) (hf : IsOpenHolomorphic f)
+    (O : TopologicalSpace.Opens X) :
+    ∃ (V : TopologicalSpace.Opens X) (hVs : (V : Set X) ⊆ f.source)
+      (hVO : (V : Set X) ⊆ O)
+      (hm : ∀ x : (f.restrictSource V hVs).source, (f.restrictSource V hVs).map x ∈ O),
+      ∀ x : f.source, (x : X) ∈ O → f.map x ∈ O → (x : X) ∈ V := by
+  let V : TopologicalSpace.Opens X :=
+    ⟨Subtype.val '' {x : f.source | (x : X) ∈ O ∧ f.map x ∈ O},
+      f.source.isOpen.isOpenMap_subtype_val _
+        ((O.isOpen.preimage continuous_subtype_val).inter (O.isOpen.preimage hf.2.continuous))⟩
+  have hVs : (V : Set X) ⊆ f.source := by
+    rintro x ⟨y, hy, rfl⟩
+    exact y.property
+  have hVO : (V : Set X) ⊆ O := by
+    rintro x ⟨y, hy, rfl⟩
+    exact hy.1
+  refine ⟨V, hVs, hVO, ?_, fun x hx hy => ⟨x, ⟨hx, hy⟩, rfl⟩⟩
+  intro x
+  obtain ⟨y, hy, he⟩ := x.property
+  change f.map ⟨(x : X), hVs x.property⟩ ∈ O
+  have hey : (⟨(x : X), hVs x.property⟩ : f.source) = y := Subtype.ext he.symm
+  rw [hey]
+  exact hy.2
+
 /-- Restricting source and ambient surface preserves a regular-value
 neighbourhood when no preimage over that neighbourhood has been removed. -/
 theorem regularValues_restrictAmbient_restrictSource
