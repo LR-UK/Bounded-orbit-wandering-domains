@@ -1,6 +1,7 @@
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
 import BoundedWanderingDomains.Surfaces.OldPunctureBoundaryMass
 import BoundedWanderingDomains.Surfaces.PunctureBoundaryMass
+import Mathlib.MeasureTheory.Integral.DominatedConvergence
 
 /-! # Finite assembly of puncture boundary masses
 
@@ -11,7 +12,8 @@ while finitely many uniformly bounded new-end terms have a finite total
 bound. -/
 
 open Set Function Filter
-open scoped Topology
+open MeasureTheory
+open scoped Topology ENNReal
 
 namespace AreaDeficit.Surfaces
 
@@ -53,8 +55,61 @@ theorem eventually_bounded_old_new_boundary_sum
   filter_upwards [holdBound, hnew] with t htold htnew
   exact (abs_add_le _ _).trans <| by linarith
 
+/-- Uniform bounds for an exhausting family of nonnegative cutoff integrals
+bound the total mass.  This is the measure-theoretic endpoint of the global
+Riesz assembly and avoids subtracting two possibly infinite areas. -/
+theorem measure_univ_le_of_cutoff_lintegrals
+    {α : Type*} [MeasurableSpace α] (μ : Measure α)
+    (χ : ℕ → α → ℝ≥0∞) (hχ : ∀ n, AEMeasurable (χ n) μ)
+    (hlim : ∀ᵐ x ∂μ, Tendsto (fun n => χ n x) atTop (𝓝 1))
+    {C : ℝ≥0∞} (hbound : ∀ n, ∫⁻ x, χ n x ∂μ ≤ C) :
+    μ Set.univ ≤ C := by
+  rw [← lintegral_one]
+  calc
+    (∫⁻ _x : α, (1 : ℝ≥0∞) ∂μ) =
+        ∫⁻ x : α, liminf (fun n => χ n x) atTop ∂μ := by
+      apply lintegral_congr_ae
+      filter_upwards [hlim] with x hx
+      exact hx.liminf_eq.symm
+    _ ≤ liminf (fun n => ∫⁻ x, χ n x ∂μ) atTop :=
+      lintegral_liminf_le' hχ
+    _ ≤ C := by
+      have hb : ∀ᶠ n : ℕ in atTop, (∫⁻ x, χ n x ∂μ) ≤ C :=
+        Filter.Eventually.of_forall hbound
+      have h := Filter.liminf_le_liminf hb
+      simpa only [liminf_const] using h
+
+/-- Riesz-cutoff form of `measure_univ_le_of_cutoff_lintegrals`.  If every
+cutoff mass is the nonnegative real boundary pairing and those pairings are
+eventually bounded in absolute value, the whole Riesz measure has finite
+mass.  Passing to a tail removes the word `eventually` without changing the
+exhaustion. -/
+theorem measure_univ_le_of_eventually_bounded_riesz_cutoffs
+    {α : Type*} [MeasurableSpace α] (μ : Measure α)
+    (χ : ℕ → α → ℝ≥0∞) (hχ : ∀ n, AEMeasurable (χ n) μ)
+    (hlim : ∀ᵐ x ∂μ, Tendsto (fun n => χ n x) atTop (𝓝 1))
+    (boundary : ℕ → ℝ)
+    (hgreen : ∀ n, (∫⁻ x, χ n x ∂μ) = ENNReal.ofReal (boundary n))
+    {B : ℝ} (hB : 0 ≤ B)
+    (hbound : ∀ᶠ n : ℕ in atTop, |boundary n| ≤ B) :
+    μ Set.univ ≤ ENNReal.ofReal B := by
+  obtain ⟨N, hN⟩ := eventually_atTop.mp hbound
+  let ψ : ℕ → α → ℝ≥0∞ := fun n => χ (n + N)
+  apply measure_univ_le_of_cutoff_lintegrals μ ψ
+  · intro n
+    exact hχ (n + N)
+  · filter_upwards [hlim] with x hx
+    exact hx.comp (tendsto_add_atTop_nat N)
+  · intro n
+    rw [show (∫⁻ x, ψ n x ∂μ) = ENNReal.ofReal (boundary (n + N)) by
+      simpa only [ψ] using hgreen (n + N)]
+    apply ENNReal.ofReal_le_ofReal
+    exact (le_abs_self (boundary (n + N))).trans (hN _ (Nat.le_add_left N n))
+
 end AreaDeficit.Surfaces
 
 #print axioms AreaDeficit.Surfaces.tendsto_finset_sum_zero
 #print axioms AreaDeficit.Surfaces.eventually_abs_finset_sum_le
 #print axioms AreaDeficit.Surfaces.eventually_bounded_old_new_boundary_sum
+#print axioms AreaDeficit.Surfaces.measure_univ_le_of_cutoff_lintegrals
+#print axioms AreaDeficit.Surfaces.measure_univ_le_of_eventually_bounded_riesz_cutoffs
