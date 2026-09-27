@@ -2,6 +2,28 @@
 
 The main surface arguments live in `BoundedWanderingDomains/Surfaces/`.
 
+## Components and their forward images
+
+For a local map `f : O -> X`, the normality locus `omega` consists of points
+with an open neighbourhood whose entire forward orbit stays in `O` and on
+which the iterates form a normal family, using the one-point compactification
+of `X` as target. A normality component is a connected component of this open
+locus. A "full normality component" means the whole connected component;
+"full" here does not mean that a planar domain has no holes.
+
+Let `U_n` be the component containing `f^n(U)`. The forward-containment property
+is `f(U_n) ⊆ U_(n+1)`, even for points of `U_n` outside `f^n(U)`. Neither
+`f(U_n) = U_(n+1)` nor `f^n(U) = U_n` is required. Wandering means these
+components are pairwise distinct (and hence disjoint). The simple-connectivity
+hypothesis of Theorem 1.5 concerns these whole components.
+
+`OmegaDynamics.lean` proves forward invariance of the normality locus in
+`LocalMap.totalize_mapsTo_omega`, and then component containment in
+`LocalMap.mapsTo_component_of_imageAt`. The first uses openness to transfer
+normality from a neighbourhood to its image; the second uses connectedness
+and the common orbit point. These are proved structural lemmas, not additional
+hypotheses in the paper's theorem statements.
+
 ## Theorem 1.3(1)
 
 `SurfaceOrbitEscape.lean` removes a small coordinate disc inside the initial

@@ -12,9 +12,10 @@ does not import PaperChallenge. Local comparison checks six theorem types and
 - **1.2 meromorphic:** the same conclusion for non-rational meromorphic maps in
   normal form, with Fatou neighbourhoods avoiding poles and prepoles. Poles are
   allowed; their representative values are not used by admissible iterates.
-- **1.3(1):** every marked orbit in an actual wandering normality component
-  leaves every compact subset of the local map's open source. No simple
-  connectivity or injectivity is assumed.
+- **1.3(1):** no marked orbit in an actual wandering normality component is
+  contained in a compact subset of the local map's open source: for each such
+  compact set K, some iterate lies outside K. This does not assert eventual
+  escape from every compact set. No simple connectivity or injectivity is assumed.
 - **1.3(2):** a measurable positive-chart-area set in `trapped \ omega`, with
   pairwise disjoint forward images and injectivity on its forward saturation,
   has saturation not contained in any compact subset of the source. This now
