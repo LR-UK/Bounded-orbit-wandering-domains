@@ -916,3 +916,11 @@ exact reusable conclusion: the absolute Riesz boundary contribution at one
 newly inserted puncture is eventually bounded by one finite constant.  The
 statement is intrinsic in the two disc covers and has no asymptotic hypothesis
 left for callers.  Its focused build passes without `sorryAx`.
+
+`Surfaces/OldPunctureBoundaryMass.lean` now combines the intrinsic comparison
+with a local end parametrization.  Whenever the parametrization escapes every
+compact subset of the old surface, the chart log-density ratio tends to zero
+and its logarithmic cutoff/Riesz boundary integral tends to zero.  Together
+with `PunctureBoundaryMass.lean`, the full old-end/new-puncture boundary data
+for Lemma 2.6 is compiled; the remaining work is the finite global Green/Riesz
+assembly on the compactification and its use in the dynamics reductions.
