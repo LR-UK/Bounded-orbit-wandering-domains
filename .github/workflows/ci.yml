@@ -37,7 +37,6 @@ jobs:
         run: |
           set -o pipefail
           bash scripts/verify-comparator.sh comparator.json 2>&1 | tee verification/comparator-ci.log
-          bash scripts/verify-comparator.sh comparator-singular-limits.json 2>&1 | tee verification/comparator-singular-ci.log
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         if: always()
         with:

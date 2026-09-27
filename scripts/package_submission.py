@@ -7,7 +7,7 @@ import zipfile
 from audit_attribution import audit
 
 root = Path(__file__).resolve().parents[1]
-assert json.loads((root / "verification/submission.json").read_text())["result"] == "passed"
+assert json.loads((root / "verification/paper-submission.json").read_text())["result"] == "passed"
 assert json.loads((root / "verification/metadata.json").read_text())["result"] == "passed"
 moves = json.loads((root / "verification/moved-sources.json").read_text())
 for old_path, new_path in moves.items():

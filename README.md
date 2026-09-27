@@ -9,23 +9,30 @@ which formalised the main results of:
 [PRW] N. Prochorov, L. Rempe and J. Waterman, *Absence of bounded-orbit wandering
 domains*, [arXiv:2609.28279](https://arxiv.org/abs/2609.28279).
 
-The current formalisation preserves those results and adds the following.
+The current formalisation preserves the result on the absence of bounded-orbit wandering
+domains (referred to as Theorem 1.2 entire), adds the meromorphic case that was not
+stated in the previous version, although it follows from the results proved there
+(referred to as Theorem 1.2 meromorphic) and adds the following.
 
 - The derived-set theorem announced without proof in [PRW]: for a transcendental
   entire function, every point in a wandering Fatou component has a subsequence
-  of its orbit converging to the derived set of the spherical singular values.
+  of its orbit converging to the derived set of the spherical singular values. 
+  This result is referred to hereafter as Theorem 1.4. Učakar has informed the
+  authors that he independently obtained a proof of this theorem.
 - The local result with unnecessary hypotheses removed, on arbitrary Riemann
   surfaces: if an open holomorphic map is defined on an open subset $O$ of a
   Riemann surface and $U$ is a wandering normality component, no point of $U$
   has its whole forward orbit contained in a compact subset of $O$.
+  Referred to hereafter as Theorem 1.3(1)
 - A surface analogue of the derived-set theorem, currently assuming that the
-  normality components met by the wandering orbit are simply connected.
+  normality components met by the wandering orbit are simply connected;
+  referred to as Theorem 1.5.
 - The positive-area statement, previously present for subsets of the sphere in
   the manuscript but absent from the first formalisation. If $A$ is measurable,
   has positive area in a chart, lies outside the normality locus, has all iterates
   defined in $O$, has pairwise disjoint forward images, and the map is injective
   on the whole forward saturation of $A$, that saturation is not contained in
-  a compact subset of $O$.
+  a compact subset of $O$; referred to as Theorem 1.3(2).
 - Classical no-wandering corollaries for rational maps and transcendental entire
   functions with finitely many singular values, together with the more general
   compact-surface corollary. The polynomial case is included among rational maps.
@@ -48,8 +55,7 @@ no-wandering domain theorems without quasiconformal techniques*,
 [arXiv:2609.23834](https://arxiv.org/abs/2609.23834). All four preprints acknowledge
 generative AI in the generation of their proofs.
 
-As reported by Lasse Rempe on 27 September 2026, the authors of [PRW] and [DPU]
-have agreed to combine their efforts and are preparing a joint preprint
+The authors of [PRW] and [DPU] have agreed to combine their efforts and are preparing a joint preprint
 containing all the results formalised here.
 
 This unconditional formalisation was prepared with generative AI for submission
@@ -59,12 +65,12 @@ The precise mathematical scope and verification status are given below.
 
 ## Formalised statements
 
-All six statements from the revised paper introduction are proved in Lean.
+All the above statements are proved in Lean.
 The independent specifications are in [Challenge.lean](Challenge.lean);
 the proofs are exposed by [Solution.lean](Solution.lean). The original
 entire-function bounded-orbit theorem is also included under its unchanged name
 and statement. With the three no-wandering corollaries, the current challenge
-selects ten theorem declarations.
+selects ten theorem declarations. 
 
 | Paper statement | Proved declaration |
 |---|---|
@@ -76,7 +82,7 @@ selects ten theorem declarations.
 | Theorem 1.5, surface escape or derived singular accumulation | `SurfaceDynamics.theorem_1_5` |
 | Original entire-function bounded-orbit theorem (unchanged) | `BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire` |
 | Finite-type transcendental entire functions: no wandering domains | `BoundedWanderingDomains.no_wandering_domains_transcendental_entire_finite_singularValues` |
-| Compact Riemann surface self-maps: no wandering domains | `SurfaceDynamics.no_wandering_domains_compact` |
+| Compact Riemann surface self-maps: no wandering domains. (Only the spherical case is actually non-trivial.) | `SurfaceDynamics.no_wandering_domains_compact` |
 | Rational maps: no wandering domains | `SurfaceDynamics.no_wandering_domains_rational` |
 
 The surface statements apply to arbitrary Riemann surfaces and actual local
@@ -95,12 +101,20 @@ on the whole Riemann sphere, including poles and infinity. Its proof specialises
 the compact-surface theorem; it does not require a polynomial-quotient encoding.
 The finite-type entire corollary explicitly assumes transcendence and finiteness
 of the finite singular-value set. No finite-type meromorphic no-wandering
-corollary is claimed. The relation with the Baker–Kotus–Lü argument, especially
-for multiply connected meromorphic wandering domains, remains a separate question.
+corollary is claimed. However, the original proof by Baker–Kotus–Lü 
+
+[BKL] I. N. Baker, J. Kotus and Y. Lü, Iterates of Meromorphic Functions IV: Critically Finite Functions, Results in Mathematics 22 (1992), 651–656.
+
+establishes that, after sufficiently many iterates, such 
+wandering domains would need to be simply connected;
+the remainder of the proof (for which [BKL] use Sullivan's argument) can then 
+be replaced by our Theorem 1.5. The authors believe that the same argument
+can be used to remove the assumption of simple connectivity in Theorem 1.5;
+the formalisation of this claim has been deferred.
 
 ## Project layout
 
-Only the two current submission files are at the top level:
+The only top-level Lean files are the two current submission files.
 
 ```text
 Challenge.lean        All ten current statements
@@ -145,16 +159,11 @@ Linux with working bubblewrap user namespaces:
 bash scripts/verify-comparator.sh comparator.json
 ```
 
-`comparator.json` and `comparator-paper.json` select all ten
-targets (six revised-paper statements, the original entire theorem, and three
-no-wandering corollaries). `comparator-legacy.json` and `comparator-singular-limits.json` preserve
-the earlier independent comparisons. Challenge `sorry` placeholders are
+`comparator.json` selects all ten targets. Challenge `sorry` placeholders are
 intentional specifications and are never imported by the proofs.
 
-See [VERIFICATION.md](VERIFICATION.md) for actual check results and the distinction
-between local verification and official registry verification. Nothing has been
-pushed or submitted. [GITHUB_UPDATE.md](GITHUB_UPDATE.md) and
-[SUBMISSION.md](SUBMISSION.md) describe the prepared upload workflow.
+See [VERIFICATION.md](docs/VERIFICATION.md) for actual check results and the distinction
+between local verification and official registry verification. 
 
 ## Sources and authorship
 

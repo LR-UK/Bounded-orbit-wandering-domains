@@ -16,7 +16,7 @@ OUT.mkdir(exist_ok=True)
 LAKE = shutil.which('lake')
 if not LAKE:
     raise SystemExit('Put the pinned Lean toolchain on PATH first.')
-CONFIG = json.loads((ROOT / 'comparator-paper.json').read_text(encoding='utf-8'))
+CONFIG = json.loads((ROOT / 'comparator.json').read_text(encoding='utf-8'))
 ALLOWED = {'propext', 'Classical.choice', 'Quot.sound'}
 ENV = dict(os.environ)
 ENV.setdefault('LEAN_NUM_THREADS', '2')
@@ -123,7 +123,7 @@ if args.all:
         visit(module)
 report = {
     'result': 'passed', 'scope': 'Local Lean build, independent declaration equality, source closure and transitive axioms',
-    'official_comparator': 'Not run by this script; use scripts/verify-comparator.sh comparator-paper.json on Linux',
+    'official_comparator': 'Not run by this script; use scripts/verify-comparator.sh comparator.json on Linux',
     'theorems_compared': len(CONFIG['theorem_names']),
     'supporting_declarations_compared': len(challenge) - len(CONFIG['theorem_names']),
     'local_proof_modules_scanned': len(paper_visited), 'axioms': axioms,

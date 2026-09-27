@@ -3,15 +3,12 @@ version: v0.4
 project:
   name: Absence of bounded-orbit wandering domains
   description: >-
-    All six statements in the revised introduction of Absence of bounded-orbit
-    wandering domains are formalised: locally uniform escape for entire and
-    meromorphic functions; compact-orbit and positive-area wandering-set exclusion
-    for local open holomorphic maps on arbitrary Riemann surfaces; entire derived
-    singular accumulation; and the surface escape-or-derived-singular alternative
-    for simply connected component orbits. Classical no-wandering corollaries
-    are included for compact surface self-maps, rational maps and finite-type
-    transcendental entire functions. Supporting hyperbolic area, covering,
-    finite-puncture and normal-family results are proved in the same development.
+    We formalise the recently proved absence of bounded-orbit wandering domains for transcendental entire and meromorphic functions, as well as a corresponding result for 
+    locally defined functions. This second version of the formalisation includes the meromorphic case, a local version for maps on Riemann surfaces, the fact that 
+    orbits in wandering domains of entire functions must accumulate on limit points of singular values, as well as a local version of this result also (which currently requires 
+    simple connectivity of the domains, although it seems likely that this hypothesis can be removed by applying
+    additional classical arguments by Baker, Kotus and Lü that are not yet normalised.) For further background,
+    see the README.md documentation.
   authors:
   - Nikolai Prochorov
   - Lasse Rempe
@@ -45,15 +42,14 @@ sources:
     role: AI-assisted Lean proof construction, compatibility work and verification
   location: https://arxiv.org/abs/2609.28279
   note: >-
-    PRW is the source of the original bounded-orbit results. The present extension
+    This paper [PRW] is the source of the original bounded-orbit results. The present extension
     proves the derived-singular-set assertion announced there without proof,
     removes unnecessary local hypotheses, extends the local results to arbitrary
     Riemann surfaces, adds the positive-area result and classical no-wandering
     corollaries. Surface derived-set accumulation assumes simply connected
     component orbits. The exact independent statements are in Challenge.lean,
-    with proofs exposed by Solution.lean. Lasse Rempe reported on 27 September
-    2026 that the PRW and DPU authors are preparing a joint preprint containing
-    all formalised results. No independent human review or acceptance of this
+    with proofs exposed by Solution.lean. The authors of [PRW] and [DPU] are preparing a joint preprint containing
+    these results. No independent human review or acceptance of this
     updated package is claimed.
 - title: Bounded-orbit wandering domains do not exist
   authors:
@@ -63,14 +59,14 @@ sources:
   id: https://arxiv.org/abs/2609.30103
   type: paper
   relationship: background
-  note: Subsequent independent preprint; its authors and the PRW authors are preparing a joint paper.
+  note: Subsequent independent preprint; its authors and the authors of [PRW] are preparing a joint paper.
 - title: Hyperbolic Area Methods in Meromorphic Dynamics and Elliptic Polynomial Skew Products
   authors:
   - Zihao Ye
   id: https://arxiv.org/abs/2609.30067
   type: paper
   relationship: background
-  note: Subsequent preprint announcing bounded-orbit results; not a claim to formalise all of its results.
+  note: Subsequent preprint announcing bounded-orbit results; this paper was not used in the formalisation.
 - title: A new proof of no-wandering domain theorems without quasiconformal techniques
   authors:
   - Zihao Ye
@@ -184,9 +180,9 @@ related_formalizations:
   note: User-supplied streamlined snapshot; tract simple connectivity and logarithmic transform. See RECOVERY_PORT.md and retained licences.
 status:
   scope: >-
-    All six revised-paper targets are proved in Solution.lean. The original entire-function bounded-orbit theorem is also retained unchanged and selected for comparison. Compact sets
+    All challenge targets are proved in Solution.lean. The original entire-function bounded-orbit theorem is retained unchanged and selected for comparison. Compact sets
     in Theorem 1.3 lie inside the actual open source. Simple connectivity is assumed
-    only in Theorem 1.5. The positive-area theorem assumes a measurable set in
+    only in Theorem 1.5; removal of this assumption using an argument of Baker–Kotus–Lü is still outstanding. The positive-area theorem assumes a measurable set in
     trapped minus omega, disjoint forward images, and injectivity on its saturation.
     Meromorphic normal form allows poles; admissible Fatou components avoid poles
     and prepoles. Theorem 1.5 concerns compact escape in the ambient surface or
@@ -196,7 +192,7 @@ status:
     surface self-maps, rational maps in the intrinsic holomorphic-sphere
     formulation, and finite-type transcendental entire functions. Polynomials
     are included as rational maps. No finite-type meromorphic no-wandering
-    theorem is asserted; the Baker–Kotus–Lü generalisation is deferred.
+    theorem is asserted; this generalisation is deferred.
   sorry_count: 0
   sorry_in_definitions: 0
   axioms:
@@ -306,8 +302,7 @@ fidelity:
     backward preimages, a finite-end normal-family argument, and uniform finite
     puncture area bounds; separate sphere and torus periodic-orbit classifications
     are unnecessary. The entire derived-singular theorem follows from the previously
-    verified stronger locally uniform theorem. Legacy formulations have separate
-    comparison configurations. The rational corollary uses open holomorphic
+    verified stronger locally uniform theorem. The rational corollary uses open holomorphic
     self-maps of the compact sphere; its complex atlas is universally quantified
     and in particular may be the standard sphere atlas. No equivalence theorem
     with a polynomial-quotient representation is asserted. The entire finite-type
@@ -317,7 +312,7 @@ review:
   status: self-assessed
   reviewers: []
   notes: Lean builds, transitive axiom audits, independent Challenge/Solution declaration comparison and
-    metadata validation are recorded in VERIFICATION.md. Official Comparator and independent-kernel replay
+    metadata validation are recorded in docs/VERIFICATION.md. Official Comparator and independent-kernel replay
     status is recorded there separately. No independent human review, Palomar acceptance or public submission
     is claimed.
 alignment:

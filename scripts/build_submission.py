@@ -1,6 +1,6 @@
 """Stage local Lean builds with at most four compiler processes.
 
-This is only resource scheduling. scripts/verify_submission.py follows it with
+This is only resource scheduling. scripts/verify_paper.py --all follows it with
 Lake's ordinary full target and dependency-hash validation. Cached-file hints
 here never substitute for that final check.
 """
