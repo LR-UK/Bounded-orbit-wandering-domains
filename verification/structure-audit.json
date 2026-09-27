@@ -17,31 +17,31 @@
       "local": 1,
       "external_frontier": 13
     },
-    "Solution": {
+    "Legacy.Solution": {
       "local": 545,
       "external_frontier": 341
     },
-    "Challenge": {
+    "Legacy.Challenge": {
       "local": 1,
       "external_frontier": 9
     },
-    "NewResults": {
+    "Research.NewResults": {
       "local": 557,
       "external_frontier": 344
     },
-    "SingularLimitsChallenge": {
+    "Legacy.SingularLimitsChallenge": {
       "local": 1,
       "external_frontier": 9
     },
-    "SingularLimitsSolution": {
+    "Legacy.SingularLimitsSolution": {
       "local": 544,
       "external_frontier": 341
     },
-    "SurfaceResearch": {
+    "Research.SurfaceResearch": {
       "local": 622,
       "external_frontier": 253
     },
-    "CoveringSolution": {
+    "BoundedWanderingDomains.CoveringSolution": {
       "local": 381,
       "external_frontier": 219
     }
@@ -62,20 +62,20 @@
     "BoundedWanderingDomains.Surfaces.SurfaceChartPartition",
     "BoundedWanderingDomains.Surfaces.SurfaceGreenIdentity",
     "BoundedWanderingDomains.Surfaces.WanderingCompactTail",
-    "Challenge",
-    "NewResults",
+    "Legacy.Challenge",
+    "Legacy.SingularLimitsChallenge",
+    "Legacy.SingularLimitsSolution",
+    "Legacy.Solution",
     "PaperChallenge",
-    "SingularLimitsChallenge",
-    "SingularLimitsSolution",
-    "Solution",
-    "SurfaceDynamicsTargets",
-    "SurfaceFiniteRemoval",
-    "SurfaceGeometry",
-    "SurfaceKernel",
-    "SurfaceResearch"
+    "Research.NewResults",
+    "Research.SurfaceDynamicsTargets",
+    "Research.SurfaceFiniteRemoval",
+    "Research.SurfaceGeometry",
+    "Research.SurfaceKernel",
+    "Research.SurfaceResearch"
   ],
   "unused_local_modules": [
-    "BoundedWanderingDomains",
+    "BoundedWanderingDomains.All",
     "BoundedWanderingDomains.AreaDeficit",
     "BoundedWanderingDomains.ConditionalPositiveArea",
     "BoundedWanderingDomains.CoveringExhaustion",
@@ -672,7 +672,7 @@
     ]
   ],
   "redundant_direct_imports": {
-    "BoundedWanderingDomains.lean": [
+    "BoundedWanderingDomains/All.lean": [
       "BoundedWanderingDomains.AreaCancellation",
       "BoundedWanderingDomains.AreaDeficitCore",
       "BoundedWanderingDomains.AreaLimits",
@@ -757,6 +757,11 @@
     "BoundedWanderingDomains/CoveringDensityPullback.lean": [
       "BoundedWanderingDomains.GeneralDomainMetric",
       "BoundedWanderingDomains.HolomorphicLifting"
+    ],
+    "BoundedWanderingDomains/CoveringSolution.lean": [
+      "BoundedWanderingDomains.EntireFatouBridge",
+      "BoundedWanderingDomains.TrappedComponentCovering",
+      "BoundedWanderingDomains.TrappedSimpleConnectivity"
     ],
     "BoundedWanderingDomains/DiscArea.lean": [
       "Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus"
@@ -1019,11 +1024,6 @@
     "BoundedWanderingDomains/UnnormalisedPointRemoval.lean": [
       "BoundedWanderingDomains.UnconditionalPointRemoval"
     ],
-    "CoveringSolution.lean": [
-      "BoundedWanderingDomains.EntireFatouBridge",
-      "BoundedWanderingDomains.TrappedComponentCovering",
-      "BoundedWanderingDomains.TrappedSimpleConnectivity"
-    ],
     "EremenkoLyubichConstant/Growth.lean": [
       "Mathlib.Topology.MetricSpace.ProperSpace"
     ],
@@ -1033,12 +1033,8 @@
     "EremenkoLyubichConstant/Puncture.lean": [
       "Mathlib.Analysis.Complex.RemovableSingularity"
     ],
-    "NewResults.lean": [
-      "BoundedWanderingDomains.SphereCompactRemoval",
-      "BoundedWanderingDomains.SphereFiniteRemoval",
-      "BoundedWanderingDomains.SphereCombinedRemoval",
-      "BoundedWanderingDomains.MeromorphicSphereHolomorphic",
-      "BoundedWanderingDomains.MeromorphicSurfaceModel"
+    "Legacy/Solution.lean": [
+      "RiemannDynamics.BoundedWanderingSolution"
     ],
     "RMT4/Main.lean": [
       "RMT4.Spaces"
@@ -1377,6 +1373,42 @@
       "Mathlib.Analysis.SpecialFunctions.Pow.Real",
       "Ray.Misc.Bound"
     ],
+    "Research/NewResults.lean": [
+      "BoundedWanderingDomains.SphereCompactRemoval",
+      "BoundedWanderingDomains.SphereFiniteRemoval",
+      "BoundedWanderingDomains.SphereCombinedRemoval",
+      "BoundedWanderingDomains.MeromorphicSphereHolomorphic",
+      "BoundedWanderingDomains.MeromorphicSurfaceModel"
+    ],
+    "Research/SurfaceDynamicsTargets.lean": [
+      "BoundedWanderingDomains.Surfaces.LocalDynamics",
+      "BoundedWanderingDomains.Surfaces.CompactificationEscape",
+      "BoundedWanderingDomains.Surfaces.Statements"
+    ],
+    "Research/SurfaceFiniteRemoval.lean": [
+      "BoundedWanderingDomains.Surfaces.CompactChartPatches",
+      "BoundedWanderingDomains.Surfaces.GainFatou",
+      "BoundedWanderingDomains.Surfaces.DomainCompactGain",
+      "BoundedWanderingDomains.Surfaces.DomainRemoteArea",
+      "BoundedWanderingDomains.Surfaces.CompactFiniteRemoval"
+    ],
+    "Research/SurfaceGeometry.lean": [
+      "BoundedWanderingDomains.Surfaces.DensityRegularity",
+      "BoundedWanderingDomains.Surfaces.DensityRatioInvariance",
+      "BoundedWanderingDomains.Surfaces.AreaNullSets",
+      "BoundedWanderingDomains.Surfaces.UniformizationBridge",
+      "BoundedWanderingDomains.Surfaces.SubdomainCover",
+      "BoundedWanderingDomains.Surfaces.DomainChartDensity",
+      "BoundedWanderingDomains.Surfaces.DomainSchwarz",
+      "BoundedWanderingDomains.Surfaces.HyperbolicAreaFinite"
+    ],
+    "Research/SurfaceKernel.lean": [
+      "BoundedWanderingDomains.Surfaces.KernelNonconstant",
+      "BoundedWanderingDomains.Surfaces.KernelDomains",
+      "BoundedWanderingDomains.Surfaces.KernelNormal",
+      "BoundedWanderingDomains.Surfaces.KernelConvergence",
+      "BoundedWanderingDomains.Surfaces.DomainDensityDivergence"
+    ],
     "RiemannDynamics/Surface/GenusSurface/Basic.lean": [
       "Mathlib.Analysis.SpecialFunctions.Complex.Circle"
     ],
@@ -1403,38 +1435,6 @@
       "RiemannDynamics.Uniformization.HolomorphicEquiv",
       "RiemannDynamics.Analysis.Winding.GridPrimitives.Primitives",
       "FunctionTheory.Conformal.RiemannMapping"
-    ],
-    "Solution.lean": [
-      "RiemannDynamics.BoundedWanderingSolution"
-    ],
-    "SurfaceDynamicsTargets.lean": [
-      "BoundedWanderingDomains.Surfaces.LocalDynamics",
-      "BoundedWanderingDomains.Surfaces.CompactificationEscape",
-      "BoundedWanderingDomains.Surfaces.Statements"
-    ],
-    "SurfaceFiniteRemoval.lean": [
-      "BoundedWanderingDomains.Surfaces.CompactChartPatches",
-      "BoundedWanderingDomains.Surfaces.GainFatou",
-      "BoundedWanderingDomains.Surfaces.DomainCompactGain",
-      "BoundedWanderingDomains.Surfaces.DomainRemoteArea",
-      "BoundedWanderingDomains.Surfaces.CompactFiniteRemoval"
-    ],
-    "SurfaceGeometry.lean": [
-      "BoundedWanderingDomains.Surfaces.DensityRegularity",
-      "BoundedWanderingDomains.Surfaces.DensityRatioInvariance",
-      "BoundedWanderingDomains.Surfaces.AreaNullSets",
-      "BoundedWanderingDomains.Surfaces.UniformizationBridge",
-      "BoundedWanderingDomains.Surfaces.SubdomainCover",
-      "BoundedWanderingDomains.Surfaces.DomainChartDensity",
-      "BoundedWanderingDomains.Surfaces.DomainSchwarz",
-      "BoundedWanderingDomains.Surfaces.HyperbolicAreaFinite"
-    ],
-    "SurfaceKernel.lean": [
-      "BoundedWanderingDomains.Surfaces.KernelNonconstant",
-      "BoundedWanderingDomains.Surfaces.KernelDomains",
-      "BoundedWanderingDomains.Surfaces.KernelNormal",
-      "BoundedWanderingDomains.Surfaces.KernelConvergence",
-      "BoundedWanderingDomains.Surfaces.DomainDensityDivergence"
     ],
     "dependencies/ComplexApproximation/ComplexApproximation.lean": [
       "ComplexApproximation.Topology.FilledContinua",
@@ -2543,6 +2543,7 @@
     "BoundedWanderingDomains.CoveringDiscs",
     "BoundedWanderingDomains.CoveringEndIntegrals",
     "BoundedWanderingDomains.CoveringMetricInput",
+    "BoundedWanderingDomains.CoveringSolution",
     "BoundedWanderingDomains.CoveringTotalArea",
     "BoundedWanderingDomains.CuspAffineBounds",
     "BoundedWanderingDomains.CuspAreaIntegrability",
@@ -2882,7 +2883,6 @@
     "ComplexDynamics.Basic",
     "ComplexDynamics.BoundedNormality",
     "ComplexDynamics.Normality",
-    "CoveringSolution",
     "EremenkoLyubichConstant.ClassB",
     "EremenkoLyubichConstant.ClassBTracts",
     "EremenkoLyubichConstant.CoveringNaturality",
@@ -3283,7 +3283,7 @@
     "TauCeti.Topology.Frontier"
   ],
   "imports": {
-    "BoundedWanderingDomains": [
+    "BoundedWanderingDomains.All": [
       "BoundedWanderingDomains.AreaCancellation",
       "BoundedWanderingDomains.AreaDeficit",
       "BoundedWanderingDomains.AreaDeficitCore",
@@ -3535,6 +3535,14 @@
     "BoundedWanderingDomains.CoveringMetricInput": [
       "BoundedWanderingDomains.DiscCoveringMetric",
       "BoundedWanderingDomains.SubmissionDefinitions"
+    ],
+    "BoundedWanderingDomains.CoveringSolution": [
+      "BoundedWanderingDomains.CoveringMetricInput",
+      "BoundedWanderingDomains.EntireFatouBridge",
+      "BoundedWanderingDomains.TrappedComponentCovering",
+      "BoundedWanderingDomains.TrappedSimpleConnectivity",
+      "BoundedWanderingDomains.BoundedPointWandering",
+      "BoundedWanderingDomains.LocalBoundedPointGeneral"
     ],
     "BoundedWanderingDomains.CoveringTotalArea": [
       "BoundedWanderingDomains.CoveringCutoffArea",
@@ -5165,25 +5173,6 @@
       "Mathlib.Data.Set.Lattice",
       "Mathlib.Tactic.Ext"
     ],
-    "Challenge": [
-      "Mathlib.Analysis.Complex.CauchyIntegral",
-      "Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected",
-      "Mathlib.Topology.UniformSpace.LocallyUniformConvergence",
-      "Mathlib.Topology.UniformSpace.Uniformizable",
-      "Mathlib.Topology.Compactification.OnePoint.Basic",
-      "Mathlib.Topology.Connected.LocallyConnected",
-      "Mathlib.Topology.Covering.Basic",
-      "Mathlib.Analysis.CStarAlgebra.Classes",
-      "Mathlib.Topology.DerivedSet"
-    ],
-    "CoveringSolution": [
-      "BoundedWanderingDomains.CoveringMetricInput",
-      "BoundedWanderingDomains.EntireFatouBridge",
-      "BoundedWanderingDomains.TrappedComponentCovering",
-      "BoundedWanderingDomains.TrappedSimpleConnectivity",
-      "BoundedWanderingDomains.BoundedPointWandering",
-      "BoundedWanderingDomains.LocalBoundedPointGeneral"
-    ],
     "EremenkoLyubichConstant.ClassB": [
       "Mathlib.Analysis.Complex.Polynomial.Basic",
       "Mathlib.Topology.Covering.Basic",
@@ -5277,16 +5266,36 @@
       "Mathlib.Analysis.Calculus.InverseFunctionTheorem.Deriv",
       "Mathlib.Analysis.SpecialFunctions.ExpDeriv"
     ],
-    "NewResults": [
-      "BoundedWanderingDomains.SphereCompactRemoval",
-      "BoundedWanderingDomains.SphereFiniteRemoval",
-      "BoundedWanderingDomains.SphereCombinedRemoval",
-      "BoundedWanderingDomains.PlaneUniformFiniteRemoval",
+    "Legacy.Challenge": [
+      "Mathlib.Analysis.Complex.CauchyIntegral",
+      "Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected",
+      "Mathlib.Topology.UniformSpace.LocallyUniformConvergence",
+      "Mathlib.Topology.UniformSpace.Uniformizable",
+      "Mathlib.Topology.Compactification.OnePoint.Basic",
+      "Mathlib.Topology.Connected.LocallyConnected",
+      "Mathlib.Topology.Covering.Basic",
+      "Mathlib.Analysis.CStarAlgebra.Classes",
+      "Mathlib.Topology.DerivedSet"
+    ],
+    "Legacy.SingularLimitsChallenge": [
+      "Mathlib.Analysis.Complex.CauchyIntegral",
+      "Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected",
+      "Mathlib.Topology.UniformSpace.LocallyUniformConvergence",
+      "Mathlib.Topology.UniformSpace.Uniformizable",
+      "Mathlib.Topology.Compactification.OnePoint.Basic",
+      "Mathlib.Topology.Connected.LocallyConnected",
+      "Mathlib.Topology.Covering.Basic",
+      "Mathlib.Analysis.CStarAlgebra.Classes",
+      "Mathlib.Topology.DerivedSet"
+    ],
+    "Legacy.SingularLimitsSolution": [
       "BoundedWanderingDomains.LocallyUniformSingularLimits",
-      "BoundedWanderingDomains.LocalUniformSingularLimits",
-      "BoundedWanderingDomains.MeromorphicSphereHolomorphic",
-      "BoundedWanderingDomains.MeromorphicSurfaceModel",
-      "BoundedWanderingDomains.MeromorphicNormalityBridge"
+      "BoundedWanderingDomains.LocalUniformSingularLimits"
+    ],
+    "Legacy.Solution": [
+      "RiemannDynamics.BoundedWanderingSolution",
+      "BoundedWanderingDomains.GlobalLimitStatements",
+      "BoundedWanderingDomains.LocalUniformSingularLimits"
     ],
     "PaperChallenge": [
       "Mathlib.Analysis.Complex.CauchyIntegral",
@@ -6057,6 +6066,69 @@
       "Mathlib.SetTheory.Cardinal.Basic",
       "Mathlib.Topology.MetricSpace.Basic"
     ],
+    "Research.NewResults": [
+      "BoundedWanderingDomains.SphereCompactRemoval",
+      "BoundedWanderingDomains.SphereFiniteRemoval",
+      "BoundedWanderingDomains.SphereCombinedRemoval",
+      "BoundedWanderingDomains.PlaneUniformFiniteRemoval",
+      "BoundedWanderingDomains.LocallyUniformSingularLimits",
+      "BoundedWanderingDomains.LocalUniformSingularLimits",
+      "BoundedWanderingDomains.MeromorphicSphereHolomorphic",
+      "BoundedWanderingDomains.MeromorphicSurfaceModel",
+      "BoundedWanderingDomains.MeromorphicNormalityBridge"
+    ],
+    "Research.SurfaceDynamicsTargets": [
+      "BoundedWanderingDomains.Surfaces.LocalDynamics",
+      "BoundedWanderingDomains.Surfaces.CompactificationEscape",
+      "BoundedWanderingDomains.Surfaces.Statements",
+      "BoundedWanderingDomains.Surfaces.DerivedLimitReduction"
+    ],
+    "Research.SurfaceFiniteRemoval": [
+      "BoundedWanderingDomains.Surfaces.CompactChartPatches",
+      "BoundedWanderingDomains.Surfaces.GainFatou",
+      "BoundedWanderingDomains.Surfaces.DomainCompactGain",
+      "BoundedWanderingDomains.Surfaces.DomainRemoteArea",
+      "BoundedWanderingDomains.Surfaces.CompactFiniteRemoval",
+      "BoundedWanderingDomains.Surfaces.UniformFiniteRemoval",
+      "BoundedWanderingDomains.Surfaces.FiniteModelArea"
+    ],
+    "Research.SurfaceGeometry": [
+      "BoundedWanderingDomains.Surfaces.DensityRegularity",
+      "BoundedWanderingDomains.Surfaces.DensityRatioInvariance",
+      "BoundedWanderingDomains.Surfaces.AreaGain",
+      "BoundedWanderingDomains.Surfaces.AreaNullSets",
+      "BoundedWanderingDomains.Surfaces.PositiveAreaBridge",
+      "BoundedWanderingDomains.Surfaces.UniformizationBridge",
+      "BoundedWanderingDomains.Surfaces.SubdomainCover",
+      "BoundedWanderingDomains.Surfaces.DomainChartDensity",
+      "BoundedWanderingDomains.Surfaces.DomainSchwarz",
+      "BoundedWanderingDomains.Surfaces.DiscComparisonInfinity",
+      "BoundedWanderingDomains.Surfaces.HyperbolicAreaFinite",
+      "BoundedWanderingDomains.Surfaces.DomainArea"
+    ],
+    "Research.SurfaceKernel": [
+      "BoundedWanderingDomains.Surfaces.KernelNonconstant",
+      "BoundedWanderingDomains.Surfaces.KernelDomains",
+      "BoundedWanderingDomains.Surfaces.KernelNormal",
+      "BoundedWanderingDomains.Surfaces.KernelConvergence",
+      "BoundedWanderingDomains.Surfaces.DomainChartKernel",
+      "BoundedWanderingDomains.Surfaces.DomainDensityDivergence",
+      "BoundedWanderingDomains.Surfaces.DomainAreaBlowup"
+    ],
+    "Research.SurfaceResearch": [
+      "BoundedWanderingDomains.Surfaces.GeometricArea",
+      "BoundedWanderingDomains.Surfaces.RemoteChartCompact",
+      "BoundedWanderingDomains.Surfaces.WanderingCompactTail",
+      "BoundedWanderingDomains.Surfaces.CoveringComponents",
+      "BoundedWanderingDomains.Surfaces.SurfaceChartPartition",
+      "Research.SurfaceGeometry",
+      "Research.SurfaceFiniteRemoval",
+      "Research.SurfaceKernel",
+      "Research.SurfaceDynamicsTargets",
+      "BoundedWanderingDomains.Surfaces.SurfaceOrbitEscape",
+      "BoundedWanderingDomains.Surfaces.SurfaceDerivedLimits",
+      "BoundedWanderingDomains.Surfaces.SurfacePositiveArea"
+    ],
     "RiemannDynamics.Analysis.GrotzschRing.RingPotential": [
       "RiemannDynamics.Analysis.Potential.PerronEnvelope"
     ],
@@ -6105,7 +6177,7 @@
     "RiemannDynamics.BoundedWanderingSolution": [
       "RiemannDynamics.Uniformization.PuncturedPlaneCovering",
       "BoundedWanderingDomains.CoveringTotalArea",
-      "CoveringSolution"
+      "BoundedWanderingDomains.CoveringSolution"
     ],
     "RiemannDynamics.Hyperbolic.DiskModel.DiskMetric": [
       "Mathlib.Analysis.SpecialFunctions.Arsinh",
@@ -6283,78 +6355,6 @@
       "RiemannDynamics.Uniformization.Perron.BipolarGreen.Assembly",
       "RiemannDynamics.Analysis.Winding.GridPrimitives.Primitives",
       "FunctionTheory.Conformal.RiemannMapping"
-    ],
-    "SingularLimitsChallenge": [
-      "Mathlib.Analysis.Complex.CauchyIntegral",
-      "Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected",
-      "Mathlib.Topology.UniformSpace.LocallyUniformConvergence",
-      "Mathlib.Topology.UniformSpace.Uniformizable",
-      "Mathlib.Topology.Compactification.OnePoint.Basic",
-      "Mathlib.Topology.Connected.LocallyConnected",
-      "Mathlib.Topology.Covering.Basic",
-      "Mathlib.Analysis.CStarAlgebra.Classes",
-      "Mathlib.Topology.DerivedSet"
-    ],
-    "SingularLimitsSolution": [
-      "BoundedWanderingDomains.LocallyUniformSingularLimits",
-      "BoundedWanderingDomains.LocalUniformSingularLimits"
-    ],
-    "Solution": [
-      "RiemannDynamics.BoundedWanderingSolution",
-      "BoundedWanderingDomains.GlobalLimitStatements",
-      "BoundedWanderingDomains.LocalUniformSingularLimits"
-    ],
-    "SurfaceDynamicsTargets": [
-      "BoundedWanderingDomains.Surfaces.LocalDynamics",
-      "BoundedWanderingDomains.Surfaces.CompactificationEscape",
-      "BoundedWanderingDomains.Surfaces.Statements",
-      "BoundedWanderingDomains.Surfaces.DerivedLimitReduction"
-    ],
-    "SurfaceFiniteRemoval": [
-      "BoundedWanderingDomains.Surfaces.CompactChartPatches",
-      "BoundedWanderingDomains.Surfaces.GainFatou",
-      "BoundedWanderingDomains.Surfaces.DomainCompactGain",
-      "BoundedWanderingDomains.Surfaces.DomainRemoteArea",
-      "BoundedWanderingDomains.Surfaces.CompactFiniteRemoval",
-      "BoundedWanderingDomains.Surfaces.UniformFiniteRemoval",
-      "BoundedWanderingDomains.Surfaces.FiniteModelArea"
-    ],
-    "SurfaceGeometry": [
-      "BoundedWanderingDomains.Surfaces.DensityRegularity",
-      "BoundedWanderingDomains.Surfaces.DensityRatioInvariance",
-      "BoundedWanderingDomains.Surfaces.AreaGain",
-      "BoundedWanderingDomains.Surfaces.AreaNullSets",
-      "BoundedWanderingDomains.Surfaces.PositiveAreaBridge",
-      "BoundedWanderingDomains.Surfaces.UniformizationBridge",
-      "BoundedWanderingDomains.Surfaces.SubdomainCover",
-      "BoundedWanderingDomains.Surfaces.DomainChartDensity",
-      "BoundedWanderingDomains.Surfaces.DomainSchwarz",
-      "BoundedWanderingDomains.Surfaces.DiscComparisonInfinity",
-      "BoundedWanderingDomains.Surfaces.HyperbolicAreaFinite",
-      "BoundedWanderingDomains.Surfaces.DomainArea"
-    ],
-    "SurfaceKernel": [
-      "BoundedWanderingDomains.Surfaces.KernelNonconstant",
-      "BoundedWanderingDomains.Surfaces.KernelDomains",
-      "BoundedWanderingDomains.Surfaces.KernelNormal",
-      "BoundedWanderingDomains.Surfaces.KernelConvergence",
-      "BoundedWanderingDomains.Surfaces.DomainChartKernel",
-      "BoundedWanderingDomains.Surfaces.DomainDensityDivergence",
-      "BoundedWanderingDomains.Surfaces.DomainAreaBlowup"
-    ],
-    "SurfaceResearch": [
-      "BoundedWanderingDomains.Surfaces.GeometricArea",
-      "BoundedWanderingDomains.Surfaces.RemoteChartCompact",
-      "BoundedWanderingDomains.Surfaces.WanderingCompactTail",
-      "BoundedWanderingDomains.Surfaces.CoveringComponents",
-      "BoundedWanderingDomains.Surfaces.SurfaceChartPartition",
-      "SurfaceGeometry",
-      "SurfaceFiniteRemoval",
-      "SurfaceKernel",
-      "SurfaceDynamicsTargets",
-      "BoundedWanderingDomains.Surfaces.SurfaceOrbitEscape",
-      "BoundedWanderingDomains.Surfaces.SurfaceDerivedLimits",
-      "BoundedWanderingDomains.Surfaces.SurfacePositiveArea"
     ],
     "ComplexApproximation": [
       "ComplexApproximation.Topology.FilledContinua",
@@ -10908,7 +10908,7 @@
       "TauCeti.Topology.LocallyConnected"
     ],
     "verification.Axioms": [
-      "Solution",
+      "Legacy.Solution",
       "BoundedWanderingDomains.AreaDeficit",
       "BoundedWanderingDomains.TrappedFilling",
       "BoundedWanderingDomains.EventualCompactDiscs",
@@ -10924,13 +10924,13 @@
       "BoundedWanderingDomains.CoveringTotalArea",
       "BoundedWanderingDomains.CuspDensityBounds",
       "BoundedWanderingDomains.CoveringAreaTransport",
-      "CoveringSolution",
+      "BoundedWanderingDomains.CoveringSolution",
       "BoundedWanderingDomains.IdealTriangleArea",
       "BoundedWanderingDomains.CoveringExhaustion",
       "BoundedWanderingDomains.CoveringLimitBranches"
     ],
     "verification.ExportChallenge": [
-      "Challenge",
+      "Legacy.Challenge",
       "Lean"
     ],
     "verification.ExportPaperChallenge": [
@@ -10942,29 +10942,29 @@
       "Lean"
     ],
     "verification.ExportSingularLimitsChallenge": [
-      "SingularLimitsChallenge",
+      "Legacy.SingularLimitsChallenge",
       "Lean"
     ],
     "verification.ExportSingularLimitsSolution": [
-      "SingularLimitsSolution",
+      "Legacy.SingularLimitsSolution",
       "Lean"
     ],
     "verification.ExportSolution": [
-      "Solution",
+      "Legacy.Solution",
       "Lean"
     ],
     "verification.KernelAxioms": [
-      "SurfaceKernel"
+      "Research.SurfaceKernel"
     ],
     "verification.NewResultsAxioms": [
-      "NewResults",
-      "Solution"
+      "Research.NewResults",
+      "Legacy.Solution"
     ],
     "verification.PaperAxioms": [
       "PaperSolution"
     ],
     "verification.SurfaceAxioms": [
-      "SurfaceResearch",
+      "Research.SurfaceResearch",
       "BoundedWanderingDomains.MeromorphicSurfaceModel",
       "BoundedWanderingDomains.MeromorphicNormalityBridge"
     ],
@@ -10973,7 +10973,7 @@
     ]
   },
   "paths": {
-    "BoundedWanderingDomains": "BoundedWanderingDomains.lean",
+    "BoundedWanderingDomains.All": "BoundedWanderingDomains/All.lean",
     "BoundedWanderingDomains.AnchoredCompactArea": "BoundedWanderingDomains/AnchoredCompactArea.lean",
     "BoundedWanderingDomains.AnchoredCompactComparison": "BoundedWanderingDomains/AnchoredCompactComparison.lean",
     "BoundedWanderingDomains.AreaAnchorFree": "BoundedWanderingDomains/AreaAnchorFree.lean",
@@ -11010,6 +11010,7 @@
     "BoundedWanderingDomains.CoveringExhaustion": "BoundedWanderingDomains/CoveringExhaustion.lean",
     "BoundedWanderingDomains.CoveringLimitBranches": "BoundedWanderingDomains/CoveringLimitBranches.lean",
     "BoundedWanderingDomains.CoveringMetricInput": "BoundedWanderingDomains/CoveringMetricInput.lean",
+    "BoundedWanderingDomains.CoveringSolution": "BoundedWanderingDomains/CoveringSolution.lean",
     "BoundedWanderingDomains.CoveringTotalArea": "BoundedWanderingDomains/CoveringTotalArea.lean",
     "BoundedWanderingDomains.CuspAffineBounds": "BoundedWanderingDomains/CuspAffineBounds.lean",
     "BoundedWanderingDomains.CuspAreaIntegrability": "BoundedWanderingDomains/CuspAreaIntegrability.lean",
@@ -11363,8 +11364,6 @@
     "BoundedWanderingDomains.UnitDiscShift": "BoundedWanderingDomains/UnitDiscShift.lean",
     "BoundedWanderingDomains.UnnormalisedPointRemoval": "BoundedWanderingDomains/UnnormalisedPointRemoval.lean",
     "BoundedWanderingDomains.WanderingSets": "BoundedWanderingDomains/WanderingSets.lean",
-    "Challenge": "Challenge.lean",
-    "CoveringSolution": "CoveringSolution.lean",
     "EremenkoLyubichConstant.ClassB": "EremenkoLyubichConstant/ClassB.lean",
     "EremenkoLyubichConstant.ClassBLogarithmicTransform": "EremenkoLyubichConstant/ClassBLogarithmicTransform.lean",
     "EremenkoLyubichConstant.ClassBTracts": "EremenkoLyubichConstant/ClassBTracts.lean",
@@ -11386,7 +11385,10 @@
     "EremenkoLyubichConstant.TractCovering": "EremenkoLyubichConstant/TractCovering.lean",
     "EremenkoLyubichConstant.TractSimplyConnected": "EremenkoLyubichConstant/TractSimplyConnected.lean",
     "EremenkoLyubichConstant.UniversalCover": "EremenkoLyubichConstant/UniversalCover.lean",
-    "NewResults": "NewResults.lean",
+    "Legacy.Challenge": "Legacy/Challenge.lean",
+    "Legacy.SingularLimitsChallenge": "Legacy/SingularLimitsChallenge.lean",
+    "Legacy.SingularLimitsSolution": "Legacy/SingularLimitsSolution.lean",
+    "Legacy.Solution": "Legacy/Solution.lean",
     "PaperChallenge": "PaperChallenge.lean",
     "PaperSolution": "PaperSolution.lean",
     "RMT4.Main": "RMT4/Main.lean",
@@ -11455,6 +11457,12 @@
     "Ray.Misc.Subexp": "Ray/Misc/Subexp.lean",
     "Ray.Misc.Topology": "Ray/Misc/Topology.lean",
     "Ray.Misc.TotallyDisconnected": "Ray/Misc/TotallyDisconnected.lean",
+    "Research.NewResults": "Research/NewResults.lean",
+    "Research.SurfaceDynamicsTargets": "Research/SurfaceDynamicsTargets.lean",
+    "Research.SurfaceFiniteRemoval": "Research/SurfaceFiniteRemoval.lean",
+    "Research.SurfaceGeometry": "Research/SurfaceGeometry.lean",
+    "Research.SurfaceKernel": "Research/SurfaceKernel.lean",
+    "Research.SurfaceResearch": "Research/SurfaceResearch.lean",
     "RiemannDynamics.Analysis.GrotzschRing.RingPotential": "RiemannDynamics/Analysis/GrotzschRing/RingPotential.lean",
     "RiemannDynamics.Analysis.Potential.HarmonicHarnack": "RiemannDynamics/Analysis/Potential/HarmonicHarnack.lean",
     "RiemannDynamics.Analysis.Potential.PerronEnvelope": "RiemannDynamics/Analysis/Potential/PerronEnvelope.lean",
@@ -11506,14 +11514,6 @@
     "RiemannDynamics.Uniformization.PuncturedPlaneCovering": "RiemannDynamics/Uniformization/PuncturedPlaneCovering.lean",
     "RiemannDynamics.Uniformization.SphereManifold": "RiemannDynamics/Uniformization/SphereManifold.lean",
     "RiemannDynamics.Uniformization.Trichotomy": "RiemannDynamics/Uniformization/Trichotomy.lean",
-    "SingularLimitsChallenge": "SingularLimitsChallenge.lean",
-    "SingularLimitsSolution": "SingularLimitsSolution.lean",
-    "Solution": "Solution.lean",
-    "SurfaceDynamicsTargets": "SurfaceDynamicsTargets.lean",
-    "SurfaceFiniteRemoval": "SurfaceFiniteRemoval.lean",
-    "SurfaceGeometry": "SurfaceGeometry.lean",
-    "SurfaceKernel": "SurfaceKernel.lean",
-    "SurfaceResearch": "SurfaceResearch.lean",
     "ComplexApproximation": "dependencies/ComplexApproximation/ComplexApproximation.lean",
     "ComplexApproximation.Arakelian": "dependencies/ComplexApproximation/ComplexApproximation/Arakelian.lean",
     "ComplexApproximation.ArakelianGluing": "dependencies/ComplexApproximation/ComplexApproximation/ArakelianGluing.lean",
@@ -12343,7 +12343,7 @@
     "verification.UnconditionalAxioms": "verification/UnconditionalAxioms.lean"
   },
   "sizes": {
-    "BoundedWanderingDomains": {
+    "BoundedWanderingDomains.All": {
       "bytes": 3281,
       "lines": 65
     },
@@ -12490,6 +12490,10 @@
     "BoundedWanderingDomains.CoveringMetricInput": {
       "bytes": 2396,
       "lines": 54
+    },
+    "BoundedWanderingDomains.CoveringSolution": {
+      "bytes": 3088,
+      "lines": 59
     },
     "BoundedWanderingDomains.CoveringTotalArea": {
       "bytes": 2792,
@@ -13903,14 +13907,6 @@
       "bytes": 2516,
       "lines": 64
     },
-    "Challenge": {
-      "bytes": 8331,
-      "lines": 193
-    },
-    "CoveringSolution": {
-      "bytes": 3088,
-      "lines": 59
-    },
     "EremenkoLyubichConstant.ClassB": {
       "bytes": 4951,
       "lines": 121
@@ -13995,9 +13991,21 @@
       "bytes": 6438,
       "lines": 143
     },
-    "NewResults": {
-      "bytes": 1380,
-      "lines": 30
+    "Legacy.Challenge": {
+      "bytes": 8331,
+      "lines": 193
+    },
+    "Legacy.SingularLimitsChallenge": {
+      "bytes": 6972,
+      "lines": 159
+    },
+    "Legacy.SingularLimitsSolution": {
+      "bytes": 382,
+      "lines": 9
+    },
+    "Legacy.Solution": {
+      "bytes": 1898,
+      "lines": 43
     },
     "PaperChallenge": {
       "bytes": 14362,
@@ -14271,6 +14279,30 @@
       "bytes": 4479,
       "lines": 94
     },
+    "Research.NewResults": {
+      "bytes": 1380,
+      "lines": 30
+    },
+    "Research.SurfaceDynamicsTargets": {
+      "bytes": 320,
+      "lines": 5
+    },
+    "Research.SurfaceFiniteRemoval": {
+      "bytes": 475,
+      "lines": 8
+    },
+    "Research.SurfaceGeometry": {
+      "bytes": 786,
+      "lines": 13
+    },
+    "Research.SurfaceKernel": {
+      "bytes": 489,
+      "lines": 8
+    },
+    "Research.SurfaceResearch": {
+      "bytes": 704,
+      "lines": 14
+    },
     "RiemannDynamics.Analysis.GrotzschRing.RingPotential": {
       "bytes": 22209,
       "lines": 385
@@ -14312,7 +14344,7 @@
       "lines": 1410
     },
     "RiemannDynamics.BoundedWanderingSolution": {
-      "bytes": 2646,
+      "bytes": 2670,
       "lines": 59
     },
     "RiemannDynamics.Hyperbolic.DiskModel.DiskMetric": {
@@ -14474,38 +14506,6 @@
     "RiemannDynamics.Uniformization.Trichotomy": {
       "bytes": 10028,
       "lines": 194
-    },
-    "SingularLimitsChallenge": {
-      "bytes": 6972,
-      "lines": 159
-    },
-    "SingularLimitsSolution": {
-      "bytes": 382,
-      "lines": 9
-    },
-    "Solution": {
-      "bytes": 1898,
-      "lines": 43
-    },
-    "SurfaceDynamicsTargets": {
-      "bytes": 320,
-      "lines": 5
-    },
-    "SurfaceFiniteRemoval": {
-      "bytes": 475,
-      "lines": 8
-    },
-    "SurfaceGeometry": {
-      "bytes": 786,
-      "lines": 13
-    },
-    "SurfaceKernel": {
-      "bytes": 489,
-      "lines": 8
-    },
-    "SurfaceResearch": {
-      "bytes": 668,
-      "lines": 14
     },
     "ComplexApproximation": {
       "bytes": 1991,
@@ -17760,7 +17760,7 @@
       "lines": 299
     },
     "verification.Axioms": {
-      "bytes": 1743,
+      "bytes": 1750,
       "lines": 30
     },
     "verification.CheckClosedTrapped": {
@@ -17768,11 +17768,11 @@
       "lines": 44
     },
     "verification.CoveringAxioms": {
-      "bytes": 2326,
+      "bytes": 2350,
       "lines": 49
     },
     "verification.ExportChallenge": {
-      "bytes": 2369,
+      "bytes": 2376,
       "lines": 31
     },
     "verification.ExportPaperChallenge": {
@@ -17784,23 +17784,23 @@
       "lines": 49
     },
     "verification.ExportSingularLimitsChallenge": {
-      "bytes": 2100,
+      "bytes": 2107,
       "lines": 31
     },
     "verification.ExportSingularLimitsSolution": {
-      "bytes": 2099,
+      "bytes": 2106,
       "lines": 31
     },
     "verification.ExportSolution": {
-      "bytes": 2368,
+      "bytes": 2375,
       "lines": 31
     },
     "verification.KernelAxioms": {
-      "bytes": 325,
+      "bytes": 334,
       "lines": 6
     },
     "verification.NewResultsAxioms": {
-      "bytes": 1296,
+      "bytes": 1312,
       "lines": 20
     },
     "verification.PaperAxioms": {
@@ -17808,7 +17808,7 @@
       "lines": 8
     },
     "verification.SurfaceAxioms": {
-      "bytes": 8594,
+      "bytes": 8603,
       "lines": 127
     },
     "verification.UnconditionalAxioms": {

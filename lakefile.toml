@@ -1,5 +1,5 @@
 name = "area_deficit"
-version = "1.4.1"
+version = "1.4.2"
 defaultTargets = ["PaperSolution", "PaperChallenge"]
 
 [[require]]
@@ -9,13 +9,6 @@ path = "dependencies/ComplexApproximation"
 [[require]]
 name = "eremenkosConjecture"
 path = "dependencies/EremenkosConjecture"
-
-[[lean_lib]]
-name = "Submission"
-roots = ["Solution"]
-
-[[lean_lib]]
-name = "Challenge"
 
 [[require]]
 name = "mathlib"
@@ -32,9 +25,8 @@ path = "dependencies/ComplexDynamics"
 
 [[lean_lib]]
 name = "BoundedWanderingDomains"
-
-[[lean_lib]]
-name = "CoveringSolution"
+roots = ["BoundedWanderingDomains.All"]
+globs = ["BoundedWanderingDomains.+"]
 
 [[lean_lib]]
 name = "RiemannDynamics"
@@ -51,31 +43,17 @@ name = "EremenkoLyubichConstant"
 name = "Ray"
 
 [[lean_lib]]
-name = "NewResults"
-
-[[lean_lib]]
-name = "SingularLimitsChallenge"
-
-[[lean_lib]]
-name = "SingularLimitsSolution"
-
-[[lean_lib]]
-name = "SurfaceResearch"
-
-[[lean_lib]]
-name = "SurfaceGeometry"
-
-[[lean_lib]]
-name = "SurfaceFiniteRemoval"
-
-[[lean_lib]]
-name = "SurfaceKernel"
-
-[[lean_lib]]
-name = "SurfaceDynamicsTargets"
-
-[[lean_lib]]
 name = "PaperChallenge"
 
 [[lean_lib]]
 name = "PaperSolution"
+
+[[lean_lib]]
+name = "Legacy"
+roots = ["Legacy.Challenge", "Legacy.Solution", "Legacy.SingularLimitsChallenge", "Legacy.SingularLimitsSolution"]
+globs = ["Legacy.+"]
+
+[[lean_lib]]
+name = "Research"
+roots = ["Research.SurfaceResearch", "Research.NewResults"]
+globs = ["Research.+"]

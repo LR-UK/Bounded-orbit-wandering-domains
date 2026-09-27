@@ -1,6 +1,6 @@
-# Verification — audited completed formalisation, 27 September 2026
+# Verification - layout update 1.4.2, 27 September 2026
 
-The complete retained local build passed (4,326 Lake jobs; 795 local modules).
+The complete retained local build passed (4,319 Lake jobs; 795 local modules).
 The pinned compiler is Lean 4.35.0-rc2; Mathlib is pinned to
 `065356127b1dc0016f66b7283ce0ce2c4055aa55`.
 
@@ -17,21 +17,33 @@ The dedicated revised-paper audit passed:
   With `--all`, all 792 local proof modules in the retained build passed this scan.
 - The retained legacy entry points also compile. The earlier completion check
   repaired an old malformed finite-removal statement and an obsolete
-  multiplication lemma. This build audit preserves all theorem statements.
+  multiplication lemma. This layout update preserves every Lean statement and proof body.
 
 `verification/paper-submission.json` is the machine-readable audit report.
 The corresponding build, axiom and independent declaration logs are in
 `verification/paper-*.log` and `verification/paper*-declarations.log`.
-`verification/full-build.log` records the broader build. Ordinary unused-variable
+`verification/paper-build.log` records the fresh full retained build;
+`verification/full-build.log` is the historical version 1.4.1 build log. Ordinary unused-variable
 and style lints are permitted; challenge proof-placeholder warnings are expected.
 Saved build logs have trailing whitespace normalized.
 
 Reproduce the main audit with `python3 scripts/verify_paper.py`; use `--all`
-to include the retained earlier and research entry points. BUILD_AUDIT.md records
+to include the retained earlier and research entry points. LAYOUT_UPDATE.md records
+the current file moves. BUILD_AUDIT.md records the earlier version 1.4.1 results:
 the import and duplication audit, supplementary type checks and measured timings.
 The source dependency inventory is also summarized in
 `verification/paper-dependencies.md`.
 The attribution audit is supplied as `scripts/audit_attribution.py`.
+
+The layout comparison checked all 1,371 Lean source files against version 1.4.1.
+After accounting for moves, only module import commands differ; no theorem,
+definition or proof body changed. The two paper entry files and all vendored
+sources are unchanged. Both moved legacy challenge/solution pairs also passed
+fresh local elaborated-declaration comparisons (8 theorem comparisons and 26
+supporting-declaration comparisons across the two pairs). The moved library
+umbrella `BoundedWanderingDomains.All` compiled separately. These results are
+in `verification/layout-audit.json`, `verification/layout-legacy-comparison.json`
+and the corresponding `verification/layout-*.log` files.
 
 ## Separate external checks
 
@@ -40,7 +52,8 @@ Windows session. The toolchain requires Linux bubblewrap for that workflow;
 no sandbox or kernel check was bypassed. The unchanged protected runner and
 updated GitHub workflow run these checks after upload.
 
-`formalization.yaml` was updated while preserving the attribution records.
+`formalization.yaml` retains the completed version's metadata and attribution
+records; the layout update leaves it unchanged.
 The pinned metadata contract is supplied, but its current run requires PyYAML,
 which is unavailable in the local Python runtime. CI installs it and invokes
 `scripts/verify_metadata.py`. The older `verification/metadata.json` describes

@@ -1,4 +1,4 @@
-import Solution
+import Legacy.Solution
 import Lean
 
 /- Erase only bound-variable display names and nonsemantic metadata.

@@ -24,6 +24,26 @@ challenge. The transitive axiom audit reports only `propext`, `Classical.choice`
 and `Quot.sound`; 770 local proof modules were scanned for holes and shortcuts.
 The complete build also verifies the retained earlier results.
 
+## Project layout
+
+Only the two current submission files are at the top level:
+
+```text
+PaperChallenge.lean        Independent statements of the six paper theorems
+PaperSolution.lean         Proved versions of those statements
+BoundedWanderingDomains/   Main proof library, including CoveringSolution.lean
+RiemannDynamics/           Meromorphic dynamics proofs
+RMT4/, Ray/, EremenkoLyubichConstant/   Supporting libraries
+Legacy/                   Earlier challenge and solution pairs
+Research/                 Optional entry points for additional results
+verification/             Audit sources, reports and logs
+dependencies/             Contained source dependencies
+```
+
+The earlier entry points remain available under their folder-qualified module
+names. See [LAYOUT_UPDATE.md](LAYOUT_UPDATE.md) for the complete path mapping.
+This reorganisation changes no theorem statements or proof bodies.
+
 ## Build and check
 
 Lean: `leanprover/lean4:v4.35.0-rc2`. Mathlib:

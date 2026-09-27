@@ -1,7 +1,7 @@
 import BoundedWanderingDomains.CoveringTotalArea
 import BoundedWanderingDomains.CuspDensityBounds
 import BoundedWanderingDomains.CoveringAreaTransport
-import CoveringSolution
+import BoundedWanderingDomains.CoveringSolution
 import BoundedWanderingDomains.IdealTriangleArea
 import BoundedWanderingDomains.CoveringExhaustion
 import BoundedWanderingDomains.CoveringLimitBranches

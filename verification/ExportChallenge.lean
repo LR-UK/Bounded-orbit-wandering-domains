@@ -1,4 +1,4 @@
-import Challenge
+import Legacy.Challenge
 import Lean
 
 /- Erase only bound-variable display names and nonsemantic metadata.

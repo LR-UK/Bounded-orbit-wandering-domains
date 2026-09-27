@@ -1,4 +1,7 @@
-"""Build and audit this submission; not official Palomar Comparator."""
+"""Historical-pair audit; use verify_paper.py for the current paper submission.
+
+This is a local audit, not official Palomar Comparator.
+"""
 from pathlib import Path
 import hashlib
 import importlib.util
@@ -23,19 +26,19 @@ def run(args, output):
         raise RuntimeError(f"{args} failed; see verification/{output}")
 
 subprocess.run([sys.executable, str(ROOT / "scripts/build_submission.py")], cwd=ROOT, check=True)
-run(["build", "BoundedWanderingDomains", "Submission", "Challenge", "CoveringSolution", "NewResults", "SingularLimitsChallenge", "SingularLimitsSolution", "SurfaceResearch"], "build.log")
+run(["build", 'BoundedWanderingDomains', 'Legacy.Solution', 'Legacy.Challenge', 'BoundedWanderingDomains.CoveringSolution', 'Research.NewResults', 'Legacy.SingularLimitsChallenge', 'Legacy.SingularLimitsSolution', 'Research.SurfaceResearch'], "build.log")
 build_warnings = [line for line in (OUT / "build.log").read_text().splitlines()
                   if line.startswith("warning:")]
 unexpected_warnings = [line for line in build_warnings if not re.fullmatch(
-    r"warning: (?:Challenge|SingularLimitsChallenge)\.lean:\d+:\d+: declaration uses `sorry`", line)]
+    r"warning: Legacy[/\\](?:Challenge|SingularLimitsChallenge)\.lean:\d+:\d+: declaration uses `sorry`", line)]
 assert not unexpected_warnings, "Unexpected build warnings: " + repr(unexpected_warnings)
 run(["env", "lean", "verification/Axioms.lean"], "axioms.log")
 run(["env", "lean", "verification/SurfaceAxioms.lean"], "surface-axioms.log")
 run(["env", "lean", "verification/CoveringAxioms.lean"], "covering-axioms.log")
 run(["env", "lean", "verification/UnconditionalAxioms.lean"], "unconditional-axioms.log")
 run(["env", "lean", "verification/NewResultsAxioms.lean"], "new-results-axioms.log")
-for which in ("Challenge", "Solution", "SingularLimitsChallenge", "SingularLimitsSolution"):
-    run(["env", "lean", f"verification/Export{which}.lean"],
+for which in ('Legacy.Challenge', 'Legacy.Solution', 'Legacy.SingularLimitsChallenge', 'Legacy.SingularLimitsSolution'):
+    run(["env", "lean", f"verification/Export{which.rsplit('.', 1)[-1]}.lean"],
         f"{which.lower()}-declarations.log")
 
 def declarations(which):
@@ -74,20 +77,25 @@ spec = importlib.util.spec_from_file_location(
     "foundation_verify", ROOT / "dependencies/FunctionTheory/scripts/verify.py")
 lexer = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(lexer)
-sources = sorted([*ROOT.glob("*.lean"), *(ROOT / "BoundedWanderingDomains").rglob("*.lean"),
+sources = sorted([*ROOT.glob("*.lean"), *(ROOT / 'BoundedWanderingDomains').rglob("*.lean"),
+                  *(ROOT / "Legacy").rglob("*.lean"), *(ROOT / "Research").rglob("*.lean"),
                   *(ROOT / "RiemannDynamics").rglob("*.lean"), *(ROOT / "RMT4").rglob("*.lean"), *(ROOT / "EremenkoLyubichConstant").rglob("*.lean"), *(ROOT / "Ray").rglob("*.lean")])
 for source in sources:
     code = lexer.without_lean_comments(source.read_text())
     holes = re.findall(r"\b(?:sorry|admit)\b", code)
-    if source.name == "Challenge.lean":
+    relative = source.relative_to(ROOT).as_posix()
+    if relative == 'Legacy/Challenge.lean':
         assert holes == ["sorry"] * len(CONFIG["theorem_names"])
-    elif source.name == "SingularLimitsChallenge.lean":
+    elif relative == 'Legacy/SingularLimitsChallenge.lean':
         assert holes == ["sorry", "sorry"]
+    elif relative == 'PaperChallenge.lean':
+        paper_config = json.loads((ROOT / "comparator-paper.json").read_text())
+        assert holes == ["sorry"] * len(paper_config["theorem_names"])
     else:
         assert not holes, source.name
     assert not re.search(r"\b(?:axiom|native_decide)\b|Lean\.ofReduceBool", code), source.name
 
-text = (ROOT / "Challenge.lean").read_text()
+text = (ROOT / 'Legacy/Challenge.lean').read_text()
 imports = re.findall(r"^import\s+(\S+)\s*$", text, re.M)
 assert imports and all(i.startswith("Mathlib.") for i in imports)
 assert len(text.splitlines()) <= 300 and len(text.encode()) <= 32 * 1024
@@ -99,7 +107,7 @@ for module in imports:
                  ROOT / "dependencies/EremenkosConjecture",
                  ROOT / "dependencies/EremenkosConjecture/vendor/schoenflies"):
         assert not (base / rel).exists(), f"Shadowed Mathlib import: {base / rel}"
-assert "import Challenge" not in (ROOT / "Solution.lean").read_text()
+assert "import Legacy.Challenge" not in (ROOT / 'Legacy/Solution.lean').read_text()
 assert set(CONFIG["permitted_axioms"]) == ALLOWED
 assert "external_kernels" not in CONFIG
 manifest = json.loads((ROOT / "lake-manifest.json").read_text())
@@ -108,8 +116,8 @@ for package in manifest["packages"]:
     if package["type"] == "path":
         assert (ROOT / package["dir"]).resolve().is_relative_to(ROOT), package
 
-for module in ("Challenge", "SingularLimitsChallenge"):
-    source = (ROOT / f"{module}.lean").read_text()
+for module in ('Legacy.Challenge', 'Legacy.SingularLimitsChallenge'):
+    source = (ROOT / Path(*module.split('.')).with_suffix('.lean')).read_text()
     direct = re.findall(r"^import\s+(\S+)\s*$", source, re.M)
     assert direct and all(i.startswith("Mathlib.") for i in direct)
     assert len(source.splitlines()) <= 300 and len(source.encode()) <= 32 * 1024
@@ -121,7 +129,7 @@ for module in ("Challenge", "SingularLimitsChallenge"):
             assert not (base / relative).exists(), f"Shadowed Challenge import: {base / relative}"
 
 report = {
-    "result": "passed", "project_version": "1.3.0",
+    "result": "passed", "project_version": "1.4.2",
     "lean": (ROOT / "lean-toolchain").read_text().strip(),
     "mathlib": mathlib,
     "curvature": -1, "area_normalisation": "sphere area bounds use curvature -1 without division; older internal quantities divide by 2*pi",

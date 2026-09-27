@@ -1,6 +1,6 @@
 {
-  "challenge_module": "Challenge",
-  "solution_module": "Solution",
+  "challenge_module": "Legacy.Challenge",
+  "solution_module": "Legacy.Solution",
   "theorem_names": [
     "BoundedWanderingDomains.no_local_bounded_wandering_domains",
     "BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire",

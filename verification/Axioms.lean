@@ -1,4 +1,4 @@
-import Solution
+import Legacy.Solution
 import BoundedWanderingDomains.AreaDeficit
 import BoundedWanderingDomains.TrappedFilling
 import BoundedWanderingDomains.EventualCompactDiscs

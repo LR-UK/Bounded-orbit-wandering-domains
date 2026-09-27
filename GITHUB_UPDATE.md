@@ -1,17 +1,17 @@
-# GitHub update — version 1.4.1
+# GitHub update — version 1.4.2
 
-This revision completes all six revised-paper statements, including arbitrary
-Riemann surfaces, meromorphic escape and the compact-global positive-area case.
-It also audits and reduces imports, repeated diagnostics and duplicate proof
-bodies without changing the theorem statements. The source archive, Git bundle
-and verification reports are prepared locally.
+Version 1.4.2 puts all supporting Lean files in subfolders, leaving only
+`PaperChallenge.lean` and `PaperSolution.lean` at the top level. It preserves
+all six completed paper theorems and the import/duplication improvements from
+version 1.4.1. See LAYOUT_UPDATE.md for renamed module entry points and checks.
+The source archive, Git bundle and verification reports are prepared locally.
 No remote has been changed.
 
 To bring the history into an existing checkout, fetch the supplied bundle and
 create a review branch:
 
 ```powershell
-git fetch "C:/path/to/derived-set-audited-github.bundle" local-paper-formalisation
+git fetch "C:/path/to/derived-set-clean-layout-github.bundle" local-paper-formalisation
 git switch -c review-paper-formalisation FETCH_HEAD
 lake build
 python scripts/verify_paper.py --all

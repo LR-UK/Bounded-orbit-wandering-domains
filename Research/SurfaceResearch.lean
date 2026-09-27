@@ -4,10 +4,10 @@ import BoundedWanderingDomains.Surfaces.RemoteChartCompact
 import BoundedWanderingDomains.Surfaces.WanderingCompactTail
 import BoundedWanderingDomains.Surfaces.CoveringComponents
 import BoundedWanderingDomains.Surfaces.SurfaceChartPartition
-import SurfaceGeometry
-import SurfaceFiniteRemoval
-import SurfaceKernel
-import SurfaceDynamicsTargets
+import Research.SurfaceGeometry
+import Research.SurfaceFiniteRemoval
+import Research.SurfaceKernel
+import Research.SurfaceDynamicsTargets
 
 import BoundedWanderingDomains.Surfaces.SurfaceOrbitEscape
 import BoundedWanderingDomains.Surfaces.SurfaceDerivedLimits

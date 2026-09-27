@@ -39,8 +39,8 @@ def run(args, filename):
 
 targets = ['PaperSolution', 'PaperChallenge']
 if args.all:
-    targets += ['SurfaceResearch', 'Submission', 'Challenge', 'CoveringSolution',
-                'NewResults', 'SingularLimitsChallenge', 'SingularLimitsSolution']
+    targets += ['Research.SurfaceResearch', 'Legacy.Solution', 'Legacy.Challenge', 'BoundedWanderingDomains.CoveringSolution',
+                'Research.NewResults', 'Legacy.SingularLimitsChallenge', 'Legacy.SingularLimitsSolution']
 run(['build', *targets], 'paper-build.log')
 for module in ['PaperChallenge', 'PaperSolution']:
     run(['env', 'lean', f'verification/Export{module}.lean'], module.lower() + '-declarations.log')
@@ -117,8 +117,8 @@ def visit(module):
 visit('PaperSolution')
 paper_visited = dict(visited)
 if args.all:
-    for module in ['SurfaceResearch', 'Solution', 'CoveringSolution', 'NewResults',
-                   'SingularLimitsSolution']:
+    for module in ['Research.SurfaceResearch', 'Legacy.Solution', 'BoundedWanderingDomains.CoveringSolution', 'Research.NewResults',
+                   'Legacy.SingularLimitsSolution']:
         visit(module)
 report = {
     'result': 'passed', 'scope': 'Local Lean build, independent declaration equality, source closure and transitive axioms',

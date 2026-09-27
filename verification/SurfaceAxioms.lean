@@ -1,4 +1,4 @@
-import SurfaceResearch
+import Research.SurfaceResearch
 import BoundedWanderingDomains.MeromorphicSurfaceModel
 import BoundedWanderingDomains.MeromorphicNormalityBridge
 

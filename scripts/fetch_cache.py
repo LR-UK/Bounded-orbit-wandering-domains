@@ -1,7 +1,7 @@
 """Fetch Mathlib cache for imports throughout the contained source closure.
 
 Mathlib's cache traverses Mathlib imports, but skips imports of local libraries.
-Walk those libraries first so a root Solution.lean does not omit its foundations.
+Walk those libraries first so the paper entry points do not omit their foundations.
 """
 from pathlib import Path
 import importlib.util
@@ -21,7 +21,7 @@ CACHE = {'Mathlib', 'Batteries', 'Aesop', 'Qq', 'ProofWidgets', 'LeanSearchClien
          'ImportGraph', 'Plausible'}
 CORE = {'Init', 'Lean', 'Std', 'Lake'}
 seen, imports = set(), set()
-pending = ['PaperSolution', 'PaperChallenge', 'Solution', 'Challenge', 'CoveringSolution', 'NewResults', 'SingularLimitsChallenge', 'SingularLimitsSolution', 'SurfaceResearch']
+pending = ['PaperSolution', 'PaperChallenge', 'Legacy.Solution', 'Legacy.Challenge', 'BoundedWanderingDomains.CoveringSolution', 'Research.NewResults', 'Legacy.SingularLimitsChallenge', 'Legacy.SingularLimitsSolution', 'Research.SurfaceResearch']
 while pending:
     module = pending.pop()
     if module in seen:

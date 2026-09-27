@@ -4,7 +4,7 @@ Released under Apache 2.0 licence; see LICENSE.
 -/
 import RiemannDynamics.Uniformization.PuncturedPlaneCovering
 import BoundedWanderingDomains.CoveringTotalArea
-import CoveringSolution
+import BoundedWanderingDomains.CoveringSolution
 
 /-!
 # Bounded-orbit wandering domains: complete formalisation

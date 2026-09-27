@@ -1,0 +1,77 @@
+{
+  "baseline_commit": "5dc6917882a38a985051ff36df21e91cdde9cc37",
+  "module_moves": {
+    "BoundedWanderingDomains": "BoundedWanderingDomains.All",
+    "CoveringSolution": "BoundedWanderingDomains.CoveringSolution",
+    "Challenge": "Legacy.Challenge",
+    "Solution": "Legacy.Solution",
+    "SingularLimitsChallenge": "Legacy.SingularLimitsChallenge",
+    "SingularLimitsSolution": "Legacy.SingularLimitsSolution",
+    "NewResults": "Research.NewResults",
+    "SurfaceDynamicsTargets": "Research.SurfaceDynamicsTargets",
+    "SurfaceFiniteRemoval": "Research.SurfaceFiniteRemoval",
+    "SurfaceGeometry": "Research.SurfaceGeometry",
+    "SurfaceKernel": "Research.SurfaceKernel",
+    "SurfaceResearch": "Research.SurfaceResearch"
+  },
+  "source_moves": {
+    "BoundedWanderingDomains.lean": "BoundedWanderingDomains/All.lean",
+    "CoveringSolution.lean": "BoundedWanderingDomains/CoveringSolution.lean",
+    "Challenge.lean": "Legacy/Challenge.lean",
+    "Solution.lean": "Legacy/Solution.lean",
+    "SingularLimitsChallenge.lean": "Legacy/SingularLimitsChallenge.lean",
+    "SingularLimitsSolution.lean": "Legacy/SingularLimitsSolution.lean",
+    "NewResults.lean": "Research/NewResults.lean",
+    "SurfaceDynamicsTargets.lean": "Research/SurfaceDynamicsTargets.lean",
+    "SurfaceFiniteRemoval.lean": "Research/SurfaceFiniteRemoval.lean",
+    "SurfaceGeometry.lean": "Research/SurfaceGeometry.lean",
+    "SurfaceKernel.lean": "Research/SurfaceKernel.lean",
+    "SurfaceResearch.lean": "Research/SurfaceResearch.lean"
+  },
+  "import_commands_updated_in": [
+    "RiemannDynamics/BoundedWanderingSolution.lean",
+    "Research/SurfaceResearch.lean",
+    "verification/Axioms.lean",
+    "verification/CoveringAxioms.lean",
+    "verification/ExportChallenge.lean",
+    "verification/ExportSingularLimitsChallenge.lean",
+    "verification/ExportSingularLimitsSolution.lean",
+    "verification/ExportSolution.lean",
+    "verification/KernelAxioms.lean",
+    "verification/NewResultsAxioms.lean",
+    "verification/SurfaceAxioms.lean"
+  ],
+  "root_lean_files": [
+    "PaperChallenge.lean",
+    "PaperSolution.lean"
+  ],
+  "result": "passed",
+  "project_version": "1.4.2",
+  "lean_sources_preserved": 1371,
+  "theorem_and_proof_source_text": "unchanged; only module import paths changed",
+  "root_paper_sources": "byte-identical after normalizing line endings",
+  "third_party_sources": "unchanged",
+  "full_local_build": "passed",
+  "full_build_jobs": 4319,
+  "full_retained_local_modules": 795,
+  "paper_local_proof_modules": 770,
+  "full_scanned_proof_modules": 792,
+  "import_closures_preserved": true,
+  "independent_declarations_unchanged": true,
+  "declarations_sha256": "34036203450459e491d5b6e7cdf4e9c3e146d3e95f5f181a18d582881bff058d",
+  "moved_legacy_comparisons": [
+    {
+      "configuration": "comparator-legacy.json",
+      "theorems_compared": 6,
+      "supporting_declarations_compared": 13,
+      "declarations_sha256": "fa404c2bcf8012406a0700980f533cde90e49956543f6d9552ae255992ee5cc4"
+    },
+    {
+      "configuration": "comparator-singular-limits.json",
+      "theorems_compared": 2,
+      "supporting_declarations_compared": 13,
+      "declarations_sha256": "2f210de97ef2e029542a1a03f553da9561204ba1d872fea42fcb37ac802ae3b1"
+    }
+  ],
+  "umbrella_entry_point": "BoundedWanderingDomains.All compiled"
+}

@@ -1,4 +1,4 @@
-import SingularLimitsSolution
+import Legacy.SingularLimitsSolution
 import Lean
 
 /- Erase only bound-variable display names and nonsemantic metadata.

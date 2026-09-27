@@ -5064,12 +5064,12 @@
       "imports": [
         "RiemannDynamics.Uniformization.PuncturedPlaneCovering",
         "BoundedWanderingDomains.CoveringTotalArea",
-        "CoveringSolution"
+        "BoundedWanderingDomains.CoveringSolution"
       ],
-      "sha256": "1bf85c92c9fb9717f469cbd1f23d2120961afb02a03c987210bf655be380c619"
+      "sha256": "7493d535e91e76bde341a4137463401a0be80e3abcb0236ebcd8bf37811f5a0a"
     },
-    "CoveringSolution": {
-      "file": "CoveringSolution.lean",
+    "BoundedWanderingDomains.CoveringSolution": {
+      "file": "BoundedWanderingDomains/CoveringSolution.lean",
       "imports": [
         "BoundedWanderingDomains.CoveringMetricInput",
         "BoundedWanderingDomains.EntireFatouBridge",
@@ -7333,23 +7333,23 @@
     }
   },
   "additional_proof_imports": {
-    "SurfaceResearch": {
-      "file": "SurfaceResearch.lean",
+    "Research.SurfaceResearch": {
+      "file": "Research/SurfaceResearch.lean",
       "imports": [
         "BoundedWanderingDomains.Surfaces.GeometricArea",
         "BoundedWanderingDomains.Surfaces.RemoteChartCompact",
         "BoundedWanderingDomains.Surfaces.WanderingCompactTail",
         "BoundedWanderingDomains.Surfaces.CoveringComponents",
         "BoundedWanderingDomains.Surfaces.SurfaceChartPartition",
-        "SurfaceGeometry",
-        "SurfaceFiniteRemoval",
-        "SurfaceKernel",
-        "SurfaceDynamicsTargets",
+        "Research.SurfaceGeometry",
+        "Research.SurfaceFiniteRemoval",
+        "Research.SurfaceKernel",
+        "Research.SurfaceDynamicsTargets",
         "BoundedWanderingDomains.Surfaces.SurfaceOrbitEscape",
         "BoundedWanderingDomains.Surfaces.SurfaceDerivedLimits",
         "BoundedWanderingDomains.Surfaces.SurfacePositiveArea"
       ],
-      "sha256": "975fdd7e04dfdfb301318b77242d7f9d2b6edc3824311a164d41906e3e745879"
+      "sha256": "93514558f0ca9545a5734f494bb563dc30c6b0182327c2ce23747c3c0c27d980"
     },
     "BoundedWanderingDomains.Surfaces.GeometricArea": {
       "file": "BoundedWanderingDomains/Surfaces/GeometricArea.lean",
@@ -7414,8 +7414,8 @@
       ],
       "sha256": "918107de61d2474cb554c210d4d446e6d011e586051d019a6b3668bd6d29b150"
     },
-    "SurfaceGeometry": {
-      "file": "SurfaceGeometry.lean",
+    "Research.SurfaceGeometry": {
+      "file": "Research/SurfaceGeometry.lean",
       "imports": [
         "BoundedWanderingDomains.Surfaces.DensityRegularity",
         "BoundedWanderingDomains.Surfaces.DensityRatioInvariance",
@@ -7432,8 +7432,8 @@
       ],
       "sha256": "6326cc315188514ff340296018cca05a8da831f65caffe77f1680302a3ce8aad"
     },
-    "SurfaceFiniteRemoval": {
-      "file": "SurfaceFiniteRemoval.lean",
+    "Research.SurfaceFiniteRemoval": {
+      "file": "Research/SurfaceFiniteRemoval.lean",
       "imports": [
         "BoundedWanderingDomains.Surfaces.CompactChartPatches",
         "BoundedWanderingDomains.Surfaces.GainFatou",
@@ -7445,8 +7445,8 @@
       ],
       "sha256": "f14142064a80065328c11797d6dfa71cf4d1d7b75e5ea720c281b516178e6c45"
     },
-    "SurfaceKernel": {
-      "file": "SurfaceKernel.lean",
+    "Research.SurfaceKernel": {
+      "file": "Research/SurfaceKernel.lean",
       "imports": [
         "BoundedWanderingDomains.Surfaces.KernelNonconstant",
         "BoundedWanderingDomains.Surfaces.KernelDomains",
@@ -7458,8 +7458,8 @@
       ],
       "sha256": "34d171a55467601b250d115f8502f8894a6ddb672f1d22978b2662f4e7c2d6f4"
     },
-    "SurfaceDynamicsTargets": {
-      "file": "SurfaceDynamicsTargets.lean",
+    "Research.SurfaceDynamicsTargets": {
+      "file": "Research/SurfaceDynamicsTargets.lean",
       "imports": [
         "BoundedWanderingDomains.Surfaces.LocalDynamics",
         "BoundedWanderingDomains.Surfaces.CompactificationEscape",
@@ -7468,8 +7468,8 @@
       ],
       "sha256": "3d46b7a957e19429c8ff1c1b3f2e58749e2f485c3788f0e987948b2e4f1310e4"
     },
-    "Solution": {
-      "file": "Solution.lean",
+    "Legacy.Solution": {
+      "file": "Legacy/Solution.lean",
       "imports": [
         "RiemannDynamics.BoundedWanderingSolution",
         "BoundedWanderingDomains.GlobalLimitStatements",
@@ -7518,8 +7518,8 @@
       ],
       "sha256": "d5cd52fdda9ed61e03d59228a0e011ecb1f300593b9b2d11abddae9f9e980166"
     },
-    "NewResults": {
-      "file": "NewResults.lean",
+    "Research.NewResults": {
+      "file": "Research/NewResults.lean",
       "imports": [
         "BoundedWanderingDomains.SphereCompactRemoval",
         "BoundedWanderingDomains.SphereFiniteRemoval",
@@ -7540,8 +7540,8 @@
       ],
       "sha256": "8cbde77f35128b3f34ba130cd4f228a0fdac0f42f157dc9e7bfedff7cf012e06"
     },
-    "SingularLimitsSolution": {
-      "file": "SingularLimitsSolution.lean",
+    "Legacy.SingularLimitsSolution": {
+      "file": "Legacy/SingularLimitsSolution.lean",
       "imports": [
         "BoundedWanderingDomains.LocallyUniformSingularLimits",
         "BoundedWanderingDomains.LocalUniformSingularLimits"

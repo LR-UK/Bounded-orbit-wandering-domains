@@ -1,4 +1,4 @@
-import SurfaceKernel
+import Research.SurfaceKernel
 
 #print axioms AreaDeficit.Surfaces.DiscCover.density_nested_subdomains
 #print axioms AreaDeficit.Surfaces.DiscCover.density_sequence_bounded_by_subdomain

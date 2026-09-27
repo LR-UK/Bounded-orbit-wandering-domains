@@ -1,6 +1,6 @@
 {
-  "challenge_module": "SingularLimitsChallenge",
-  "solution_module": "SingularLimitsSolution",
+  "challenge_module": "Legacy.SingularLimitsChallenge",
+  "solution_module": "Legacy.SingularLimitsSolution",
   "theorem_names": [
     "BoundedWanderingDomains.wandering_orbit_locallyUniform_spherical_singular_derivedSet",
     "BoundedWanderingDomains.local_wandering_orbit_locallyUniform_singular_derivedSet"
