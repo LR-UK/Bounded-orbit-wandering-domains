@@ -52,13 +52,14 @@ theorem trapped_barrier_component (f : LocalMap X) (hf : Continuous f.map)
   rw [← f.trappedSet_totalize_eq_trapped]
   exact fun n => ((hit n).2 hy).1
 
-theorem connected_trapped_open_subset_omega_of_compact_orbit
+theorem compact_orbits_on_connected_trapped_open
     (f : LocalMap X) (hf : IsOpenHolomorphic f) (p : DiscCover X)
     (W : TopologicalSpace.Opens X) [ConnectedSpace W]
     (hW : (W : Set X) ⊆ f.trapped) (x : W)
     {K : Set X} (hK : IsCompact K)
     (hxK : ∀ n, f.orbit n ⟨x, hW x.property⟩ ∈ K) :
-    (W : Set X) ⊆ f.omega := by
+    ∀ y : W, ∃ L : Set X, IsCompact L ∧
+      ∀ n, f.orbit n ⟨y, hW y.property⟩ ∈ L := by
   classical
   obtain ⟨q, hq0⟩ := (Classical.choice (p.nonempty_subdomain W)).exists_centred x
   let F : ℕ → unitDisc → X := fun n => f.orbitOn W hW n ∘ q.projection
@@ -67,15 +68,27 @@ theorem connected_trapped_open_subset_omega_of_compact_orbit
   have hF0 : ∀ n, F n discZero ∈ K := by
     intro n
     simpa only [F, comp_apply, hq0, orbitOn] using hxK n
-  intro y hy
-  obtain ⟨w, hw⟩ := q.surjective ⟨y, hy⟩
+  intro y
+  obtain ⟨w, hw⟩ := q.surjective y
   obtain ⟨L, hL, hbound⟩ := p.compact_disc_images hK
     (show ‖(w : ℂ)‖ < 1 from mem_ball_zero_iff.mp w.property)
-  have hyK : ∀ n, f.orbitOn W hW n ⟨y, hy⟩ ∈ L := by
+  have hyK : ∀ n, f.orbitOn W hW n y ∈ L := by
     intro n
     have hh := hbound (F n) (hF n) (hF0 n) w le_rfl
     simpa only [F, comp_apply, hw] using hh
-  exact f.mem_omega_of_compact_orbit hf p W hW ⟨y, hy⟩ hL hyK
+  exact ⟨L, hL, hyK⟩
+
+theorem connected_trapped_open_subset_omega_of_compact_orbit
+    (f : LocalMap X) (hf : IsOpenHolomorphic f) (p : DiscCover X)
+    (W : TopologicalSpace.Opens X) [ConnectedSpace W]
+    (hW : (W : Set X) ⊆ f.trapped) (x : W)
+    {K : Set X} (hK : IsCompact K)
+    (hxK : ∀ n, f.orbit n ⟨x, hW x.property⟩ ∈ K) :
+    (W : Set X) ⊆ f.omega := by
+  intro y hy
+  obtain ⟨L, hL, hyL⟩ :=
+    f.compact_orbits_on_connected_trapped_open hf p W hW x hK hxK ⟨y, hy⟩
+  exact f.mem_omega_of_compact_orbit hf p W hW ⟨y, hy⟩ hL hyL
 
 theorem barrier_component_subset_omega_of_compact_orbit
     (f : LocalMap X) (hf : IsOpenHolomorphic f) (p : DiscCover X)
