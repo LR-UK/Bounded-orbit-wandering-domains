@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "verification"
 OUT.mkdir(exist_ok=True)
 LAKE = shutil.which("lake") or str(Path.home() / ".elan/bin/lake")
-CONFIG = json.loads((ROOT / "comparator.json").read_text())
+CONFIG = json.loads((ROOT / "comparator-legacy.json").read_text())
 ALLOWED = {"propext", "Classical.choice", "Quot.sound"}
 
 def run(args, output):
@@ -48,7 +48,7 @@ def declarations(which):
     return result
 
 comparisons = []
-for config_file in ("comparator.json", "comparator-singular-limits.json"):
+for config_file in ("comparator-legacy.json", "comparator-singular-limits.json"):
     config = json.loads((ROOT / config_file).read_text())
     challenge = declarations(config["challenge_module"].lower())
     solution = declarations(config["solution_module"].lower())
@@ -137,7 +137,7 @@ report = {
     "unexpected_build_warnings": unexpected_warnings,
     "expected_challenge_warnings": build_warnings,
     "source_sha256": {p.relative_to(ROOT).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
-                      for p in sources + [ROOT / "comparator.json", ROOT / "formalization.yaml",
+                      for p in sources + [ROOT / "comparator-legacy.json", ROOT / "formalization.yaml",
                                           ROOT / "lakefile.toml", ROOT / "lake-manifest.json"]},
     "official_comparator": "see comparator-status.json and comparator.log",
     "metadata_contract": "see metadata.json", "public_submission": "not made",

@@ -1,19 +1,20 @@
-# Research-branch submission status
+# Prepared Palomar submission
 
-The stable prepared 1.3.0 submission is preserved at `stable-v1.3.0` and
-`v1.3.0`. This branch has not been pushed or submitted.
+The six revised-paper targets are proved. Submit the publicly uploaded repository
+at the immutable commit identified in the delivery's `UPLOAD-INSTRUCTIONS.txt`.
+Nothing has been uploaded or submitted by the assistant.
 
-The main `comparator.json` now checks six declarations in `Challenge.lean`
-against `Solution.lean`: the two bounded-orbit statements, locally uniform
-escape to infinity, both derived-singular-limit formulations, and the proved
-bounded local singular-limit theorem. The older singular-limit configuration
-continues to compare its two declarations.
+- Challenge: `PaperChallenge`
+- Solution: `PaperSolution`
+- Comparator configuration: `comparator.json` (identical to `comparator-paper.json`)
+- Metadata: `formalization.yaml`
+- Local audit: `verification/paper-submission.json`
+- Compiler: `leanprover/lean4:v4.35.0-rc2`
 
-The arbitrary-surface dynamical extension is unfinished. Its named research
-propositions must not be submitted as completed theorems. The current verified
-scope and remaining proof obligations are in `RIEMANN_SURFACE_RESEARCH.md`.
+The primary comparator selects all six introductory statements. Earlier
+formulations retain `comparator-legacy.json` and `comparator-singular-limits.json`.
 
-Before publication, review the exact Challenge and metadata, run the strict
-local audit and the protected Comparator in a supported environment, then use
-the full immutable SHA of the reviewed publicly pushed commit. No earlier
-pending registry submission should be overwritten automatically.
+After uploading, let the provided Linux CI run the metadata contract and official
+Comparator with its bundled independent kernels. Use the full immutable commit
+SHA for the submission. See VERIFICATION.md for the completed local checks and
+the external checks that have not yet been run.

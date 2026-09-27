@@ -1,143 +1,68 @@
-# No bounded-orbit wandering domains
+# Absence of bounded-orbit wandering domains
 
-This is the `research-riemann-surfaces` branch. The stable 1.3.0 release is
-preserved at `stable-v1.3.0` and `v1.3.0`. The global theorem formulations below
-are proved; the arbitrary-surface dynamical extensions remain unfinished.
-See [RIEMANN_SURFACE_RESEARCH.md](RIEMANN_SURFACE_RESEARCH.md).
+All six statements from the revised paper introduction are proved in Lean.
+The independent specifications are in [PaperChallenge.lean](PaperChallenge.lean);
+the proofs are exposed by [PaperSolution.lean](PaperSolution.lean).
 
-We prove that transcendental entire functions do not have bounded-orbit wandering domains.
+| Paper statement | Proved declaration |
+|---|---|
+| Theorem 1.2, entire escape | `BoundedWanderingDomains.theorem_1_2_entire` |
+| Theorem 1.2, meromorphic escape | `MeromorphicDynamics.theorem_1_2_meromorphic` |
+| Theorem 1.3(1), surface compact-orbit exclusion | `SurfaceDynamics.theorem_1_3_orbit` |
+| Theorem 1.3(2), positive-area wandering sets | `SurfaceDynamics.theorem_1_3_positive_area` |
+| Theorem 1.4, entire derived singular accumulation | `BoundedWanderingDomains.theorem_1_4` |
+| Theorem 1.5, surface escape or derived singular accumulation | `SurfaceDynamics.theorem_1_5` |
 
-This answers a major open question in the field. The proof builds upon Zihao Ye's new proof of Sullivan's No Wandering Domains theorem, and was obtained with assistance by generative AI. We also formalise a stronger theorem, which shows that locally defined holomorphic functions do not have wandering trapped-component orbits with one point orbit compactly contained in the iteration domain.
+The surface statements apply to arbitrary Riemann surfaces and actual local
+open holomorphic maps. Compact sets in Theorem 1.3 lie inside the map's source.
+Simple connectivity is required only by Theorem 1.5. Meromorphic maps may have
+poles. See [PAPER_STATEMENT_ALIGNMENT.md](PAPER_STATEMENT_ALIGNMENT.md) for the
+precise hypotheses and [PAPER_PROOF_GUIDE.md](PAPER_PROOF_GUIDE.md) for the proof route.
 
-This is an unconditional formalisation, prepared with the use of Generative AI for submission to Palomar. In order to achieve an unconditional formalisation, a number of classical results had to be newly (auto-)formalised, including results concerning the hyperbolic metric for a finitely punctured sphere, and its area.  
+The six theorem types and 36 supporting declarations match the independent
+challenge. The transitive axiom audit reports only `propext`, `Classical.choice`,
+and `Quot.sound`; 773 local proof modules were scanned for holes and shortcuts.
+The complete build also verifies the retained earlier results.
 
-The accompanying [paper (PDF)](paper/Absence_of_bounded_orbit_wandering_domains-1.pdf)
-contains the mathematical statements and proofs.
+## Build and check
 
-[Challenge.lean](Challenge.lean) now collects six independent statements using
-only Mathlib imports: the two bounded-orbit results, locally uniform escape to
-infinity, pointwise and locally uniform derived-singular-value accumulation,
-and the previously proved bounded local singular-limit result.
-[Solution.lean](Solution.lean) supplies all six proofs.
-
-## Current revised-paper challenge statements
-
-The independent [PaperChallenge.lean](PaperChallenge.lean) records all six
-targets from the current introduction:
-
-1. **Theorem 1.2, entire case.** For a transcendental entire function and a
-   wandering Fatou component, some strictly increasing subsequence of the
-   iterates converges locally uniformly on that component to infinity in the
-   Riemann sphere.
-2. **Theorem 1.2, meromorphic case.** The same conclusion holds for a
-   transcendental meromorphic function, with poles allowed and iteration
-   restricted to pole-avoiding Fatou neighbourhoods. This is intended as a
-   corollary of the surface theorem.
-3. **Theorem 1.3(1).** If f:O→X is open and holomorphic on a Riemann surface
-   and U is a wandering component of its normality locus, then every orbit
-   starting in U eventually leaves each compact subset of O.
-4. **Theorem 1.3(2).** A measurable positive-area subset of T(f)\Ω(f), with
-   pairwise disjoint forward images and injective forward saturation, cannot
-   have its saturation contained in a compact subset of O.
-5. **Theorem 1.4.** For a transcendental entire function, every point in a
-   wandering Fatou component has a subsequence converging in the sphere to a
-   point of the derived set of S(f)∪{∞}.
-6. **Theorem 1.5.** On a Riemann surface, if every normality component met by
-   the orbit of a wandering component is simply connected, then every point
-   has a subsequence which either leaves every compact subset of X or
-   converges to a point of the derived set S(f)'.
-
-The corresponding named declarations are `theorem_1_2_entire`,
-`theorem_1_2_meromorphic`, `theorem_1_3_orbit`,
-`theorem_1_3_positive_area`, `theorem_1_4`, and `theorem_1_5`.
-The compact set in Theorem 1.3(2) is a compact subset of O, as corrected by
-the author. The six declarations are challenge placeholders.  The two entire
-targets have proved source theorems, and the complete positive-area proof is
-now compiled for every disc-covered Riemann surface.  The finite-puncture
-reduction from an arbitrary ambient surface, the other surface conclusions,
-and the meromorphic wrapper remain on the research branch.
-
-
-The definition of the Fatou set, using normality, uses subsequential locally uniform convergence of sphere-valued iterates into the one-point compactification of ℂ. 
-Transcendental entire means complex differentiability everywhere and inequality to every complex polynomial.
-
-All thirteen supporting definitions are included in the comparison.
-
-The three additional proved results are exposed by [NewResults.lean](NewResults.lean):
-uniform compact-deletion area gain on the sphere, the 2π-per-puncture bound,
-and locally uniform derived singular accumulation for entire wandering components.
-See [NEW_RESULTS_PROGRESS.md](NEW_RESULTS_PROGRESS.md) for precise names and scope.
-The entire and bounded-local singular-limit theorems share the independent
-[SingularLimitsChallenge.lean](SingularLimitsChallenge.lean), proof entry point
-and `comparator-singular-limits.json`. The area bounds remain supporting results.
-The added local singular-limit theorem retains simple connectivity but requires
-no injectivity; see [LOCAL_SINGULAR_LIMITS.md](LOCAL_SINGULAR_LIMITS.md) for its
-precise bounded-domain hypotheses and proof.
-See [GITHUB_UPDATE.md](GITHUB_UPDATE.md) for the prepared version 1.3.0 update.
-
-## Build and verification
-
-The toolchain is `leanprover/lean4:v4.35.0-rc2`. Mathlib is pinned to
-`065356127b1dc0016f66b7283ce0ce2c4055aa55`. From this directory:
+Lean: `leanprover/lean4:v4.35.0-rc2`. Mathlib:
+`065356127b1dc0016f66b7283ce0ce2c4055aa55`.
 
 ```sh
 python3 scripts/fetch_cache.py
-lake build BoundedWanderingDomains Submission Challenge CoveringSolution NewResults SurfaceResearch
-python3 scripts/verify_submission.py
+lake build
+python3 scripts/verify_paper.py
 python3 scripts/verify_metadata.py
 python3 scripts/audit_attribution.py
-./scripts/verify-comparator.sh comparator.json
-./scripts/verify-comparator.sh comparator-singular-limits.json
 ```
 
-The verification script builds with bounded parallelism, then runs the full
-Lake target check. The Python metadata check requires PyYAML. The final command requires Linux
-with working unprivileged user namespaces and bubblewrap; it uses the bundled
-Palomar Comparator, NanoDa and con-ron without weakening their checks.
-See [VERIFICATION.md](VERIFICATION.md) for the actual results and limitations.
-The six `sorry`s in Challenge and two in SingularLimitsChallenge are intentional
-statement placeholders; neither proof entry point imports a Challenge. No proof holes or extra axioms are permitted in
-Solution's dependency closure.
+The metadata checker requires PyYAML. On Windows, use UTF-8 Python mode for
+the older attribution script (`python -X utf8 scripts/audit_attribution.py`).
+For the official sandboxed comparison and bundled independent kernels, use
+Linux with working bubblewrap user namespaces:
 
-## Organisation and provenance
+```sh
+bash scripts/verify-comparator.sh comparator.json
+```
 
-- `BoundedWanderingDomains/`: analytic, dynamical and area arguments.
-- `RiemannDynamics/`: attributed uniformisation port and the final bridge.
-- `RMT4/`: attributed supporting analytic source.
-- `EremenkoLyubichConstant/` and `Ray/`: attributed tract-theorem dependency.
-- `dependencies/`: four contained source dependencies and vendored Schoenflies.
-- `verification/`: reproducible audit scripts' outputs and supporting exporters.
-- `history/`: clearly separated earlier-stage documents and logs.
+`comparator.json` and `comparator-paper.json` select the six revised-paper
+targets. `comparator-legacy.json` and `comparator-singular-limits.json` preserve
+the earlier independent comparisons. Challenge `sorry` placeholders are
+intentional specifications and are never imported by the proofs.
 
-There are no sibling-project dependencies. Mathlib and its pinned Git
-dependencies are fetched by Lake. Build caches are not distributed.
-The mathematical proof outline is in [BOUNDED_POINT_PROOF.md](BOUNDED_POINT_PROOF.md).
-The new unconditional connection is in
-`RiemannDynamics/BoundedWanderingSolution.lean`.
+See [VERIFICATION.md](VERIFICATION.md) for actual check results and the distinction
+between local verification and official registry verification. Nothing has been
+pushed or submitted. [GITHUB_UPDATE.md](GITHUB_UPDATE.md) and
+[SUBMISSION.md](SUBMISSION.md) describe the prepared upload workflow.
+
+## Sources and authorship
 
 Mathematical direction: Lasse Rempe. Paper authors: Nikolai Prochorov,
 Lasse Rempe and James Waterman. AI-assisted formalisation: OpenAI ChatGPT/Codex.
-Third-party proofs retain their own authorship and licences; see
-[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and `formalization.yaml`.
-The manuscript is being prepared separately. No independent human review or
-Palomar acceptance is claimed.
-
-## Licences
-
-The original project development is distributed under the Apache License,
-Version 2.0; see the complete text in [LICENSE](LICENSE).
-The `project.license` value in `formalization.yaml` is `Apache-2.0`.
-
-Included third-party source retains its own copyright, authorship and licence
-notices. [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) identifies the sources,
-adaptations and bundled licence texts. In particular, the Palomar metadata
-validator retains its [MIT licence](verification/palomar-contract/LICENSE).
-Keep these licence files, source notices and adaptation records with any
-redistribution of the included source.
-
-## Submission
-
-Use [SUBMISSION.md](SUBMISSION.md) for the prepared form values and remaining
-publication step. The current submission form is
-https://submit.palomar-registry.org/ . A public repository and the full immutable
-commit SHA are required. This archive has not been published or submitted.
+The current manuscript source is `handoff/reference/no-bounded-WD-2.tex`.
+Third-party proofs retain their authorship and licences; see
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md), [LICENSE](LICENSE), and
+`formalization.yaml`. Local path dependencies are included in the source
+archive; Mathlib and its pinned dependencies are fetched by Lake. Caches are
+not distributed. Earlier status documents are historical, not current scope.

@@ -1,3 +1,5 @@
+> Historical checkpoint, superseded on 27 September 2026. All six revised-paper targets are now proved; see README.md, PAPER_PROOF_GUIDE.md and VERIFICATION.md.
+
 # Astra handoff: derived-set formalisation
 
 This branch is an active Lean research formalisation. Continue autonomously until all six declarations in `PaperChallenge.lean` have compiling proofs in `PaperSolution.lean`, the full build and axiom audit pass, and the GitHub and Palomar bundles are ready. Do not stop at checkpoints, partial reductions, or reports of remaining difficulty. Make frequent local commits and update `RECOVERY_ACTIVE.md` silently.

@@ -19,7 +19,6 @@
     "ComplexDynamics.regularValueSet",
     "ComplexDynamics.singularValues",
     "ComplexDynamics.sphericalSingularValues",
-    "SurfaceDynamics.LocalMap",
     "SurfaceDynamics.LocalMap.step",
     "SurfaceDynamics.LocalMap.iterate",
     "SurfaceDynamics.LocalMap.trapped",

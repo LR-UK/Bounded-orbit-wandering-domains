@@ -3,19 +3,13 @@ version: v0.4
 project:
   name: Absence of bounded-orbit wandering domains
   description: >-
-    We prove that transcendental entire functions do not have bounded-orbit wandering domains.
-    This answers a major open question in the field.
-    The proof builds upon Zihao Ye's new proof of Sullivan's No Wandering Domains theorem, and
-    was obtained with assistance by generative AI. 
-    We also formalise a stronger theorem, which shows that locally defined holomorphic functions
-    do not have wandering trapped-component orbits with one compactly contained point orbit.
-    The formalisation includes a number of classical results that were
-    implemented as auxiliary results, including results concerning the hyperbolic metric
-    for a finitely punctured sphere, and its area.
-    It also proves sphere area-gain bounds and a locally uniform subsequence
-    converging to a derived spherical singular value on every entire wandering component.
-    A bounded local version holds for simply connected trapped components, without
-    an injectivity assumption, using the singular set of the restricted map.
+    All six statements in the revised introduction of Absence of bounded-orbit
+    wandering domains are formalised: locally uniform escape for entire and
+    meromorphic functions; compact-orbit and positive-area wandering-set exclusion
+    for local open holomorphic maps on arbitrary Riemann surfaces; entire derived
+    singular accumulation; and the surface escape-or-derived-singular alternative
+    for simply connected component orbits. Supporting hyperbolic area, covering,
+    finite-puncture and normal-family results are proved in the same development.
   authors:
   - Nikolai Prochorov
   - Lasse Rempe
@@ -48,7 +42,7 @@ sources:
     role: AI-assisted Lean proof construction, compatibility work and verification
   location: "https://github.com/LR-UK/Bounded-orbit-wandering-domains/tree/main/paper/Absence_of_bounded_orbit_wandering_domains-1.pdf"
   note: The manuscript was drafted separately by the authors. The precise formalised claims are the
-    declarations in Solution.lean and NewResults.lean. The main independent Challenge now consolidates six proved formulations; the earlier singular-limit configuration is also retained. No independent
+    declarations in PaperSolution.lean, matched to handoff/reference/no-bounded-WD-2.tex. The independent PaperChallenge specifies all six proved introductory statements; the earlier singular-limit configuration is also retained. No independent
     human review or registry acceptance is claimed.
 - title: A new proof of no-wandering domain theorems without quasiconformal techniques
   authors:
@@ -159,21 +153,14 @@ related_formalizations:
   note: User-supplied streamlined snapshot; tract simple connectivity and logarithmic transform. See RECOVERY_PORT.md and retained licences.
 status:
   scope: >-
-    The bounded-orbit theorem assumes one bounded point orbit in an entire Fatou
-    component. The local theorem assumes one point orbit compactly contained in
-    an analytic iteration domain; simple connectivity and injectivity are not
-    hypotheses. NewResults also proves uniform compact-deletion area gain on the
-    sphere, the 2*pi-per-puncture bound, and a locally uniform subsequence on every
-    entire wandering component converging to a derived spherical singular value.
-    The added local singular-limit theorem assumes simple connectivity of trapped
-    components and analyticity without constant germs near compact closure(V).
-    It yields a finite constant locally uniform limit in closure(V), belonging to
-    the derived singular set of f restricted to V. Injectivity is derived.
-    The main Challenge also includes locally uniform escape to infinity and the
-    pointwise derived-singular-value formulation. The arbitrary-surface local
-    dynamical statements remain unproved research propositions; their definitions,
-    compact-separation cutoffs and intrinsic metric foundations are checked.
-    Independent Challenge placeholders are not imported by either proof entry point.
+    All six revised-paper targets are proved in PaperSolution.lean. Compact sets
+    in Theorem 1.3 lie inside the actual open source. Simple connectivity is assumed
+    only in Theorem 1.5. The positive-area theorem assumes a measurable set in
+    trapped minus omega, disjoint forward images, and injectivity on its saturation.
+    Meromorphic normal form allows poles; admissible Fatou components avoid poles
+    and prepoles. Theorem 1.5 concerns compact escape in the ambient surface or
+    accumulation at the derived singular set of the actual local map. Independent
+    Challenge placeholders are excluded from the proof dependency closure.
   sorry_count: 0
   sorry_in_definitions: 0
   axioms:
@@ -181,43 +168,43 @@ status:
   - Classical.choice
   - Quot.sound
   main_results:
-  - declaration: BoundedWanderingDomains.local_wandering_orbit_locallyUniform_singular_derivedSet
-    file: BoundedWanderingDomains/LocalUniformSingularLimits.lean
+  - declaration: BoundedWanderingDomains.theorem_1_2_entire
+    file: PaperSolution.lean
     sorry_count: 0
     axioms:
     - propext
     - Classical.choice
     - Quot.sound
-  - declaration: BoundedWanderingDomains.no_local_bounded_wandering_domains
-    file: Solution.lean
+  - declaration: MeromorphicDynamics.theorem_1_2_meromorphic
+    file: PaperSolution.lean
     sorry_count: 0
     axioms:
     - propext
     - Classical.choice
     - Quot.sound
-  - declaration: BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire
-    file: Solution.lean
+  - declaration: SurfaceDynamics.theorem_1_3_orbit
+    file: PaperSolution.lean
     sorry_count: 0
     axioms:
     - propext
     - Classical.choice
     - Quot.sound
-  - declaration: AreaDeficit.uniform_compact_gain_sphere
-    file: BoundedWanderingDomains/SphereCompactRemoval.lean
+  - declaration: SurfaceDynamics.theorem_1_3_positive_area
+    file: PaperSolution.lean
     sorry_count: 0
     axioms:
     - propext
     - Classical.choice
     - Quot.sound
-  - declaration: AreaDeficit.sphere_finite_puncture_gain_le_two_pi_mul_card
-    file: BoundedWanderingDomains/SphereFiniteRemoval.lean
+  - declaration: BoundedWanderingDomains.theorem_1_4
+    file: PaperSolution.lean
     sorry_count: 0
     axioms:
     - propext
     - Classical.choice
     - Quot.sound
-  - declaration: BoundedWanderingDomains.wandering_orbit_locallyUniform_spherical_singular_derivedSet
-    file: BoundedWanderingDomains/LocallyUniformSingularLimits.lean
+  - declaration: SurfaceDynamics.theorem_1_5
+    file: PaperSolution.lean
     sorry_count: 0
     axioms:
     - propext
@@ -237,7 +224,7 @@ automation:
   cost:
     wall_time: Multiple interactive sessions; not tracked
     spend_usd: not tracked
-    hardware: API assistant and Linux Lean checker
+    hardware: Windows local pinned Lean toolchain; earlier development also used Linux
   prompting_notes: The user requested a complete unconditional formalisation and an independent readable
     Palomar Challenge, preserving the earlier conditional snapshot. Mathlib definitions are used where
     available. The separate manuscript is being drafted by its human authors.
@@ -246,17 +233,15 @@ automation:
     not independent mathematical review.
 fidelity:
   divergences: >-
-    Covering existence and the area formula are proved. New sphere area bounds
-    use curvature minus one without dividing by 2*pi. The local theorem concerns
-    plane maps analytic near compact closure(V), with one compactly contained
-    point orbit; no simple connectivity is assumed. Singular limits are on the
-    sphere, including infinity. No meromorphic extension or positive-area-set
-    theorem is claimed. The main Challenge consolidates the proved dynamical statements; the older
-    singular-limit comparator is retained. The surface generalisation is unfinished. The two sphere area results are proved
-    supporting results, without standalone registry Challenge declarations.
-    The local derived-singular-set theorem retains simple connectivity, in contrast
-    to the earlier local bounded-point absence theorem. It does not assume orbit
-    injectivity or compact containment away from the boundary of V.
+    The six introductory statements have independent explicit Lean definitions.
+    Positive area means positive Lebesgue area in a coordinate chart. Surface
+    escape uses the one-point compactification and is proved equivalent to eventual
+    compact avoidance. The compact positive-area proof uses three anchors and their
+    backward preimages, a finite-end normal-family argument, and uniform finite
+    puncture area bounds; separate sphere and torus periodic-orbit classifications
+    are unnecessary. The entire derived-singular theorem follows from the previously
+    verified stronger locally uniform theorem. Legacy formulations have separate
+    comparison configurations. No custom mathematical axioms are used.
 
 review:
   status: self-assessed
@@ -270,33 +255,33 @@ alignment:
   statements:
   - source: Theorem 1.2, entire case
     lean: BoundedWanderingDomains.theorem_1_2_entire
-    module: PaperChallenge
+    module: PaperSolution
     status: proved
     note: The independent challenge statement has a proved source theorem giving locally uniform escape.
   - source: Theorem 1.2, meromorphic case
     lean: MeromorphicDynamics.theorem_1_2_meromorphic
-    module: PaperChallenge
-    status: proposed
-    note: Intended as a corollary of Theorem 1.3(1), after the meromorphic-to-surface bridge.
+    module: PaperSolution
+    status: proved
+    note: Proved from Theorem 1.3(1) through the meromorphic sphere model.
   - source: Theorem 1.3(1), compact avoidance on a Riemann surface
     lean: SurfaceDynamics.theorem_1_3_orbit
-    module: PaperChallenge
-    status: proposed
+    module: PaperSolution
+    status: proved
     note: Every orbit in a wandering component leaves each compact subset of the actual source O.
   - source: Theorem 1.3(2), positive-area wandering set
     lean: SurfaceDynamics.theorem_1_3_positive_area
-    module: PaperChallenge
-    status: proposed
+    module: PaperSolution
+    status: proved
     note: The forward saturation is not contained in a compact subset of O.
   - source: Theorem 1.4, entire derived singular accumulation
     lean: BoundedWanderingDomains.theorem_1_4
-    module: PaperChallenge
+    module: PaperSolution
     status: proved
     note: A stronger locally uniform source theorem is already proved.
   - source: Theorem 1.5, surface derived singular accumulation or compact escape
     lean: SurfaceDynamics.theorem_1_5
-    module: PaperChallenge
-    status: proposed
+    module: PaperSolution
+    status: proved
     note: Simple connectivity is assumed only for normality components met by the orbit.
 acknowledgements: Mathlib contributors; the Tau Ceti contributors; Chris Birkbeck; Yury Kudryashov; Geoffrey
   Irving; Will (Ziang) Li and Yusheng Luo; D. Cureton; Álvaro Begué; the attributed FunctionTheory, ComplexDynamics,

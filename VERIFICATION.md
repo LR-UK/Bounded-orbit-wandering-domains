@@ -1,39 +1,46 @@
-# Verification — research checkpoint, 24 September 2026
+# Verification — completed formalisation, 27 September 2026
 
-The strict audit passed. The combined Lake build completed 4,487 jobs,
-including `SurfaceResearch`. Lean is pinned to 4.35.0-rc2 and Mathlib to
+The complete local build passed (4,705 targets). The pinned compiler is
+Lean 4.35.0-rc2; Mathlib is pinned to
 `065356127b1dc0016f66b7283ce0ce2c4055aa55`.
 
-- Six main Challenge theorem types matched Solution exactly.
-- Two legacy singular-limit Challenge theorem types also matched.
-- Thirteen supporting definition types and bodies matched in each configuration.
-- 78 distinct declarations were audited transitively; only
-  `propext`, `Classical.choice`, and `Quot.sound` occur.
-- 305 project Lean sources were scanned; no unexpected proof holes,
-  custom axioms or native decision shortcuts were found.
-- No unexpected warnings remain. The six main Challenge placeholders and two
-  legacy Challenge placeholders are intentional and are not imported by proofs.
-- Metadata contract and attribution audits passed.
+The dedicated revised-paper audit passed:
 
-`verification/submission.json` is the authoritative machine-readable report.
-`verification/surface-axioms.log` includes the surface cutoff, compactification,
-partial-iteration and intrinsic metric theorems. The named surface dynamical
-propositions in `Surfaces/Statements.lean` are **unproved targets**, not theorems.
-An audit pass does not establish those propositions.
+- Six independent theorem types match.
+- Thirty-six supporting declarations match, including definition bodies and
+  the local-map constructor type. Only bound-variable display names and
+  nonsemantic expression metadata are erased by the local comparison.
+- Every target's transitive axioms are contained in
+  `propext`, `Classical.choice`, and `Quot.sound`.
+- 773 local modules in PaperSolution's import closure were scanned; no `sorry`,
+  `admit`, `native_decide`, custom axioms or challenge imports occur there.
+- The retained legacy entry points also compile. An old malformed finite-removal
+  statement and an obsolete multiplication lemma were repaired during this check.
 
-Reproduce the checks:
+`verification/paper-submission.json` is the machine-readable audit report.
+The corresponding build, axiom and independent declaration logs are in
+`verification/paper-*.log` and `verification/paper*-declarations.log`.
+`verification/full-build.log` records the broader build. Ordinary unused-variable
+and style lints are permitted; challenge proof-placeholder warnings are expected.
+Saved build logs have trailing whitespace normalized.
 
-```sh
-LEAN_NUM_THREADS=4 python3 scripts/verify_submission.py
-python3 scripts/verify_metadata.py
-python3 scripts/audit_attribution.py
-```
+Reproduce the main audit with `python3 scripts/verify_paper.py`. The source
+dependency inventory is also summarized in `verification/paper-dependencies.md`.
+The attribution audit is supplied as `scripts/audit_attribution.py`.
 
-Official Comparator / independent-kernel replay has not been run for this
-research checkpoint. The earlier environment rejected bubblewrap user-namespace
-setup. No sandbox requirement or independent-kernel check has been weakened.
-The protected replay scripts and CI configuration remain supplied. No public
-push, registry submission or acceptance is claimed.
+## Separate external checks
 
-Stable 1.3.0 remains at `4a2c4b75c71541f569b7ae34bde616bcca66c07a`.
-See `RIEMANN_SURFACE_RESEARCH.md` for exact completed and incomplete scope.
+Official sandboxed Comparator and NanoDa/con-ron replay were not run in this
+Windows session. The toolchain requires Linux bubblewrap for that workflow;
+no sandbox or kernel check was bypassed. The unchanged protected runner and
+updated GitHub workflow run these checks after upload.
+
+`formalization.yaml` was updated while preserving the attribution records.
+The pinned metadata contract is supplied, but its current run requires PyYAML,
+which is unavailable in the local Python runtime. CI installs it and invokes
+`scripts/verify_metadata.py`. The older `verification/metadata.json` describes
+the earlier metadata, not a fresh validation of this revision.
+
+No independent human review, public upload, registry submission or acceptance
+is claimed. Historical verification reports are retained separately and do not
+replace this revision's report.

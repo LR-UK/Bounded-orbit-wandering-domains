@@ -1,4 +1,4 @@
-name: Unconditional submission
+name: Revised paper formalisation
 on:
   push:
   pull_request:
@@ -28,7 +28,7 @@ jobs:
       - name: Fetch the required Mathlib cache
         run: python3 scripts/fetch_cache.py
       - name: Build, compare declarations and audit axioms
-        run: python3 scripts/verify_submission.py
+        run: python3 scripts/verify_paper.py
       - name: Validate metadata and attribution
         run: |
           python3 scripts/verify_metadata.py

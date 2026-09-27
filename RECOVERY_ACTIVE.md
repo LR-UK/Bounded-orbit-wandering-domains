@@ -1,3 +1,5 @@
+> Historical checkpoint, superseded on 27 September 2026. All six revised-paper targets are now proved; see README.md, PAPER_PROOF_GUIDE.md and VERIFICATION.md.
+
 # Active continuation — do not stop at checkpoints
 
 ## Current continuation: compact finite-removal budget checked, 25 September

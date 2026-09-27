@@ -1,0 +1,6 @@
+'BoundedWanderingDomains.theorem_1_2_entire' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MeromorphicDynamics.theorem_1_2_meromorphic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SurfaceDynamics.theorem_1_3_orbit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SurfaceDynamics.theorem_1_3_positive_area' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BoundedWanderingDomains.theorem_1_4' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SurfaceDynamics.theorem_1_5' depends on axioms: [propext, Classical.choice, Quot.sound]

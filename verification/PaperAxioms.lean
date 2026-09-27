@@ -1,0 +1,8 @@
+import PaperSolution
+
+#print axioms BoundedWanderingDomains.theorem_1_2_entire
+#print axioms MeromorphicDynamics.theorem_1_2_meromorphic
+#print axioms SurfaceDynamics.theorem_1_3_orbit
+#print axioms SurfaceDynamics.theorem_1_3_positive_area
+#print axioms BoundedWanderingDomains.theorem_1_4
+#print axioms SurfaceDynamics.theorem_1_5
