@@ -1,7 +1,7 @@
 # Prepared Palomar submission
 
-The six revised-paper targets and the retained original entire-function theorem
-are proved and selected together in the main configuration. Submit the publicly uploaded repository
+The six revised-paper targets, the retained original entire-function theorem
+and three classical no-wandering corollaries are proved and selected together in the main configuration. Submit the publicly uploaded repository
 at the immutable commit identified in the delivery's `UPLOAD-INSTRUCTIONS.txt`.
 Nothing has been uploaded or submitted by the assistant.
 
@@ -13,7 +13,8 @@ Nothing has been uploaded or submitted by the assistant.
 - Compiler: `leanprover/lean4:v4.35.0-rc2`
 
 The primary comparator selects all six introductory statements plus the original
-`no_bounded_wandering_domains_transcendental_entire` statement, unchanged. Earlier
+`no_bounded_wandering_domains_transcendental_entire` statement, unchanged, plus no-wandering corollaries for compact surface
+self-maps, rational maps and finite-type transcendental entire functions. Earlier
 formulations retain `comparator-legacy.json` and `comparator-singular-limits.json`.
 
 After uploading, let the provided Linux CI run the metadata contract and official
@@ -24,7 +25,8 @@ the external checks that have not yet been run.
 ## Why there are two paper files
 
 Challenge.lean independently states the six targets from the revised paper
-(Theorems 1.2-1.5, with separate cases exposed individually). Its proof holes
+(Theorems 1.2-1.5, with separate cases exposed individually), the original entire
+theorem and the three classical corollaries. Its proof holes
 are intentional specifications. Solution.lean supplies the matching proved
 declarations through the supporting libraries. These are the current revised
 paper statements; the earlier submission pairs are retained in Legacy/.

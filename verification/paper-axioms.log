@@ -5,3 +5,6 @@
 'BoundedWanderingDomains.theorem_1_4' depends on axioms: [propext, Classical.choice, Quot.sound]
 'SurfaceDynamics.theorem_1_5' depends on axioms: [propext, Classical.choice, Quot.sound]
 'BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BoundedWanderingDomains.no_wandering_domains_transcendental_entire_finite_singularValues' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SurfaceDynamics.no_wandering_domains_compact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SurfaceDynamics.no_wandering_domains_rational' depends on axioms: [propext, Classical.choice, Quot.sound]

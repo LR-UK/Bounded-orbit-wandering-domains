@@ -1,8 +1,8 @@
-# Current submission layout - version 1.4.3
+# Current submission layout - version 1.4.4
 
 Only `Challenge.lean` and `Solution.lean` are at the project root.
 `Challenge.lean` contains all six revised-paper statements and the original
-entire-function bounded-orbit theorem, for seven compared theorem declarations.
+entire-function bounded-orbit theorem, and three classical no-wandering corollaries, for ten compared declarations.
 The retained theorem has exactly the same name and hypotheses as before:
 `BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire`.
 
@@ -45,7 +45,7 @@ the consolidated submission.
 
 ## Verification and historical reports
 
-See VERIFICATION.md and `verification/submission-consolidation.json` for current
+See VERIFICATION.md and `verification/no-wandering-release.json` for current
 checks, including comparison with the previous compiled statement types.
 `verification/paper-submission.json` is the main current audit report.
 `verification/layout-audit.json` and `history/layout-1.4.2.md` describe the

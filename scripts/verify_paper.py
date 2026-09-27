@@ -24,6 +24,7 @@ parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--all', action='store_true', help='Also build the retained legacy and research entry points.')
 args = parser.parse_args()
 timings = []
+(OUT / 'paper-declaration-mismatches.json').unlink(missing_ok=True)
 report_path = OUT / 'paper-submission.json'
 if report_path.exists():
     report_path.unlink()  # A failed recheck must not leave a stale success report.

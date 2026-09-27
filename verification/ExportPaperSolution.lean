@@ -18,7 +18,7 @@ open Lean Elab Command in
 run_cmd do
   let env ← getEnv
   let definitions : List Name := [`ComplexDynamics.IsNormalSequenceOn, `ComplexDynamics.RiemannSphere, `ComplexDynamics.riemannSphereUniformSpace, `ComplexDynamics.sphericalIterate, `ComplexDynamics.fatouSet, `ComplexDynamics.IsFatouComponent, `ComplexDynamics.regularValueSet, `ComplexDynamics.singularValues, `ComplexDynamics.sphericalSingularValues, `SurfaceDynamics.LocalMap.step, `SurfaceDynamics.LocalMap.iterate, `SurfaceDynamics.LocalMap.trapped, `SurfaceDynamics.LocalMap.imageAt, `SurfaceDynamics.LocalMap.compactifiedIterate, `SurfaceDynamics.LocalMap.IsNormalOn, `SurfaceDynamics.LocalMap.omega, `SurfaceDynamics.LocalMap.IsComponent, `SurfaceDynamics.LocalMap.IsWanderingComponent, `SurfaceDynamics.LocalMap.regularValues, `SurfaceDynamics.LocalMap.singularValues, `SurfaceDynamics.IsOpenHolomorphic, `SurfaceDynamics.HasPositiveChartArea, `SurfaceDynamics.LocalMap.saturation, `SurfaceDynamics.LocalMap.InjectiveOnSaturation, `SurfaceDynamics.LocalMap.HasSimplyConnectedComponentOrbit, `MeromorphicDynamics.IsRationalMeromorphic, `MeromorphicDynamics.poleAvoidingSet, `MeromorphicDynamics.fatouSet, `MeromorphicDynamics.IsFatouComponent, `SurfaceDynamics.LocalMap, `BoundedWanderingDomains.wandering_orbit_locallyUniform_inftyClaim, `BoundedWanderingDomains.wandering_orbit_pointwise_spherical_singular_derivedSetClaim, `MeromorphicDynamics.WanderingLocallyUniformInfinityClaim, `SurfaceDynamics.NoCompactWanderingOrbitClaim, `SurfaceDynamics.NoCompactPositiveAreaWanderingSetClaim, `SurfaceDynamics.WanderingDerivedSingularLimitClaim]
-  let theorems : List Name := [`BoundedWanderingDomains.theorem_1_2_entire, `MeromorphicDynamics.theorem_1_2_meromorphic, `SurfaceDynamics.theorem_1_3_orbit, `SurfaceDynamics.theorem_1_3_positive_area, `BoundedWanderingDomains.theorem_1_4, `SurfaceDynamics.theorem_1_5, `BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire]
+  let theorems : List Name := [`BoundedWanderingDomains.theorem_1_2_entire, `MeromorphicDynamics.theorem_1_2_meromorphic, `SurfaceDynamics.theorem_1_3_orbit, `SurfaceDynamics.theorem_1_3_positive_area, `BoundedWanderingDomains.theorem_1_4, `SurfaceDynamics.theorem_1_5, `BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire, `BoundedWanderingDomains.no_wandering_domains_transcendental_entire_finite_singularValues, `SurfaceDynamics.no_wandering_domains_compact, `SurfaceDynamics.no_wandering_domains_rational]
   for name in definitions ++ theorems do
     let some ci := env.find? name | throwError "Missing declaration {name}"
     let mut fields := [
@@ -49,3 +49,7 @@ run_cmd do
 #print axioms SurfaceDynamics.theorem_1_5
 
 #print axioms BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire
+
+#print axioms BoundedWanderingDomains.no_wandering_domains_transcendental_entire_finite_singularValues
+#print axioms SurfaceDynamics.no_wandering_domains_compact
+#print axioms SurfaceDynamics.no_wandering_domains_rational

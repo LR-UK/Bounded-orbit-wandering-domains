@@ -2,6 +2,7 @@
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
+import BoundedWanderingDomains.NoWanderingCorollaries
 import BoundedWanderingDomains.EntireBoundedOrbit
 import BoundedWanderingDomains.GlobalLimitStatements
 import BoundedWanderingDomains.MeromorphicEscape

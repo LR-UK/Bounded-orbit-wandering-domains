@@ -129,7 +129,7 @@ for module in ('Legacy.Challenge', 'Legacy.SingularLimitsChallenge'):
             assert not (base / relative).exists(), f"Shadowed Challenge import: {base / relative}"
 
 report = {
-    "result": "passed", "project_version": "1.4.3",
+    "result": "passed", "project_version": "1.4.4",
     "lean": (ROOT / "lean-toolchain").read_text().strip(),
     "mathlib": mathlib,
     "curvature": -1, "area_normalisation": "sphere area bounds use curvature -1 without division; older internal quantities divide by 2*pi",

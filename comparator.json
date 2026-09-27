@@ -8,7 +8,10 @@
     "SurfaceDynamics.theorem_1_3_positive_area",
     "BoundedWanderingDomains.theorem_1_4",
     "SurfaceDynamics.theorem_1_5",
-    "BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire"
+    "BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire",
+    "BoundedWanderingDomains.no_wandering_domains_transcendental_entire_finite_singularValues",
+    "SurfaceDynamics.no_wandering_domains_compact",
+    "SurfaceDynamics.no_wandering_domains_rational"
   ],
   "definition_names": [
     "ComplexDynamics.IsNormalSequenceOn",

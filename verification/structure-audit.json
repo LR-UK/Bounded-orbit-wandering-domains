@@ -1,5 +1,5 @@
 {
-  "tracked_lean_files": 1372,
+  "tracked_lean_files": 1373,
   "auxiliary_module_name_collisions": {
     "scripts.Audit": [
       "dependencies/ComplexApproximation/scripts/Audit.lean",
@@ -10,7 +10,7 @@
   },
   "root_closures": {
     "Solution": {
-      "local": 771,
+      "local": 772,
       "external_frontier": 361
     },
     "Challenge": {
@@ -46,7 +46,7 @@
       "external_frontier": 219
     }
   },
-  "all_root_local_modules": 796,
+  "all_root_local_modules": 797,
   "extra_local_modules_in_legacy_build": [
     "BoundedWanderingDomains.LocalCoveringArea",
     "BoundedWanderingDomains.LocalDerivedSetAreaContradiction",
@@ -649,7 +649,7 @@
     "verification.SurfaceAxioms",
     "verification.UnconditionalAxioms"
   ],
-  "diagnostic_commands": 1317,
+  "diagnostic_commands": 1323,
   "paper_diagnostic_commands": 0,
   "diagnostics_by_file": {
     "dependencies/ComplexApproximation/scripts/Audit.lean": 160,
@@ -658,10 +658,10 @@
     "dependencies/FunctionTheory/scripts/Audit.lean": 608,
     "verification/Axioms.lean": 20,
     "verification/CoveringAxioms.lean": 29,
-    "verification/ExportPaperSolution.lean": 7,
+    "verification/ExportPaperSolution.lean": 10,
     "verification/KernelAxioms.lean": 4,
     "verification/NewResultsAxioms.lean": 16,
-    "verification/PaperAxioms.lean": 7,
+    "verification/PaperAxioms.lean": 10,
     "verification/SurfaceAxioms.lean": 116,
     "verification/UnconditionalAxioms.lean": 7
   },
@@ -1432,6 +1432,10 @@
       "RiemannDynamics.Uniformization.HolomorphicEquiv",
       "RiemannDynamics.Analysis.Winding.GridPrimitives.Primitives",
       "FunctionTheory.Conformal.RiemannMapping"
+    ],
+    "Solution.lean": [
+      "BoundedWanderingDomains.GlobalLimitStatements",
+      "BoundedWanderingDomains.Surfaces.SurfaceOrbitEscape"
     ],
     "dependencies/ComplexApproximation/ComplexApproximation.lean": [
       "ComplexApproximation.Topology.FilledContinua",
@@ -2603,6 +2607,7 @@
     "BoundedWanderingDomains.MeromorphicNormalityBridge",
     "BoundedWanderingDomains.MeromorphicSphereHolomorphic",
     "BoundedWanderingDomains.MeromorphicSurfaceModel",
+    "BoundedWanderingDomains.NoWanderingCorollaries",
     "BoundedWanderingDomains.NormalFamilies",
     "BoundedWanderingDomains.NormalFamilyOnDomain",
     "BoundedWanderingDomains.OmittedPairCompactness",
@@ -3890,6 +3895,10 @@
       "BoundedWanderingDomains.Surfaces.OpenMapping",
       "BoundedWanderingDomains.Surfaces.PlaneReading",
       "FunctionTheory.Meromorphic.RationalInfinity"
+    ],
+    "BoundedWanderingDomains.NoWanderingCorollaries": [
+      "BoundedWanderingDomains.GlobalLimitStatements",
+      "BoundedWanderingDomains.Surfaces.SurfaceOrbitEscape"
     ],
     "BoundedWanderingDomains.NormalFamilies": [
       "BoundedWanderingDomains.RiemannMappingFull",
@@ -6352,6 +6361,7 @@
       "FunctionTheory.Conformal.RiemannMapping"
     ],
     "Solution": [
+      "BoundedWanderingDomains.NoWanderingCorollaries",
       "BoundedWanderingDomains.EntireBoundedOrbit",
       "BoundedWanderingDomains.GlobalLimitStatements",
       "BoundedWanderingDomains.MeromorphicEscape",
@@ -11087,6 +11097,7 @@
     "BoundedWanderingDomains.MeromorphicNormalityBridge": "BoundedWanderingDomains/MeromorphicNormalityBridge.lean",
     "BoundedWanderingDomains.MeromorphicSphereHolomorphic": "BoundedWanderingDomains/MeromorphicSphereHolomorphic.lean",
     "BoundedWanderingDomains.MeromorphicSurfaceModel": "BoundedWanderingDomains/MeromorphicSurfaceModel.lean",
+    "BoundedWanderingDomains.NoWanderingCorollaries": "BoundedWanderingDomains/NoWanderingCorollaries.lean",
     "BoundedWanderingDomains.NormalFamilies": "BoundedWanderingDomains/NormalFamilies.lean",
     "BoundedWanderingDomains.NormalFamilyOnDomain": "BoundedWanderingDomains/NormalFamilyOnDomain.lean",
     "BoundedWanderingDomains.OmittedPairCompactness": "BoundedWanderingDomains/OmittedPairCompactness.lean",
@@ -12791,6 +12802,10 @@
       "bytes": 12825,
       "lines": 269
     },
+    "BoundedWanderingDomains.NoWanderingCorollaries": {
+      "bytes": 3615,
+      "lines": 83
+    },
     "BoundedWanderingDomains.NormalFamilies": {
       "bytes": 5260,
       "lines": 103
@@ -13756,7 +13771,7 @@
       "lines": 312
     },
     "BoundedWanderingDomains.Surfaces.Statements": {
-      "bytes": 3502,
+      "bytes": 3506,
       "lines": 79
     },
     "BoundedWanderingDomains.Surfaces.SubdomainCover": {
@@ -13916,8 +13931,8 @@
       "lines": 64
     },
     "Challenge": {
-      "bytes": 15198,
-      "lines": 360
+      "bytes": 17399,
+      "lines": 413
     },
     "EremenkoLyubichConstant.ClassB": {
       "bytes": 4951,
@@ -14512,8 +14527,8 @@
       "lines": 194
     },
     "Solution": {
-      "bytes": 4965,
-      "lines": 115
+      "bytes": 5020,
+      "lines": 116
     },
     "ComplexApproximation": {
       "bytes": 1991,
@@ -17784,12 +17799,12 @@
       "lines": 31
     },
     "verification.ExportPaperChallenge": {
-      "bytes": 3762,
+      "bytes": 3948,
       "lines": 41
     },
     "verification.ExportPaperSolution": {
-      "bytes": 4246,
-      "lines": 51
+      "bytes": 4659,
+      "lines": 55
     },
     "verification.ExportSingularLimitsChallenge": {
       "bytes": 2107,
@@ -17812,8 +17827,8 @@
       "lines": 20
     },
     "verification.PaperAxioms": {
-      "bytes": 428,
-      "lines": 10
+      "bytes": 655,
+      "lines": 14
     },
     "verification.SurfaceAxioms": {
       "bytes": 8603,

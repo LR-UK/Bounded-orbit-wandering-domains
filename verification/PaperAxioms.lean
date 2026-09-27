@@ -8,3 +8,7 @@ import Solution
 #print axioms SurfaceDynamics.theorem_1_5
 
 #print axioms BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire
+
+#print axioms BoundedWanderingDomains.no_wandering_domains_transcendental_entire_finite_singularValues
+#print axioms SurfaceDynamics.no_wandering_domains_compact
+#print axioms SurfaceDynamics.no_wandering_domains_rational

@@ -1,10 +1,10 @@
 # Proof dependency audit
 
-Solution imports 771 local modules, including the shared original entire theorem.
+Solution imports 772 local modules, including one new corollary module.
 
 | Source group | Modules |
 |---|---:|
-| BoundedWanderingDomains | 359 |
+| BoundedWanderingDomains | 360 |
 | EremenkoLyubichConstant | 18 |
 | RMT4 | 2 |
 | Ray | 55 |
@@ -15,5 +15,5 @@ Solution imports 771 local modules, including the shared original entire theorem
 | dependencies/EremenkosConjecture | 139 |
 | dependencies/FunctionTheory | 120 |
 
-Exact source hashes are recorded in paper-submission.json. Mathlib and Lean
-core are excluded from these local counts. See LAYOUT_UPDATE.md and VERIFICATION.md.
+Exact source hashes are in paper-submission.json. Mathlib and Lean core
+are excluded from these local counts. See VERIFICATION.md for current checks.

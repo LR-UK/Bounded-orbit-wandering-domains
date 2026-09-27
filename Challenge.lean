@@ -18,7 +18,8 @@ import Mathlib.Analysis.Meromorphic.NormalForm
 
 /-! # Independent challenge for the revised paper's introduction
 
-Six revised-paper targets, plus the unchanged original entire-function theorem: entire and meromorphic escape, the two local surface
+Six revised-paper targets, the unchanged original entire-function theorem,
+and three classical no-wandering corollaries: entire and meromorphic escape, the two local surface
 conclusions, entire derived-set accumulation, and surface derived-set/escape.
 The theorem declarations below are independent statement placeholders.
 Their proofs are supplied by Solution, which does not import this module.
@@ -358,3 +359,55 @@ theorem no_bounded_wandering_domains_transcendental_entire
   sorry
 
 end BoundedWanderingDomains
+
+/-! ## Classical no-wandering corollaries
+
+The rational statement uses the intrinsic holomorphic-sphere formulation.
+The finite-singular-value entire statement explicitly treats the transcendental
+case; polynomials are included among rational maps. No meromorphic finite-type
+no-wandering theorem is asserted. -/
+
+namespace BoundedWanderingDomains
+
+/-- A finite-type transcendental entire function has no wandering Fatou domains. -/
+theorem no_wandering_domains_transcendental_entire_finite_singularValues
+    {f : ℂ → ℂ} (hf : Differentiable ℂ f)
+    (htrans : ¬ ∃ p : Polynomial ℂ, ∀ z, f z = p.eval z)
+    (hfinite : (ComplexDynamics.singularValues f).Finite)
+    {U : ℕ → Set ℂ} {z : ℂ}
+    (hU : ∀ n, ComplexDynamics.IsFatouComponent f (U n))
+    (hz : z ∈ U 0) (hforward : ∀ n, MapsTo f (U n) (U (n + 1))) :
+    ¬ Pairwise (fun n m : ℕ => Disjoint (U n) (U m)) := by
+  sorry
+
+end BoundedWanderingDomains
+
+namespace SurfaceDynamics
+
+variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
+  [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X]
+  [ConnectedSpace X] [IsManifold 𝓘(ℂ) 1 X]
+
+/-- An open holomorphic self-map of a compact Riemann surface has no wandering
+normality components. In particular this applies to nonconstant rational maps. -/
+theorem no_wandering_domains_compact [CompactSpace X]
+    (f : LocalMap X) (hf : IsOpenHolomorphic f)
+    (hglobal : (f.source : Set X) = univ) (U : Set X) :
+    ¬ f.IsWanderingComponent U := by
+  sorry
+
+end SurfaceDynamics
+
+namespace SurfaceDynamics
+
+/-- The rational-map corollary, in the intrinsic holomorphic-sphere formulation.
+The source is the whole sphere, so poles and infinity are included. -/
+theorem no_wandering_domains_rational
+    [T2Space (OnePoint ℂ)] [LocallyCompactSpace (OnePoint ℂ)]
+    [ChartedSpace ℂ (OnePoint ℂ)] [IsManifold 𝓘(ℂ) 1 (OnePoint ℂ)]
+    (f : LocalMap (OnePoint ℂ)) (hf : IsOpenHolomorphic f)
+    (hglobal : (f.source : Set (OnePoint ℂ)) = univ) (U : Set (OnePoint ℂ)) :
+    ¬ f.IsWanderingComponent U := by
+  sorry
+
+end SurfaceDynamics

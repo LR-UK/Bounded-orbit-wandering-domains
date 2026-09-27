@@ -1,6 +1,7 @@
-# GitHub update — version 1.4.3
+# GitHub update — version 1.4.4
 
-Version 1.4.3 puts all supporting Lean files in subfolders, leaving only
+Version 1.4.4 adds the requested no-wandering corollaries and revised paper
+background. Supporting Lean files remain in subfolders, leaving only
 `Challenge.lean` and `Solution.lean` at the top level. It preserves
 all six completed paper theorems, includes the unchanged original entire-function
 statement in the main comparison, and retains the import/duplication improvements from
@@ -12,7 +13,7 @@ To bring the history into an existing checkout, fetch the supplied bundle and
 create a review branch:
 
 ```powershell
-git fetch "C:/path/to/derived-set-unified-submission-github.bundle" local-paper-formalisation
+git fetch "C:/path/to/derived-set-no-wandering-github.bundle" local-paper-formalisation
 git switch -c review-paper-formalisation FETCH_HEAD
 lake build
 python scripts/verify_paper.py --all

@@ -1,5 +1,5 @@
 name = "area_deficit"
-version = "1.4.3"
+version = "1.4.4"
 defaultTargets = ["Solution", "Challenge"]
 
 [[require]]
