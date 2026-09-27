@@ -243,9 +243,62 @@ theorem sphereComplThree_uniformGlobalPointInsertionBound
       mem_singleton_iff] using hbc
   · exact hab
 
+/-- The sharp insertion estimate on a three-anchor complement of any surface
+biholomorphic to the sphere.  The canonical sphere atlas now agrees with the
+uniformization atlas, so Möbius normalization supplies the required
+biholomorphism to the normalized model directly. -/
+theorem uniformGlobalPointInsertionBound_of_diffeomorph_sphere
+    {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
+    [IsManifold 𝓘(ℂ) ω X] [T2Space X] [SecondCountableTopology X]
+    [LocallyCompactSpace X] [MeasurableSpace X] [BorelSpace X]
+    {a b c : X} (hab : a ≠ b) (hac : a ≠ c) (hbc : b ≠ c)
+    (e : X ≃ₘ^ω⟮𝓘(ℂ), 𝓘(ℂ)⟯ ℂ̂)
+    (U : Opens X) (hU : ∀ x : X, x ∈ U ↔ x ∉ ({a, b, c} : Set X))
+    [DecidableEq U] (p : DiscCover U) :
+    p.UniformGlobalPointInsertionBound (ENNReal.ofReal (2 * Real.pi)) := by
+  classical
+  obtain ⟨g, hga, hgb, hgc⟩ :=
+    RiemannDynamics.exists_gl_smul_eq_zero_one_infty
+      (e.injective.ne hab) (e.injective.ne hac) (e.injective.ne hbc)
+  obtain ⟨eg, heg⟩ := RiemannDynamics.exists_gl_smul_diffeomorph g
+  let h : X ≃ₘ^ω⟮𝓘(ℂ), 𝓘(ℂ)⟯ ℂ̂ := e.trans eg
+  obtain ⟨V, hVimg, ⟨r⟩⟩ :=
+    RiemannDynamics.exists_diffeomorph_opens_image h U
+  have hV : V = normalizedThricePuncturedSphere := by
+    apply Opens.ext
+    rw [hVimg]
+    have hUset : (U : Set X) = ({a, b, c} : Set X)ᶜ := by
+      ext x
+      exact hU x
+    rw [hUset]
+    change (h.toHomeomorph : X → ℂ̂) '' ({a, b, c} : Set X)ᶜ =
+      ({(∞ : ℂ̂), ((0 : ℂ) : ℂ̂), ((1 : ℂ) : ℂ̂)} : Set ℂ̂)ᶜ
+    rw [h.toHomeomorph.image_compl]
+    congr 1
+    change (h.toHomeomorph : X → ℂ̂) '' ({a, b, c} : Set X) =
+      ({(∞ : ℂ̂), ((0 : ℂ) : ℂ̂), ((1 : ℂ) : ℂ̂)} : Set ℂ̂)
+    have hea : h a = ((0 : ℂ) : ℂ̂) := by
+      change eg (e a) = ((0 : ℂ) : ℂ̂)
+      rw [heg]
+      exact hga
+    have heb : h b = ((1 : ℂ) : ℂ̂) := by
+      change eg (e b) = ((1 : ℂ) : ℂ̂)
+      rw [heg]
+      exact hgb
+    have hec : h c = (∞ : ℂ̂) := by
+      change eg (e c) = (∞ : ℂ̂)
+      rw [heg]
+      exact hgc
+    ext z
+    simp [hea, heb, hec, or_comm, or_left_comm]
+  subst V
+  letI : LocallyCompactSpace U := U.isOpen.locallyCompactSpace
+  exact p.uniformGlobalPointInsertionBound_of_diffeomorph_normalized r
+
 end AreaDeficit.Surfaces.DiscCover
 
 #print axioms AreaDeficit.Surfaces.DiscCover.normalizedThricePuncturedSphere_uniformGlobalPointInsertionBound
 #print axioms AreaDeficit.Surfaces.DiscCover.uniformGlobalPointInsertionBound_of_diffeomorph_normalized
 #print axioms AreaDeficit.Surfaces.DiscCover.sphereDomain_uniformGlobalPointInsertionBound_of_chart
 #print axioms AreaDeficit.Surfaces.DiscCover.sphereComplThree_uniformGlobalPointInsertionBound
+#print axioms AreaDeficit.Surfaces.DiscCover.uniformGlobalPointInsertionBound_of_diffeomorph_sphere

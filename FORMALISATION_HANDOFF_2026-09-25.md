@@ -843,3 +843,13 @@ three distinct anchors has the sharp uniform `2π` insertion bound.  The focused
 module build passes and the new theorem has no `sorryAx`.  The compact torus
 case remains the nonhyperbolic compact-surface input needed by the global
 positive-area branch.
+
+The legacy `RiemannDynamics` sphere manifold now aliases FunctionTheory's
+canonical Riemann-sphere atlas, and its explicit finite/infinity charts are the
+canonical charts.  The complete dependent uniformization chain, including
+Möbius holomorphic equivalences and `SpherePunctureCover`, rebuilds successfully.
+This removes the duplicate-atlas obstruction and deletes the duplicated atlas
+compatibility proof.  `uniformGlobalPointInsertionBound_of_diffeomorph_sphere`
+now proves the sharp `2π` insertion bound on a three-anchor complement of any
+surface biholomorphic to the sphere, using the existing Möbius normalization.
+The focused build has no `sorryAx` in the new theorem.
