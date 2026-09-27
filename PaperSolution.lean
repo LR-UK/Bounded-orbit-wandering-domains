@@ -4,6 +4,8 @@ Released under Apache 2.0 licence; see LICENSE.
 -/
 import BoundedWanderingDomains.GlobalLimitStatements
 import BoundedWanderingDomains.MeromorphicNormalityBridge
+import BoundedWanderingDomains.MeromorphicEscape
+import BoundedWanderingDomains.Surfaces.SurfaceOrbitEscape
 import BoundedWanderingDomains.Surfaces.DerivedLimitReduction
 import BoundedWanderingDomains.Surfaces.CompactLocalAreaAdvance
 
@@ -48,11 +50,33 @@ theorem theorem_1_4 :
 
 end BoundedWanderingDomains
 
+namespace MeromorphicDynamics
+
+theorem theorem_1_2_meromorphic :
+    ∀ {f : ℂ → ℂ}, MeromorphicNFOn f univ →
+      ¬ FunctionTheory.IsRationalMeromorphic f →
+      ∀ {U : ℕ → Set ℂ} {z : ℂ},
+        (∀ n, IsFatouComponent f (U n)) → z ∈ U 0 →
+        (∀ n, MapsTo f (U n) (U (n + 1))) →
+        Pairwise (fun n m => Disjoint (U n) (U m)) →
+        ∃ φ : ℕ → ℕ, StrictMono φ ∧ TendstoLocallyUniformlyOn
+          (fun k w => ((f^[φ k]) w : OnePoint ℂ))
+          (fun _ => (∞ : OnePoint ℂ)) atTop (U 0) :=
+  wanderingLocallyUniformInfinityClaim_of_surface_theorem
+    SurfaceDynamics.noCompactWanderingOrbitClaim
+
+end MeromorphicDynamics
+
 namespace SurfaceDynamics
 
 variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X]
   [ConnectedSpace X] [IsManifold 𝓘(ℂ) 1 X]
+
+theorem theorem_1_3_orbit : NoCompactWanderingOrbitClaim (X := X) :=
+  noCompactWanderingOrbitClaim
+
+variable
   [MeasurableSpace X] [BorelSpace X]
 
 /-- The exact positive-area statement of Theorem 1.3(2) for every
@@ -74,5 +98,7 @@ end SurfaceDynamics
 
 #print axioms BoundedWanderingDomains.theorem_1_2_entire
 #print axioms BoundedWanderingDomains.theorem_1_4
+#print axioms MeromorphicDynamics.theorem_1_2_meromorphic
+#print axioms SurfaceDynamics.theorem_1_3_orbit
 #print axioms SurfaceDynamics.theorem_1_3_positive_area_noncompact
 #print axioms SurfaceDynamics.theorem_1_3_positive_area_hyperbolic
