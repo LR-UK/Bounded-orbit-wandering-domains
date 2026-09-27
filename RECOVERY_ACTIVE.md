@@ -338,3 +338,11 @@ Commit target: intrinsic global Green reduction.
 - Proved a surface logarithmic cutoff is locally one at its centre.
 - Added `FiniteSurfaceCutoffGreen`: each cutoff Laplacian avoids the whole finite puncture set, its intrinsic Green integral is its planar chart pairing, and the global finite cutoff boundary is exactly the negative finite sum of pure puncture pairings. Focused build passes.
 - Next bridge: identify the ambient `domainChartLogRatio (M\\P) (M\\(insert a P))` with the intrinsic chart log ratio for the disc cover of the connected old finite-puncture subtype and its one-point subdomain. Then old-end vanishing and new-end boundedness apply verbatim.
+
+## Checkpoint 2026-09-27: nested finite-domain density bridge
+
+- Added `NestedDomainDensity.lean`.
+- Proved `domainDensity_nested_open`: the componentwise density of a nested ambient open set agrees with the componentwise density of the corresponding open subset of the old-domain subtype. The proof constructs the canonical homeomorphism of connected components and uses covering-pullback uniqueness.
+- Proved `domainChartLogRatio_eq_nested`: on a twice-restricted chart, the ambient quotient `domainChartLogRatio U V` is exactly the ordinary quotient for supplied disc covers of `U` and its nested subtype.
+- Focused module build passes without `sorryAx`.
+- Next: instantiate with `U = M \\ P`, `V = M \\ insert a P`, and the one-point deletion inside `U`; transport old-end vanishing and new-end boundedness into the finite ambient cutoff Green sum.
