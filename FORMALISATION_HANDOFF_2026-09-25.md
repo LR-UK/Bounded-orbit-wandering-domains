@@ -824,3 +824,13 @@ build passed (4045 modules), with no `sorryAx` in the new theorem.  The next
 sphere step is transport from the normalized punctures to arbitrary three
 anchors; the remaining compact non-sphere step is still the intrinsic global
 point-insertion estimate (equivalently, the one-puncture total-area increment).
+
+The same module now also proves transport of this estimate along an arbitrary
+biholomorphism *to the normalized three-punctured sphere*.  It constructs the
+pulled-back global coordinate and checks both coordinate directions directly,
+so the result does not require a separate change-of-area theorem.  A direct
+attempt to instantiate this with the older sphere-normalization construction
+exposed the repository's two definitionally different Riemann-sphere charted
+space instances; use the FunctionTheory `RiemannSphere` coordinates directly,
+or first add a compatibility bridge, when completing arbitrary-anchor sphere
+transport.
