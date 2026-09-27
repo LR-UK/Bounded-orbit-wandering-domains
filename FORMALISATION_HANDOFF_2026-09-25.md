@@ -924,3 +924,7 @@ and its logarithmic cutoff/Riesz boundary integral tends to zero.  Together
 with `PunctureBoundaryMass.lean`, the full old-end/new-puncture boundary data
 for Lemma 2.6 is compiled; the remaining work is the finite global Green/Riesz
 assembly on the compactification and its use in the dynamics reductions.
+
+## 27 September local continuation: finite end-mass assembly
+
+`Surfaces/FiniteBoundaryMassAssembly.lean` packages the finite compactification-end bookkeeping. A finite sum of old-end terms tends to zero; finitely many eventually bounded new-end terms admit the sum of their bounds; and the combined old/new boundary contribution has one finite eventual bound. The focused build passes without `sorryAx`. The remaining geometric bridge is the compact-surface Green/Riesz identity connecting this finite boundary sum to the total mass of the nonnegative Laplacian of the log density ratio, hence to the total hyperbolic area gain.
