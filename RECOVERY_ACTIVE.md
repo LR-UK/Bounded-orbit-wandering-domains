@@ -355,3 +355,11 @@ Commit target: intrinsic global Green reduction.
 - Added `CompactificationCutoffGreen.lean`: Green's identity for each normalized end term and the finite sum identity for the normalized full cutoff. This now works with a disc cover only on the anchor complement, so it covers the torus/plane branch as well as the sphere branch.
 - Focused builds pass without `sorryAx`.
 - Next: instantiate the ambient finite set as anchors plus old punctures plus the newly inserted point; apply old-end vanishing to anchors and old punctures, the new-puncture bound to the inserted point, add back the fixed normalization constant, and feed the resulting bound to the Riesz/Fatou package.
+
+## Checkpoint 2026-09-27: nested end charts and boundary transport
+
+- Added `CompactificationEndCharts.lean`: a pairwise-disjoint ambient coordinate disc remains a punctured chart after successive restriction past the fixed anchors, an old finite puncture set, and one new puncture.
+- Proved the inverse of such a restricted chart escapes every compact subset of the old finite-stage surface whenever its ambient centre is absent from that stage. This treats fixed compactification anchors and old finite punctures uniformly.
+- Added `NestedBoundaryMass.lean`: on sufficiently small logarithmic annuli the ambient componentwise density quotient is exactly the quotient of supplied covers of the nested subtypes. Consequently the completed old-end vanishing and new-end uniform bounds transport directly to the compactification Green sum.
+- Focused builds pass without `sorryAx`.
+- Next: define the ambient finite set `anchors ∪ old punctures ∪ {new point}`, classify its unique new end, assemble all end bounds, and construct the Riesz cutoff package giving the uniform global one-point insertion estimate.
