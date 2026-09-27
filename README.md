@@ -1,8 +1,10 @@
 # Absence of bounded-orbit wandering domains
 
 All six statements from the revised paper introduction are proved in Lean.
-The independent specifications are in [PaperChallenge.lean](PaperChallenge.lean);
-the proofs are exposed by [PaperSolution.lean](PaperSolution.lean).
+The independent specifications are in [Challenge.lean](Challenge.lean);
+the proofs are exposed by [Solution.lean](Solution.lean). The original
+entire-function bounded-orbit theorem is also included under its unchanged name
+and statement, making seven selected theorem declarations in total.
 
 | Paper statement | Proved declaration |
 |---|---|
@@ -12,6 +14,7 @@ the proofs are exposed by [PaperSolution.lean](PaperSolution.lean).
 | Theorem 1.3(2), positive-area wandering sets | `SurfaceDynamics.theorem_1_3_positive_area` |
 | Theorem 1.4, entire derived singular accumulation | `BoundedWanderingDomains.theorem_1_4` |
 | Theorem 1.5, surface escape or derived singular accumulation | `SurfaceDynamics.theorem_1_5` |
+| Original entire-function bounded-orbit theorem (unchanged) | `BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire` |
 
 The surface statements apply to arbitrary Riemann surfaces and actual local
 open holomorphic maps. Compact sets in Theorem 1.3 lie inside the map's source.
@@ -19,9 +22,9 @@ Simple connectivity is required only by Theorem 1.5. Meromorphic maps may have
 poles. See [PAPER_STATEMENT_ALIGNMENT.md](PAPER_STATEMENT_ALIGNMENT.md) for the
 precise hypotheses and [PAPER_PROOF_GUIDE.md](PAPER_PROOF_GUIDE.md) for the proof route.
 
-The six theorem types and 36 supporting declarations match the independent
+The seven theorem types and 36 supporting declarations match the independent
 challenge. The transitive axiom audit reports only `propext`, `Classical.choice`,
-and `Quot.sound`; 770 local proof modules were scanned for holes and shortcuts.
+and `Quot.sound`; 771 local proof modules were scanned for holes and shortcuts.
 The complete build also verifies the retained earlier results.
 
 ## Project layout
@@ -29,8 +32,8 @@ The complete build also verifies the retained earlier results.
 Only the two current submission files are at the top level:
 
 ```text
-PaperChallenge.lean        Independent statements of the six paper theorems
-PaperSolution.lean         Proved versions of those statements
+Challenge.lean        Six paper statements and the original entire-function statement
+Solution.lean         Proved versions of those statements
 BoundedWanderingDomains/   Main proof library, including CoveringSolution.lean
 RiemannDynamics/           Meromorphic dynamics proofs
 RMT4/, Ray/, EremenkoLyubichConstant/   Supporting libraries
@@ -42,7 +45,8 @@ dependencies/             Contained source dependencies
 
 The earlier entry points remain available under their folder-qualified module
 names. See [LAYOUT_UPDATE.md](LAYOUT_UPDATE.md) for the complete path mapping.
-This reorganisation changes no theorem statements or proof bodies.
+The original entire-function statement retains its exact declaration name and
+hypotheses. The current and legacy solutions share its proof.
 
 ## Build and check
 
@@ -70,8 +74,8 @@ Linux with working bubblewrap user namespaces:
 bash scripts/verify-comparator.sh comparator.json
 ```
 
-`comparator.json` and `comparator-paper.json` select the six revised-paper
-targets. `comparator-legacy.json` and `comparator-singular-limits.json` preserve
+`comparator.json` and `comparator-paper.json` select all seven
+targets (the six revised-paper statements and the original entire theorem). `comparator-legacy.json` and `comparator-singular-limits.json` preserve
 the earlier independent comparisons. Challenge `sorry` placeholders are
 intentional specifications and are never imported by the proofs.
 

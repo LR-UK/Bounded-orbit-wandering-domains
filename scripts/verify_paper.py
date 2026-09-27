@@ -1,4 +1,4 @@
-"""Build and audit the six revised-paper statements (not official Comparator)."""
+"""Build and audit the current paper statements and retained entire-function theorem (not official Comparator)."""
 from pathlib import Path
 import argparse
 import hashlib
@@ -37,24 +37,24 @@ def run(args, filename):
         raise RuntimeError(f'{args} failed; see verification/{filename}')
     timings.append({'command': args, 'seconds': time.perf_counter() - started})
 
-targets = ['PaperSolution', 'PaperChallenge']
+targets = ['Solution', 'Challenge']
 if args.all:
     targets += ['Research.SurfaceResearch', 'Legacy.Solution', 'Legacy.Challenge', 'BoundedWanderingDomains.CoveringSolution',
                 'Research.NewResults', 'Legacy.SingularLimitsChallenge', 'Legacy.SingularLimitsSolution']
 run(['build', *targets], 'paper-build.log')
-for module in ['PaperChallenge', 'PaperSolution']:
-    run(['env', 'lean', f'verification/Export{module}.lean'], module.lower() + '-declarations.log')
+for module in ['Challenge', 'Solution']:
+    run(['env', 'lean', f'verification/ExportPaper{module}.lean'], 'paper' + module.lower() + '-declarations.log')
 
 def declarations(module):
     answer = {}
-    for line in (OUT / (module.lower() + '-declarations.log')).read_text(encoding='utf-8').splitlines():
+    for line in (OUT / ('paper' + module.lower() + '-declarations.log')).read_text(encoding='utf-8').splitlines():
         if 'PALOMAR_DECL ' in line:
             entry = json.loads(line.split('PALOMAR_DECL ', 1)[1])
             assert entry['name'] not in answer
             answer[entry['name']] = entry
     return answer
 
-challenge, solution = declarations('PaperChallenge'), declarations('PaperSolution')
+challenge, solution = declarations('Challenge'), declarations('Solution')
 assert set(challenge) == set(solution), 'Missing compared declarations'
 claim_names = [
     'BoundedWanderingDomains.wandering_orbit_locallyUniform_inftyClaim',
@@ -74,7 +74,7 @@ if mismatches:
     (OUT / 'paper-declaration-mismatches.json').write_text(json.dumps(mismatches, indent=2), encoding='utf-8')
     raise AssertionError('Independent declaration mismatch: ' + repr(mismatches))
 
-# The solution exporter also prints the six transitive axiom reports. Keeping
+# The solution exporter also prints the transitive axiom reports. Keeping
 # these checks in the same Lean process avoids loading the large proof
 # environment a second time. PaperAxioms.lean remains a standalone audit.
 audit_text = (OUT / 'papersolution-declarations.log').read_text(encoding='utf-8')
@@ -114,7 +114,7 @@ def visit(module):
     for dependency in imports:
         visit(dependency)
 
-visit('PaperSolution')
+visit('Solution')
 paper_visited = dict(visited)
 if args.all:
     for module in ['Research.SurfaceResearch', 'Legacy.Solution', 'BoundedWanderingDomains.CoveringSolution', 'Research.NewResults',

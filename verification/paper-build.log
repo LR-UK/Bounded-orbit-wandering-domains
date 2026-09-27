@@ -1,44 +1,4 @@
-⚠ [3258/3266] Replayed BoundedWanderingDomains.WanderingSets
-warning: BoundedWanderingDomains/WanderingSets.lean:3:0: 'Mathlib.Data.Set.Lattice' has been deprecated: please replace this import by
-
-import Mathlib.Data.Set.Lattice.Bounded
-import Mathlib.Data.Set.Lattice.Disjoint
-import Mathlib.Data.Set.Lattice.Image
-import Mathlib.Data.Set.Lattice.Indexed
-import Mathlib.Data.Set.Lattice.Order
-ℹ [3283/3292] Replayed Ray.Misc.Bounds
-info: Ray/Misc/Bounds.lean:74:6: Try this:
-  [apply] rwa [← ak]
-
-Note: This linter can be disabled with `set_option linter.tacticAnalysis.rwaSuggestion false`
-info: Ray/Misc/Bounds.lean:344:34: Try this:
-  [apply] rwa [← zw]
-
-Note: This linter can be disabled with `set_option linter.tacticAnalysis.rwaSuggestion false`
-ℹ [3289/3329] Replayed Ray.Misc.Multilinear
-info: Ray/Misc/Multilinear.lean:67:4: Try this:
-  [apply] rwa [fstCmmap_apply, norm_one] at lo
-
-Note: This linter can be disabled with `set_option linter.tacticAnalysis.rwaSuggestion false`
-info: Ray/Misc/Multilinear.lean:80:4: Try this:
-  [apply] rwa [sndCmmap_apply, norm_one] at lo
-
-Note: This linter can be disabled with `set_option linter.tacticAnalysis.rwaSuggestion false`
-ℹ [3333/3339] Replayed Ray.Hartogs.Osgood
-info: Ray/Hartogs/Osgood.lean:378:4: Try this:
-  [apply] rwa [← Nat.add_sub_assoc n0n n0, Nat.add_sub_cancel_left] at sb
-
-Note: This linter can be disabled with `set_option linter.tacticAnalysis.rwaSuggestion false`
-info: Ray/Hartogs/Osgood.lean:403:38: Try this:
-  [apply] rwa [abs_of_pos h.rp, div_lt_one h.rp]
-
-Note: This linter can be disabled with `set_option linter.tacticAnalysis.rwaSuggestion false`
-ℹ [3349/3367] Replayed Ray.Analytic.Products
-info: Ray/Analytic/Products.lean:163:26: Try this:
-  [apply] rwa [← hg]
-
-Note: This linter can be disabled with `set_option linter.tacticAnalysis.rwaSuggestion false`
-⚠ [3896/3907] Replayed RiemannDynamics.Uniformization.SphereManifold
+⚠ [3047/3073] Replayed RiemannDynamics.Uniformization.SphereManifold
 warning: RiemannDynamics/Uniformization/SphereManifold.lean:164:32: `if_pos` has been deprecated: Use `ite_eq_left` instead
 
 Hint: Replace the deprecated name:
@@ -55,7 +15,15 @@ warning: RiemannDynamics/Uniformization/SphereManifold.lean:197:30: `if_neg` has
 
 Hint: Replace the deprecated name:
   i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
-⚠ [3957/3981] Replayed BoundedWanderingDomains.LogKernelBounds
+⚠ [3193/3216] Replayed BoundedWanderingDomains.WanderingSets
+warning: BoundedWanderingDomains/WanderingSets.lean:3:0: 'Mathlib.Data.Set.Lattice' has been deprecated: please replace this import by
+
+import Mathlib.Data.Set.Lattice.Bounded
+import Mathlib.Data.Set.Lattice.Disjoint
+import Mathlib.Data.Set.Lattice.Image
+import Mathlib.Data.Set.Lattice.Indexed
+import Mathlib.Data.Set.Lattice.Order
+⚠ [3485/3503] Replayed BoundedWanderingDomains.LogKernelBounds
 warning: BoundedWanderingDomains/LogKernelBounds.lean:90:47: This simp argument is unused:
   sq_abs
 
@@ -63,7 +31,39 @@ Hint: Omit it from the simp argument list.
   [apply] simp only [sub_eq_add_neg, abs_div, abs_pow, abs_norm, Real.norm_eq_abs]
 
 Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-⚠ [4048/4072] Replayed FunctionTheory.Meromorphic.Sphere
+ℹ [3793/3804] Replayed Ray.Misc.Bounds
+info: Ray/Misc/Bounds.lean:74:6: Try this:
+  [apply] rwa [← ak]
+
+Note: This linter can be disabled with `set_option linter.tacticAnalysis.rwaSuggestion false`
+info: Ray/Misc/Bounds.lean:344:34: Try this:
+  [apply] rwa [← zw]
+
+Note: This linter can be disabled with `set_option linter.tacticAnalysis.rwaSuggestion false`
+ℹ [3794/3804] Replayed Ray.Misc.Multilinear
+info: Ray/Misc/Multilinear.lean:67:4: Try this:
+  [apply] rwa [fstCmmap_apply, norm_one] at lo
+
+Note: This linter can be disabled with `set_option linter.tacticAnalysis.rwaSuggestion false`
+info: Ray/Misc/Multilinear.lean:80:4: Try this:
+  [apply] rwa [sndCmmap_apply, norm_one] at lo
+
+Note: This linter can be disabled with `set_option linter.tacticAnalysis.rwaSuggestion false`
+ℹ [3805/3818] Replayed Ray.Hartogs.Osgood
+info: Ray/Hartogs/Osgood.lean:378:4: Try this:
+  [apply] rwa [← Nat.add_sub_assoc n0n n0, Nat.add_sub_cancel_left] at sb
+
+Note: This linter can be disabled with `set_option linter.tacticAnalysis.rwaSuggestion false`
+info: Ray/Hartogs/Osgood.lean:403:38: Try this:
+  [apply] rwa [abs_of_pos h.rp, div_lt_one h.rp]
+
+Note: This linter can be disabled with `set_option linter.tacticAnalysis.rwaSuggestion false`
+ℹ [3823/3837] Replayed Ray.Analytic.Products
+info: Ray/Analytic/Products.lean:163:26: Try this:
+  [apply] rwa [← hg]
+
+Note: This linter can be disabled with `set_option linter.tacticAnalysis.rwaSuggestion false`
+⚠ [4054/4060] Replayed FunctionTheory.Meromorphic.Sphere
 warning: FunctionTheory/Meromorphic/Sphere.lean:40:37: `if_pos` has been deprecated: Use `ite_eq_left` instead
 
 Hint: Replace the deprecated name:
@@ -72,7 +72,7 @@ warning: FunctionTheory/Meromorphic/Sphere.lean:44:37: `if_neg` has been depreca
 
 Hint: Replace the deprecated name:
   i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
-⚠ [4055/4072] Replayed BoundedWanderingDomains.Surfaces.OpenMapping
+⚠ [4061/4085] Replayed BoundedWanderingDomains.Surfaces.OpenMapping
 warning: BoundedWanderingDomains/Surfaces/OpenMapping.lean:18:0: automatically included section variable(s) unused in theorem `SurfaceDynamics.not_isOpen_singleton_surface`:
   [IsManifold 𝓘(ℂ, ℂ) 1 X]
 consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
@@ -86,7 +86,7 @@ consider restructuring your `variable` declarations so that the variables are no
   omit [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ, ℂ) 1 X] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [4064/4072] Replayed BoundedWanderingDomains.MeromorphicEscape
+⚠ [4070/4085] Replayed BoundedWanderingDomains.MeromorphicEscape
 warning: BoundedWanderingDomains/MeromorphicEscape.lean:84:2: Try this:
   letI̵
 
@@ -95,14 +95,14 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4088/4121] Replayed BoundedWanderingDomains.Surfaces.CoveringDiscArea
+⚠ [4094/4100] Replayed BoundedWanderingDomains.Surfaces.CoveringDiscArea
 warning: BoundedWanderingDomains/Surfaces/CoveringDiscArea.lean:17:0: automatically included section variable(s) unused in theorem `AreaDeficit.Surfaces.DiscCover.hyperbolicArea_image_radius`:
   [T2Space M]
 consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
   omit [T2Space M] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [4090/4121] Replayed BoundedWanderingDomains.Surfaces.UniformizationBridge
+⚠ [4096/4123] Replayed BoundedWanderingDomains.Surfaces.UniformizationBridge
 warning: BoundedWanderingDomains/Surfaces/UniformizationBridge.lean:46:2: Try this:
   letI̵
 
@@ -119,23 +119,7 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4112/4134] Replayed BoundedWanderingDomains.Surfaces.DomainKernelArea
-warning: BoundedWanderingDomains/Surfaces/DomainKernelArea.lean:17:0: automatically included section variable(s) unused in theorem `AreaDeficit.Surfaces.DiscCover.domainDensityRatio_tendsto_finite_punctures`:
-  [MeasurableSpace M]
-  [BorelSpace M]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [MeasurableSpace M] [BorelSpace M] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: BoundedWanderingDomains/Surfaces/DomainKernelArea.lean:82:4: Try this:
-  letI̵
-
-The goal is a proposition, so `let` is preferred over `letI`.
-The difference between `let` and `letI` is that `letI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4113/4134] Replayed BoundedWanderingDomains.Surfaces.DomainAreaSubtype
+⚠ [4117/4123] Replayed BoundedWanderingDomains.Surfaces.DomainAreaSubtype
 warning: BoundedWanderingDomains/Surfaces/DomainAreaSubtype.lean:17:0: automatically included section variable(s) unused in theorem `AreaDeficit.Surfaces.DiscCover.domainDensity_eq_connected`:
   [MeasurableSpace M]
   [BorelSpace M]
@@ -151,7 +135,31 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4114/4134] Replayed BoundedWanderingDomains.Surfaces.FiniteModelDiscArea
+⚠ [4118/4123] Replayed BoundedWanderingDomains.Surfaces.FiniteFibers
+warning: BoundedWanderingDomains/Surfaces/FiniteFibers.lean:37:23: This simp argument is unused:
+  d
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [g, e, writtenInExtChartAt, Function.comp_apply, e.left_inv hzs, extChartAt_to_inv]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [4120/4151] Replayed BoundedWanderingDomains.Surfaces.DomainKernelArea
+warning: BoundedWanderingDomains/Surfaces/DomainKernelArea.lean:17:0: automatically included section variable(s) unused in theorem `AreaDeficit.Surfaces.DiscCover.domainDensityRatio_tendsto_finite_punctures`:
+  [MeasurableSpace M]
+  [BorelSpace M]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [MeasurableSpace M] [BorelSpace M] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: BoundedWanderingDomains/Surfaces/DomainKernelArea.lean:82:4: Try this:
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [4121/4151] Replayed BoundedWanderingDomains.Surfaces.FiniteModelDiscArea
 warning: BoundedWanderingDomains/Surfaces/FiniteModelDiscArea.lean:36:2: Try this:
   letI̵
 
@@ -160,15 +168,7 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4115/4134] Replayed BoundedWanderingDomains.Surfaces.FiniteFibers
-warning: BoundedWanderingDomains/Surfaces/FiniteFibers.lean:37:23: This simp argument is unused:
-  d
-
-Hint: Omit it from the simp argument list.
-  [apply] simp only [g, e, writtenInExtChartAt, Function.comp_apply, e.left_inv hzs, extChartAt_to_inv]
-
-Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-⚠ [4117/4134] Replayed BoundedWanderingDomains.Surfaces.ChartMapAreaTransport
+⚠ [4123/4151] Replayed BoundedWanderingDomains.Surfaces.ChartMapAreaTransport
 warning: BoundedWanderingDomains/Surfaces/ChartMapAreaTransport.lean:22:0: automatically included section variable(s) unused in theorem `AreaDeficit.Surfaces.DiscCover.hasDerivAt_writtenInCharts`:
   [MeasurableSpace M]
   [BorelSpace M]
@@ -184,7 +184,7 @@ consider restructuring your `variable` declarations so that the variables are no
   M] [IsManifold 𝓘(ℂ, ℂ) 1 N] [MeasurableSpace N] [BorelSpace N] [SecondCountableTopology N] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [4118/4134] Replayed BoundedWanderingDomains.Surfaces.ChartCriticalValues
+⚠ [4124/4151] Replayed BoundedWanderingDomains.Surfaces.ChartCriticalValues
 warning: BoundedWanderingDomains/Surfaces/ChartCriticalValues.lean:49:0: automatically included section variable(s) unused in theorem `SurfaceDynamics.not_eventuallyConst_writtenInCharts`:
   [MeasurableSpace M]
   [BorelSpace M]
@@ -198,7 +198,12 @@ consider restructuring your `variable` declarations so that the variables are no
   M] [SecondCountableTopology M] [MeasurableSpace N] [BorelSpace N] [SecondCountableTopology N] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [4135/4156] Replayed BoundedWanderingDomains.Surfaces.CompactSurfaceCovering
+⚠ [4141/4151] Replayed BoundedWanderingDomains.Surfaces.LocalMapTotalization
+warning: BoundedWanderingDomains/Surfaces/LocalMapTotalization.lean:26:6: `continuousOn_iff_continuous_restrict` has been deprecated: Use `continuousOn_iff_continuous_domRestrict` instead
+
+Hint: Replace the deprecated name:
+  continuousOn_iff_continuous_r̵d̲o̲m̲R̲estrict
+⚠ [4142/4175] Replayed BoundedWanderingDomains.Surfaces.CompactSurfaceCovering
 warning: BoundedWanderingDomains/Surfaces/CompactSurfaceCovering.lean:22:2: Try this:
   letI̵
 
@@ -207,7 +212,7 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4136/4156] Replayed BoundedWanderingDomains.Surfaces.CompactInteriorCover
+⚠ [4143/4175] Replayed BoundedWanderingDomains.Surfaces.CompactInteriorCover
 warning: BoundedWanderingDomains/Surfaces/CompactInteriorCover.lean:20:0: automatically included section variable(s) unused in theorem `SurfaceDynamics.compact_interior_isCoveringMap`:
   [T2Space M]
   [T2Space N]
@@ -221,12 +226,7 @@ Hint: The binding can be removed (if unused) or named `_` (if used implicitly). 
   [apply] _hK
 
 Note: This linter can be disabled with `set_option linter.unusedVariables false`
-⚠ [4137/4156] Replayed BoundedWanderingDomains.Surfaces.LocalMapTotalization
-warning: BoundedWanderingDomains/Surfaces/LocalMapTotalization.lean:26:6: `continuousOn_iff_continuous_restrict` has been deprecated: Use `continuousOn_iff_continuous_domRestrict` instead
-
-Hint: Replace the deprecated name:
-  continuousOn_iff_continuous_r̵d̲o̲m̲R̲estrict
-⚠ [4138/4156] Replayed BoundedWanderingDomains.Surfaces.LocalCompactCovering
+⚠ [4144/4175] Replayed BoundedWanderingDomains.Surfaces.LocalCompactCovering
 warning: BoundedWanderingDomains/Surfaces/LocalCompactCovering.lean:21:0: automatically included section variable(s) unused in theorem `SurfaceDynamics.LocalMap.sourceCompact_isCompact`:
   [ChartedSpace ℂ X]
   [IsManifold 𝓘(ℂ, ℂ) 1 X]
@@ -267,7 +267,7 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4141/4156] Replayed BoundedWanderingDomains.Surfaces.DomainComponentMap
+⚠ [4147/4175] Replayed BoundedWanderingDomains.Surfaces.DomainComponentMap
 warning: BoundedWanderingDomains/Surfaces/DomainComponentMap.lean:33:8: automatically included section variable(s) unused in theorem `AreaDeficit.Surfaces.domainComponentMap_coe`:
   [IsManifold 𝓘(ℂ, ℂ) 1 M]
   [IsManifold 𝓘(ℂ, ℂ) 1 N]
@@ -289,7 +289,7 @@ consider restructuring your `variable` declarations so that the variables are no
   omit [IsManifold 𝓘(ℂ, ℂ) 1 M] [IsManifold 𝓘(ℂ, ℂ) 1 N] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [4148/4177] Replayed BoundedWanderingDomains.Surfaces.SurfacePolish
+⚠ [4154/4175] Replayed BoundedWanderingDomains.Surfaces.SurfacePolish
 warning: BoundedWanderingDomains/Surfaces/SurfacePolish.lean:19:0: Definition `AreaDeficit.Surfaces.onePointSecondCountableTopology` of class type is semireducible. Most type class instances should be instance-reducible, so consider marking this
 definition with `@[instance_reducible]`. If it is intentionally semireducible, this warning can be disabled with `set_option warn.classDefReducibility false`.
 warning: BoundedWanderingDomains/Surfaces/SurfacePolish.lean:19:0: Definition `onePointSecondCountableTopology` is a proposition; use `theorem` instead of `def`
@@ -348,7 +348,7 @@ definition with `@[instance_reducible]`. If it is intentionally semireducible, t
 warning: BoundedWanderingDomains/Surfaces/SurfacePolish.lean:71:0: Definition `surfacePolishSpace` is a proposition; use `theorem` instead of `def`
 
 Note: This linter can be disabled with `set_option linter.defProp false`
-⚠ [4149/4177] Replayed BoundedWanderingDomains.Surfaces.ChartPartitionCoveringTransport
+⚠ [4155/4175] Replayed BoundedWanderingDomains.Surfaces.ChartPartitionCoveringTransport
 warning: BoundedWanderingDomains/Surfaces/ChartPartitionCoveringTransport.lean:29:2: Try this:
   letI̵
 
@@ -369,7 +369,20 @@ warning: BoundedWanderingDomains/Surfaces/ChartPartitionCoveringTransport.lean:7
 
 Hint: Replace the deprecated name:
   continuousOn_iff_continuous_r̵d̲o̲m̲R̲estrict
-⚠ [4161/4177] Replayed BoundedWanderingDomains.Surfaces.SaturationDynamics
+⚠ [4170/4185] Replayed BoundedWanderingDomains.Surfaces.RemoteCoveringAreaAdvance
+warning: BoundedWanderingDomains/Surfaces/RemoteCoveringAreaAdvance.lean:95:4: Try this:
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: BoundedWanderingDomains/Surfaces/RemoteCoveringAreaAdvance.lean:97:10: `continuousOn_iff_continuous_restrict` has been deprecated: Use `continuousOn_iff_continuous_domRestrict` instead
+
+Hint: Replace the deprecated name:
+  continuousOn_iff_continuous_r̵d̲o̲m̲R̲estrict
+⚠ [4171/4185] Replayed BoundedWanderingDomains.Surfaces.SaturationDynamics
 warning: BoundedWanderingDomains/Surfaces/SaturationDynamics.lean:128:25: `dif_neg` has been deprecated: Use `dite_eq_right` instead
 
 Hint: Replace the deprecated name:
@@ -408,7 +421,23 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4162/4177] Replayed BoundedWanderingDomains.Surfaces.CoordinateDiskSelection
+⚠ [4172/4185] Replayed BoundedWanderingDomains.Surfaces.LocalCompactAreaAdvance
+warning: BoundedWanderingDomains/Surfaces/LocalCompactAreaAdvance.lean:21:0: automatically included section variable(s) unused in theorem `SurfaceDynamics.LocalMap.localCompactCoverDomain_le_finitePunctureDomain`:
+  [ChartedSpace ℂ X]
+  [IsManifold 𝓘(ℂ, ℂ) 1 X]
+  [MeasurableSpace X]
+  [BorelSpace X]
+  [SecondCountableTopology X]
+  [LocallyCompactSpace X]
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [ChartedSpace ℂ
+  X] [IsManifold 𝓘(ℂ, ℂ) 1
+  X] [MeasurableSpace
+  X] [BorelSpace X] [SecondCountableTopology X] [LocallyCompactSpace X] [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [4174/4185] Replayed BoundedWanderingDomains.Surfaces.CoordinateDiskSelection
 warning: BoundedWanderingDomains/Surfaces/CoordinateDiskSelection.lean:19:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
 If you'd rather continue using `push_neg` in your project, you can implement it as follows:
 ```
@@ -443,7 +472,7 @@ Hint: The binding can be removed (if unused) or named `_` (if used implicitly). 
   [apply] _p
 
 Note: This linter can be disabled with `set_option linter.unusedVariables false`
-⚠ [4163/4177] Replayed BoundedWanderingDomains.Surfaces.LocalMapRestriction
+⚠ [4175/4185] Replayed BoundedWanderingDomains.Surfaces.LocalMapRestriction
 warning: BoundedWanderingDomains/Surfaces/LocalMapRestriction.lean:23:8: automatically included section variable(s) unused in theorem `SurfaceDynamics.LocalMap.restrictSource_source`:
   [ChartedSpace ℂ X]
   [IsManifold 𝓘(ℂ, ℂ) 1 X]
@@ -465,43 +494,14 @@ consider restructuring your `variable` declarations so that the variables are no
   omit [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ, ℂ) 1 X] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [4167/4199] Replayed BoundedWanderingDomains.Surfaces.RemoteCoveringAreaAdvance
-warning: BoundedWanderingDomains/Surfaces/RemoteCoveringAreaAdvance.lean:95:4: Try this:
-  letI̵
-
-The goal is a proposition, so `let` is preferred over `letI`.
-The difference between `let` and `letI` is that `letI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: BoundedWanderingDomains/Surfaces/RemoteCoveringAreaAdvance.lean:97:10: `continuousOn_iff_continuous_restrict` has been deprecated: Use `continuousOn_iff_continuous_domRestrict` instead
-
-Hint: Replace the deprecated name:
-  continuousOn_iff_continuous_r̵d̲o̲m̲R̲estrict
-⚠ [4168/4199] Replayed BoundedWanderingDomains.Surfaces.LocalCompactAreaAdvance
-warning: BoundedWanderingDomains/Surfaces/LocalCompactAreaAdvance.lean:21:0: automatically included section variable(s) unused in theorem `SurfaceDynamics.LocalMap.localCompactCoverDomain_le_finitePunctureDomain`:
-  [ChartedSpace ℂ X]
-  [IsManifold 𝓘(ℂ, ℂ) 1 X]
-  [MeasurableSpace X]
-  [BorelSpace X]
-  [SecondCountableTopology X]
-  [LocallyCompactSpace X]
-  [DecidableEq X]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [ChartedSpace ℂ
-  X] [IsManifold 𝓘(ℂ, ℂ) 1
-  X] [MeasurableSpace
-  X] [BorelSpace X] [SecondCountableTopology X] [LocallyCompactSpace X] [DecidableEq X] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [4170/4199] Replayed BoundedWanderingDomains.Surfaces.InvariantSubsurface
+⚠ [4176/4185] Replayed BoundedWanderingDomains.Surfaces.InvariantSubsurface
 warning: BoundedWanderingDomains/Surfaces/InvariantSubsurface.lean:25:7: Variable name `p` is not explicitly referenced.
 
 Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
   [apply] _p
 
 Note: This linter can be disabled with `set_option linter.unusedVariables false`
-⚠ [4171/4199] Replayed BoundedWanderingDomains.Surfaces.CompactCentreNormal
+⚠ [4177/4185] Replayed BoundedWanderingDomains.Surfaces.CompactCentreNormal
 warning: BoundedWanderingDomains/Surfaces/CompactCentreNormal.lean:53:2: Try this:
   letI̵
 
@@ -566,7 +566,7 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4172/4199] Replayed BoundedWanderingDomains.Surfaces.CoordinateDiscParam
+⚠ [4178/4185] Replayed BoundedWanderingDomains.Surfaces.CoordinateDiscParam
 warning: BoundedWanderingDomains/Surfaces/CoordinateDiscParam.lean:22:0: automatically included section variable(s) unused in theorem `RiemannDynamics.CoordDisk.param_argument_mem_target`:
   [IsManifold 𝓘(ℂ, ℂ) 1 X]
 consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
@@ -585,7 +585,7 @@ consider restructuring your `variable` declarations so that the variables are no
   omit [IsManifold 𝓘(ℂ, ℂ) 1 X] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [4173/4199] Replayed BoundedWanderingDomains.Surfaces.LocalIterateHolomorphic
+⚠ [4179/4185] Replayed BoundedWanderingDomains.Surfaces.LocalIterateHolomorphic
 warning: BoundedWanderingDomains/Surfaces/LocalIterateHolomorphic.lean:21:8: automatically included section variable(s) unused in theorem `SurfaceDynamics.LocalMap.orbitOn_zero`:
   [ChartedSpace ℂ X]
   [IsManifold 𝓘(ℂ, ℂ) 1 X]
@@ -600,7 +600,7 @@ consider restructuring your `variable` declarations so that the variables are no
   omit [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ, ℂ) 1 X] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [4174/4199] Replayed BoundedWanderingDomains.Surfaces.CompactOrbitNormal
+⚠ [4180/4185] Replayed BoundedWanderingDomains.Surfaces.CompactOrbitNormal
 warning: BoundedWanderingDomains/Surfaces/CompactOrbitNormal.lean:52:2: Try this:
   letI̵
 
@@ -625,7 +625,7 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4176/4199] Replayed BoundedWanderingDomains.Surfaces.LocalMapSubsurface
+⚠ [4183/4214] Replayed BoundedWanderingDomains.Surfaces.LocalMapSubsurface
 warning: BoundedWanderingDomains/Surfaces/LocalMapSubsurface.lean:21:5: Variable name `hsource` is not explicitly referenced.
 
 Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
@@ -659,7 +659,7 @@ Hint: Use `simp` instead of `simpa`:
   [apply] simp [he, hzyo]
 
 Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
-⚠ [4180/4199] Replayed BoundedWanderingDomains.Surfaces.DiscComparisonInfinity
+⚠ [4186/4214] Replayed BoundedWanderingDomains.Surfaces.DiscComparisonInfinity
 warning: BoundedWanderingDomains/Surfaces/DiscComparisonInfinity.lean:85:0: automatically included section variable(s) unused in theorem `AreaDeficit.Surfaces.DiscCover.densityRatio_tendsto_one_of_tendsto_cocompact`:
   [T2Space M]
   [SecondCountableTopology M]
@@ -667,7 +667,7 @@ consider restructuring your `variable` declarations so that the variables are no
   omit [T2Space M] [SecondCountableTopology M] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [4185/4199] Replayed BoundedWanderingDomains.Surfaces.PositiveAreaBridge
+⚠ [4191/4214] Replayed BoundedWanderingDomains.Surfaces.PositiveAreaBridge
 warning: BoundedWanderingDomains/Surfaces/PositiveAreaBridge.lean:21:0: automatically included section variable(s) unused in theorem `SurfaceDynamics.HasPositiveChartArea.hyperbolicArea_pos`:
   [T2Space X]
 consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
@@ -714,21 +714,21 @@ Hint: Use `simp` instead of `simpa`:
   [apply] simp [h]
 
 Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
-⚠ [4187/4199] Replayed BoundedWanderingDomains.Surfaces.PositiveAreaAdvanceReduction
+⚠ [4193/4214] Replayed BoundedWanderingDomains.Surfaces.PositiveAreaAdvanceReduction
 warning: BoundedWanderingDomains/Surfaces/PositiveAreaAdvanceReduction.lean:64:0: automatically included section variable(s) unused in theorem `SurfaceDynamics.false_of_positive_hyperbolicArea_global_area_advances`:
   [LocallyCompactSpace X]
 consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
   omit [LocallyCompactSpace X] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [4188/4220] Replayed BoundedWanderingDomains.Surfaces.LocalPunctures
+⚠ [4194/4214] Replayed BoundedWanderingDomains.Surfaces.LocalPunctures
 warning: BoundedWanderingDomains/Surfaces/LocalPunctures.lean:18:0: automatically included section variable(s) unused in theorem `SurfaceDynamics.finite_compact_inter_preimage_of_finite`:
   [T2Space X]
 consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
   omit [T2Space X] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [4189/4220] Replayed BoundedWanderingDomains.Surfaces.BoundaryPunctureSequence
+⚠ [4195/4214] Replayed BoundedWanderingDomains.Surfaces.BoundaryPunctureSequence
 warning: BoundedWanderingDomains/Surfaces/BoundaryPunctureSequence.lean:31:0: automatically included section variable(s) unused in theorem `SurfaceDynamics.LocalMap.boundaryBackwardTree_mono`:
   [T2Space X]
   [LocallyCompactSpace X]
@@ -802,7 +802,7 @@ consider restructuring your `variable` declarations so that the variables are no
   X] [LocallyCompactSpace X] [SecondCountableTopology X] [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ, ℂ) 1 X] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [4191/4220] Replayed BoundedWanderingDomains.Surfaces.RestrictedBarrierComponents
+⚠ [4197/4214] Replayed BoundedWanderingDomains.Surfaces.RestrictedBarrierComponents
 warning: BoundedWanderingDomains/Surfaces/RestrictedBarrierComponents.lean:33:2: Try this:
   letI̵
 
@@ -811,7 +811,7 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4192/4220] Replayed BoundedWanderingDomains.Surfaces.BoundaryBarrierPackage
+⚠ [4198/4214] Replayed BoundedWanderingDomains.Surfaces.BoundaryBarrierPackage
 warning: BoundedWanderingDomains/Surfaces/BoundaryBarrierPackage.lean:48:4: Try this:
   letI̵
 
@@ -823,7 +823,7 @@ Note: This linter can be disabled with `set_option linter.style.haveILetI false`
 warning: BoundedWanderingDomains/Surfaces/BoundaryBarrierPackage.lean:86:4: Try this: intro n m hnm x hx
 
 Note: This linter can be disabled with `set_option linter.tacticAnalysis.introMerge false`
-⚠ [4193/4220] Replayed BoundedWanderingDomains.Surfaces.RestrictionSaturationBridge
+⚠ [4199/4214] Replayed BoundedWanderingDomains.Surfaces.RestrictionSaturationBridge
 warning: BoundedWanderingDomains/Surfaces/RestrictionSaturationBridge.lean:36:0: automatically included section variable(s) unused in theorem `SurfaceDynamics.LocalMap.restrictSource_saturation_eq_of_saturation_subset`:
   [T2Space X]
   [LocallyCompactSpace X]
@@ -838,19 +838,19 @@ consider restructuring your `variable` declarations so that the variables are no
   omit [T2Space X] [LocallyCompactSpace X] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [4194/4220] Replayed BoundedWanderingDomains.Surfaces.PositiveAreaBarrierReduction
+⚠ [4200/4214] Replayed BoundedWanderingDomains.Surfaces.PositiveAreaBarrierReduction
 warning: BoundedWanderingDomains/Surfaces/PositiveAreaBarrierReduction.lean:64:7: Variable name `p` is not explicitly referenced.
 
 Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
   [apply] _p
 
 Note: This linter can be disabled with `set_option linter.unusedVariables false`
-⚠ [4195/4220] Replayed BoundedWanderingDomains.Surfaces.BackwardExceptionalPackage
+⚠ [4201/4214] Replayed BoundedWanderingDomains.Surfaces.BackwardExceptionalPackage
 warning: BoundedWanderingDomains/Surfaces/BackwardExceptionalPackage.lean:70:4: Unused tactic linter: `change
   f.map ⟨x, hVsource (subset_closure hxV)⟩ ∈ (S n : Set X) ∪ f.totalize '' ((P n : Set X) ∪ (E : Set X))` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-⚠ [4196/4220] Replayed BoundedWanderingDomains.Surfaces.PositiveAreaExceptionalReduction
+⚠ [4202/4214] Replayed BoundedWanderingDomains.Surfaces.PositiveAreaExceptionalReduction
 warning: BoundedWanderingDomains/Surfaces/PositiveAreaExceptionalReduction.lean:84:12: Unused tactic linter: `change f.map w ∈ S` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
@@ -871,7 +871,7 @@ Note: This linter can be disabled with `set_option linter.unusedSectionVars fals
 warning: BoundedWanderingDomains/Surfaces/PositiveAreaExceptionalReduction.lean:121:10: Unused tactic linter: `change f.map w ∈ S` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-⚠ [4198/4220] Replayed BoundedWanderingDomains.Surfaces.PositiveAreaFinalReduction
+⚠ [4204/4214] Replayed BoundedWanderingDomains.Surfaces.PositiveAreaFinalReduction
 warning: BoundedWanderingDomains/Surfaces/PositiveAreaFinalReduction.lean:46:0: automatically included section variable(s) unused in theorem `SurfaceDynamics.false_of_positiveHyperbolicArea_boundaryBarrier`:
   [ConnectedSpace X]
 consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
@@ -884,7 +884,7 @@ consider restructuring your `variable` declarations so that the variables are no
   omit [ConnectedSpace X] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [4199/4220] Replayed BoundedWanderingDomains.Surfaces.CompactLocalAreaAdvance
+⚠ [4205/4214] Replayed BoundedWanderingDomains.Surfaces.CompactLocalAreaAdvance
 warning: BoundedWanderingDomains/Surfaces/CompactLocalAreaAdvance.lean:95:4: Try this:
   letI̵
 
@@ -931,7 +931,7 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4200/4220] Replayed BoundedWanderingDomains.Surfaces.WanderingDiscShrink
+⚠ [4206/4214] Replayed BoundedWanderingDomains.Surfaces.WanderingDiscShrink
 warning: BoundedWanderingDomains/Surfaces/WanderingDiscShrink.lean:37:2: Try this:
   letI̵
 
@@ -948,7 +948,7 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4202/4220] Replayed BoundedWanderingDomains.Surfaces.WanderingDiscInjectivity
+⚠ [4208/4235] Replayed BoundedWanderingDomains.Surfaces.WanderingDiscInjectivity
 warning: BoundedWanderingDomains/Surfaces/WanderingDiscInjectivity.lean:38:2: Try this:
   letI̵
 
@@ -981,7 +981,7 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4203/4220] Replayed BoundedWanderingDomains.Surfaces.EventualCoveringArea
+⚠ [4209/4235] Replayed BoundedWanderingDomains.Surfaces.EventualCoveringArea
 warning: BoundedWanderingDomains/Surfaces/EventualCoveringArea.lean:99:4: Try this:
   letI̵
 
@@ -990,7 +990,7 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4205/4220] Replayed BoundedWanderingDomains.Surfaces.SurfaceFilling
+⚠ [4211/4235] Replayed BoundedWanderingDomains.Surfaces.SurfaceFilling
 warning: BoundedWanderingDomains/Surfaces/SurfaceFilling.lean:33:0: automatically included section variable(s) unused in theorem `AreaDeficit.Surfaces.chart_symm_image_fill_subset_compactFill`:
   [ConnectedSpace X]
   [NoncompactSpace X]
@@ -1006,7 +1006,7 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4206/4220] Replayed BoundedWanderingDomains.Surfaces.BakerCoveringDiscs
+⚠ [4212/4235] Replayed BoundedWanderingDomains.Surfaces.BakerCoveringDiscs
 warning: BoundedWanderingDomains/Surfaces/BakerCoveringDiscs.lean:37:2: Try this:
   letI̵
 
@@ -1027,7 +1027,7 @@ warning: BoundedWanderingDomains/Surfaces/BakerCoveringDiscs.lean:109:59: `Set.m
 
 Hint: Replace the deprecated name:
   S̵e̵t̵.̵m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
-⚠ [4207/4220] Replayed BoundedWanderingDomains.Surfaces.LocalCoveringDiscs
+⚠ [4213/4235] Replayed BoundedWanderingDomains.Surfaces.LocalCoveringDiscs
 warning: BoundedWanderingDomains/Surfaces/LocalCoveringDiscs.lean:50:0: automatically included section variable(s) unused in theorem `SurfaceDynamics.LocalMap.mdifferentiableOn_totalize`:
   [IsManifold 𝓘(ℂ, ℂ) 1 X]
 consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
@@ -1041,14 +1041,14 @@ consider restructuring your `variable` declarations so that the variables are no
   omit [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ, ℂ) 1 X] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [4208/4220] Replayed BoundedWanderingDomains.Surfaces.CompactOrbitRestriction
+⚠ [4214/4235] Replayed BoundedWanderingDomains.Surfaces.CompactOrbitRestriction
 warning: BoundedWanderingDomains/Surfaces/CompactOrbitRestriction.lean:18:0: automatically included section variable(s) unused in theorem `SurfaceDynamics.LocalMap.mem_interior_trapped_restrict_of_compact_orbit`:
   [LocallyCompactSpace X]
 consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
   omit [LocallyCompactSpace X] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [4209/4239] Replayed BoundedWanderingDomains.Surfaces.DerivedLimitReduction
+⚠ [4215/4235] Replayed BoundedWanderingDomains.Surfaces.DerivedLimitReduction
 warning: BoundedWanderingDomains/Surfaces/DerivedLimitReduction.lean:81:0: automatically included section variable(s) unused in theorem `SurfaceDynamics.wanderingDerivedSingularLimitClaim_of_clusterMeetsDerived`:
   [SecondCountableTopology X]
   [ConnectedSpace X]
@@ -1063,7 +1063,7 @@ consider restructuring your `variable` declarations so that the variables are no
   omit [SecondCountableTopology X] [ConnectedSpace X] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [4210/4239] Replayed BoundedWanderingDomains.Surfaces.WanderingOrbitStructure
+⚠ [4216/4235] Replayed BoundedWanderingDomains.Surfaces.WanderingOrbitStructure
 warning: BoundedWanderingDomains/Surfaces/WanderingOrbitStructure.lean:33:0: automatically included section variable(s) unused in theorem `SurfaceDynamics.LocalMap.orbit_mem_of_compactifiedIterate_mem_image`:
   [T2Space X]
   [LocallyCompactSpace X]
@@ -1071,7 +1071,7 @@ consider restructuring your `variable` declarations so that the variables are no
   omit [T2Space X] [LocallyCompactSpace X] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [4211/4239] Replayed BoundedWanderingDomains.Surfaces.OrbitEscapeReduction
+⚠ [4217/4235] Replayed BoundedWanderingDomains.Surfaces.OrbitEscapeReduction
 warning: BoundedWanderingDomains/Surfaces/OrbitEscapeReduction.lean:34:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
 If you'd rather continue using `push_neg` in your project, you can implement it as follows:
 ```
@@ -1089,7 +1089,7 @@ Note: This linter can be disabled with `set_option linter.unusedSectionVars fals
 warning: BoundedWanderingDomains/Surfaces/OrbitEscapeReduction.lean:31:2: Try this: intro f hf U hU z hz K hK hKsource
 
 Note: This linter can be disabled with `set_option linter.tacticAnalysis.introMerge false`
-⚠ [4212/4239] Replayed BoundedWanderingDomains.Surfaces.HyperbolicOrbitEscape
+⚠ [4218/4235] Replayed BoundedWanderingDomains.Surfaces.HyperbolicOrbitEscape
 warning: BoundedWanderingDomains/Surfaces/HyperbolicOrbitEscape.lean:24:2: Try this:
   letI̵
 
@@ -1106,14 +1106,14 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4213/4239] Replayed BoundedWanderingDomains.Surfaces.SubsurfaceOrbitRestriction
+⚠ [4219/4235] Replayed BoundedWanderingDomains.Surfaces.SubsurfaceOrbitRestriction
 warning: BoundedWanderingDomains/Surfaces/SubsurfaceOrbitRestriction.lean:41:0: automatically included section variable(s) unused in theorem `SurfaceDynamics.LocalMap.mem_interior_trapped_restrict_of_subsurface_orbit`:
   [LocallyCompactSpace X]
 consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
   omit [LocallyCompactSpace X] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [4214/4239] Replayed BoundedWanderingDomains.Surfaces.WanderingAnchorDisk
+⚠ [4220/4235] Replayed BoundedWanderingDomains.Surfaces.WanderingAnchorDisk
 warning: BoundedWanderingDomains/Surfaces/WanderingAnchorDisk.lean:35:2: Try this:
   letI̵
 
@@ -1149,7 +1149,7 @@ Hint: The binding can be removed (if unused) or named `_` (if used implicitly). 
   [apply] _p
 
 Note: This linter can be disabled with `set_option linter.unusedVariables false`
-⚠ [4215/4239] Replayed BoundedWanderingDomains.Surfaces.SurfaceOrbitEscape
+⚠ [4221/4235] Replayed BoundedWanderingDomains.Surfaces.SurfaceOrbitEscape
 warning: BoundedWanderingDomains/Surfaces/SurfaceOrbitEscape.lean:21:2: Try this:
   letI̵
 
@@ -1213,7 +1213,7 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4216/4239] Replayed BoundedWanderingDomains.Surfaces.BarrierCompactOrbit
+⚠ [4222/4235] Replayed BoundedWanderingDomains.Surfaces.BarrierCompactOrbit
 warning: BoundedWanderingDomains/Surfaces/BarrierCompactOrbit.lean:20:0: automatically included section variable(s) unused in theorem `SurfaceDynamics.LocalMap.trapped_barrier_component`:
   [ChartedSpace ℂ X]
   [IsManifold 𝓘(ℂ, ℂ) 1 X]
@@ -1253,7 +1253,7 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4218/4239] Replayed BoundedWanderingDomains.Surfaces.LocalMapPunctureBarrier
+⚠ [4224/4235] Replayed BoundedWanderingDomains.Surfaces.LocalMapPunctureBarrier
 warning: BoundedWanderingDomains/Surfaces/LocalMapPunctureBarrier.lean:24:0: automatically included section variable(s) unused in theorem `SurfaceDynamics.LocalMap.sourceExhaustiveBackwardTree_mono`:
   [T2Space X]
   [LocallyCompactSpace X]
@@ -1313,7 +1313,7 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4219/4239] Replayed BoundedWanderingDomains.Surfaces.ForwardSourceBarrier
+⚠ [4225/4235] Replayed BoundedWanderingDomains.Surfaces.ForwardSourceBarrier
 warning: BoundedWanderingDomains/Surfaces/ForwardSourceBarrier.lean:15:0: automatically included section variable(s) unused in theorem `SurfaceDynamics.LocalMap.sourceExhaustiveBackwardTree_forward`:
   [T2Space X]
   [LocallyCompactSpace X]
@@ -1333,7 +1333,7 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4220/4239] Replayed BoundedWanderingDomains.Surfaces.OmegaDynamics
+⚠ [4226/4235] Replayed BoundedWanderingDomains.Surfaces.OmegaDynamics
 warning: BoundedWanderingDomains/Surfaces/OmegaDynamics.lean:30:2: Try this:
   letI̵
 
@@ -1342,7 +1342,7 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4222/4239] Replayed BoundedWanderingDomains.Surfaces.CompactClusterSeparation
+⚠ [4228/4235] Replayed BoundedWanderingDomains.Surfaces.CompactClusterSeparation
 warning: BoundedWanderingDomains/Surfaces/CompactClusterSeparation.lean:14:0: automatically included section variable(s) unused in theorem `SurfaceDynamics.compact_inter_finite_of_avoids_derived`:
   [T2Space X]
   [LocallyCompactSpace X]
@@ -1359,7 +1359,7 @@ consider restructuring your `variable` declarations so that the variables are no
   omit [T2Space X] [LocallyCompactSpace X] [FirstCountableTopology X] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [4224/4239] Replayed BoundedWanderingDomains.Surfaces.RegularCoveringArea
+⚠ [4230/4254] Replayed BoundedWanderingDomains.Surfaces.RegularCoveringArea
 warning: BoundedWanderingDomains/Surfaces/RegularCoveringArea.lean:24:0: automatically included section variable(s) unused in theorem `SurfaceDynamics.LocalMap.exists_regular_domain_cover`:
   [T2Space X]
   [LocallyCompactSpace X]
@@ -1378,7 +1378,7 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4226/4239] Replayed BoundedWanderingDomains.Surfaces.SimplyConnectedCoveringDiscs
+⚠ [4232/4254] Replayed BoundedWanderingDomains.Surfaces.SimplyConnectedCoveringDiscs
 warning: BoundedWanderingDomains/Surfaces/SimplyConnectedCoveringDiscs.lean:15:2: Try this:
   letI̵
 
@@ -1419,29 +1419,7 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4227/4239] Replayed BoundedWanderingDomains.Surfaces.SubsurfaceCompactNormal
-warning: BoundedWanderingDomains/Surfaces/SubsurfaceCompactNormal.lean:15:0: automatically included section variable(s) unused in theorem `SurfaceDynamics.LocalMap.restrictAmbient_orbit_val`:
-  [T2Space X]
-  [LocallyCompactSpace X]
-  [SecondCountableTopology X]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [4228/4239] Replayed BoundedWanderingDomains.Surfaces.SubsurfaceRegularValues
-warning: BoundedWanderingDomains/Surfaces/SubsurfaceRegularValues.lean:18:7: Variable name `hVO` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _hVO
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: BoundedWanderingDomains/Surfaces/SubsurfaceRegularValues.lean:19:7: Variable name `hm` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _hm
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-⚠ [4229/4258] Replayed BoundedWanderingDomains.Surfaces.HyperbolicDerivedLimits
+⚠ [4233/4254] Replayed BoundedWanderingDomains.Surfaces.HyperbolicDerivedLimits
 warning: BoundedWanderingDomains/Surfaces/HyperbolicDerivedLimits.lean:29:2: Try this:
   letI̵
 
@@ -1466,7 +1444,16 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4230/4258] Replayed BoundedWanderingDomains.Surfaces.SubsurfaceWanderingComponents
+⚠ [4234/4254] Replayed BoundedWanderingDomains.Surfaces.SubsurfaceCompactNormal
+warning: BoundedWanderingDomains/Surfaces/SubsurfaceCompactNormal.lean:15:0: automatically included section variable(s) unused in theorem `SurfaceDynamics.LocalMap.restrictAmbient_orbit_val`:
+  [T2Space X]
+  [LocallyCompactSpace X]
+  [SecondCountableTopology X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [4235/4254] Replayed BoundedWanderingDomains.Surfaces.SubsurfaceWanderingComponents
 warning: BoundedWanderingDomains/Surfaces/SubsurfaceWanderingComponents.lean:30:2: Try this:
   letI̵
 
@@ -1499,7 +1486,20 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4231/4258] Replayed BoundedWanderingDomains.Surfaces.NoEscapeCompactRange
+⚠ [4236/4254] Replayed BoundedWanderingDomains.Surfaces.SubsurfaceRegularValues
+warning: BoundedWanderingDomains/Surfaces/SubsurfaceRegularValues.lean:18:7: Variable name `hVO` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hVO
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: BoundedWanderingDomains/Surfaces/SubsurfaceRegularValues.lean:19:7: Variable name `hm` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hm
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [4237/4254] Replayed BoundedWanderingDomains.Surfaces.NoEscapeCompactRange
 warning: BoundedWanderingDomains/Surfaces/NoEscapeCompactRange.lean:24:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
 If you'd rather continue using `push_neg` in your project, you can implement it as follows:
 ```
@@ -1507,7 +1507,7 @@ open Lean.Parser.Tactic in
 macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
   `(tactic| push $cfg:optConfig Not $[$loc]?)
 ```
-⚠ [4232/4258] Replayed BoundedWanderingDomains.Surfaces.SurfaceDerivedLimits
+⚠ [4238/4254] Replayed BoundedWanderingDomains.Surfaces.SurfaceDerivedLimits
 warning: BoundedWanderingDomains/Surfaces/SurfaceDerivedLimits.lean:23:2: Try this:
   letI̵
 
@@ -1548,7 +1548,7 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4234/4258] Replayed BoundedWanderingDomains.Surfaces.FinitePunctureTopology
+⚠ [4240/4254] Replayed BoundedWanderingDomains.Surfaces.FinitePunctureTopology
 warning: BoundedWanderingDomains/Surfaces/FinitePunctureTopology.lean:28:6: Try this:
   letI̵
 
@@ -1586,7 +1586,7 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4235/4258] Replayed BoundedWanderingDomains.Surfaces.PlaneCoverPuncture
+⚠ [4241/4254] Replayed BoundedWanderingDomains.Surfaces.PlaneCoverPuncture
 warning: BoundedWanderingDomains/Surfaces/PlaneCoverPuncture.lean:35:2: Try this:
   letI̵
 
@@ -1697,7 +1697,7 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4236/4258] Replayed BoundedWanderingDomains.Surfaces.SpherePunctureCover
+⚠ [4242/4254] Replayed BoundedWanderingDomains.Surfaces.SpherePunctureCover
 warning: BoundedWanderingDomains/Surfaces/SpherePunctureCover.lean:100:8: Unused tactic linter: `change (z : ℂ̂) ∈ (U : Set ℂ̂)` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
@@ -1810,7 +1810,7 @@ Hint: Use `simp` instead of `simpa`:
   [apply] simp [U, P] at haU
 
 Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
-⚠ [4237/4258] Replayed BoundedWanderingDomains.Surfaces.CompactFiniteHyperbolization
+⚠ [4243/4254] Replayed BoundedWanderingDomains.Surfaces.CompactFiniteHyperbolization
 warning: BoundedWanderingDomains/Surfaces/CompactFiniteHyperbolization.lean:31:2: Try this:
   letI̵
 
@@ -1882,7 +1882,7 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4238/4258] Replayed BoundedWanderingDomains.Surfaces.CompactGlobalAnchors
+⚠ [4244/4254] Replayed BoundedWanderingDomains.Surfaces.CompactGlobalAnchors
 warning: BoundedWanderingDomains/Surfaces/CompactGlobalAnchors.lean:62:4: `simp` already closes the goal
 
 Hint: Use `simp` instead of `simpa`:
@@ -1919,7 +1919,7 @@ Hint: Use `simp` instead of `simpa`:
   [apply] simp [V, hsource]
 
 Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
-⚠ [4240/4258] Replayed BoundedWanderingDomains.Surfaces.FiniteEndNormal
+⚠ [4246/4254] Replayed BoundedWanderingDomains.Surfaces.FiniteEndNormal
 warning: BoundedWanderingDomains/Surfaces/FiniteEndNormal.lean:68:2: Try this:
   letI̵
 
@@ -1928,7 +1928,7 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4241/4258] Replayed BoundedWanderingDomains.Surfaces.CompactPunctureMontel
+⚠ [4247/4254] Replayed BoundedWanderingDomains.Surfaces.CompactPunctureMontel
 warning: BoundedWanderingDomains/Surfaces/CompactPunctureMontel.lean:23:2: Try this:
   letI̵
 
@@ -1937,7 +1937,7 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4242/4258] Replayed BoundedWanderingDomains.Surfaces.CompactAnchorNormality
+⚠ [4248/4254] Replayed BoundedWanderingDomains.Surfaces.CompactAnchorNormality
 warning: BoundedWanderingDomains/Surfaces/CompactAnchorNormality.lean:45:2: Try this:
   letI̵
 
@@ -1946,7 +1946,7 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4243/4258] Replayed BoundedWanderingDomains.Surfaces.CompactGlobalSingularValues
+⚠ [4249/4254] Replayed BoundedWanderingDomains.Surfaces.CompactGlobalSingularValues
 warning: BoundedWanderingDomains/Surfaces/CompactGlobalSingularValues.lean:21:2: Try this:
   letI̵
 
@@ -1971,7 +1971,7 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4245/4258] Replayed BoundedWanderingDomains.Surfaces.GlobalPointInsertion
+⚠ [4251/4254] Replayed BoundedWanderingDomains.Surfaces.GlobalPointInsertion
 warning: BoundedWanderingDomains/Surfaces/GlobalPointInsertion.lean:33:0: automatically included section variable(s) unused in theorem `AreaDeficit.Surfaces.DiscCover.uniformGlobalPointInsertionBound_independent`:
   [LocallyCompactSpace M]
 consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
@@ -2027,7 +2027,7 @@ Hint: Omit it from the simp argument list.
   [apply] simp
 
 Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-⚠ [4247/4258] Replayed BoundedWanderingDomains.CuspAreaIntegrability
+⚠ [4253/4278] Replayed BoundedWanderingDomains.CuspAreaIntegrability
 warning: BoundedWanderingDomains/CuspAreaIntegrability.lean:26:12: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
 
 Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
@@ -2050,7 +2050,7 @@ warning: BoundedWanderingDomains/CuspAreaIntegrability.lean:136:6: `if_pos` has 
 
 Hint: Replace the deprecated name:
   i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
-⚠ [4248/4258] Replayed BoundedWanderingDomains.Surfaces.CuspDensityBounds
+⚠ [4254/4278] Replayed BoundedWanderingDomains.Surfaces.CuspDensityBounds
 warning: BoundedWanderingDomains/Surfaces/CuspDensityBounds.lean:133:19: `Set.mem_diff` has been deprecated: Use `Set.mem_sdiff` instead
 
 Hint: Replace the deprecated name:
@@ -2063,7 +2063,14 @@ warning: BoundedWanderingDomains/Surfaces/CuspDensityBounds.lean:149:6: `if_pos`
 
 Hint: Replace the deprecated name:
   i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
-⚠ [4249/4258] Replayed BoundedWanderingDomains.Surfaces.SphereGlobalPointInsertion
+⚠ [4255/4278] Replayed BoundedWanderingDomains.Surfaces.CuspAreaFinite
+warning: BoundedWanderingDomains/Surfaces/CuspAreaFinite.lean:19:0: automatically included section variable(s) unused in theorem `AreaDeficit.Surfaces.DiscCover.hyperbolicArea_cusp_chart_finite`:
+  [T2Space M]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [T2Space M] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [4257/4278] Replayed BoundedWanderingDomains.Surfaces.SphereGlobalPointInsertion
 warning: BoundedWanderingDomains/Surfaces/SphereGlobalPointInsertion.lean:40:2: Try this:
   letI̵
 
@@ -2163,14 +2170,7 @@ warning: BoundedWanderingDomains/Surfaces/SphereGlobalPointInsertion.lean:278:4:
     ({(∞ : ℂ̂), ((0 : ℂ) : ℂ̂), ((1 : ℂ) : ℂ̂)} : Set ℂ̂)` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-⚠ [4250/4281] Replayed BoundedWanderingDomains.Surfaces.CuspAreaFinite
-warning: BoundedWanderingDomains/Surfaces/CuspAreaFinite.lean:19:0: automatically included section variable(s) unused in theorem `AreaDeficit.Surfaces.DiscCover.hyperbolicArea_cusp_chart_finite`:
-  [T2Space M]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [T2Space M] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [4256/4281] Replayed BoundedWanderingDomains.Surfaces.ChartZeroExtension
+⚠ [4262/4278] Replayed BoundedWanderingDomains.Surfaces.ChartZeroExtension
 warning: BoundedWanderingDomains/Surfaces/ChartZeroExtension.lean:22:0: automatically included section variable(s) unused in theorem `AreaDeficit.Surfaces.chartZeroExtensionIn_eq`:
   [ChartedSpace ℂ M]
   [IsManifold 𝓘(ℂ, ℂ) 1 M]
@@ -2209,7 +2209,7 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4257/4281] Replayed BoundedWanderingDomains.Surfaces.ChartPullbackExtension
+⚠ [4263/4278] Replayed BoundedWanderingDomains.Surfaces.ChartPullbackExtension
 warning: BoundedWanderingDomains/Surfaces/ChartPullbackExtension.lean:23:0: automatically included section variable(s) unused in theorem `AreaDeficit.Surfaces.chartPullbackExtension_eq`:
   [ChartedSpace ℂ M]
   [IsManifold 𝓘(ℂ, ℂ) 1 M]
@@ -2234,7 +2234,7 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4258/4281] Replayed BoundedWanderingDomains.Surfaces.SurfaceLogCutoff
+⚠ [4264/4278] Replayed BoundedWanderingDomains.Surfaces.SurfaceLogCutoff
 warning: BoundedWanderingDomains/Surfaces/SurfaceLogCutoff.lean:23:0: automatically included section variable(s) unused in theorem `AreaDeficit.Surfaces.exp_neg_le_coordDisk_radius`:
   [IsManifold 𝓘(ℂ, ℂ) 1 M]
   [T2Space M]
@@ -2250,7 +2250,7 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4259/4281] Replayed BoundedWanderingDomains.Surfaces.FiniteSurfacePunctureCutoff
+⚠ [4265/4278] Replayed BoundedWanderingDomains.Surfaces.FiniteSurfacePunctureCutoff
 warning: BoundedWanderingDomains/Surfaces/FiniteSurfacePunctureCutoff.lean:52:0: automatically included section variable(s) unused in theorem `AreaDeficit.Surfaces.FinitePunctureDiscs.eventually_admissible`:
   [IsManifold 𝓘(ℂ, ℂ) 1 M]
   [T2Space M]
@@ -2265,7 +2265,7 @@ consider restructuring your `variable` declarations so that the variables are no
   omit [IsManifold 𝓘(ℂ, ℂ) 1 M] [T2Space M] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [4260/4281] Replayed BoundedWanderingDomains.Surfaces.CompactificationCutoff
+⚠ [4266/4278] Replayed BoundedWanderingDomains.Surfaces.CompactificationCutoff
 warning: BoundedWanderingDomains/Surfaces/CompactificationCutoff.lean:18:0: automatically included section variable(s) unused in theorem `AreaDeficit.Surfaces.FinitePunctureDiscs.hasCompactSupport_restrict_of_tsupport_subset`:
   [ChartedSpace ℂ X]
   [IsManifold 𝓘(ℂ, ℂ) 1 X]
@@ -2350,7 +2350,7 @@ consider restructuring your `variable` declarations so that the variables are no
   omit [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ, ℂ) 1 X] [T2Space X] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [4261/4281] Replayed BoundedWanderingDomains.Surfaces.CompactificationEndCharts
+⚠ [4267/4278] Replayed BoundedWanderingDomains.Surfaces.CompactificationEndCharts
 warning: BoundedWanderingDomains/Surfaces/CompactificationEndCharts.lean:21:0: automatically included section variable(s) unused in theorem `AreaDeficit.Surfaces.FinitePunctureDiscs.puncturedBall_subset_three_restricted_targets`:
   [IsManifold 𝓘(ℂ, ℂ) 1 X]
 consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
@@ -2363,7 +2363,7 @@ consider restructuring your `variable` declarations so that the variables are no
   omit [IsManifold 𝓘(ℂ, ℂ) 1 X] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [4263/4281] Replayed BoundedWanderingDomains.Surfaces.NestedDomainDensity
+⚠ [4269/4278] Replayed BoundedWanderingDomains.Surfaces.NestedDomainDensity
 warning: BoundedWanderingDomains/Surfaces/NestedDomainDensity.lean:20:0: automatically included section variable(s) unused in theorem `AreaDeficit.Surfaces.DiscCover.domainDensity_nested_open`:
   [MeasurableSpace M]
   [BorelSpace M]
@@ -2388,7 +2388,7 @@ Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
 warning: BoundedWanderingDomains/Surfaces/NestedDomainDensity.lean:162:4: Unused tactic linter: `change (xW : U) ∈ d.source` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-⚠ [4264/4281] Replayed BoundedWanderingDomains.LogGrowthCutoff
+⚠ [4270/4278] Replayed BoundedWanderingDomains.LogGrowthCutoff
 warning: BoundedWanderingDomains/LogGrowthCutoff.lean:26:19: Variable name `hC` is not explicitly referenced.
 
 Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
@@ -2398,14 +2398,21 @@ Note: This linter can be disabled with `set_option linter.unusedVariables false`
 warning: BoundedWanderingDomains/LogGrowthCutoff.lean:80:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
 
 Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
-⚠ [4267/4281] Replayed BoundedWanderingDomains.Surfaces.PunctureBoundaryMass
+⚠ [4273/4278] Replayed BoundedWanderingDomains.Surfaces.PunctureBoundaryMass
 warning: BoundedWanderingDomains/Surfaces/PunctureBoundaryMass.lean:54:32: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
 
 Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
 warning: BoundedWanderingDomains/Surfaces/PunctureBoundaryMass.lean:54:50: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
 
 Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
-⚠ [4268/4281] Replayed BoundedWanderingDomains.Surfaces.NestedBoundaryMass
+⚠ [4274/4278] Replayed BoundedWanderingDomains.Surfaces.FiniteBoundaryMassAssembly
+warning: BoundedWanderingDomains/Surfaces/FiniteBoundaryMassAssembly.lean:93:13: Variable name `hB` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hB
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [4275/4307] Replayed BoundedWanderingDomains.Surfaces.NestedBoundaryMass
 warning: BoundedWanderingDomains/Surfaces/NestedBoundaryMass.lean:20:0: automatically included section variable(s) unused in theorem `AreaDeficit.Surfaces.DiscCover.mem_domainChartSet_of_mem_nested_target`:
   [ChartedSpace ℂ M]
   [IsManifold 𝓘(ℂ, ℂ) 1 M]
@@ -2418,14 +2425,7 @@ consider restructuring your `variable` declarations so that the variables are no
   M] [IsManifold 𝓘(ℂ, ℂ) 1 M] [T2Space M] [SecondCountableTopology M] [MeasurableSpace M] [BorelSpace M] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [4269/4281] Replayed BoundedWanderingDomains.Surfaces.FiniteBoundaryMassAssembly
-warning: BoundedWanderingDomains/Surfaces/FiniteBoundaryMassAssembly.lean:93:13: Variable name `hB` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _hB
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-⚠ [4270/4281] Replayed BoundedWanderingDomains.Surfaces.CompactificationInsertionEnds
+⚠ [4276/4307] Replayed BoundedWanderingDomains.Surfaces.CompactificationInsertionEnds
 warning: BoundedWanderingDomains/Surfaces/CompactificationInsertionEnds.lean:26:8: automatically included section variable(s) unused in theorem `AreaDeficit.Surfaces.mem_compactificationInsertionEnds`:
   [ChartedSpace ℂ X]
   [IsManifold 𝓘(ℂ, ℂ) 1 X]
@@ -2584,7 +2584,7 @@ Hint: The binding can be removed (if unused) or named `_` (if used implicitly). 
   [apply] _q
 
 Note: This linter can be disabled with `set_option linter.unusedVariables false`
-⚠ [4272/4305] Replayed BoundedWanderingDomains.Surfaces.DomainSurfaceGreenIdentity
+⚠ [4278/4307] Replayed BoundedWanderingDomains.Surfaces.DomainSurfaceGreenIdentity
 warning: BoundedWanderingDomains/Surfaces/DomainSurfaceGreenIdentity.lean:129:0: automatically included section variable(s) unused in theorem `AreaDeficit.Surfaces.DiscCover.domain_chart_green_nonneg`:
   [MeasurableSpace M]
   [BorelSpace M]
@@ -2592,7 +2592,7 @@ consider restructuring your `variable` declarations so that the variables are no
   omit [MeasurableSpace M] [BorelSpace M] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [4273/4305] Replayed BoundedWanderingDomains.Surfaces.AmbientChartPartition
+⚠ [4279/4307] Replayed BoundedWanderingDomains.Surfaces.AmbientChartPartition
 warning: BoundedWanderingDomains/Surfaces/AmbientChartPartition.lean:23:2: Try this:
   letI̵
 
@@ -2639,7 +2639,7 @@ consider restructuring your `variable` declarations so that the variables are no
   omit [T2Space M] [SecondCountableTopology M] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [4276/4305] Replayed BoundedWanderingDomains.Surfaces.IntrinsicSurfaceLaplacian
+⚠ [4282/4307] Replayed BoundedWanderingDomains.Surfaces.IntrinsicSurfaceLaplacian
 warning: BoundedWanderingDomains/Surfaces/IntrinsicSurfaceLaplacian.lean:69:2: Try this:
   letI̵
 
@@ -2710,14 +2710,14 @@ Hint: The binding can be removed (if unused) or named `_` (if used implicitly). 
   [apply] _hu
 
 Note: This linter can be disabled with `set_option linter.unusedVariables false`
-⚠ [4277/4305] Replayed BoundedWanderingDomains.Surfaces.IntrinsicGreenPairing
+⚠ [4283/4307] Replayed BoundedWanderingDomains.Surfaces.IntrinsicGreenPairing
 warning: BoundedWanderingDomains/Surfaces/IntrinsicGreenPairing.lean:202:5: Variable name `hint` is not explicitly referenced.
 
 Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
   [apply] _hint
 
 Note: This linter can be disabled with `set_option linter.unusedVariables false`
-⚠ [4278/4305] Replayed BoundedWanderingDomains.Surfaces.GlobalIntrinsicGreen
+⚠ [4284/4307] Replayed BoundedWanderingDomains.Surfaces.GlobalIntrinsicGreen
 warning: BoundedWanderingDomains/Surfaces/GlobalIntrinsicGreen.lean:26:2: Try this:
   letI̵
 
@@ -2730,7 +2730,7 @@ warning: BoundedWanderingDomains/Surfaces/GlobalIntrinsicGreen.lean:105:10: `Mea
 
 Hint: Replace the deprecated name:
   integral_finset_̵s̵S̲um
-⚠ [4279/4305] Replayed BoundedWanderingDomains.Surfaces.CompactificationCutoffGreen
+⚠ [4285/4307] Replayed BoundedWanderingDomains.Surfaces.CompactificationCutoffGreen
 warning: BoundedWanderingDomains/Surfaces/CompactificationCutoffGreen.lean:19:8: automatically included section variable(s) unused in theorem `_private.BoundedWanderingDomains.Surfaces.CompactificationCutoffGreen.0.AreaDeficit.Surfaces.FinitePunctureDiscs.closedCarrier_subset_chartSource`:
   [IsManifold 𝓘(ℂ, ℂ) 1 X]
   [T2Space X]
@@ -2762,7 +2762,7 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4280/4305] Replayed BoundedWanderingDomains.Surfaces.CompactificationInsertionRiesz
+⚠ [4286/4307] Replayed BoundedWanderingDomains.Surfaces.CompactificationInsertionRiesz
 warning: BoundedWanderingDomains/Surfaces/CompactificationInsertionRiesz.lean:207:4: Try this:
   letI̵
 
@@ -2787,7 +2787,7 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4281/4305] Replayed BoundedWanderingDomains.Surfaces.CompactAnchorAreaReduction
+⚠ [4287/4307] Replayed BoundedWanderingDomains.Surfaces.CompactAnchorAreaReduction
 warning: BoundedWanderingDomains/Surfaces/CompactAnchorAreaReduction.lean:24:0: automatically included section variable(s) unused in theorem `SurfaceDynamics.anchorComplement_hyperbolicArea_lt_top`:
   [LocallyCompactSpace X]
   [DecidableEq X]
@@ -2859,7 +2859,7 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4283/4305] Replayed BoundedWanderingDomains.Surfaces.CompactGlobalPositiveArea
+⚠ [4289/4307] Replayed BoundedWanderingDomains.Surfaces.CompactGlobalPositiveArea
 warning: BoundedWanderingDomains/Surfaces/CompactGlobalPositiveArea.lean:29:2: Try this:
   letI̵
 
@@ -2892,7 +2892,7 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4284/4305] Replayed BoundedWanderingDomains.Surfaces.SurfacePositiveArea
+⚠ [4290/4307] Replayed BoundedWanderingDomains.Surfaces.SurfacePositiveArea
 warning: BoundedWanderingDomains/Surfaces/SurfacePositiveArea.lean:23:4: Try this:
   letI̵
 
@@ -2901,14 +2901,15 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [4285/4305] Replayed PaperChallenge
-warning: PaperChallenge.lean:309:8: declaration uses `sorry`
-warning: PaperChallenge.lean:312:8: declaration uses `sorry`
-warning: PaperChallenge.lean:320:8: declaration uses `sorry`
-warning: PaperChallenge.lean:331:8: declaration uses `sorry`
-warning: PaperChallenge.lean:334:8: declaration uses `sorry`
-warning: PaperChallenge.lean:338:8: declaration uses `sorry`
-⚠ [4290/4305] Replayed BoundedWanderingDomains.Surfaces.WanderingCompactTail
+⚠ [4291/4307] Replayed Challenge
+warning: Challenge.lean:309:8: declaration uses `sorry`
+warning: Challenge.lean:312:8: declaration uses `sorry`
+warning: Challenge.lean:320:8: declaration uses `sorry`
+warning: Challenge.lean:331:8: declaration uses `sorry`
+warning: Challenge.lean:334:8: declaration uses `sorry`
+warning: Challenge.lean:338:8: declaration uses `sorry`
+warning: Challenge.lean:350:8: declaration uses `sorry`
+⚠ [4296/4307] Replayed BoundedWanderingDomains.Surfaces.WanderingCompactTail
 warning: BoundedWanderingDomains/Surfaces/WanderingCompactTail.lean:32:2: Try this:
   letI̵
 
@@ -2923,7 +2924,7 @@ Hint: The binding can be removed (if unused) or named `_` (if used implicitly). 
   [apply] _p
 
 Note: This linter can be disabled with `set_option linter.unusedVariables false`
-⚠ [4293/4306] Replayed BoundedWanderingDomains.Surfaces.SurfaceGreenIdentity
+⚠ [4299/4307] Replayed BoundedWanderingDomains.Surfaces.SurfaceGreenIdentity
 warning: BoundedWanderingDomains/Surfaces/SurfaceGreenIdentity.lean:119:0: automatically included section variable(s) unused in theorem `AreaDeficit.Surfaces.DiscCover.chart_green_nonneg`:
   [MeasurableSpace M]
   [BorelSpace M]
@@ -2932,9 +2933,7 @@ consider restructuring your `variable` declarations so that the variables are no
   omit [MeasurableSpace M] [BorelSpace M] [SecondCountableTopology M] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-✔ [4294/4306] Built Research.SurfaceGeometry (46s)
-✔ [4295/4306] Built BoundedWanderingDomains.CoveringSolution (50s)
-⚠ [4296/4308] Replayed BoundedWanderingDomains.Surfaces.SurfaceChartPartition
+⚠ [4302/4320] Replayed BoundedWanderingDomains.Surfaces.SurfaceChartPartition
 warning: BoundedWanderingDomains/Surfaces/SurfaceChartPartition.lean:28:2: Try this:
   letI̵
 
@@ -2990,30 +2989,20 @@ consider restructuring your `variable` declarations so that the variables are no
   omit [IsManifold 𝓘(ℂ, ℂ) 1 M] [T2Space M] [SecondCountableTopology M] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-✔ [4297/4308] Built Research.SurfaceFiniteRemoval (101s)
-✔ [4298/4308] Built Research.SurfaceKernel (100s)
-✔ [4299/4308] Built Research.SurfaceDynamicsTargets (74s)
-✔ [4300/4308] Built RiemannDynamics.BoundedWanderingSolution (83s)
-✔ [4301/4315] Built Research.SurfaceResearch (76s)
-✔ [4303/4317] Built BoundedWanderingDomains.SphericalSingularUnbounded (72s)
-⚠ [4307/4319] Built Legacy.Challenge (51s)
+⚠ [4312/4320] Replayed Legacy.Challenge
 warning: Legacy/Challenge.lean:117:8: declaration uses `sorry`
 warning: Legacy/Challenge.lean:129:8: declaration uses `sorry`
 warning: Legacy/Challenge.lean:139:8: declaration uses `sorry`
 warning: Legacy/Challenge.lean:151:8: declaration uses `sorry`
 warning: Legacy/Challenge.lean:163:8: declaration uses `sorry`
 warning: Legacy/Challenge.lean:177:8: declaration uses `sorry`
-✔ [4309/4319] Built BoundedWanderingDomains.SingularLimits (53s)
-⚠ [4312/4319] Built Legacy.SingularLimitsChallenge (46s)
+⚠ [4315/4320] Replayed Legacy.SingularLimitsChallenge
 warning: Legacy/SingularLimitsChallenge.lean:125:8: declaration uses `sorry`
 warning: Legacy/SingularLimitsChallenge.lean:143:8: declaration uses `sorry`
-✔ [4313/4319] Built BoundedWanderingDomains.LocallyUniformSingularLimits (49s)
-✔ [4314/4319] Built Legacy.SingularLimitsSolution (44s)
-✔ [4315/4319] Built Research.NewResults (44s)
-✔ [4316/4319] Built BoundedWanderingDomains.GlobalLimitStatements (40s)
-✔ [4317/4319] Built Legacy.Solution (65s)
-⚠ [4318/4319] Built PaperSolution (66s)
-warning: PaperSolution.lean:102:2: Try this:
+✔ [4317/4320] Built BoundedWanderingDomains.EntireBoundedOrbit (48s)
+✔ [4318/4320] Built Legacy.Solution (42s)
+⚠ [4319/4320] Built Solution (43s)
+warning: Solution.lean:104:2: Try this:
   letI̵
 
 The goal is a proposition, so `let` is preferred over `letI`.
@@ -3021,7 +3010,7 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: PaperSolution.lean:110:2: Try this:
+warning: Solution.lean:112:2: Try this:
   letI̵
 
 The goal is a proposition, so `let` is preferred over `letI`.
@@ -3029,4 +3018,4 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-Build completed successfully (4319 jobs).
+Build completed successfully (4320 jobs).

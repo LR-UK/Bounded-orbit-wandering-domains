@@ -1,10 +1,27 @@
-# Project layout update - version 1.4.2
+# Current submission layout - version 1.4.3
 
-Only `PaperChallenge.lean` and `PaperSolution.lean` remain as top-level Lean files.
-These are still the current challenge and solution for the six paper theorems.
-The Comparator settings, declaration names, hypotheses and proof bodies are unchanged.
+Only `Challenge.lean` and `Solution.lean` are at the project root.
+`Challenge.lean` contains all six revised-paper statements and the original
+entire-function bounded-orbit theorem, for seven compared theorem declarations.
+The retained theorem has exactly the same name and hypotheses as before:
+`BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire`.
 
-Twelve supporting or earlier entry points were moved:
+`Solution.lean` exposes the corresponding proofs. The original theorem's proof
+is shared with `Legacy/Solution.lean` through
+`BoundedWanderingDomains/EntireBoundedOrbit.lean`; there is one copy of the proof.
+The earlier complete challenge/solution pairs remain in `Legacy/`.
+Optional entry points remain in `Research/`, and the main proof libraries remain
+in their existing folders.
+
+## Import and build names
+
+The preceding version's `PaperChallenge` and `PaperSolution` are now `Challenge`
+and `Solution`. Update such imports in your own Lean files. The primary
+configuration remains `comparator.json`; `comparator-paper.json` is identical.
+`lake build` builds the current pair; `python3 scripts/verify_paper.py --all`
+also checks the retained legacy and research results.
+
+The earlier supporting-file moves are:
 
 | Previous module | Current module |
 |---|---|
@@ -21,33 +38,19 @@ Twelve supporting or earlier entry points were moved:
 | `SurfaceKernel` | `Research.SurfaceKernel` |
 | `SurfaceResearch` | `Research.SurfaceResearch` |
 
-A module name such as `Legacy.Solution` corresponds to `Legacy/Solution.lean`.
-Imports, Lake targets, verification scripts and the earlier Comparator configurations
-now use these names. Mathematical namespaces and theorem names are unchanged.
-If your own Lean files import one of the moved modules, update only that import
-using the table above. `import PaperSolution` continues to work.
-The old `lake build Submission` target becomes `lake build Legacy.Solution`.
+The earlier `lake build Submission` target is now `lake build Legacy.Solution`.
+The earlier `Challenge`/`Solution` pair in that table predates the revised-paper
+pair; its files are preserved under `Legacy/`. The current root files contain
+the consolidated submission.
 
-`lake build` still builds the two current paper entry points.
-`python3 scripts/verify_paper.py --all` also builds the retained earlier and
-research results. The folder move itself is not a compilation-speed optimisation;
-previously compiled files affected by the move may need rebuilding once.
+## Verification and historical reports
 
-## Validation
+See VERIFICATION.md and `verification/submission-consolidation.json` for current
+checks, including comparison with the previous compiled statement types.
+`verification/paper-submission.json` is the main current audit report.
+`verification/layout-audit.json` and `history/layout-1.4.2.md` describe the
+preceding directory-only update. BUILD_AUDIT.md and `verification/build-audit.json`
+describe the earlier version 1.4.1 performance audit.
 
-The complete retained build passed again, as did the exact comparison of all
-six paper theorem types and 36 supporting declarations, and the transitive
-axiom checks. Both older challenge/solution comparisons also passed under
-their new names. All import-closure memberships are preserved.
-
-The source comparison against commit `5dc6917882a38a985051ff36df21e91cdde9cc37` checks every Lean source
-after accounting for file moves and import-path changes. No Lean statement or
-proof body was edited; all 1,371 Lean source files and third-party sources are
-preserved. The current paper files are unchanged. See
-`verification/layout-audit.json` and VERIFICATION.md for the completed build
-and declaration checks.
-
-BUILD_AUDIT.md and `verification/build-audit.json` document the earlier version
-1.4.1 performance audit. Their original module names and timings are historical.
-The fresh reports are `verification/paper-submission.json`,
-`verification/structure-audit.json` and `verification/layout-audit.json`.
+The reorganisation itself is not a first-build speed optimisation. Renamed
+entry points may need a one-time rebuild; supporting compiled modules can be reused.

@@ -42,7 +42,7 @@ sources:
     role: AI-assisted Lean proof construction, compatibility work and verification
   location: "https://github.com/LR-UK/Bounded-orbit-wandering-domains/tree/main/paper/Absence_of_bounded_orbit_wandering_domains-1.pdf"
   note: The manuscript was drafted separately by the authors. The precise formalised claims are the
-    declarations in PaperSolution.lean, matched to handoff/reference/no-bounded-WD-2.tex. The independent PaperChallenge specifies all six proved introductory statements; the earlier singular-limit configuration is also retained. No independent
+    declarations in Solution.lean, matched to handoff/reference/no-bounded-WD-2.tex. The independent Challenge specifies all six proved introductory statements; the earlier singular-limit configuration is also retained. No independent
     human review or registry acceptance is claimed.
 - title: A new proof of no-wandering domain theorems without quasiconformal techniques
   authors:
@@ -153,7 +153,7 @@ related_formalizations:
   note: User-supplied streamlined snapshot; tract simple connectivity and logarithmic transform. See RECOVERY_PORT.md and retained licences.
 status:
   scope: >-
-    All six revised-paper targets are proved in PaperSolution.lean. Compact sets
+    All six revised-paper targets are proved in Solution.lean. The original entire-function bounded-orbit theorem is also retained unchanged and selected for comparison. Compact sets
     in Theorem 1.3 lie inside the actual open source. Simple connectivity is assumed
     only in Theorem 1.5. The positive-area theorem assumes a measurable set in
     trapped minus omega, disjoint forward images, and injectivity on its saturation.
@@ -169,42 +169,49 @@ status:
   - Quot.sound
   main_results:
   - declaration: BoundedWanderingDomains.theorem_1_2_entire
-    file: PaperSolution.lean
+    file: Solution.lean
     sorry_count: 0
     axioms:
     - propext
     - Classical.choice
     - Quot.sound
   - declaration: MeromorphicDynamics.theorem_1_2_meromorphic
-    file: PaperSolution.lean
+    file: Solution.lean
     sorry_count: 0
     axioms:
     - propext
     - Classical.choice
     - Quot.sound
   - declaration: SurfaceDynamics.theorem_1_3_orbit
-    file: PaperSolution.lean
+    file: Solution.lean
     sorry_count: 0
     axioms:
     - propext
     - Classical.choice
     - Quot.sound
   - declaration: SurfaceDynamics.theorem_1_3_positive_area
-    file: PaperSolution.lean
+    file: Solution.lean
     sorry_count: 0
     axioms:
     - propext
     - Classical.choice
     - Quot.sound
   - declaration: BoundedWanderingDomains.theorem_1_4
-    file: PaperSolution.lean
+    file: Solution.lean
     sorry_count: 0
     axioms:
     - propext
     - Classical.choice
     - Quot.sound
   - declaration: SurfaceDynamics.theorem_1_5
-    file: PaperSolution.lean
+    file: Solution.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - declaration: BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire
+    file: BoundedWanderingDomains/EntireBoundedOrbit.lean
     sorry_count: 0
     axioms:
     - propext
@@ -255,34 +262,39 @@ alignment:
   statements:
   - source: Theorem 1.2, entire case
     lean: BoundedWanderingDomains.theorem_1_2_entire
-    module: PaperSolution
+    module: Solution
     status: proved
     note: The independent challenge statement has a proved source theorem giving locally uniform escape.
   - source: Theorem 1.2, meromorphic case
     lean: MeromorphicDynamics.theorem_1_2_meromorphic
-    module: PaperSolution
+    module: Solution
     status: proved
     note: Proved from Theorem 1.3(1) through the meromorphic sphere model.
   - source: Theorem 1.3(1), compact avoidance on a Riemann surface
     lean: SurfaceDynamics.theorem_1_3_orbit
-    module: PaperSolution
+    module: Solution
     status: proved
     note: Every orbit in a wandering component leaves each compact subset of the actual source O.
   - source: Theorem 1.3(2), positive-area wandering set
     lean: SurfaceDynamics.theorem_1_3_positive_area
-    module: PaperSolution
+    module: Solution
     status: proved
     note: The forward saturation is not contained in a compact subset of O.
   - source: Theorem 1.4, entire derived singular accumulation
     lean: BoundedWanderingDomains.theorem_1_4
-    module: PaperSolution
+    module: Solution
     status: proved
     note: A stronger locally uniform source theorem is already proved.
   - source: Theorem 1.5, surface derived singular accumulation or compact escape
     lean: SurfaceDynamics.theorem_1_5
-    module: PaperSolution
+    module: Solution
     status: proved
     note: Simple connectivity is assumed only for normality components met by the orbit.
+  - source: Original entire-function bounded-orbit theorem
+    lean: BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire
+    module: Solution
+    status: proved
+    note: Same declaration name and exact statement as in the earlier challenge.
 acknowledgements: Mathlib contributors; the Tau Ceti contributors; Chris Birkbeck; Yury Kudryashov; Geoffrey
   Irving; Will (Ziang) Li and Yusheng Luo; D. Cureton; Álvaro Begué; the attributed FunctionTheory, ComplexDynamics,
   ComplexApproximation and EremenkosConjecture sources. See the included notices. The RiemannDynamics

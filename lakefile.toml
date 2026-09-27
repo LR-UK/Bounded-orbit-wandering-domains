@@ -1,6 +1,6 @@
 name = "area_deficit"
-version = "1.4.2"
-defaultTargets = ["PaperSolution", "PaperChallenge"]
+version = "1.4.3"
+defaultTargets = ["Solution", "Challenge"]
 
 [[require]]
 name = "complexApproximation"
@@ -43,10 +43,10 @@ name = "EremenkoLyubichConstant"
 name = "Ray"
 
 [[lean_lib]]
-name = "PaperChallenge"
+name = "Challenge"
 
 [[lean_lib]]
-name = "PaperSolution"
+name = "Solution"
 
 [[lean_lib]]
 name = "Legacy"

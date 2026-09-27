@@ -64,10 +64,10 @@ def closure(start):
         pending.extend(imports.get(name, []))
     return found
 
-root_names = ['PaperSolution', 'PaperChallenge', 'Legacy.Solution', 'Legacy.Challenge', 'Research.NewResults',
+root_names = ['Solution', 'Challenge', 'Legacy.Solution', 'Legacy.Challenge', 'Research.NewResults',
               'Legacy.SingularLimitsChallenge', 'Legacy.SingularLimitsSolution', 'Research.SurfaceResearch', 'BoundedWanderingDomains.CoveringSolution']
 closure_by_root = {n: closure([n]) for n in root_names}
-paper = closure_by_root['PaperSolution']
+paper = closure_by_root['Solution']
 all_roots = closure(root_names)
 collisions = {n: ps for n, ps in module_paths.items() if len(ps) > 1}
 assert not (all_roots & collisions.keys()), 'An active import resolves to multiple source files'

@@ -2,6 +2,7 @@
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
+import BoundedWanderingDomains.EntireBoundedOrbit
 import BoundedWanderingDomains.GlobalLimitStatements
 import BoundedWanderingDomains.MeromorphicEscape
 import BoundedWanderingDomains.Surfaces.SurfaceOrbitEscape
@@ -10,9 +11,10 @@ import BoundedWanderingDomains.Surfaces.SurfacePositiveArea
 
 /-! # Proofs of the revised paper statements
 
-This file is the solution-side entry point for `PaperChallenge.lean`.  Each
+This file is the solution-side entry point for `Challenge.lean`.  Each
 declaration repeats its independent challenge type rather than importing the
-challenge file.
+challenge file. The original entire-function bounded-orbit statement is
+exposed unchanged by the shared EntireBoundedOrbit module.
 -/
 
 open Set Function Filter OnePoint

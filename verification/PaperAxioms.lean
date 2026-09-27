@@ -1,4 +1,4 @@
-import PaperSolution
+import Solution
 
 #print axioms BoundedWanderingDomains.theorem_1_2_entire
 #print axioms MeromorphicDynamics.theorem_1_2_meromorphic
@@ -6,3 +6,5 @@ import PaperSolution
 #print axioms SurfaceDynamics.theorem_1_3_positive_area
 #print axioms BoundedWanderingDomains.theorem_1_4
 #print axioms SurfaceDynamics.theorem_1_5
+
+#print axioms BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire

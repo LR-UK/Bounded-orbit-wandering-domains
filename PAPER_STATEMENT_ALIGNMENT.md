@@ -2,8 +2,8 @@
 
 All six targets are proved. The source is the author's
 `handoff/reference/no-bounded-WD-2.tex`, supplied 25 September 2026.
-PaperChallenge imports only Mathlib; PaperSolution imports proved source and
-does not import PaperChallenge. Local comparison checks six theorem types and
+Challenge imports only Mathlib; Solution imports proved source and
+does not import Challenge. Local comparison checks six theorem types and
 36 supporting declarations, including the local-map structure and its constructor.
 
 - **1.2 entire:** a transcendental entire function, actual Fatou components,

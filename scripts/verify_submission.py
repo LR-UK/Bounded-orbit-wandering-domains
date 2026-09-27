@@ -88,7 +88,7 @@ for source in sources:
         assert holes == ["sorry"] * len(CONFIG["theorem_names"])
     elif relative == 'Legacy/SingularLimitsChallenge.lean':
         assert holes == ["sorry", "sorry"]
-    elif relative == 'PaperChallenge.lean':
+    elif relative == 'Challenge.lean':
         paper_config = json.loads((ROOT / "comparator-paper.json").read_text())
         assert holes == ["sorry"] * len(paper_config["theorem_names"])
     else:
@@ -129,7 +129,7 @@ for module in ('Legacy.Challenge', 'Legacy.SingularLimitsChallenge'):
             assert not (base / relative).exists(), f"Shadowed Challenge import: {base / relative}"
 
 report = {
-    "result": "passed", "project_version": "1.4.2",
+    "result": "passed", "project_version": "1.4.3",
     "lean": (ROOT / "lean-toolchain").read_text().strip(),
     "mathlib": mathlib,
     "curvature": -1, "area_normalisation": "sphere area bounds use curvature -1 without division; older internal quantities divide by 2*pi",

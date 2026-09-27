@@ -4,3 +4,4 @@
 'SurfaceDynamics.theorem_1_3_positive_area' depends on axioms: [propext, Classical.choice, Quot.sound]
 'BoundedWanderingDomains.theorem_1_4' depends on axioms: [propext, Classical.choice, Quot.sound]
 'SurfaceDynamics.theorem_1_5' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire' depends on axioms: [propext, Classical.choice, Quot.sound]

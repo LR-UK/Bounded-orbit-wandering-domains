@@ -2,8 +2,8 @@
   {
     "command": [
       "build",
-      "PaperSolution",
-      "PaperChallenge",
+      "Solution",
+      "Challenge",
       "Research.SurfaceResearch",
       "Legacy.Solution",
       "Legacy.Challenge",
@@ -12,7 +12,7 @@
       "Legacy.SingularLimitsChallenge",
       "Legacy.SingularLimitsSolution"
     ],
-    "seconds": 590.0128951000224
+    "seconds": 116.8851757000084
   },
   {
     "command": [
@@ -20,7 +20,7 @@
       "lean",
       "verification/ExportPaperChallenge.lean"
     ],
-    "seconds": 116.49740580000798
+    "seconds": 85.94988530001137
   },
   {
     "command": [
@@ -28,6 +28,6 @@
       "lean",
       "verification/ExportPaperSolution.lean"
     ],
-    "seconds": 103.22390800001449
+    "seconds": 105.14237779995892
   }
 ]

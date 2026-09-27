@@ -18,10 +18,10 @@ import Mathlib.Analysis.Meromorphic.NormalForm
 
 /-! # Independent challenge for the revised paper's introduction
 
-Six proposition targets: entire and meromorphic escape, the two local surface
+Six revised-paper targets, plus the unchanged original entire-function theorem: entire and meromorphic escape, the two local surface
 conclusions, entire derived-set accumulation, and surface derived-set/escape.
-The six theorem declarations at the end are independent statement placeholders.
-Their proofs are supplied by PaperSolution, which does not import this module.
+The theorem declarations below are independent statement placeholders.
+Their proofs are supplied by Solution, which does not import this module.
 Only Mathlib is imported here; the placeholders are confined to this specification.
 
 Matched to no-bounded-WD-2.tex, supplied 25 September 2026. In the positive-area
@@ -339,3 +339,22 @@ theorem theorem_1_5 : WanderingDerivedSingularLimitClaim (X := X) := by
   sorry
 
 end SurfaceDynamics
+
+/-! ## Original entire-function statement (unchanged)
+
+Retained verbatim from the preceding challenge, with the same declaration name
+and hypotheses. The revised-paper statements above remain separate targets. -/
+
+namespace BoundedWanderingDomains
+
+theorem no_bounded_wandering_domains_transcendental_entire
+    {f : ℂ → ℂ} (hf : Differentiable ℂ f)
+    (htrans : ¬ ∃ p : Polynomial ℂ, ∀ z, f z = p.eval z)
+    {U : ℕ → Set ℂ} {z : ℂ}
+    (hU : ∀ n, ComplexDynamics.IsFatouComponent f (U n))
+    (hz : z ∈ U 0) (hforward : ∀ n, MapsTo f (U n) (U (n + 1)))
+    (hbounded : Bornology.IsBounded (Set.range (fun n : ℕ => (f^[n]) z))) :
+    ¬ Pairwise (fun n m : ℕ => Disjoint (U n) (U m)) := by
+  sorry
+
+end BoundedWanderingDomains

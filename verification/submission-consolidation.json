@@ -1,0 +1,27 @@
+{
+  "result": "passed",
+  "project_version": "1.4.3",
+  "baseline_commit": "35292068bec63e60f08ef83db3602c609b27060b",
+  "root_lean_files": [
+    "Challenge.lean",
+    "Solution.lean"
+  ],
+  "selected_theorem_declarations": 7,
+  "revised_paper_theorems": 6,
+  "supporting_declarations_compared": 36,
+  "independent_declarations_unchanged": true,
+  "previous_paper_declarations_preserved": 42,
+  "original_entire_statement": "BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire",
+  "original_statement_source_verbatim": true,
+  "original_statement_compiled_type_unchanged": true,
+  "original_proof_moved_verbatim_to_shared_module": true,
+  "current_and_legacy_solution_imports_compatible": true,
+  "expanded_statement_review_compiles": true,
+  "full_local_build": "passed",
+  "full_build_jobs": 4320,
+  "full_retained_local_modules": 796,
+  "paper_local_proof_modules": 771,
+  "full_scanned_proof_modules": 793,
+  "tracked_lean_sources": 1372,
+  "declarations_sha256": "77f88ff1a69cfef3a6340546436fc2b116b33fb866cc25685c7ad15a5bbbe867"
+}
