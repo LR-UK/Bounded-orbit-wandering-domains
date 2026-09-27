@@ -5,6 +5,7 @@ import BoundedWanderingDomains.Surfaces.PositiveAreaBridge
 import BoundedWanderingDomains.Surfaces.GlobalFinitePunctureArea
 import BoundedWanderingDomains.Surfaces.CompactFinitePunctureArea
 import BoundedWanderingDomains.Surfaces.SphereGlobalPointInsertion
+import BoundedWanderingDomains.Surfaces.CompactificationInsertionRiesz
 
 /-! # Compact anchor-complement area reduction -/
 
@@ -62,6 +63,23 @@ theorem anchorComplement_globalFinitePunctureAreaPackage_of_pointInsertion
     (AreaDeficit.Surfaces.anchorComplement E).isOpen.locallyCompactSpace
   exact p.globalFinitePunctureAreaPackage_of_pointInsertion q
     (anchorComplement_hyperbolicArea_lt_top E p) hC hpoint
+
+/-- The uniform compactification insertion estimate supplies the complete
+finite-puncture area package on every connected finite anchor complement. -/
+theorem anchorComplement_globalFinitePunctureAreaPackage
+    [CompactSpace X] [ConnectedSpace X] [Infinite X] (E : Finset X)
+    (p : AreaDeficit.Surfaces.DiscCover
+      (AreaDeficit.Surfaces.anchorComplement E)) (q : ℕ) :
+    p.GlobalFinitePunctureAreaPackage q := by
+  let O := AreaDeficit.Surfaces.anchorComplement E
+  letI : LocallyCompactSpace O := O.isOpen.locallyCompactSpace
+  letI : ConnectedSpace O := Subtype.connectedSpace
+    (RiemannDynamics.isConnected_compl_finset E)
+  letI : Infinite O := Set.Infinite.to_subtype E.finite_toSet.infinite_compl
+  exact anchorComplement_globalFinitePunctureAreaPackage_of_pointInsertion
+    E p q ENNReal.ofReal_ne_top
+    (AreaDeficit.Surfaces.FinitePunctureDiscs.DiscCover.compactification_uniformGlobalPointInsertionBound
+      E O (fun _ => Iff.rfl) ⟨p.projection AreaDeficit.Surfaces.discZero⟩ p)
 
 /-- On a compact surface biholomorphic to the sphere, three distinct anchors
 give the complete finite-puncture area package, with the sharp one-point cost
@@ -206,3 +224,4 @@ end SurfaceDynamics
 #print axioms SurfaceDynamics.anchorComplement_finiteStage_area_lt_top
 #print axioms SurfaceDynamics.anchorComplement_globalFinitePunctureAreaPackage_of_pointInsertion
 #print axioms SurfaceDynamics.anchorComplement_pointInsertion_iff_totalArea_increment
+#print axioms SurfaceDynamics.anchorComplement_globalFinitePunctureAreaPackage

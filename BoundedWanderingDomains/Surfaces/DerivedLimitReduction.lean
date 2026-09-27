@@ -3,9 +3,9 @@ import BoundedWanderingDomains.Surfaces.Statements
 
 /-! # Topological reduction for the derived-singular-limit theorem
 
-The compactification alternative is purely topological.  This file isolates
-the remaining analytic statement: every finite subsequential limit of a
-wandering orbit belongs to the derived singular set. -/
+The target only needs one suitable subsequence. The analytic obligation is
+restricted to orbits without a compact-escaping subsequence; it does not
+classify every finite limit or require a finite limit of an escaping orbit. -/
 
 open Set Function Filter OnePoint
 open scoped Topology Manifold
@@ -63,10 +63,9 @@ def FiniteWanderingOrbitLimitsDerivedClaim : Prop :=
             (𝓝 (a : OnePoint X)) →
           a ∈ derivedSet f.singularValues
 
-/-- The analytic statement actually used by the area argument: the orbit has
-at least one cluster point in the derived singular set.  This is weaker than
-requiring every finite orbit limit to be singular-derived, and matches the
-conclusion of the existing planar area-contradiction proof. -/
+/-- A stronger sufficient condition, requiring a finite derived-singular
+cluster point even for orbits that have an escaping subsequence. This is not
+the remaining obligation for the paper's escape-or-derived-set target. -/
 def WanderingOrbitClusterMeetsDerivedClaim : Prop :=
   ∀ f : LocalMap X, IsOpenHolomorphic f →
     ∀ U : Set X, f.IsWanderingComponent U →
@@ -86,8 +85,37 @@ theorem wanderingDerivedSingularLimitClaim_of_clusterMeetsDerived
   obtain ⟨a, ha, φ, hφ, hlim⟩ := hcluster f hf U hU hsc z hz
   exact ⟨φ, hφ, Or.inr ⟨a, ha, hlim⟩⟩
 
+/-- The derived-singular cluster-point obligation only for orbits with no
+subsequence escaping every compact subset of the ambient surface. -/
+def NonEscapingWanderingOrbitClusterMeetsDerivedClaim : Prop :=
+  ∀ f : LocalMap X, IsOpenHolomorphic f →
+    ∀ U : Set X, f.IsWanderingComponent U →
+      f.HasSimplyConnectedComponentOrbit U → ∀ z ∈ U,
+        (¬ ∃ φ : ℕ → ℕ, StrictMono φ ∧
+          Tendsto (fun k => f.compactifiedIterate (φ k) z) atTop
+            (𝓝 (∞ : OnePoint X))) →
+        ∃ a ∈ derivedSet f.singularValues,
+          ∃ φ : ℕ → ℕ, StrictMono φ ∧
+            Tendsto (fun k => f.compactifiedIterate (φ k) z) atTop
+              (𝓝 (a : OnePoint X))
+
+/-- Separate the escape alternative before invoking the area argument.
+The exact independent paper statement is preserved. -/
+theorem wanderingDerivedSingularLimitClaim_of_nonEscapingClusterMeetsDerived
+    (hcluster : NonEscapingWanderingOrbitClusterMeetsDerivedClaim (X := X)) :
+    WanderingDerivedSingularLimitClaim (X := X) := by
+  intro f hf U hU hsc z hz
+  by_cases hescape : ∃ φ : ℕ → ℕ, StrictMono φ ∧
+      Tendsto (fun k => f.compactifiedIterate (φ k) z) atTop
+        (𝓝 (∞ : OnePoint X))
+  · obtain ⟨φ, hφ, hlim⟩ := hescape
+    exact ⟨φ, hφ, Or.inl hlim⟩
+  · obtain ⟨a, ha, φ, hφ, hlim⟩ := hcluster f hf U hU hsc z hz hescape
+    exact ⟨φ, hφ, Or.inr ⟨a, ha, hlim⟩⟩
+
 end Manifold
 end SurfaceDynamics
 
 #print axioms SurfaceDynamics.escape_or_subsequence_tendsto_mem
 #print axioms SurfaceDynamics.wanderingDerivedSingularLimitClaim_of_clusterMeetsDerived
+#print axioms SurfaceDynamics.wanderingDerivedSingularLimitClaim_of_nonEscapingClusterMeetsDerived
