@@ -83,7 +83,7 @@ theorem exists_chartLogRatio_le_const_sub_log_norm
     (hd : MDifferentiableOn 𝓘(ℂ) 𝓘(ℂ) d d.source)
     {a : ℂ} (ha : a ∈ d.target) {R : ℝ} (hR : 0 < R)
     (hball : ball a R \ {a} ⊆ (d.subtypeRestr hU).target) :
-    ∃ r > 0, ∃ C : ℝ, 0 ≤ C ∧ ∀ z : ℂ, z ≠ a → ‖z - a‖ < r →
+    ∃ r > 0, r < R ∧ ∃ C : ℝ, 0 ≤ C ∧ ∀ z : ℂ, z ≠ a → ‖z - a‖ < r →
       p.chartLogRatio q hU d z ≤ C - Real.log ‖z - a‖ := by
   let m : ℝ := p.chartDensity d a / 2
   have hpa : 0 < p.chartDensity d a := p.chartDensity_pos hd ha
@@ -94,7 +94,10 @@ theorem exists_chartLogRatio_le_const_sub_log_norm
   obtain ⟨δ, hδ, hδball⟩ := Metric.eventually_nhds_iff.mp hnear
   let r : ℝ := min δ (R / Real.exp 1)
   have hr : 0 < r := lt_min hδ (div_pos hR (Real.exp_pos 1))
-  refine ⟨r, hr, max (Real.log (2 / m)) 0, le_max_right _ _, ?_⟩
+  have hrR : r < R := (min_le_right δ _).trans_lt
+    ((div_lt_iff₀ (Real.exp_pos 1)).mpr
+      (lt_mul_of_one_lt_right hR (Real.one_lt_exp_iff.mpr zero_lt_one)))
+  refine ⟨r, hr, hrR, max (Real.log (2 / m)) 0, le_max_right _ _, ?_⟩
   intro z hza hzr
   have hzrδ : ‖z - a‖ < δ := hzr.trans_le (min_le_left _ _)
   have hzrRexp : ‖z - a‖ < R / Real.exp 1 :=

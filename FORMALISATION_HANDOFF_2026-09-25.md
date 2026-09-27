@@ -909,3 +909,10 @@ annuli `[-2t,-t]`.  Applying this to the log density ratio from the intrinsic
 old-end comparison eliminates every old-puncture boundary term.  Thus the two
 local ingredients of the proposed Riesz proof now compile separately: zero
 mass at old ends and uniformly bounded mass at new punctures.
+
+`Surfaces/PunctureBoundaryMass.lean` now combines the cusp estimate, local
+positivity of the old metric and the logarithmic cutoff calculation into the
+exact reusable conclusion: the absolute Riesz boundary contribution at one
+newly inserted puncture is eventually bounded by one finite constant.  The
+statement is intrinsic in the two disc covers and has no asymptotic hypothesis
+left for callers.  Its focused build passes without `sorryAx`.
