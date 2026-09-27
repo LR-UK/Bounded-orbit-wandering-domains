@@ -834,3 +834,12 @@ exposed the repository's two definitionally different Riemann-sphere charted
 space instances; use the FunctionTheory `RiemannSphere` coordinates directly,
 or first add a compatibility bridge, when completing arbitrary-anchor sphere
 transport.
+
+The arbitrary-anchor sphere step is now complete without using the incompatible
+legacy normalization instance.  `sphereDomain_uniformGlobalPointInsertionBound_of_chart`
+packages the one-chart argument, and `sphereComplThree_uniformGlobalPointInsertionBound`
+applies it to the pole chart at the third puncture.  Thus every sphere minus
+three distinct anchors has the sharp uniform `2π` insertion bound.  The focused
+module build passes and the new theorem has no `sorryAx`.  The compact torus
+case remains the nonhyperbolic compact-surface input needed by the global
+positive-area branch.

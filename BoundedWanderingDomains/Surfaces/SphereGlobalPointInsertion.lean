@@ -158,7 +158,94 @@ theorem uniformGlobalPointInsertionBound_of_diffeomorph_normalized
     change ((1 : ℂ) : ℂ̂) ∈ V at hy
     exact hy (by simp [V, normalizedThricePuncturedSphere])
 
+/-- A sphere domain contained in one global coordinate and omitting two
+points in that coordinate has the sharp global insertion bound. -/
+theorem sphereDomain_uniformGlobalPointInsertionBound_of_chart
+    {U : Opens ℂ̂} [DecidableEq U] (p : DiscCover U)
+    {a b : ℂ̂} (haU : a ∉ U) (hbU : b ∉ U)
+    {g : OpenPartialHomeomorph ℂ̂ ℂ}
+    (hg : MDifferentiableOn 𝓘(ℂ) 𝓘(ℂ) g g.source)
+    (hgi : MDifferentiableOn 𝓘(ℂ) 𝓘(ℂ) g.symm g.target)
+    (hUg : (U : Set ℂ̂) ⊆ g.source)
+    (ha : a ∈ g.source) (hb : b ∈ g.source) (hab : a ≠ b) :
+    p.UniformGlobalPointInsertionBound (ENNReal.ofReal (2 * Real.pi)) := by
+  classical
+  have hUN : Nonempty U := ⟨p.projection discZero⟩
+  let c : OpenPartialHomeomorph U ℂ := g.subtypeRestr hUN
+  letI : LocallyCompactSpace U := U.isOpen.locallyCompactSpace
+  apply p.uniformGlobalPointInsertionBound_of_global_chart
+      (c := c) (mdifferentiableOn_subtypeRestr hUN hg)
+      (mdifferentiableOn_subtypeRestr_symm hUN hgi)
+  · intro x _
+    dsimp only [c]
+    simp only [OpenPartialHomeomorph.subtypeRestr_source, mem_preimage]
+    exact hUg x.property
+  · intro heq
+    exact hab (g.injOn ha hb heq)
+  · rintro ⟨hga, _⟩
+    change g a ∈ (g.subtypeRestr hUN).target at hga
+    have hy := ((g.subtypeRestr hUN).symm (g a)).property
+    have heq := g.subtypeRestr_symm_apply hUN hga
+    change (((g.subtypeRestr hUN).symm (g a) : U) : ℂ̂) =
+      g.symm (g a) at heq
+    rw [heq, g.left_inv ha] at hy
+    exact haU hy
+  · rintro ⟨hgb, _⟩
+    change g b ∈ (g.subtypeRestr hUN).target at hgb
+    have hy := ((g.subtypeRestr hUN).symm (g b)).property
+    have heq := g.subtypeRestr_symm_apply hUN hgb
+    change (((g.subtypeRestr hUN).symm (g b) : U) : ℂ̂) =
+      g.symm (g b) at heq
+    rw [heq, g.left_inv hb] at hy
+    exact hbU hy
+
+/-- The sphere with three specified points removed. -/
+def sphereComplThree (a b c : ℂ̂) : Opens ℂ̂ :=
+  ⟨({a, b, c} : Set ℂ̂)ᶜ,
+    (((Set.finite_singleton c).insert b).insert a).isClosed.isOpen_compl⟩
+
+/-- Every three-punctured sphere has the sharp global one-point insertion
+bound.  The pole chart at the third puncture contains the whole domain, while
+the other two punctures supply the two omitted finite coordinate values. -/
+theorem sphereComplThree_uniformGlobalPointInsertionBound
+    {a b c : ℂ̂} (hab : a ≠ b) (hac : a ≠ c) (hbc : b ≠ c)
+    [DecidableEq (sphereComplThree a b c)]
+    (p : DiscCover (sphereComplThree a b c)) :
+    p.UniformGlobalPointInsertionBound (ENNReal.ofReal (2 * Real.pi)) := by
+  classical
+  let g : OpenPartialHomeomorph ℂ̂ ℂ := (AreaDeficit.spherePoleChart c).symm
+  have hg : MDifferentiableOn 𝓘(ℂ) 𝓘(ℂ) g g.source := by
+    intro z hz
+    have hzc : z ≠ c := by
+      simpa only [g, OpenPartialHomeomorph.symm_source,
+        AreaDeficit.spherePoleChart_target, mem_compl_iff,
+        mem_singleton_iff] using hz
+    exact ((AreaDeficit.spherePoleChart_symm_contMDiffAt hzc).mdifferentiableAt
+      (by simp)).mdifferentiableWithinAt
+  have hgi : MDifferentiableOn 𝓘(ℂ) 𝓘(ℂ) g.symm g.target := by
+    exact ((AreaDeficit.spherePoleChart_contMDiff c).mdifferentiable
+      (by simp)).mdifferentiableOn
+  apply p.sphereDomain_uniformGlobalPointInsertionBound_of_chart
+      (a := a) (b := b) (g := g) (by simp [sphereComplThree])
+      (by simp [sphereComplThree]) hg hgi
+  · intro z hz
+    change z ∈ (AreaDeficit.spherePoleChart c).target
+    rw [AreaDeficit.spherePoleChart_target]
+    exact by
+      simp only [mem_compl_iff, mem_singleton_iff]
+      intro hzc
+      exact hz (by simp [sphereComplThree, hzc])
+  · change a ∈ (AreaDeficit.spherePoleChart c).target
+    simpa only [AreaDeficit.spherePoleChart_target, mem_compl_iff,
+      mem_singleton_iff] using hac
+  · change b ∈ (AreaDeficit.spherePoleChart c).target
+    simpa only [AreaDeficit.spherePoleChart_target, mem_compl_iff,
+      mem_singleton_iff] using hbc
+  · exact hab
+
 end AreaDeficit.Surfaces.DiscCover
 
 #print axioms AreaDeficit.Surfaces.DiscCover.normalizedThricePuncturedSphere_uniformGlobalPointInsertionBound
 #print axioms AreaDeficit.Surfaces.DiscCover.uniformGlobalPointInsertionBound_of_diffeomorph_normalized
+#print axioms AreaDeficit.Surfaces.DiscCover.sphereDomain_uniformGlobalPointInsertionBound_of_chart
+#print axioms AreaDeficit.Surfaces.DiscCover.sphereComplThree_uniformGlobalPointInsertionBound
