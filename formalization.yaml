@@ -3,11 +3,10 @@ version: v0.4
 project:
   name: Absence of bounded-orbit wandering domains
   description: >-
-    We formalise the recently proved absence of bounded-orbit wandering domains for transcendental entire and meromorphic functions, as well as a corresponding result for 
-    locally defined functions. This second version of the formalisation includes the meromorphic case, a local version for maps on Riemann surfaces, the fact that 
-    orbits in wandering domains of entire functions must accumulate on limit points of singular values, as well as a local version of this result also (which currently requires 
-    simple connectivity of the domains, although it seems likely that this hypothesis can be removed by applying
-    additional classical arguments by Baker, Kotus and Lü that are not yet normalised.) For further background,
+    We formalise the recently proved absence of bounded-orbit wandering domains for transcendental entire and meromorphic functions, as well as a corresponding result for
+    locally defined functions. This version of the formalisation includes the meromorphic case, a local version for maps on Riemann surfaces, the fact that
+    orbits in wandering domains of entire functions must accumulate on limit points of singular values, as well as a local version of this result for arbitrary wandering normality components.
+    The simple-connectivity hypothesis in Theorem 1.5 has been removed by formalising an adaptation of the covering and filling argument of Baker, Kotus and Lü. For further background,
     see the README.md documentation.
   authors:
   - Nikolai Prochorov
@@ -46,8 +45,8 @@ sources:
     proves the derived-singular-set assertion announced there without proof,
     removes unnecessary local hypotheses, extends the local results to arbitrary
     Riemann surfaces, adds the positive-area result and classical no-wandering
-    corollaries. Surface derived-set accumulation assumes simply connected
-    component orbits. The exact independent statements are in Challenge.lean,
+    corollaries. Surface derived-set accumulation now applies without a
+    simple-connectivity hypothesis, by an adaptation of the Baker–Kotus–Lü argument. The exact independent statements are in Challenge.lean,
     with proofs exposed by Solution.lean. The authors of [PRW] and [DPU] are preparing a joint preprint containing
     these results. No independent human review or acceptance of this
     updated package is claimed.
@@ -91,6 +90,20 @@ sources:
   type: paper
   relationship: background
   note: Background for comparison of hyperbolic metrics; not a trusted axiom.
+- title: 'Iterates of Meromorphic Functions IV: Critically Finite Functions'
+  id: https://doi.org/10.1007/BF03323112
+  type: paper
+  relationship: background
+  authors:
+  - I. N. Baker
+  - J. Kotus
+  - Lü Yinian
+  note: >-
+    The covering and filling argument is adapted to fixed-radius covering discs
+    of locally defined maps. Removable-point completion and discrete backward
+    orbits remove the simple-connectivity hypothesis from Theorem 1.5. The
+    formalisation does not assert that whole later local components become
+    simply connected or add a separate finite-type meromorphic corollary.
 related_formalizations:
 - title: First registered bounded-orbit wandering-domain formalisation
   id: https://palomar-registry.org/entry?id=PALOMAR-2026-09-25-000001&version=1

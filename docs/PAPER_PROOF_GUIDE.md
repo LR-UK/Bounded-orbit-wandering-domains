@@ -14,8 +14,8 @@ locus. A "full normality component" means the whole connected component;
 Let `U_n` be the component containing `f^n(U)`. The forward-containment property
 is `f(U_n) ⊆ U_(n+1)`, even for points of `U_n` outside `f^n(U)`. Neither
 `f(U_n) = U_(n+1)` nor `f^n(U) = U_n` is required. Wandering means these
-components are pairwise distinct (and hence disjoint). The simple-connectivity
-hypothesis of Theorem 1.5 concerns these whole components.
+components are pairwise distinct (and hence disjoint). No simple-connectivity
+hypothesis is imposed on these components in Theorem 1.5.
 
 `OmegaDynamics.lean` proves forward invariance of the normality locus in
 `LocalMap.totalize_mapsTo_omega`, and then component containment in
@@ -37,18 +37,39 @@ then supplies Theorem 1.2 for meromorphic maps via their local sphere model.
 ## Theorem 1.5
 
 `NoEscapeCompactRange.lean` first separates compact escape: if no escaping
-subsequence exists, the full orbit lies in an ambient compact set. Finite
-backward models and a compact cluster-set separation in
-`CompactClusterSeparation.lean` reduce the singular values near the orbit to a
-finite exceptional set plus a closed remote set. `RegularCoveringArea.lean`
-gives exact covering transport there; `HyperbolicDerivedLimits.lean` obtains
-the required derived singular accumulation.
+subsequence exists, the full orbit lies in an ambient compact set. Assuming
+that its cluster points avoid the derived singular set gives a compact tail
+neighbourhood with only finitely many relevant singular values.
 
-`SubsurfaceWanderingComponents.lean` proves that deleting the initial anchor
-disc preserves the actual later simply connected components. The new singular
-values are confined to the compact image of the removed disc, inside an early
-wandering component. That set cannot contain a tail cluster point.
-`SurfaceDerivedLimits.lean` therefore proves the exact arbitrary-surface target.
+The six modules in `BoundedWanderingDomains/Surfaces/BKL/` implement the
+covering and filling argument for arbitrary local wandering components:
+
+1. `ReturnLimits.lean` proves local isolation of finite-target backward orbits
+   in regions whose iterate subsequences have constant limits, and proves that
+   removing a closed discrete set does not disconnect a surface domain.
+2. `PuncturedCovers.lean` classifies connected covers of a punctured disc and
+   extends bounded punctured-disc embeddings across their removable centres.
+3. `AnalyticCompletion.lean` glues compatible dense holomorphic extensions.
+   It proves that completion introduces no singular values and that late
+   filled covering discs lie in the completed source. The cover is pulled back
+   on the full preimage of each regular punctured target disc.
+4. `ComponentRecovery.lean` recovers the original normality component after
+   removing the discrete exceptional backward orbits. Any remaining missing
+   point would map to a puncture over one of finitely many values. A value can
+   puncture at most one of the pairwise disjoint wandering components.
+5. `ShrinkingFillings.lean` proves normality and constant limits for the forward
+   fillings, then shows that sufficiently late fillings belong to the original
+   components. Their fixed-radius covering discs are therefore embedded.
+6. `DerivedLimits.lean` applies the regular-covering area argument to those
+   eventually embedded discs. It also proves the final subsurface reduction
+   using connectedness and compact-orbit normality.
+
+Deleting a small anchor disc from the initial component gives a noncompact
+hyperbolic ambient subsurface. It preserves the actual later normality
+components. The extra singular values lie in the compact image of the removed
+disc, inside an early wandering component, and cannot contain a tail cluster
+point. `SurfaceDerivedLimits.lean` exports the resulting theorem on an arbitrary
+Riemann surface without a simple-connectivity assumption.
 
 ## Theorem 1.3(2)
 
@@ -74,10 +95,10 @@ finite-puncture area package yields the contradiction.
 The entire escape and derived-singular statements use the previously verified
 stronger entire results. The meromorphic statement is directly deduced from the
 surface theorem. Earlier local-plane and sphere-area results remain available
-through their separate entry points and comparator configurations. This keeps
+through their separate entry points. This keeps
 the established results reproducible without duplicating their proofs in the
 new surface assembly.
 
-All six targets have only Lean's standard classical logical axioms. Supporting
+All ten selected targets have only Lean's standard classical logical axioms. Supporting
 geometric hypotheses such as disc-cover existence are discharged by the
 attributed uniformisation development; they are not extra target assumptions.

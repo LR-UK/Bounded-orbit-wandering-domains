@@ -36,24 +36,24 @@
     },
     "EremenkoLyubichConstant/RAY_LICENSE": {
       "license": "Apache-2.0",
-      "sha256": "e03ba41d7fab20700769fe4118bab50d800cb74f990353a05d2f5fff1c228363"
+      "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1"
     },
     "LICENSE": {
       "license": "Apache-2.0",
-      "sha256": "e03ba41d7fab20700769fe4118bab50d800cb74f990353a05d2f5fff1c228363"
+      "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1"
     },
     "RIEMANN_DYNAMICS_LICENSE": {
       "license": "Apache-2.0",
-      "sha256": "6879f86d54949e9de6a0ae70287c5ca7aa5ae8cfb7b173bdc17513d8c71042b5"
+      "sha256": "44d4b40bd7b0907652947950e63b9aa4379eda788e89eb098fd21e1925612d0d"
     },
     "RMT4_LICENSE": {
       "license": "Apache-2.0",
-      "sha256": "ff9ef18d3a9436bf495f71840a333564859785731f5ebce53f28e14548064d77"
+      "sha256": "d8c4abc948663fa5f3e4a2c2439ed32e88c400a8859a8117b7288d680fca02b2"
     }
   },
   "attribution_files": {
-    "BoundedWanderingDomains/RiemannMappingFull.lean": "57623f380d98ca73b3f0256550483236db35ad57ea70eb2dbf0ef7c1f3ef35e2",
-    "BoundedWanderingDomains/UnitDiscShift.lean": "012ad24f96be3fca48d424ac8553e35c568864897bfc0ab6ce53f4a60ce1e7f1",
+    "BoundedWanderingDomains/RiemannMappingFull.lean": "189e83535fc41465dce8c67df277cefb5b53b2709e17f4d3f03828274a23148c",
+    "BoundedWanderingDomains/UnitDiscShift.lean": "6f47c456d9e1f54eedc1b13267548fbfe7b13b03ddf1dbe3e4d83bde7be4f858",
     "dependencies/ComplexApproximation/LICENSE": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
     "dependencies/ComplexApproximation/PROVENANCE.md": "f04c3da86000c791bf5783550258588425d334677532f0ca431432aa9ad0349a",
     "dependencies/ComplexApproximation/THIRD_PARTY_NOTICES.md": "ff3b210438cbaccb08b125c0822c7659980fd29df9392a24036d9a14349377eb",
@@ -70,7 +70,7 @@
     "dependencies/FunctionTheory/FunctionTheory/RiemannSphere/Basic.lean": "0fb7a16078ac68692edeed6541ddadae0b3867eeac6f7acd77d5a1e4f573281d",
     "dependencies/FunctionTheory/FunctionTheory/RiemannSphere/Coordinates.lean": "1acb9eb119db9d994e9fb462ab74cb535d243b842c503033345dc7fbce4ea94b",
     "dependencies/FunctionTheory/LICENSE": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
-    "dependencies/FunctionTheory/PROVENANCE.md": "e81d17c8412ca638dffd5093796ff22b60dbb991155910117375301b3f831ab7",
+    "dependencies/FunctionTheory/PROVENANCE.md": "4a6e6cb524b5190ec0d7f9386fa0c0d5e4882f71a69422b86c9beeda344371d6",
     "dependencies/FunctionTheory/TauCeti/Analysis/Complex/Conformal/Inverse/BoundaryCluster.lean": "f87a545ab78c55a29656b1a240e1c996e2b788644463b471cd1102972b2a47a8",
     "dependencies/FunctionTheory/third_party/NoWanderingDomains/LICENSE": "44d4b40bd7b0907652947950e63b9aa4379eda788e89eb098fd21e1925612d0d",
     "dependencies/FunctionTheory/third_party/NoWanderingDomains/README.md": "54269a2f769cbfb3501b31635999379c04f3262a2d47098088642036798ef070",
@@ -86,23 +86,23 @@
     "dependencies/FunctionTheory/third_party/TauCeti/README.md": "3f279250cc9447736cee8db0f2fe2e9eeab457221e10f5ad9ce5915c54b89a0d",
     "dependencies/FunctionTheory/third_party/TauCeti/UPSTREAM.json": "2edfb2e90051494274cc9bebb0e8b410980183f5f63802fca111f37249c48e8c",
     "dependencies/FunctionTheory/THIRD_PARTY_NOTICES.md": "4d59025d42958094e58e4949c159e2eb0877303f679e2789d163c6da2415925e",
-    "DEPENDENCY_COMPATIBILITY.md": "6ffc6570ae0c6fb782f6a73026b37518798238a919a96ab90fc865c85dfda2c6",
-    "EremenkoLyubichConstant/RAY_LICENSE": "e03ba41d7fab20700769fe4118bab50d800cb74f990353a05d2f5fff1c228363",
-    "EremenkoLyubichConstant/RECOVERY_PORT.md": "439a1239d20c3c17145f967493463dac17afd06c5e5121a445e290d715c0e191",
-    "EremenkoLyubichConstant/THIRD_PARTY_NOTICES.md": "3e9b22e9cd6f3a312d179707ba4ea8b3d3033935c1bf5879bd2f01ca3c8fb782",
-    "LICENSE": "e03ba41d7fab20700769fe4118bab50d800cb74f990353a05d2f5fff1c228363",
-    "port-deprecation-updates.json": "59355fa5fbe4451869e4fc97569028ea348e635443397c483b2f7266b66aaceb",
-    "RIEMANN_DYNAMICS_LICENSE": "6879f86d54949e9de6a0ae70287c5ca7aa5ae8cfb7b173bdc17513d8c71042b5",
-    "RMT4_LICENSE": "ff9ef18d3a9436bf495f71840a333564859785731f5ebce53f28e14548064d77",
-    "THIRD_PARTY_NOTICES.md": "c66e5ee1c48d2c3078d3f5a123904ade9061dda33112aa52fc314c3c231724d3",
-    "verification/linter-compatibility.patch": "0f52d890fda1116343c2cccab7a1ffcfc40f566c262fc3bdbd36b46a83716f9f",
-    "verification/linter-updated-files.json": "9f67f43e9e034ed1b4b74f8abe02b4cd38db0c23c290f370eaaac68574a8e7e0",
-    "verification/palomar-contract/LICENSE": "a497ea78f01eac04f283b8f266aa691b3e7aace05d836a1127c5265f6078a4d9",
-    "verification/palomar-contract/PROVENANCE.md": "a7c83ceeb010566616ef928a915a1bd733517f9d9ce410b0ebbda08aa3c935e0",
-    "verification/toolchain435-changes.json": "8350435f8a000305a66ce422559f9cc33257bfdd8faa830d87a97b1e52e1aa49",
-    "verification/toolchain435-changes.patch": "4a5194c7580b1c2f4eb2534d62566619fe9a39ca898be4d1a8b9aac71accf63a",
-    "verification/update-warning-compatibility.patch": "d852a1a4f888ef6f20669c10c7c798796ccc9e5b0fa91d37aec60224acf1c5a4",
-    "verification/update-warning-files.json": "907dfbe41138364f31eadfdeef8bc3ddfe8d27023a9bf69c209d33c7d8888779"
+    "DEPENDENCY_COMPATIBILITY.md": "a8e34a287c315929b2e9091845c0321a56bc4a2d5b94c0e5b8e602c44a271bb6",
+    "EremenkoLyubichConstant/RAY_LICENSE": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+    "EremenkoLyubichConstant/RECOVERY_PORT.md": "864500f3d90c01a42aab76bab9b8b070eb2a1a3521d1f3756dba0d9acc3d9f14",
+    "EremenkoLyubichConstant/THIRD_PARTY_NOTICES.md": "88b69eb3f9cd3d0309b3d6cebbd915c00152a1a685e07fea6b4ce4a96d9ba163",
+    "LICENSE": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+    "port-deprecation-updates.json": "b0a54bba10faf0218244845cce464bd74e688f97d881684190b4087567d3be7c",
+    "RIEMANN_DYNAMICS_LICENSE": "44d4b40bd7b0907652947950e63b9aa4379eda788e89eb098fd21e1925612d0d",
+    "RMT4_LICENSE": "d8c4abc948663fa5f3e4a2c2439ed32e88c400a8859a8117b7288d680fca02b2",
+    "THIRD_PARTY_NOTICES.md": "b7232b9ca25b1e81db5e959865bb524013ca752cc247d256b4a36f00d24970cb",
+    "verification/linter-compatibility.patch": "d7f73d160ecaae85a8c9588cc4b124abc85d0eb7a85d3f57561d606142e03ce7",
+    "verification/linter-updated-files.json": "5d6edab8ff4834f59abb815f9f3e0c3aba0816780677faa97d7b4208c392234a",
+    "verification/palomar-contract/LICENSE": "10321b0cca2b8025d4b5065dd20e22c1f74da2e872c12363e3601974e093bc21",
+    "verification/palomar-contract/PROVENANCE.md": "ef77f4be467c1bf31288ce8c858e0b0350fde872cfa00acc4062bb541755efe0",
+    "verification/toolchain435-changes.json": "ab9bf17bbf49393a5a456704736bc724f4f35b938300234a70b52dac08db5db9",
+    "verification/toolchain435-changes.patch": "fa0edac4c88bd36a60e63dfdd5c58c56c79b7ca00e7c6524340c8c51e72c70b7",
+    "verification/update-warning-compatibility.patch": "a2bf1f25786e315433c7f2f33759763f51cfc21d0c4cc2ffe3c729ae1e85f26b",
+    "verification/update-warning-files.json": "c9405a5c14266d4e293dddfc00429aebbaf9213756c3ed484375e2892c29ec48"
   },
   "vendored_header_checks": [
     {

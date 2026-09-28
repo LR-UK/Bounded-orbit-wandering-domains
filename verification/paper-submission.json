@@ -1,10 +1,10 @@
 {
   "result": "passed",
   "scope": "Local Lean build, independent declaration equality, source closure and transitive axioms",
-  "official_comparator": "Not run by this script; use scripts/verify-comparator.sh comparator-paper.json on Linux",
+  "official_comparator": "Not run by this script; use scripts/verify-comparator.sh comparator.json on Linux",
   "theorems_compared": 10,
-  "supporting_declarations_compared": 36,
-  "local_proof_modules_scanned": 772,
+  "supporting_declarations_compared": 35,
+  "local_proof_modules_scanned": 777,
   "axioms": {
     "BoundedWanderingDomains.theorem_1_2_entire": [
       "propext",
@@ -58,9 +58,9 @@
     ]
   },
   "built_all_entry_points": true,
-  "all_local_proof_modules_scanned": 794,
+  "all_local_proof_modules_scanned": 798,
   "source_hash_encoding": "UTF-8 with LF line endings",
-  "declarations_sha256": "e4e7caa4a90a9769fae5c07422c2ba037ca351c4beef672121c125930ad87ba4",
+  "declarations_sha256": "9afe44f2be44e243f3ac9aab7c6c0e581ae816bb30fd2a5dcf3527e1a3e524bb",
   "proof_imports": {
     "Solution": {
       "file": "Solution.lean",
@@ -73,7 +73,7 @@
         "BoundedWanderingDomains.Surfaces.SurfaceDerivedLimits",
         "BoundedWanderingDomains.Surfaces.SurfacePositiveArea"
       ],
-      "sha256": "c0f4cb49962c98e0a753eb2ab137d502838da60e7f125b31095f9a7c214a91bc"
+      "sha256": "27584c62b9b9f38352609e3a4a6ef9b25759ac53b00c44810a1926898b5cad1e"
     },
     "BoundedWanderingDomains.NoWanderingCorollaries": {
       "file": "BoundedWanderingDomains/NoWanderingCorollaries.lean",
@@ -1017,10 +1017,14 @@
       "imports": [
         "Mathlib.Dynamics.FixedPoints.Basic",
         "Mathlib.Data.Set.Pairwise.Basic",
-        "Mathlib.Data.Set.Lattice",
+        "Mathlib.Data.Set.Lattice.Bounded",
+        "Mathlib.Data.Set.Lattice.Disjoint",
+        "Mathlib.Data.Set.Lattice.Image",
+        "Mathlib.Data.Set.Lattice.Indexed",
+        "Mathlib.Data.Set.Lattice.Order",
         "Mathlib.Tactic.Ext"
       ],
-      "sha256": "091db39659c2aa5f5f1471ab6bea02e57e2c638052a9844811f549e139d1935a"
+      "sha256": "b607d09f1a3bd8d4f84cce722a1cc259ac803a254409db764123443fc3202b6c"
     },
     "BoundedWanderingDomains.LocalTrappedTopology": {
       "file": "BoundedWanderingDomains/LocalTrappedTopology.lean",
@@ -1177,7 +1181,7 @@
         "Ray.Misc.Bound",
         "Ray.Misc.Finset"
       ],
-      "sha256": "25a96dc30f3cc720db8d3c044d273a308853d7832e699d5dd5673c0ee279237d"
+      "sha256": "f13f7cab3aee240e606f0e82e432499d38fd02b459efd8bc0adecfb55b035687"
     },
     "Ray.Misc.Defs": {
       "file": "Ray/Misc/Defs.lean",
@@ -1223,7 +1227,7 @@
         "Mathlib.Analysis.InnerProductSpace.Basic",
         "Mathlib.Tactic.Cases"
       ],
-      "sha256": "2bff1c3daa7abd35d2eec31c3b5fb0acaefe1d7aca409740663de8dc5310b2df"
+      "sha256": "da4f48654cc3ec8c00da22c1b37cc3159ae60428646343f51ee5bea77a4cd550"
     },
     "Ray.Misc.Topology": {
       "file": "Ray/Misc/Topology.lean",
@@ -1333,7 +1337,7 @@
         "Ray.Misc.Bounds",
         "Ray.Misc.Finset"
       ],
-      "sha256": "79bc3842414781cc90914fe0140ac3dd917837c8bf0f4991dae8288c08786563"
+      "sha256": "0c61d4d77990f253a3624f38e8814bf1616a96103454ea4ef9315f19100ec4e6"
     },
     "Ray.Analytic.Holomorphic": {
       "file": "Ray/Analytic/Holomorphic.lean",
@@ -1385,7 +1389,7 @@
         "Ray.Misc.Multilinear",
         "Ray.Misc.Topology"
       ],
-      "sha256": "5199e727980569d29e74c75883dd61632215ab5a4baaad1e9ce414a9f744fc2d"
+      "sha256": "869d06827089028971eb1bcfe932b899773d5a59b2e76322b2e90ca7b21828db"
     },
     "Ray.Analytic.Series": {
       "file": "Ray/Analytic/Series.lean",
@@ -4286,7 +4290,7 @@
         "FunctionTheory.RiemannSphere.Basic",
         "Mathlib.Geometry.Manifold.IsManifold.Basic"
       ],
-      "sha256": "77019d256676ec2878dfe5f089f30d311696365cb37ae4e00731ed84a5b7e510"
+      "sha256": "a46bbfa270c2675bb77f33d51220a27547c1039e6c2d8d98a068a24d629ccae6"
     },
     "RiemannDynamics.Sphere.MobiusAction": {
       "file": "RiemannDynamics/Sphere/MobiusAction.lean",
@@ -4817,7 +4821,7 @@
         "BoundedWanderingDomains.LogKernelMoments",
         "BoundedWanderingDomains.CutoffLaplacian"
       ],
-      "sha256": "27857151e2c155f91dd66c6e83a84ed36ce14bd632e112a88167492c7bac10ed"
+      "sha256": "3643127f4c7e564bf95af84893fe3979246b3c68ef53b6af3c3e976949ac8768"
     },
     "BoundedWanderingDomains.LogKernelMoments": {
       "file": "BoundedWanderingDomains/LogKernelMoments.lean",
@@ -5375,7 +5379,7 @@
         "BoundedWanderingDomains.Surfaces.LocalMapSubsurface",
         "BoundedWanderingDomains.Surfaces.WanderingAnchorDisk"
       ],
-      "sha256": "2857c6434fc2410bbf9d8e9f57e45d9af1c65f30cbdd788b0eb40f5db0be65dd"
+      "sha256": "8149820ff867f0f870771cc0ff1a72f1cc0f964be337fdbee93c337067c0f1d3"
     },
     "BoundedWanderingDomains.Surfaces.HyperbolicOrbitEscape": {
       "file": "BoundedWanderingDomains/Surfaces/HyperbolicOrbitEscape.lean",
@@ -5386,7 +5390,7 @@
         "BoundedWanderingDomains.Surfaces.CompactOrbitRestriction",
         "BoundedWanderingDomains.Surfaces.OrbitEscapeReduction"
       ],
-      "sha256": "4b620d1807bb0245c329d9cc079fb947f0d354c348fbae743853443723dfa4a9"
+      "sha256": "993e6b8eb24f770139381c1a4b3b1ef47f806684ccb45545cc8075ede46dbfec"
     },
     "BoundedWanderingDomains.Surfaces.EventualCoveringArea": {
       "file": "BoundedWanderingDomains/Surfaces/EventualCoveringArea.lean",
@@ -5395,7 +5399,7 @@
         "BoundedWanderingDomains.Surfaces.CompactLocalAreaAdvance",
         "BoundedWanderingDomains.Surfaces.WanderingDiscInjectivity"
       ],
-      "sha256": "fea5d699241dd7c265fb0bac873e990b5dfcd04b09603bf055131ab26a813902"
+      "sha256": "446393071bdae08a6a3fe6ae304212b291357e6ce712cb33caa3a644ac5b19bd"
     },
     "BoundedWanderingDomains.Surfaces.FiniteModelDiscArea": {
       "file": "BoundedWanderingDomains/Surfaces/FiniteModelDiscArea.lean",
@@ -5404,7 +5408,7 @@
         "BoundedWanderingDomains.Surfaces.DomainKernelArea",
         "BoundedWanderingDomains.Surfaces.DomainAreaSubtype"
       ],
-      "sha256": "529fde7dfb2e4ccc4cc6c6fa3fd1b2f447b99495505ddd4bdb90827518b8eb1a"
+      "sha256": "1c8c099e3f28f608374a33510206f253ee787996345378015c4e11347770a207"
     },
     "BoundedWanderingDomains.Surfaces.CoveringDiscArea": {
       "file": "BoundedWanderingDomains/Surfaces/CoveringDiscArea.lean",
@@ -5413,7 +5417,7 @@
         "BoundedWanderingDomains.Surfaces.PointedCoveringDiscs",
         "BoundedWanderingDomains.DiscArea"
       ],
-      "sha256": "4cf70281767b1181306448076632263bbe08bf55ee1cf8fe660e11fb1203ddba"
+      "sha256": "fb37cbe6bb61f3a06be8b9548535941527aa46b71ace551957a61d9844f1d562"
     },
     "BoundedWanderingDomains.Surfaces.HyperbolicArea": {
       "file": "BoundedWanderingDomains/Surfaces/HyperbolicArea.lean",
@@ -5601,7 +5605,7 @@
         "BoundedWanderingDomains.Surfaces.ComponentKernel",
         "Mathlib.MeasureTheory.Integral.Lebesgue.Add"
       ],
-      "sha256": "a21b81c5898c9517c62ad4b761d1451eea3c9b580332272ba40f6944e28eca79"
+      "sha256": "9d5b6bb58530061ba1de5beffbd943ef077782b7da7ce48b5b76a55346394e8a"
     },
     "BoundedWanderingDomains.Surfaces.DomainArea": {
       "file": "BoundedWanderingDomains/Surfaces/DomainArea.lean",
@@ -5669,7 +5673,7 @@
         "RiemannDynamics.Uniformization.PuncturedPlaneBridge",
         "RiemannDynamics.Uniformization.Perron.BipolarGreen.Pieces"
       ],
-      "sha256": "03d0b637947b28ffa1e9bdd302fc6a12ffea1c42b2d4affc3845fe25ba884523"
+      "sha256": "531d76d2fc2b668af0aed814e6c8b6d6078025936c16ee3912a84af892f779bd"
     },
     "RiemannDynamics.Uniformization.HyperbolicSurface": {
       "file": "RiemannDynamics/Uniformization/HyperbolicSurface.lean",
@@ -5805,7 +5809,7 @@
       "imports": [
         "BoundedWanderingDomains.Surfaces.DomainArea"
       ],
-      "sha256": "78dca2b68a123641137b65421edc389645801c5967afb1b7823b36f065b061c9"
+      "sha256": "774f65438052d7efacc1d4bbcf413cc9cc7895a515b7a027b05eff3ced7a2418"
     },
     "BoundedWanderingDomains.Surfaces.CompactLocalAreaAdvance": {
       "file": "BoundedWanderingDomains/Surfaces/CompactLocalAreaAdvance.lean",
@@ -5817,7 +5821,7 @@
         "BoundedWanderingDomains.Surfaces.UniformizationBridge",
         "Mathlib.Order.Disjointed"
       ],
-      "sha256": "6fb16c59eae171af7b7119dfe33e7a0bc974d2193c74e1a45ac0586ee05d5a7e"
+      "sha256": "7fae78e6b6d27731040b8d26ee2e7bce8af417140f38e8c1cde8ea2b6d6a92bb"
     },
     "BoundedWanderingDomains.Surfaces.LocalCompactModelPatches": {
       "file": "BoundedWanderingDomains/Surfaces/LocalCompactModelPatches.lean",
@@ -5825,7 +5829,7 @@
         "BoundedWanderingDomains.Surfaces.FiniteFibers",
         "BoundedWanderingDomains.Surfaces.LocalCompactAreaAdvance"
       ],
-      "sha256": "15e93d324370216242227092ad1952049ff1820f307be84c251d0407af506e40"
+      "sha256": "d8860f393ba28633e5ddd12aec4a0f48b8ed9d413b95d5f6aa7bc147286e2168"
     },
     "BoundedWanderingDomains.Surfaces.FiniteFibers": {
       "file": "BoundedWanderingDomains/Surfaces/FiniteFibers.lean",
@@ -5833,7 +5837,7 @@
         "BoundedWanderingDomains.Surfaces.OpenMapping",
         "Mathlib.Topology.DiscreteSubset"
       ],
-      "sha256": "2e3ea3cf4d6e6f0b2d6d40657955ba4c4b4e73faa77b59739ef827b408437f7c"
+      "sha256": "ca0fd8d18a12068337bf44decb3bdd48fa4d0da20df00729c40d67e57cd95f40"
     },
     "BoundedWanderingDomains.Surfaces.OpenMapping": {
       "file": "BoundedWanderingDomains/Surfaces/OpenMapping.lean",
@@ -5841,7 +5845,7 @@
         "BoundedWanderingDomains.Surfaces.AnalyticSurface",
         "Mathlib.Analysis.Complex.OpenMapping"
       ],
-      "sha256": "878757c5bde48e3eef136fd93c3c4982b68e2b67c68ea07980ae3c2363124b3c"
+      "sha256": "a6e5fd7f65f7e176d121984ecb35235f08014aa9f3fd3084642e3675d23909bf"
     },
     "BoundedWanderingDomains.Surfaces.LocalCompactAreaAdvance": {
       "file": "BoundedWanderingDomains/Surfaces/LocalCompactAreaAdvance.lean",
@@ -5850,7 +5854,7 @@
         "BoundedWanderingDomains.Surfaces.RemoteCoveringAreaAdvance",
         "BoundedWanderingDomains.Surfaces.SaturationDynamics"
       ],
-      "sha256": "c5c6bc8f7cebdaa796eb9209301bbf0d1c54478c382b628a4240e691adfdc8e7"
+      "sha256": "45c36dc6b8948c34e0374fc755cebeb5128869c07559b6a707003f0e7739bde3"
     },
     "BoundedWanderingDomains.Surfaces.LocalCompactCovering": {
       "file": "BoundedWanderingDomains/Surfaces/LocalCompactCovering.lean",
@@ -5858,21 +5862,21 @@
         "BoundedWanderingDomains.Surfaces.CompactInteriorCover",
         "BoundedWanderingDomains.Surfaces.LocalMapTotalization"
       ],
-      "sha256": "5ba542cb3b6f69dadee99a5270ffa0b691bd1276dffe76086176c33d5f8d9118"
+      "sha256": "8b46eb7dbfbe497234bc30adedac7dad58a65459bba9b877fadfa727cd98c790"
     },
     "BoundedWanderingDomains.Surfaces.CompactInteriorCover": {
       "file": "BoundedWanderingDomains/Surfaces/CompactInteriorCover.lean",
       "imports": [
         "BoundedWanderingDomains.Surfaces.CompactSurfaceCovering"
       ],
-      "sha256": "e93741551024a1c90c56459c8d8828d9bff8e0cac7b00c3801e9d6d816fc5737"
+      "sha256": "22dc7fcd84c31e72b30f3b47725e48909c0717bb971ef1d6bfddff222d146d9f"
     },
     "BoundedWanderingDomains.Surfaces.CompactSurfaceCovering": {
       "file": "BoundedWanderingDomains/Surfaces/CompactSurfaceCovering.lean",
       "imports": [
         "BoundedWanderingDomains.Surfaces.SurfaceLocalBranching"
       ],
-      "sha256": "1179ff49e4947fd0d98a5be283b60c372b955e51ce6878f58fba0bc3fa7efbc2"
+      "sha256": "3bfde4756f04e1d5a8e1d49e045d3854ead75496eca2472047ec2b7b737af8e9"
     },
     "BoundedWanderingDomains.Surfaces.SurfaceLocalBranching": {
       "file": "BoundedWanderingDomains/Surfaces/SurfaceLocalBranching.lean",
@@ -5880,7 +5884,7 @@
         "BoundedWanderingDomains.Surfaces.CompactBranchValues",
         "Mathlib.Topology.IsLocalHomeomorph"
       ],
-      "sha256": "77ce7bd14841762abc887563c1a76ce755b99d8c3da2bd83e6b173b4924c0195"
+      "sha256": "69435e872f639a67caa65200172ed63f61db4f93628417f0aca072c0ae2ee4c4"
     },
     "BoundedWanderingDomains.Surfaces.CompactBranchValues": {
       "file": "BoundedWanderingDomains/Surfaces/CompactBranchValues.lean",
@@ -5888,14 +5892,14 @@
         "BoundedWanderingDomains.Surfaces.FiniteChartCriticalCover",
         "BoundedWanderingDomains.Surfaces.CompactChartPatches"
       ],
-      "sha256": "71e2eb890f29d0ecc14f6d01d3681eef5500a5c3f230e5c6a9fc2c364d1aee99"
+      "sha256": "df17e6990be94b7714af02b11495fe931c806b1d6af14f9ebd528fc35a074197"
     },
     "BoundedWanderingDomains.Surfaces.FiniteChartCriticalCover": {
       "file": "BoundedWanderingDomains/Surfaces/FiniteChartCriticalCover.lean",
       "imports": [
         "BoundedWanderingDomains.Surfaces.ChartCriticalValues"
       ],
-      "sha256": "90261c426b742310657c8db9c85fd82a12d95bcc10e7fb7de1112011d0fb0e96"
+      "sha256": "b0edd2dc796e6ce4704fecf61ee1cccc2ab8d27e6d319b018e9f4f9229cff5b4"
     },
     "BoundedWanderingDomains.Surfaces.ChartCriticalValues": {
       "file": "BoundedWanderingDomains/Surfaces/ChartCriticalValues.lean",
@@ -5904,7 +5908,7 @@
         "BoundedWanderingDomains.Surfaces.OpenMapping",
         "BoundedWanderingDomains.LocalCovering"
       ],
-      "sha256": "2641e514d3b53b105f77a90d0d11ebeab30962477b61e086392ffb41a89eff6e"
+      "sha256": "04dcfbcb6c3a1fb534a61bc30cdf41e6a67f17c5b3a5fbcffd2c20224abba5e3"
     },
     "BoundedWanderingDomains.Surfaces.ChartMapAreaTransport": {
       "file": "BoundedWanderingDomains/Surfaces/ChartMapAreaTransport.lean",
@@ -5913,7 +5917,7 @@
         "BoundedWanderingDomains.Surfaces.CoveringMetricPullback",
         "BoundedWanderingDomains.HolomorphicTransport"
       ],
-      "sha256": "0e1df96110dae114f8464d9c12e25b5d46b53cd5e82601b60fdf20ae89e42009"
+      "sha256": "276a09f80c0caa835e2c0f243f2576d83431e2bd5dd1923fe644efad45b5709a"
     },
     "BoundedWanderingDomains.Surfaces.CoveringMetricPullback": {
       "file": "BoundedWanderingDomains/Surfaces/CoveringMetricPullback.lean",
@@ -6031,7 +6035,7 @@
         "BoundedWanderingDomains.LocalTrappedTopology",
         "BoundedWanderingDomains.Surfaces.LocalDynamics"
       ],
-      "sha256": "c27aaf099b3af97a318785a6d3e18e16f3ce9410020330ef0c2074d3a4c22d91"
+      "sha256": "d34959ccb420802a5803f4e38944cdebf11a22883e20b20eb24f0a696b5c7edb"
     },
     "BoundedWanderingDomains.Surfaces.LocalDynamics": {
       "file": "BoundedWanderingDomains/Surfaces/LocalDynamics.lean",
@@ -6053,7 +6057,7 @@
         "BoundedWanderingDomains.Surfaces.ChartPartitionCoveringTransport",
         "BoundedWanderingDomains.Surfaces.UniformFiniteRemoval"
       ],
-      "sha256": "a7130f92739846bca9e1d9ab4344bb405d28bffaed81353aa6408bfc8fb96da2"
+      "sha256": "7736795c38b614b854321deebf5f8b3114ffef7fe1fd0eb887f664bc2f5d5bff"
     },
     "BoundedWanderingDomains.Surfaces.OpenDomainFinitePatchTransport": {
       "file": "BoundedWanderingDomains/Surfaces/OpenDomainFinitePatchTransport.lean",
@@ -6083,7 +6087,7 @@
       "imports": [
         "BoundedWanderingDomains.Surfaces.DomainCoveringPullback"
       ],
-      "sha256": "1b0dda0923700be442dbe9e8c02b17df44719cc3b31ef9f0435ceb2327d2ec95"
+      "sha256": "035496a371f733c4c51677089fb44b112c81e6fc0f4c9fb8db0ce1e0ac76d7c3"
     },
     "BoundedWanderingDomains.Surfaces.DomainCoveringPullback": {
       "file": "BoundedWanderingDomains/Surfaces/DomainCoveringPullback.lean",
@@ -6116,7 +6120,7 @@
         "BoundedWanderingDomains.Surfaces.SurfacePolish",
         "Mathlib.Data.Nat.Pairing"
       ],
-      "sha256": "9a8c713d64101594345e78eb77ce924987bad6ebc7ac003fd7c70b3bf9f16294"
+      "sha256": "52fbba704ceb911bedbb94b03f4ac8f876c76cfd77900a066b11df2b2049f5ae"
     },
     "BoundedWanderingDomains.Surfaces.CountablePatchTransport": {
       "file": "BoundedWanderingDomains/Surfaces/CountablePatchTransport.lean",
@@ -6135,7 +6139,7 @@
         "Mathlib.Topology.Compactification.OnePoint.Basic",
         "Mathlib.Topology.Compactness.SigmaCompact"
       ],
-      "sha256": "9e1cebf232c013d7986d0b6eb929913fe1a90080fe822a17f41f27e56723ed92"
+      "sha256": "0d4b748d5067edcee983e19a52e5e76d34186206b1c5cc614e5e38c06175322a"
     },
     "BoundedWanderingDomains.Surfaces.UniformFiniteRemoval": {
       "file": "BoundedWanderingDomains/Surfaces/UniformFiniteRemoval.lean",
@@ -6258,7 +6262,7 @@
         "BoundedWanderingDomains.Surfaces.Statements",
         "BoundedWanderingDomains.Surfaces.SurfacePolish"
       ],
-      "sha256": "314ecb12fe682aaf7b8e45540cd15e0d33b76524f1a10696516f9da3a763a340"
+      "sha256": "822f15c68a2e3b08ece60ef67512fec2f96c4a8baf562b53ea7e69f09705ef5c"
     },
     "BoundedWanderingDomains.Surfaces.Statements": {
       "file": "BoundedWanderingDomains/Surfaces/Statements.lean",
@@ -6266,10 +6270,9 @@
         "BoundedWanderingDomains.Surfaces.LocalDynamics",
         "BoundedWanderingDomains.Surfaces.CompactificationEscape",
         "Mathlib.MeasureTheory.Measure.Lebesgue.Complex",
-        "Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected",
         "Mathlib.Topology.DerivedSet"
       ],
-      "sha256": "89029d2f442048b8ce13322e96c1ee3390f1bcdbe9507f24937f29f35939b465"
+      "sha256": "f84c98fde5ba9974b85c41beb23fcc3e3f0d1b3185e30d8d9b1ebe5ae28eb47d"
     },
     "BoundedWanderingDomains.Surfaces.CompactificationEscape": {
       "file": "BoundedWanderingDomains/Surfaces/CompactificationEscape.lean",
@@ -6288,7 +6291,7 @@
         "BoundedWanderingDomains.Surfaces.LocalMapRestriction",
         "BoundedWanderingDomains.Surfaces.SaturationDynamics"
       ],
-      "sha256": "631a9470b25af8c1f08ae8c90702bd36e612a3d0c1902135e18be05f2fe20001"
+      "sha256": "25b552a5668619d455b10b6c33cf6c2d56caceca1aa17717e3243199220e0586"
     },
     "BoundedWanderingDomains.Surfaces.CoordinateDiskSelection": {
       "file": "BoundedWanderingDomains/Surfaces/CoordinateDiskSelection.lean",
@@ -6296,7 +6299,7 @@
         "BoundedWanderingDomains.Surfaces.OpenMapping",
         "BoundedWanderingDomains.Surfaces.UniformizationBridge"
       ],
-      "sha256": "3857e1e8e7c5e5ec503d2784f773925e9ce2ba28fbbe2dabd735f8e0b760460a"
+      "sha256": "bd96bbcd1d138ffd34ca6a25b3e074bd3c31f0377423060ef9bf713027e44313"
     },
     "BoundedWanderingDomains.Surfaces.LocalMapRestriction": {
       "file": "BoundedWanderingDomains/Surfaces/LocalMapRestriction.lean",
@@ -6305,7 +6308,7 @@
         "BoundedWanderingDomains.Surfaces.PlaneReading",
         "BoundedWanderingDomains.Surfaces.SubtypeHolomorphic"
       ],
-      "sha256": "94127a17d3e77e5d626829b6999e5ca105bb1d4fdbbf172decaca1becfc3b4f4"
+      "sha256": "420e5a2485b2b3469a6369e2cbc90ac763468951d21f429e78f5d29aae170f3f"
     },
     "BoundedWanderingDomains.Surfaces.LocalMapSubsurface": {
       "file": "BoundedWanderingDomains/Surfaces/LocalMapSubsurface.lean",
@@ -6316,7 +6319,7 @@
         "BoundedWanderingDomains.Surfaces.Statements",
         "BoundedWanderingDomains.Surfaces.SubtypeHolomorphic"
       ],
-      "sha256": "83a0d6f1b1f94648483596b851d1785ae3cb951fb365eff2bcccf7e9444423f9"
+      "sha256": "2db23acbc6762041e2de12911887e689ef405ac09cb2b62c0cc5aafa7de235f2"
     },
     "BoundedWanderingDomains.Surfaces.RestrictedOmega": {
       "file": "BoundedWanderingDomains/Surfaces/RestrictedOmega.lean",
@@ -6333,7 +6336,7 @@
         "BoundedWanderingDomains.Surfaces.CoordinateDiscParam",
         "BoundedWanderingDomains.Surfaces.LocalIterateHolomorphic"
       ],
-      "sha256": "d5a34f8943bb81297e451a0c0f395167633adc2ca97207502d3b0baab688232f"
+      "sha256": "b7fb36ed15219e7da3667fc20f27682a33aa7bcd7b09ae55cfb01f6e9f238fb1"
     },
     "BoundedWanderingDomains.Surfaces.CompactCentreNormal": {
       "file": "BoundedWanderingDomains/Surfaces/CompactCentreNormal.lean",
@@ -6344,7 +6347,7 @@
         "Mathlib.Topology.Compactification.OnePoint.Basic",
         "Mathlib.Topology.UniformSpace.Uniformizable"
       ],
-      "sha256": "9eda6f0b3b5298fdb4ad97a51ab767a422c1225500011248247a4fbdcecb1e9f"
+      "sha256": "dde120d439246ba4ff8947ddf390aeee514d414bf1a1df59a9b06ddf5fe245ea"
     },
     "BoundedWanderingDomains.Surfaces.CoordinateDiscParam": {
       "file": "BoundedWanderingDomains/Surfaces/CoordinateDiscParam.lean",
@@ -6353,7 +6356,7 @@
         "BoundedWanderingDomains.Surfaces.DiscDilation",
         "BoundedWanderingDomains.Surfaces.HolomorphicLifting"
       ],
-      "sha256": "467cbfa6873e7de4640e41ce65ee02ad627812353c3b24c36cb47604ee68ec88"
+      "sha256": "565b8e345dbef7131dcc1d673ee6bca25674a27bad0c5a9089cd3480e41d6f8a"
     },
     "BoundedWanderingDomains.Surfaces.LocalIterateHolomorphic": {
       "file": "BoundedWanderingDomains/Surfaces/LocalIterateHolomorphic.lean",
@@ -6362,7 +6365,7 @@
         "BoundedWanderingDomains.Surfaces.SubtypeHolomorphic",
         "BoundedWanderingDomains.Surfaces.PlaneReading"
       ],
-      "sha256": "4074b614e07efe1a3f188f739d7e7480bd32c3cfd4c73e40a5f53c418b0a95b9"
+      "sha256": "9c67258a98e87d2edb0fb0dac4f26508ccd9c916a19da73ef332d3a113164fa0"
     },
     "BoundedWanderingDomains.Surfaces.PositiveAreaFinalReduction": {
       "file": "BoundedWanderingDomains/Surfaces/PositiveAreaFinalReduction.lean",
@@ -6372,7 +6375,7 @@
         "BoundedWanderingDomains.Surfaces.PositiveAreaExceptionalReduction",
         "BoundedWanderingDomains.Surfaces.TopDiscCover"
       ],
-      "sha256": "9ff06a511d2fd00e26327fc5fe0dbc1e2bcbfd9426ecab1ff98c70841c55a3d1"
+      "sha256": "f71f6a82f3a38174a6119ed3aeed7e9bfaf9ab3bdfef9d1321508db5d9a18a2c"
     },
     "BoundedWanderingDomains.Surfaces.PositiveAreaAdvanceReduction": {
       "file": "BoundedWanderingDomains/Surfaces/PositiveAreaAdvanceReduction.lean",
@@ -6380,7 +6383,7 @@
         "BoundedWanderingDomains.Surfaces.FiniteModelCancellation",
         "BoundedWanderingDomains.Surfaces.PositiveAreaContradiction"
       ],
-      "sha256": "178dda07e13486171fad3d4926b4760d2dd89c3c2c457ca7becf60b137922fbd"
+      "sha256": "bb511a06547fe2c616920d3516dde864f8b42d8bfa88f49f16e86cf1ef2d1e9d"
     },
     "BoundedWanderingDomains.Surfaces.FiniteModelCancellation": {
       "file": "BoundedWanderingDomains/Surfaces/FiniteModelCancellation.lean",
@@ -6430,7 +6433,7 @@
         "BoundedWanderingDomains.Surfaces.DomainSchwarz",
         "BoundedWanderingDomains.Surfaces.DiscAvoidanceRatio"
       ],
-      "sha256": "702e451e158a7b86f42b0842f88ab73d4198efad8bda2e75d6154b0674ce8d80"
+      "sha256": "6f475a98e5ef6d014f2cd13f8b00a2a4d75d000a17653115a409c6bd1f8d993d"
     },
     "BoundedWanderingDomains.Surfaces.PositiveAreaContradiction": {
       "file": "BoundedWanderingDomains/Surfaces/PositiveAreaContradiction.lean",
@@ -6469,7 +6472,7 @@
         "BoundedWanderingDomains.Surfaces.Statements",
         "BoundedWanderingDomains.Surfaces.SubdomainDensity"
       ],
-      "sha256": "5f601c3e308cacee0974fc4a5b14c70fc36bdab236889eb27a30f54f4ff6f1a3"
+      "sha256": "fe9f7c562c72205416be2b00a337cad8c566e689c1a2a9d7990ba3b539a05eaf"
     },
     "BoundedWanderingDomains.Surfaces.PositiveAreaBarrierReduction": {
       "file": "BoundedWanderingDomains/Surfaces/PositiveAreaBarrierReduction.lean",
@@ -6478,14 +6481,14 @@
         "BoundedWanderingDomains.Surfaces.CoordinateDiskSelection",
         "BoundedWanderingDomains.Surfaces.RestrictionSaturationBridge"
       ],
-      "sha256": "5edfdcfde8b9e749c209c9c8553919dec2aba5cb863bdd05c4ee232fd5d5fd96"
+      "sha256": "a11a2426f7d1d1b0cf01acfef1c5ffa9e9afaa2e152b846dd331a1982cbbe7ca"
     },
     "BoundedWanderingDomains.Surfaces.BoundaryBarrierPackage": {
       "file": "BoundedWanderingDomains/Surfaces/BoundaryBarrierPackage.lean",
       "imports": [
         "BoundedWanderingDomains.Surfaces.RestrictedBarrierComponents"
       ],
-      "sha256": "6916a7fe3840fb48031abff77ee0597cdecdb9b421d3380bd4792be231d75c7b"
+      "sha256": "cfc8599ab10ccbcdd25e28e9285f4e4f538e6089598f005a8f7933cb3b0be7a2"
     },
     "BoundedWanderingDomains.Surfaces.RestrictedBarrierComponents": {
       "file": "BoundedWanderingDomains/Surfaces/RestrictedBarrierComponents.lean",
@@ -6494,7 +6497,7 @@
         "BoundedWanderingDomains.Surfaces.LocalBarrierComponents",
         "BoundedWanderingDomains.Surfaces.RestrictedOmega"
       ],
-      "sha256": "7afc67446e33995e7748dc959f258a2156b6c5bcd46b4795489424c144b2bb93"
+      "sha256": "7f2fca355fa6eeaf0d394812c85e6f6db1b524afb79cf0ff43eef5e3cdda79d7"
     },
     "BoundedWanderingDomains.Surfaces.BoundaryPunctureSequence": {
       "file": "BoundedWanderingDomains/Surfaces/BoundaryPunctureSequence.lean",
@@ -6506,7 +6509,7 @@
         "BoundedWanderingDomains.Surfaces.LocalMapTotalization",
         "Mathlib.Topology.Separation.Regular"
       ],
-      "sha256": "2881c04eb3374913bb23787215c8051b691c92603f923bd1fb42ba98ed7cc65f"
+      "sha256": "ebeb46f6d9eac64fe56da65955c1c97a8c70d08bba1adb736a0f3896e9f9b38d"
     },
     "BoundedWanderingDomains.Surfaces.LocalPunctures": {
       "file": "BoundedWanderingDomains/Surfaces/LocalPunctures.lean",
@@ -6514,7 +6517,7 @@
         "BoundedWanderingDomains.LocalPunctures",
         "BoundedWanderingDomains.Surfaces.FiniteFibers"
       ],
-      "sha256": "c24d5a5ba733aeeadc7919ee573b515ecedf1c0679cd147464df786387b95d2e"
+      "sha256": "a347a0992a00955e55b83be7420490555556418320956f51784e11ba566ec61e"
     },
     "BoundedWanderingDomains.Surfaces.LocalBarrierComponents": {
       "file": "BoundedWanderingDomains/Surfaces/LocalBarrierComponents.lean",
@@ -6530,7 +6533,7 @@
         "BoundedWanderingDomains.Surfaces.LocalMapRestriction",
         "BoundedWanderingDomains.Surfaces.SaturationDynamics"
       ],
-      "sha256": "bf78c4a8cec37d2ca68025d5614ecb10f8086cf467adcb4e89a1f5fd1d1049c1"
+      "sha256": "fa38afdc88f1ea2f665382b4ba1793a3c79b30ddc53557c0b967d81903d543e2"
     },
     "BoundedWanderingDomains.Surfaces.PositiveAreaExceptionalReduction": {
       "file": "BoundedWanderingDomains/Surfaces/PositiveAreaExceptionalReduction.lean",
@@ -6539,14 +6542,14 @@
         "BoundedWanderingDomains.Surfaces.PositiveAreaBridge",
         "BoundedWanderingDomains.Surfaces.SaturationDynamics"
       ],
-      "sha256": "8a8e0d7697c10a65d40657f36a3fe8627bcf08014399f562369c08a116a3d5d4"
+      "sha256": "8bfae823cb8cbc2c5054eb56beae223d1159108e7d8b7ac341f982877822cbf6"
     },
     "BoundedWanderingDomains.Surfaces.BackwardExceptionalPackage": {
       "file": "BoundedWanderingDomains/Surfaces/BackwardExceptionalPackage.lean",
       "imports": [
         "BoundedWanderingDomains.Surfaces.BoundaryPunctureSequence"
       ],
-      "sha256": "14f5ca752bc0b7625614d387fde3c6c9e50a62339b7c5c01a732b5aeb56cddb6"
+      "sha256": "d5c5e6a986c9b08dfae6b38fa6fd05ed98abb9bb9ce385992ed6d4ba2537152a"
     },
     "BoundedWanderingDomains.Surfaces.TopDiscCover": {
       "file": "BoundedWanderingDomains/Surfaces/TopDiscCover.lean",
@@ -6564,7 +6567,7 @@
         "BoundedWanderingDomains.Surfaces.LocalCompactModelPatches",
         "BoundedWanderingDomains.TrappedComponentCovering"
       ],
-      "sha256": "c49e3b92af5ad171cb580e6381addfeae32e9d06d9b785755299f4b351437e1b"
+      "sha256": "4b66b389b3f19fe56fea0a54f01f685763f7352d65384d8ea2cafaca8e90311e"
     },
     "BoundedWanderingDomains.Surfaces.ConditionalDiscShrink": {
       "file": "BoundedWanderingDomains/Surfaces/ConditionalDiscShrink.lean",
@@ -6579,7 +6582,7 @@
         "BoundedWanderingDomains.Surfaces.CompactDiscImages",
         "BoundedWanderingDomains.ShrinkingImages"
       ],
-      "sha256": "d847d599dfd61e187d61553286ea9fb387792e0d0bd702fbbcac7bbaebd0b59f"
+      "sha256": "564dc03e7fe1470f65897509c2a1f081be3ecff9724ead166ed01f18c26f967b"
     },
     "BoundedWanderingDomains.Surfaces.BakerCoveringDiscs": {
       "file": "BoundedWanderingDomains/Surfaces/BakerCoveringDiscs.lean",
@@ -6589,7 +6592,7 @@
         "BoundedWanderingDomains.Surfaces.WanderingDiscShrink",
         "BoundedWanderingDomains.Surfaces.CoordinateDiscParam"
       ],
-      "sha256": "ff9f45fe1cb12a64f1406c511150ea60817f37419929180261cb0aae957134d1"
+      "sha256": "c7626d4abd01061647d9493b42d1ff6e4fb5de943c28edeb8a2ccf68bb2ec840"
     },
     "BoundedWanderingDomains.Surfaces.SurfaceFilling": {
       "file": "BoundedWanderingDomains/Surfaces/SurfaceFilling.lean",
@@ -6599,7 +6602,7 @@
         "BoundedWanderingDomains.HolomorphicFilling",
         "EremenkosConjecture.PlaneSimpleConnectivity"
       ],
-      "sha256": "898e32d103e1d4ef038b692c67b579eca988ea4188fbacb9fb6707db0d9c411d"
+      "sha256": "046636f9361b02f431dab5d5693b9c0fbd45fd80d809c577f3562dcccc37e3ce"
     },
     "BoundedWanderingDomains.Surfaces.CompactFilling": {
       "file": "BoundedWanderingDomains/Surfaces/CompactFilling.lean",
@@ -6617,7 +6620,7 @@
         "BoundedWanderingDomains.Surfaces.PointedCoveringDiscs",
         "BoundedWanderingDomains.Surfaces.LocalMapTotalization"
       ],
-      "sha256": "ed760ac0a9d817f7a50ae5c832cb6504862c1ca8bacad095284fbb70d9457d76"
+      "sha256": "b36f52b5926bb3e132d79bb847b4ea52deb716910d18b40d2efb3620ccd9bea8"
     },
     "BoundedWanderingDomains.Surfaces.CompactOrbitRestriction": {
       "file": "BoundedWanderingDomains/Surfaces/CompactOrbitRestriction.lean",
@@ -6625,28 +6628,28 @@
         "BoundedWanderingDomains.Surfaces.CompactOrbitNormal",
         "BoundedWanderingDomains.Surfaces.LocalMapRestriction"
       ],
-      "sha256": "fa80192116f9ebf97ee4b427c0c8a323f5bec0f52138ee55cff593503da4e4f9"
+      "sha256": "36d54b0be8540e1e3a1ebae0a39210f091595475521cdbf6162d6a264168c3d3"
     },
     "BoundedWanderingDomains.Surfaces.OrbitEscapeReduction": {
       "file": "BoundedWanderingDomains/Surfaces/OrbitEscapeReduction.lean",
       "imports": [
         "BoundedWanderingDomains.Surfaces.WanderingOrbitStructure"
       ],
-      "sha256": "b78eeb74074dee43f72c56f19d911bbe1718cab02fed36b5d80b643b8865b338"
+      "sha256": "b440e74c3f1ecb67aab570e922660f379a068f4405967528e876043be5b11f89"
     },
     "BoundedWanderingDomains.Surfaces.WanderingOrbitStructure": {
       "file": "BoundedWanderingDomains/Surfaces/WanderingOrbitStructure.lean",
       "imports": [
         "BoundedWanderingDomains.Surfaces.DerivedLimitReduction"
       ],
-      "sha256": "0a19c28c9c16e8cc21403a3f38635b6536750ecb0550c4e0b7848cb4b705aa7b"
+      "sha256": "4468d354e70d0174a49ebb402cd0a523c513a1bd412a76b63b237c0a65afc4b2"
     },
     "BoundedWanderingDomains.Surfaces.DerivedLimitReduction": {
       "file": "BoundedWanderingDomains/Surfaces/DerivedLimitReduction.lean",
       "imports": [
         "BoundedWanderingDomains.Surfaces.Statements"
       ],
-      "sha256": "969459e18ec88e8f602673da0164b1f33e23cc75e7225dc448f86ffd9dea2b51"
+      "sha256": "47b70f35a3d81540358e7d9ee3ed6abdd836cb8ac1c2c11b17f0e7149a62eb23"
     },
     "BoundedWanderingDomains.Surfaces.SubsurfaceOrbitRestriction": {
       "file": "BoundedWanderingDomains/Surfaces/SubsurfaceOrbitRestriction.lean",
@@ -6654,7 +6657,7 @@
         "BoundedWanderingDomains.Surfaces.CompactOrbitRestriction",
         "BoundedWanderingDomains.Surfaces.InvariantSubsurface"
       ],
-      "sha256": "7ea11042d36d2221c36dd4d2f79a044ed7c29af98ec615936cf53e500f2902d9"
+      "sha256": "3de31e195d22e95bb0f37d0c969601d5bb77d61b8cdb91a848a1450a80809160"
     },
     "BoundedWanderingDomains.Surfaces.WanderingAnchorDisk": {
       "file": "BoundedWanderingDomains/Surfaces/WanderingAnchorDisk.lean",
@@ -6663,7 +6666,7 @@
         "BoundedWanderingDomains.Surfaces.LocalMapRestriction",
         "BoundedWanderingDomains.Surfaces.WanderingOrbitStructure"
       ],
-      "sha256": "b46d63ec16d822c212a1dc9fee5058cce5c390b3ff845164eeda2dce8dc9593a"
+      "sha256": "1c1af5b1c97b3f308ea4d75db61b274519597269039ec49bcfc59f43ecf66d00"
     },
     "BoundedWanderingDomains.EntireBoundedOrbit": {
       "file": "BoundedWanderingDomains/EntireBoundedOrbit.lean",
@@ -6684,7 +6687,7 @@
         "BoundedWanderingDomains.Surfaces.Statements",
         "FunctionTheory.Analytic.FiniteOrbitLocalDegree"
       ],
-      "sha256": "867daa92a62b1ad982f473c631ef7356cf31596f21b74f9df2f8a94dd74f7c88"
+      "sha256": "5bb92a96c664ad1d6e230be74a02241f1de7c24259e8bb86d0163c293af9cc8b"
     },
     "BoundedWanderingDomains.MeromorphicNormalityBridge": {
       "file": "BoundedWanderingDomains/MeromorphicNormalityBridge.lean",
@@ -6722,7 +6725,7 @@
         "Mathlib.Topology.Compactification.OnePoint.Basic",
         "Mathlib.Topology.MetricSpace.ProperSpace"
       ],
-      "sha256": "8b0ca37645ed4ad7c2f088634da2addb6e58b000c8fa54e9a9c51d3fe421448d"
+      "sha256": "72cd9a249263aa2bc2a4faab245188be93c6ae7e318b99afc3dfcb9e56a21e63"
     },
     "BoundedWanderingDomains.SphereHolomorphicManifold": {
       "file": "BoundedWanderingDomains/SphereHolomorphicManifold.lean",
@@ -6756,24 +6759,27 @@
     "BoundedWanderingDomains.Surfaces.SurfaceDerivedLimits": {
       "file": "BoundedWanderingDomains/Surfaces/SurfaceDerivedLimits.lean",
       "imports": [
-        "BoundedWanderingDomains.Surfaces.HyperbolicDerivedLimits",
-        "BoundedWanderingDomains.Surfaces.SubsurfaceWanderingComponents",
-        "BoundedWanderingDomains.Surfaces.SubsurfaceRegularValues",
-        "BoundedWanderingDomains.Surfaces.NoEscapeCompactRange",
-        "BoundedWanderingDomains.Surfaces.WanderingAnchorDisk"
+        "BoundedWanderingDomains.Surfaces.BKL.DerivedLimits"
       ],
-      "sha256": "2a80fcd37095ee19edff2cf30b3bc8c706f8cd2db50def6d31f0240e16e57bc7"
+      "sha256": "5edd6ee94783f7779672389cd00e4a16c984de8d7855aa186a7f6f617af197aa"
     },
-    "BoundedWanderingDomains.Surfaces.HyperbolicDerivedLimits": {
-      "file": "BoundedWanderingDomains/Surfaces/HyperbolicDerivedLimits.lean",
+    "BoundedWanderingDomains.Surfaces.BKL.DerivedLimits": {
+      "file": "BoundedWanderingDomains/Surfaces/BKL/DerivedLimits.lean",
       "imports": [
         "BoundedWanderingDomains.Surfaces.CompactOrbitFiniteModels",
         "BoundedWanderingDomains.Surfaces.CompactClusterSeparation",
         "BoundedWanderingDomains.Surfaces.EventualRegularArea",
         "BoundedWanderingDomains.Surfaces.SimplyConnectedCoveringDiscs",
-        "BoundedWanderingDomains.Surfaces.ConditionalDiscShrink"
+        "BoundedWanderingDomains.Surfaces.ConditionalDiscShrink",
+        "BoundedWanderingDomains.Surfaces.BKL.ShrinkingFillings",
+        "BoundedWanderingDomains.Surfaces.SubdomainCover",
+        "BoundedWanderingDomains.Surfaces.SubsurfaceCompactNormal",
+        "BoundedWanderingDomains.Surfaces.SaturationDynamics",
+        "BoundedWanderingDomains.Surfaces.SubsurfaceRegularValues",
+        "BoundedWanderingDomains.Surfaces.NoEscapeCompactRange",
+        "BoundedWanderingDomains.Surfaces.WanderingAnchorDisk"
       ],
-      "sha256": "1e9afb41d51075dfd2726f98b98a4f9ab9771020233c1187973cf2f6e92c7af4"
+      "sha256": "2fcbd0f4912062a2d4e61d833c7c0f4e50783561578ab4baa80603a57dcdfcb5"
     },
     "BoundedWanderingDomains.Surfaces.CompactOrbitFiniteModels": {
       "file": "BoundedWanderingDomains/Surfaces/CompactOrbitFiniteModels.lean",
@@ -6793,14 +6799,14 @@
         "BoundedWanderingDomains.Surfaces.ComponentDomains",
         "BoundedWanderingDomains.BarrierComponents"
       ],
-      "sha256": "daf4d1eebf9843aa04f6c7496e51cea660bcad946027fb37f7dc42966652f43e"
+      "sha256": "2d8322fef4642b82f91c1472abfcaea73d401432a801228773fd75c356e9eca6"
     },
     "BoundedWanderingDomains.Surfaces.ForwardSourceBarrier": {
       "file": "BoundedWanderingDomains/Surfaces/ForwardSourceBarrier.lean",
       "imports": [
         "BoundedWanderingDomains.Surfaces.LocalMapPunctureBarrier"
       ],
-      "sha256": "8de375a005845ba20e1dbb66e397b782c399b3bde1c808e5d2f38e35c8303676"
+      "sha256": "bf80ac528e73d92d5b0f32ec1fa5e1d7db713b5c4cf684ee983ccf6485bcae52"
     },
     "BoundedWanderingDomains.Surfaces.LocalMapPunctureBarrier": {
       "file": "BoundedWanderingDomains/Surfaces/LocalMapPunctureBarrier.lean",
@@ -6808,7 +6814,7 @@
         "BoundedWanderingDomains.Surfaces.ExhaustivePunctureBarrier",
         "BoundedWanderingDomains.Surfaces.LocalDynamics"
       ],
-      "sha256": "912b14653564b21365a6359c94a05d1c60f32cfa7a3d3ed3912360d08b8b4fee"
+      "sha256": "fec365c606fce1cc57d3390eeb14db0a4e45371763ccb74576c446ce93aa3152"
     },
     "BoundedWanderingDomains.Surfaces.ExhaustivePunctureBarrier": {
       "file": "BoundedWanderingDomains/Surfaces/ExhaustivePunctureBarrier.lean",
@@ -6825,7 +6831,7 @@
         "BoundedWanderingDomains.Surfaces.LocalCoveringDiscs",
         "BoundedWanderingDomains.Surfaces.WanderingOrbitStructure"
       ],
-      "sha256": "fbced56bd025e4f7a857cb9ccc604a2d1dea3af34d0c8e2e7b5ff506e00f3ceb"
+      "sha256": "c306e2835ee0e2886c92b4378d6e9ee21bcf3a36f91553884b43c064ab8795aa"
     },
     "BoundedWanderingDomains.Surfaces.CompactClusterSeparation": {
       "file": "BoundedWanderingDomains/Surfaces/CompactClusterSeparation.lean",
@@ -6833,7 +6839,7 @@
         "BoundedWanderingDomains.Surfaces.Statements",
         "Mathlib.Topology.Separation.Regular"
       ],
-      "sha256": "28d3858087a7a81543944215d7b3ff3f73cd2928cd32ed9180a1cb2975c5fd14"
+      "sha256": "ca9259439563d996d34dcb8cb2741c6019afc664996aec05e01e42ca1f48c025"
     },
     "BoundedWanderingDomains.Surfaces.EventualRegularArea": {
       "file": "BoundedWanderingDomains/Surfaces/EventualRegularArea.lean",
@@ -6854,7 +6860,7 @@
         "BoundedWanderingDomains.Surfaces.CompactFiniteRemoval",
         "BoundedWanderingDomains.Surfaces.SaturationDynamics"
       ],
-      "sha256": "72b5125dfacd40ca824cd5e0ffef73b6e66021200b0594accd42ee2868f9cd0f"
+      "sha256": "a458ff4add382ca855fbd81664b8fc41ac634ffc0fceb17b0243bf997eadd6ef"
     },
     "BoundedWanderingDomains.Surfaces.SurfaceSingularCovering": {
       "file": "BoundedWanderingDomains/Surfaces/SurfaceSingularCovering.lean",
@@ -6870,87 +6876,106 @@
         "BoundedWanderingDomains.Surfaces.LocalCoveringDiscs",
         "BoundedWanderingDomains.Surfaces.SurfaceSingularCovering"
       ],
-      "sha256": "d2718aa78091acc2da44bf97e25d8ef37a0121e776e3e0f1d9c1eff53ba3841a"
+      "sha256": "276eef944e27f90b0e81fd52accf3b1d2e7c0d783cfe5771b4e54e1a89c0a2dd"
     },
-    "BoundedWanderingDomains.Surfaces.SubsurfaceWanderingComponents": {
-      "file": "BoundedWanderingDomains/Surfaces/SubsurfaceWanderingComponents.lean",
+    "BoundedWanderingDomains.Surfaces.BKL.ShrinkingFillings": {
+      "file": "BoundedWanderingDomains/Surfaces/BKL/ShrinkingFillings.lean",
       "imports": [
-        "BoundedWanderingDomains.Surfaces.SubsurfaceCompactNormal",
-        "BoundedWanderingDomains.Surfaces.SaturationDynamics"
+        "Mathlib.Topology.UniformSpace.LocallyUniformConvergence",
+        "Mathlib.Topology.Sequences",
+        "BoundedWanderingDomains.Surfaces.LocalMapTotalization",
+        "BoundedWanderingDomains.Surfaces.CompactFilling",
+        "BoundedWanderingDomains.Surfaces.LocalCoveringDiscs",
+        "BoundedWanderingDomains.Surfaces.WanderingDiscShrink",
+        "BoundedWanderingDomains.Surfaces.SurfaceFilling",
+        "BoundedWanderingDomains.Surfaces.CoordinateDiscParam",
+        "Mathlib.Topology.Sets.Opens",
+        "BoundedWanderingDomains.Surfaces.BKL.AnalyticCompletion",
+        "BoundedWanderingDomains.Surfaces.BKL.ComponentRecovery",
+        "BoundedWanderingDomains.Surfaces.PointedCoveringDiscs",
+        "BoundedWanderingDomains.Surfaces.CompactClusterSeparation"
       ],
-      "sha256": "3123d57264aa8da383edcbf6cd1c42f88957979c4bc8a3348a7e5f7e44e1e60c"
+      "sha256": "8571a6776e419641530c9908f7e12afd29cb2109e218b2fcb293176a110ba648"
     },
-    "BoundedWanderingDomains.Surfaces.SubsurfaceCompactNormal": {
-      "file": "BoundedWanderingDomains/Surfaces/SubsurfaceCompactNormal.lean",
+    "BoundedWanderingDomains.Surfaces.BKL.AnalyticCompletion": {
+      "file": "BoundedWanderingDomains/Surfaces/BKL/AnalyticCompletion.lean",
       "imports": [
-        "BoundedWanderingDomains.Surfaces.LocalMapSubsurface",
-        "BoundedWanderingDomains.Surfaces.BarrierCompactOrbit"
-      ],
-      "sha256": "5fa26b5b80fcda6ace08a91779c5a0bfccaeda80eea043fd3f513e0248a9d526"
-    },
-    "BoundedWanderingDomains.Surfaces.SubsurfaceRegularValues": {
-      "file": "BoundedWanderingDomains/Surfaces/SubsurfaceRegularValues.lean",
-      "imports": [
-        "BoundedWanderingDomains.Surfaces.LocalMapSubsurface",
-        "BoundedWanderingDomains.Surfaces.SurfaceSingularCovering"
-      ],
-      "sha256": "7ec9fce16446dce9d55c06a2b9a15b9f7a2687d1cdb853c002f4b4890a97989a"
-    },
-    "BoundedWanderingDomains.Surfaces.NoEscapeCompactRange": {
-      "file": "BoundedWanderingDomains/Surfaces/NoEscapeCompactRange.lean",
-      "imports": [
-        "BoundedWanderingDomains.Surfaces.CompactificationEscape",
-        "Mathlib.Topology.Compactness.SigmaCompact"
-      ],
-      "sha256": "9fab31ee2ee6e2b7eaacb0a2d608a94afb4ed29b94b088779a3e0edd2a07709e"
-    },
-    "BoundedWanderingDomains.Surfaces.SurfacePositiveArea": {
-      "file": "BoundedWanderingDomains/Surfaces/SurfacePositiveArea.lean",
-      "imports": [
-        "BoundedWanderingDomains.Surfaces.CompactGlobalPositiveArea",
-        "BoundedWanderingDomains.Surfaces.CompactLocalAreaAdvance"
-      ],
-      "sha256": "2c9c47e48731e227b4789a82673d7c7ca4d325d5bd3675daa8bc4d3efcc79698"
-    },
-    "BoundedWanderingDomains.Surfaces.CompactGlobalPositiveArea": {
-      "file": "BoundedWanderingDomains/Surfaces/CompactGlobalPositiveArea.lean",
-      "imports": [
-        "BoundedWanderingDomains.Surfaces.CompactGlobalAnchors",
-        "BoundedWanderingDomains.Surfaces.CompactAnchorNormality",
-        "BoundedWanderingDomains.Surfaces.CompactGlobalSingularValues",
-        "BoundedWanderingDomains.Surfaces.CompactAnchorAreaReduction",
-        "BoundedWanderingDomains.Surfaces.FiniteDefectAreaAdvance",
-        "BoundedWanderingDomains.Surfaces.SubsurfaceRegularValues"
-      ],
-      "sha256": "0544de698a68e4f56bbc877230be156e965a9c2be7b353de2afb2667cfcedb02"
-    },
-    "BoundedWanderingDomains.Surfaces.CompactGlobalAnchors": {
-      "file": "BoundedWanderingDomains/Surfaces/CompactGlobalAnchors.lean",
-      "imports": [
-        "BoundedWanderingDomains.Surfaces.PositiveAreaExceptionalReduction",
-        "BoundedWanderingDomains.Surfaces.CompactFiniteHyperbolization"
-      ],
-      "sha256": "e219893ff7d0cc7d424309714f9b35d5adcf56af7b81bb0d47a8313d7ab5c48e"
-    },
-    "BoundedWanderingDomains.Surfaces.CompactFiniteHyperbolization": {
-      "file": "BoundedWanderingDomains/Surfaces/CompactFiniteHyperbolization.lean",
-      "imports": [
-        "BoundedWanderingDomains.Surfaces.PlaneCoverPuncture",
-        "BoundedWanderingDomains.Surfaces.SpherePunctureCover",
-        "BoundedWanderingDomains.Surfaces.UniformizationBridge"
-      ],
-      "sha256": "046a3bfce699049ccec243085d66cafcfa9a92c3b3bb5c64c1e422469c8d4aa1"
-    },
-    "BoundedWanderingDomains.Surfaces.PlaneCoverPuncture": {
-      "file": "BoundedWanderingDomains/Surfaces/PlaneCoverPuncture.lean",
-      "imports": [
+        "BoundedWanderingDomains.Surfaces.LocalMapTotalization",
+        "BoundedWanderingDomains.Surfaces.SubtypeHolomorphic",
+        "BoundedWanderingDomains.Surfaces.PlaneReading",
+        "BoundedWanderingDomains.Surfaces.OpenMapping",
         "BoundedWanderingDomains.Surfaces.HolomorphicLifting",
-        "BoundedWanderingDomains.Surfaces.LegacyDiscCoverBridge",
-        "BoundedWanderingDomains.Surfaces.FinitePunctureTopology",
-        "FunctionTheory.Conformal.LittlePicardBloch",
-        "RiemannDynamics.Uniformization.Trichotomy"
+        "BoundedWanderingDomains.Surfaces.BKL.PuncturedCovers",
+        "BoundedWanderingDomains.SimplyConnectedFilling",
+        "Mathlib.Topology.Covering.Basic",
+        "Mathlib.Topology.Compactness.LocallyCompact",
+        "BoundedWanderingDomains.Surfaces.CompactFilling",
+        "BoundedWanderingDomains.Surfaces.FiniteFibers",
+        "BoundedWanderingDomains.Surfaces.SurfaceSingularCovering",
+        "Mathlib.Topology.DerivedSet",
+        "BoundedWanderingDomains.Surfaces.SurfaceFilling",
+        "BoundedWanderingDomains.Surfaces.WanderingDiscShrink"
       ],
-      "sha256": "09dcaac0c1b7c432072e5e8b2212407f013ce0de44767315163d95d5247b87ae"
+      "sha256": "4bd82f5d14f7653646236fbceab2055b508a353c4cc0fd0bd2a0c15cb76cd2db"
+    },
+    "BoundedWanderingDomains.Surfaces.BKL.PuncturedCovers": {
+      "file": "BoundedWanderingDomains/Surfaces/BKL/PuncturedCovers.lean",
+      "imports": [
+        "BoundedWanderingDomains.Surfaces.CoordinateDiscParam",
+        "EremenkoLyubichConstant.ExteriorCoverClassification",
+        "Mathlib.Analysis.Calculus.Deriv.Inv",
+        "BoundedWanderingDomains.Surfaces.BKL.ReturnLimits",
+        "BoundedWanderingDomains.Surfaces.LocalDynamics",
+        "Mathlib.Topology.DerivedSet",
+        "BoundedWanderingDomains.Surfaces.WanderingDiscShrink",
+        "BoundedWanderingDomains.TrappedComponentCovering",
+        "BoundedWanderingDomains.Surfaces.SurfaceFilling",
+        "BoundedWanderingDomains.Surfaces.PointedCoveringDiscs",
+        "BoundedWanderingDomains.Surfaces.PlaneReading",
+        "EremenkoLyubichConstant.TractCovering",
+        "BoundedWanderingDomains.Surfaces.CoveringComponents",
+        "BoundedWanderingDomains.Surfaces.HolomorphicLifting",
+        "BoundedWanderingDomains.Surfaces.SubtypeHolomorphic",
+        "BoundedWanderingDomains.Surfaces.SurfaceSingularCovering",
+        "BoundedWanderingDomains.Surfaces.LocalMapTotalization",
+        "Mathlib.Analysis.Complex.RemovableSingularity",
+        "TauCeti.Analysis.Complex.Conformal.Inverse.Function",
+        "TauCeti.Analysis.Complex.Conformal.ImageSimplyConnected",
+        "Mathlib.Analysis.Convex.Contractible"
+      ],
+      "sha256": "30e2777008d575d9769a7e3cf88357beebd546b90deac12370e21888542dddd8"
+    },
+    "BoundedWanderingDomains.Surfaces.BKL.ReturnLimits": {
+      "file": "BoundedWanderingDomains/Surfaces/BKL/ReturnLimits.lean",
+      "imports": [
+        "Mathlib.Topology.Separation.Hausdorff",
+        "Mathlib.Topology.ContinuousOn",
+        "Mathlib.Logic.Function.Iterate",
+        "Mathlib.Topology.UniformSpace.LocallyUniformConvergence",
+        "Mathlib.Topology.Compactness.LocallyCompact",
+        "Mathlib.Topology.Maps.Basic",
+        "Mathlib.Data.Set.Function",
+        "Lean.Elab.Tactic.Omega",
+        "Mathlib.Analysis.Complex.Schwarz",
+        "Mathlib.Topology.OpenPartialHomeomorph.Basic",
+        "BoundedWanderingDomains.Surfaces.FiniteFibers",
+        "BoundedWanderingDomains.Surfaces.HolomorphicLifting",
+        "BoundedWanderingDomains.Surfaces.LocalPunctures",
+        "Mathlib.Order.Filter.AtTopBot.CountablyGenerated",
+        "BoundedWanderingDomains.Surfaces.FinitePunctureTopology",
+        "Mathlib.Topology.Separation.Regular"
+      ],
+      "sha256": "65eed1b047cd3ae3aa09475cd5478a8acaf9f4311779d7f6903612fd5c9c3e95"
+    },
+    "BoundedWanderingDomains.Surfaces.FinitePunctureTopology": {
+      "file": "BoundedWanderingDomains/Surfaces/FinitePunctureTopology.lean",
+      "imports": [
+        "RiemannDynamics.Uniformization.Perron.GreensFunction.Basic",
+        "BoundedWanderingDomains.Surfaces.SubdomainCover",
+        "BoundedWanderingDomains.Surfaces.LegacyDiscCoverBridge",
+        "BoundedWanderingDomains.Surfaces.SubtypeHolomorphic"
+      ],
+      "sha256": "1407d8d2805badabf2613d0fcb8abb61b780c238b28a21e2f0d7eb83a7264957"
     },
     "BoundedWanderingDomains.Surfaces.LegacyDiscCoverBridge": {
       "file": "BoundedWanderingDomains/Surfaces/LegacyDiscCoverBridge.lean",
@@ -6962,15 +6987,97 @@
       ],
       "sha256": "d1ea6cf575d3e7e2af8d26dedbc8ac6a448dcc25d16ba9e50689011b1f889aae"
     },
-    "BoundedWanderingDomains.Surfaces.FinitePunctureTopology": {
-      "file": "BoundedWanderingDomains/Surfaces/FinitePunctureTopology.lean",
+    "BoundedWanderingDomains.Surfaces.CoveringComponents": {
+      "file": "BoundedWanderingDomains/Surfaces/CoveringComponents.lean",
       "imports": [
-        "RiemannDynamics.Uniformization.Perron.GreensFunction.Basic",
-        "BoundedWanderingDomains.Surfaces.SubdomainCover",
-        "BoundedWanderingDomains.Surfaces.LegacyDiscCoverBridge",
-        "BoundedWanderingDomains.Surfaces.SubtypeHolomorphic"
+        "Mathlib.Topology.Homotopy.Lifting"
       ],
-      "sha256": "1f237f3c73b83838497e1cd0f3605aec913668caab106a97d0c8baa193ac2caf"
+      "sha256": "dae1645ac8315e64944cd1530b182aa6e01e76b61617e6f78f5ef4a8870b80a3"
+    },
+    "BoundedWanderingDomains.Surfaces.BKL.ComponentRecovery": {
+      "file": "BoundedWanderingDomains/Surfaces/BKL/ComponentRecovery.lean",
+      "imports": [
+        "BoundedWanderingDomains.Surfaces.BKL.AnalyticCompletion",
+        "BoundedWanderingDomains.Surfaces.LocalMapRestriction",
+        "BoundedWanderingDomains.Surfaces.BKL.ReturnLimits",
+        "BoundedWanderingDomains.Surfaces.OmegaDynamics",
+        "BoundedWanderingDomains.Surfaces.FiniteFibers",
+        "Mathlib.Order.Filter.Cofinite",
+        "BoundedWanderingDomains.Surfaces.LocalCoveringDiscs"
+      ],
+      "sha256": "d2fffd11b5c9b6e65693557e52e9cc4d5482ca97de4b04454c5f5253b5f970a7"
+    },
+    "BoundedWanderingDomains.Surfaces.SubsurfaceCompactNormal": {
+      "file": "BoundedWanderingDomains/Surfaces/SubsurfaceCompactNormal.lean",
+      "imports": [
+        "BoundedWanderingDomains.Surfaces.LocalMapSubsurface",
+        "BoundedWanderingDomains.Surfaces.BarrierCompactOrbit"
+      ],
+      "sha256": "d4ca85a5bc5941465b23c4fc78483fee829b00e1e4be48367a51951cdf00f0b0"
+    },
+    "BoundedWanderingDomains.Surfaces.SubsurfaceRegularValues": {
+      "file": "BoundedWanderingDomains/Surfaces/SubsurfaceRegularValues.lean",
+      "imports": [
+        "BoundedWanderingDomains.Surfaces.LocalMapSubsurface",
+        "BoundedWanderingDomains.Surfaces.SurfaceSingularCovering"
+      ],
+      "sha256": "780b5e738a4b61a5595d43046f4ec7f3c432b846ac5f56495300085603693e1a"
+    },
+    "BoundedWanderingDomains.Surfaces.NoEscapeCompactRange": {
+      "file": "BoundedWanderingDomains/Surfaces/NoEscapeCompactRange.lean",
+      "imports": [
+        "BoundedWanderingDomains.Surfaces.CompactificationEscape",
+        "Mathlib.Topology.Compactness.SigmaCompact"
+      ],
+      "sha256": "72115583c525978ca0ab40c8de16443329c666b779bd2514b5750214c2c3e11e"
+    },
+    "BoundedWanderingDomains.Surfaces.SurfacePositiveArea": {
+      "file": "BoundedWanderingDomains/Surfaces/SurfacePositiveArea.lean",
+      "imports": [
+        "BoundedWanderingDomains.Surfaces.CompactGlobalPositiveArea",
+        "BoundedWanderingDomains.Surfaces.CompactLocalAreaAdvance"
+      ],
+      "sha256": "3df58b8a0227dcc80b8d65884ba74f52439a2098558706ad24cbcd2eec8e150b"
+    },
+    "BoundedWanderingDomains.Surfaces.CompactGlobalPositiveArea": {
+      "file": "BoundedWanderingDomains/Surfaces/CompactGlobalPositiveArea.lean",
+      "imports": [
+        "BoundedWanderingDomains.Surfaces.CompactGlobalAnchors",
+        "BoundedWanderingDomains.Surfaces.CompactAnchorNormality",
+        "BoundedWanderingDomains.Surfaces.CompactGlobalSingularValues",
+        "BoundedWanderingDomains.Surfaces.CompactAnchorAreaReduction",
+        "BoundedWanderingDomains.Surfaces.FiniteDefectAreaAdvance",
+        "BoundedWanderingDomains.Surfaces.SubsurfaceRegularValues"
+      ],
+      "sha256": "dfce3232ad5f7905a0df08dc21a6e8daa4624ce908e482106fdb9f89bf12aea3"
+    },
+    "BoundedWanderingDomains.Surfaces.CompactGlobalAnchors": {
+      "file": "BoundedWanderingDomains/Surfaces/CompactGlobalAnchors.lean",
+      "imports": [
+        "BoundedWanderingDomains.Surfaces.PositiveAreaExceptionalReduction",
+        "BoundedWanderingDomains.Surfaces.CompactFiniteHyperbolization"
+      ],
+      "sha256": "0327c713847c12a9a6748c9c4e86c65239dd9b2c4bb354a223d534f67e5b2707"
+    },
+    "BoundedWanderingDomains.Surfaces.CompactFiniteHyperbolization": {
+      "file": "BoundedWanderingDomains/Surfaces/CompactFiniteHyperbolization.lean",
+      "imports": [
+        "BoundedWanderingDomains.Surfaces.PlaneCoverPuncture",
+        "BoundedWanderingDomains.Surfaces.SpherePunctureCover",
+        "BoundedWanderingDomains.Surfaces.UniformizationBridge"
+      ],
+      "sha256": "49bd6b06adc2625fb55313940c90afcb47e864a85a597994a72d1e4bdd4d081a"
+    },
+    "BoundedWanderingDomains.Surfaces.PlaneCoverPuncture": {
+      "file": "BoundedWanderingDomains/Surfaces/PlaneCoverPuncture.lean",
+      "imports": [
+        "BoundedWanderingDomains.Surfaces.HolomorphicLifting",
+        "BoundedWanderingDomains.Surfaces.LegacyDiscCoverBridge",
+        "BoundedWanderingDomains.Surfaces.FinitePunctureTopology",
+        "FunctionTheory.Conformal.LittlePicardBloch",
+        "RiemannDynamics.Uniformization.Trichotomy"
+      ],
+      "sha256": "59793ebeecc0ba9a16cf9518b97cd1aab2e37571cd32c091e259387088f662ad"
     },
     "BoundedWanderingDomains.Surfaces.SpherePunctureCover": {
       "file": "BoundedWanderingDomains/Surfaces/SpherePunctureCover.lean",
@@ -6982,7 +7089,7 @@
         "FunctionTheory.Conformal.LittlePicardBloch",
         "RiemannDynamics.Uniformization.HolomorphicEquiv"
       ],
-      "sha256": "0fbfa222649ebd4940bf3cd91581c7bde9d9c344f13798322b0783b6d37a67d8"
+      "sha256": "95a7c0ff9f1a8225d4b9d6443d5aae6eb35f1c76982932fccf2b3b1c20a74235"
     },
     "BoundedWanderingDomains.Surfaces.CompactAnchorNormality": {
       "file": "BoundedWanderingDomains/Surfaces/CompactAnchorNormality.lean",
@@ -6992,14 +7099,14 @@
         "BoundedWanderingDomains.Surfaces.LocalMapPunctureBarrier",
         "BoundedWanderingDomains.Surfaces.SaturationDynamics"
       ],
-      "sha256": "538894af659e4244a999e9d897f5e0d2ec9768e7fdaf0e37b6a2c070364463a6"
+      "sha256": "53f9dc22ec9d249587f8c1af41c55856f7bd7b2be994710eec68f78fe24f0f1b"
     },
     "BoundedWanderingDomains.Surfaces.CompactPunctureMontel": {
       "file": "BoundedWanderingDomains/Surfaces/CompactPunctureMontel.lean",
       "imports": [
         "BoundedWanderingDomains.Surfaces.FiniteEndNormal"
       ],
-      "sha256": "a3d4154fddb5c9253847103addaa9f116997814a33f14cce847fce2f5dbcdf2b"
+      "sha256": "8b7629fcdddde9a950c5f07eb63ae7af3532f892b137242a3a185a5200f5dd78"
     },
     "BoundedWanderingDomains.Surfaces.FiniteEndNormal": {
       "file": "BoundedWanderingDomains/Surfaces/FiniteEndNormal.lean",
@@ -7009,7 +7116,7 @@
         "BoundedWanderingDomains.Surfaces.BoundaryEscape",
         "Mathlib.Topology.Connected.Clopen"
       ],
-      "sha256": "fed0678c7052af55663ba7a5630d8e380cb96c974eda1c7d7fcd48f48495014b"
+      "sha256": "baccd1d156e56131b4cdfeb377e66d83301bd72d832c156dc82f9fa1607babd8"
     },
     "BoundedWanderingDomains.Surfaces.BoundaryEscape": {
       "file": "BoundedWanderingDomains/Surfaces/BoundaryEscape.lean",
@@ -7026,7 +7133,7 @@
         "BoundedWanderingDomains.Surfaces.LocalDynamics",
         "BoundedWanderingDomains.Surfaces.Statements"
       ],
-      "sha256": "3c1f9a1683fd84e1f103dafdf8acbfee694b7af8a723fb58d01e714a5ab13a51"
+      "sha256": "622174f223cc7de99da11cad0f895d8ddc5decea99e7ac54aa27ab0d0cffc6e9"
     },
     "BoundedWanderingDomains.Surfaces.CompactAnchorAreaReduction": {
       "file": "BoundedWanderingDomains/Surfaces/CompactAnchorAreaReduction.lean",
@@ -7039,7 +7146,7 @@
         "BoundedWanderingDomains.Surfaces.SphereGlobalPointInsertion",
         "BoundedWanderingDomains.Surfaces.CompactificationInsertionRiesz"
       ],
-      "sha256": "4f07cb0ccc5caff47c8b927e91d22492c8d42bbbe6e75c9ee0147f0c3a2c14f4"
+      "sha256": "cfb8bb855d48ea4fa31b41ee75a0f45e93a35225244052d77759be00f9d1ca0a"
     },
     "BoundedWanderingDomains.Surfaces.AnchorComplementModels": {
       "file": "BoundedWanderingDomains/Surfaces/AnchorComplementModels.lean",
@@ -7054,7 +7161,7 @@
         "BoundedWanderingDomains.Surfaces.PositiveAreaAdvanceReduction",
         "BoundedWanderingDomains.Surfaces.GlobalPointInsertion"
       ],
-      "sha256": "90643b1ff13b8a50ca9e5c63cc6b81e91b43912fd6616e80acc0eaa80ef843ca"
+      "sha256": "86c006cbb0810f48f3df690e0b306d263603ac0ab3f2832b9a069574007ede75"
     },
     "BoundedWanderingDomains.Surfaces.GlobalPointInsertion": {
       "file": "BoundedWanderingDomains/Surfaces/GlobalPointInsertion.lean",
@@ -7063,7 +7170,7 @@
         "BoundedWanderingDomains.Surfaces.DomainAreaSubtype",
         "BoundedWanderingDomains.Surfaces.HyperbolicAreaFinite"
       ],
-      "sha256": "abeb6697ca783e181639da15f1af994e8ee3663f9d1f68ddc0b08ab0c6e5b08f"
+      "sha256": "2afe2ff327330a47dc5ffe5ff7dd23105a7afbd834d10bcb7b022ea675777174"
     },
     "BoundedWanderingDomains.Surfaces.CompactFinitePunctureArea": {
       "file": "BoundedWanderingDomains/Surfaces/CompactFinitePunctureArea.lean",
@@ -7081,7 +7188,7 @@
         "BoundedWanderingDomains.Surfaces.FinitePunctureAreaBridge",
         "BoundedWanderingDomains.Surfaces.HyperbolicAreaFinite"
       ],
-      "sha256": "33174fcc62682310ae3c2e2393b689b02fbeefdfeb520b4427b6627e768c4046"
+      "sha256": "ddcfb8c36fbeb4de8f1f90d48a82055fbbed73c5442bb6af9517e36f143a5821"
     },
     "BoundedWanderingDomains.Surfaces.CuspDensityBounds": {
       "file": "BoundedWanderingDomains/Surfaces/CuspDensityBounds.lean",
@@ -7090,7 +7197,7 @@
         "BoundedWanderingDomains.Surfaces.SurfaceSchwarz",
         "BoundedWanderingDomains.Surfaces.SubtypeHolomorphic"
       ],
-      "sha256": "cca0e9b366eb52588221c7c2f3f0ffecd375763047591ab5d010dbd7da8c2b54"
+      "sha256": "370e3b8e1346754590fb66b4659216efd501ea61b3d59c6139c4c23820b9d383"
     },
     "BoundedWanderingDomains.CuspAreaIntegrability": {
       "file": "BoundedWanderingDomains/CuspAreaIntegrability.lean",
@@ -7099,7 +7206,7 @@
         "BoundedWanderingDomains.CuspDensityBounds",
         "Mathlib.Analysis.SpecialFunctions.ImproperIntegrals"
       ],
-      "sha256": "8ff6aaf2004e1369697712d6784e9e002cb3ee7fba21c5c375316b3daded1713"
+      "sha256": "c74dbd58bee784ef0253a3fcc6ae54000725452cad0ba380f590d70a829f9185"
     },
     "BoundedWanderingDomains.Surfaces.SphereGlobalPointInsertion": {
       "file": "BoundedWanderingDomains/Surfaces/SphereGlobalPointInsertion.lean",
@@ -7108,7 +7215,7 @@
         "BoundedWanderingDomains.Surfaces.SpherePunctureCover",
         "BoundedWanderingDomains.SphereHyperbolicArea"
       ],
-      "sha256": "23629809d6fd60b807c1990fc0bea029e5e4a39123918485d6d185d1d7a58962"
+      "sha256": "c00ba6e304eda74aaf7b9962023986c147cba8a1a083b86b085f27c357bc79d2"
     },
     "BoundedWanderingDomains.Surfaces.CompactificationInsertionRiesz": {
       "file": "BoundedWanderingDomains/Surfaces/CompactificationInsertionRiesz.lean",
@@ -7118,7 +7225,7 @@
         "BoundedWanderingDomains.Surfaces.FinitePunctureTopology",
         "BoundedWanderingDomains.Surfaces.GlobalPointInsertion"
       ],
-      "sha256": "a237d9957341e521f09b3ff8552581cb284a9d0ba0c12c4804c9c5303f152397"
+      "sha256": "6c4c7f092d248c25acd6377aee156979cf5583bedb3a57d1affaf9c8f8e2363f"
     },
     "BoundedWanderingDomains.Surfaces.CompactificationInsertionEnds": {
       "file": "BoundedWanderingDomains/Surfaces/CompactificationInsertionEnds.lean",
@@ -7129,7 +7236,7 @@
         "BoundedWanderingDomains.Surfaces.FiniteBoundaryMassAssembly",
         "BoundedWanderingDomains.CutoffEndLimits"
       ],
-      "sha256": "915e8b1b08a3a9e8d7f61ab0f9f30d7006547953421e4016d3561d99d481794a"
+      "sha256": "ee154997ae875b6aeff10158545217e9a84f4d5157a5c56a8d66bf21692591b2"
     },
     "BoundedWanderingDomains.Surfaces.CompactificationEndCharts": {
       "file": "BoundedWanderingDomains/Surfaces/CompactificationEndCharts.lean",
@@ -7138,21 +7245,21 @@
         "BoundedWanderingDomains.Surfaces.ComponentDomains",
         "BoundedWanderingDomains.Surfaces.BoundaryEscape"
       ],
-      "sha256": "245f5b1185fe6a84f56d2c1a2a676fab1ba5eb50c8373131a574b95f2ea758c4"
+      "sha256": "75dd458c4bcd0e5722f442a611049bda9a7f268ecf900cc146d7b5f5cc09a8c1"
     },
     "BoundedWanderingDomains.Surfaces.CompactificationCutoff": {
       "file": "BoundedWanderingDomains/Surfaces/CompactificationCutoff.lean",
       "imports": [
         "BoundedWanderingDomains.Surfaces.FiniteSurfacePunctureCutoff"
       ],
-      "sha256": "29c13181ffee86741bbe313dc9d4e454c047e62f7445106c91f5ce402afec2bb"
+      "sha256": "53e9a16c025a1f44f114e037801ab1907d5e3bc667762376789022e0496e512c"
     },
     "BoundedWanderingDomains.Surfaces.FiniteSurfacePunctureCutoff": {
       "file": "BoundedWanderingDomains/Surfaces/FiniteSurfacePunctureCutoff.lean",
       "imports": [
         "BoundedWanderingDomains.Surfaces.SurfaceLogCutoff"
       ],
-      "sha256": "e4c631a638f7234ac14f119d7a651aa819e6855ba24cb1b34721f1a88c031394"
+      "sha256": "f234e3b2914e0b4e161286772863aa91a4277a531471d696f280075bfd2bdcec"
     },
     "BoundedWanderingDomains.Surfaces.SurfaceLogCutoff": {
       "file": "BoundedWanderingDomains/Surfaces/SurfaceLogCutoff.lean",
@@ -7161,7 +7268,7 @@
         "BoundedWanderingDomains.Surfaces.CoordinateDiskSelection",
         "BoundedWanderingDomains.LogarithmicCutoff"
       ],
-      "sha256": "05e63f86f396e88c536515c9f36411f1aad804476ad91d7390b7d5e07efcea1d"
+      "sha256": "263484cec39d72886eaf3896c0031b9c582b19d09d6b58deb5199b26f5e5ebf5"
     },
     "BoundedWanderingDomains.Surfaces.ChartPullbackExtension": {
       "file": "BoundedWanderingDomains/Surfaces/ChartPullbackExtension.lean",
@@ -7170,7 +7277,7 @@
         "BoundedWanderingDomains.Surfaces.ChartZeroExtension",
         "Mathlib.Geometry.Manifold.ContMDiff.Atlas"
       ],
-      "sha256": "34006f732bc544ee3778d1827ee4c49d0ba53cc7334eeb66ce8fc37d66641020"
+      "sha256": "fe18460fb5843c5d7b7f3d073949583ae78377f822849cda3a465d90852b9937"
     },
     "BoundedWanderingDomains.Surfaces.SmoothSurface": {
       "file": "BoundedWanderingDomains/Surfaces/SmoothSurface.lean",
@@ -7214,7 +7321,7 @@
         "Mathlib.Geometry.Manifold.PartitionOfUnity",
         "Mathlib.Geometry.Manifold.ContMDiff.Atlas"
       ],
-      "sha256": "fb0a55b9cd59f04b7c9d2738beaf9e36fa8a47dd2923e04ef3c1eecde501ad70"
+      "sha256": "622cb0b89ebab003cde963007d357da91508aee21ad6f5d4ef281cb50a3bf5b1"
     },
     "BoundedWanderingDomains.Surfaces.NestedBoundaryMass": {
       "file": "BoundedWanderingDomains/Surfaces/NestedBoundaryMass.lean",
@@ -7224,7 +7331,7 @@
         "BoundedWanderingDomains.Surfaces.PunctureBoundaryMass",
         "BoundedWanderingDomains.CutoffError"
       ],
-      "sha256": "d0501dbf158cc97fb4cb102ae7d6e3c274f6041cdec4a4c2d7eb22867402f29a"
+      "sha256": "b9195c7ab87697acd8ecd194ea07edeccda4567f06ef6cbc5ecbcc5152343f80"
     },
     "BoundedWanderingDomains.Surfaces.NestedDomainDensity": {
       "file": "BoundedWanderingDomains/Surfaces/NestedDomainDensity.lean",
@@ -7234,7 +7341,7 @@
         "BoundedWanderingDomains.Surfaces.DomainLogRatio",
         "BoundedWanderingDomains.Surfaces.LogDensityRatio"
       ],
-      "sha256": "23e0d0462c5c4672b5b75a100e06f850b0a8a308a5a73f63bf35e44064b5b76a"
+      "sha256": "1cb38c5621331fc7fa06cada76c1a0b1bbcfab9cdfbf013a05ccf744839c8cef"
     },
     "BoundedWanderingDomains.Surfaces.DomainLogRatio": {
       "file": "BoundedWanderingDomains/Surfaces/DomainLogRatio.lean",
@@ -7251,14 +7358,14 @@
         "BoundedWanderingDomains.Surfaces.DiscComparisonInfinity",
         "BoundedWanderingDomains.Surfaces.LogRatioBound"
       ],
-      "sha256": "4c9718b52be01f2c2eefec0a84e1a8d8058eb23d9613a42e9bb99d396bd0e197"
+      "sha256": "8c739a58f4059817b24d03c4fbe73dde549c8595cb5447606c21bbeca48cbf25"
     },
     "BoundedWanderingDomains.LogGrowthCutoff": {
       "file": "BoundedWanderingDomains/LogGrowthCutoff.lean",
       "imports": [
         "BoundedWanderingDomains.CutoffError"
       ],
-      "sha256": "b5320248d23a9e5dfb258268127ee1c10042ea8e001a37fee85a0448c9e29589"
+      "sha256": "abcca213308f87a8f84ddec042c2d9ba97a58f7d0acf982f58b9f424af28e4a9"
     },
     "BoundedWanderingDomains.Surfaces.PunctureBoundaryMass": {
       "file": "BoundedWanderingDomains/Surfaces/PunctureBoundaryMass.lean",
@@ -7266,7 +7373,7 @@
         "BoundedWanderingDomains.LogGrowthCutoff",
         "BoundedWanderingDomains.Surfaces.PunctureLogRatioBound"
       ],
-      "sha256": "3e51246e8e33785546f9e0d7b17f5a15658f88c32f3e920f52552a5486ff0093"
+      "sha256": "1a979ad9d14ae70b4ae9526a81dfcea4e2b79b4fca39b70fc8f88a43fd367e75"
     },
     "BoundedWanderingDomains.Surfaces.PunctureLogRatioBound": {
       "file": "BoundedWanderingDomains/Surfaces/PunctureLogRatioBound.lean",
@@ -7283,7 +7390,7 @@
         "BoundedWanderingDomains.Surfaces.PunctureBoundaryMass",
         "Mathlib.MeasureTheory.Integral.DominatedConvergence"
       ],
-      "sha256": "425095393972e850852f998527916d1a71f61603764683c34ea264d8fbd70f09"
+      "sha256": "4da3ee162df02eadf20a3d903c43c0a78dcca1bbd4935848223b1d2a5f0a66d5"
     },
     "BoundedWanderingDomains.Surfaces.CompactificationCutoffGreen": {
       "file": "BoundedWanderingDomains/Surfaces/CompactificationCutoffGreen.lean",
@@ -7292,7 +7399,7 @@
         "BoundedWanderingDomains.Surfaces.GlobalIntrinsicGreen",
         "BoundedWanderingDomains.CutoffEndLimits"
       ],
-      "sha256": "78edaa312f636b5d8a88a81a8cf677cef2982a5e3503ec502201431d314ba1db"
+      "sha256": "ffc046f64cfc435dffe92ceedf551bd4f2c6c8f5d1e61e2f269c4b15ee5630a3"
     },
     "BoundedWanderingDomains.Surfaces.GlobalIntrinsicGreen": {
       "file": "BoundedWanderingDomains/Surfaces/GlobalIntrinsicGreen.lean",
@@ -7301,7 +7408,7 @@
         "BoundedWanderingDomains.Surfaces.IntrinsicGreenPairing",
         "BoundedWanderingDomains.Surfaces.HyperbolicAreaFinite"
       ],
-      "sha256": "3740bcb84cc3872feaf479493aebca7166a8102fe1f725b0620bac88fb371921"
+      "sha256": "b7c028ea6a56b98bb286782f9a2b1f54c3867f10a342b77c1f5b2881335fc6fe"
     },
     "BoundedWanderingDomains.Surfaces.GlobalDomainSurfaceGreen": {
       "file": "BoundedWanderingDomains/Surfaces/GlobalDomainSurfaceGreen.lean",
@@ -7316,7 +7423,7 @@
         "BoundedWanderingDomains.Surfaces.DomainSurfaceGreenIdentity",
         "Mathlib.Topology.Compactness.LocallyFinite"
       ],
-      "sha256": "647a1239d07775a5d5f4ee9a08c685f604c75182c36d1f7e665837fb3cf57202"
+      "sha256": "a29afe94334dd40944187f2c5268abc37625df4116476b9c0c47deeae0095257"
     },
     "BoundedWanderingDomains.Surfaces.DomainSurfaceGreenIdentity": {
       "file": "BoundedWanderingDomains/Surfaces/DomainSurfaceGreenIdentity.lean",
@@ -7326,7 +7433,7 @@
         "BoundedWanderingDomains.Surfaces.ChartZeroExtension",
         "BoundedWanderingDomains.GreenIdentity"
       ],
-      "sha256": "78c24a5b2b447f6bf15bf0138bb99922bd863dd17d8197cc20645c103d6bddb6"
+      "sha256": "fcb2ed05fdc5bacfd7784b1f3af9720395ad3fb0fabc4c22e6bb7c633796c332"
     },
     "BoundedWanderingDomains.Surfaces.DomainAreaGainIntegration": {
       "file": "BoundedWanderingDomains/Surfaces/DomainAreaGainIntegration.lean",
@@ -7342,7 +7449,7 @@
         "BoundedWanderingDomains.Surfaces.DomainSurfaceGreenIdentity",
         "BoundedWanderingDomains.Surfaces.AreaIntegration"
       ],
-      "sha256": "60bc37c36b4168949be8ecf2b5fed8d9dfe92b5bfdf04be168a229db4ef60216"
+      "sha256": "bc0e4b7e280e382eaa3127df6783ad23de4569a4ab0c18e629227d6c5c73517d"
     },
     "BoundedWanderingDomains.Surfaces.IntrinsicSurfaceLaplacian": {
       "file": "BoundedWanderingDomains/Surfaces/IntrinsicSurfaceLaplacian.lean",
@@ -7352,7 +7459,7 @@
         "BoundedWanderingDomains.Surfaces.ChartLaplacianSupport",
         "BoundedWanderingDomains.Surfaces.SmoothSurface"
       ],
-      "sha256": "b4919a19d95c3f53a4ed3924c177807fba420b81fc9be2806d3298ea164137b2"
+      "sha256": "04644873bf0675fa526724318b76b84a94ed4309ea4be685fdad47c6710b891c"
     },
     "BoundedWanderingDomains.Surfaces.CoordinateLaplacian": {
       "file": "BoundedWanderingDomains/Surfaces/CoordinateLaplacian.lean",
@@ -7360,7 +7467,7 @@
         "BoundedWanderingDomains.ConformalLaplacian",
         "BoundedWanderingDomains.Surfaces.ChartCriticalValues"
       ],
-      "sha256": "ce42ae38eed34cda25fa593ea5e462a9707988a9496dab011e34bd2d5268cfb7"
+      "sha256": "593bbc92f2a48929af920e385e3b765dfdbcba5a68977ad2e1c3610deebca551"
     },
     "BoundedWanderingDomains.Surfaces.FiniteDefectAreaAdvance": {
       "file": "BoundedWanderingDomains/Surfaces/FiniteDefectAreaAdvance.lean",
@@ -7419,14 +7526,7 @@
         "BoundedWanderingDomains.Surfaces.BoundaryBarrierPackage",
         "BoundedWanderingDomains.Surfaces.WanderingAnchorDisk"
       ],
-      "sha256": "9bda3c02e09fcd79245e6ecc7f3402b9c776bd7686837b983776153f0b4280a1"
-    },
-    "BoundedWanderingDomains.Surfaces.CoveringComponents": {
-      "file": "BoundedWanderingDomains/Surfaces/CoveringComponents.lean",
-      "imports": [
-        "Mathlib.Topology.Homotopy.Lifting"
-      ],
-      "sha256": "dae1645ac8315e64944cd1530b182aa6e01e76b61617e6f78f5ef4a8870b80a3"
+      "sha256": "02be6efc0289a54bcce0baca7f4776f7c83d674376ebb2a040deb82eecdb91f6"
     },
     "BoundedWanderingDomains.Surfaces.SurfaceChartPartition": {
       "file": "BoundedWanderingDomains/Surfaces/SurfaceChartPartition.lean",
@@ -7434,7 +7534,7 @@
         "BoundedWanderingDomains.Surfaces.SurfaceGreenIdentity",
         "Mathlib.Topology.Compactness.LocallyFinite"
       ],
-      "sha256": "d563a156e7c0a2be1c88a420153aa18b26b4130aa48e8d0ef8a5fd4c2431b542"
+      "sha256": "88f6472623bd1b9b39f737343916f3fc8a27ad2d665bc899c6e9715035560839"
     },
     "BoundedWanderingDomains.Surfaces.SurfaceGreenIdentity": {
       "file": "BoundedWanderingDomains/Surfaces/SurfaceGreenIdentity.lean",
@@ -7443,7 +7543,7 @@
         "BoundedWanderingDomains.Surfaces.ChartZeroExtension",
         "BoundedWanderingDomains.GreenIdentity"
       ],
-      "sha256": "9ceac0c4d16c706c7688ae372924bceb144e953e19a1aa7e47b0a41deb219a65"
+      "sha256": "70231717e4ad06ec632fc6b16f11c12781aa111b77ceb3067f69749ec13e55cd"
     },
     "BoundedWanderingDomains.Surfaces.AreaGainIntegration": {
       "file": "BoundedWanderingDomains/Surfaces/AreaGainIntegration.lean",

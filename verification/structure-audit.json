@@ -1,5 +1,5 @@
 {
-  "tracked_lean_files": 1373,
+  "tracked_lean_files": 1379,
   "auxiliary_module_name_collisions": {
     "scripts.Audit": [
       "dependencies/ComplexApproximation/scripts/Audit.lean",
@@ -10,16 +10,16 @@
   },
   "root_closures": {
     "Solution": {
-      "local": 772,
-      "external_frontier": 361
+      "local": 777,
+      "external_frontier": 372
     },
     "Challenge": {
       "local": 1,
-      "external_frontier": 13
+      "external_frontier": 12
     },
     "Legacy.Solution": {
       "local": 546,
-      "external_frontier": 341
+      "external_frontier": 345
     },
     "Legacy.Challenge": {
       "local": 1,
@@ -27,7 +27,7 @@
     },
     "Research.NewResults": {
       "local": 557,
-      "external_frontier": 344
+      "external_frontier": 348
     },
     "Legacy.SingularLimitsChallenge": {
       "local": 1,
@@ -35,18 +35,18 @@
     },
     "Legacy.SingularLimitsSolution": {
       "local": 544,
-      "external_frontier": 341
+      "external_frontier": 345
     },
     "Research.SurfaceResearch": {
-      "local": 622,
-      "external_frontier": 253
+      "local": 693,
+      "external_frontier": 359
     },
     "BoundedWanderingDomains.CoveringSolution": {
       "local": 381,
-      "external_frontier": 219
+      "external_frontier": 223
     }
   },
-  "all_root_local_modules": 797,
+  "all_root_local_modules": 801,
   "extra_local_modules_in_legacy_build": [
     "BoundedWanderingDomains.LocalCoveringArea",
     "BoundedWanderingDomains.LocalDerivedSetAreaContradiction",
@@ -55,7 +55,6 @@
     "BoundedWanderingDomains.LocalUniformSingularLimits",
     "BoundedWanderingDomains.PlaneUniformFiniteRemoval",
     "BoundedWanderingDomains.Surfaces.AreaGainIntegration",
-    "BoundedWanderingDomains.Surfaces.CoveringComponents",
     "BoundedWanderingDomains.Surfaces.GeometricArea",
     "BoundedWanderingDomains.Surfaces.RemoteChartCompact",
     "BoundedWanderingDomains.Surfaces.RemoteChartGain",
@@ -89,10 +88,12 @@
     "BoundedWanderingDomains.Surfaces.FiniteSurfaceCutoffGreen",
     "BoundedWanderingDomains.Surfaces.GlobalRieszInsertion",
     "BoundedWanderingDomains.Surfaces.GlobalSurfaceGreen",
+    "BoundedWanderingDomains.Surfaces.HyperbolicDerivedLimits",
     "BoundedWanderingDomains.Surfaces.PaperAreaLemma",
     "BoundedWanderingDomains.Surfaces.PunctureBarrier",
     "BoundedWanderingDomains.Surfaces.SmoothCompactExhaustion",
     "BoundedWanderingDomains.Surfaces.SmoothRieszExhaustion",
+    "BoundedWanderingDomains.Surfaces.SubsurfaceWanderingComponents",
     "BoundedWanderingDomains.TrappedFilling",
     "ComplexApproximation",
     "ComplexApproximation.Arakelian",
@@ -852,6 +853,64 @@
     "BoundedWanderingDomains/SubmissionDefinitions.lean": [
       "Mathlib.Analysis.Complex.CauchyIntegral"
     ],
+    "BoundedWanderingDomains/Surfaces/BKL/AnalyticCompletion.lean": [
+      "BoundedWanderingDomains.Surfaces.LocalMapTotalization",
+      "BoundedWanderingDomains.Surfaces.SubtypeHolomorphic",
+      "BoundedWanderingDomains.Surfaces.PlaneReading",
+      "BoundedWanderingDomains.Surfaces.OpenMapping",
+      "BoundedWanderingDomains.Surfaces.HolomorphicLifting",
+      "BoundedWanderingDomains.SimplyConnectedFilling",
+      "Mathlib.Topology.Covering.Basic",
+      "Mathlib.Topology.Compactness.LocallyCompact",
+      "BoundedWanderingDomains.Surfaces.CompactFilling",
+      "BoundedWanderingDomains.Surfaces.FiniteFibers",
+      "BoundedWanderingDomains.Surfaces.SurfaceSingularCovering",
+      "Mathlib.Topology.DerivedSet",
+      "BoundedWanderingDomains.Surfaces.SurfaceFilling",
+      "BoundedWanderingDomains.Surfaces.WanderingDiscShrink"
+    ],
+    "BoundedWanderingDomains/Surfaces/BKL/ComponentRecovery.lean": [
+      "BoundedWanderingDomains.Surfaces.BKL.ReturnLimits",
+      "BoundedWanderingDomains.Surfaces.FiniteFibers",
+      "BoundedWanderingDomains.Surfaces.LocalCoveringDiscs"
+    ],
+    "BoundedWanderingDomains/Surfaces/BKL/DerivedLimits.lean": [
+      "BoundedWanderingDomains.Surfaces.CompactClusterSeparation",
+      "BoundedWanderingDomains.Surfaces.SubdomainCover",
+      "BoundedWanderingDomains.Surfaces.SaturationDynamics"
+    ],
+    "BoundedWanderingDomains/Surfaces/BKL/PuncturedCovers.lean": [
+      "Mathlib.Analysis.Calculus.Deriv.Inv",
+      "BoundedWanderingDomains.Surfaces.LocalDynamics",
+      "BoundedWanderingDomains.Surfaces.PlaneReading",
+      "BoundedWanderingDomains.Surfaces.HolomorphicLifting",
+      "BoundedWanderingDomains.Surfaces.SubtypeHolomorphic",
+      "Mathlib.Analysis.Complex.RemovableSingularity",
+      "TauCeti.Analysis.Complex.Conformal.Inverse.Function",
+      "TauCeti.Analysis.Complex.Conformal.ImageSimplyConnected",
+      "Mathlib.Analysis.Convex.Contractible"
+    ],
+    "BoundedWanderingDomains/Surfaces/BKL/ReturnLimits.lean": [
+      "Mathlib.Topology.UniformSpace.LocallyUniformConvergence",
+      "Mathlib.Topology.Maps.Basic",
+      "Mathlib.Data.Set.Function",
+      "Mathlib.Analysis.Complex.Schwarz",
+      "Mathlib.Topology.OpenPartialHomeomorph.Basic",
+      "BoundedWanderingDomains.Surfaces.FiniteFibers",
+      "BoundedWanderingDomains.Surfaces.HolomorphicLifting"
+    ],
+    "BoundedWanderingDomains/Surfaces/BKL/ShrinkingFillings.lean": [
+      "Mathlib.Topology.UniformSpace.LocallyUniformConvergence",
+      "Mathlib.Topology.Sequences",
+      "BoundedWanderingDomains.Surfaces.LocalMapTotalization",
+      "BoundedWanderingDomains.Surfaces.CompactFilling",
+      "BoundedWanderingDomains.Surfaces.LocalCoveringDiscs",
+      "BoundedWanderingDomains.Surfaces.WanderingDiscShrink",
+      "BoundedWanderingDomains.Surfaces.SurfaceFilling",
+      "BoundedWanderingDomains.Surfaces.CoordinateDiscParam",
+      "BoundedWanderingDomains.Surfaces.BKL.AnalyticCompletion",
+      "BoundedWanderingDomains.Surfaces.PointedCoveringDiscs"
+    ],
     "BoundedWanderingDomains/Surfaces/BoundaryPunctureSequence.lean": [
       "BoundedWanderingDomains.Surfaces.LocalDynamics"
     ],
@@ -1405,6 +1464,9 @@
       "BoundedWanderingDomains.Surfaces.KernelNormal",
       "BoundedWanderingDomains.Surfaces.KernelConvergence",
       "BoundedWanderingDomains.Surfaces.DomainDensityDivergence"
+    ],
+    "Research/SurfaceResearch.lean": [
+      "BoundedWanderingDomains.Surfaces.CoveringComponents"
     ],
     "RiemannDynamics/Surface/GenusSurface/Basic.lean": [
       "Mathlib.Analysis.SpecialFunctions.Complex.Circle"
@@ -2651,6 +2713,12 @@
     "BoundedWanderingDomains.Surfaces.AreaGain",
     "BoundedWanderingDomains.Surfaces.AreaIntegration",
     "BoundedWanderingDomains.Surfaces.AreaNullSets",
+    "BoundedWanderingDomains.Surfaces.BKL.AnalyticCompletion",
+    "BoundedWanderingDomains.Surfaces.BKL.ComponentRecovery",
+    "BoundedWanderingDomains.Surfaces.BKL.DerivedLimits",
+    "BoundedWanderingDomains.Surfaces.BKL.PuncturedCovers",
+    "BoundedWanderingDomains.Surfaces.BKL.ReturnLimits",
+    "BoundedWanderingDomains.Surfaces.BKL.ShrinkingFillings",
     "BoundedWanderingDomains.Surfaces.BackwardExceptionalPackage",
     "BoundedWanderingDomains.Surfaces.BakerCoveringDiscs",
     "BoundedWanderingDomains.Surfaces.BarrierCompactOrbit",
@@ -2707,6 +2775,7 @@
     "BoundedWanderingDomains.Surfaces.CoordinateLaplacian",
     "BoundedWanderingDomains.Surfaces.CountableChartPartition",
     "BoundedWanderingDomains.Surfaces.CountablePatchTransport",
+    "BoundedWanderingDomains.Surfaces.CoveringComponents",
     "BoundedWanderingDomains.Surfaces.CoveringDensity",
     "BoundedWanderingDomains.Surfaces.CoveringDiscArea",
     "BoundedWanderingDomains.Surfaces.CoveringMetricPullback",
@@ -2776,7 +2845,6 @@
     "BoundedWanderingDomains.Surfaces.HolomorphicLifting",
     "BoundedWanderingDomains.Surfaces.HyperbolicArea",
     "BoundedWanderingDomains.Surfaces.HyperbolicAreaFinite",
-    "BoundedWanderingDomains.Surfaces.HyperbolicDerivedLimits",
     "BoundedWanderingDomains.Surfaces.HyperbolicOrbitEscape",
     "BoundedWanderingDomains.Surfaces.IntrinsicGreenPairing",
     "BoundedWanderingDomains.Surfaces.IntrinsicSurfaceLaplacian",
@@ -2842,7 +2910,6 @@
     "BoundedWanderingDomains.Surfaces.SubsurfaceCompactNormal",
     "BoundedWanderingDomains.Surfaces.SubsurfaceOrbitRestriction",
     "BoundedWanderingDomains.Surfaces.SubsurfaceRegularValues",
-    "BoundedWanderingDomains.Surfaces.SubsurfaceWanderingComponents",
     "BoundedWanderingDomains.Surfaces.SubtypeHolomorphic",
     "BoundedWanderingDomains.Surfaces.SurfaceDerivedLimits",
     "BoundedWanderingDomains.Surfaces.SurfaceFilling",
@@ -4107,6 +4174,102 @@
     "BoundedWanderingDomains.Surfaces.AreaNullSets": [
       "BoundedWanderingDomains.Surfaces.AreaIntegration"
     ],
+    "BoundedWanderingDomains.Surfaces.BKL.AnalyticCompletion": [
+      "BoundedWanderingDomains.Surfaces.LocalMapTotalization",
+      "BoundedWanderingDomains.Surfaces.SubtypeHolomorphic",
+      "BoundedWanderingDomains.Surfaces.PlaneReading",
+      "BoundedWanderingDomains.Surfaces.OpenMapping",
+      "BoundedWanderingDomains.Surfaces.HolomorphicLifting",
+      "BoundedWanderingDomains.Surfaces.BKL.PuncturedCovers",
+      "BoundedWanderingDomains.SimplyConnectedFilling",
+      "Mathlib.Topology.Covering.Basic",
+      "Mathlib.Topology.Compactness.LocallyCompact",
+      "BoundedWanderingDomains.Surfaces.CompactFilling",
+      "BoundedWanderingDomains.Surfaces.FiniteFibers",
+      "BoundedWanderingDomains.Surfaces.SurfaceSingularCovering",
+      "Mathlib.Topology.DerivedSet",
+      "BoundedWanderingDomains.Surfaces.SurfaceFilling",
+      "BoundedWanderingDomains.Surfaces.WanderingDiscShrink"
+    ],
+    "BoundedWanderingDomains.Surfaces.BKL.ComponentRecovery": [
+      "BoundedWanderingDomains.Surfaces.BKL.AnalyticCompletion",
+      "BoundedWanderingDomains.Surfaces.LocalMapRestriction",
+      "BoundedWanderingDomains.Surfaces.BKL.ReturnLimits",
+      "BoundedWanderingDomains.Surfaces.OmegaDynamics",
+      "BoundedWanderingDomains.Surfaces.FiniteFibers",
+      "Mathlib.Order.Filter.Cofinite",
+      "BoundedWanderingDomains.Surfaces.LocalCoveringDiscs"
+    ],
+    "BoundedWanderingDomains.Surfaces.BKL.DerivedLimits": [
+      "BoundedWanderingDomains.Surfaces.CompactOrbitFiniteModels",
+      "BoundedWanderingDomains.Surfaces.CompactClusterSeparation",
+      "BoundedWanderingDomains.Surfaces.EventualRegularArea",
+      "BoundedWanderingDomains.Surfaces.SimplyConnectedCoveringDiscs",
+      "BoundedWanderingDomains.Surfaces.ConditionalDiscShrink",
+      "BoundedWanderingDomains.Surfaces.BKL.ShrinkingFillings",
+      "BoundedWanderingDomains.Surfaces.SubdomainCover",
+      "BoundedWanderingDomains.Surfaces.SubsurfaceCompactNormal",
+      "BoundedWanderingDomains.Surfaces.SaturationDynamics",
+      "BoundedWanderingDomains.Surfaces.SubsurfaceRegularValues",
+      "BoundedWanderingDomains.Surfaces.NoEscapeCompactRange",
+      "BoundedWanderingDomains.Surfaces.WanderingAnchorDisk"
+    ],
+    "BoundedWanderingDomains.Surfaces.BKL.PuncturedCovers": [
+      "BoundedWanderingDomains.Surfaces.CoordinateDiscParam",
+      "EremenkoLyubichConstant.ExteriorCoverClassification",
+      "Mathlib.Analysis.Calculus.Deriv.Inv",
+      "BoundedWanderingDomains.Surfaces.BKL.ReturnLimits",
+      "BoundedWanderingDomains.Surfaces.LocalDynamics",
+      "Mathlib.Topology.DerivedSet",
+      "BoundedWanderingDomains.Surfaces.WanderingDiscShrink",
+      "BoundedWanderingDomains.TrappedComponentCovering",
+      "BoundedWanderingDomains.Surfaces.SurfaceFilling",
+      "BoundedWanderingDomains.Surfaces.PointedCoveringDiscs",
+      "BoundedWanderingDomains.Surfaces.PlaneReading",
+      "EremenkoLyubichConstant.TractCovering",
+      "BoundedWanderingDomains.Surfaces.CoveringComponents",
+      "BoundedWanderingDomains.Surfaces.HolomorphicLifting",
+      "BoundedWanderingDomains.Surfaces.SubtypeHolomorphic",
+      "BoundedWanderingDomains.Surfaces.SurfaceSingularCovering",
+      "BoundedWanderingDomains.Surfaces.LocalMapTotalization",
+      "Mathlib.Analysis.Complex.RemovableSingularity",
+      "TauCeti.Analysis.Complex.Conformal.Inverse.Function",
+      "TauCeti.Analysis.Complex.Conformal.ImageSimplyConnected",
+      "Mathlib.Analysis.Convex.Contractible"
+    ],
+    "BoundedWanderingDomains.Surfaces.BKL.ReturnLimits": [
+      "Mathlib.Topology.Separation.Hausdorff",
+      "Mathlib.Topology.ContinuousOn",
+      "Mathlib.Logic.Function.Iterate",
+      "Mathlib.Topology.UniformSpace.LocallyUniformConvergence",
+      "Mathlib.Topology.Compactness.LocallyCompact",
+      "Mathlib.Topology.Maps.Basic",
+      "Mathlib.Data.Set.Function",
+      "Lean.Elab.Tactic.Omega",
+      "Mathlib.Analysis.Complex.Schwarz",
+      "Mathlib.Topology.OpenPartialHomeomorph.Basic",
+      "BoundedWanderingDomains.Surfaces.FiniteFibers",
+      "BoundedWanderingDomains.Surfaces.HolomorphicLifting",
+      "BoundedWanderingDomains.Surfaces.LocalPunctures",
+      "Mathlib.Order.Filter.AtTopBot.CountablyGenerated",
+      "BoundedWanderingDomains.Surfaces.FinitePunctureTopology",
+      "Mathlib.Topology.Separation.Regular"
+    ],
+    "BoundedWanderingDomains.Surfaces.BKL.ShrinkingFillings": [
+      "Mathlib.Topology.UniformSpace.LocallyUniformConvergence",
+      "Mathlib.Topology.Sequences",
+      "BoundedWanderingDomains.Surfaces.LocalMapTotalization",
+      "BoundedWanderingDomains.Surfaces.CompactFilling",
+      "BoundedWanderingDomains.Surfaces.LocalCoveringDiscs",
+      "BoundedWanderingDomains.Surfaces.WanderingDiscShrink",
+      "BoundedWanderingDomains.Surfaces.SurfaceFilling",
+      "BoundedWanderingDomains.Surfaces.CoordinateDiscParam",
+      "Mathlib.Topology.Sets.Opens",
+      "BoundedWanderingDomains.Surfaces.BKL.AnalyticCompletion",
+      "BoundedWanderingDomains.Surfaces.BKL.ComponentRecovery",
+      "BoundedWanderingDomains.Surfaces.PointedCoveringDiscs",
+      "BoundedWanderingDomains.Surfaces.CompactClusterSeparation"
+    ],
     "BoundedWanderingDomains.Surfaces.BackwardExceptionalPackage": [
       "BoundedWanderingDomains.Surfaces.BoundaryPunctureSequence"
     ],
@@ -5004,7 +5167,6 @@
       "BoundedWanderingDomains.Surfaces.LocalDynamics",
       "BoundedWanderingDomains.Surfaces.CompactificationEscape",
       "Mathlib.MeasureTheory.Measure.Lebesgue.Complex",
-      "Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected",
       "Mathlib.Topology.DerivedSet"
     ],
     "BoundedWanderingDomains.Surfaces.SubdomainCover": [
@@ -5042,11 +5204,7 @@
       "Mathlib.Topology.Compactness.LocallyFinite"
     ],
     "BoundedWanderingDomains.Surfaces.SurfaceDerivedLimits": [
-      "BoundedWanderingDomains.Surfaces.HyperbolicDerivedLimits",
-      "BoundedWanderingDomains.Surfaces.SubsurfaceWanderingComponents",
-      "BoundedWanderingDomains.Surfaces.SubsurfaceRegularValues",
-      "BoundedWanderingDomains.Surfaces.NoEscapeCompactRange",
-      "BoundedWanderingDomains.Surfaces.WanderingAnchorDisk"
+      "BoundedWanderingDomains.Surfaces.BKL.DerivedLimits"
     ],
     "BoundedWanderingDomains.Surfaces.SurfaceFilling": [
       "BoundedWanderingDomains.Surfaces.CompactFilling",
@@ -5181,12 +5339,15 @@
     "BoundedWanderingDomains.WanderingSets": [
       "Mathlib.Dynamics.FixedPoints.Basic",
       "Mathlib.Data.Set.Pairwise.Basic",
-      "Mathlib.Data.Set.Lattice",
+      "Mathlib.Data.Set.Lattice.Bounded",
+      "Mathlib.Data.Set.Lattice.Disjoint",
+      "Mathlib.Data.Set.Lattice.Image",
+      "Mathlib.Data.Set.Lattice.Indexed",
+      "Mathlib.Data.Set.Lattice.Order",
       "Mathlib.Tactic.Ext"
     ],
     "Challenge": [
       "Mathlib.Analysis.Complex.CauchyIntegral",
-      "Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected",
       "Mathlib.Topology.UniformSpace.LocallyUniformConvergence",
       "Mathlib.Topology.UniformSpace.Uniformizable",
       "Mathlib.Topology.Compactification.OnePoint.Basic",
@@ -11143,6 +11304,12 @@
     "BoundedWanderingDomains.Surfaces.AreaGainIntegration": "BoundedWanderingDomains/Surfaces/AreaGainIntegration.lean",
     "BoundedWanderingDomains.Surfaces.AreaIntegration": "BoundedWanderingDomains/Surfaces/AreaIntegration.lean",
     "BoundedWanderingDomains.Surfaces.AreaNullSets": "BoundedWanderingDomains/Surfaces/AreaNullSets.lean",
+    "BoundedWanderingDomains.Surfaces.BKL.AnalyticCompletion": "BoundedWanderingDomains/Surfaces/BKL/AnalyticCompletion.lean",
+    "BoundedWanderingDomains.Surfaces.BKL.ComponentRecovery": "BoundedWanderingDomains/Surfaces/BKL/ComponentRecovery.lean",
+    "BoundedWanderingDomains.Surfaces.BKL.DerivedLimits": "BoundedWanderingDomains/Surfaces/BKL/DerivedLimits.lean",
+    "BoundedWanderingDomains.Surfaces.BKL.PuncturedCovers": "BoundedWanderingDomains/Surfaces/BKL/PuncturedCovers.lean",
+    "BoundedWanderingDomains.Surfaces.BKL.ReturnLimits": "BoundedWanderingDomains/Surfaces/BKL/ReturnLimits.lean",
+    "BoundedWanderingDomains.Surfaces.BKL.ShrinkingFillings": "BoundedWanderingDomains/Surfaces/BKL/ShrinkingFillings.lean",
     "BoundedWanderingDomains.Surfaces.BackwardExceptionalPackage": "BoundedWanderingDomains/Surfaces/BackwardExceptionalPackage.lean",
     "BoundedWanderingDomains.Surfaces.BakerCoveringDiscs": "BoundedWanderingDomains/Surfaces/BakerCoveringDiscs.lean",
     "BoundedWanderingDomains.Surfaces.BarrierCompactOrbit": "BoundedWanderingDomains/Surfaces/BarrierCompactOrbit.lean",
@@ -12359,7 +12526,7 @@
   },
   "sizes": {
     "BoundedWanderingDomains.All": {
-      "bytes": 3281,
+      "bytes": 3216,
       "lines": 65
     },
     "BoundedWanderingDomains.AnchoredCompactArea": {
@@ -12395,11 +12562,11 @@
       "lines": 38
     },
     "BoundedWanderingDomains.AreaLimits": {
-      "bytes": 3704,
+      "bytes": 3634,
       "lines": 70
     },
     "BoundedWanderingDomains.AreaTransport": {
-      "bytes": 5068,
+      "bytes": 4972,
       "lines": 96
     },
     "BoundedWanderingDomains.BackwardOrbitModels": {
@@ -12443,11 +12610,11 @@
       "lines": 50
     },
     "BoundedWanderingDomains.CompactDeficit": {
-      "bytes": 1844,
+      "bytes": 1807,
       "lines": 37
     },
     "BoundedWanderingDomains.CompactWanderingLimits": {
-      "bytes": 3004,
+      "bytes": 2946,
       "lines": 58
     },
     "BoundedWanderingDomains.ConditionalPositiveArea": {
@@ -12467,11 +12634,11 @@
       "lines": 111
     },
     "BoundedWanderingDomains.CoveringAreaTransport": {
-      "bytes": 4156,
+      "bytes": 4069,
       "lines": 87
     },
     "BoundedWanderingDomains.CoveringCutoffArea": {
-      "bytes": 4666,
+      "bytes": 4573,
       "lines": 93
     },
     "BoundedWanderingDomains.CoveringDensityPullback": {
@@ -12483,31 +12650,31 @@
       "lines": 48
     },
     "BoundedWanderingDomains.CoveringDiscInjectivity": {
-      "bytes": 3478,
+      "bytes": 3403,
       "lines": 75
     },
     "BoundedWanderingDomains.CoveringDiscs": {
-      "bytes": 5795,
+      "bytes": 5688,
       "lines": 107
     },
     "BoundedWanderingDomains.CoveringEndIntegrals": {
-      "bytes": 3444,
+      "bytes": 3375,
       "lines": 69
     },
     "BoundedWanderingDomains.CoveringExhaustion": {
-      "bytes": 3335,
+      "bytes": 3269,
       "lines": 66
     },
     "BoundedWanderingDomains.CoveringLimitBranches": {
-      "bytes": 2586,
+      "bytes": 2526,
       "lines": 60
     },
     "BoundedWanderingDomains.CoveringMetricInput": {
-      "bytes": 2396,
+      "bytes": 2342,
       "lines": 54
     },
     "BoundedWanderingDomains.CoveringSolution": {
-      "bytes": 3088,
+      "bytes": 3029,
       "lines": 59
     },
     "BoundedWanderingDomains.CoveringTotalArea": {
@@ -12515,23 +12682,23 @@
       "lines": 57
     },
     "BoundedWanderingDomains.CuspAffineBounds": {
-      "bytes": 8415,
+      "bytes": 8243,
       "lines": 172
     },
     "BoundedWanderingDomains.CuspAreaIntegrability": {
-      "bytes": 7025,
+      "bytes": 7015,
       "lines": 160
     },
     "BoundedWanderingDomains.CuspDensityBounds": {
-      "bytes": 8463,
+      "bytes": 8297,
       "lines": 166
     },
     "BoundedWanderingDomains.CuspEndLimits": {
-      "bytes": 5009,
+      "bytes": 4902,
       "lines": 107
     },
     "BoundedWanderingDomains.CuspLogLimit": {
-      "bytes": 2624,
+      "bytes": 2571,
       "lines": 53
     },
     "BoundedWanderingDomains.CutoffAreaLimit": {
@@ -12539,23 +12706,23 @@
       "lines": 36
     },
     "BoundedWanderingDomains.CutoffEndLimits": {
-      "bytes": 5202,
+      "bytes": 5102,
       "lines": 100
     },
     "BoundedWanderingDomains.CutoffError": {
-      "bytes": 4070,
+      "bytes": 3991,
       "lines": 79
     },
     "BoundedWanderingDomains.CutoffLaplacian": {
-      "bytes": 3306,
+      "bytes": 3237,
       "lines": 69
     },
     "BoundedWanderingDomains.DensityDeficit": {
-      "bytes": 3208,
+      "bytes": 3141,
       "lines": 67
     },
     "BoundedWanderingDomains.DerivedSetAreaContradiction": {
-      "bytes": 8062,
+      "bytes": 7894,
       "lines": 168
     },
     "BoundedWanderingDomains.DerivedSetDiscControl": {
@@ -12567,19 +12734,19 @@
       "lines": 34
     },
     "BoundedWanderingDomains.DiscArea": {
-      "bytes": 5770,
+      "bytes": 5651,
       "lines": 119
     },
     "BoundedWanderingDomains.DiscCoveringMetric": {
-      "bytes": 9766,
+      "bytes": 9568,
       "lines": 198
     },
     "BoundedWanderingDomains.DiscMetric": {
-      "bytes": 5475,
+      "bytes": 5354,
       "lines": 121
     },
     "BoundedWanderingDomains.DiscRestriction": {
-      "bytes": 1886,
+      "bytes": 1841,
       "lines": 45
     },
     "BoundedWanderingDomains.DiscSchwarzPick": {
@@ -12587,7 +12754,7 @@
       "lines": 55
     },
     "BoundedWanderingDomains.EntireBoundedOrbit": {
-      "bytes": 1177,
+      "bytes": 1145,
       "lines": 32
     },
     "BoundedWanderingDomains.EntireFatouBridge": {
@@ -12603,7 +12770,7 @@
       "lines": 125
     },
     "BoundedWanderingDomains.ExceptionalSets": {
-      "bytes": 3652,
+      "bytes": 3572,
       "lines": 80
     },
     "BoundedWanderingDomains.ExteriorDerivativeBound": {
@@ -12647,7 +12814,7 @@
       "lines": 192
     },
     "BoundedWanderingDomains.GeneralMetricDeficit": {
-      "bytes": 4484,
+      "bytes": 4393,
       "lines": 91
     },
     "BoundedWanderingDomains.GeneralPunctureCost": {
@@ -12667,19 +12834,19 @@
       "lines": 63
     },
     "BoundedWanderingDomains.HolomorphicLifting": {
-      "bytes": 3025,
+      "bytes": 2963,
       "lines": 62
     },
     "BoundedWanderingDomains.HolomorphicTransport": {
-      "bytes": 2612,
+      "bytes": 2560,
       "lines": 52
     },
     "BoundedWanderingDomains.IdealTriangleArea": {
-      "bytes": 6605,
+      "bytes": 6467,
       "lines": 138
     },
     "BoundedWanderingDomains.IdealTriangleIntegral": {
-      "bytes": 2207,
+      "bytes": 2158,
       "lines": 49
     },
     "BoundedWanderingDomains.InteriorDensityLimit": {
@@ -12691,7 +12858,7 @@
       "lines": 49
     },
     "BoundedWanderingDomains.LaplacianChain": {
-      "bytes": 3266,
+      "bytes": 3195,
       "lines": 71
     },
     "BoundedWanderingDomains.LocalBoundedPoint": {
@@ -12703,7 +12870,7 @@
       "lines": 115
     },
     "BoundedWanderingDomains.LocalCovering": {
-      "bytes": 6714,
+      "bytes": 6579,
       "lines": 135
     },
     "BoundedWanderingDomains.LocalCoveringArea": {
@@ -12715,7 +12882,7 @@
       "lines": 183
     },
     "BoundedWanderingDomains.LocalDiscInjectivity": {
-      "bytes": 7191,
+      "bytes": 7042,
       "lines": 149
     },
     "BoundedWanderingDomains.LocalDynamicalAreaBound": {
@@ -12739,7 +12906,7 @@
       "lines": 96
     },
     "BoundedWanderingDomains.LocalPunctures": {
-      "bytes": 8072,
+      "bytes": 7904,
       "lines": 168
     },
     "BoundedWanderingDomains.LocalSingularLimits": {
@@ -12747,11 +12914,11 @@
       "lines": 103
     },
     "BoundedWanderingDomains.LocalSingularValues": {
-      "bytes": 2320,
+      "bytes": 2264,
       "lines": 56
     },
     "BoundedWanderingDomains.LocalTrappedTopology": {
-      "bytes": 5915,
+      "bytes": 5794,
       "lines": 121
     },
     "BoundedWanderingDomains.LocalUniformSingularLimits": {
@@ -12763,19 +12930,19 @@
       "lines": 92
     },
     "BoundedWanderingDomains.LogBarrier": {
-      "bytes": 2960,
+      "bytes": 2895,
       "lines": 65
     },
     "BoundedWanderingDomains.LogGrowthCutoff": {
-      "bytes": 5404,
+      "bytes": 5402,
       "lines": 120
     },
     "BoundedWanderingDomains.LogKernelBounds": {
-      "bytes": 6261,
+      "bytes": 6125,
       "lines": 128
     },
     "BoundedWanderingDomains.LogKernelMoments": {
-      "bytes": 4955,
+      "bytes": 4841,
       "lines": 114
     },
     "BoundedWanderingDomains.LogRadialIntegral": {
@@ -12783,11 +12950,11 @@
       "lines": 39
     },
     "BoundedWanderingDomains.LogarithmicCutoff": {
-      "bytes": 4470,
+      "bytes": 4367,
       "lines": 103
     },
     "BoundedWanderingDomains.MeromorphicEscape": {
-      "bytes": 7933,
+      "bytes": 7932,
       "lines": 170
     },
     "BoundedWanderingDomains.MeromorphicNormalityBridge": {
@@ -12803,11 +12970,11 @@
       "lines": 269
     },
     "BoundedWanderingDomains.NoWanderingCorollaries": {
-      "bytes": 3615,
+      "bytes": 3532,
       "lines": 83
     },
     "BoundedWanderingDomains.NormalFamilies": {
-      "bytes": 5260,
+      "bytes": 5157,
       "lines": 103
     },
     "BoundedWanderingDomains.NormalFamilyOnDomain": {
@@ -12815,7 +12982,7 @@
       "lines": 112
     },
     "BoundedWanderingDomains.OmittedPairCompactness": {
-      "bytes": 1736,
+      "bytes": 1700,
       "lines": 36
     },
     "BoundedWanderingDomains.PlaneUniformFiniteRemoval": {
@@ -12823,39 +12990,39 @@
       "lines": 86
     },
     "BoundedWanderingDomains.PointOrbitBridge": {
-      "bytes": 5101,
+      "bytes": 4993,
       "lines": 108
     },
     "BoundedWanderingDomains.PositivePart": {
-      "bytes": 7026,
+      "bytes": 6895,
       "lines": 131
     },
     "BoundedWanderingDomains.PunctureDensityLimits": {
-      "bytes": 4462,
+      "bytes": 4371,
       "lines": 91
     },
     "BoundedWanderingDomains.PunctureRegularisation": {
-      "bytes": 6875,
+      "bytes": 6730,
       "lines": 145
     },
     "BoundedWanderingDomains.PuncturedCutoff": {
-      "bytes": 7564,
+      "bytes": 7410,
       "lines": 154
     },
     "BoundedWanderingDomains.Regularisation": {
-      "bytes": 4416,
+      "bytes": 4314,
       "lines": 102
     },
     "BoundedWanderingDomains.RiemannMappingFull": {
-      "bytes": 37036,
+      "bytes": 36313,
       "lines": 723
     },
     "BoundedWanderingDomains.ShrinkingChartDiscs": {
-      "bytes": 3402,
+      "bytes": 3333,
       "lines": 69
     },
     "BoundedWanderingDomains.ShrinkingImages": {
-      "bytes": 2781,
+      "bytes": 2728,
       "lines": 53
     },
     "BoundedWanderingDomains.SimplyConnectedFilling": {
@@ -12955,15 +13122,15 @@
       "lines": 47
     },
     "BoundedWanderingDomains.SubmissionDefinitions": {
-      "bytes": 3085,
+      "bytes": 3030,
       "lines": 55
     },
     "BoundedWanderingDomains.Surfaces.AmbientChartPartition": {
-      "bytes": 2952,
-      "lines": 68
+      "bytes": 3092,
+      "lines": 71
     },
     "BoundedWanderingDomains.Surfaces.AnalyticSurface": {
-      "bytes": 1393,
+      "bytes": 1365,
       "lines": 28
     },
     "BoundedWanderingDomains.Surfaces.AnchorComplementModels": {
@@ -12971,7 +13138,7 @@
       "lines": 75
     },
     "BoundedWanderingDomains.Surfaces.AreaGain": {
-      "bytes": 4112,
+      "bytes": 4026,
       "lines": 86
     },
     "BoundedWanderingDomains.Surfaces.AreaGainIntegration": {
@@ -12979,100 +13146,124 @@
       "lines": 62
     },
     "BoundedWanderingDomains.Surfaces.AreaIntegration": {
-      "bytes": 5589,
+      "bytes": 5478,
       "lines": 111
     },
     "BoundedWanderingDomains.Surfaces.AreaNullSets": {
-      "bytes": 2208,
+      "bytes": 2163,
       "lines": 45
     },
+    "BoundedWanderingDomains.Surfaces.BKL.AnalyticCompletion": {
+      "bytes": 47404,
+      "lines": 1073
+    },
+    "BoundedWanderingDomains.Surfaces.BKL.ComponentRecovery": {
+      "bytes": 25213,
+      "lines": 599
+    },
+    "BoundedWanderingDomains.Surfaces.BKL.DerivedLimits": {
+      "bytes": 26123,
+      "lines": 538
+    },
+    "BoundedWanderingDomains.Surfaces.BKL.PuncturedCovers": {
+      "bytes": 41817,
+      "lines": 995
+    },
+    "BoundedWanderingDomains.Surfaces.BKL.ReturnLimits": {
+      "bytes": 33705,
+      "lines": 787
+    },
+    "BoundedWanderingDomains.Surfaces.BKL.ShrinkingFillings": {
+      "bytes": 29713,
+      "lines": 644
+    },
     "BoundedWanderingDomains.Surfaces.BackwardExceptionalPackage": {
-      "bytes": 3564,
-      "lines": 86
+      "bytes": 3372,
+      "lines": 82
     },
     "BoundedWanderingDomains.Surfaces.BakerCoveringDiscs": {
-      "bytes": 7573,
+      "bytes": 7572,
       "lines": 146
     },
     "BoundedWanderingDomains.Surfaces.BarrierCompactOrbit": {
-      "bytes": 5226,
-      "lines": 108
+      "bytes": 5382,
+      "lines": 110
     },
     "BoundedWanderingDomains.Surfaces.BoundaryBarrierPackage": {
-      "bytes": 4602,
-      "lines": 95
+      "bytes": 4591,
+      "lines": 94
     },
     "BoundedWanderingDomains.Surfaces.BoundaryEscape": {
       "bytes": 1364,
       "lines": 36
     },
     "BoundedWanderingDomains.Surfaces.BoundaryPunctureSequence": {
-      "bytes": 13004,
-      "lines": 283
+      "bytes": 14324,
+      "lines": 298
     },
     "BoundedWanderingDomains.Surfaces.ChartArea": {
-      "bytes": 2915,
+      "bytes": 2854,
       "lines": 61
     },
     "BoundedWanderingDomains.Surfaces.ChartCriticalValues": {
-      "bytes": 5222,
-      "lines": 107
+      "bytes": 5098,
+      "lines": 105
     },
     "BoundedWanderingDomains.Surfaces.ChartGainCutoff": {
-      "bytes": 2644,
+      "bytes": 2593,
       "lines": 51
     },
     "BoundedWanderingDomains.Surfaces.ChartLaplacianSupport": {
-      "bytes": 3238,
+      "bytes": 3167,
       "lines": 72
     },
     "BoundedWanderingDomains.Surfaces.ChartMapAreaTransport": {
-      "bytes": 9272,
-      "lines": 193
+      "bytes": 9438,
+      "lines": 194
     },
     "BoundedWanderingDomains.Surfaces.ChartPartitionCoveringTransport": {
-      "bytes": 4169,
+      "bytes": 4170,
       "lines": 96
     },
     "BoundedWanderingDomains.Surfaces.ChartPointRemoval": {
-      "bytes": 4599,
+      "bytes": 4498,
       "lines": 101
     },
     "BoundedWanderingDomains.Surfaces.ChartPullbackExtension": {
-      "bytes": 4225,
-      "lines": 96
+      "bytes": 4494,
+      "lines": 100
     },
     "BoundedWanderingDomains.Surfaces.ChartPunctures": {
-      "bytes": 1990,
+      "bytes": 1939,
       "lines": 51
     },
     "BoundedWanderingDomains.Surfaces.ChartZeroExtension": {
-      "bytes": 6315,
-      "lines": 144
+      "bytes": 6746,
+      "lines": 152
     },
     "BoundedWanderingDomains.Surfaces.CompactAnchorAreaReduction": {
-      "bytes": 10861,
-      "lines": 219
+      "bytes": 10925,
+      "lines": 221
     },
     "BoundedWanderingDomains.Surfaces.CompactAnchorNormality": {
-      "bytes": 4271,
+      "bytes": 4270,
       "lines": 91
     },
     "BoundedWanderingDomains.Surfaces.CompactBranchValues": {
-      "bytes": 4000,
-      "lines": 83
+      "bytes": 3870,
+      "lines": 81
     },
     "BoundedWanderingDomains.Surfaces.CompactCentreNormal": {
-      "bytes": 13855,
+      "bytes": 13850,
       "lines": 283
     },
     "BoundedWanderingDomains.Surfaces.CompactChartPatches": {
-      "bytes": 4214,
+      "bytes": 4119,
       "lines": 95
     },
     "BoundedWanderingDomains.Surfaces.CompactClusterSeparation": {
-      "bytes": 2936,
-      "lines": 59
+      "bytes": 3113,
+      "lines": 62
     },
     "BoundedWanderingDomains.Surfaces.CompactDiscImages": {
       "bytes": 6860,
@@ -13083,7 +13274,7 @@
       "lines": 216
     },
     "BoundedWanderingDomains.Surfaces.CompactFiniteHyperbolization": {
-      "bytes": 7091,
+      "bytes": 7064,
       "lines": 156
     },
     "BoundedWanderingDomains.Surfaces.CompactFinitePunctureArea": {
@@ -13091,91 +13282,91 @@
       "lines": 154
     },
     "BoundedWanderingDomains.Surfaces.CompactFiniteRemoval": {
-      "bytes": 3177,
+      "bytes": 3109,
       "lines": 68
     },
     "BoundedWanderingDomains.Surfaces.CompactGlobalAnchors": {
-      "bytes": 9301,
-      "lines": 208
+      "bytes": 9363,
+      "lines": 209
     },
     "BoundedWanderingDomains.Surfaces.CompactGlobalPositiveArea": {
-      "bytes": 7747,
+      "bytes": 7743,
       "lines": 159
     },
     "BoundedWanderingDomains.Surfaces.CompactGlobalSingularValues": {
-      "bytes": 1958,
-      "lines": 40
+      "bytes": 2026,
+      "lines": 41
     },
     "BoundedWanderingDomains.Surfaces.CompactInteriorCover": {
-      "bytes": 1729,
-      "lines": 42
+      "bytes": 1762,
+      "lines": 43
     },
     "BoundedWanderingDomains.Surfaces.CompactLocalAreaAdvance": {
-      "bytes": 14247,
-      "lines": 314
+      "bytes": 14296,
+      "lines": 316
     },
     "BoundedWanderingDomains.Surfaces.CompactOrbitFiniteModels": {
       "bytes": 2267,
       "lines": 52
     },
     "BoundedWanderingDomains.Surfaces.CompactOrbitNormal": {
-      "bytes": 8038,
+      "bytes": 8035,
       "lines": 189
     },
     "BoundedWanderingDomains.Surfaces.CompactOrbitRestriction": {
-      "bytes": 2734,
-      "lines": 55
+      "bytes": 2778,
+      "lines": 56
     },
     "BoundedWanderingDomains.Surfaces.CompactPointRemoval": {
-      "bytes": 3793,
+      "bytes": 3715,
       "lines": 78
     },
     "BoundedWanderingDomains.Surfaces.CompactPunctureMontel": {
-      "bytes": 2684,
+      "bytes": 2683,
       "lines": 52
     },
     "BoundedWanderingDomains.Surfaces.CompactSeparation": {
-      "bytes": 2315,
+      "bytes": 2258,
       "lines": 57
     },
     "BoundedWanderingDomains.Surfaces.CompactSurfaceCovering": {
-      "bytes": 2244,
-      "lines": 54
+      "bytes": 2379,
+      "lines": 56
     },
     "BoundedWanderingDomains.Surfaces.CompactificationCutoff": {
-      "bytes": 13288,
-      "lines": 287
+      "bytes": 13939,
+      "lines": 301
     },
     "BoundedWanderingDomains.Surfaces.CompactificationCutoffGreen": {
-      "bytes": 22219,
-      "lines": 464
+      "bytes": 22550,
+      "lines": 470
     },
     "BoundedWanderingDomains.Surfaces.CompactificationEndCharts": {
-      "bytes": 7485,
-      "lines": 171
+      "bytes": 7565,
+      "lines": 173
     },
     "BoundedWanderingDomains.Surfaces.CompactificationEscape": {
-      "bytes": 2746,
+      "bytes": 2686,
       "lines": 60
     },
     "BoundedWanderingDomains.Surfaces.CompactificationInsertionEnds": {
-      "bytes": 17050,
-      "lines": 377
+      "bytes": 17719,
+      "lines": 386
     },
     "BoundedWanderingDomains.Surfaces.CompactificationInsertionRiesz": {
-      "bytes": 10305,
-      "lines": 222
+      "bytes": 10327,
+      "lines": 223
     },
     "BoundedWanderingDomains.Surfaces.ComponentDensity": {
-      "bytes": 3282,
+      "bytes": 3217,
       "lines": 65
     },
     "BoundedWanderingDomains.Surfaces.ComponentDomains": {
-      "bytes": 2871,
+      "bytes": 2804,
       "lines": 67
     },
     "BoundedWanderingDomains.Surfaces.ComponentKernel": {
-      "bytes": 2253,
+      "bytes": 2208,
       "lines": 45
     },
     "BoundedWanderingDomains.Surfaces.ConditionalDiscShrink": {
@@ -13183,27 +13374,27 @@
       "lines": 43
     },
     "BoundedWanderingDomains.Surfaces.CoordinateChainRule": {
-      "bytes": 2485,
+      "bytes": 2442,
       "lines": 43
     },
     "BoundedWanderingDomains.Surfaces.CoordinateDerivative": {
-      "bytes": 3659,
+      "bytes": 3577,
       "lines": 82
     },
     "BoundedWanderingDomains.Surfaces.CoordinateDiscParam": {
-      "bytes": 5373,
-      "lines": 121
+      "bytes": 5528,
+      "lines": 125
     },
     "BoundedWanderingDomains.Surfaces.CoordinateDiskSelection": {
-      "bytes": 4342,
-      "lines": 102
+      "bytes": 4378,
+      "lines": 105
     },
     "BoundedWanderingDomains.Surfaces.CoordinateLaplacian": {
-      "bytes": 2156,
-      "lines": 47
+      "bytes": 2227,
+      "lines": 48
     },
     "BoundedWanderingDomains.Surfaces.CountableChartPartition": {
-      "bytes": 2309,
+      "bytes": 2261,
       "lines": 48
     },
     "BoundedWanderingDomains.Surfaces.CountablePatchTransport": {
@@ -13215,79 +13406,79 @@
       "lines": 33
     },
     "BoundedWanderingDomains.Surfaces.CoveringDensity": {
-      "bytes": 4585,
+      "bytes": 4486,
       "lines": 99
     },
     "BoundedWanderingDomains.Surfaces.CoveringDiscArea": {
-      "bytes": 3507,
-      "lines": 73
+      "bytes": 3527,
+      "lines": 74
     },
     "BoundedWanderingDomains.Surfaces.CoveringMetricPullback": {
-      "bytes": 2698,
+      "bytes": 2648,
       "lines": 50
     },
     "BoundedWanderingDomains.Surfaces.CuspAreaFinite": {
-      "bytes": 2882,
-      "lines": 71
+      "bytes": 2902,
+      "lines": 72
     },
     "BoundedWanderingDomains.Surfaces.CuspDensityBounds": {
-      "bytes": 7732,
+      "bytes": 7668,
       "lines": 173
     },
     "BoundedWanderingDomains.Surfaces.DenseFinitePunctures": {
-      "bytes": 2404,
+      "bytes": 2343,
       "lines": 61
     },
     "BoundedWanderingDomains.Surfaces.DensityCoordinateChange": {
-      "bytes": 1959,
+      "bytes": 1920,
       "lines": 39
     },
     "BoundedWanderingDomains.Surfaces.DensityRatioContinuity": {
-      "bytes": 2249,
+      "bytes": 2203,
       "lines": 46
     },
     "BoundedWanderingDomains.Surfaces.DensityRatioInvariance": {
-      "bytes": 3580,
+      "bytes": 3518,
       "lines": 62
     },
     "BoundedWanderingDomains.Surfaces.DensityRegularity": {
-      "bytes": 4484,
+      "bytes": 4391,
       "lines": 93
     },
     "BoundedWanderingDomains.Surfaces.DerivedLimitReduction": {
-      "bytes": 5406,
-      "lines": 117
+      "bytes": 5360,
+      "lines": 119
     },
     "BoundedWanderingDomains.Surfaces.DiscAvoidanceRatio": {
-      "bytes": 3416,
+      "bytes": 3354,
       "lines": 62
     },
     "BoundedWanderingDomains.Surfaces.DiscComparisonInfinity": {
-      "bytes": 6617,
-      "lines": 126
+      "bytes": 6587,
+      "lines": 128
     },
     "BoundedWanderingDomains.Surfaces.DiscCover": {
       "bytes": 1781,
       "lines": 49
     },
     "BoundedWanderingDomains.Surfaces.DiscDilation": {
-      "bytes": 1713,
+      "bytes": 1678,
       "lines": 35
     },
     "BoundedWanderingDomains.Surfaces.DiscSchwarz": {
-      "bytes": 2371,
+      "bytes": 2316,
       "lines": 55
     },
     "BoundedWanderingDomains.Surfaces.DomainArea": {
-      "bytes": 6003,
+      "bytes": 5878,
       "lines": 125
     },
     "BoundedWanderingDomains.Surfaces.DomainAreaBlowup": {
-      "bytes": 3152,
+      "bytes": 3094,
       "lines": 58
     },
     "BoundedWanderingDomains.Surfaces.DomainAreaGain": {
-      "bytes": 8107,
+      "bytes": 7940,
       "lines": 167
     },
     "BoundedWanderingDomains.Surfaces.DomainAreaGainIntegration": {
@@ -13295,24 +13486,24 @@
       "lines": 57
     },
     "BoundedWanderingDomains.Surfaces.DomainAreaSubtype": {
-      "bytes": 6793,
-      "lines": 156
+      "bytes": 6835,
+      "lines": 157
     },
     "BoundedWanderingDomains.Surfaces.DomainChartDensity": {
-      "bytes": 5457,
+      "bytes": 5348,
       "lines": 109
     },
     "BoundedWanderingDomains.Surfaces.DomainChartKernel": {
-      "bytes": 1441,
+      "bytes": 1414,
       "lines": 27
     },
     "BoundedWanderingDomains.Surfaces.DomainCompactGain": {
-      "bytes": 3043,
+      "bytes": 2991,
       "lines": 52
     },
     "BoundedWanderingDomains.Surfaces.DomainComponentMap": {
-      "bytes": 3065,
-      "lines": 68
+      "bytes": 3281,
+      "lines": 71
     },
     "BoundedWanderingDomains.Surfaces.DomainCoveringMetricPullback": {
       "bytes": 5981,
@@ -13323,24 +13514,24 @@
       "lines": 81
     },
     "BoundedWanderingDomains.Surfaces.DomainDensityDivergence": {
-      "bytes": 7094,
+      "bytes": 6941,
       "lines": 153
     },
     "BoundedWanderingDomains.Surfaces.DomainFiniteCutoff": {
-      "bytes": 5375,
+      "bytes": 5272,
       "lines": 103
     },
     "BoundedWanderingDomains.Surfaces.DomainGainLimit": {
-      "bytes": 4007,
+      "bytes": 3934,
       "lines": 73
     },
     "BoundedWanderingDomains.Surfaces.DomainGainOrder": {
-      "bytes": 4343,
+      "bytes": 4257,
       "lines": 86
     },
     "BoundedWanderingDomains.Surfaces.DomainKernelArea": {
-      "bytes": 4498,
-      "lines": 93
+      "bytes": 4540,
+      "lines": 94
     },
     "BoundedWanderingDomains.Surfaces.DomainLogRatio": {
       "bytes": 5795,
@@ -13351,28 +13542,28 @@
       "lines": 95
     },
     "BoundedWanderingDomains.Surfaces.DomainPlanarDensity": {
-      "bytes": 5311,
+      "bytes": 5204,
       "lines": 107
     },
     "BoundedWanderingDomains.Surfaces.DomainRemoteArea": {
-      "bytes": 6050,
+      "bytes": 5933,
       "lines": 117
     },
     "BoundedWanderingDomains.Surfaces.DomainRemoteBound": {
-      "bytes": 3074,
+      "bytes": 3015,
       "lines": 59
     },
     "BoundedWanderingDomains.Surfaces.DomainSchwarz": {
-      "bytes": 6520,
+      "bytes": 6398,
       "lines": 122
     },
     "BoundedWanderingDomains.Surfaces.DomainSurfaceGreenIdentity": {
-      "bytes": 8185,
-      "lines": 174
+      "bytes": 8228,
+      "lines": 175
     },
     "BoundedWanderingDomains.Surfaces.EventualCoveringArea": {
-      "bytes": 6123,
-      "lines": 122
+      "bytes": 6149,
+      "lines": 123
     },
     "BoundedWanderingDomains.Surfaces.EventualRegularArea": {
       "bytes": 5816,
@@ -13383,27 +13574,27 @@
       "lines": 135
     },
     "BoundedWanderingDomains.Surfaces.ExtremalDisc": {
-      "bytes": 2820,
+      "bytes": 2765,
       "lines": 55
     },
     "BoundedWanderingDomains.Surfaces.FiniteBoundaryMassAssembly": {
-      "bytes": 5147,
+      "bytes": 5148,
       "lines": 109
     },
     "BoundedWanderingDomains.Surfaces.FiniteChartCriticalCover": {
-      "bytes": 2198,
-      "lines": 54
+      "bytes": 2039,
+      "lines": 51
     },
     "BoundedWanderingDomains.Surfaces.FiniteDefectAreaAdvance": {
       "bytes": 2060,
       "lines": 45
     },
     "BoundedWanderingDomains.Surfaces.FiniteEndNormal": {
-      "bytes": 4405,
+      "bytes": 4404,
       "lines": 97
     },
     "BoundedWanderingDomains.Surfaces.FiniteFibers": {
-      "bytes": 2622,
+      "bytes": 2619,
       "lines": 60
     },
     "BoundedWanderingDomains.Surfaces.FiniteModelArea": {
@@ -13415,11 +13606,11 @@
       "lines": 42
     },
     "BoundedWanderingDomains.Surfaces.FiniteModelDiscArea": {
-      "bytes": 3400,
+      "bytes": 3399,
       "lines": 75
     },
     "BoundedWanderingDomains.Surfaces.FinitePatchAssembly": {
-      "bytes": 7567,
+      "bytes": 7405,
       "lines": 162
     },
     "BoundedWanderingDomains.Surfaces.FinitePatchTransport": {
@@ -13427,15 +13618,15 @@
       "lines": 55
     },
     "BoundedWanderingDomains.Surfaces.FinitePunctureAreaBridge": {
-      "bytes": 6374,
+      "bytes": 6235,
       "lines": 139
     },
     "BoundedWanderingDomains.Surfaces.FinitePunctureChartCutoff": {
-      "bytes": 2918,
+      "bytes": 2860,
       "lines": 58
     },
     "BoundedWanderingDomains.Surfaces.FinitePunctureChartTarget": {
-      "bytes": 7394,
+      "bytes": 7241,
       "lines": 153
     },
     "BoundedWanderingDomains.Surfaces.FinitePunctureInsertion": {
@@ -13443,27 +13634,27 @@
       "lines": 38
     },
     "BoundedWanderingDomains.Surfaces.FinitePunctureRemoteChart": {
-      "bytes": 2170,
+      "bytes": 2130,
       "lines": 40
     },
     "BoundedWanderingDomains.Surfaces.FinitePunctureTopology": {
-      "bytes": 6845,
-      "lines": 158
+      "bytes": 6911,
+      "lines": 160
     },
     "BoundedWanderingDomains.Surfaces.FiniteSurfaceCutoffGreen": {
       "bytes": 8063,
       "lines": 176
     },
     "BoundedWanderingDomains.Surfaces.FiniteSurfacePunctureCutoff": {
-      "bytes": 6882,
-      "lines": 167
+      "bytes": 7233,
+      "lines": 175
     },
     "BoundedWanderingDomains.Surfaces.ForwardSourceBarrier": {
-      "bytes": 3529,
-      "lines": 77
+      "bytes": 3653,
+      "lines": 78
     },
     "BoundedWanderingDomains.Surfaces.GainFatou": {
-      "bytes": 1409,
+      "bytes": 1377,
       "lines": 32
     },
     "BoundedWanderingDomains.Surfaces.GeometricArea": {
@@ -13475,16 +13666,16 @@
       "lines": 90
     },
     "BoundedWanderingDomains.Surfaces.GlobalFinitePunctureArea": {
-      "bytes": 5681,
-      "lines": 125
+      "bytes": 5745,
+      "lines": 127
     },
     "BoundedWanderingDomains.Surfaces.GlobalIntrinsicGreen": {
-      "bytes": 6662,
+      "bytes": 6660,
       "lines": 137
     },
     "BoundedWanderingDomains.Surfaces.GlobalPointInsertion": {
-      "bytes": 9625,
-      "lines": 204
+      "bytes": 9854,
+      "lines": 212
     },
     "BoundedWanderingDomains.Surfaces.GlobalRieszInsertion": {
       "bytes": 2201,
@@ -13495,55 +13686,55 @@
       "lines": 87
     },
     "BoundedWanderingDomains.Surfaces.HolomorphicLifting": {
-      "bytes": 5116,
+      "bytes": 5015,
       "lines": 101
     },
     "BoundedWanderingDomains.Surfaces.HyperbolicArea": {
-      "bytes": 3538,
+      "bytes": 3473,
       "lines": 65
     },
     "BoundedWanderingDomains.Surfaces.HyperbolicAreaFinite": {
-      "bytes": 3002,
+      "bytes": 2940,
       "lines": 62
     },
     "BoundedWanderingDomains.Surfaces.HyperbolicDerivedLimits": {
-      "bytes": 7865,
+      "bytes": 7862,
       "lines": 161
     },
     "BoundedWanderingDomains.Surfaces.HyperbolicOrbitEscape": {
-      "bytes": 9118,
+      "bytes": 9116,
       "lines": 191
     },
     "BoundedWanderingDomains.Surfaces.IntrinsicGreenPairing": {
-      "bytes": 12321,
+      "bytes": 12322,
       "lines": 274
     },
     "BoundedWanderingDomains.Surfaces.IntrinsicSurfaceLaplacian": {
-      "bytes": 9367,
-      "lines": 210
+      "bytes": 10145,
+      "lines": 221
     },
     "BoundedWanderingDomains.Surfaces.InvariantSubsurface": {
-      "bytes": 3596,
+      "bytes": 3597,
       "lines": 84
     },
     "BoundedWanderingDomains.Surfaces.KernelConvergence": {
-      "bytes": 7721,
+      "bytes": 7570,
       "lines": 151
     },
     "BoundedWanderingDomains.Surfaces.KernelDomains": {
-      "bytes": 3372,
+      "bytes": 3305,
       "lines": 67
     },
     "BoundedWanderingDomains.Surfaces.KernelLift": {
-      "bytes": 7780,
+      "bytes": 7616,
       "lines": 164
     },
     "BoundedWanderingDomains.Surfaces.KernelNonconstant": {
-      "bytes": 4703,
+      "bytes": 4596,
       "lines": 107
     },
     "BoundedWanderingDomains.Surfaces.KernelNormal": {
-      "bytes": 1968,
+      "bytes": 1922,
       "lines": 46
     },
     "BoundedWanderingDomains.Surfaces.LegacyDiscCoverBridge": {
@@ -13551,11 +13742,11 @@
       "lines": 80
     },
     "BoundedWanderingDomains.Surfaces.LiftedPunctureClosure": {
-      "bytes": 4522,
+      "bytes": 4421,
       "lines": 101
     },
     "BoundedWanderingDomains.Surfaces.LocalAreaMeasure": {
-      "bytes": 5034,
+      "bytes": 4936,
       "lines": 98
     },
     "BoundedWanderingDomains.Surfaces.LocalBarrierComponents": {
@@ -13563,75 +13754,75 @@
       "lines": 64
     },
     "BoundedWanderingDomains.Surfaces.LocalCompactAreaAdvance": {
-      "bytes": 7002,
-      "lines": 151
+      "bytes": 7166,
+      "lines": 152
     },
     "BoundedWanderingDomains.Surfaces.LocalCompactCovering": {
-      "bytes": 7289,
-      "lines": 154
+      "bytes": 7711,
+      "lines": 157
     },
     "BoundedWanderingDomains.Surfaces.LocalCompactModelPatches": {
-      "bytes": 3630,
-      "lines": 82
+      "bytes": 3717,
+      "lines": 83
     },
     "BoundedWanderingDomains.Surfaces.LocalCoveringDiscs": {
-      "bytes": 4200,
-      "lines": 95
+      "bytes": 4301,
+      "lines": 97
     },
     "BoundedWanderingDomains.Surfaces.LocalDynamics": {
-      "bytes": 7963,
+      "bytes": 7772,
       "lines": 191
     },
     "BoundedWanderingDomains.Surfaces.LocalIterateHolomorphic": {
-      "bytes": 2423,
-      "lines": 62
+      "bytes": 2545,
+      "lines": 64
     },
     "BoundedWanderingDomains.Surfaces.LocalMapPunctureBarrier": {
-      "bytes": 6637,
-      "lines": 150
+      "bytes": 7318,
+      "lines": 157
     },
     "BoundedWanderingDomains.Surfaces.LocalMapRestriction": {
-      "bytes": 6747,
-      "lines": 156
+      "bytes": 6755,
+      "lines": 157
     },
     "BoundedWanderingDomains.Surfaces.LocalMapSubsurface": {
-      "bytes": 11639,
-      "lines": 264
+      "bytes": 11689,
+      "lines": 265
     },
     "BoundedWanderingDomains.Surfaces.LocalMapTotalization": {
-      "bytes": 2666,
+      "bytes": 2669,
       "lines": 73
     },
     "BoundedWanderingDomains.Surfaces.LocalPunctures": {
-      "bytes": 2423,
-      "lines": 62
+      "bytes": 2443,
+      "lines": 63
     },
     "BoundedWanderingDomains.Surfaces.LogDensityRatio": {
-      "bytes": 3225,
+      "bytes": 3173,
       "lines": 52
     },
     "BoundedWanderingDomains.Surfaces.LogRatioBound": {
-      "bytes": 2982,
+      "bytes": 2931,
       "lines": 51
     },
     "BoundedWanderingDomains.Surfaces.NestedBoundaryMass": {
-      "bytes": 6373,
-      "lines": 143
+      "bytes": 6638,
+      "lines": 147
     },
     "BoundedWanderingDomains.Surfaces.NestedDomainDensity": {
-      "bytes": 7592,
-      "lines": 177
+      "bytes": 7629,
+      "lines": 178
     },
     "BoundedWanderingDomains.Surfaces.NoEscapeCompactRange": {
       "bytes": 1859,
       "lines": 47
     },
     "BoundedWanderingDomains.Surfaces.OldPunctureBoundaryMass": {
-      "bytes": 1986,
-      "lines": 44
+      "bytes": 2034,
+      "lines": 45
     },
     "BoundedWanderingDomains.Surfaces.OmegaDynamics": {
-      "bytes": 3997,
+      "bytes": 3996,
       "lines": 88
     },
     "BoundedWanderingDomains.Surfaces.OpenDomainAreaTransport": {
@@ -13643,11 +13834,11 @@
       "lines": 49
     },
     "BoundedWanderingDomains.Surfaces.OpenMapping": {
-      "bytes": 8400,
-      "lines": 175
+      "bytes": 8580,
+      "lines": 178
     },
     "BoundedWanderingDomains.Surfaces.OrbitEscapeReduction": {
-      "bytes": 1694,
+      "bytes": 1741,
       "lines": 40
     },
     "BoundedWanderingDomains.Surfaces.PaperAreaLemma": {
@@ -13655,11 +13846,11 @@
       "lines": 37
     },
     "BoundedWanderingDomains.Surfaces.PlaneCoverPuncture": {
-      "bytes": 9173,
+      "bytes": 9145,
       "lines": 187
     },
     "BoundedWanderingDomains.Surfaces.PlaneReading": {
-      "bytes": 3881,
+      "bytes": 3801,
       "lines": 80
     },
     "BoundedWanderingDomains.Surfaces.PointedCoveringDiscs": {
@@ -13667,35 +13858,35 @@
       "lines": 127
     },
     "BoundedWanderingDomains.Surfaces.PositiveAreaAdvanceReduction": {
-      "bytes": 5624,
-      "lines": 112
+      "bytes": 5688,
+      "lines": 114
     },
     "BoundedWanderingDomains.Surfaces.PositiveAreaBarrierReduction": {
-      "bytes": 4832,
+      "bytes": 4833,
       "lines": 101
     },
     "BoundedWanderingDomains.Surfaces.PositiveAreaBridge": {
-      "bytes": 6439,
-      "lines": 153
+      "bytes": 6922,
+      "lines": 158
     },
     "BoundedWanderingDomains.Surfaces.PositiveAreaContradiction": {
       "bytes": 1976,
       "lines": 45
     },
     "BoundedWanderingDomains.Surfaces.PositiveAreaExceptionalReduction": {
-      "bytes": 9652,
+      "bytes": 9780,
       "lines": 220
     },
     "BoundedWanderingDomains.Surfaces.PositiveAreaFinalReduction": {
-      "bytes": 10095,
-      "lines": 218
+      "bytes": 10203,
+      "lines": 222
     },
     "BoundedWanderingDomains.Surfaces.PunctureBarrier": {
       "bytes": 2961,
       "lines": 69
     },
     "BoundedWanderingDomains.Surfaces.PunctureBoundaryMass": {
-      "bytes": 3770,
+      "bytes": 3764,
       "lines": 76
     },
     "BoundedWanderingDomains.Surfaces.PunctureLogRatioBound": {
@@ -13703,27 +13894,27 @@
       "lines": 122
     },
     "BoundedWanderingDomains.Surfaces.RegularCoveringArea": {
-      "bytes": 5119,
-      "lines": 102
+      "bytes": 5225,
+      "lines": 103
     },
     "BoundedWanderingDomains.Surfaces.RemoteChartCompact": {
-      "bytes": 4511,
+      "bytes": 4420,
       "lines": 91
     },
     "BoundedWanderingDomains.Surfaces.RemoteChartGain": {
-      "bytes": 1809,
+      "bytes": 1779,
       "lines": 30
     },
     "BoundedWanderingDomains.Surfaces.RemoteCoveringAreaAdvance": {
-      "bytes": 5022,
+      "bytes": 5024,
       "lines": 104
     },
     "BoundedWanderingDomains.Surfaces.RemoteDensityBound": {
-      "bytes": 1357,
+      "bytes": 1330,
       "lines": 27
     },
     "BoundedWanderingDomains.Surfaces.RestrictedBarrierComponents": {
-      "bytes": 1924,
+      "bytes": 1923,
       "lines": 44
     },
     "BoundedWanderingDomains.Surfaces.RestrictedOmega": {
@@ -13731,23 +13922,23 @@
       "lines": 53
     },
     "BoundedWanderingDomains.Surfaces.RestrictionSaturationBridge": {
-      "bytes": 4296,
-      "lines": 104
+      "bytes": 4378,
+      "lines": 106
     },
     "BoundedWanderingDomains.Surfaces.SaturationDynamics": {
-      "bytes": 6444,
-      "lines": 157
+      "bytes": 6533,
+      "lines": 160
     },
     "BoundedWanderingDomains.Surfaces.SeparatingCutoff": {
-      "bytes": 6908,
+      "bytes": 6762,
       "lines": 146
     },
     "BoundedWanderingDomains.Surfaces.SimplyConnectedCoveringDiscs": {
-      "bytes": 2991,
+      "bytes": 2986,
       "lines": 61
     },
     "BoundedWanderingDomains.Surfaces.SmallChartDomain": {
-      "bytes": 1231,
+      "bytes": 1203,
       "lines": 28
     },
     "BoundedWanderingDomains.Surfaces.SmoothCompactExhaustion": {
@@ -13759,87 +13950,87 @@
       "lines": 84
     },
     "BoundedWanderingDomains.Surfaces.SmoothSurface": {
-      "bytes": 3139,
+      "bytes": 3077,
       "lines": 62
     },
     "BoundedWanderingDomains.Surfaces.SphereGlobalPointInsertion": {
-      "bytes": 14059,
-      "lines": 298
+      "bytes": 13742,
+      "lines": 296
     },
     "BoundedWanderingDomains.Surfaces.SpherePunctureCover": {
-      "bytes": 14464,
-      "lines": 312
+      "bytes": 14377,
+      "lines": 311
     },
     "BoundedWanderingDomains.Surfaces.Statements": {
-      "bytes": 3506,
-      "lines": 79
+      "bytes": 3016,
+      "lines": 71
     },
     "BoundedWanderingDomains.Surfaces.SubdomainCover": {
-      "bytes": 4401,
+      "bytes": 4313,
       "lines": 88
     },
     "BoundedWanderingDomains.Surfaces.SubdomainDensity": {
-      "bytes": 3881,
+      "bytes": 3806,
       "lines": 75
     },
     "BoundedWanderingDomains.Surfaces.SubsurfaceCompactNormal": {
-      "bytes": 2853,
-      "lines": 60
+      "bytes": 2975,
+      "lines": 62
     },
     "BoundedWanderingDomains.Surfaces.SubsurfaceOrbitRestriction": {
-      "bytes": 4356,
-      "lines": 88
+      "bytes": 4400,
+      "lines": 89
     },
     "BoundedWanderingDomains.Surfaces.SubsurfaceRegularValues": {
-      "bytes": 5544,
+      "bytes": 5546,
       "lines": 119
     },
     "BoundedWanderingDomains.Surfaces.SubsurfaceWanderingComponents": {
-      "bytes": 5392,
+      "bytes": 5388,
       "lines": 113
     },
     "BoundedWanderingDomains.Surfaces.SubtypeHolomorphic": {
-      "bytes": 1054,
+      "bytes": 1027,
       "lines": 27
     },
     "BoundedWanderingDomains.Surfaces.SurfaceChartPartition": {
-      "bytes": 3740,
-      "lines": 88
+      "bytes": 3938,
+      "lines": 91
     },
     "BoundedWanderingDomains.Surfaces.SurfaceDerivedLimits": {
-      "bytes": 8087,
-      "lines": 160
+      "bytes": 831,
+      "lines": 21
     },
     "BoundedWanderingDomains.Surfaces.SurfaceFilling": {
-      "bytes": 5615,
-      "lines": 118
+      "bytes": 5708,
+      "lines": 120
     },
     "BoundedWanderingDomains.Surfaces.SurfaceGreenIdentity": {
-      "bytes": 7620,
-      "lines": 164
+      "bytes": 7723,
+      "lines": 166
     },
     "BoundedWanderingDomains.Surfaces.SurfaceLocalBranching": {
-      "bytes": 3179,
-      "lines": 71
+      "bytes": 3047,
+      "lines": 68
     },
     "BoundedWanderingDomains.Surfaces.SurfaceLogCutoff": {
-      "bytes": 6781,
-      "lines": 147
+      "bytes": 6958,
+      "lines": 155
     },
     "BoundedWanderingDomains.Surfaces.SurfaceOrbitEscape": {
-      "bytes": 8873,
+      "bytes": 8866,
       "lines": 175
     },
     "BoundedWanderingDomains.Surfaces.SurfacePolish": {
-      "bytes": 3650,
-      "lines": 84
+      "bytes": 3566,
+      "lines": 82
     },
     "BoundedWanderingDomains.Surfaces.SurfacePositiveArea": {
-      "bytes": 1311,
+      "bytes": 1310,
       "lines": 33
     },
     "BoundedWanderingDomains.Surfaces.SurfaceSchwarz": {
-      "bytes": 3014,
+      "bytes": 2961,
       "lines": 53
     },
     "BoundedWanderingDomains.Surfaces.SurfaceSingularCovering": {
@@ -13851,7 +14042,7 @@
       "lines": 34
     },
     "BoundedWanderingDomains.Surfaces.UniformDiscAvoidance": {
-      "bytes": 4920,
+      "bytes": 4819,
       "lines": 101
     },
     "BoundedWanderingDomains.Surfaces.UniformFiniteRemoval": {
@@ -13859,31 +14050,31 @@
       "lines": 285
     },
     "BoundedWanderingDomains.Surfaces.UniformizationBridge": {
-      "bytes": 2828,
+      "bytes": 2771,
       "lines": 55
     },
     "BoundedWanderingDomains.Surfaces.WanderingAnchorDisk": {
-      "bytes": 5301,
-      "lines": 111
+      "bytes": 5383,
+      "lines": 112
     },
     "BoundedWanderingDomains.Surfaces.WanderingCompactTail": {
       "bytes": 2855,
       "lines": 68
     },
     "BoundedWanderingDomains.Surfaces.WanderingDiscInjectivity": {
-      "bytes": 6486,
-      "lines": 126
+      "bytes": 6553,
+      "lines": 127
     },
     "BoundedWanderingDomains.Surfaces.WanderingDiscShrink": {
-      "bytes": 4375,
+      "bytes": 4373,
       "lines": 91
     },
     "BoundedWanderingDomains.Surfaces.WanderingOrbitStructure": {
-      "bytes": 1712,
-      "lines": 42
+      "bytes": 1756,
+      "lines": 43
     },
     "BoundedWanderingDomains.TotalAreaCost": {
-      "bytes": 986,
+      "bytes": 963,
       "lines": 23
     },
     "BoundedWanderingDomains.TractFillingObstruction": {
@@ -13891,7 +14082,7 @@
       "lines": 78
     },
     "BoundedWanderingDomains.TransitionMoments": {
-      "bytes": 3545,
+      "bytes": 3466,
       "lines": 79
     },
     "BoundedWanderingDomains.TrappedComponentCovering": {
@@ -13911,15 +14102,15 @@
       "lines": 91
     },
     "BoundedWanderingDomains.UniformLocalLifting": {
-      "bytes": 2271,
+      "bytes": 2226,
       "lines": 45
     },
     "BoundedWanderingDomains.UniformSphericalConstants": {
-      "bytes": 1906,
+      "bytes": 1862,
       "lines": 44
     },
     "BoundedWanderingDomains.UnitDiscShift": {
-      "bytes": 7248,
+      "bytes": 7049,
       "lines": 199
     },
     "BoundedWanderingDomains.UnnormalisedPointRemoval": {
@@ -13927,103 +14118,103 @@
       "lines": 129
     },
     "BoundedWanderingDomains.WanderingSets": {
-      "bytes": 2516,
-      "lines": 64
+      "bytes": 2681,
+      "lines": 68
     },
     "Challenge": {
-      "bytes": 17399,
-      "lines": 413
+      "bytes": 16594,
+      "lines": 405
     },
     "EremenkoLyubichConstant.ClassB": {
-      "bytes": 4951,
+      "bytes": 4830,
       "lines": 121
     },
     "EremenkoLyubichConstant.ClassBLogarithmicTransform": {
-      "bytes": 9611,
+      "bytes": 9439,
       "lines": 172
     },
     "EremenkoLyubichConstant.ClassBTracts": {
-      "bytes": 5782,
+      "bytes": 5675,
       "lines": 107
     },
     "EremenkoLyubichConstant.Consequences": {
-      "bytes": 11804,
+      "bytes": 11556,
       "lines": 248
     },
     "EremenkoLyubichConstant.CoveringNaturality": {
-      "bytes": 4753,
+      "bytes": 4641,
       "lines": 112
     },
     "EremenkoLyubichConstant.CoveringSections": {
-      "bytes": 4532,
+      "bytes": 4439,
       "lines": 93
     },
     "EremenkoLyubichConstant.Expansion": {
-      "bytes": 2936,
+      "bytes": 2864,
       "lines": 72
     },
     "EremenkoLyubichConstant.ExteriorCoverClassification": {
-      "bytes": 5412,
+      "bytes": 5307,
       "lines": 105
     },
     "EremenkoLyubichConstant.ExteriorFundamentalGroup": {
-      "bytes": 7342,
+      "bytes": 7188,
       "lines": 154
     },
     "EremenkoLyubichConstant.ExteriorPowerCover": {
-      "bytes": 7693,
+      "bytes": 7540,
       "lines": 153
     },
     "EremenkoLyubichConstant.Growth": {
-      "bytes": 5932,
+      "bytes": 5801,
       "lines": 131
     },
     "EremenkoLyubichConstant.HolomorphicLift": {
-      "bytes": 2630,
+      "bytes": 2569,
       "lines": 61
     },
     "EremenkoLyubichConstant.Koebe": {
-      "bytes": 2133,
+      "bytes": 2069,
       "lines": 64
     },
     "EremenkoLyubichConstant.LogarithmicTransform": {
-      "bytes": 10081,
+      "bytes": 9856,
       "lines": 225
     },
     "EremenkoLyubichConstant.Mobius": {
-      "bytes": 3000,
+      "bytes": 2923,
       "lines": 77
     },
     "EremenkoLyubichConstant.PolynomialGrowth": {
-      "bytes": 5528,
+      "bytes": 5418,
       "lines": 110
     },
     "EremenkoLyubichConstant.Puncture": {
-      "bytes": 6874,
+      "bytes": 6736,
       "lines": 138
     },
     "EremenkoLyubichConstant.Tract": {
-      "bytes": 11435,
+      "bytes": 11197,
       "lines": 238
     },
     "EremenkoLyubichConstant.TractCovering": {
-      "bytes": 5453,
+      "bytes": 5344,
       "lines": 109
     },
     "EremenkoLyubichConstant.TractSimplyConnected": {
-      "bytes": 6052,
+      "bytes": 5936,
       "lines": 116
     },
     "EremenkoLyubichConstant.UniversalCover": {
-      "bytes": 6438,
+      "bytes": 6295,
       "lines": 143
     },
     "Legacy.Challenge": {
-      "bytes": 8331,
+      "bytes": 8138,
       "lines": 193
     },
     "Legacy.SingularLimitsChallenge": {
-      "bytes": 6972,
+      "bytes": 6813,
       "lines": 159
     },
     "Legacy.SingularLimitsSolution": {
@@ -14031,7 +14222,7 @@
       "lines": 9
     },
     "Legacy.Solution": {
-      "bytes": 1238,
+      "bytes": 1208,
       "lines": 30
     },
     "RMT4.Main": {
@@ -14043,259 +14234,259 @@
       "lines": 84
     },
     "RMT4.Spaces": {
-      "bytes": 5544,
+      "bytes": 5424,
       "lines": 120
     },
     "RMT4.cindex": {
-      "bytes": 8618,
+      "bytes": 8455,
       "lines": 163
     },
     "RMT4.defs": {
-      "bytes": 3861,
+      "bytes": 3770,
       "lines": 91
     },
     "RMT4.deriv_inj": {
-      "bytes": 8136,
+      "bytes": 7989,
       "lines": 147
     },
     "RMT4.etape2": {
-      "bytes": 8292,
+      "bytes": 8119,
       "lines": 173
     },
     "RMT4.has_sqrt": {
-      "bytes": 4303,
+      "bytes": 4218,
       "lines": 85
     },
     "RMT4.hurwitz": {
-      "bytes": 20984,
+      "bytes": 20564,
       "lines": 420
     },
     "RMT4.to_mathlib": {
-      "bytes": 8904,
+      "bytes": 8712,
       "lines": 192
     },
     "RMT4.uniform": {
-      "bytes": 5688,
+      "bytes": 5568,
       "lines": 120
     },
     "Ray.Analytic.Analytic": {
-      "bytes": 21545,
+      "bytes": 21147,
       "lines": 398
     },
     "Ray.Analytic.ConjConj": {
-      "bytes": 2324,
+      "bytes": 2266,
       "lines": 58
     },
     "Ray.Analytic.Defs": {
-      "bytes": 2669,
+      "bytes": 2603,
       "lines": 66
     },
     "Ray.Analytic.Holomorphic": {
-      "bytes": 4780,
+      "bytes": 4679,
       "lines": 101
     },
     "Ray.Analytic.Integral": {
-      "bytes": 11495,
+      "bytes": 11271,
       "lines": 224
     },
     "Ray.Analytic.Log": {
-      "bytes": 6378,
+      "bytes": 6253,
       "lines": 125
     },
     "Ray.Analytic.Products": {
-      "bytes": 14672,
+      "bytes": 14369,
       "lines": 292
     },
     "Ray.Analytic.Series": {
-      "bytes": 10024,
+      "bytes": 9813,
       "lines": 211
     },
     "Ray.Analytic.Uniform": {
-      "bytes": 13168,
+      "bytes": 12905,
       "lines": 263
     },
     "Ray.Dynamics.BottcherNear": {
-      "bytes": 33672,
+      "bytes": 32964,
       "lines": 708
     },
     "Ray.Dynamics.Defs": {
-      "bytes": 6715,
+      "bytes": 6551,
       "lines": 164
     },
     "Ray.Dynamics.Multiple": {
-      "bytes": 15800,
+      "bytes": 15522,
       "lines": 278
     },
     "Ray.Hartogs.Duals": {
-      "bytes": 7436,
+      "bytes": 7282,
       "lines": 154
     },
     "Ray.Hartogs.FubiniBall": {
-      "bytes": 14460,
+      "bytes": 14163,
       "lines": 297
     },
     "Ray.Hartogs.Hartogs": {
-      "bytes": 44612,
+      "bytes": 43764,
       "lines": 848
     },
     "Ray.Hartogs.MaxLog": {
-      "bytes": 4401,
+      "bytes": 4301,
       "lines": 100
     },
     "Ray.Hartogs.Osgood": {
-      "bytes": 33712,
-      "lines": 615
+      "bytes": 33072,
+      "lines": 614
     },
     "Ray.Hartogs.Subharmonic": {
-      "bytes": 60575,
+      "bytes": 59453,
       "lines": 1122
     },
     "Ray.Koebe.Bieberbach": {
-      "bytes": 8256,
+      "bytes": 8085,
       "lines": 171
     },
     "Ray.Koebe.Gronwall": {
-      "bytes": 58003,
+      "bytes": 56830,
       "lines": 1173
     },
     "Ray.Koebe.Koebe": {
-      "bytes": 8014,
+      "bytes": 7855,
       "lines": 159
     },
     "Ray.Koebe.Snap": {
-      "bytes": 7411,
+      "bytes": 7233,
       "lines": 178
     },
     "Ray.Koebe.Wind": {
-      "bytes": 9832,
+      "bytes": 9594,
       "lines": 238
     },
     "Ray.Koebe.WindArea": {
-      "bytes": 8608,
+      "bytes": 8433,
       "lines": 175
     },
     "Ray.Koebe.WindInj": {
-      "bytes": 10127,
+      "bytes": 9925,
       "lines": 202
     },
     "Ray.Manifold.Analytic": {
-      "bytes": 8757,
+      "bytes": 8596,
       "lines": 161
     },
     "Ray.Manifold.Defs": {
-      "bytes": 4107,
+      "bytes": 4015,
       "lines": 92
     },
     "Ray.Manifold.Inverse": {
-      "bytes": 17039,
+      "bytes": 16690,
       "lines": 349
     },
     "Ray.Manifold.LocalInj": {
-      "bytes": 3753,
+      "bytes": 3683,
       "lines": 70
     },
     "Ray.Manifold.Manifold": {
-      "bytes": 11500,
+      "bytes": 11284,
       "lines": 216
     },
     "Ray.Manifold.Nontrivial": {
-      "bytes": 25409,
+      "bytes": 24947,
       "lines": 462
     },
     "Ray.Manifold.OneDimension": {
-      "bytes": 22387,
+      "bytes": 21948,
       "lines": 439
     },
     "Ray.Manifold.OpenMapping": {
-      "bytes": 15949,
+      "bytes": 15679,
       "lines": 270
     },
     "Ray.Misc.Annuli": {
-      "bytes": 7844,
+      "bytes": 7671,
       "lines": 173
     },
     "Ray.Misc.Bound": {
-      "bytes": 3872,
+      "bytes": 3789,
       "lines": 83
     },
     "Ray.Misc.Bounds": {
-      "bytes": 24185,
+      "bytes": 23635,
       "lines": 528
     },
     "Ray.Misc.Circle": {
-      "bytes": 9682,
+      "bytes": 9492,
       "lines": 190
     },
     "Ray.Misc.Cobounded": {
-      "bytes": 6694,
+      "bytes": 6558,
       "lines": 136
     },
     "Ray.Misc.Complex": {
-      "bytes": 6953,
+      "bytes": 6794,
       "lines": 159
     },
     "Ray.Misc.Connected": {
-      "bytes": 18168,
+      "bytes": 17844,
       "lines": 324
     },
     "Ray.Misc.Continuation": {
-      "bytes": 17920,
+      "bytes": 17571,
       "lines": 349
     },
     "Ray.Misc.Defs": {
-      "bytes": 662,
+      "bytes": 638,
       "lines": 24
     },
     "Ray.Misc.Deriv": {
-      "bytes": 1749,
+      "bytes": 1712,
       "lines": 37
     },
     "Ray.Misc.Finset": {
-      "bytes": 4498,
+      "bytes": 4389,
       "lines": 109
     },
     "Ray.Misc.Linear": {
-      "bytes": 256,
+      "bytes": 247,
       "lines": 9
     },
     "Ray.Misc.Max": {
-      "bytes": 1224,
+      "bytes": 1193,
       "lines": 31
     },
     "Ray.Misc.Measure": {
-      "bytes": 18711,
+      "bytes": 18355,
       "lines": 356
     },
     "Ray.Misc.MonotoneSeries": {
-      "bytes": 4409,
+      "bytes": 4323,
       "lines": 86
     },
     "Ray.Misc.Multilinear": {
-      "bytes": 17749,
+      "bytes": 17406,
       "lines": 321
     },
     "Ray.Misc.Pow": {
-      "bytes": 6289,
+      "bytes": 6157,
       "lines": 132
     },
     "Ray.Misc.Prod": {
-      "bytes": 2868,
+      "bytes": 2802,
       "lines": 66
     },
     "Ray.Misc.Set": {
-      "bytes": 262,
+      "bytes": 248,
       "lines": 14
     },
     "Ray.Misc.Subexp": {
-      "bytes": 5225,
+      "bytes": 5093,
       "lines": 132
     },
     "Ray.Misc.Topology": {
-      "bytes": 16089,
+      "bytes": 15785,
       "lines": 304
     },
     "Ray.Misc.TotallyDisconnected": {
-      "bytes": 4479,
+      "bytes": 4385,
       "lines": 94
     },
     "Research.NewResults": {
@@ -14303,19 +14494,19 @@
       "lines": 30
     },
     "Research.SurfaceDynamicsTargets": {
-      "bytes": 320,
+      "bytes": 315,
       "lines": 5
     },
     "Research.SurfaceFiniteRemoval": {
-      "bytes": 475,
+      "bytes": 467,
       "lines": 8
     },
     "Research.SurfaceGeometry": {
-      "bytes": 786,
+      "bytes": 773,
       "lines": 13
     },
     "Research.SurfaceKernel": {
-      "bytes": 489,
+      "bytes": 481,
       "lines": 8
     },
     "Research.SurfaceResearch": {
@@ -14323,43 +14514,43 @@
       "lines": 14
     },
     "RiemannDynamics.Analysis.GrotzschRing.RingPotential": {
-      "bytes": 22209,
+      "bytes": 21824,
       "lines": 385
     },
     "RiemannDynamics.Analysis.Potential.HarmonicHarnack": {
-      "bytes": 21768,
+      "bytes": 21390,
       "lines": 378
     },
     "RiemannDynamics.Analysis.Potential.PerronEnvelope": {
-      "bytes": 25464,
+      "bytes": 25031,
       "lines": 433
     },
     "RiemannDynamics.Analysis.Potential.PoissonDirichlet": {
-      "bytes": 30101,
+      "bytes": 29567,
       "lines": 534
     },
     "RiemannDynamics.Analysis.Potential.Subharmonic": {
-      "bytes": 53632,
+      "bytes": 52695,
       "lines": 937
     },
     "RiemannDynamics.Analysis.Winding.Basic": {
-      "bytes": 54932,
+      "bytes": 53804,
       "lines": 1128
     },
     "RiemannDynamics.Analysis.Winding.GridPrimitives.Basic": {
-      "bytes": 73856,
+      "bytes": 72279,
       "lines": 1577
     },
     "RiemannDynamics.Analysis.Winding.GridPrimitives.Join": {
-      "bytes": 42355,
+      "bytes": 41514,
       "lines": 841
     },
     "RiemannDynamics.Analysis.Winding.GridPrimitives.Loop": {
-      "bytes": 91652,
+      "bytes": 89675,
       "lines": 1977
     },
     "RiemannDynamics.Analysis.Winding.GridPrimitives.Primitives": {
-      "bytes": 67971,
+      "bytes": 66561,
       "lines": 1410
     },
     "RiemannDynamics.BoundedWanderingSolution": {
@@ -14367,151 +14558,151 @@
       "lines": 59
     },
     "RiemannDynamics.Hyperbolic.DiskModel.DiskMetric": {
-      "bytes": 12822,
+      "bytes": 12561,
       "lines": 261
     },
     "RiemannDynamics.Hyperbolic.DiskModel.MobiusDisk": {
-      "bytes": 9639,
+      "bytes": 9440,
       "lines": 199
     },
     "RiemannDynamics.Hyperbolic.DiskModel.SchwarzPick": {
-      "bytes": 8056,
+      "bytes": 7900,
       "lines": 156
     },
     "RiemannDynamics.NormalFamilies.Basic": {
-      "bytes": 17459,
+      "bytes": 17116,
       "lines": 343
     },
     "RiemannDynamics.NormalFamilies.Spherical": {
-      "bytes": 2296,
+      "bytes": 2240,
       "lines": 56
     },
     "RiemannDynamics.Sphere.Basic": {
-      "bytes": 4978,
+      "bytes": 4849,
       "lines": 129
     },
     "RiemannDynamics.Sphere.MobiusAction": {
-      "bytes": 27617,
+      "bytes": 27115,
       "lines": 502
     },
     "RiemannDynamics.Sphere.SphericalMetric": {
-      "bytes": 23346,
+      "bytes": 22885,
       "lines": 461
     },
     "RiemannDynamics.Surface.GenusSurface.Atlas": {
-      "bytes": 86538,
+      "bytes": 84636,
       "lines": 1902
     },
     "RiemannDynamics.Surface.GenusSurface.Basic": {
-      "bytes": 41416,
+      "bytes": 40476,
       "lines": 940
     },
     "RiemannDynamics.Surface.GenusSurface.EdgeCharts": {
-      "bytes": 53627,
+      "bytes": 52446,
       "lines": 1181
     },
     "RiemannDynamics.Surface.GenusSurface.Manifold": {
-      "bytes": 95803,
+      "bytes": 93828,
       "lines": 1975
     },
     "RiemannDynamics.Surface.GenusSurface.VertexChart": {
-      "bytes": 68347,
+      "bytes": 66855,
       "lines": 1492
     },
     "RiemannDynamics.Uniformization.CoverCountable": {
-      "bytes": 49424,
+      "bytes": 48523,
       "lines": 901
     },
     "RiemannDynamics.Uniformization.HolomorphicEquiv": {
-      "bytes": 26421,
+      "bytes": 25904,
       "lines": 517
     },
     "RiemannDynamics.Uniformization.HyperbolicSurface": {
-      "bytes": 49317,
+      "bytes": 48425,
       "lines": 892
     },
     "RiemannDynamics.Uniformization.Perron.BipolarGreen.Assembly": {
-      "bytes": 82202,
+      "bytes": 80650,
       "lines": 1552
     },
     "RiemannDynamics.Uniformization.Perron.BipolarGreen.Barrier": {
-      "bytes": 69249,
+      "bytes": 67920,
       "lines": 1329
     },
     "RiemannDynamics.Uniformization.Perron.BipolarGreen.DipoleMap": {
-      "bytes": 89976,
+      "bytes": 88229,
       "lines": 1747
     },
     "RiemannDynamics.Uniformization.Perron.BipolarGreen.DriftBound": {
-      "bytes": 85869,
+      "bytes": 84218,
       "lines": 1651
     },
     "RiemannDynamics.Uniformization.Perron.BipolarGreen.ExteriorBound": {
-      "bytes": 87673,
+      "bytes": 86005,
       "lines": 1668
     },
     "RiemannDynamics.Uniformization.Perron.BipolarGreen.Harnack": {
-      "bytes": 65185,
+      "bytes": 63940,
       "lines": 1245
     },
     "RiemannDynamics.Uniformization.Perron.BipolarGreen.Injective": {
-      "bytes": 61807,
+      "bytes": 60671,
       "lines": 1136
     },
     "RiemannDynamics.Uniformization.Perron.BipolarGreen.Limit": {
-      "bytes": 86581,
+      "bytes": 84947,
       "lines": 1634
     },
     "RiemannDynamics.Uniformization.Perron.BipolarGreen.Pieces": {
-      "bytes": 80271,
+      "bytes": 78678,
       "lines": 1593
     },
     "RiemannDynamics.Uniformization.Perron.GreenSymmetry.Symmetry": {
-      "bytes": 48915,
+      "bytes": 47945,
       "lines": 970
     },
     "RiemannDynamics.Uniformization.Perron.GreenSymmetry.Transport": {
-      "bytes": 60203,
+      "bytes": 59117,
       "lines": 1086
     },
     "RiemannDynamics.Uniformization.Perron.GreensFunction.Basic": {
-      "bytes": 36351,
+      "bytes": 35622,
       "lines": 729
     },
     "RiemannDynamics.Uniformization.Perron.GreensFunction.Envelope": {
-      "bytes": 71038,
+      "bytes": 69681,
       "lines": 1357
     },
     "RiemannDynamics.Uniformization.Perron.GreensFunction.GreenMap": {
-      "bytes": 67636,
+      "bytes": 66334,
       "lines": 1302
     },
     "RiemannDynamics.Uniformization.Perron.GreensFunction.Injective": {
-      "bytes": 64410,
+      "bytes": 63190,
       "lines": 1220
     },
     "RiemannDynamics.Uniformization.Perron.HarmonicTransfer": {
-      "bytes": 41294,
+      "bytes": 40495,
       "lines": 799
     },
     "RiemannDynamics.Uniformization.Perron.Myrberg.DeckSum": {
-      "bytes": 85865,
+      "bytes": 84281,
       "lines": 1584
     },
     "RiemannDynamics.Uniformization.Perron.Myrberg.Transfer": {
-      "bytes": 75226,
+      "bytes": 73806,
       "lines": 1420
     },
     "RiemannDynamics.Uniformization.Perron.PathCover": {
-      "bytes": 71572,
+      "bytes": 70256,
       "lines": 1316
     },
     "RiemannDynamics.Uniformization.Perron.SurfaceHarmonic": {
-      "bytes": 33511,
+      "bytes": 32882,
       "lines": 629
     },
     "RiemannDynamics.Uniformization.PuncturedPlaneBridge": {
-      "bytes": 5651,
+      "bytes": 5534,
       "lines": 117
     },
     "RiemannDynamics.Uniformization.PuncturedPlaneCovering": {
@@ -14519,15 +14710,15 @@
       "lines": 35
     },
     "RiemannDynamics.Uniformization.SphereManifold": {
-      "bytes": 8958,
+      "bytes": 8759,
       "lines": 221
     },
     "RiemannDynamics.Uniformization.Trichotomy": {
-      "bytes": 10028,
+      "bytes": 9834,
       "lines": 194
     },
     "Solution": {
-      "bytes": 5020,
+      "bytes": 4902,
       "lines": 116
     },
     "ComplexApproximation": {
@@ -16995,7 +17186,7 @@
       "lines": 124
     },
     "FunctionTheory.Meromorphic.Sphere": {
-      "bytes": 3654,
+      "bytes": 3665,
       "lines": 75
     },
     "FunctionTheory.NormalFamilies.FiniteChartConvergence": {
@@ -17783,59 +17974,59 @@
       "lines": 299
     },
     "verification.Axioms": {
-      "bytes": 1750,
+      "bytes": 1720,
       "lines": 30
     },
     "verification.CheckClosedTrapped": {
-      "bytes": 1786,
+      "bytes": 1742,
       "lines": 44
     },
     "verification.CoveringAxioms": {
-      "bytes": 2350,
+      "bytes": 2301,
       "lines": 49
     },
     "verification.ExportChallenge": {
-      "bytes": 2376,
+      "bytes": 2345,
       "lines": 31
     },
     "verification.ExportPaperChallenge": {
-      "bytes": 3948,
+      "bytes": 3847,
       "lines": 41
     },
     "verification.ExportPaperSolution": {
-      "bytes": 4659,
+      "bytes": 4544,
       "lines": 55
     },
     "verification.ExportSingularLimitsChallenge": {
-      "bytes": 2107,
+      "bytes": 2076,
       "lines": 31
     },
     "verification.ExportSingularLimitsSolution": {
-      "bytes": 2106,
+      "bytes": 2075,
       "lines": 31
     },
     "verification.ExportSolution": {
-      "bytes": 2375,
+      "bytes": 2344,
       "lines": 31
     },
     "verification.KernelAxioms": {
-      "bytes": 334,
+      "bytes": 328,
       "lines": 6
     },
     "verification.NewResultsAxioms": {
-      "bytes": 1312,
+      "bytes": 1292,
       "lines": 20
     },
     "verification.PaperAxioms": {
-      "bytes": 655,
+      "bytes": 641,
       "lines": 14
     },
     "verification.SurfaceAxioms": {
-      "bytes": 8603,
+      "bytes": 8476,
       "lines": 127
     },
     "verification.UnconditionalAxioms": {
-      "bytes": 652,
+      "bytes": 642,
       "lines": 10
     }
   }

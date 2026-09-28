@@ -16,7 +16,7 @@ stated in the previous version, although it follows from the results proved ther
 
 - The derived-set theorem announced without proof in [PRW]: for a transcendental
   entire function, every point in a wandering Fatou component has a subsequence
-  of its orbit converging to the derived set of the spherical singular values. 
+  of its orbit converging to the derived set of the spherical singular values.
   This result is referred to hereafter as Theorem 1.4. Učakar has informed the
   authors that he independently obtained a proof of this theorem.
 - The local result with unnecessary hypotheses removed, on arbitrary Riemann
@@ -24,9 +24,10 @@ stated in the previous version, although it follows from the results proved ther
   Riemann surface and $U$ is a wandering normality component, no point of $U$
   has its whole forward orbit contained in a compact subset of $O$.
   Referred to hereafter as Theorem 1.3(1)
-- A surface analogue of the derived-set theorem, currently assuming that the
-  normality components met by the wandering orbit are simply connected;
-  referred to as Theorem 1.5.
+- A surface analogue of the derived-set theorem for arbitrary wandering
+  normality components, including multiply connected ones; referred to as
+  Theorem 1.5. Version 1.5.0 removes the simple-connectivity hypothesis by
+  formalising an adaptation of the Baker–Kotus–Lü covering and filling argument.
 - The positive-area statement, previously present for subsets of the sphere in
   the manuscript but absent from the first formalisation. If $A$ is measurable,
   has positive area in a chart, lies outside the normality locus, has all iterates
@@ -70,7 +71,7 @@ The independent specifications are in [Challenge.lean](Challenge.lean);
 the proofs are exposed by [Solution.lean](Solution.lean). The original
 entire-function bounded-orbit theorem is also included under its unchanged name
 and statement. With the three no-wandering corollaries, the current challenge
-selects ten theorem declarations. 
+selects ten theorem declarations.
 
 | Paper statement | Proved declaration |
 |---|---|
@@ -87,30 +88,34 @@ selects ten theorem declarations.
 
 The surface statements apply to arbitrary Riemann surfaces and actual local
 open holomorphic maps. Compact sets in Theorem 1.3 lie inside the map's source.
-Simple connectivity is required only by Theorem 1.5. Meromorphic maps may have
-poles. See [PAPER_STATEMENT_ALIGNMENT.md](PAPER_STATEMENT_ALIGNMENT.md) for the
-precise hypotheses and [PAPER_PROOF_GUIDE.md](PAPER_PROOF_GUIDE.md) for the proof route.
+Theorem 1.5 also applies to multiply connected normality components.
+Meromorphic maps may have poles. See [PAPER_STATEMENT_ALIGNMENT.md](docs/PAPER_STATEMENT_ALIGNMENT.md) for the
+precise hypotheses and [PAPER_PROOF_GUIDE.md](docs/PAPER_PROOF_GUIDE.md) for the proof route.
 
-The ten theorem types and 36 supporting declarations match the independent
+The ten theorem types and 35 supporting declarations match the independent
 challenge. The transitive axiom audit reports only `propext`, `Classical.choice`,
-and `Quot.sound`; 772 local proof modules were scanned for holes and shortcuts.
+and `Quot.sound`; 777 local proof modules were scanned for holes and shortcuts.
 The complete build also verifies the retained earlier results.
 
 The rational-map corollary is stated intrinsically for open holomorphic maps
 on the whole Riemann sphere, including poles and infinity. Its proof specialises
 the compact-surface theorem; it does not require a polynomial-quotient encoding.
 The finite-type entire corollary explicitly assumes transcendence and finiteness
-of the finite singular-value set. No finite-type meromorphic no-wandering
-corollary is claimed. However, the original proof by Baker–Kotus–Lü 
+of the finite singular-value set. No separate finite-type meromorphic
+no-wandering corollary is selected in the current challenge.
 
-[BKL] I. N. Baker, J. Kotus and Y. Lü, Iterates of Meromorphic Functions IV: Critically Finite Functions, Results in Mathematics 22 (1992), 651–656.
+Theorem 1.5 now uses a local adaptation of the covering and filling argument in:
 
-establishes that, after sufficiently many iterates, such 
-wandering domains would need to be simply connected;
-the remainder of the proof (for which [BKL] use Sullivan's argument) can then 
-be replaced by our Theorem 1.5. The authors believe that the same argument
-can be used to remove the assumption of simple connectivity in Theorem 1.5;
-the formalisation of this claim has been deferred.
+[BKL] I. N. Baker, J. Kotus and Y. Lü, *Iterates of Meromorphic Functions IV:
+Critically Finite Functions*, Results in Mathematics 22 (1992), 651–656,
+[doi:10.1007/BF03323112](https://doi.org/10.1007/BF03323112).
+
+The proof uses the full preimages of regular punctured discs, fills removable
+points, and controls the backward orbits of finitely many singular values.
+It proves eventual injectivity on each fixed-radius covering disc inside the
+wandering components, which is sufficient for the area argument. The new
+supporting proofs are grouped into six files in
+`BoundedWanderingDomains/Surfaces/BKL/`.
 
 ## Project layout
 
@@ -129,8 +134,7 @@ dependencies/             Contained source dependencies
 ```
 
 The earlier entry points remain available under their folder-qualified module
-names. See [LAYOUT_UPDATE.md](LAYOUT_UPDATE.md) for the complete path mapping.
-The original entire-function statement retains its exact declaration name and
+names. The original entire-function statement retains its exact declaration name and
 hypotheses. The current and legacy solutions share its proof.
 
 ## Build and check
@@ -147,8 +151,10 @@ python3 scripts/audit_attribution.py
 ```
 
 `lake build` builds the two paper entry points. The `--all` audit also builds
-the retained earlier and research results. See [BUILD_AUDIT.md](BUILD_AUDIT.md)
-for the import, duplication and performance audit.
+the retained earlier and research results. Fetch the pinned dependency cache
+before the first build; a build without it may compile Mathlib from source.
+Keep the `.lake` directory when updating an existing checkout so that unchanged
+dependencies remain cached.
 
 The metadata checker requires PyYAML. On Windows, use UTF-8 Python mode for
 the older attribution script (`python -X utf8 scripts/audit_attribution.py`).
@@ -163,7 +169,7 @@ bash scripts/verify-comparator.sh comparator.json
 intentional specifications and are never imported by the proofs.
 
 See [VERIFICATION.md](docs/VERIFICATION.md) for actual check results and the distinction
-between local verification and official registry verification. 
+between local verification and official registry verification.
 
 ## Sources and authorship
 

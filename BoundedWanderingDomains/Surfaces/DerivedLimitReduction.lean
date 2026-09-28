@@ -52,12 +52,12 @@ variable [ChartedSpace ℂ X] [SecondCountableTopology X] [ConnectedSpace X]
   [IsManifold 𝓘(ℂ) 1 X]
 
 /-- The analytic core left after the compactification argument: every finite
-subsequential limit of a simply-connected wandering orbit is a derived
+subsequential limit of a wandering orbit is a derived
 singular value. -/
 def FiniteWanderingOrbitLimitsDerivedClaim : Prop :=
   ∀ f : LocalMap X, IsOpenHolomorphic f →
     ∀ U : Set X, f.IsWanderingComponent U →
-      f.HasSimplyConnectedComponentOrbit U → ∀ z ∈ U,
+      ∀ z ∈ U,
         ∀ (a : X) (φ : ℕ → ℕ), StrictMono φ →
           Tendsto (fun k => f.compactifiedIterate (φ k) z) atTop
             (𝓝 (a : OnePoint X)) →
@@ -69,7 +69,7 @@ the remaining obligation for the paper's escape-or-derived-set target. -/
 def WanderingOrbitClusterMeetsDerivedClaim : Prop :=
   ∀ f : LocalMap X, IsOpenHolomorphic f →
     ∀ U : Set X, f.IsWanderingComponent U →
-      f.HasSimplyConnectedComponentOrbit U → ∀ z ∈ U,
+      ∀ z ∈ U,
         ∃ a ∈ derivedSet f.singularValues,
           ∃ φ : ℕ → ℕ, StrictMono φ ∧
             Tendsto (fun k => f.compactifiedIterate (φ k) z) atTop
@@ -82,8 +82,8 @@ about all other finite cluster points is needed. -/
 theorem wanderingDerivedSingularLimitClaim_of_clusterMeetsDerived
     (hcluster : WanderingOrbitClusterMeetsDerivedClaim (X := X)) :
     WanderingDerivedSingularLimitClaim (X := X) := by
-  intro f hf U hU hsc z hz
-  obtain ⟨a, ha, φ, hφ, hlim⟩ := hcluster f hf U hU hsc z hz
+  intro f hf U hU z hz
+  obtain ⟨a, ha, φ, hφ, hlim⟩ := hcluster f hf U hU z hz
   exact ⟨φ, hφ, Or.inr ⟨a, ha, hlim⟩⟩
 
 /-- The derived-singular cluster-point obligation only for orbits with no
@@ -91,7 +91,7 @@ subsequence escaping every compact subset of the ambient surface. -/
 def NonEscapingWanderingOrbitClusterMeetsDerivedClaim : Prop :=
   ∀ f : LocalMap X, IsOpenHolomorphic f →
     ∀ U : Set X, f.IsWanderingComponent U →
-      f.HasSimplyConnectedComponentOrbit U → ∀ z ∈ U,
+      ∀ z ∈ U,
         (¬ ∃ φ : ℕ → ℕ, StrictMono φ ∧
           Tendsto (fun k => f.compactifiedIterate (φ k) z) atTop
             (𝓝 (∞ : OnePoint X))) →
@@ -106,13 +106,13 @@ The exact independent paper statement is preserved. -/
 theorem wanderingDerivedSingularLimitClaim_of_nonEscapingClusterMeetsDerived
     (hcluster : NonEscapingWanderingOrbitClusterMeetsDerivedClaim (X := X)) :
     WanderingDerivedSingularLimitClaim (X := X) := by
-  intro f hf U hU hsc z hz
+  intro f hf U hU z hz
   by_cases hescape : ∃ φ : ℕ → ℕ, StrictMono φ ∧
       Tendsto (fun k => f.compactifiedIterate (φ k) z) atTop
         (𝓝 (∞ : OnePoint X))
   · obtain ⟨φ, hφ, hlim⟩ := hescape
     exact ⟨φ, hφ, Or.inl hlim⟩
-  · obtain ⟨a, ha, φ, hφ, hlim⟩ := hcluster f hf U hU hsc z hz hescape
+  · obtain ⟨a, ha, φ, hφ, hlim⟩ := hcluster f hf U hU z hz hescape
     exact ⟨φ, hφ, Or.inr ⟨a, ha, hlim⟩⟩
 
 end Manifold

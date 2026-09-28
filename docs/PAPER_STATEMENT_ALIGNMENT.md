@@ -3,8 +3,8 @@
 All six targets are proved. The source is the author's
 `handoff/reference/no-bounded-WD-2.tex`, supplied 25 September 2026.
 Challenge imports only Mathlib; Solution imports proved source and
-does not import Challenge. Local comparison checks six theorem types and
-36 supporting declarations, including the local-map structure and its constructor.
+does not import Challenge. Local comparison checks ten theorem types and
+35 supporting declarations, including the local-map structure and its constructor.
 
 - **1.2 entire:** a transcendental entire function, actual Fatou components,
   forward containment and pairwise distinct components give a strictly increasing
@@ -22,12 +22,14 @@ does not import Challenge. Local comparison checks six theorem types and
   includes compact global sphere and torus maps and all other surface cases.
 - **1.4:** an entire wandering marked orbit has a subsequence converging to a
   derived spherical singular value, allowing infinity.
-- **1.5:** if all normality components met by a wandering component orbit are
-  simply connected, a marked orbit has a subsequence escaping every compact
+- **1.5:** every marked orbit in a wandering normality component has a
+  subsequence escaping every compact
   subset of the ambient surface or converging to a derived singular value of
   the actual local map. No auxiliary restricted-map singular set is substituted.
 
-The challenge statements have not been weakened. The final comparison work
+Version 1.5.0 strengthens Theorem 1.5 by removing the simple-connectivity
+hypothesis. The other selected statements, including the original entire-function
+theorem, are preserved. The final comparison work
 aligned the meromorphic definitions' canonical complex instances and named
 rationality/Claim wrappers, so the independent declarations match exactly.
 The LocalMap structure is checked transitively by Comparator; it is not listed
@@ -52,10 +54,11 @@ The independent current challenge also selects the following three proved declar
 
 The entire corollary explicitly states transcendence. Polynomial dynamics is
 included in the rational case. These additions make no claim about finite-type
-meromorphic no-wandering domains, including multiply connected domains; the
-Baker–Kotus–Lü comparison and possible generalisation are deferred.
+meromorphic no-wandering domains as a separate selected corollary. The local
+derived-set theorem itself now includes multiply connected wandering components,
+using the formalised Baker–Kotus–Lü adaptation.
 
 The README background incorporates Lasse Rempe's revision dated 27 September
 2026. The positive-area description spells out the exact hypotheses already
 present in Lean: positive chart area, disjoint forward images and injectivity
-on the whole forward saturation. The existing six theorem statements are unchanged.
+on the whole forward saturation. Theorem 1.5 is the only selected statement strengthened in version 1.5.0.

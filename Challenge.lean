@@ -3,7 +3,6 @@ Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
 import Mathlib.Analysis.Complex.CauchyIntegral
-import Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected
 import Mathlib.Topology.UniformSpace.LocallyUniformConvergence
 import Mathlib.Topology.UniformSpace.Uniformizable
 import Mathlib.Topology.Compactification.OnePoint.Basic
@@ -208,13 +207,6 @@ def saturation (f : LocalMap X) (A : Set X) : Set X := ⋃ n : ℕ, f.imageAt n 
 def InjectiveOnSaturation (f : LocalMap X) (A : Set X) : Prop :=
   InjOn f.map {x : f.source | (x : X) ∈ f.saturation A}
 
-variable [T2Space X] [LocallyCompactSpace X]
-
-/-- The simply-connected-orbit hypothesis refers to actual normality components. -/
-def HasSimplyConnectedComponentOrbit (f : LocalMap X) (U : Set X) : Prop :=
-  ∀ n : ℕ, ∀ z ∈ f.imageAt n U,
-    SimplyConnectedSpace (connectedComponentIn f.omega z)
-
 end LocalMap
 
 section Targets
@@ -238,11 +230,11 @@ def NoCompactPositiveAreaWanderingSetClaim [MeasurableSpace X] [BorelSpace X] : 
 
 /-- Target 4: compact escape or accumulation at a derived singular value.
 The escape alternative has exactly its compact-avoidance meaning by
-`tendsto_infty_iff_leaves_compacts`. There is no orbit-injectivity hypothesis. -/
+`tendsto_infty_iff_leaves_compacts`. There is no simple-connectivity or orbit-injectivity hypothesis. -/
 def WanderingDerivedSingularLimitClaim : Prop :=
   ∀ f : LocalMap X, IsOpenHolomorphic f →
     ∀ U : Set X, f.IsWanderingComponent U →
-      f.HasSimplyConnectedComponentOrbit U → ∀ z ∈ U,
+      ∀ z ∈ U,
         ∃ φ : ℕ → ℕ, StrictMono φ ∧
           (Tendsto (fun k => f.compactifiedIterate (φ k) z) atTop
               (𝓝 (∞ : OnePoint X)) ∨

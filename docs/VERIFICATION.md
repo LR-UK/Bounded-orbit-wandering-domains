@@ -1,63 +1,78 @@
-# Verification — version 1.4.4, 27 September 2026
+# Verification — version 1.5.0, 28 September 2026
 
-The full retained Lean build passed (4,321 Lake jobs; 797 local modules).
-Lean is pinned to 4.35.0-rc2 and Mathlib to
+The full retained Lean build passed: 4,324 Lake jobs, including the current
+submission, retained earlier statements and research entry points. Lean is
+pinned to 4.35.0-rc2 and Mathlib to
 `065356127b1dc0016f66b7283ce0ce2c4055aa55`.
 
 The independent Challenge/Solution comparison passed for all ten selected
-theorem types and 36 supporting declarations. The six revised-paper statements
-and the unchanged original entire-function theorem are joined by three proved
-corollaries: no wandering components for compact surface self-maps, its
-Riemann-sphere specialisation, and no wandering domains for finite-type
-transcendental entire functions.
+theorem declarations and 35 supporting declarations. Theorem 1.5 now applies
+to arbitrary wandering normality components, including multiply connected
+ones. Its simple-connectivity hypothesis was removed without adding a
+replacement hypothesis. The proof formalises the covering and removable-filling
+argument in the six modules under `BoundedWanderingDomains/Surfaces/BKL/`.
 
-All 43 declaration records from the preceding consolidated submission are
-identical. Its proof-library source hashes are also unchanged; Solution adds
-one import, and the new corollaries occupy one small additional module.
-The original entire theorem still has its exact earlier name and compiled type.
-The expanded ten-statement review compiled, including a specialisation of the
-sphere corollary using the standard sphere atlas without an atlas hypothesis.
+Compared with the preceding linter update, 44 of the 45 current declaration
+records are identical. The changed record is
+`SurfaceDynamics.WanderingDerivedSingularLimitClaim`; the unused supporting
+definition `SurfaceDynamics.LocalMap.HasSimplyConnectedComponentOrbit` is no longer a
+comparison target. In particular, the original entire-function theorem retains
+its exact compiled statement. The other selected statements are unchanged.
 
-The ten proofs use only `propext`, `Classical.choice` and `Quot.sound`.
-The current proof closure has 772 local modules; the full retained proof closure
-has 794. Both passed the source check for holes, custom axioms, native_decide
-and challenge imports. Challenge proof placeholders are intentional and occur
-only in independent specifications. The attribution audit passed: 12 licence
-texts, 51 attribution files and 274 vendored headers.
+All ten proofs depend only on `propext`, `Classical.choice` and `Quot.sound`.
+The current proof closure has 777 local modules; the full retained proof closure
+has 798. Both passed the source audit for `sorry`, `admit`, custom axioms,
+`native_decide` and imports of independent challenges.
 
-Reproduce with `python3 scripts/verify_paper.py --all`,
-`python3 scripts/audit_structure.py` and
-`python3 -X utf8 scripts/audit_attribution.py`.
-Evidence: `verification/paper-submission.json`,
-`verification/no-wandering-release.json`, the current paper build, declaration
-and axiom logs, and `verification/no-wandering-currentstatements.log`.
-Ordinary style warnings and challenge-placeholder warnings are allowed.
-Saved logs have trailing whitespace normalised.
+## Warnings and supporting checks
 
-## Scope of the added corollaries
+There are no ordinary linter warnings in the full build. The 18 remaining
+warnings are intentional proof placeholders in the three independent Challenge
+files. These specifications are never imported by the solutions. No linter was
+disabled. The preceding linter update fixed 385 ordinary warnings, and the new
+BKL modules have also been checked and corrected.
 
-The rational statement uses open holomorphic self-maps of the whole compact
-sphere, including infinity. Its intrinsic formulation does not introduce
-polynomial quotients or assert a new equivalence theorem with that encoding.
-The finite-singular-value entire statement explicitly assumes transcendence;
-polynomial dynamics is included among rational maps. No finite-type meromorphic
-no-wandering corollary or Baker–Kotus–Lü generalisation is claimed.
+The pinned Palomar metadata contract passed using PyYAML 6.0.3. The attribution
+audit passed: 12 licence texts, 51 attribution files and 274 vendored headers.
+The source-structure audit passed for the active import closures. Existing
+auxiliary audit-module name collisions outside those closures are recorded in
+its report.
 
-The README and metadata incorporate Lasse Rempe's revised paper background.
-The positive-area paragraph records the exact existing Lean hypotheses.
+Reproduce the local checks with:
 
-## Historical evidence and external checks
+```sh
+python3 scripts/verify_paper.py --all
+python3 scripts/verify_metadata.py
+python3 scripts/audit_structure.py
+python3 -X utf8 scripts/audit_attribution.py
+```
 
-`verification/submission-consolidation.json` records version 1.4.3, including
-the exact preservation of the original theorem and simultaneous current/legacy
-imports. `verification/layout-audit.json` and the layout comparison logs record
-version 1.4.2. BUILD_AUDIT.md and `verification/build-audit.json` describe the
-version 1.4.1 performance audit. Their timings are not cold-build measurements.
+Install PyYAML for the metadata checker. Fetch the pinned Mathlib cache first
+with `python3 scripts/fetch_cache.py`, and preserve `.lake` when updating.
+The final changed-source build took 10.7 minutes;
+the complete local build/declaration audit took
+13.1 minutes. These measurements used
+an existing dependency cache and are not cold-build estimates for other machines.
 
-Official sandboxed Comparator and NanoDa/con-ron replay were not run in this
-Windows session. The supplied Linux CI performs those checks after upload.
-The pinned metadata checker requires PyYAML, absent from the local runtime;
-verification/metadata.json explicitly records that validation was not run.
-The older report is preserved in history/metadata-before-1.4.4.json.
-No public upload, acceptance of this new package or independent human review
-is claimed. The first registered version is linked in README.md.
+Evidence is in `verification/paper-submission.json`, `verification/bkl-release.json`,
+the paper build/declaration/axiom logs, `verification/paper-check-timings.json`,
+`verification/metadata.json`, `verification/attribution.json` and
+`verification/structure-audit.json`. Older reports remain historical evidence.
+
+## Statement scope and external verification
+
+The rational corollary uses open holomorphic self-maps of the whole compact
+sphere, including infinity. The finite-singular-value entire corollary assumes
+transcendence; polynomial dynamics is included in the rational case. A separate
+finite-type meromorphic no-wandering corollary is not selected, although the
+local derived-set theorem now includes multiply connected components.
+
+The official sandboxed Palomar Comparator and NanoDa/con-ron replay were not
+run in this Windows session. The supplied Linux CI runs those checks after
+upload; local independent declaration comparison is a separate check.
+The standalone FunctionTheory verifier encountered a certificate error in its
+separate Mathlib fetch before compilation. All dependency modules imported by
+the submitted and retained proofs were checked by the main pinned build.
+
+The README and metadata preserve the author's revised paper background,
+including the independent-proof attribution and the planned joint preprint.

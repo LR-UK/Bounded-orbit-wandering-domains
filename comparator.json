@@ -38,7 +38,6 @@
     "SurfaceDynamics.HasPositiveChartArea",
     "SurfaceDynamics.LocalMap.saturation",
     "SurfaceDynamics.LocalMap.InjectiveOnSaturation",
-    "SurfaceDynamics.LocalMap.HasSimplyConnectedComponentOrbit",
     "MeromorphicDynamics.IsRationalMeromorphic",
     "MeromorphicDynamics.poleAvoidingSet",
     "MeromorphicDynamics.fatouSet",
