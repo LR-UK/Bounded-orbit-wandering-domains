@@ -17,8 +17,8 @@ private partial def canonicalExpr : Lean.Expr → Lean.Expr
 open Lean Elab Command in
 run_cmd do
   let env ← getEnv
-  let definitions : List Name := [`ComplexDynamics.IsNormalSequenceOn, `ComplexDynamics.RiemannSphere, `ComplexDynamics.riemannSphereUniformSpace, `ComplexDynamics.sphericalIterate, `ComplexDynamics.fatouSet, `ComplexDynamics.IsFatouComponent, `ComplexDynamics.regularValueSet, `ComplexDynamics.singularValues, `ComplexDynamics.sphericalSingularValues, `SurfaceDynamics.LocalMap.step, `SurfaceDynamics.LocalMap.iterate, `SurfaceDynamics.LocalMap.trapped, `SurfaceDynamics.LocalMap.imageAt, `SurfaceDynamics.LocalMap.compactifiedIterate, `SurfaceDynamics.LocalMap.IsNormalOn, `SurfaceDynamics.LocalMap.omega, `SurfaceDynamics.LocalMap.IsComponent, `SurfaceDynamics.LocalMap.IsWanderingComponent, `SurfaceDynamics.LocalMap.regularValues, `SurfaceDynamics.LocalMap.singularValues, `SurfaceDynamics.IsOpenHolomorphic, `SurfaceDynamics.HasPositiveChartArea, `SurfaceDynamics.LocalMap.saturation, `SurfaceDynamics.LocalMap.InjectiveOnSaturation, `MeromorphicDynamics.IsRationalMeromorphic, `MeromorphicDynamics.poleAvoidingSet, `MeromorphicDynamics.fatouSet, `MeromorphicDynamics.IsFatouComponent, `SurfaceDynamics.LocalMap, `BoundedWanderingDomains.wandering_orbit_locallyUniform_inftyClaim, `BoundedWanderingDomains.wandering_orbit_pointwise_spherical_singular_derivedSetClaim, `MeromorphicDynamics.WanderingLocallyUniformInfinityClaim, `SurfaceDynamics.NoCompactWanderingOrbitClaim, `SurfaceDynamics.NoCompactPositiveAreaWanderingSetClaim, `SurfaceDynamics.WanderingDerivedSingularLimitClaim]
-  let theorems : List Name := [`BoundedWanderingDomains.theorem_1_2_entire, `MeromorphicDynamics.theorem_1_2_meromorphic, `SurfaceDynamics.theorem_1_3_orbit, `SurfaceDynamics.theorem_1_3_positive_area, `BoundedWanderingDomains.theorem_1_4, `SurfaceDynamics.theorem_1_5, `BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire, `BoundedWanderingDomains.no_wandering_domains_transcendental_entire_finite_singularValues, `SurfaceDynamics.no_wandering_domains_compact, `SurfaceDynamics.no_wandering_domains_rational]
+  let definitions : List Name := [`ComplexDynamics.IsNormalSequenceOn, `ComplexDynamics.RiemannSphere, `ComplexDynamics.riemannSphereUniformSpace, `ComplexDynamics.sphericalIterate, `ComplexDynamics.fatouSet, `ComplexDynamics.IsFatouComponent, `ComplexDynamics.regularValueSet, `ComplexDynamics.singularValues, `ComplexDynamics.sphericalSingularValues, `SurfaceDynamics.LocalMap.step, `SurfaceDynamics.LocalMap.iterate, `SurfaceDynamics.LocalMap.trapped, `SurfaceDynamics.LocalMap.imageAt, `SurfaceDynamics.LocalMap.compactifiedIterate, `SurfaceDynamics.LocalMap.IsNormalOn, `SurfaceDynamics.LocalMap.omega, `SurfaceDynamics.LocalMap.IsComponent, `SurfaceDynamics.LocalMap.IsWanderingComponent, `SurfaceDynamics.LocalMap.regularValues, `SurfaceDynamics.LocalMap.singularValues, `SurfaceDynamics.IsOpenHolomorphic, `SurfaceDynamics.HasPositiveChartArea, `SurfaceDynamics.LocalMap.saturation, `SurfaceDynamics.LocalMap.InjectiveOnSaturation, `MeromorphicDynamics.IsRationalMeromorphic, `MeromorphicDynamics.poleAvoidingSet, `MeromorphicDynamics.fatouSet, `MeromorphicDynamics.IsFatouComponent, `SurfaceDynamics.LocalMap, `BoundedWanderingDomains.wandering_orbit_locallyUniform_inftyClaim, `BoundedWanderingDomains.wandering_orbit_pointwise_spherical_singular_derivedSetClaim, `MeromorphicDynamics.WanderingLocallyUniformInfinityClaim, `SurfaceDynamics.NoCompactWanderingOrbitClaim, `SurfaceDynamics.NoCompactPositiveAreaWanderingSetClaim, `SurfaceDynamics.WanderingDerivedSingularLimitClaim, `SurfaceDynamics.ChartAlmostEverywhere, `SurfaceDynamics.LocalMap.HasSourceEscapingSubsequence, `SurfaceDynamics.LocalMap.HasEscapingOrDerivedSingularSubsequence]
+  let theorems : List Name := [`BoundedWanderingDomains.wandering_domain_has_locally_uniform_escaping_subsequence, `MeromorphicDynamics.wandering_domain_has_locally_uniform_escaping_subsequence, `SurfaceDynamics.wandering_component_orbit_not_compactly_contained, `SurfaceDynamics.positive_area_wandering_saturation_not_compactly_contained, `BoundedWanderingDomains.wandering_orbit_accumulates_on_derived_singular_values, `SurfaceDynamics.wandering_orbit_has_escaping_or_derived_singular_subsequence, `BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire, `BoundedWanderingDomains.no_wandering_domains_transcendental_entire_finite_singularValues, `SurfaceDynamics.no_wandering_domains_compact, `SurfaceDynamics.no_wandering_domains_rational, `SurfaceDynamics.compact_wandering_orbit_accumulates_on_derived_singular_values, `SurfaceDynamics.almost_every_wandering_point_has_source_escaping_subsequence, `SurfaceDynamics.positive_area_wandering_saturation_not_compactly_contained_away_from_derived, `SurfaceDynamics.almost_every_wandering_point_has_escaping_or_derived_singular_subsequence]
   for name in definitions ++ theorems do
     let some ci := env.find? name | throwError "Missing declaration {name}"
     let mut fields := [
@@ -41,15 +41,20 @@ run_cmd do
     logInfo s!"PALOMAR_DECL {(Json.mkObj fields).compress}"
 
 -- Share the imported proof environment with the declaration comparison.
-#print axioms BoundedWanderingDomains.theorem_1_2_entire
-#print axioms MeromorphicDynamics.theorem_1_2_meromorphic
-#print axioms SurfaceDynamics.theorem_1_3_orbit
-#print axioms SurfaceDynamics.theorem_1_3_positive_area
-#print axioms BoundedWanderingDomains.theorem_1_4
-#print axioms SurfaceDynamics.theorem_1_5
+#print axioms BoundedWanderingDomains.wandering_domain_has_locally_uniform_escaping_subsequence
+#print axioms MeromorphicDynamics.wandering_domain_has_locally_uniform_escaping_subsequence
+#print axioms SurfaceDynamics.wandering_component_orbit_not_compactly_contained
+#print axioms SurfaceDynamics.positive_area_wandering_saturation_not_compactly_contained
+#print axioms BoundedWanderingDomains.wandering_orbit_accumulates_on_derived_singular_values
+#print axioms SurfaceDynamics.wandering_orbit_has_escaping_or_derived_singular_subsequence
 
 #print axioms BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire
 
 #print axioms BoundedWanderingDomains.no_wandering_domains_transcendental_entire_finite_singularValues
 #print axioms SurfaceDynamics.no_wandering_domains_compact
 #print axioms SurfaceDynamics.no_wandering_domains_rational
+
+#print axioms SurfaceDynamics.compact_wandering_orbit_accumulates_on_derived_singular_values
+#print axioms SurfaceDynamics.almost_every_wandering_point_has_source_escaping_subsequence
+#print axioms SurfaceDynamics.positive_area_wandering_saturation_not_compactly_contained_away_from_derived
+#print axioms SurfaceDynamics.almost_every_wandering_point_has_escaping_or_derived_singular_subsequence

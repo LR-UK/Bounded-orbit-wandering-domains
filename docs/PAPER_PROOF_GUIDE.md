@@ -15,7 +15,7 @@ Let `U_n` be the component containing `f^n(U)`. The forward-containment property
 is `f(U_n) ⊆ U_(n+1)`, even for points of `U_n` outside `f^n(U)`. Neither
 `f(U_n) = U_(n+1)` nor `f^n(U) = U_n` is required. Wandering means these
 components are pairwise distinct (and hence disjoint). No simple-connectivity
-hypothesis is imposed on these components in Theorem 1.5.
+hypothesis is imposed on these components in the local derived-singular theorem.
 
 `OmegaDynamics.lean` proves forward invariance of the normality locus in
 `LocalMap.totalize_mapsTo_omega`, and then component containment in
@@ -24,7 +24,7 @@ normality from a neighbourhood to its image; the second uses connectedness
 and the common orbit point. These are proved structural lemmas, not additional
 hypotheses in the paper's theorem statements.
 
-## Theorem 1.3(1)
+## the local compact-orbit theorem
 
 `SurfaceOrbitEscape.lean` removes a small coordinate disc inside the initial
 wandering component, away from the marked point. The later components lie in
@@ -32,9 +32,9 @@ its disc-covered complement. Compact orbit bounds permit a source restriction;
 `HyperbolicOrbitEscape.lean` combines shrinking covering discs, surface filling,
 eventual injectivity and the finite-model area contradiction. This works for
 multiply connected wandering components as well. `MeromorphicEscape.lean`
-then supplies Theorem 1.2 for meromorphic maps via their local sphere model.
+then supplies the entire and meromorphic escape theorem for meromorphic maps via their local sphere model.
 
-## Theorem 1.5
+## the local derived-singular theorem
 
 `NoEscapeCompactRange.lean` first separates compact escape: if no escaping
 subsequence exists, the full orbit lies in an ambient compact set. Assuming
@@ -71,7 +71,7 @@ disc, inside an early wandering component, and cannot contain a tail cluster
 point. `SurfaceDerivedLimits.lean` exports the resulting theorem on an arbitrary
 Riemann surface without a simple-connectivity assumption.
 
-## Theorem 1.3(2)
+## the positive-area wandering-set theorem
 
 `CompactLocalAreaAdvance.lean` handles every proper compact candidate through
 a fixed hyperbolic subsurface. The remaining compact-global case is proved in
@@ -99,6 +99,42 @@ through their separate entry points. This keeps
 the established results reproducible without duplicating their proofs in the
 new surface assembly.
 
-All ten selected targets have only Lean's standard classical logical axioms. Supporting
+All fourteen selected targets have only Lean's standard classical logical axioms. Supporting
 geometric hypotheses such as disc-cover existence are discharged by the
 attributed uniformisation development; they are not extra target assumptions.
+
+## Compact and almost-everywhere refinements
+
+The nine modules in `BoundedWanderingDomains/Surfaces/AlmostEverywhere/` contain
+the refinements. `Definitions.lean` makes chartwise nullity and the two
+subsequence conclusions explicit. `OrbitShift.lean` proves backward invariance
+of normality, inheritance under time shifts, and the passage from injectivity
+of every iterate on the starting set to injectivity on its disjoint saturation.
+
+`CompactDerivedArea.lean` first proves positive-area exclusion for a compact
+saturation avoiding the derived singular set on a hyperbolic surface. A compact
+neighbourhood meets the singular set in only finitely many exceptional values.
+Finite backward stages of the source boundary capture all non-normal points;
+removing a countable backward-invariant set preserves positive area. The regular
+covering gives uniform one-step area gain and the finite-model contradiction.
+For a compact ambient surface with finite singular set, three anchors supply
+the same argument even when the original map has a proper open source.
+
+`ThreePointHyperbolization.lean` and `CompactAreaRestriction.lean` remove three
+points outside any proper compact candidate. The resulting subsurface is
+hyperbolic, and the restriction adds only finitely many singular values.
+Compact-orbit normality transfers back to the original map. This proves the
+ambient compact-set theorem on every surface.
+
+`PositiveAreaImage.lean` proves that an injective open holomorphic map preserves
+positive chart area. It uses compact chart patches, finitely many critical
+points on each patch, and the holomorphic change-of-variables theorem.
+`CompactSource.lean` and `DerivedSingular.lean` then use countable compact
+exhaustions. For the latter, each exceptional set consists of points whose
+orbits stay in a fixed compact set after a fixed time. Its forward image is
+null by the compact-area theorem, so it too is null. Countable stability gives
+the almost-everywhere conclusion in every chart. No global measure is needed.
+
+`Results.lean` exposes the four new public statements, including the compact
+wandering-orbit corollary of the BKL theorem. These results concern subsequences;
+the full orbit is not asserted to escape permanently.

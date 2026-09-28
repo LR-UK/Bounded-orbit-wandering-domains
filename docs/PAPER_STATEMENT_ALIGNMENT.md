@@ -1,64 +1,55 @@
-# Revised-paper statement alignment
+# Statement alignment
 
-All six targets are proved. The source is the author's
-`handoff/reference/no-bounded-WD-2.tex`, supplied 25 September 2026.
-Challenge imports only Mathlib; Solution imports proved source and
-does not import Challenge. Local comparison checks ten theorem types and
-35 supporting declarations, including the local-map structure and its constructor.
+The independent `Challenge.lean` and proved `Solution.lean` select fourteen
+theorems. All names are descriptive, without unpublished manuscript numbering.
+The original entire-function bounded-orbit theorem keeps its exact name and
+statement. The current challenge imports only Mathlib; the proofs never import it.
 
-- **1.2 entire:** a transcendental entire function, actual Fatou components,
-  forward containment and pairwise distinct components give a strictly increasing
-  subsequence converging locally uniformly to infinity on the initial component.
-- **1.2 meromorphic:** the same conclusion for non-rational meromorphic maps in
-  normal form, with Fatou neighbourhoods avoiding poles and prepoles. Poles are
-  allowed; their representative values are not used by admissible iterates.
-- **1.3(1):** no marked orbit in an actual wandering normality component is
-  contained in a compact subset of the local map's open source: for each such
-  compact set K, some iterate lies outside K. This does not assert eventual
-  escape from every compact set. No simple connectivity or injectivity is assumed.
-- **1.3(2):** a measurable positive-chart-area set in `trapped \ omega`, with
-  pairwise disjoint forward images and injectivity on its forward saturation,
-  has saturation not contained in any compact subset of the source. This now
-  includes compact global sphere and torus maps and all other surface cases.
-- **1.4:** an entire wandering marked orbit has a subsequence converging to a
-  derived spherical singular value, allowing infinity.
-- **1.5:** every marked orbit in a wandering normality component has a
-  subsequence escaping every compact
-  subset of the ambient surface or converging to a derived singular value of
-  the actual local map. No auxiliary restricted-map singular set is substituted.
+- **Entire and meromorphic escape:** a strictly increasing subsequence of
+  iterates converges locally uniformly to infinity on the initial wandering
+  component. Meromorphic normal form permits poles; admissible Fatou
+  neighbourhoods avoid poles and prepoles.
+- **Local compact-source exclusion:** an orbit in a wandering normality
+  component is not contained in a compact subset of the actual open source.
+- **Entire derived-singular accumulation:** a marked wandering orbit has a
+  subsequence converging to a derived spherical singular value, possibly infinity.
+- **Local derived-singular accumulation:** a marked wandering orbit has a
+  subsequence escaping every ambient compact set or converging to a derived
+  singular value of the actual local map. No simple-connectivity hypothesis
+  is present. The Baker–Kotus–Lü adaptation handles multiply connected components.
+- **Compact wandering-orbit version:** if such an orbit is contained in an
+  ambient compact set, it has a derived-singular subsequential limit in that set.
+- **Positive-area compact formulations:** a measurable wandering set in
+  `trapped \ omega` cannot have positive chart area and saturation contained
+  in a source compact set. The stronger derived-singular formulation excludes
+  an ambient compact saturation disjoint from the derived singular set.
+- **Almost-everywhere formulations:** for a measurable wandering set in
+  `trapped \ omega` with every iterate injective on the set, almost every point
+  has a subsequence escaping source compacts. Also, almost every point has an
+  ambient-escaping or derived-singular subsequence. The exceptional set is
+  Lebesgue-null in every chart. These conclusions do not require a global measure.
+- **Classical corollaries:** no wandering domains for compact-surface self-maps,
+  rational maps in the intrinsic holomorphic-sphere formulation, or
+  transcendental entire functions with finitely many finite singular values.
+  Polynomial maps are included among rational maps. No separate finite-type
+  meromorphic no-wandering corollary is selected.
 
-Version 1.5.0 strengthens Theorem 1.5 by removing the simple-connectivity
-hypothesis. The other selected statements, including the original entire-function
-theorem, are preserved. The final comparison work
-aligned the meromorphic definitions' canonical complex instances and named
-rationality/Claim wrappers, so the independent declarations match exactly.
-The LocalMap structure is checked transitively by Comparator; it is not listed
-as a definition-hole target, because it is an inductive structure.
+The almost-everywhere and compact-source area formulations are equivalent by
+countable exhaustion, finite-prefix compactness and countable stability of null
+sets. For the derived-singular statement, failure of both subsequence alternatives
+puts an orbit tail in a compact set avoiding the derived singular set. Such tails
+form a countable family after fixing the exhaustion level and starting time.
+Injective holomorphic iterates preserve positive area, so these exceptional sets
+are null. Pairwise disjoint forward images make the iterate-injectivity
+hypothesis sufficient for the saturation-injectivity used in the area proofs.
 
-## Classical corollaries added in version 1.4.4
+Escape always has the meaning explicitly shown in the statement: compact
+avoidance along the chosen subsequence. No assertion here requires the full
+orbit eventually to leave every compact set forever.
 
-The independent current challenge also selects the following three proved declarations.
-
-- `SurfaceDynamics.no_wandering_domains_compact`: an open holomorphic map on a
-  compact Riemann surface, whose source is the whole surface, has no wandering
-  normality components. Apply Theorem 1.3(1) to the whole compact surface.
-- `SurfaceDynamics.no_wandering_domains_rational`: the specialisation to the
-  whole Riemann sphere, including poles and infinity. This is the intrinsic
-  holomorphic-sphere formulation of nonconstant rational dynamics. The Lean
-  statement is valid for every complex atlas and is checked with the standard
-  sphere atlas; an algebraic polynomial-quotient representation is not introduced.
-- `BoundedWanderingDomains.no_wandering_domains_transcendental_entire_finite_singularValues`:
-  a transcendental entire function with finitely many finite singular values
-  cannot have a pairwise disjoint forward sequence of actual Fatou components.
-  Theorem 1.4 would give an accumulation point of a finite spherical singular set.
-
-The entire corollary explicitly states transcendence. Polynomial dynamics is
-included in the rational case. These additions make no claim about finite-type
-meromorphic no-wandering domains as a separate selected corollary. The local
-derived-set theorem itself now includes multiply connected wandering components,
-using the formalised Baker–Kotus–Lü adaptation.
-
-The README background incorporates Lasse Rempe's revision dated 27 September
-2026. The positive-area description spells out the exact hypotheses already
-present in Lean: positive chart area, disjoint forward images and injectivity
-on the whole forward saturation. Theorem 1.5 is the only selected statement strengthened in version 1.5.0.
+The rational statement quantifies over a complex atlas on the sphere and applies
+in particular to the standard atlas. It uses open holomorphic self-maps, including
+poles and infinity; no polynomial-quotient equivalence theorem is asserted.
+The original entire theorem and all preceding result families are retained.
+The README preserves Lasse Rempe's supplied background, including Učakar's
+independent proof and the planned joint PRW/DPU paper.

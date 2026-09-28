@@ -3,11 +3,16 @@ version: v0.4
 project:
   name: Absence of bounded-orbit wandering domains
   description: >-
-    We formalise the recently proved absence of bounded-orbit wandering domains for transcendental entire and meromorphic functions, as well as a corresponding result for
-    locally defined functions. This version of the formalisation includes the meromorphic case, a local version for maps on Riemann surfaces, the fact that
-    orbits in wandering domains of entire functions must accumulate on limit points of singular values, as well as a local version of this result for arbitrary wandering normality components.
-    The simple-connectivity hypothesis in Theorem 1.5 has been removed by formalising an adaptation of the covering and filling argument of Baker, Kotus and Lü. For further background,
-    see the README.md documentation.
+    We formalise bounded-orbit exclusion and escaping subsequences for wandering
+    domains of entire and meromorphic functions, and local analogues on Riemann
+    surfaces. Derived-singular accumulation is proved without a
+    simple-connectivity hypothesis using the Baker–Kotus–Lü argument. The
+    selection includes positive-area wandering-set theorems and their
+    almost-everywhere forms: outside normality, almost every point of a measurable
+    wandering set with injective iterates has an escaping or derived-singular
+    subsequence. Compact-set versions are included. Classical corollaries
+    exclude wandering domains for rational maps, compact-surface self-maps and
+    transcendental entire functions with finitely many singular values.
   authors:
   - Nikolai Prochorov
   - Lasse Rempe
@@ -101,7 +106,7 @@ sources:
   note: >-
     The covering and filling argument is adapted to fixed-radius covering discs
     of locally defined maps. Removable-point completion and discrete backward
-    orbits remove the simple-connectivity hypothesis from Theorem 1.5. The
+    orbits remove the simple-connectivity hypothesis from the local derived-singular theorem. The
     formalisation does not assert that whole later local components become
     simply connected or add a separate finite-type meromorphic corollary.
 related_formalizations:
@@ -193,19 +198,22 @@ related_formalizations:
   note: User-supplied streamlined snapshot; tract simple connectivity and logarithmic transform. See RECOVERY_PORT.md and retained licences.
 status:
   scope: >-
-    All challenge targets are proved in Solution.lean. The original entire-function bounded-orbit theorem is retained unchanged and selected for comparison. Compact sets
-    in Theorem 1.3 lie inside the actual open source. Simple connectivity is assumed
-    only in Theorem 1.5; removal of this assumption using an argument of Baker–Kotus–Lü is still outstanding. The positive-area theorem assumes a measurable set in
-    trapped minus omega, disjoint forward images, and injectivity on its saturation.
+    All fourteen selected challenge targets are proved and exposed by Solution.lean.
+    The original entire-function bounded-orbit theorem retains its exact name and
+    statement. Local wandering-component results have no simple-connectivity or
+    injectivity hypothesis; the Baker–Kotus–Lü adaptation is complete. The
+    positive-area and almost-everywhere results concern measurable sets in
+    trapped minus omega, with disjoint forward images and injective iterates.
+    The original compact-source formulation is retained alongside an ambient
+    compact-set exclusion away from derived singular values and the corresponding
+    almost-everywhere subsequence conclusions. Nullity is checked in every chart.
+    Compact wandering orbits have a derived-singular limit in the same compact
+    set. Escape is a subsequence conclusion, not eventual escape of the full orbit.
     Meromorphic normal form allows poles; admissible Fatou components avoid poles
-    and prepoles. Theorem 1.5 concerns compact escape in the ambient surface or
-    accumulation at the derived singular set of the actual local map. Independent
-    Challenge placeholders are excluded from the proof dependency closure.
-    Three additional selected corollaries exclude wandering domains for compact
-    surface self-maps, rational maps in the intrinsic holomorphic-sphere
-    formulation, and finite-type transcendental entire functions. Polynomials
-    are included as rational maps. No finite-type meromorphic no-wandering
-    theorem is asserted; this generalisation is deferred.
+    and prepoles. Classical no-wandering corollaries cover rational maps,
+    compact-surface self-maps and finite-singular-value transcendental entire
+    functions. No separate finite-type meromorphic corollary is selected.
+    Independent Challenge placeholders are excluded from the proof dependencies.
   sorry_count: 0
   sorry_in_definitions: 0
   axioms:
@@ -213,42 +221,42 @@ status:
   - Classical.choice
   - Quot.sound
   main_results:
-  - declaration: BoundedWanderingDomains.theorem_1_2_entire
+  - declaration: BoundedWanderingDomains.wandering_domain_has_locally_uniform_escaping_subsequence
     file: Solution.lean
     sorry_count: 0
     axioms:
     - propext
     - Classical.choice
     - Quot.sound
-  - declaration: MeromorphicDynamics.theorem_1_2_meromorphic
+  - declaration: MeromorphicDynamics.wandering_domain_has_locally_uniform_escaping_subsequence
     file: Solution.lean
     sorry_count: 0
     axioms:
     - propext
     - Classical.choice
     - Quot.sound
-  - declaration: SurfaceDynamics.theorem_1_3_orbit
+  - declaration: SurfaceDynamics.wandering_component_orbit_not_compactly_contained
     file: Solution.lean
     sorry_count: 0
     axioms:
     - propext
     - Classical.choice
     - Quot.sound
-  - declaration: SurfaceDynamics.theorem_1_3_positive_area
+  - declaration: SurfaceDynamics.positive_area_wandering_saturation_not_compactly_contained
     file: Solution.lean
     sorry_count: 0
     axioms:
     - propext
     - Classical.choice
     - Quot.sound
-  - declaration: BoundedWanderingDomains.theorem_1_4
+  - declaration: BoundedWanderingDomains.wandering_orbit_accumulates_on_derived_singular_values
     file: Solution.lean
     sorry_count: 0
     axioms:
     - propext
     - Classical.choice
     - Quot.sound
-  - declaration: SurfaceDynamics.theorem_1_5
+  - declaration: SurfaceDynamics.wandering_orbit_has_escaping_or_derived_singular_subsequence
     file: Solution.lean
     sorry_count: 0
     axioms:
@@ -283,6 +291,34 @@ status:
     - propext
     - Classical.choice
     - Quot.sound
+  - declaration: SurfaceDynamics.compact_wandering_orbit_accumulates_on_derived_singular_values
+    file: BoundedWanderingDomains/Surfaces/AlmostEverywhere/Results.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - declaration: SurfaceDynamics.almost_every_wandering_point_has_source_escaping_subsequence
+    file: BoundedWanderingDomains/Surfaces/AlmostEverywhere/Results.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - declaration: SurfaceDynamics.positive_area_wandering_saturation_not_compactly_contained_away_from_derived
+    file: BoundedWanderingDomains/Surfaces/AlmostEverywhere/Results.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - declaration: SurfaceDynamics.almost_every_wandering_point_has_escaping_or_derived_singular_subsequence
+    file: BoundedWanderingDomains/Surfaces/AlmostEverywhere/Results.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
 automation:
   methods:
   - method: manual
@@ -308,10 +344,10 @@ automation:
     not independent mathematical review.
 fidelity:
   divergences: >-
-    The six introductory statements have independent explicit Lean definitions.
+    All selected statements have independent explicit Lean specifications.
     Positive area means positive Lebesgue area in a coordinate chart. Surface
     escape uses the one-point compactification and is proved equivalent to eventual
-    compact avoidance. The compact positive-area proof uses three anchors and their
+    compact avoidance along the selected subsequence. The compact positive-area proof uses three anchors and their
     backward preimages, a finite-end normal-family argument, and uniform finite
     puncture area bounds; separate sphere and torus periodic-orbit classifications
     are unnecessary. The entire derived-singular theorem follows from the previously
@@ -326,41 +362,41 @@ review:
   reviewers: []
   notes: Lean builds, transitive axiom audits, independent Challenge/Solution declaration comparison and
     metadata validation are recorded in docs/VERIFICATION.md. Official Comparator and independent-kernel replay
-    status is recorded there separately. No independent human review, Palomar acceptance or public submission
-    is claimed.
+    status is recorded there separately. Local verification is distinct from independent
+    human review and registry acceptance of this version.
 alignment:
   namespace: Revised paper challenge
   statements:
-  - source: Theorem 1.2, entire case
-    lean: BoundedWanderingDomains.theorem_1_2_entire
+  - source: the entire and meromorphic escape theorem, entire case
+    lean: BoundedWanderingDomains.wandering_domain_has_locally_uniform_escaping_subsequence
     module: Solution
     status: proved
     note: The independent challenge statement has a proved source theorem giving locally uniform escape.
-  - source: Theorem 1.2, meromorphic case
-    lean: MeromorphicDynamics.theorem_1_2_meromorphic
+  - source: the entire and meromorphic escape theorem, meromorphic case
+    lean: MeromorphicDynamics.wandering_domain_has_locally_uniform_escaping_subsequence
     module: Solution
     status: proved
-    note: Proved from Theorem 1.3(1) through the meromorphic sphere model.
-  - source: Theorem 1.3(1), compact avoidance on a Riemann surface
-    lean: SurfaceDynamics.theorem_1_3_orbit
+    note: Proved from the local compact-orbit theorem through the meromorphic sphere model.
+  - source: the local compact-orbit theorem, compact avoidance on a Riemann surface
+    lean: SurfaceDynamics.wandering_component_orbit_not_compactly_contained
     module: Solution
     status: proved
     note: Every orbit in a wandering component leaves each compact subset of the actual source O.
-  - source: Theorem 1.3(2), positive-area wandering set
-    lean: SurfaceDynamics.theorem_1_3_positive_area
+  - source: the positive-area wandering-set theorem, positive-area wandering set
+    lean: SurfaceDynamics.positive_area_wandering_saturation_not_compactly_contained
     module: Solution
     status: proved
     note: The forward saturation is not contained in a compact subset of O.
-  - source: Theorem 1.4, entire derived singular accumulation
-    lean: BoundedWanderingDomains.theorem_1_4
+  - source: the entire derived-singular theorem, entire derived singular accumulation
+    lean: BoundedWanderingDomains.wandering_orbit_accumulates_on_derived_singular_values
     module: Solution
     status: proved
     note: A stronger locally uniform source theorem is already proved.
-  - source: Theorem 1.5, surface derived singular accumulation or compact escape
-    lean: SurfaceDynamics.theorem_1_5
+  - source: the local derived-singular theorem, surface derived singular accumulation or compact escape
+    lean: SurfaceDynamics.wandering_orbit_has_escaping_or_derived_singular_subsequence
     module: Solution
     status: proved
-    note: Simple connectivity is assumed only for normality components met by the orbit.
+    note: Applies to arbitrary wandering components, including multiply connected ones; the BKL adaptation is proved.
   - source: Original entire-function bounded-orbit theorem
     lean: BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire
     module: Solution
@@ -370,17 +406,33 @@ alignment:
     lean: BoundedWanderingDomains.no_wandering_domains_transcendental_entire_finite_singularValues
     module: Solution
     status: proved
-    note: A finite spherical singular set has empty derived set, contradicting Theorem 1.4.
+    note: A finite spherical singular set has empty derived set, contradicting the entire derived-singular theorem.
   - source: Compact-surface no-wandering corollary
     lean: SurfaceDynamics.no_wandering_domains_compact
     module: Solution
     status: proved
-    note: Apply Theorem 1.3(1) with the compact set equal to the whole source surface.
+    note: Apply the local compact-orbit theorem with the compact set equal to the whole source surface.
   - source: Rational no-wandering corollary
     lean: SurfaceDynamics.no_wandering_domains_rational
     module: Solution
     status: proved
     note: Specialise the compact-surface theorem to the whole Riemann sphere, including infinity.
+  - source: 'Compact wandering orbit: derived-singular limit in the compact set'
+    lean: SurfaceDynamics.compact_wandering_orbit_accumulates_on_derived_singular_values
+    module: Solution
+    status: proved
+  - source: Almost-everywhere source escape
+    lean: SurfaceDynamics.almost_every_wandering_point_has_source_escaping_subsequence
+    module: Solution
+    status: proved
+  - source: Positive-area compact exclusion away from derived singular values
+    lean: SurfaceDynamics.positive_area_wandering_saturation_not_compactly_contained_away_from_derived
+    module: Solution
+    status: proved
+  - source: Almost-everywhere ambient escape or derived-singular accumulation
+    lean: SurfaceDynamics.almost_every_wandering_point_has_escaping_or_derived_singular_subsequence
+    module: Solution
+    status: proved
 acknowledgements: Mathlib contributors; the Tau Ceti contributors; Chris Birkbeck; Yury Kudryashov; Geoffrey
   Irving; Will (Ziang) Li and Yusheng Luo; D. Cureton; Álvaro Begué; the attributed FunctionTheory, ComplexDynamics,
   ComplexApproximation and EremenkosConjecture sources. See the included notices. The RiemannDynamics

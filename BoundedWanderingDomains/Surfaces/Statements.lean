@@ -39,14 +39,14 @@ section Targets
 variable [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X]
   [ConnectedSpace X] [IsManifold 𝓘(ℂ) 1 X]
 
-/-- Target 2(1): no auxiliary working domain V and no simple connectivity. -/
+/-- Compact-orbit exclusion: no auxiliary working domain V and no simple connectivity. -/
 def NoCompactWanderingOrbitClaim : Prop :=
   ∀ f : LocalMap X, IsOpenHolomorphic f →
     ∀ U : Set X, f.IsWanderingComponent U → ∀ z ∈ U,
       ∀ K : Set X, IsCompact K → K ⊆ f.source →
         ∃ n : ℕ, f.compactifiedIterate n z ∉ ((↑) : X → OnePoint X) '' K
 
-/-- Target 2(2): positive-area wandering sets cannot stay compactly inside O. -/
+/-- Positive-area wandering sets: positive-area wandering sets cannot stay compactly inside O. -/
 def NoCompactPositiveAreaWanderingSetClaim [MeasurableSpace X] [BorelSpace X] : Prop :=
   ∀ f : LocalMap X, IsOpenHolomorphic f →
     ∀ A : Set X, MeasurableSet A → A ⊆ f.trapped \ f.omega →
@@ -54,7 +54,7 @@ def NoCompactPositiveAreaWanderingSetClaim [MeasurableSpace X] [BorelSpace X] : 
       f.InjectiveOnSaturation A → HasPositiveChartArea A →
       ¬ ∃ K : Set X, IsCompact K ∧ K ⊆ f.source ∧ f.saturation A ⊆ K
 
-/-- Target 4: compact escape or accumulation at a derived singular value.
+/-- Derived-singular accumulation: compact escape or accumulation at a derived singular value.
 The escape alternative has exactly its compact-avoidance meaning by
 `tendsto_infty_iff_leaves_compacts`. There is no simple-connectivity or orbit-injectivity hypothesis. -/
 def WanderingDerivedSingularLimitClaim : Prop :=

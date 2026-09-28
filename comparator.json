@@ -2,16 +2,20 @@
   "challenge_module": "Challenge",
   "solution_module": "Solution",
   "theorem_names": [
-    "BoundedWanderingDomains.theorem_1_2_entire",
-    "MeromorphicDynamics.theorem_1_2_meromorphic",
-    "SurfaceDynamics.theorem_1_3_orbit",
-    "SurfaceDynamics.theorem_1_3_positive_area",
-    "BoundedWanderingDomains.theorem_1_4",
-    "SurfaceDynamics.theorem_1_5",
+    "BoundedWanderingDomains.wandering_domain_has_locally_uniform_escaping_subsequence",
+    "MeromorphicDynamics.wandering_domain_has_locally_uniform_escaping_subsequence",
+    "SurfaceDynamics.wandering_component_orbit_not_compactly_contained",
+    "SurfaceDynamics.positive_area_wandering_saturation_not_compactly_contained",
+    "BoundedWanderingDomains.wandering_orbit_accumulates_on_derived_singular_values",
+    "SurfaceDynamics.wandering_orbit_has_escaping_or_derived_singular_subsequence",
     "BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire",
     "BoundedWanderingDomains.no_wandering_domains_transcendental_entire_finite_singularValues",
     "SurfaceDynamics.no_wandering_domains_compact",
-    "SurfaceDynamics.no_wandering_domains_rational"
+    "SurfaceDynamics.no_wandering_domains_rational",
+    "SurfaceDynamics.compact_wandering_orbit_accumulates_on_derived_singular_values",
+    "SurfaceDynamics.almost_every_wandering_point_has_source_escaping_subsequence",
+    "SurfaceDynamics.positive_area_wandering_saturation_not_compactly_contained_away_from_derived",
+    "SurfaceDynamics.almost_every_wandering_point_has_escaping_or_derived_singular_subsequence"
   ],
   "definition_names": [
     "ComplexDynamics.IsNormalSequenceOn",
@@ -41,7 +45,10 @@
     "MeromorphicDynamics.IsRationalMeromorphic",
     "MeromorphicDynamics.poleAvoidingSet",
     "MeromorphicDynamics.fatouSet",
-    "MeromorphicDynamics.IsFatouComponent"
+    "MeromorphicDynamics.IsFatouComponent",
+    "SurfaceDynamics.ChartAlmostEverywhere",
+    "SurfaceDynamics.LocalMap.HasSourceEscapingSubsequence",
+    "SurfaceDynamics.LocalMap.HasEscapingOrDerivedSingularSubsequence"
   ],
   "permitted_axioms": [
     "propext",

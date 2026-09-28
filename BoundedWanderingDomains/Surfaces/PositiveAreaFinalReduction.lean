@@ -16,7 +16,7 @@ variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [SecondCountableTopology X] [ConnectedSpace X]
   [MeasurableSpace X] [BorelSpace X] [DecidableEq X]
 
-/-- The sole analytic statement still needed for Theorem 1.3(2): on a
+/-- The analytic area estimate used for the positive-area wandering-set theorem: on a
 relatively compact local source, the hyperbolic area lost under one
 holomorphic step is bounded uniformly over all forward-invariant finite
 puncture models.  The finite exceptional set contains the branch values on

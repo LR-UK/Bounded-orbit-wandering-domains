@@ -15,18 +15,17 @@ import Mathlib.Geometry.Manifold.IsManifold.Basic
 import Mathlib.MeasureTheory.Measure.Lebesgue.Complex
 import Mathlib.Analysis.Meromorphic.NormalForm
 
-/-! # Independent challenge for the revised paper's introduction
+/-! # Independent challenge for wandering-domain and wandering-set results
 
-Six revised-paper targets, the unchanged original entire-function theorem,
-and three classical no-wandering corollaries: entire and meromorphic escape, the two local surface
-conclusions, entire derived-set accumulation, and surface derived-set/escape.
-The theorem declarations below are independent statement placeholders.
-Their proofs are supplied by Solution, which does not import this module.
-Only Mathlib is imported here; the placeholders are confined to this specification.
+Fourteen targets cover entire and meromorphic escape, local compact-orbit and
+derived-singular accumulation, positive-area and almost-everywhere wandering
+sets, the unchanged original entire theorem, and classical no-wandering
+corollaries. Descriptive names do not depend on manuscript numbering.
 
-Matched to no-bounded-WD-2.tex, supplied 25 September 2026. In the positive-area
-conclusion K is contained in O, as explicitly confirmed by the author. Both
-derived-set conclusions use the subsequence n_k. See PAPER_STATEMENT_ALIGNMENT.md.
+Only Mathlib is imported. These independent proof placeholders are specifications;
+the solution supplies proofs without importing this module. The compact-source
+and ambient derived-singular formulations are distinguished explicitly.
+See docs/PAPER_STATEMENT_ALIGNMENT.md for their mathematical scope.
 -/
 
 open Set Function Filter MeasureTheory OnePoint
@@ -213,14 +212,14 @@ section Targets
 variable [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X]
   [ConnectedSpace X] [IsManifold 𝓘(ℂ) 1 X]
 
-/-- Target 2(1): no auxiliary working domain V and no simple connectivity. -/
+/-- Compact-orbit exclusion: no auxiliary working domain V and no simple connectivity. -/
 def NoCompactWanderingOrbitClaim : Prop :=
   ∀ f : LocalMap X, IsOpenHolomorphic f →
     ∀ U : Set X, f.IsWanderingComponent U → ∀ z ∈ U,
       ∀ K : Set X, IsCompact K → K ⊆ f.source →
         ∃ n : ℕ, f.compactifiedIterate n z ∉ ((↑) : X → OnePoint X) '' K
 
-/-- Target 2(2): positive-area wandering sets cannot stay compactly inside O. -/
+/-- Positive-area wandering sets: positive-area wandering sets cannot stay compactly inside O. -/
 def NoCompactPositiveAreaWanderingSetClaim [MeasurableSpace X] [BorelSpace X] : Prop :=
   ∀ f : LocalMap X, IsOpenHolomorphic f →
     ∀ A : Set X, MeasurableSet A → A ⊆ f.trapped \ f.omega →
@@ -228,7 +227,7 @@ def NoCompactPositiveAreaWanderingSetClaim [MeasurableSpace X] [BorelSpace X] : 
       f.InjectiveOnSaturation A → HasPositiveChartArea A →
       ¬ ∃ K : Set X, IsCompact K ∧ K ⊆ f.source ∧ f.saturation A ⊆ K
 
-/-- Target 4: compact escape or accumulation at a derived singular value.
+/-- Derived-singular accumulation: compact escape or accumulation at a derived singular value.
 The escape alternative has exactly its compact-avoidance meaning by
 `tendsto_infty_iff_leaves_compacts`. There is no simple-connectivity or orbit-injectivity hypothesis. -/
 def WanderingDerivedSingularLimitClaim : Prop :=
@@ -276,7 +275,7 @@ def IsFatouComponent (f : ℂ → ℂ) (U : Set ℂ) : Prop :=
 
 attribute [instance] instCommCStarAlgebraComplex
 
-/-- The meromorphic part of thm:boundedorbitentire. No simple-connectivity
+/-- Meromorphic wandering-domain escape. No simple-connectivity
 or orbit-injectivity assumption. Convergence is locally uniform and spherical.
 MeromorphicNFOn is a representation convention, not an exclusion of poles. -/
 def WanderingLocallyUniformInfinityClaim : Prop :=
@@ -293,16 +292,16 @@ end MeromorphicDynamics
 
 /-! ## Revised-paper challenge declarations
 
-These six declarations are the independent Palomar-facing statement layer.
+These declarations belong to the independent Palomar-facing statement layer.
 Their proofs are intentionally omitted in the challenge file.  A completed
 solution must prove these exact propositions without importing this module. -/
 
 namespace BoundedWanderingDomains
 
-theorem theorem_1_2_entire : wandering_orbit_locallyUniform_inftyClaim := by
+theorem wandering_domain_has_locally_uniform_escaping_subsequence : wandering_orbit_locallyUniform_inftyClaim := by
   sorry
 
-theorem theorem_1_4 :
+theorem wandering_orbit_accumulates_on_derived_singular_values :
     wandering_orbit_pointwise_spherical_singular_derivedSetClaim := by
   sorry
 
@@ -310,7 +309,7 @@ end BoundedWanderingDomains
 
 namespace MeromorphicDynamics
 
-theorem theorem_1_2_meromorphic : WanderingLocallyUniformInfinityClaim := by
+theorem wandering_domain_has_locally_uniform_escaping_subsequence : WanderingLocallyUniformInfinityClaim := by
   sorry
 
 end MeromorphicDynamics
@@ -321,14 +320,14 @@ variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X]
   [ConnectedSpace X] [IsManifold 𝓘(ℂ) 1 X]
 
-theorem theorem_1_3_orbit : NoCompactWanderingOrbitClaim (X := X) := by
+theorem wandering_component_orbit_not_compactly_contained : NoCompactWanderingOrbitClaim (X := X) := by
   sorry
 
-theorem theorem_1_3_positive_area [MeasurableSpace X] [BorelSpace X] :
+theorem positive_area_wandering_saturation_not_compactly_contained [MeasurableSpace X] [BorelSpace X] :
     NoCompactPositiveAreaWanderingSetClaim (X := X) := by
   sorry
 
-theorem theorem_1_5 : WanderingDerivedSingularLimitClaim (X := X) := by
+theorem wandering_orbit_has_escaping_or_derived_singular_subsequence : WanderingDerivedSingularLimitClaim (X := X) := by
   sorry
 
 end SurfaceDynamics
@@ -400,6 +399,88 @@ theorem no_wandering_domains_rational
     (f : LocalMap (OnePoint ℂ)) (hf : IsOpenHolomorphic f)
     (hglobal : (f.source : Set (OnePoint ℂ)) = univ) (U : Set (OnePoint ℂ)) :
     ¬ f.IsWanderingComponent U := by
+  sorry
+
+end SurfaceDynamics
+
+/-! ## Compact and almost-everywhere refinements -/
+
+-- Match the canonical complex instances used by the independent definition module.
+attribute [-instance] instCommCStarAlgebraComplex
+
+open Set Function Filter MeasureTheory OnePoint
+open scoped Topology Manifold
+
+namespace SurfaceDynamics
+
+variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
+
+/-- A property holds outside a set of area zero in every chart. -/
+def ChartAlmostEverywhere (A : Set X) (P : X → Prop) : Prop :=
+  ∀ p : X, volume ((chartAt ℂ p) '' ({x ∈ A | ¬ P x} ∩ (chartAt ℂ p).source)) = 0
+
+/-- One subsequence eventually leaves every compact subset of the source. -/
+def LocalMap.HasSourceEscapingSubsequence (f : LocalMap X) (x : X) : Prop :=
+  ∃ φ : ℕ → ℕ, StrictMono φ ∧
+    ∀ K : Set X, IsCompact K → K ⊆ f.source →
+      ∀ᶠ n in atTop, f.compactifiedIterate (φ n) x ∉ ((↑) : X → OnePoint X) '' K
+
+end SurfaceDynamics
+
+namespace SurfaceDynamics
+
+variable {X : Type*} [TopologicalSpace X]
+
+/-- A subsequence escapes the ambient surface or converges to a derived singular value. -/
+def LocalMap.HasEscapingOrDerivedSingularSubsequence (f : LocalMap X) (x : X) : Prop :=
+  ∃ φ : ℕ → ℕ, StrictMono φ ∧
+    (Tendsto (fun n => f.compactifiedIterate (φ n) x) atTop (𝓝 (∞ : OnePoint X)) ∨
+      ∃ a ∈ derivedSet f.singularValues,
+        Tendsto (fun n => f.compactifiedIterate (φ n) x) atTop (𝓝 (a : OnePoint X)))
+
+end SurfaceDynamics
+
+attribute [instance] instCommCStarAlgebraComplex
+
+namespace SurfaceDynamics
+
+variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
+  [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X]
+  [ConnectedSpace X] [IsManifold 𝓘(ℂ) 1 X]
+
+theorem compact_wandering_orbit_accumulates_on_derived_singular_values
+    (f : LocalMap X) (hf : IsOpenHolomorphic f)
+    {U : Set X} (hU : f.IsWanderingComponent U) {z : X} (hz : z ∈ U)
+    {K : Set X} (hK : IsCompact K)
+    (horbit : ∀ n, f.compactifiedIterate n z ∈ ((↑) : X → OnePoint X) '' K) :
+    ∃ a ∈ K ∩ derivedSet f.singularValues, ∃ φ : ℕ → ℕ, StrictMono φ ∧
+      Tendsto (fun n => f.compactifiedIterate (φ n) z) atTop (𝓝 (a : OnePoint X)) := by
+  sorry
+
+variable [MeasurableSpace X] [BorelSpace X]
+
+theorem almost_every_wandering_point_has_source_escaping_subsequence
+    (f : LocalMap X) (hf : IsOpenHolomorphic f)
+    {A : Set X} (hA : MeasurableSet A) (hAbad : A ⊆ f.trapped \ f.omega)
+    (hdis : Pairwise (fun n m : ℕ => Disjoint (f.imageAt n A) (f.imageAt m A)))
+    (hinj : ∀ n, InjOn (f.compactifiedIterate n) A) :
+    ChartAlmostEverywhere A f.HasSourceEscapingSubsequence := by
+  sorry
+
+theorem positive_area_wandering_saturation_not_compactly_contained_away_from_derived
+    (f : LocalMap X) (hf : IsOpenHolomorphic f)
+    {A : Set X} (hA : MeasurableSet A) (hAbad : A ⊆ f.trapped \ f.omega)
+    (hdis : Pairwise (fun n m : ℕ => Disjoint (f.imageAt n A) (f.imageAt m A)))
+    (hinj : ∀ n, InjOn (f.compactifiedIterate n) A) (hpos : HasPositiveChartArea A) :
+    ¬ ∃ K : Set X, IsCompact K ∧ Disjoint K (derivedSet f.singularValues) ∧ f.saturation A ⊆ K := by
+  sorry
+
+theorem almost_every_wandering_point_has_escaping_or_derived_singular_subsequence
+    (f : LocalMap X) (hf : IsOpenHolomorphic f)
+    {A : Set X} (hA : MeasurableSet A) (hAbad : A ⊆ f.trapped \ f.omega)
+    (hdis : Pairwise (fun n m : ℕ => Disjoint (f.imageAt n A) (f.imageAt m A)))
+    (hinj : ∀ n, InjOn (f.compactifiedIterate n) A) :
+    ChartAlmostEverywhere A f.HasEscapingOrDerivedSingularSubsequence := by
   sorry
 
 end SurfaceDynamics

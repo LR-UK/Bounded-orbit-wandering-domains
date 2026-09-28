@@ -1,44 +1,45 @@
-# Verification — version 1.5.0, 28 September 2026
+# Verification — version 1.6.0, 28 September 2026
 
-The full retained Lean build passed: 4,324 Lake jobs, including the current
-submission, retained earlier statements and research entry points. Lean is
-pinned to 4.35.0-rc2 and Mathlib to
+The full retained Lean build passed: 4,333 Lake jobs, including the current
+submission, earlier statements and research entry points. Lean remains pinned
+to `leanprover/lean4:v4.35.0-rc2`; Mathlib remains pinned to
 `065356127b1dc0016f66b7283ce0ce2c4055aa55`.
 
-The independent Challenge/Solution comparison passed for all ten selected
-theorem declarations and 35 supporting declarations. Theorem 1.5 now applies
-to arbitrary wandering normality components, including multiply connected
-ones. Its simple-connectivity hypothesis was removed without adding a
-replacement hypothesis. The proof formalises the covering and removable-filling
-argument in the six modules under `BoundedWanderingDomains/Surfaces/BKL/`.
+All fourteen selected theorem declarations and 38 supporting declarations match
+between the independent Challenge and Solution. The seven new records comprise
+four theorem statements and three definitions. All 45 records from version 1.5.0
+are unchanged except for the requested descriptive theorem names. The original
+entire-function theorem retains its exact name and compiled statement.
 
-Compared with the preceding linter update, 44 of the 45 current declaration
-records are identical. The changed record is
-`SurfaceDynamics.WanderingDerivedSingularLimitClaim`; the unused supporting
-definition `SurfaceDynamics.LocalMap.HasSimplyConnectedComponentOrbit` is no longer a
-comparison target. In particular, the original entire-function theorem retains
-its exact compiled statement. The other selected statements are unchanged.
+The new results are compact wandering-orbit derived-singular accumulation,
+almost-everywhere source escape, positive-area ambient compact exclusion away
+from derived singular values, and almost-everywhere ambient escape or
+derived-singular accumulation. The completed BKL proof without simple
+connectivity remains included. Measurable wandering sets lie in the
+infinite-iteration locus outside normality; every iterate is injective on the
+starting set. Nullity is expressed in every chart, and escape concerns a chosen
+subsequence rather than permanent escape of the full orbit.
 
-All ten proofs depend only on `propext`, `Classical.choice` and `Quot.sound`.
-The current proof closure has 777 local modules; the full retained proof closure
-has 798. Both passed the source audit for `sorry`, `admit`, custom axioms,
-`native_decide` and imports of independent challenges.
+Every selected proof uses only `propext`, `Classical.choice` and `Quot.sound`.
+The active proof closure contains 786 local modules; the full retained closure
+contains 807. Both passed the scan for proof holes, custom axioms,
+`native_decide`, and imports of independent challenges.
 
 ## Warnings and supporting checks
 
-There are no ordinary linter warnings in the full build. The 18 remaining
-warnings are intentional proof placeholders in the three independent Challenge
-files. These specifications are never imported by the solutions. No linter was
-disabled. The preceding linter update fixed 385 ordinary warnings, and the new
-BKL modules have also been checked and corrected.
+The full build has zero ordinary linter warnings. Its 22 warnings are intentional
+`sorry` placeholders in the three independent Challenge specifications, which
+are never imported by proofs. No linter was disabled. The earlier linter fixes
+and the warning-free BKL modules are retained, and all new modules were checked.
 
-The pinned Palomar metadata contract passed using PyYAML 6.0.3. The attribution
-audit passed: 12 licence texts, 51 attribution files and 274 vendored headers.
-The source-structure audit passed for the active import closures. Existing
-auxiliary audit-module name collisions outside those closures are recorded in
-its report.
+The pinned Palomar metadata contract passed with PyYAML 6.0.3. The public abstract
+now mentions positive-area wandering sets, almost-everywhere conclusions, and
+the classical no-wandering corollaries. The attribution audit passed for all
+12 licence texts, 51 attribution files and 274 vendored headers. The structure
+audit passed for active import closures; auxiliary audit modules with identical
+names outside those closures remain recorded as historical tooling.
 
-Reproduce the local checks with:
+Reproduce the checks with:
 
 ```sh
 python3 scripts/verify_paper.py --all
@@ -47,32 +48,19 @@ python3 scripts/audit_structure.py
 python3 -X utf8 scripts/audit_attribution.py
 ```
 
-Install PyYAML for the metadata checker. Fetch the pinned Mathlib cache first
-with `python3 scripts/fetch_cache.py`, and preserve `.lake` when updating.
-The final changed-source build took 10.7 minutes;
-the complete local build/declaration audit took
-13.1 minutes. These measurements used
-an existing dependency cache and are not cold-build estimates for other machines.
+The metadata checker needs PyYAML. A fresh checkout should first run
+`python3 scripts/fetch_cache.py`. Preserve `.lake` when updating. The final local
+build and declaration audit took 3.9 minutes with an existing dependency
+cache; this is not a cold-build estimate for another machine.
 
-Evidence is in `verification/paper-submission.json`, `verification/bkl-release.json`,
+Evidence is in `verification/ae-release.json`, `verification/paper-submission.json`,
 the paper build/declaration/axiom logs, `verification/paper-check-timings.json`,
 `verification/metadata.json`, `verification/attribution.json` and
-`verification/structure-audit.json`. Older reports remain historical evidence.
+`verification/structure-audit.json`. Earlier release reports are historical.
 
-## Statement scope and external verification
+## External verification
 
-The rational corollary uses open holomorphic self-maps of the whole compact
-sphere, including infinity. The finite-singular-value entire corollary assumes
-transcendence; polynomial dynamics is included in the rational case. A separate
-finite-type meromorphic no-wandering corollary is not selected, although the
-local derived-set theorem now includes multiply connected components.
-
-The official sandboxed Palomar Comparator and NanoDa/con-ron replay were not
-run in this Windows session. The supplied Linux CI runs those checks after
-upload; local independent declaration comparison is a separate check.
-The standalone FunctionTheory verifier encountered a certificate error in its
-separate Mathlib fetch before compilation. All dependency modules imported by
-the submitted and retained proofs were checked by the main pinned build.
-
-The README and metadata preserve the author's revised paper background,
-including the independent-proof attribution and the planned joint preprint.
+The official sandboxed Palomar Comparator and NanoDa/con-ron replay were not run
+locally for this version. The included Linux workflow runs these checks after
+upload. The local declaration comparison, Lean kernel checks and axiom audit
+are distinct from those external checks and from registry review or acceptance.

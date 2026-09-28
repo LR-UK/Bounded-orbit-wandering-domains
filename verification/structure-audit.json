@@ -1,5 +1,5 @@
 {
-  "tracked_lean_files": 1379,
+  "tracked_lean_files": 1388,
   "auxiliary_module_name_collisions": {
     "scripts.Audit": [
       "dependencies/ComplexApproximation/scripts/Audit.lean",
@@ -10,8 +10,8 @@
   },
   "root_closures": {
     "Solution": {
-      "local": 777,
-      "external_frontier": 372
+      "local": 786,
+      "external_frontier": 373
     },
     "Challenge": {
       "local": 1,
@@ -46,7 +46,7 @@
       "external_frontier": 223
     }
   },
-  "all_root_local_modules": 801,
+  "all_root_local_modules": 810,
   "extra_local_modules_in_legacy_build": [
     "BoundedWanderingDomains.LocalCoveringArea",
     "BoundedWanderingDomains.LocalDerivedSetAreaContradiction",
@@ -650,7 +650,7 @@
     "verification.SurfaceAxioms",
     "verification.UnconditionalAxioms"
   ],
-  "diagnostic_commands": 1323,
+  "diagnostic_commands": 1331,
   "paper_diagnostic_commands": 0,
   "diagnostics_by_file": {
     "dependencies/ComplexApproximation/scripts/Audit.lean": 160,
@@ -659,10 +659,10 @@
     "dependencies/FunctionTheory/scripts/Audit.lean": 608,
     "verification/Axioms.lean": 20,
     "verification/CoveringAxioms.lean": 29,
-    "verification/ExportPaperSolution.lean": 10,
+    "verification/ExportPaperSolution.lean": 14,
     "verification/KernelAxioms.lean": 4,
     "verification/NewResultsAxioms.lean": 16,
-    "verification/PaperAxioms.lean": 10,
+    "verification/PaperAxioms.lean": 14,
     "verification/SurfaceAxioms.lean": 116,
     "verification/UnconditionalAxioms.lean": 7
   },
@@ -852,6 +852,26 @@
     ],
     "BoundedWanderingDomains/SubmissionDefinitions.lean": [
       "Mathlib.Analysis.Complex.CauchyIntegral"
+    ],
+    "BoundedWanderingDomains/Surfaces/AlmostEverywhere/CompactAreaRestriction.lean": [
+      "BoundedWanderingDomains.Surfaces.AnchorComplementModels",
+      "BoundedWanderingDomains.Surfaces.SubsurfaceRegularValues"
+    ],
+    "BoundedWanderingDomains/Surfaces/AlmostEverywhere/CompactDerivedArea.lean": [
+      "BoundedWanderingDomains.Surfaces.RegularCoveringArea",
+      "BoundedWanderingDomains.Surfaces.PositiveAreaAdvanceReduction",
+      "BoundedWanderingDomains.Surfaces.PositiveAreaExceptionalReduction",
+      "BoundedWanderingDomains.Surfaces.AnchorComplementModels"
+    ],
+    "BoundedWanderingDomains/Surfaces/AlmostEverywhere/DerivedSingular.lean": [
+      "BoundedWanderingDomains.Surfaces.AlmostEverywhere.Definitions",
+      "BoundedWanderingDomains.Surfaces.CompactClusterSeparation"
+    ],
+    "BoundedWanderingDomains/Surfaces/AlmostEverywhere/PositiveAreaImage.lean": [
+      "BoundedWanderingDomains.Surfaces.SaturationDynamics"
+    ],
+    "BoundedWanderingDomains/Surfaces/AlmostEverywhere/ThreePointHyperbolization.lean": [
+      "BoundedWanderingDomains.Surfaces.UniformizationBridge"
     ],
     "BoundedWanderingDomains/Surfaces/BKL/AnalyticCompletion.lean": [
       "BoundedWanderingDomains.Surfaces.LocalMapTotalization",
@@ -1497,7 +1517,9 @@
     ],
     "Solution.lean": [
       "BoundedWanderingDomains.GlobalLimitStatements",
-      "BoundedWanderingDomains.Surfaces.SurfaceOrbitEscape"
+      "BoundedWanderingDomains.Surfaces.SurfaceOrbitEscape",
+      "BoundedWanderingDomains.Surfaces.SurfaceDerivedLimits",
+      "BoundedWanderingDomains.Surfaces.SurfacePositiveArea"
     ],
     "dependencies/ComplexApproximation/ComplexApproximation.lean": [
       "ComplexApproximation.Topology.FilledContinua",
@@ -2707,6 +2729,15 @@
     "BoundedWanderingDomains.SphericalSingularUnbounded",
     "BoundedWanderingDomains.SphericalSingularValues",
     "BoundedWanderingDomains.SubmissionDefinitions",
+    "BoundedWanderingDomains.Surfaces.AlmostEverywhere.CompactAreaRestriction",
+    "BoundedWanderingDomains.Surfaces.AlmostEverywhere.CompactDerivedArea",
+    "BoundedWanderingDomains.Surfaces.AlmostEverywhere.CompactSource",
+    "BoundedWanderingDomains.Surfaces.AlmostEverywhere.Definitions",
+    "BoundedWanderingDomains.Surfaces.AlmostEverywhere.DerivedSingular",
+    "BoundedWanderingDomains.Surfaces.AlmostEverywhere.OrbitShift",
+    "BoundedWanderingDomains.Surfaces.AlmostEverywhere.PositiveAreaImage",
+    "BoundedWanderingDomains.Surfaces.AlmostEverywhere.Results",
+    "BoundedWanderingDomains.Surfaces.AlmostEverywhere.ThreePointHyperbolization",
     "BoundedWanderingDomains.Surfaces.AmbientChartPartition",
     "BoundedWanderingDomains.Surfaces.AnalyticSurface",
     "BoundedWanderingDomains.Surfaces.AnchorComplementModels",
@@ -4147,6 +4178,65 @@
       "Mathlib.MeasureTheory.Measure.Lebesgue.Complex",
       "Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected",
       "ComplexDynamics.Basic"
+    ],
+    "BoundedWanderingDomains.Surfaces.AlmostEverywhere.CompactAreaRestriction": [
+      "BoundedWanderingDomains.Surfaces.AlmostEverywhere.CompactDerivedArea",
+      "BoundedWanderingDomains.Surfaces.AlmostEverywhere.ThreePointHyperbolization",
+      "BoundedWanderingDomains.Surfaces.AnchorComplementModels",
+      "BoundedWanderingDomains.Surfaces.SubsurfaceCompactNormal",
+      "BoundedWanderingDomains.Surfaces.SubsurfaceRegularValues",
+      "BoundedWanderingDomains.Surfaces.RestrictionSaturationBridge"
+    ],
+    "BoundedWanderingDomains.Surfaces.AlmostEverywhere.CompactDerivedArea": [
+      "BoundedWanderingDomains.Surfaces.RegularCoveringArea",
+      "BoundedWanderingDomains.Surfaces.PositiveAreaAdvanceReduction",
+      "BoundedWanderingDomains.Surfaces.PositiveAreaExceptionalReduction",
+      "BoundedWanderingDomains.Surfaces.ForwardSourceBarrier",
+      "BoundedWanderingDomains.Surfaces.BarrierCompactOrbit",
+      "BoundedWanderingDomains.Surfaces.CompactClusterSeparation",
+      "BoundedWanderingDomains.Surfaces.OmegaDynamics",
+      "BoundedWanderingDomains.Surfaces.CompactAnchorNormality",
+      "BoundedWanderingDomains.Surfaces.AnchorComplementModels",
+      "BoundedWanderingDomains.Surfaces.CompactGlobalAnchors",
+      "BoundedWanderingDomains.Surfaces.CompactGlobalSingularValues",
+      "BoundedWanderingDomains.Surfaces.CompactAnchorAreaReduction",
+      "BoundedWanderingDomains.Surfaces.FiniteDefectAreaAdvance",
+      "BoundedWanderingDomains.Surfaces.SubsurfaceRegularValues"
+    ],
+    "BoundedWanderingDomains.Surfaces.AlmostEverywhere.CompactSource": [
+      "BoundedWanderingDomains.Surfaces.AlmostEverywhere.Definitions",
+      "BoundedWanderingDomains.Surfaces.SurfacePositiveArea",
+      "BoundedWanderingDomains.Surfaces.NoEscapeCompactRange"
+    ],
+    "BoundedWanderingDomains.Surfaces.AlmostEverywhere.Definitions": [
+      "BoundedWanderingDomains.Surfaces.Statements"
+    ],
+    "BoundedWanderingDomains.Surfaces.AlmostEverywhere.DerivedSingular": [
+      "BoundedWanderingDomains.Surfaces.AlmostEverywhere.Definitions",
+      "BoundedWanderingDomains.Surfaces.AlmostEverywhere.CompactSource",
+      "BoundedWanderingDomains.Surfaces.CompactClusterSeparation",
+      "BoundedWanderingDomains.Surfaces.AlmostEverywhere.CompactAreaRestriction",
+      "BoundedWanderingDomains.Surfaces.AlmostEverywhere.PositiveAreaImage"
+    ],
+    "BoundedWanderingDomains.Surfaces.AlmostEverywhere.OrbitShift": [
+      "BoundedWanderingDomains.Surfaces.OmegaDynamics",
+      "BoundedWanderingDomains.Surfaces.SaturationDynamics"
+    ],
+    "BoundedWanderingDomains.Surfaces.AlmostEverywhere.PositiveAreaImage": [
+      "BoundedWanderingDomains.Surfaces.PositiveAreaBridge",
+      "Mathlib.MeasureTheory.Measure.Regular",
+      "BoundedWanderingDomains.Surfaces.ChartCriticalValues",
+      "BoundedWanderingDomains.Surfaces.SaturationDynamics",
+      "BoundedWanderingDomains.Surfaces.AlmostEverywhere.OrbitShift"
+    ],
+    "BoundedWanderingDomains.Surfaces.AlmostEverywhere.Results": [
+      "BoundedWanderingDomains.Surfaces.AlmostEverywhere.DerivedSingular",
+      "BoundedWanderingDomains.Surfaces.SurfaceDerivedLimits"
+    ],
+    "BoundedWanderingDomains.Surfaces.AlmostEverywhere.ThreePointHyperbolization": [
+      "BoundedWanderingDomains.Surfaces.PlaneCoverPuncture",
+      "BoundedWanderingDomains.Surfaces.SpherePunctureCover",
+      "BoundedWanderingDomains.Surfaces.UniformizationBridge"
     ],
     "BoundedWanderingDomains.Surfaces.AmbientChartPartition": [
       "BoundedWanderingDomains.Surfaces.DomainSurfaceGreenIdentity",
@@ -6522,6 +6612,7 @@
       "FunctionTheory.Conformal.RiemannMapping"
     ],
     "Solution": [
+      "BoundedWanderingDomains.Surfaces.AlmostEverywhere.Results",
       "BoundedWanderingDomains.NoWanderingCorollaries",
       "BoundedWanderingDomains.EntireBoundedOrbit",
       "BoundedWanderingDomains.GlobalLimitStatements",
@@ -11297,6 +11388,15 @@
     "BoundedWanderingDomains.SphericalSingularUnbounded": "BoundedWanderingDomains/SphericalSingularUnbounded.lean",
     "BoundedWanderingDomains.SphericalSingularValues": "BoundedWanderingDomains/SphericalSingularValues.lean",
     "BoundedWanderingDomains.SubmissionDefinitions": "BoundedWanderingDomains/SubmissionDefinitions.lean",
+    "BoundedWanderingDomains.Surfaces.AlmostEverywhere.CompactAreaRestriction": "BoundedWanderingDomains/Surfaces/AlmostEverywhere/CompactAreaRestriction.lean",
+    "BoundedWanderingDomains.Surfaces.AlmostEverywhere.CompactDerivedArea": "BoundedWanderingDomains/Surfaces/AlmostEverywhere/CompactDerivedArea.lean",
+    "BoundedWanderingDomains.Surfaces.AlmostEverywhere.CompactSource": "BoundedWanderingDomains/Surfaces/AlmostEverywhere/CompactSource.lean",
+    "BoundedWanderingDomains.Surfaces.AlmostEverywhere.Definitions": "BoundedWanderingDomains/Surfaces/AlmostEverywhere/Definitions.lean",
+    "BoundedWanderingDomains.Surfaces.AlmostEverywhere.DerivedSingular": "BoundedWanderingDomains/Surfaces/AlmostEverywhere/DerivedSingular.lean",
+    "BoundedWanderingDomains.Surfaces.AlmostEverywhere.OrbitShift": "BoundedWanderingDomains/Surfaces/AlmostEverywhere/OrbitShift.lean",
+    "BoundedWanderingDomains.Surfaces.AlmostEverywhere.PositiveAreaImage": "BoundedWanderingDomains/Surfaces/AlmostEverywhere/PositiveAreaImage.lean",
+    "BoundedWanderingDomains.Surfaces.AlmostEverywhere.Results": "BoundedWanderingDomains/Surfaces/AlmostEverywhere/Results.lean",
+    "BoundedWanderingDomains.Surfaces.AlmostEverywhere.ThreePointHyperbolization": "BoundedWanderingDomains/Surfaces/AlmostEverywhere/ThreePointHyperbolization.lean",
     "BoundedWanderingDomains.Surfaces.AmbientChartPartition": "BoundedWanderingDomains/Surfaces/AmbientChartPartition.lean",
     "BoundedWanderingDomains.Surfaces.AnalyticSurface": "BoundedWanderingDomains/Surfaces/AnalyticSurface.lean",
     "BoundedWanderingDomains.Surfaces.AnchorComplementModels": "BoundedWanderingDomains/Surfaces/AnchorComplementModels.lean",
@@ -13125,6 +13225,42 @@
       "bytes": 3030,
       "lines": 55
     },
+    "BoundedWanderingDomains.Surfaces.AlmostEverywhere.CompactAreaRestriction": {
+      "bytes": 8860,
+      "lines": 180
+    },
+    "BoundedWanderingDomains.Surfaces.AlmostEverywhere.CompactDerivedArea": {
+      "bytes": 18982,
+      "lines": 399
+    },
+    "BoundedWanderingDomains.Surfaces.AlmostEverywhere.CompactSource": {
+      "bytes": 8214,
+      "lines": 183
+    },
+    "BoundedWanderingDomains.Surfaces.AlmostEverywhere.Definitions": {
+      "bytes": 1435,
+      "lines": 34
+    },
+    "BoundedWanderingDomains.Surfaces.AlmostEverywhere.DerivedSingular": {
+      "bytes": 6561,
+      "lines": 132
+    },
+    "BoundedWanderingDomains.Surfaces.AlmostEverywhere.OrbitShift": {
+      "bytes": 5895,
+      "lines": 137
+    },
+    "BoundedWanderingDomains.Surfaces.AlmostEverywhere.PositiveAreaImage": {
+      "bytes": 10013,
+      "lines": 222
+    },
+    "BoundedWanderingDomains.Surfaces.AlmostEverywhere.Results": {
+      "bytes": 4360,
+      "lines": 77
+    },
+    "BoundedWanderingDomains.Surfaces.AlmostEverywhere.ThreePointHyperbolization": {
+      "bytes": 7607,
+      "lines": 151
+    },
     "BoundedWanderingDomains.Surfaces.AmbientChartPartition": {
       "bytes": 3092,
       "lines": 71
@@ -13838,7 +13974,7 @@
       "lines": 178
     },
     "BoundedWanderingDomains.Surfaces.OrbitEscapeReduction": {
-      "bytes": 1741,
+      "bytes": 1762,
       "lines": 40
     },
     "BoundedWanderingDomains.Surfaces.PaperAreaLemma": {
@@ -13878,7 +14014,7 @@
       "lines": 220
     },
     "BoundedWanderingDomains.Surfaces.PositiveAreaFinalReduction": {
-      "bytes": 10203,
+      "bytes": 10219,
       "lines": 222
     },
     "BoundedWanderingDomains.Surfaces.PunctureBarrier": {
@@ -13962,7 +14098,7 @@
       "lines": 311
     },
     "BoundedWanderingDomains.Surfaces.Statements": {
-      "bytes": 3016,
+      "bytes": 3066,
       "lines": 71
     },
     "BoundedWanderingDomains.Surfaces.SubdomainCover": {
@@ -14122,8 +14258,8 @@
       "lines": 68
     },
     "Challenge": {
-      "bytes": 16594,
-      "lines": 405
+      "bytes": 20390,
+      "lines": 486
     },
     "EremenkoLyubichConstant.ClassB": {
       "bytes": 4830,
@@ -14718,8 +14854,8 @@
       "lines": 194
     },
     "Solution": {
-      "bytes": 4902,
-      "lines": 116
+      "bytes": 5313,
+      "lines": 117
     },
     "ComplexApproximation": {
       "bytes": 1991,
@@ -17990,12 +18126,12 @@
       "lines": 31
     },
     "verification.ExportPaperChallenge": {
-      "bytes": 3847,
+      "bytes": 4587,
       "lines": 41
     },
     "verification.ExportPaperSolution": {
-      "bytes": 4544,
-      "lines": 55
+      "bytes": 5910,
+      "lines": 60
     },
     "verification.ExportSingularLimitsChallenge": {
       "bytes": 2076,
@@ -18018,8 +18154,8 @@
       "lines": 20
     },
     "verification.PaperAxioms": {
-      "bytes": 641,
-      "lines": 14
+      "bytes": 1267,
+      "lines": 19
     },
     "verification.SurfaceAxioms": {
       "bytes": 8476,

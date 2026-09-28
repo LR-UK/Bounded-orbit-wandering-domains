@@ -2,7 +2,7 @@
   "result": "passed",
   "validator_repository": "https://github.com/PalomarRegistry/PalomarSubmission",
   "validator_commit": "e48a86d0495356b5131a92c9406aa6e27cf99e56",
-  "metadata_sha256": "41d7941d97a5f0adff9b5cb5a2dd6ad3037944bed3aea310566110c624cbd2e5",
+  "metadata_sha256": "4141c2e24494fa8f8dae7b4e8ab01b6f23182373e1a4efe914fae11d493dd1e4",
   "metadata_hash_encoding": "UTF-8 with LF line endings",
   "provenance": {
     "result_origin": "source-based",
@@ -126,7 +126,7 @@
         ],
         "relationship": "background",
         "identifier": "https://doi.org/10.1007/BF03323112",
-        "note": "The covering and filling argument is adapted to fixed-radius covering discs of locally defined maps. Removable-point completion and discrete backward orbits remove the simple-connectivity hypothesis from Theorem 1.5. The formalisation does not assert that whole later local components become simply connected or add a separate finite-type meromorphic corollary.",
+        "note": "The covering and filling argument is adapted to fixed-radius covering discs of locally defined maps. Removable-point completion and discrete backward orbits remove the simple-connectivity hypothesis from the local derived-singular theorem. The formalisation does not assert that whole later local components become simply connected or add a separate finite-type meromorphic corollary.",
         "type": "paper"
       }
     ],

@@ -2,6 +2,7 @@
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
+import BoundedWanderingDomains.Surfaces.AlmostEverywhere.Results
 import BoundedWanderingDomains.NoWanderingCorollaries
 import BoundedWanderingDomains.EntireBoundedOrbit
 import BoundedWanderingDomains.GlobalLimitStatements
@@ -34,7 +35,7 @@ def wandering_orbit_locallyUniform_inftyClaim : Prop :=
         (fun k w => ((f^[φ k]) w : OnePoint ℂ))
         (fun _ => (∞ : OnePoint ℂ)) atTop (U 0)
 
-theorem theorem_1_2_entire : wandering_orbit_locallyUniform_inftyClaim := by
+theorem wandering_domain_has_locally_uniform_escaping_subsequence : wandering_orbit_locallyUniform_inftyClaim := by
   intro f hf htrans U z hU hz hforward hdis
   exact wandering_orbit_locallyUniform_infty hf htrans hU hz hforward hdis
 
@@ -49,7 +50,7 @@ def wandering_orbit_pointwise_spherical_singular_derivedSetClaim : Prop :=
         StrictMono φ ∧ Tendsto
           (fun k => ((f^[φ k]) z : OnePoint ℂ)) atTop (𝓝 a)
 
-theorem theorem_1_4 : wandering_orbit_pointwise_spherical_singular_derivedSetClaim := by
+theorem wandering_orbit_accumulates_on_derived_singular_values : wandering_orbit_pointwise_spherical_singular_derivedSetClaim := by
   intro f hf htrans U z hU hz hforward hdis
   exact wandering_orbit_pointwise_spherical_singular_derivedSet
     hf htrans hU hz hforward hdis
@@ -74,7 +75,7 @@ def WanderingLocallyUniformInfinityClaim : Prop :=
           (fun k w => ((f^[φ k]) w : OnePoint ℂ))
           (fun _ => (∞ : OnePoint ℂ)) atTop (U 0)
 
-theorem theorem_1_2_meromorphic : WanderingLocallyUniformInfinityClaim :=
+theorem wandering_domain_has_locally_uniform_escaping_subsequence : WanderingLocallyUniformInfinityClaim :=
   wanderingLocallyUniformInfinityClaim_of_surface_theorem
     SurfaceDynamics.noCompactWanderingOrbitClaim
 
@@ -86,28 +87,28 @@ variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X]
   [ConnectedSpace X] [IsManifold 𝓘(ℂ) 1 X]
 
-theorem theorem_1_3_orbit : NoCompactWanderingOrbitClaim (X := X) :=
+theorem wandering_component_orbit_not_compactly_contained : NoCompactWanderingOrbitClaim (X := X) :=
   noCompactWanderingOrbitClaim
 
-theorem theorem_1_5 : WanderingDerivedSingularLimitClaim (X := X) :=
+theorem wandering_orbit_has_escaping_or_derived_singular_subsequence : WanderingDerivedSingularLimitClaim (X := X) :=
   wanderingDerivedSingularLimitClaim
 
 variable
   [MeasurableSpace X] [BorelSpace X]
 
-theorem theorem_1_3_positive_area : NoCompactPositiveAreaWanderingSetClaim (X := X) :=
+theorem positive_area_wandering_saturation_not_compactly_contained : NoCompactPositiveAreaWanderingSetClaim (X := X) :=
   noCompactPositiveAreaWanderingSetClaim
 
-/-- The exact positive-area statement of Theorem 1.3(2) for every
+/-- The exact positive-area statement of the positive-area wandering-set theorem for every
 noncompact Riemann surface. -/
-theorem theorem_1_3_positive_area_noncompact [NoncompactSpace X] :
+theorem positive_area_wandering_saturation_not_compactly_contained_noncompact [NoncompactSpace X] :
     NoCompactPositiveAreaWanderingSetClaim (X := X) := by
   let : DecidableEq X := Classical.decEq X
   exact noCompactPositiveAreaWanderingSetClaim_of_noncompact
 
-/-- The exact positive-area statement of Theorem 1.3(2) for every
+/-- The exact positive-area statement of the positive-area wandering-set theorem for every
 hyperbolic Riemann surface, including compact ones. -/
-theorem theorem_1_3_positive_area_hyperbolic
+theorem positive_area_wandering_saturation_not_compactly_contained_hyperbolic
     (hX : RiemannDynamics.IsHyperbolic X) :
     NoCompactPositiveAreaWanderingSetClaim (X := X) := by
   let : DecidableEq X := Classical.decEq X

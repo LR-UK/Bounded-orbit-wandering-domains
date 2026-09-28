@@ -12,7 +12,7 @@ variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X]
   [ConnectedSpace X] [IsManifold 𝓘(ℂ) 1 X]
 
-/-- The analytic form of Theorem 1.3(1): pairwise disjoint normality
+/-- The analytic form of the compact-orbit exclusion theorem: pairwise disjoint normality
 components cannot contain a marked orbit confined to a compact subset of the
 source.  The wrapper theorem below shows that this is exactly the remaining
 area contradiction after unpacking `IsWanderingComponent`. -/
