@@ -29,7 +29,7 @@ statement unchanged and includes the following results.
 - **Positive-area and almost-everywhere results:** let $A$ be a measurable set
   in the infinite-iteration locus, outside the normality locus, with pairwise
   disjoint forward images and each iterate injective on $A$. Almost every point
-  of $A$ has a subsequence escaping every compact subset of $O$. More strongly,
+  of $A$ has a subsequence escaping every compact subset of $O$. Moreover,
   almost every point has a subsequence escaping ambient compact sets or
   converging to a derived singular value of the actual local map. The compact-set
   formulations are retained: a positive-area forward saturation cannot stay in
@@ -38,9 +38,8 @@ statement unchanged and includes the following results.
   no global surface measure is chosen.
 - **Finite-type no-wandering theorem:** an open holomorphic map from an open
   subset of a compact Riemann surface to that surface has no wandering normality
-  components if its singular set is finite. This recovers Epstein's theorem and
-  also allows removable source punctures. It follows directly from the local
-  derived-singular theorem.
+  components if its singular set is finite. This recovers a theorem of Adam Epstein. 
+  It follows directly from the local derived-singular theorem.
 - **Classical no-wandering corollaries:** rational maps, compact Riemann surface
   self-maps, and class S entire and meromorphic functions have no wandering
   domains. All are deduced from the finite-type theorem. The explicit plane
@@ -68,8 +67,8 @@ no-wandering domain theorems without quasiconformal techniques*,
 [arXiv:2609.23834](https://arxiv.org/abs/2609.23834). All four preprints acknowledge
 generative AI in the generation of their proofs.
 
-The authors of [PRW] and [DPU] have agreed to combine their efforts and are preparing a joint preprint
-containing all the results formalised here.
+The authors of [PRW] and [DPU] have agreed to combine their efforts and are preparing a joint preprint,
+which is expected to contain all the results formalised here.
 
 This unconditional formalisation was prepared with generative AI for submission
 to Palomar, based on [PRW], the new statements, proof sketches and prompts by
