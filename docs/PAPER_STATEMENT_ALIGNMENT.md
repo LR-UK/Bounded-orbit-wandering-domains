@@ -1,6 +1,6 @@
 # Statement alignment
 
-The independent `Challenge.lean` and proved `Solution.lean` select fourteen
+The independent `Challenge.lean` and proved `Solution.lean` select sixteen
 theorems. All names are descriptive, without unpublished manuscript numbering.
 The original entire-function bounded-orbit theorem keeps its exact name and
 statement. The current challenge imports only Mathlib; the proofs never import it.
@@ -28,11 +28,17 @@ statement. The current challenge imports only Mathlib; the proofs never import i
   has a subsequence escaping source compacts. Also, almost every point has an
   ambient-escaping or derived-singular subsequence. The exceptional set is
   Lebesgue-null in every chart. These conclusions do not require a global measure.
+- **Finite-type theorem:** an open holomorphic map from an arbitrary open
+  subset of a compact Riemann surface into that surface, with a finite singular
+  set, has no wandering normality components. Neither simple connectivity nor
+  maximality of the source is assumed; removable punctures are permitted.
 - **Classical corollaries:** no wandering domains for compact-surface self-maps,
-  rational maps in the intrinsic holomorphic-sphere formulation, or
-  transcendental entire functions with finitely many finite singular values.
-  Polynomial maps are included among rational maps. No separate finite-type
-  meromorphic no-wandering corollary is selected.
+  rational maps in the intrinsic holomorphic-sphere formulation, and class S
+  transcendental entire and meromorphic functions. All follow from the finite-type
+  theorem. Polynomial maps are included among rational maps. Meromorphic singular
+  values are defined using the genuine sphere-valued map and surjective local
+  coverings, including omitted values. The pole-avoiding Fatou components agree
+  with the normality components of the local sphere model.
 
 The almost-everywhere and compact-source area formulations are equivalent by
 countable exhaustion, finite-prefix compactness and countable stability of null

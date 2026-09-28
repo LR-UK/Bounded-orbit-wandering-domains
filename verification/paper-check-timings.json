@@ -12,7 +12,7 @@
       "Legacy.SingularLimitsChallenge",
       "Legacy.SingularLimitsSolution"
     ],
-    "seconds": 91.07818549999502
+    "seconds": 90.57408690004377
   },
   {
     "command": [
@@ -20,7 +20,7 @@
       "lean",
       "verification/ExportPaperChallenge.lean"
     ],
-    "seconds": 64.25306730001466
+    "seconds": 63.598618799995165
   },
   {
     "command": [
@@ -28,6 +28,6 @@
       "lean",
       "verification/ExportPaperSolution.lean"
     ],
-    "seconds": 77.81667229998857
+    "seconds": 78.50178669998422
   }
 ]

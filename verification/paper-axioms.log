@@ -12,3 +12,5 @@
 'SurfaceDynamics.almost_every_wandering_point_has_source_escaping_subsequence' depends on axioms: [propext, Classical.choice, Quot.sound]
 'SurfaceDynamics.positive_area_wandering_saturation_not_compactly_contained_away_from_derived' depends on axioms: [propext, Classical.choice, Quot.sound]
 'SurfaceDynamics.almost_every_wandering_point_has_escaping_or_derived_singular_subsequence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SurfaceDynamics.no_wandering_domains_finite_type' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MeromorphicDynamics.no_wandering_domains_transcendental_meromorphic_finite_singularValues' depends on axioms: [propext, Classical.choice, Quot.sound]

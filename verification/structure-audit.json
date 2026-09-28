@@ -1,5 +1,5 @@
 {
-  "tracked_lean_files": 1388,
+  "tracked_lean_files": 1391,
   "auxiliary_module_name_collisions": {
     "scripts.Audit": [
       "dependencies/ComplexApproximation/scripts/Audit.lean",
@@ -10,7 +10,7 @@
   },
   "root_closures": {
     "Solution": {
-      "local": 786,
+      "local": 789,
       "external_frontier": 373
     },
     "Challenge": {
@@ -46,7 +46,7 @@
       "external_frontier": 223
     }
   },
-  "all_root_local_modules": 810,
+  "all_root_local_modules": 813,
   "extra_local_modules_in_legacy_build": [
     "BoundedWanderingDomains.LocalCoveringArea",
     "BoundedWanderingDomains.LocalDerivedSetAreaContradiction",
@@ -650,7 +650,7 @@
     "verification.SurfaceAxioms",
     "verification.UnconditionalAxioms"
   ],
-  "diagnostic_commands": 1331,
+  "diagnostic_commands": 1335,
   "paper_diagnostic_commands": 0,
   "diagnostics_by_file": {
     "dependencies/ComplexApproximation/scripts/Audit.lean": 160,
@@ -659,10 +659,10 @@
     "dependencies/FunctionTheory/scripts/Audit.lean": 608,
     "verification/Axioms.lean": 20,
     "verification/CoveringAxioms.lean": 29,
-    "verification/ExportPaperSolution.lean": 14,
+    "verification/ExportPaperSolution.lean": 16,
     "verification/KernelAxioms.lean": 4,
     "verification/NewResultsAxioms.lean": 16,
-    "verification/PaperAxioms.lean": 14,
+    "verification/PaperAxioms.lean": 16,
     "verification/SurfaceAxioms.lean": 116,
     "verification/UnconditionalAxioms.lean": 7
   },
@@ -1516,8 +1516,6 @@
       "FunctionTheory.Conformal.RiemannMapping"
     ],
     "Solution.lean": [
-      "BoundedWanderingDomains.GlobalLimitStatements",
-      "BoundedWanderingDomains.Surfaces.SurfaceOrbitEscape",
       "BoundedWanderingDomains.Surfaces.SurfaceDerivedLimits",
       "BoundedWanderingDomains.Surfaces.SurfacePositiveArea"
     ],
@@ -2649,6 +2647,7 @@
     "BoundedWanderingDomains.DiscSchwarzPick",
     "BoundedWanderingDomains.EntireBoundedOrbit",
     "BoundedWanderingDomains.EntireFatouBridge",
+    "BoundedWanderingDomains.EntireSurfaceModel",
     "BoundedWanderingDomains.EventualCompactDiscs",
     "BoundedWanderingDomains.EventualCoveringDiscs",
     "BoundedWanderingDomains.ExceptionalSets",
@@ -2689,6 +2688,7 @@
     "BoundedWanderingDomains.LogarithmicCutoff",
     "BoundedWanderingDomains.MeromorphicEscape",
     "BoundedWanderingDomains.MeromorphicNormalityBridge",
+    "BoundedWanderingDomains.MeromorphicSingularValues",
     "BoundedWanderingDomains.MeromorphicSphereHolomorphic",
     "BoundedWanderingDomains.MeromorphicSurfaceModel",
     "BoundedWanderingDomains.NoWanderingCorollaries",
@@ -2867,6 +2867,7 @@
     "BoundedWanderingDomains.Surfaces.FinitePunctureRemoteChart",
     "BoundedWanderingDomains.Surfaces.FinitePunctureTopology",
     "BoundedWanderingDomains.Surfaces.FiniteSurfacePunctureCutoff",
+    "BoundedWanderingDomains.Surfaces.FiniteType",
     "BoundedWanderingDomains.Surfaces.ForwardSourceBarrier",
     "BoundedWanderingDomains.Surfaces.GainFatou",
     "BoundedWanderingDomains.Surfaces.GlobalDomainSurfaceGreen",
@@ -3737,6 +3738,10 @@
       "BoundedWanderingDomains.ConditionalWanderingDomains",
       "ComplexDynamics.BoundedNormality"
     ],
+    "BoundedWanderingDomains.EntireSurfaceModel": [
+      "BoundedWanderingDomains.MeromorphicNormalityBridge",
+      "BoundedWanderingDomains.MeromorphicSingularValues"
+    ],
     "BoundedWanderingDomains.EventualCompactDiscs": [
       "BoundedWanderingDomains.ConditionalWanderingDomains"
     ],
@@ -3982,6 +3987,11 @@
       "BoundedWanderingDomains.MeromorphicSurfaceModel",
       "ComplexDynamics.Basic"
     ],
+    "BoundedWanderingDomains.MeromorphicSingularValues": [
+      "BoundedWanderingDomains.MeromorphicSurfaceModel",
+      "BoundedWanderingDomains.SingularValues",
+      "FunctionTheory.Conformal.LittlePicardBloch"
+    ],
     "BoundedWanderingDomains.MeromorphicSphereHolomorphic": [
       "FunctionTheory.Meromorphic.Sphere",
       "NoWanderingDomains.Sphere.SphereHolomorphic",
@@ -3995,8 +4005,9 @@
       "FunctionTheory.Meromorphic.RationalInfinity"
     ],
     "BoundedWanderingDomains.NoWanderingCorollaries": [
-      "BoundedWanderingDomains.GlobalLimitStatements",
-      "BoundedWanderingDomains.Surfaces.SurfaceOrbitEscape"
+      "BoundedWanderingDomains.EntireSurfaceModel",
+      "BoundedWanderingDomains.Surfaces.FiniteType",
+      "BoundedWanderingDomains.Surfaces.CompactGlobalSingularValues"
     ],
     "BoundedWanderingDomains.NormalFamilies": [
       "BoundedWanderingDomains.RiemannMappingFull",
@@ -4892,6 +4903,9 @@
     ],
     "BoundedWanderingDomains.Surfaces.FiniteSurfacePunctureCutoff": [
       "BoundedWanderingDomains.Surfaces.SurfaceLogCutoff"
+    ],
+    "BoundedWanderingDomains.Surfaces.FiniteType": [
+      "BoundedWanderingDomains.Surfaces.SurfaceDerivedLimits"
     ],
     "BoundedWanderingDomains.Surfaces.ForwardSourceBarrier": [
       "BoundedWanderingDomains.Surfaces.LocalMapPunctureBarrier"
@@ -11297,6 +11311,7 @@
     "BoundedWanderingDomains.DiscSchwarzPick": "BoundedWanderingDomains/DiscSchwarzPick.lean",
     "BoundedWanderingDomains.EntireBoundedOrbit": "BoundedWanderingDomains/EntireBoundedOrbit.lean",
     "BoundedWanderingDomains.EntireFatouBridge": "BoundedWanderingDomains/EntireFatouBridge.lean",
+    "BoundedWanderingDomains.EntireSurfaceModel": "BoundedWanderingDomains/EntireSurfaceModel.lean",
     "BoundedWanderingDomains.EventualCompactDiscs": "BoundedWanderingDomains/EventualCompactDiscs.lean",
     "BoundedWanderingDomains.EventualCoveringDiscs": "BoundedWanderingDomains/EventualCoveringDiscs.lean",
     "BoundedWanderingDomains.ExceptionalSets": "BoundedWanderingDomains/ExceptionalSets.lean",
@@ -11347,6 +11362,7 @@
     "BoundedWanderingDomains.LogarithmicCutoff": "BoundedWanderingDomains/LogarithmicCutoff.lean",
     "BoundedWanderingDomains.MeromorphicEscape": "BoundedWanderingDomains/MeromorphicEscape.lean",
     "BoundedWanderingDomains.MeromorphicNormalityBridge": "BoundedWanderingDomains/MeromorphicNormalityBridge.lean",
+    "BoundedWanderingDomains.MeromorphicSingularValues": "BoundedWanderingDomains/MeromorphicSingularValues.lean",
     "BoundedWanderingDomains.MeromorphicSphereHolomorphic": "BoundedWanderingDomains/MeromorphicSphereHolomorphic.lean",
     "BoundedWanderingDomains.MeromorphicSurfaceModel": "BoundedWanderingDomains/MeromorphicSurfaceModel.lean",
     "BoundedWanderingDomains.NoWanderingCorollaries": "BoundedWanderingDomains/NoWanderingCorollaries.lean",
@@ -11528,6 +11544,7 @@
     "BoundedWanderingDomains.Surfaces.FinitePunctureTopology": "BoundedWanderingDomains/Surfaces/FinitePunctureTopology.lean",
     "BoundedWanderingDomains.Surfaces.FiniteSurfaceCutoffGreen": "BoundedWanderingDomains/Surfaces/FiniteSurfaceCutoffGreen.lean",
     "BoundedWanderingDomains.Surfaces.FiniteSurfacePunctureCutoff": "BoundedWanderingDomains/Surfaces/FiniteSurfacePunctureCutoff.lean",
+    "BoundedWanderingDomains.Surfaces.FiniteType": "BoundedWanderingDomains/Surfaces/FiniteType.lean",
     "BoundedWanderingDomains.Surfaces.ForwardSourceBarrier": "BoundedWanderingDomains/Surfaces/ForwardSourceBarrier.lean",
     "BoundedWanderingDomains.Surfaces.GainFatou": "BoundedWanderingDomains/Surfaces/GainFatou.lean",
     "BoundedWanderingDomains.Surfaces.GeometricArea": "BoundedWanderingDomains/Surfaces/GeometricArea.lean",
@@ -12861,6 +12878,10 @@
       "bytes": 3405,
       "lines": 72
     },
+    "BoundedWanderingDomains.EntireSurfaceModel": {
+      "bytes": 1792,
+      "lines": 40
+    },
     "BoundedWanderingDomains.EventualCompactDiscs": {
       "bytes": 6088,
       "lines": 121
@@ -13061,6 +13082,10 @@
       "bytes": 15770,
       "lines": 345
     },
+    "BoundedWanderingDomains.MeromorphicSingularValues": {
+      "bytes": 4654,
+      "lines": 102
+    },
     "BoundedWanderingDomains.MeromorphicSphereHolomorphic": {
       "bytes": 3679,
       "lines": 80
@@ -13070,8 +13095,8 @@
       "lines": 269
     },
     "BoundedWanderingDomains.NoWanderingCorollaries": {
-      "bytes": 3532,
-      "lines": 83
+      "bytes": 4805,
+      "lines": 102
     },
     "BoundedWanderingDomains.NormalFamilies": {
       "bytes": 5157,
@@ -13785,6 +13810,10 @@
       "bytes": 7233,
       "lines": 175
     },
+    "BoundedWanderingDomains.Surfaces.FiniteType": {
+      "bytes": 1989,
+      "lines": 46
+    },
     "BoundedWanderingDomains.Surfaces.ForwardSourceBarrier": {
       "bytes": 3653,
       "lines": 78
@@ -14258,8 +14287,8 @@
       "lines": 68
     },
     "Challenge": {
-      "bytes": 20390,
-      "lines": 486
+      "bytes": 22886,
+      "lines": 549
     },
     "EremenkoLyubichConstant.ClassB": {
       "bytes": 4830,
@@ -14854,8 +14883,8 @@
       "lines": 194
     },
     "Solution": {
-      "bytes": 5313,
-      "lines": 117
+      "bytes": 5080,
+      "lines": 112
     },
     "ComplexApproximation": {
       "bytes": 1991,
@@ -18126,12 +18155,12 @@
       "lines": 31
     },
     "verification.ExportPaperChallenge": {
-      "bytes": 4587,
+      "bytes": 4843,
       "lines": 41
     },
     "verification.ExportPaperSolution": {
-      "bytes": 5910,
-      "lines": 60
+      "bytes": 6334,
+      "lines": 63
     },
     "verification.ExportSingularLimitsChallenge": {
       "bytes": 2076,
@@ -18154,8 +18183,8 @@
       "lines": 20
     },
     "verification.PaperAxioms": {
-      "bytes": 1267,
-      "lines": 19
+      "bytes": 1435,
+      "lines": 22
     },
     "verification.SurfaceAxioms": {
       "bytes": 8476,

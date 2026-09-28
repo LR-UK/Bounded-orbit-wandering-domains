@@ -59,11 +59,6 @@ end BoundedWanderingDomains
 
 namespace MeromorphicDynamics
 
-/-- The independent challenge's germ-based rationality convention. -/
-def IsRationalMeromorphic (f : ℂ → ℂ) : Prop :=
-  ∃ p q : Polynomial ℂ, q ≠ 0 ∧
-    ∀ a : ℂ, f =ᶠ[𝓝[≠] a] (fun z => p.eval z / q.eval z)
-
 def WanderingLocallyUniformInfinityClaim : Prop :=
     ∀ {f : ℂ → ℂ}, MeromorphicNFOn f univ →
       ¬ IsRationalMeromorphic f →

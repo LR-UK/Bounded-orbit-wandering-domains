@@ -2,16 +2,18 @@
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.GlobalLimitStatements
-import BoundedWanderingDomains.Surfaces.SurfaceOrbitEscape
+import BoundedWanderingDomains.EntireSurfaceModel
+import BoundedWanderingDomains.Surfaces.FiniteType
+import BoundedWanderingDomains.Surfaces.CompactGlobalSingularValues
 
 /-! # Classical no-wandering corollaries
 
 The compact-surface result includes nonconstant rational maps, represented
 intrinsically as open holomorphic self-maps of the Riemann sphere. The sphere
 statement is valid for every complex atlas, hence for the standard sphere atlas.
-The entire statement treats the transcendental case with finitely many finite
-singular values. Polynomial dynamics is included in the compact sphere case.
+The entire and meromorphic statements treat the transcendental case with
+finitely many singular values. Polynomial dynamics is included in the compact
+sphere case. Every corollary below follows from the general finite-type theorem.
 -/
 
 open Set Function Filter OnePoint
@@ -26,17 +28,19 @@ theorem no_wandering_domains_transcendental_entire_finite_singularValues
     (hfinite : (ComplexDynamics.singularValues f).Finite)
     {U : ℕ → Set ℂ} {z : ℂ}
     (hU : ∀ n, ComplexDynamics.IsFatouComponent f (U n))
-    (hz : z ∈ U 0) (hforward : ∀ n, MapsTo f (U n) (U (n + 1))) :
+    (_hz : z ∈ U 0) (hforward : ∀ n, MapsTo f (U n) (U (n + 1))) :
     ¬ Pairwise (fun n m : ℕ => Disjoint (U n) (U m)) := by
   intro hdis
-  obtain ⟨a, ha, _⟩ := wandering_orbit_pointwise_spherical_singular_derivedSet
-    hf htrans hU hz hforward hdis
-  have hS : (ComplexDynamics.sphericalSingularValues f).Finite :=
-    (hfinite.image ((↑) : ℂ → OnePoint ℂ)).insert ∞
-  have hac : a ∈ closure (ComplexDynamics.sphericalSingularValues f \ {a}) :=
-    mem_closure_iff_clusterPt.mpr (accPt_principal_iff_clusterPt.mp ha)
-  have ham := hS.sdiff.isClosed.closure_subset hac
-  exact ham.2 (mem_singleton a)
+  have hnonconst : ¬ ∃ c, ∀ z, f z = c := by
+    rintro ⟨c, hc⟩
+    exact htrans ⟨Polynomial.C c, fun z => by simpa using hc z⟩
+  have hS : (MeromorphicDynamics.surfaceModel f).singularValues.Finite := by
+    rw [MeromorphicDynamics.surfaceModel_singularValues]
+    exact MeromorphicDynamics.finite_singularValues_of_entire hf hnonconst hfinite
+  exact SurfaceDynamics.no_wandering_domains_finite_type _
+    (MeromorphicDynamics.surfaceModel_isOpenHolomorphic_of_entire hf hnonconst) hS _
+    (MeromorphicDynamics.surfaceModel_isWanderingComponent_of_fatouComponents
+      (fun n => MeromorphicDynamics.isFatouComponent_of_entire hf (hU n)) hforward hdis)
 
 end BoundedWanderingDomains
 
@@ -52,21 +56,36 @@ theorem no_wandering_domains_compact [CompactSpace X]
     (f : LocalMap X) (hf : IsOpenHolomorphic f)
     (hglobal : (f.source : Set X) = univ) (U : Set X) :
     ¬ f.IsWanderingComponent U := by
-  intro hU
-  have hW := hU
-  obtain ⟨V, hV0, hVcomp, _, _⟩ := hW
-  obtain ⟨z, hz, hVz⟩ := hVcomp 0
-  have hzU : z ∈ U := by
-    rw [← hV0, hVz]
-    exact mem_connectedComponentIn hz
-  have hzT : z ∈ f.trapped := interior_subset (f.omega_subset_trapped_interior hz)
-  obtain ⟨n, hn⟩ := noCompactWanderingOrbitClaim f hf U hU z hzU univ
-    isCompact_univ (by rw [hglobal])
-  apply hn
-  exact ⟨f.orbit n ⟨z, hzT⟩, mem_univ _,
-    (f.compactifiedIterate_eq_orbit n ⟨z, hzT⟩).symm⟩
+  have hsource : f.source = ⊤ := SetLike.coe_injective hglobal
+  obtain ⟨B, hB⟩ := f.exists_finite_singularValues_of_compact_global hf hsource
+  exact no_wandering_domains_finite_type f hf (B.finite_toSet.subset hB) U
 
 end SurfaceDynamics
+
+namespace MeromorphicDynamics
+
+/-- The independent challenge's germ-based rationality convention. -/
+def IsRationalMeromorphic (f : ℂ → ℂ) : Prop :=
+  ∃ p q : Polynomial ℂ, q ≠ 0 ∧
+    ∀ a : ℂ, f =ᶠ[𝓝[≠] a] (fun z => p.eval z / q.eval z)
+
+/-- A transcendental meromorphic function with finitely many singular values
+on the sphere has no wandering Fatou domains. Poles are included in the
+holomorphic source model; the Fatou components avoid poles and prepoles. -/
+theorem no_wandering_domains_transcendental_meromorphic_finite_singularValues
+    {f : ℂ → ℂ} (hf : MeromorphicNFOn f univ)
+    (htrans : ¬ IsRationalMeromorphic f) (hfinite : (singularValues f).Finite)
+    {U : ℕ → Set ℂ} (hU : ∀ n, IsFatouComponent f (U n))
+    (hforward : ∀ n, MapsTo f (U n) (U (n + 1))) :
+    ¬ Pairwise (fun n m : ℕ => Disjoint (U n) (U m)) := by
+  intro hdis
+  have hS : (surfaceModel f).singularValues.Finite := by
+    rwa [surfaceModel_singularValues]
+  exact SurfaceDynamics.no_wandering_domains_finite_type (surfaceModel f)
+    (surfaceModel_isOpenHolomorphic hf htrans) hS (finiteImage (U 0))
+    (surfaceModel_isWanderingComponent_of_fatouComponents hU hforward hdis)
+
+end MeromorphicDynamics
 
 namespace SurfaceDynamics
 

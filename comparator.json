@@ -15,7 +15,9 @@
     "SurfaceDynamics.compact_wandering_orbit_accumulates_on_derived_singular_values",
     "SurfaceDynamics.almost_every_wandering_point_has_source_escaping_subsequence",
     "SurfaceDynamics.positive_area_wandering_saturation_not_compactly_contained_away_from_derived",
-    "SurfaceDynamics.almost_every_wandering_point_has_escaping_or_derived_singular_subsequence"
+    "SurfaceDynamics.almost_every_wandering_point_has_escaping_or_derived_singular_subsequence",
+    "SurfaceDynamics.no_wandering_domains_finite_type",
+    "MeromorphicDynamics.no_wandering_domains_transcendental_meromorphic_finite_singularValues"
   ],
   "definition_names": [
     "ComplexDynamics.IsNormalSequenceOn",
@@ -48,7 +50,10 @@
     "MeromorphicDynamics.IsFatouComponent",
     "SurfaceDynamics.ChartAlmostEverywhere",
     "SurfaceDynamics.LocalMap.HasSourceEscapingSubsequence",
-    "SurfaceDynamics.LocalMap.HasEscapingOrDerivedSingularSubsequence"
+    "SurfaceDynamics.LocalMap.HasEscapingOrDerivedSingularSubsequence",
+    "FunctionTheory.meromorphicSphereValue",
+    "MeromorphicDynamics.regularValues",
+    "MeromorphicDynamics.singularValues"
   ],
   "permitted_axioms": [
     "propext",

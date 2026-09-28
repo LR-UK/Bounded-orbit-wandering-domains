@@ -1,4 +1,4 @@
-⚠ [4306/4333] Built Challenge (32s)
+⚠ [4308/4322] Built Challenge (33s)
 warning: Challenge.lean:301:8: declaration uses `sorry`
 warning: Challenge.lean:304:8: declaration uses `sorry`
 warning: Challenge.lean:312:8: declaration uses `sorry`
@@ -13,16 +13,18 @@ warning: Challenge.lean:451:8: declaration uses `sorry`
 warning: Challenge.lean:462:8: declaration uses `sorry`
 warning: Challenge.lean:470:8: declaration uses `sorry`
 warning: Challenge.lean:478:8: declaration uses `sorry`
-⚠ [4326/4333] Replayed Legacy.Challenge
+warning: Challenge.lean:502:8: declaration uses `sorry`
+warning: Challenge.lean:541:8: declaration uses `sorry`
+⚠ [4329/4336] Replayed Legacy.Challenge
 warning: Legacy/Challenge.lean:117:8: declaration uses `sorry`
 warning: Legacy/Challenge.lean:129:8: declaration uses `sorry`
 warning: Legacy/Challenge.lean:139:8: declaration uses `sorry`
 warning: Legacy/Challenge.lean:151:8: declaration uses `sorry`
 warning: Legacy/Challenge.lean:163:8: declaration uses `sorry`
 warning: Legacy/Challenge.lean:177:8: declaration uses `sorry`
-⚠ [4329/4333] Replayed Legacy.SingularLimitsChallenge
+⚠ [4332/4336] Replayed Legacy.SingularLimitsChallenge
 warning: Legacy/SingularLimitsChallenge.lean:125:8: declaration uses `sorry`
 warning: Legacy/SingularLimitsChallenge.lean:143:8: declaration uses `sorry`
-✔ [4331/4333] Built BoundedWanderingDomains.Surfaces.AlmostEverywhere.Results (34s)
-✔ [4332/4333] Built Solution (34s)
-Build completed successfully (4333 jobs).
+✔ [4334/4336] Built BoundedWanderingDomains.NoWanderingCorollaries (35s)
+✔ [4335/4336] Built Solution (34s)
+Build completed successfully (4336 jobs).

@@ -99,7 +99,7 @@ through their separate entry points. This keeps
 the established results reproducible without duplicating their proofs in the
 new surface assembly.
 
-All fourteen selected targets have only Lean's standard classical logical axioms. Supporting
+All sixteen selected targets have only Lean's standard classical logical axioms. Supporting
 geometric hypotheses such as disc-cover existence are discharged by the
 attributed uniformisation development; they are not extra target assumptions.
 
@@ -138,3 +138,27 @@ the almost-everywhere conclusion in every chart. No global measure is needed.
 `Results.lean` exposes the four new public statements, including the compact
 wandering-orbit corollary of the BKL theorem. These results concern subsequences;
 the full orbit is not asserted to escape permanently.
+
+## Finite-type theorem and classical corollaries
+
+`Surfaces/FiniteType.lean` applies the BKL-derived surface theorem to a marked
+point in a wandering component. Compactness of the target excludes escape;
+finiteness of the singular set excludes a derived singular value. This proves
+Epstein's no-wandering conclusion for open holomorphic maps with arbitrary open
+source in a compact Riemann surface, including maps with removable punctures.
+
+`NoWanderingCorollaries.lean` uses this theorem for every classical corollary.
+For a global map of a compact surface, the previously proved finite-singular-set
+lemma supplies finiteness; the rational case specialises to the sphere.
+`MeromorphicSingularValues.lean` identifies the intrinsic singular set of the
+local sphere model with the surjective-covering definition for the honest
+sphere-valued meromorphic map. Poles are ordinary source points mapping to
+infinity. `MeromorphicNormalityBridge.lean` carries actual Fatou components to
+normality components, so finite-type exclusion applies directly.
+
+`EntireSurfaceModel.lean` specialises that bridge to entire functions. The
+plane and meromorphic Fatou definitions agree since poles are absent. The
+original plane covering convention permits empty fibres; Little Picard shows
+that the omitted-value set has at most one point for a nonconstant entire map.
+Thus adjoining omitted values and infinity preserves finiteness and supplies
+the sphere-model hypothesis without changing the existing public statement.

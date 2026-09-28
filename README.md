@@ -36,9 +36,16 @@ statement unchanged and includes the following results.
   a source compact set, or in an ambient compact set avoiding derived singular
   values. Almost everywhere means outside a Lebesgue-null set in every chart;
   no global surface measure is chosen.
+- **Finite-type no-wandering theorem:** an open holomorphic map from an open
+  subset of a compact Riemann surface to that surface has no wandering normality
+  components if its singular set is finite. This recovers Epstein's theorem and
+  also allows removable source punctures. It follows directly from the local
+  derived-singular theorem.
 - **Classical no-wandering corollaries:** rational maps, compact Riemann surface
-  self-maps, and transcendental entire functions with finitely many singular
-  values have no wandering domains. Polynomials are included among rational maps.
+  self-maps, and class S entire and meromorphic functions have no wandering
+  domains. All are deduced from the finite-type theorem. The explicit plane
+  corollaries treat transcendental functions; polynomials and rational functions
+  are covered by the intrinsic rational-map statement.
 
 All escape conclusions above refer to subsequences where stated; they do not
 assert that the full orbit eventually leaves every compact set forever.
@@ -75,11 +82,13 @@ All the above statements are proved in Lean.
 The independent specifications are in [Challenge.lean](Challenge.lean);
 the proofs are exposed by [Solution.lean](Solution.lean). The original
 entire-function bounded-orbit theorem is also included under its unchanged name
-and statement. The current challenge selects fourteen theorem declarations, with descriptive
+and statement. The current challenge selects sixteen theorem declarations, with descriptive
 names independent of unpublished manuscript numbering.
 
 | Paper statement | Proved declaration |
 |---|---|
+| Finite-type local maps on compact surfaces: no wandering domains | `SurfaceDynamics.no_wandering_domains_finite_type` |
+| Class S transcendental meromorphic functions: no wandering domains | `MeromorphicDynamics.no_wandering_domains_transcendental_meromorphic_finite_singularValues` |
 | Entire escape | `BoundedWanderingDomains.wandering_domain_has_locally_uniform_escaping_subsequence` |
 | Meromorphic escape | `MeromorphicDynamics.wandering_domain_has_locally_uniform_escaping_subsequence` |
 | Local compact-orbit exclusion | `SurfaceDynamics.wandering_component_orbit_not_compactly_contained` |
@@ -95,8 +104,9 @@ names independent of unpublished manuscript numbering.
 | Positive-area compact exclusion away from derived singular values | `SurfaceDynamics.positive_area_wandering_saturation_not_compactly_contained_away_from_derived` |
 | Almost-everywhere ambient escape or derived-singular accumulation | `SurfaceDynamics.almost_every_wandering_point_has_escaping_or_derived_singular_subsequence` |
 
-The surface statements apply to arbitrary Riemann surfaces and actual local
-open holomorphic maps. The original compact-orbit exclusion concerns compact
+The local escape and derived-singular statements apply to arbitrary Riemann
+surfaces and actual local open holomorphic maps. The finite-type no-wandering
+theorem assumes that the ambient surface is compact, as in Epstein's setting. The original compact-orbit exclusion concerns compact
 subsets of the source; the derived-singular compact versions allow compact
 subsets of the ambient surface. No simple-connectivity hypothesis is imposed.
 Meromorphic maps may have poles. See [statement alignment](docs/PAPER_STATEMENT_ALIGNMENT.md)
@@ -110,8 +120,17 @@ The rational-map corollary is stated intrinsically for open holomorphic maps
 on the whole Riemann sphere, including poles and infinity. Its proof specialises
 the compact-surface theorem; it does not require a polynomial-quotient encoding.
 The finite-type entire corollary explicitly assumes transcendence and finiteness
-of the finite singular-value set. No separate finite-type meromorphic
-no-wandering corollary is selected in the current challenge.
+of the finite singular-value set. The meromorphic corollary uses the genuine
+sphere-valued map, sending poles to infinity. Its singular set is the complement
+of values with a surjectively covered neighbourhood, so omitted values are
+included. Finiteness is equivalent to finiteness of the finite singular values.
+Both plane corollaries transport actual Fatou components to the local sphere
+model before applying the general finite-type theorem.
+
+The finite-type no-wandering theorem is due to Adam Epstein, *Towers of finite
+type complex analytic maps*, PhD thesis, CUNY (1993). Here it is obtained as a
+corollary of the derived-singular theorem, rather than by formalising Epstein's
+original deformation argument. See also [Epstein's course description](https://pi.math.cornell.edu/m/Courses/GradCourses/SP00/722).
 
 The local derived-singular theorem uses a local adaptation of the covering and filling argument in:
 
@@ -131,7 +150,7 @@ supporting proofs are grouped into six files in
 The only top-level Lean files are the two current submission files.
 
 ```text
-Challenge.lean        All fourteen current statements
+Challenge.lean        All sixteen current statements
 Solution.lean         Proved versions of those statements
 BoundedWanderingDomains/   Main proof library, including CoveringSolution.lean
 RiemannDynamics/           Meromorphic dynamics proofs
@@ -174,7 +193,7 @@ Linux with working bubblewrap user namespaces:
 bash scripts/verify-comparator.sh comparator.json
 ```
 
-`comparator.json` selects all fourteen targets. Challenge `sorry` placeholders are
+`comparator.json` selects all sixteen targets. Challenge `sorry` placeholders are
 intentional specifications and are never imported by the proofs.
 
 See [VERIFICATION.md](docs/VERIFICATION.md) for actual check results and the distinction

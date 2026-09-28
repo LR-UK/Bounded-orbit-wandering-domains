@@ -17,7 +17,7 @@ import Mathlib.Analysis.Meromorphic.NormalForm
 
 /-! # Independent challenge for wandering-domain and wandering-set results
 
-Fourteen targets cover entire and meromorphic escape, local compact-orbit and
+Sixteen targets cover entire and meromorphic escape, local compact-orbit and
 derived-singular accumulation, positive-area and almost-everywhere wandering
 sets, the unchanged original entire theorem, and classical no-wandering
 corollaries. Descriptive names do not depend on manuscript numbering.
@@ -355,8 +355,8 @@ end BoundedWanderingDomains
 
 The rational statement uses the intrinsic holomorphic-sphere formulation.
 The finite-singular-value entire statement explicitly treats the transcendental
-case; polynomials are included among rational maps. No meromorphic finite-type
-no-wandering theorem is asserted. -/
+case; polynomials are included among rational maps. All classical corollaries
+follow from the finite-type theorem below, which also covers meromorphic maps. -/
 
 namespace BoundedWanderingDomains
 
@@ -484,3 +484,66 @@ theorem almost_every_wandering_point_has_escaping_or_derived_singular_subsequenc
   sorry
 
 end SurfaceDynamics
+
+/-! ## Finite-type maps and the meromorphic class S corollary
+
+The target surface is compact; its open source need not be compact or maximal.
+In particular no exclusion of removable source punctures is assumed.
+-/
+
+namespace SurfaceDynamics
+
+variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
+  [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X]
+  [ConnectedSpace X] [IsManifold 𝓘(ℂ) 1 X] [CompactSpace X]
+
+/-- An open holomorphic map on an open subset of a compact Riemann surface
+with a finite singular set has no wandering normality components. -/
+theorem no_wandering_domains_finite_type
+    (f : LocalMap X) (hf : IsOpenHolomorphic f)
+    (hfinite : f.singularValues.Finite) (U : Set X) :
+    ¬ f.IsWanderingComponent U := by
+  sorry
+
+end SurfaceDynamics
+
+-- Match the canonical complex instances of the sphere-value definition.
+attribute [-instance] instCommCStarAlgebraComplex
+
+namespace FunctionTheory
+
+-- The original definition predates the inner-product-space imports here.
+attribute [local instance 2000] NormedField.toNormedSpace
+
+/-- The genuine sphere value of a normal meromorphic representative. -/
+noncomputable def meromorphicSphereValue (f : ℂ → ℂ) (z : ℂ) : OnePoint ℂ := by
+  classical
+  exact if AnalyticAt ℂ f z then (f z : OnePoint ℂ) else ∞
+
+end FunctionTheory
+
+namespace MeromorphicDynamics
+
+/-- Values with a neighbourhood covered surjectively by the honest
+sphere-valued meromorphic map. -/
+def regularValues (f : ℂ → ℂ) : Set (OnePoint ℂ) :=
+  {y | ∃ W : Set (OnePoint ℂ), IsOpen W ∧ y ∈ W ∧
+    W ⊆ range (FunctionTheory.meromorphicSphereValue f) ∧
+    IsCoveringMapOn (FunctionTheory.meromorphicSphereValue f) W}
+
+/-- Singular values on the sphere, including any omitted values. -/
+def singularValues (f : ℂ → ℂ) : Set (OnePoint ℂ) := (regularValues f)ᶜ
+
+attribute [instance] instCommCStarAlgebraComplex
+
+/-- A transcendental meromorphic map with a finite singular set on the
+sphere has no wandering Fatou domains. -/
+theorem no_wandering_domains_transcendental_meromorphic_finite_singularValues
+    {f : ℂ → ℂ} (hf : MeromorphicNFOn f univ)
+    (htrans : ¬ IsRationalMeromorphic f) (hfinite : (singularValues f).Finite)
+    {U : ℕ → Set ℂ} (hU : ∀ n, IsFatouComponent f (U n))
+    (hforward : ∀ n, MapsTo f (U n) (U (n + 1))) :
+    ¬ Pairwise (fun n m : ℕ => Disjoint (U n) (U m)) := by
+  sorry
+
+end MeromorphicDynamics

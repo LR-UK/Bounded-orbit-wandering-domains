@@ -2,7 +2,7 @@
   "result": "passed",
   "validator_repository": "https://github.com/PalomarRegistry/PalomarSubmission",
   "validator_commit": "e48a86d0495356b5131a92c9406aa6e27cf99e56",
-  "metadata_sha256": "4141c2e24494fa8f8dae7b4e8ab01b6f23182373e1a4efe914fae11d493dd1e4",
+  "metadata_sha256": "8231d03349d77304ae4094d6842fbc41c1b3335e3561d062c1de75f2c4963c37",
   "metadata_hash_encoding": "UTF-8 with LF line endings",
   "provenance": {
     "result_origin": "source-based",
@@ -126,8 +126,20 @@
         ],
         "relationship": "background",
         "identifier": "https://doi.org/10.1007/BF03323112",
-        "note": "The covering and filling argument is adapted to fixed-radius covering discs of locally defined maps. Removable-point completion and discrete backward orbits remove the simple-connectivity hypothesis from the local derived-singular theorem. The formalisation does not assert that whole later local components become simply connected or add a separate finite-type meromorphic corollary.",
+        "note": "The covering and filling argument is adapted to fixed-radius covering discs of locally defined maps. Removable-point completion and discrete backward orbits remove the simple-connectivity hypothesis from the local derived-singular theorem. The formalisation does not assert that whole later local components become simply connected. A separate finite-type theorem and its meromorphic class S corollary are deduced from the resulting derived-singular statement.",
         "type": "paper"
+      },
+      {
+        "title": "Towers of finite type complex analytic maps",
+        "authors": [
+          {
+            "name": "Adam Epstein"
+          }
+        ],
+        "relationship": "background",
+        "identifier": "https://pcwww.liv.ac.uk/~lrempe/adam/thesis.pdf",
+        "note": "CUNY PhD thesis (1993). The finite-type no-wandering conclusion is recovered here as a corollary of the derived-singular theorem, not by formalising Epstein's original deformation argument. The target surface is compact; the source is an arbitrary open subset. Our statement permits removable source punctures, so no maximality assumption is needed.",
+        "type": "thesis"
       }
     ],
     "related_formalizations": [
