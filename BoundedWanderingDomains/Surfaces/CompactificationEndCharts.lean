@@ -15,6 +15,7 @@ variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
 
 namespace FinitePunctureDiscs
 
+omit [IsManifold 𝓘(ℂ, ℂ) 1 X] in
 /-- A punctured coordinate disc from a pairwise-disjoint ambient family
 survives restriction first past the compactification anchors, then past the
 old finite stage, and finally past the newly inserted point. -/
@@ -90,6 +91,7 @@ theorem puncturedBall_subset_three_restricted_targets
     exact c.right_inv hzt
   exact heq ▸ hmap
 
+omit [IsManifold 𝓘(ℂ, ℂ) 1 X] in
 /-- The inverse of a successively restricted compactification chart escapes
 every compact subset of an intermediate open subtype when its centre is not
 in that subtype. -/

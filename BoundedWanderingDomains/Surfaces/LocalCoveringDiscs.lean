@@ -47,6 +47,7 @@ open AreaDeficit.Surfaces
 variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [IsManifold 𝓘(ℂ) 1 X]
 
+omit [IsManifold 𝓘(ℂ, ℂ) 1 X] in
 theorem mdifferentiableOn_totalize (f : LocalMap X)
     (hf : MDifferentiable 𝓘(ℂ) 𝓘(ℂ) f.map) :
     MDifferentiableOn 𝓘(ℂ) 𝓘(ℂ) f.totalize f.source := by
@@ -58,6 +59,7 @@ theorem mdifferentiableOn_totalize (f : LocalMap X)
   rw [he]
   exact hf ⟨x, hx⟩
 
+omit [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ, ℂ) 1 X] in
 theorem isOpen_image_totalize (f : LocalMap X) (hf : IsOpenMap f.map)
     {D : Set X} (hD : IsOpen D) (hDs : D ⊆ f.source) :
     IsOpen (f.totalize '' D) := by

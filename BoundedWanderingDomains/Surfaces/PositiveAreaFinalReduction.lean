@@ -40,6 +40,7 @@ def CompactLocalAreaAdvanceClaim : Prop :=
                 (AreaDeficit.Surfaces.finitePunctureDomain (P ∪ E))
                 (f.totalize '' W) + C
 
+omit [ConnectedSpace X] in
 /-- The boundary-barrier contradiction using intrinsic area positivity
 directly.  This is the form used after moving the compact dynamics into a
 hyperbolic open subsurface. -/
@@ -112,6 +113,7 @@ theorem false_of_positiveHyperbolicArea_boundaryBarrier
     · exact hnotS (mem_iUnion.mpr ⟨n, (hcontain n).1 hp⟩)
     · exact hnotS (mem_iUnion.mpr ⟨n, (hcontain n).2 he⟩)
 
+omit [ConnectedSpace X] in
 /-- The area contradiction after the boundary barrier has already been
 constructed.  This form is stable under passing to a fixed hyperbolic open
 subsurface: normality is used only to obtain `hAP`, and does not occur in the
@@ -174,6 +176,7 @@ theorem false_of_positiveArea_boundaryBarrier
     · exact hnotS (mem_iUnion.mpr ⟨n, (hcontain n).1 hp⟩)
     · exact hnotS (mem_iUnion.mpr ⟨n, (hcontain n).2 he⟩)
 
+omit [ConnectedSpace X] in
 /-- Once compact local area advance is available, every positive-area
 wandering saturation on a disc-covered surface escapes compact subsets of
 the source.  All boundary, exceptional-set, measurability, and cancellation
@@ -193,6 +196,7 @@ theorem noCompactPositiveAreaWanderingSetClaim_of_discCover_areaAdvance
     (fun x hx => (hAbad hx).1) hdis hinj hApos hK hsatK V hVsource P
     hKV hVcompact hPmono hPforward hAP
 
+omit [ConnectedSpace X] in
 /-- Intrinsic-area version of the disc-covered conclusion. -/
 theorem noCompactPositiveHyperbolicAreaWanderingSet_of_discCover_areaAdvance
     (p : AreaDeficit.Surfaces.DiscCover X)

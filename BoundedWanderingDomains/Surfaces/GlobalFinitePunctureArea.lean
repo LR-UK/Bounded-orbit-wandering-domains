@@ -79,6 +79,7 @@ variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [LocallyCompactSpace X] [MeasurableSpace X] [BorelSpace X]
   [DecidableEq X]
 
+omit [LocallyCompactSpace X] in
 /-- A global finite-area package turns the one-step area inequality directly
 into the intrinsic positive-area contradiction, without compact containment
 in the punctured ambient surface. -/
@@ -104,6 +105,7 @@ theorem false_of_positive_hyperbolicArea_global_package
   refine ⟨E, f, W, hAW, hfW, himage, ?_, hstep, hcost (P n) E hEq _ hfW⟩
   exact ne_top_of_le_ne_top (htotal (P n)) (measure_mono (subset_univ W))
 
+omit [LocallyCompactSpace X] in
 /-- Chart-positive version of the global package reduction. -/
 theorem false_of_positive_area_global_package
     (p : AreaDeficit.Surfaces.DiscCover X) (q : ℕ)

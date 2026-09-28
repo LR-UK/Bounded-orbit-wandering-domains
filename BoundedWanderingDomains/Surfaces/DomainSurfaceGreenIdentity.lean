@@ -125,6 +125,7 @@ theorem domainAreaGain_lintegral_eq_chart_green
   congr 1
   exact AreaDeficit.green_laplacian hf htest htestCompact
 
+omit [MeasurableSpace M] [BorelSpace M] in
 /-- Each local Green pairing in the ambient-domain formula is nonnegative. -/
 theorem domain_chart_green_nonneg
     (p : DiscCover M) {U V : TopologicalSpace.Opens M} (hVU : V ≤ U)

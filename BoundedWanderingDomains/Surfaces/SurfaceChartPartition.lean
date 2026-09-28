@@ -25,9 +25,9 @@ partition. -/
 theorem exists_restrictedChartPartition
     (U : TopologicalSpace.Opens M) (hU : Nonempty U) :
     Nonempty (RestrictedChartPartition U hU) := by
-  letI : IsManifold 𝓘(ℝ, ℂ) ∞ U := isManifold_real_of_complex
-  letI : LocallyCompactSpace U := ChartedSpace.locallyCompactSpace ℂ U
-  letI : SigmaCompactSpace U := sigmaCompactSpace_of_locallyCompact_secondCountable
+  let : IsManifold 𝓘(ℝ, ℂ) ∞ U := isManifold_real_of_complex
+  let : LocallyCompactSpace U := ChartedSpace.locallyCompactSpace ℂ U
+  let : SigmaCompactSpace U := sigmaCompactSpace_of_locallyCompact_secondCountable
   let V : U → Set U := fun x =>
     ((chartAt ℂ (x : M)).subtypeRestr hU).source
   have hVopen : ∀ x, IsOpen (V x) := fun x =>
@@ -43,12 +43,13 @@ theorem exists_restrictedChartPartition
       isClosed_univ V hVopen hcover
   exact ⟨⟨rho, hrho⟩⟩
 
+omit [T2Space M] [SecondCountableTopology M] in
 theorem restrictedAmbientChart_mem_real_maximalAtlas
     {U : TopologicalSpace.Opens M} (hU : Nonempty U) (x : U) :
     (chartAt ℂ (x : M)).subtypeRestr hU ∈
       IsManifold.maximalAtlas 𝓘(ℝ, ℂ) 2 U := by
-  letI : IsManifold 𝓘(ℝ, ℂ) ∞ M := isManifold_real_of_complex
-  letI : IsManifold 𝓘(ℝ, ℂ) ∞ U := isManifold_real_of_complex
+  let : IsManifold 𝓘(ℝ, ℂ) ∞ M := isManifold_real_of_complex
+  let : IsManifold 𝓘(ℝ, ℂ) ∞ U := isManifold_real_of_complex
   exact StructureGroupoid.subtypeRestr_mem_maximalAtlas
     (G := contDiffGroupoid 2 𝓘(ℝ, ℂ))
       (chart_mem_atlas ℂ (x : M)) hU
@@ -63,12 +64,14 @@ noncomputable def active (P : RestrictedChartPartition U hU)
     (chi : U → ℝ) (hchi : HasCompactSupport chi) : Finset U :=
   (P.rho.locallyFinite.finite_nonempty_inter_compact hchi).toFinset
 
+omit [IsManifold 𝓘(ℂ, ℂ) 1 M] [T2Space M] [SecondCountableTopology M] in
 theorem mem_active_iff (P : RestrictedChartPartition U hU)
     {chi : U → ℝ} (hchi : HasCompactSupport chi) (i : U) :
     i ∈ P.active chi hchi ↔
       (support (P.rho i) ∩ tsupport chi).Nonempty := by
   simp [active]
 
+omit [IsManifold 𝓘(ℂ) 1 M] [T2Space M] [SecondCountableTopology M] in
 /-- On the support of a compact cutoff, the active finite part of the
 partition still sums to one. -/
 theorem sum_active_mul (P : RestrictedChartPartition U hU)

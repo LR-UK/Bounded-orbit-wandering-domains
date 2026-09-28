@@ -21,11 +21,13 @@ def sourceExhaustiveBackwardTree (f : LocalMap X)
   | n + 1 => sourceExhaustiveBackwardTree f K Q n ∪ Q (n + 1) ∪
       Subtype.val '' (K (n + 1) ∩ f.map ⁻¹' sourceExhaustiveBackwardTree f K Q n)
 
+omit [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X] [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ, ℂ) 1 X] in
 theorem sourceExhaustiveBackwardTree_mono (f : LocalMap X)
     (K : ℕ → Set f.source) (Q : ℕ → Set X) :
     Monotone (sourceExhaustiveBackwardTree f K Q) :=
   monotone_nat_of_le_succ fun _ => subset_union_left.trans subset_union_left
 
+omit [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X] [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ, ℂ) 1 X] in
 theorem roots_subset_sourceExhaustiveBackwardTree (f : LocalMap X)
     {K : ℕ → Set f.source} {Q : ℕ → Set X} (n : ℕ) :
     Q n ⊆ sourceExhaustiveBackwardTree f K Q n := by
@@ -33,6 +35,7 @@ theorem roots_subset_sourceExhaustiveBackwardTree (f : LocalMap X)
   | zero => exact Subset.rfl
   | succ n ih => exact fun _ hx => Or.inl (Or.inr hx)
 
+omit [LocallyCompactSpace X] [SecondCountableTopology X] in
 theorem sourceExhaustiveBackwardTree_finite (f : LocalMap X)
     (hf : IsOpenHolomorphic f) {K : ℕ → Set f.source}
     {Q : ℕ → Set X} (hK : ∀ n, IsCompact (K n))
@@ -47,6 +50,8 @@ theorem sourceExhaustiveBackwardTree_finite (f : LocalMap X)
       exact (ih.union (hQ (n + 1))).union
         (hpre.image (fun x : f.source => (x : X)))
 
+omit [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X]
+  [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ) 1 X] in
 theorem sourceExhaustiveBackwardTree_union_backward (f : LocalMap X)
     {K : ℕ → Set f.source} {Q : ℕ → Set X}
     (hKmono : Monotone K) (hKcover : (⋃ n, K n) = univ) :
@@ -68,6 +73,7 @@ theorem sourceExhaustiveBackwardTree_union_backward (f : LocalMap X)
   exact mem_iUnion.mpr ⟨n + 1, Or.inr
     ⟨x, ⟨hrn, hmn hm⟩, rfl⟩⟩
 
+omit [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X] [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ, ℂ) 1 X] in
 /-- Openness promotes backward invariance of a set to backward invariance of
 its closure, for a map with open source. -/
 theorem closure_source_backward_invariant (f : LocalMap X)
@@ -87,6 +93,7 @@ theorem closure_source_backward_invariant (f : LocalMap X)
     mem_closure_iff.mp hx _ himage hfx
   exact ⟨(z : X), hzW.1, hback z hyP⟩
 
+omit [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X] [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ, ℂ) 1 X] in
 theorem sourceExhaustiveBackwardTree_disjoint_forwardInvariant
     (f : LocalMap X) {K : ℕ → Set f.source} {Q : ℕ → Set X}
     {O : Set X} (hQO : ∀ n, Disjoint (Q n) O) (hO : IsOpen O)
@@ -121,7 +128,7 @@ theorem exists_source_finitePuncture_barrier (f : LocalMap X)
         (x : X) ∈ closure (⋃ n, P n)) ∧
       Disjoint (closure (⋃ n, P n)) O := by
   classical
-  letI : LocallyCompactSpace f.source := f.source.isOpen.locallyCompactSpace
+  let : LocallyCompactSpace f.source := f.source.isOpen.locallyCompactSpace
   obtain ⟨Q, _, hQA, hQclosure⟩ :=
     AreaDeficit.Surfaces.closed_set_dense_finite_exhaustion hA
   let R : ℕ → Set X := fun n => (Q n : Set X)

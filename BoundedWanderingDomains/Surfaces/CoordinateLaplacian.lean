@@ -13,6 +13,7 @@ variable {M : Type*} [TopologicalSpace M] [ChartedSpace ℂ M]
   [IsManifold 𝓘(ℂ) 1 M] [MeasurableSpace M] [BorelSpace M]
   [SecondCountableTopology M]
 
+omit [MeasurableSpace M] [BorelSpace M] [SecondCountableTopology M] in
 /-- A scalar function's Euclidean coordinate Laplacians transform by the
 square norm of the holomorphic transition derivative. -/
 theorem laplacian_coordinate_change

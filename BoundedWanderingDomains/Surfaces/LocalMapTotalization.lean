@@ -23,7 +23,7 @@ theorem totalize_eq (f : LocalMap X) {x : X} (hx : x ∈ f.source) :
 
 theorem continuousOn_totalize (f : LocalMap X) (hf : Continuous f.map) :
     ContinuousOn f.totalize f.source := by
-  rw [continuousOn_iff_continuous_restrict]
+  rw [continuousOn_iff_continuous_domRestrict]
   convert hf using 1
   funext x
   exact f.totalize_eq x.property

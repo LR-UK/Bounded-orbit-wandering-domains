@@ -161,10 +161,10 @@ theorem sphereChartInfty_apply (z : ℂ̂) :
   | coe z =>
     by_cases hz : z = 0
     · subst z
-      rw [inversionGL_smul_coe, if_pos rfl]
+      rw [inversionGL_smul_coe, ite_eq_left rfl]
       change ((((0 : ℂ) : ℂ̂)⁻¹).toComplex) = (∞ : ℂ̂).toComplex
       simp
-    · rw [inversionGL_smul_coe, if_neg hz, sphereChartFinite_coe]
+    · rw [inversionGL_smul_coe, ite_eq_right hz, sphereChartFinite_coe]
       simp only [sphereChartInfty,
         RiemannSphere.invCoeOpenPartialHomeomorph_symm_apply,
         RiemannSphere.inv_coe hz, RiemannSphere.toComplex_coe]
@@ -191,10 +191,10 @@ theorem sphereChartInfty_symm_apply (w : ℂ) :
     sphereChartInfty.symm w = inversionGL • ((w : ℂ̂)) := by
   by_cases hw : w = 0
   · subst w
-    rw [inversionGL_smul_coe, if_pos rfl]
+    rw [inversionGL_smul_coe, ite_eq_left rfl]
     change (((0 : ℂ) : ℂ̂)⁻¹) = (∞ : ℂ̂)
     exact RiemannSphere.inv_zero'
-  · rw [inversionGL_smul_coe, if_neg hw]
+  · rw [inversionGL_smul_coe, ite_eq_right hw]
     exact RiemannSphere.inv_coe hw
 
 /-! ## The charted-space and manifold instances -/

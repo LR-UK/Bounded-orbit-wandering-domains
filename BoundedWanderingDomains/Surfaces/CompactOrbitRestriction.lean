@@ -13,6 +13,7 @@ namespace SurfaceDynamics.LocalMap
 variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [IsManifold 𝓘(ℂ) 1 X] [T2Space X] [LocallyCompactSpace X]
 
+omit [T2Space X] [LocallyCompactSpace X] in
 /-- Uniform small-disc avoidance keeps a whole neighbourhood of a compact
 marked interior orbit inside any prescribed open neighbourhood of that orbit. -/
 theorem mem_interior_trapped_restrict_of_compact_orbit

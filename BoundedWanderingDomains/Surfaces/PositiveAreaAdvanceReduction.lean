@@ -57,6 +57,7 @@ theorem false_of_positive_area_area_advances
   exact false_of_positive_hyperbolicArea_area_advances p P hP hA
     (hApos.hyperbolicArea_pos hA p) hAP q hL hC hadvance
 
+omit [LocallyCompactSpace X] in
 /-- Intrinsic global finite-area version of the cancellation reduction.
 Compact containment is replaced by the exact two facts it supplied in the
 local proof: finiteness of the old model on the wandering union and a
@@ -85,6 +86,7 @@ theorem false_of_positive_hyperbolicArea_global_area_advances
   obtain ⟨E, f, W, hAW, hfW, himage, hfinite, hstep, hcost⟩ := hadvance n
   exact AreaDeficit.finite_area_cancellation_le hA hAW hfinite himage hstep hcost
 
+omit [LocallyCompactSpace X] in
 /-- Global finite-area version of the cancellation reduction.  Compact
 containment is replaced by the exact two facts it supplied in the local
 proof: finiteness of the old model on the wandering union and a uniform

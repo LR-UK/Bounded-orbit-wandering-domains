@@ -37,7 +37,7 @@ theorem normalizedThricePuncturedSphere_uniformGlobalPointInsertionBound
       RiemannSphere.coeOpenPartialHomeomorph.symm.target := by
     rw [hc0]
     exact (mdifferentiable_chart (I := 𝓘(ℂ)) (((0 : ℂ) : ℂ̂))).2
-  letI : LocallyCompactSpace U := U.isOpen.locallyCompactSpace
+  let : LocallyCompactSpace U := U.isOpen.locallyCompactSpace
   apply p.uniformGlobalPointInsertionBound_of_global_chart
       (c := c) (mdifferentiableOn_subtypeRestr hUN hc)
       (mdifferentiableOn_subtypeRestr_symm hUN hci)
@@ -46,7 +46,7 @@ theorem normalizedThricePuncturedSphere_uniformGlobalPointInsertionBound
     simp only [OpenPartialHomeomorph.subtypeRestr_source, mem_preimage]
     change (x : ℂ̂) ≠ (∞ : ℂ̂)
     exact fun hx =>
-      x.property (by simp [U, normalizedThricePuncturedSphere, hx])
+      x.property (by simp [normalizedThricePuncturedSphere, hx])
   · exact zero_ne_one
   · rintro ⟨h0, _⟩
     change 0 ∈ (RiemannSphere.coeOpenPartialHomeomorph.symm.subtypeRestr hUN).target at h0
@@ -56,7 +56,7 @@ theorem normalizedThricePuncturedSphere_uniformGlobalPointInsertionBound
       RiemannSphere.coeOpenPartialHomeomorph 0 at heq
     rw [heq] at hy
     change ((0 : ℂ) : ℂ̂) ∈ U at hy
-    exact hy (by simp [U, normalizedThricePuncturedSphere])
+    exact hy (by simp)
   · rintro ⟨h1, _⟩
     change 1 ∈ (RiemannSphere.coeOpenPartialHomeomorph.symm.subtypeRestr hUN).target at h1
     have hy := ((RiemannSphere.coeOpenPartialHomeomorph.symm.subtypeRestr hUN).symm 1).property
@@ -65,7 +65,7 @@ theorem normalizedThricePuncturedSphere_uniformGlobalPointInsertionBound
       RiemannSphere.coeOpenPartialHomeomorph 1 at heq
     rw [heq] at hy
     change ((1 : ℂ) : ℂ̂) ∈ U at hy
-    exact hy (by simp [U, normalizedThricePuncturedSphere])
+    exact hy (by simp)
 
 /-- The normalized estimate pulls back along a biholomorphism.  We use the
 pulled-back finite coordinate as a global chart, so no separate area-change
@@ -146,7 +146,7 @@ theorem uniformGlobalPointInsertionBound_of_diffeomorph_normalized
       RiemannSphere.coeOpenPartialHomeomorph 0 at heq
     rw [heq] at hy
     change ((0 : ℂ) : ℂ̂) ∈ V at hy
-    exact hy (by simp [V, normalizedThricePuncturedSphere])
+    exact hy (by simp)
   · rintro ⟨h1, _⟩
     change 1 ∈ (eh.trans n).target at h1
     rw [OpenPartialHomeomorph.trans_target] at h1
@@ -156,7 +156,7 @@ theorem uniformGlobalPointInsertionBound_of_diffeomorph_normalized
       RiemannSphere.coeOpenPartialHomeomorph 1 at heq
     rw [heq] at hy
     change ((1 : ℂ) : ℂ̂) ∈ V at hy
-    exact hy (by simp [V, normalizedThricePuncturedSphere])
+    exact hy (by simp)
 
 /-- A sphere domain contained in one global coordinate and omitting two
 points in that coordinate has the sharp global insertion bound. -/
@@ -172,7 +172,7 @@ theorem sphereDomain_uniformGlobalPointInsertionBound_of_chart
   classical
   have hUN : Nonempty U := ⟨p.projection discZero⟩
   let c : OpenPartialHomeomorph U ℂ := g.subtypeRestr hUN
-  letI : LocallyCompactSpace U := U.isOpen.locallyCompactSpace
+  let : LocallyCompactSpace U := U.isOpen.locallyCompactSpace
   apply p.uniformGlobalPointInsertionBound_of_global_chart
       (c := c) (mdifferentiableOn_subtypeRestr hUN hg)
       (mdifferentiableOn_subtypeRestr_symm hUN hgi)
@@ -234,7 +234,7 @@ theorem sphereComplThree_uniformGlobalPointInsertionBound
     exact by
       simp only [mem_compl_iff, mem_singleton_iff]
       intro hzc
-      exact hz (by simp [sphereComplThree, hzc])
+      exact hz (by simp [hzc])
   · change a ∈ (AreaDeficit.spherePoleChart c).target
     simpa only [AreaDeficit.spherePoleChart_target, mem_compl_iff,
       mem_singleton_iff] using hac
@@ -275,8 +275,6 @@ theorem uniformGlobalPointInsertionBound_of_diffeomorph_sphere
       ({(∞ : ℂ̂), ((0 : ℂ) : ℂ̂), ((1 : ℂ) : ℂ̂)} : Set ℂ̂)ᶜ
     rw [h.toHomeomorph.image_compl]
     congr 1
-    change (h.toHomeomorph : X → ℂ̂) '' ({a, b, c} : Set X) =
-      ({(∞ : ℂ̂), ((0 : ℂ) : ℂ̂), ((1 : ℂ) : ℂ̂)} : Set ℂ̂)
     have hea : h a = ((0 : ℂ) : ℂ̂) := by
       change eg (e a) = ((0 : ℂ) : ℂ̂)
       rw [heg]
@@ -292,7 +290,7 @@ theorem uniformGlobalPointInsertionBound_of_diffeomorph_sphere
     ext z
     simp [hea, heb, hec, or_comm, or_left_comm]
   subst V
-  letI : LocallyCompactSpace U := U.isOpen.locallyCompactSpace
+  let : LocallyCompactSpace U := U.isOpen.locallyCompactSpace
   exact p.uniformGlobalPointInsertionBound_of_diffeomorph_normalized r
 
 end AreaDeficit.Surfaces.DiscCover

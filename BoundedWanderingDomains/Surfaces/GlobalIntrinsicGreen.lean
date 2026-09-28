@@ -23,7 +23,7 @@ theorem integrable_domainLogRatio_mul_intrinsicLaplacian_of_laplacian_compact
     (hvV : tsupport (p.intrinsicLaplacian v) ⊆ V) :
     Integrable (fun x => p.domainLogRatio U V x *
       p.intrinsicLaplacian v x) p.hyperbolicArea := by
-  letI : IsLocallyFiniteMeasure p.hyperbolicArea :=
+  let : IsLocallyFiniteMeasure p.hyperbolicArea :=
     p.hyperbolicArea_locallyFinite
   have hLcont := p.intrinsicLaplacian_continuous hv
   have hprod : Continuous (fun x => p.domainLogRatio U V x *
@@ -102,7 +102,7 @@ theorem finite_chart_green_eq_intrinsic
         (hcReal i)
     _ = ∫ x, ∑ i ∈ S, (p.domainLogRatio U V x *
           p.intrinsicLaplacian (v i) x) ∂p.hyperbolicArea := by
-      rw [integral_finset_sum S hvInt]
+      rw [integral_finsetSum S hvInt]
     _ = ∫ x, p.domainLogRatio U V x * p.intrinsicLaplacian chi x
           ∂p.hyperbolicArea := by
       apply integral_congr_ae

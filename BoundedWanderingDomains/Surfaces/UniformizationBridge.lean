@@ -43,9 +43,9 @@ parabolic or compact. -/
 theorem nonempty_discCover_coordDisk_compl [T2Space M]
     [SecondCountableTopology M] (D : RiemannDynamics.CoordDisk M) :
     Nonempty (DiscCover D.compl) := by
-  letI : ConnectedSpace D.compl :=
+  let : ConnectedSpace D.compl :=
     Subtype.connectedSpace (RiemannDynamics.isConnected_coordDisk_compl D)
-  letI : NoncompactSpace D.compl :=
+  let : NoncompactSpace D.compl :=
     RiemannDynamics.noncompactSpace_coordDisk_compl D
   let p : D.compl := Classical.choice (inferInstance : Nonempty D.compl)
   have hG : RiemannDynamics.HasGreenFunction p :=

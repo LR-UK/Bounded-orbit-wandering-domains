@@ -28,6 +28,7 @@ def UniformGlobalPointInsertionBound (p : DiscCover M) (C : ℝ≥0∞) : Prop :
     p.domainAreaGain (finitePunctureDomain P)
       (finitePunctureDomain (insert a P)) Set.univ ≤ C
 
+omit [LocallyCompactSpace M] in
 /-- The global one-point property is intrinsic and hence independent of the
 chosen universal disc cover. -/
 theorem uniformGlobalPointInsertionBound_independent
@@ -38,6 +39,7 @@ theorem uniformGlobalPointInsertionBound_independent
   rw [r.domainAreaGain_independent p]
   exact h P a
 
+omit [LocallyCompactSpace M] in
 /-- If the whole ambient surface lies in one planar chart with two omitted
 coordinate values, the sharp planar theorem gives the global `2π` one-point
 bound directly.  This is the normalized punctured-sphere case. -/
@@ -62,6 +64,7 @@ theorem uniformGlobalPointInsertionBound_of_global_chart
     simp [U, punctureDomain, finitePunctureDomain, and_comm]
   simpa only [hdom] using hsharp
 
+omit [LocallyCompactSpace M] in
 /-- For one-point insertion, total area is exactly old total area plus the
 global gain.  Both model measures ignore the finite deleted set, so the
 on-domain identity extends to `univ`. -/
@@ -76,11 +79,11 @@ theorem finitePunctureDomain_area_insert_eq_add_gain
   have hVU : V ≤ U := by
     intro x hx
     exact fun hxP => hx (Finset.mem_insert_of_mem hxP)
-  letI : NullSingletonClass p.hyperbolicArea := p.hyperbolicArea_noAtoms
-  letI : NullSingletonClass (p.domainArea U) := by
+  let : NullSingletonClass p.hyperbolicArea := p.hyperbolicArea_noAtoms
+  let : NullSingletonClass (p.domainArea U) := by
     unfold domainArea
     infer_instance
-  letI : NullSingletonClass (p.domainArea V) := by
+  let : NullSingletonClass (p.domainArea V) := by
     unfold domainArea
     infer_instance
   have hOldVae : (V : Set M) =ᵐ[p.domainArea U] Set.univ := by
@@ -103,6 +106,7 @@ theorem finitePunctureDomain_area_insert_eq_add_gain
   rw [← measure_congr hVae, ← measure_congr hOldVae, ← hgain]
   exact hEq
 
+omit [LocallyCompactSpace M] in
 /-- Therefore a uniform one-point increment of total area implies the
 uniform global gain estimate, provided the old finite-puncture models have
 finite total mass. -/
@@ -119,6 +123,7 @@ theorem uniformGlobalPointInsertionBound_of_totalArea_increment
   rw [p.finitePunctureDomain_area_insert_eq_add_gain P a] at h
   exact ENNReal.le_of_add_le_add_left (hfinite P) h
 
+omit [LocallyCompactSpace M] in
 /-- Conversely, a global gain bound is already the corresponding total-area
 increment bound.  Thus, on finite-area finite-puncture models, the global
 one-point estimate and the Gauss--Bonnet-style total-area increment are
@@ -133,6 +138,7 @@ theorem totalArea_increment_of_uniformGlobalPointInsertionBound
   rw [p.finitePunctureDomain_area_insert_eq_add_gain P a]
   exact add_le_add_right (hpoint P a) _
 
+omit [LocallyCompactSpace M] in
 /-- Exact equivalence between the whole-surface point-removal estimate and
 the one-puncture total-area increment, when all old finite-puncture models
 have finite total area. -/
@@ -148,6 +154,7 @@ theorem uniformGlobalPointInsertionBound_iff_totalArea_increment
   · exact p.totalArea_increment_of_uniformGlobalPointInsertionBound
   · exact p.uniformGlobalPointInsertionBound_of_totalArea_increment hfinite
 
+omit [LocallyCompactSpace M] in
 /-- A uniform one-point whole-surface estimate telescopes to a bound for
 inserting any finite set. -/
 theorem global_finitePuncture_gain_le_of_pointInsertion
@@ -159,7 +166,7 @@ theorem global_finitePuncture_gain_le_of_pointInsertion
         (E.card : ℝ≥0∞) * C := by
   intro P E
   induction E using Finset.induction_on with
-  | empty => simp [p.domainAreaGain_self]
+  | empty => simp
   | @insert a E ha ih =>
       calc
         p.domainAreaGain (finitePunctureDomain P)
@@ -179,6 +186,7 @@ theorem global_finitePuncture_gain_le_of_pointInsertion
           rw [Finset.card_insert_of_notMem ha, Nat.cast_add, Nat.cast_one,
             add_mul, one_mul]
 
+omit [LocallyCompactSpace M] in
 /-- The measure form used by the global cancellation package. -/
 theorem uniform_global_finitePuncture_insertion_area_le_of_pointInsertion
     (p : DiscCover M) (q : ℕ) {C : ℝ≥0∞} (hC : C ≠ ⊤)

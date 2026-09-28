@@ -28,6 +28,7 @@ theorem LocalMap.IsWanderingComponent.exists_orbit_components
   apply himage n
   exact ⟨z, hz, f.iterate_eq_some_orbit n ⟨z, hztrapped⟩⟩
 
+omit [T2Space X] [LocallyCompactSpace X] in
 /-- Compact containment of the compactified marked orbit is the same as
 compact containment of its genuine trapped orbit. -/
 theorem LocalMap.orbit_mem_of_compactifiedIterate_mem_image

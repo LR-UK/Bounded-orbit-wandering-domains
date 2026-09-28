@@ -1,3 +1,11 @@
+> **28 September 2026 linter update.** Two deprecated conditional-lemma names in
+> `FunctionTheory/Meromorphic/Sphere.lean` were replaced by their current names.
+> Public statements, attribution and dependency pins are unchanged; the module
+> maps were regenerated. The standalone `scripts/verify.py` was attempted, but
+> its separate Mathlib fetch failed with an SSL certificate error before
+> compilation. This is not a standalone-audit pass. Root-project checking uses
+> the existing pinned cache for the imported dependency modules.
+
 > **27 September 2026 import audit.** Fifteen imports of the complete Mathlib
 > tactic collection in the root paper closure were replaced by specific imports.
 > Missing mathematical and tactic dependencies are now explicit. Public theorem

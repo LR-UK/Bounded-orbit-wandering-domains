@@ -34,7 +34,7 @@ theorem isDiscrete_fiber_of_isOpenMap_of_mdifferentiable {f : X → Y}
   apply Set.Subset.antisymm
   · rintro z ⟨⟨hzs, hzV⟩, hzy⟩
     have hgeq : g (e z) = g (e x) := by
-      simp only [g, e, d, writtenInExtChartAt, Function.comp_apply,
+      simp only [g, e, writtenInExtChartAt, Function.comp_apply,
         e.left_inv hzs, extChartAt_to_inv]
       exact congrArg d ((show f z = y from hzy).trans (show f x = y from hx).symm)
     have heq : e z = e x := by

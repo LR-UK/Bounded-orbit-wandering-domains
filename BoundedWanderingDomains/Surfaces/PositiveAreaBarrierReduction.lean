@@ -61,7 +61,7 @@ theorem exists_positiveArea_hyperbolicAnchor_boundaryBarrier
     (hK : IsCompact K) (hKne : K ≠ Set.univ)
     (hKsource : K ⊆ f.source) (hsatK : f.saturation A ⊆ K) :
     ∃ (D : RiemannDynamics.CoordDisk X)
-      (p : DiscCover D.compl)
+      (_p : DiscCover D.compl)
       (W : TopologicalSpace.Opens X)
       (hW : (W : Set X) ⊆ f.source),
       let g := f.restrictSource W hW

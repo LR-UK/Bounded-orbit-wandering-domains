@@ -199,7 +199,7 @@ theorem domainChartLaplacianIntegral_eq_intrinsic
     (hvV : tsupport (p.intrinsicLaplacian v) ⊆ V)
     (hw : ∀ z ∈ c.target, Δ w z = Δ (v ∘ c.symm) z)
     (hwsupport : tsupport (Δ w) ⊆ c.target)
-    (hint : Integrable (fun x => p.domainLogRatio U V x *
+    (_hint : Integrable (fun x => p.domainLogRatio U V x *
       p.intrinsicLaplacian v x) p.hyperbolicArea) :
     (∫ z, p.domainChartLogRatio U V c z * Δ w z) =
       ∫ x, p.domainLogRatio U V x * p.intrinsicLaplacian v x

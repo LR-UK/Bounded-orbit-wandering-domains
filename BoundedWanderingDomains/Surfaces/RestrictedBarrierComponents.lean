@@ -30,7 +30,7 @@ theorem restricted_barrier_component_eq_omega
     {x : X} (hx : x ∈ (f.restrictSource V hVsource).omega) :
     connectedComponentIn Aᶜ x =
       connectedComponentIn (f.restrictSource V hVsource).omega x := by
-  letI : LocallyPathConnectedSpace X :=
+  let : LocallyPathConnectedSpace X :=
     ChartedSpace.locallyPathConnectedSpace ℂ X
   let g := f.restrictSource V hVsource
   have hgf : IsOpenHolomorphic g :=

@@ -21,6 +21,7 @@ def regularCoverDomain (f : LocalMap X) (Y : TopologicalSpace.Opens X)
   ⟨Subtype.val '' (f.map ⁻¹' (Y : Set X)),
     f.source.isOpen.isOpenMap_subtype_val _ (Y.isOpen.preimage hf)⟩
 
+omit [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X] [MeasurableSpace X] [BorelSpace X] in
 theorem exists_regular_domain_cover (f : LocalMap X) (hf : IsOpenHolomorphic f)
     (Y : TopologicalSpace.Opens X) (hY : (Y : Set X) ⊆ f.singularValuesᶜ) :
     ∃ F : f.regularCoverDomain Y hf.2.continuous → Y,
@@ -87,7 +88,7 @@ theorem exists_uniform_singular_area_advance
     rw [← f.totalize_eq (hWs hx)]
     exact ⟨havoid x hx, fun hh => disjoint_left.mp hLH (himageL ⟨x, hx, rfl⟩) hh⟩
   have him : MeasurableSet (f.totalize '' W) := by
-    letI : PolishSpace X := surfacePolishSpace
+    let : PolishSpace X := surfacePolishSpace
     exact hW.image_of_continuousOn_injOn ((f.continuousOn_totalize hf.2.continuous).mono hWs) hinj
   calc
     p.domainArea U W ≤ p.domainArea T W := p.domainArea_mono_on hTU hW hWT

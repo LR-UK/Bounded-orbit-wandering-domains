@@ -64,7 +64,7 @@ theorem fstCmmap_norm [NormedRing A] [NormedAlgebra 𝕜 A] [NormOneClass A] [No
     rw [e]
     rw [fstCmmap_apply]; simp; exact norm_fst_le (z 0)
   · have lo := (fstCmmap 𝕜 A B).unit_le_opNorm (m := fun _ ↦ (1, 1)) ?_
-    rw [fstCmmap_apply, norm_one] at lo; assumption
+    rwa [fstCmmap_apply, norm_one] at lo
     rw [pi_norm_le_iff_of_nonneg]; intro i; simp only [Prod.norm_def, norm_one]
     repeat norm_num
 
@@ -77,7 +77,7 @@ theorem sndCmmap_norm [NormedRing A] [NormedAlgebra 𝕜 A] [NormOneClass A] [No
     rw [e]
     rw [sndCmmap_apply]; simp; exact norm_snd_le (z 0)
   · have lo := (sndCmmap 𝕜 A B).unit_le_opNorm (m := fun _ ↦ (1, 1)) ?_
-    rw [sndCmmap_apply, norm_one] at lo; assumption
+    rwa [sndCmmap_apply, norm_one] at lo
     rw [pi_norm_le_iff_of_nonneg]; intro i; simp only [Prod.norm_def, norm_one]
     repeat norm_num
 

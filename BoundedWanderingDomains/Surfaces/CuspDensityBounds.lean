@@ -130,10 +130,10 @@ theorem integrableOn_chartDensity_sq_cusp (p : DiscCover M)
     (hcont.aestronglyMeasurable hBmeas)
   filter_upwards [ae_restrict_mem hBmeas] with z hz
   have hzR2 : ‖z - a‖ < R / 2 := by
-    simpa only [B, mem_diff, mem_ball, dist_eq_norm, mem_singleton_iff] using hz.1
+    simpa only [mem_ball, dist_eq_norm] using hz.1
   have hzR : ‖z - a‖ < R := hzR2.trans (by linarith)
   have hza : z ≠ a := by
-    simpa only [B, mem_diff, mem_ball, dist_eq_norm, mem_singleton_iff] using hz.2
+    simpa only [mem_singleton_iff] using hz.2
   have hr : 0 < ‖z - a‖ := norm_pos_iff.mpr (sub_ne_zero.mpr hza)
   have hl : 0 < Real.log (R / ‖z - a‖) :=
     Real.log_pos ((one_lt_div hr).mpr hzR)
@@ -146,7 +146,7 @@ theorem integrableOn_chartDensity_sq_cusp (p : DiscCover M)
   rw [Real.norm_of_nonneg (sq_nonneg _)]
   have hcond : z ≠ a ∧ ‖z - a‖ < R / 2 := ⟨hza, hzR2⟩
   dsimp only [g]
-  rw [if_pos hcond]
+  rw [ite_eq_left hcond]
   have hupper_nonneg : 0 ≤ 2 / (‖z - a‖ * Real.log (R / ‖z - a‖)) :=
     div_nonneg (by norm_num) hdpos.le
   have hsquare : (p.chartDensity d z) ^ 2 ≤

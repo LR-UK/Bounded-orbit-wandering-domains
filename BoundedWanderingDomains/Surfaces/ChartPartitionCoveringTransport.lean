@@ -26,8 +26,8 @@ theorem domainArea_eq_image_of_openDomain_covering
     (hfm : Measurable f) {W : Set X} (hW : MeasurableSet W)
     (hWU : W ⊆ U) (hinj : InjOn f W) :
     p.domainArea U W = p.domainArea V (f '' W) := by
-  letI : Nonempty X := ⟨p.projection ⟨0, by simp [unitDisc]⟩⟩
-  letI : PolishSpace X := AreaDeficit.Surfaces.surfacePolishSpace
+  let : Nonempty X := ⟨p.projection ⟨0, by simp [unitDisc]⟩⟩
+  let : PolishSpace X := AreaDeficit.Surfaces.surfacePolishSpace
   let P := Classical.choice (AreaDeficit.Surfaces.exists_chartPartition (M := X))
   let Q := Classical.choice (AreaDeficit.Surfaces.exists_chartPartition (M := X))
   let uv : ℕ → ℕ × ℕ := Nat.unpair
@@ -72,7 +72,7 @@ theorem domainArea_eq_image_of_openDomain_covering
       simpa only [A, uv, Nat.unpair_pair] using ⟨⟨hxW, hxn⟩, hxm⟩
   have hfA : ∀ k, MeasurableSet (f '' A k) := by
     have hfcont : ContinuousOn f U := by
-      rw [continuousOn_iff_continuous_restrict]
+      rw [continuousOn_iff_continuous_domRestrict]
       change Continuous (fun x : U => f x)
       rw [hf]
       exact continuous_subtype_val.comp hF.continuous

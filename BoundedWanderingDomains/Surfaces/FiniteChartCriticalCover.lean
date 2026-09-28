@@ -9,11 +9,8 @@ open scoped Manifold
 namespace SurfaceDynamics
 
 variable {M N ι : Type*} [TopologicalSpace M] [ChartedSpace ℂ M]
-  [IsManifold 𝓘(ℂ) 1 M] [MeasurableSpace M] [BorelSpace M]
-  [SecondCountableTopology M]
-  [TopologicalSpace N] [ChartedSpace ℂ N]
-  [IsManifold 𝓘(ℂ) 1 N] [MeasurableSpace N] [BorelSpace N]
-  [SecondCountableTopology N] [DecidableEq N]
+  [IsManifold 𝓘(ℂ) 1 M]
+  [TopologicalSpace N] [ChartedSpace ℂ N] [DecidableEq N]
 
 /-- Finitely many compact chart pairs produce one finite set containing all
 branch values on the covered compact set. Outside it, a covering patch can

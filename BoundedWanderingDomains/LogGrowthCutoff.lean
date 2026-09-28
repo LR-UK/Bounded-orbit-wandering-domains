@@ -23,7 +23,7 @@ the logarithmic transition widens; the second is uniform when the endpoints
 are comparable with that width. -/
 theorem integral_mul_laplacian_logCutoff_le_of_log_growth
     {f : ℂ → ℝ} (a : ℂ) {A B C L Q : ℝ}
-    (hAB : A < B) (hC : 0 ≤ C) (hL : 0 ≤ L)
+    (hAB : A < B) (_hC : 0 ≤ C) (hL : 0 ≤ L)
     (hA : |A| ≤ Q * (B - A)) (hB : |B| ≤ Q * (B - A))
     (hf : ∀ z : ℂ, z ≠ a → A < Real.log ‖z - a‖ →
       Real.log ‖z - a‖ < B →
@@ -77,7 +77,7 @@ theorem integral_mul_laplacian_logCutoff_neg_two_neg_one_le
     linarith
   have h := integral_mul_laplacian_logCutoff_le_of_log_growth
     (f := f) a hAB hC hL (Q := 2) hA hB hf
-  convert h using 1 <;> ring
+  convert h using 1; ring
 
 /-- A function tending to zero at an old finite end contributes no boundary
 mass.  This is the analytic counterpart of the metric quotient tending to

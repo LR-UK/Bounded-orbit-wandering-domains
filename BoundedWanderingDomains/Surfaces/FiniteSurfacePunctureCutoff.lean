@@ -18,6 +18,7 @@ structure FinitePunctureDiscs (F : Finset M) where
   pairwise : (Set.univ : Set ↥F).PairwiseDisjoint
     (fun i => (disc i).closedCarrier)
 
+omit [IsManifold 𝓘(ℂ) 1 M] in
 theorem exists_finitePunctureDiscs (F : Finset M) :
     Nonempty (FinitePunctureDiscs F) := by
   classical
@@ -49,6 +50,7 @@ noncomputable def cutoff {F : Finset M} (D : FinitePunctureDiscs F)
 def Admissible {F : Finset M} (D : FinitePunctureDiscs F) (t : ℝ) : Prop :=
   0 < t ∧ ∀ i : ↥F, -Real.log (D.disc i).radius ≤ t
 
+omit [IsManifold 𝓘(ℂ, ℂ) 1 M] [T2Space M] in
 theorem eventually_admissible {F : Finset M}
     (D : FinitePunctureDiscs F) :
     ∀ᶠ t : ℝ in atTop, D.Admissible t := by
@@ -66,12 +68,14 @@ theorem cutoff_contMDiff {F : Finset M} (D : FinitePunctureDiscs F)
   exact contMDiff_const.sub (ContMDiff.sum fun i _ =>
     surfaceLogCutoff_contMDiff (D.disc i) ht.1 (ht.2 i))
 
+omit [IsManifold 𝓘(ℂ, ℂ) 1 M] [T2Space M] in
 theorem cutoff_hasCompactSupport [CompactSpace M]
     {F : Finset M} (D : FinitePunctureDiscs F) (t : ℝ) :
     HasCompactSupport (D.cutoff t) :=
   isCompact_univ.of_isClosed_subset (isClosed_tsupport (D.cutoff t))
     (subset_univ _)
 
+omit [IsManifold 𝓘(ℂ, ℂ) 1 M] in
 private theorem cutoff_sum_eq_single {F : Finset M}
     (D : FinitePunctureDiscs F) {t : ℝ} (ht : D.Admissible t)
     {x : M} {i : ↥F} (hi : surfaceLogCutoff (D.disc i) t x ≠ 0) :
@@ -90,6 +94,7 @@ private theorem cutoff_sum_eq_single {F : Finset M}
       (D.pairwise (mem_univ i) (mem_univ j) hji.symm) hxi hxj
   · simp
 
+omit [IsManifold 𝓘(ℂ, ℂ) 1 M] in
 theorem cutoff_bounds {F : Finset M} (D : FinitePunctureDiscs F)
     {t : ℝ} (ht : D.Admissible t) (x : M) :
     0 ≤ D.cutoff t x ∧ D.cutoff t x ≤ 1 := by
@@ -106,6 +111,7 @@ theorem cutoff_bounds {F : Finset M} (D : FinitePunctureDiscs F)
     rw [cutoff, hz]
     constructor <;> norm_num
 
+omit [IsManifold 𝓘(ℂ, ℂ) 1 M] in
 theorem cutoff_eq_zero_at_puncture {F : Finset M}
     (D : FinitePunctureDiscs F) {t : ℝ} (ht : D.Admissible t)
     (i : ↥F) : D.cutoff t i = 0 := by
@@ -116,6 +122,7 @@ theorem cutoff_eq_zero_at_puncture {F : Finset M}
   rw [cutoff, D.cutoff_sum_eq_single ht hine, hi]
   ring
 
+omit [IsManifold 𝓘(ℂ, ℂ) 1 M] in
 theorem cutoff_tsupport_avoids {F : Finset M}
     (D : FinitePunctureDiscs F) {t : ℝ} (ht : D.Admissible t) :
     tsupport (D.cutoff t) ⊆ (↑F : Set M)ᶜ := by
@@ -148,6 +155,7 @@ theorem cutoff_tsupport_avoids {F : Finset M}
     simp
   exact (notMem_tsupport_iff_eventuallyEq.mpr hzero) hx
 
+omit [IsManifold 𝓘(ℂ, ℂ) 1 M] [T2Space M] in
 theorem cutoff_eventually_one {F : Finset M}
     (D : FinitePunctureDiscs F) {x : M} (hx : x ∉ F) :
     ∀ᶠ t : ℝ in atTop, D.cutoff t x = 1 := by

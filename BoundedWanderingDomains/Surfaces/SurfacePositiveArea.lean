@@ -20,7 +20,7 @@ theorem noCompactPositiveAreaWanderingSetClaim :
   intro f hf A hA hAbad hdis hinj hApos
   rintro ⟨K, hK, hKs, hsatK⟩
   by_cases hKuniv : K = univ
-  · letI : CompactSpace X := isCompact_univ_iff.mp (hKuniv ▸ hK)
+  · let : CompactSpace X := isCompact_univ_iff.mp (hKuniv ▸ hK)
     have hsource : f.source = ⊤ := by
       ext x
       constructor

@@ -118,6 +118,7 @@ variable [MeasurableSpace X] [BorelSpace X] [T2Space X]
   [SecondCountableTopology X] [LocallyCompactSpace X]
   [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ) 1 X]
 
+omit [T2Space X] [SecondCountableTopology X] [LocallyCompactSpace X] [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ, ℂ) 1 X] in
 theorem measurable_totalize (f : LocalMap X) (hf : Continuous f.map) :
     Measurable f.totalize := by
   classical
@@ -125,16 +126,17 @@ theorem measurable_totalize (f : LocalMap X) (hf : Continuous f.map) :
     apply continuousOn_id.congr
     intro x hx
     have hx' : x ∉ f.source := hx
-    simp only [totalize, dif_neg hx', id_eq]
+    simp only [totalize, dite_eq_right hx', id_eq]
   have hpiece := (f.continuousOn_totalize hf).measurable_piecewise hout
     f.source.isOpen.measurableSet
   simpa only [Set.piecewise_same] using hpiece
 
+omit [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ, ℂ) 1 X] in
 theorem measurableSet_imageAt (f : LocalMap X) {A : Set X}
     (hf : Continuous f.map) (hA : A ⊆ f.trapped)
     (hinj : f.InjectiveOnSaturation A) (hm : MeasurableSet A) (n : ℕ) :
     MeasurableSet (f.imageAt n A) := by
-  letI : PolishSpace X := AreaDeficit.Surfaces.surfacePolishSpace
+  let : PolishSpace X := AreaDeficit.Surfaces.surfacePolishSpace
   induction n with
   | zero => simpa using hm
   | succ n ih =>
@@ -145,11 +147,12 @@ theorem measurableSet_imageAt (f : LocalMap X) {A : Set X}
       · exact (f.totalize_injOn_saturation hA hinj).mono
           (fun _ hx => mem_iUnion.mpr ⟨n, hx⟩)
 
+omit [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ) 1 X] in
 theorem measurableSet_saturation (f : LocalMap X) {A : Set X}
     (hf : Continuous f.map) (hA : A ⊆ f.trapped)
     (hinj : f.InjectiveOnSaturation A) (hm : MeasurableSet A) :
     MeasurableSet (f.saturation A) := by
-  letI : PolishSpace X := AreaDeficit.Surfaces.surfacePolishSpace
+  let : PolishSpace X := AreaDeficit.Surfaces.surfacePolishSpace
   exact MeasurableSet.iUnion (f.measurableSet_imageAt hf hA hinj hm)
 
 end Measurable

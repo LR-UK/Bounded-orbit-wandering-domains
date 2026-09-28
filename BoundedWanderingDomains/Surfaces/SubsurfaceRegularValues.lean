@@ -15,8 +15,8 @@ image belong to the chosen open subsurface. -/
 theorem exists_full_restriction_to_open (f : LocalMap X) (hf : IsOpenHolomorphic f)
     (O : TopologicalSpace.Opens X) :
     ∃ (V : TopologicalSpace.Opens X) (hVs : (V : Set X) ⊆ f.source)
-      (hVO : (V : Set X) ⊆ O)
-      (hm : ∀ x : (f.restrictSource V hVs).source, (f.restrictSource V hVs).map x ∈ O),
+      (_hVO : (V : Set X) ⊆ O)
+      (_hm : ∀ x : (f.restrictSource V hVs).source, (f.restrictSource V hVs).map x ∈ O),
       ∀ x : f.source, (x : X) ∈ O → f.map x ∈ O → (x : X) ∈ V := by
   let V : TopologicalSpace.Opens X :=
     ⟨Subtype.val '' {x : f.source | (x : X) ∈ O ∧ f.map x ∈ O},

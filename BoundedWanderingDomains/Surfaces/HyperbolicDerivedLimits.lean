@@ -26,7 +26,7 @@ theorem compact_wandering_cluster_meets_derived_of_discCover
     {K : Set X} (hK : IsCompact K) (hzK : ∀ n, f.orbit n z ∈ K) :
     ∃ a ∈ derivedSet f.singularValues, MapClusterPt a atTop (fun n => f.orbit n z) := by
   classical
-  letI : LocallyPathConnectedSpace X := ChartedSpace.locallyPathConnectedSpace ℂ X
+  let : LocallyPathConnectedSpace X := ChartedSpace.locallyPathConnectedSpace ℂ X
   by_contra hno
   have hsep : ∀ a, MapClusterPt a atTop (fun n => f.orbit n z) → a ∉ derivedSet f.singularValues := by
     intro a ha hs
@@ -54,7 +54,7 @@ theorem compact_wandering_cluster_meets_derived_of_discCover
     (hUeq n ▸ connectedComponentIn_subset _ _).trans f.omega_subset_source
   have hq : ∀ n, ∃ q : DiscCover (U n), (q.projection discZero : X) = f.orbit n z := by
     intro n
-    letI : SimplyConnectedSpace (U n) := hRsc n
+    let : SimplyConnectedSpace (U n) := hRsc n
     obtain ⟨q, hq⟩ := (Classical.choice (p.nonempty_subdomain (U n))).exists_centred ⟨_, hzR n⟩
     exact ⟨q, congrArg Subtype.val hq⟩
   choose q hq0 using hq
@@ -99,7 +99,7 @@ theorem compact_wandering_cluster_meets_derived_of_discCover
       (q n) (q (n + 1)) (hfU n) (by rw [hq0, hq0, hnext]) r
   have hqinj : ∀ n, Injective (q n).projection := by
     intro n
-    letI : SimplyConnectedSpace (U n) := hRsc n
+    let : SimplyConnectedSpace (U n) := hRsc n
     exact (q n).injective_of_simplyConnected
   have hFemb : ∀ n, IsEmbedding (F n) := by
     intro n

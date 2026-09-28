@@ -23,13 +23,13 @@ theorem IsWanderingComponent.exists_compact_hyperbolic_restricted_tail
     (horbitK : ∀ n, f.orbit n
       ⟨z, LocalMap.IsWanderingComponent.subset_trapped f hU hz⟩ ∈ K) :
     ∃ (D : RiemannDynamics.CoordDisk X)
-      (p : DiscCover D.compl)
+      (_p : DiscCover D.compl)
       (W : TopologicalSpace.Opens X) (hW : (W : Set X) ⊆ f.source)
       (z₁ : X) (hz₁ : z₁ ∈ (f.restrictSource W hW).trapped)
       (L : Set X),
       (W : Set X) ⊆ D.compl ∧ IsCompact L ∧ L ⊆ W ∧
       ∀ n, (f.restrictSource W hW).orbit n ⟨z₁, hz₁⟩ ∈ L := by
-  letI : LocallyPathConnectedSpace X :=
+  let : LocallyPathConnectedSpace X :=
     ChartedSpace.locallyPathConnectedSpace ℂ X
   obtain ⟨V, hztrapped, D, p, hV0, hcomp, horbit, hdis, hD, htail,
       hz₁restricted, hiter⟩ := hU.exists_hyperbolic_restricted_tail f hz

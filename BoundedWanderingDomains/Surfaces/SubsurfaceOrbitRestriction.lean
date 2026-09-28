@@ -38,6 +38,7 @@ theorem exists_invariant_neighborhood_in_subsurface
   change f.totalize (x : X) ∈ O at hh
   rwa [f.totalize_eq ((hVT (subset_closure x.property)).1.1)] at hh
 
+omit [T2Space X] [LocallyCompactSpace X] in
 theorem mem_interior_trapped_restrict_of_subsurface_orbit
     (f : LocalMap X) (hf : IsOpenHolomorphic f)
     (O : TopologicalSpace.Opens X) (p : DiscCover O)

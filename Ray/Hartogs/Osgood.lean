@@ -375,8 +375,7 @@ theorem series2_norm (h : Separate f c0 c1 r b s) (n : ℕ) :
     intro n0 n0n; simp at n0n
     apply le_trans (termCmmap_norm ℂ n n0 (h.series2Coeff n0 (n - n0)))
     have sb := series2Coeff_bound h n0 (n - n0)
-    rw [← Nat.add_sub_assoc n0n n0, Nat.add_sub_cancel_left] at sb
-    assumption
+    rwa [← Nat.add_sub_assoc n0n n0, Nat.add_sub_cancel_left] at sb
   trans (Finset.range (n + 1)).sum fun n0 ↦ ‖termCmmap ℂ n n0 (h.series2Coeff n0 (n - n0))‖
   · bound
   · trans (Finset.range (n + 1)).sum fun _ ↦ b * r⁻¹ ^ n
@@ -400,7 +399,7 @@ theorem cauchy2_radius (h : Separate f c0 c1 r b s) : ENNReal.ofReal r ≤ (seri
     · rw [mul_assoc ((↑n + 1) * b) _ _, ← mul_pow, inv_mul_eq_div]
   refine .of_nonneg_of_le lo hi ?_
   simp_rw [mul_comm _ b, mul_assoc b _ _]; apply Summable.mul_left b
-  have trn : ‖↑t / r‖ < 1 := by simp; rw [abs_of_pos h.rp, div_lt_one h.rp]; assumption
+  have trn : ‖↑t / r‖ < 1 := by simp; rwa [abs_of_pos h.rp, div_lt_one h.rp]
   simp_rw [right_distrib _ _ _, one_mul]
   exact Summable.add (hasSum_coe_mul_geometric_of_norm_lt_one trn).summable
     (hasSum_geometric_of_norm_lt_one trn).summable

@@ -51,7 +51,7 @@ theorem eventually_bounded_new_puncture_boundary_mass_explicit
     |∫ z : ℂ, p.chartLogRatio q hU d z *
         Δ (AreaDeficit.logCutoff a (-2 * t) (-t)) z| ≤
         C * (H / t) + 2 * H := by
-          convert hmain using 1 <;> simp only [H] <;> ring
+          convert hmain using 1; simp only [H]; ring
     _ = (C / t) * H + 2 * H := by ring
     _ ≤ 1 * H + 2 * H := by gcongr
     _ = 3 * (2 * Real.pi * ∫ s : ℝ,

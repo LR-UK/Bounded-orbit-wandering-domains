@@ -28,16 +28,20 @@ def boundaryBackwardTree (f : LocalMap X) (V : Set X)
         f.map ⟨x, hVsource (subset_closure hx)⟩ ∈
           boundaryBackwardTree f V hVsource Q n}
 
+omit [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X] [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ, ℂ) 1 X] in
 theorem boundaryBackwardTree_mono (f : LocalMap X) (V : Set X)
     (hVsource : closure V ⊆ f.source) (Q : Set X) :
     Monotone (f.boundaryBackwardTree V hVsource Q) :=
   monotone_nat_of_le_succ fun _ => subset_union_left
 
+omit [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X]
+  [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ) 1 X] in
 theorem roots_subset_boundaryBackwardTree (f : LocalMap X) (V : Set X)
     (hVsource : closure V ⊆ f.source) (Q : Set X) (n : ℕ) :
     Q ⊆ f.boundaryBackwardTree V hVsource Q n :=
   f.boundaryBackwardTree_mono V hVsource Q (Nat.zero_le n)
 
+omit [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X] [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ, ℂ) 1 X] in
 theorem boundaryBackwardTree_mono_roots (f : LocalMap X) {V Q R : Set X}
     (hVsource : closure V ⊆ f.source) (hQR : Q ⊆ R) (n : ℕ) :
     f.boundaryBackwardTree V hVsource Q n ⊆
@@ -49,6 +53,7 @@ theorem boundaryBackwardTree_mono_roots (f : LocalMap X) {V Q R : Set X}
       · exact Or.inl (ih hx)
       · exact Or.inr ⟨hxV, ih hfx⟩
 
+omit [LocallyCompactSpace X] [SecondCountableTopology X] in
 theorem finite_working_preimage (f : LocalMap X) (hf : IsOpenHolomorphic f)
     {V S : Set X} (hVcompact : IsCompact (closure V))
     (hVsource : closure V ⊆ f.source) (hS : S.Finite) :
@@ -69,6 +74,7 @@ theorem finite_working_preimage (f : LocalMap X) (hf : IsOpenHolomorphic f)
   exact ⟨⟨x, hVsource (subset_closure hxV)⟩,
     ⟨subset_closure hxV, hfx⟩, rfl⟩
 
+omit [LocallyCompactSpace X] [SecondCountableTopology X] in
 theorem boundaryBackwardTree_finite (f : LocalMap X) (hf : IsOpenHolomorphic f)
     {V Q : Set X} (hVcompact : IsCompact (closure V))
     (hVsource : closure V ⊆ f.source) (hQ : Q.Finite) (n : ℕ) :
@@ -78,6 +84,7 @@ theorem boundaryBackwardTree_finite (f : LocalMap X) (hf : IsOpenHolomorphic f)
   | succ n ih =>
       exact ih.union (f.finite_working_preimage hf hVcompact hVsource ih)
 
+omit [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X] [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ, ℂ) 1 X] in
 /-- A boundary-rooted finite tree is forward invariant at every point which
 still lies in the open working domain.  Roots cannot occur there, and each
 remaining node was inserted as a preimage of an earlier node. -/
@@ -97,6 +104,7 @@ theorem boundaryBackwardTree_forward_invariant (f : LocalMap X)
       · exact Or.inl (ih x hxV hx)
       · exact Or.inl hfx
 
+omit [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X] [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ, ℂ) 1 X] in
 /-- Without a boundary hypothesis on the roots, the only possible failure of
 forward invariance is the image of a root.  In particular, a fixed finite
 root set costs only its finite image at every depth. -/
@@ -117,6 +125,7 @@ theorem boundaryBackwardTree_forward_up_to_roots (f : LocalMap X)
         · exact Or.inr hroot
       · exact Or.inl (Or.inl hfx)
 
+omit [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X] [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ, ℂ) 1 X] in
 theorem boundaryBackwardTree_union_backward (f : LocalMap X)
     {V Q : Set X} (hVsource : closure V ⊆ f.source) :
     ∀ x (hx : x ∈ V),
@@ -127,6 +136,8 @@ theorem boundaryBackwardTree_union_backward (f : LocalMap X)
   obtain ⟨n, hn⟩ := mem_iUnion.mp hfx
   exact mem_iUnion.mpr ⟨n + 1, Or.inr ⟨hx, hn⟩⟩
 
+omit [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X]
+  [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ) 1 X] in
 theorem boundaryBackwardTree_closure_backward (f : LocalMap X)
     (hopen : IsOpenMap f.map) {V Q : Set X} (hV : IsOpen V)
     (hVsource : closure V ⊆ f.source) :
@@ -147,6 +158,7 @@ theorem boundaryBackwardTree_closure_backward (f : LocalMap X)
     mem_closure_iff.mp hfx _ himage hfxmem
   exact ⟨(z : X), hzW.1, hback z hzW.2 hyP⟩
 
+omit [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X] [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ, ℂ) 1 X] in
 /-- Every point pulled back from the boundary reaches one of the chosen
 boundary roots in finitely many iterates of the map restricted to the
 working domain. -/
@@ -169,6 +181,8 @@ theorem boundaryBackwardTree_eventually_hits_roots (f : LocalMap X)
           k x hxV]
         exact heq
 
+omit [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X]
+  [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ) 1 X] in
 /-- Consequently the boundary-preimage tree contains no point trapped by
 the restriction to the working domain. -/
 theorem boundaryBackwardTree_disjoint_restricted_trapped (f : LocalMap X)
@@ -186,6 +200,7 @@ theorem boundaryBackwardTree_disjoint_restricted_trapped (f : LocalMap X)
   exact Set.disjoint_left.mp (disjoint_frontier_iff_isOpen.mpr V.isOpen)
     (hQ hq) hqV
 
+omit [SecondCountableTopology X] [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ) 1 X] in
 /-- The closure of all boundary preimages misses the normality locus of the
 restricted map.  This is item (3) of the boundary-preimage lemma in the
 paper. -/

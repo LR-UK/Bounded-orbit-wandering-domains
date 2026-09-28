@@ -12,6 +12,7 @@ variable {M : Type*} [TopologicalSpace M] [ChartedSpace ℂ M]
   [IsManifold 𝓘(ℂ) 1 M] [T2Space M] [MeasurableSpace M] [BorelSpace M]
   [SecondCountableTopology M]
 
+omit [MeasurableSpace M] [BorelSpace M] in
 /-- On a connected open domain, the componentwise density is the density of
 any supplied disc cover of that domain. -/
 theorem domainDensity_eq_connected (p : DiscCover M)
@@ -106,7 +107,7 @@ theorem domainArea_univ_eq_hyperbolicArea_univ_connected
     (p : DiscCover M) (U : TopologicalSpace.Opens M) [ConnectedSpace U]
     (q : DiscCover U) (hUN : Nonempty U) :
     p.domainArea U Set.univ = q.hyperbolicArea Set.univ := by
-  letI : Nonempty M := ⟨p.projection discZero⟩
+  let : Nonempty M := ⟨p.projection discZero⟩
   let P : ChartPartition M := Classical.choice (exists_chartPartition (M := M))
   let B : ℕ → Set M := fun n => (U : Set M) ∩ P.piece n
   have hBmeas : ∀ n, MeasurableSet (B n) := fun n =>

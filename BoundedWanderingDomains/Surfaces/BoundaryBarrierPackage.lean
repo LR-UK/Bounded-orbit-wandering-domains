@@ -45,7 +45,7 @@ theorem exists_boundaryBarrierPackage_in_subsurface
     f.omega_restrictSource_eq_interior_trapped hf O V p
       (subset_trans subset_closure hVsource) hVcompact hVO
   have hbad : g.trapped \ g.omega ⊆ closure (⋃ n, P n) := by
-    letI : LocallyPathConnectedSpace X :=
+    let : LocallyPathConnectedSpace X :=
       ChartedSpace.locallyPathConnectedSpace ℂ X
     exact g.trapped_diff_omega_subset_barrier
       (f.isOpenHolomorphic_restrictSource hf V
@@ -83,8 +83,7 @@ theorem exists_boundaryBarrierFinsetPackage_in_subsurface
   have hcoe : ∀ n, ((P n : Finset X) : Set X) = R n :=
     fun n => (hRfinite n).coe_toFinset
   refine ⟨V, hVsource, P, hKV, hVcompact, ?_, ?_, ?_⟩
-  · intro n m hnm
-    intro x hx
+  · intro n m hnm x hx
     apply (hRfinite m).mem_toFinset.mpr
     exact hRmono hnm ((hRfinite n).mem_toFinset.mp hx)
   · intro n x hxV hxP

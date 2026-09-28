@@ -18,6 +18,7 @@ variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [IsManifold 𝓘(ℂ) 1 X] [T2Space X] [MeasurableSpace X] [BorelSpace X]
   [SecondCountableTopology X]
 
+omit [T2Space X] in
 theorem HasPositiveChartArea.hyperbolicArea_pos {A : Set X}
     (hA : HasPositiveChartArea A) (hm : MeasurableSet A)
     (p : AreaDeficit.Surfaces.DiscCover X) :
@@ -33,6 +34,7 @@ theorem HasPositiveChartArea.hyperbolicArea_pos {A : Set X}
     (p.hyperbolicArea_pos_iff_chart hc hAc inter_subset_right).2 hx
   exact lt_of_lt_of_le hpos (measure_mono inter_subset_left)
 
+omit [T2Space X] in
 /-- Positive chart area remains positive for the intrinsic area of any open
 subsurface containing the measured set. -/
 theorem HasPositiveChartArea.hyperbolicArea_pos_openSubtype
@@ -90,6 +92,7 @@ theorem hyperbolicArea_diff_countable
     (hS : S.Countable) : p.hyperbolicArea (A \ S) = p.hyperbolicArea A := by
   rw [measure_sdiff_null (hyperbolicArea_countable_zero p hS)]
 
+omit [IsManifold 𝓘(ℂ, ℂ) 1 X] [T2Space X] [MeasurableSpace X] [BorelSpace X] [SecondCountableTopology X] in
 /-- Positive chart area is unchanged by deleting a countable set. -/
 theorem HasPositiveChartArea.diff_countable {A S : Set X}
     (hA : HasPositiveChartArea A) (hS : S.Countable) :
@@ -116,14 +119,16 @@ theorem HasPositiveChartArea.diff_countable {A S : Set X}
   rw [heq, measure_sdiff_null hBzero]
   exact hx
 
+omit [IsManifold 𝓘(ℂ, ℂ) 1 X] [T2Space X] [MeasurableSpace X] [BorelSpace X] [SecondCountableTopology X] in
 /-- A set of positive chart area is nonempty. -/
 theorem HasPositiveChartArea.nonempty {A : Set X}
     (hA : HasPositiveChartArea A) : A.Nonempty := by
   obtain ⟨x, hx⟩ := hA
   by_contra h
   rw [Set.not_nonempty_iff_eq_empty.mp h] at hx
-  simpa using hx
+  simp at hx
 
+omit [IsManifold 𝓘(ℂ) 1 X] [T2Space X] [MeasurableSpace X] [BorelSpace X] [SecondCountableTopology X] in
 /-- A set of positive chart area cannot be finite. -/
 theorem HasPositiveChartArea.infinite {A : Set X}
     (hA : HasPositiveChartArea A) : A.Infinite := by
@@ -132,6 +137,7 @@ theorem HasPositiveChartArea.infinite {A : Set X}
     hA.diff_countable hAfinite.countable
   simpa using hdiff.nonempty
 
+omit [IsManifold 𝓘(ℂ) 1 X] [T2Space X] [MeasurableSpace X] [BorelSpace X] [SecondCountableTopology X] in
 /-- Positive chart area supplies three distinct anchor points. -/
 theorem HasPositiveChartArea.exists_three {A : Set X}
     (hA : HasPositiveChartArea A) :
@@ -145,9 +151,8 @@ theorem HasPositiveChartArea.exists_three {A : Set X}
     hA.diff_countable habCount
   obtain ⟨c, hcA, hcab⟩ := habPos.nonempty
   refine ⟨a, ha, b, hbA, ?_, c, hcA, ?_, ?_⟩
-  · exact fun h => hba (by simpa [h])
+  · exact fun h => hba (by simp [h])
   · exact fun h => hcab (by simp [h])
   · exact fun h => hcab (by simp [h])
 
 end SurfaceDynamics
-

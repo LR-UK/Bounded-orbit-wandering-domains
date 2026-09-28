@@ -27,7 +27,7 @@ theorem totalize_mapsTo_omega (f : LocalMap X) (hf : IsOpenHolomorphic f) :
     exact f.trapped_forward (hWT (hCW (interior_subset hw)))
   refine ⟨T, hTo, ⟨x, hxC, rfl⟩, hTT, ?_⟩
   intro φ hφ
-  letI : UniformSpace (OnePoint X) := uniformSpaceOfCompactR1
+  let : UniformSpace (OnePoint X) := uniformSpaceOfCompactR1
   obtain ⟨ψ, hψ, G, hG⟩ := hWN (fun n => φ n + 1) (by
     intro n m hnm
     exact Nat.add_lt_add_right (hφ hnm) 1)

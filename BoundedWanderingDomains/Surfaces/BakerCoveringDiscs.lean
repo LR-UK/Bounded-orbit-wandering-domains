@@ -34,8 +34,8 @@ theorem eventually_covering_disc_embedded
       IsSimplyConnected ((fun z => ((p n).projection z : X)) ''
         {z : unitDisc | ‖(z : ℂ)‖ < r}) := by
   classical
-  letI : LocallyPathConnectedSpace X := ChartedSpace.locallyPathConnectedSpace ℂ X
-  letI : LocallyPathConnectedSpace unitDisc := unitDisc.isOpen.locallyPathConnectedSpace
+  let : LocallyPathConnectedSpace X := ChartedSpace.locallyPathConnectedSpace ℂ X
+  let : LocallyPathConnectedSpace unitDisc := unitDisc.isOpen.locallyPathConnectedSpace
   let F : ℕ → unitDisc → X := fun n z => (p n).projection z
   let C : ℕ → Set X := fun n => F n '' {z : unitDisc | ‖(z : ℂ)‖ ≤ r}
   let T := {x : X | ∀ k : ℕ, (f^[k]) x ∈ V}
@@ -106,7 +106,7 @@ theorem eventually_covering_disc_embedded
   have hFU : ∀ n ≥ N, compactFill (C n) ⊆ U n := by
     intro n hn
     have hFC : compactFill (C n) ⊆ T := by
-      simpa only [Nat.add_sub_of_le hn, T, Set.subset_def, Set.mem_setOf_eq] using hFT (n - N)
+      simpa only [Nat.add_sub_of_le hn, T, Set.subset_def, Set.mem_ofPred_eq] using hFT (n - N)
     have hCI : C n ⊆ interior T := by
       intro x hx
       exact connectedComponentIn_subset _ _ (hU n ▸ hCU n hx)

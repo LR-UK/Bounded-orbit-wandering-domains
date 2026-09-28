@@ -16,12 +16,14 @@ variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
 
 namespace FinitePunctureDiscs
 
+omit [IsManifold 𝓘(ℂ, ℂ) 1 X] [T2Space X] [CompactSpace X] [SecondCountableTopology X] in
 private theorem closedCarrier_subset_chartSource
     (D : RiemannDynamics.CoordDisk X) :
     D.closedCarrier ⊆ (chartAt ℂ D.center).source := by
   rintro x ⟨z, hz, rfl⟩
   exact (chartAt ℂ D.center).map_target (D.closedBall_subset hz)
 
+omit [IsManifold 𝓘(ℂ) 1 X] [CompactSpace X] [SecondCountableTopology X] in
 /-- The difference of two end cutoffs is supported in the restricted ambient
 chart even when the common centre is a missing compactification point. -/
 theorem tsupport_restrictedSurfaceLogCutoffDiff_subset_chartSource
@@ -48,6 +50,7 @@ theorem tsupport_restrictedSurfaceLogCutoffDiff_subset_chartSource
   simpa only [OpenPartialHomeomorph.subtypeRestr_source, mem_preimage] using
     closedCarrier_subset_chartSource (D.disc i) hxcarrier
 
+omit [CompactSpace X] [SecondCountableTopology X] in
 /-- Although a cutoff centred at a deleted compactification point need not
 itself have compact support, its intrinsic Laplacian is supported in the
 compact transition annulus. -/
@@ -130,6 +133,7 @@ theorem DiscCover.restrictedSurfaceLogCutoff_intrinsicLaplacian_hasCompactSuppor
   rw [hwlocal (c x) hct]
   exact hnonzero
 
+omit [CompactSpace X] [SecondCountableTopology X] in
 /-- The intrinsic Laplacian of a restricted end cutoff avoids every centre
 in its pairwise-disjoint ambient family. -/
 theorem DiscCover.tsupport_intrinsicLaplacian_restrictedSurfaceLogCutoff_subset
@@ -192,6 +196,7 @@ theorem DiscCover.tsupport_intrinsicLaplacian_restrictedSurfaceLogCutoff_subset
         (D.disc i) ht.1 (ht.2 i) h')
     exact hxeta (p.tsupport_intrinsicLaplacian_subset _ hx)
 
+omit [CompactSpace X] in
 /-- A single end cutoff may fail to have compact support after its centre is
 deleted, but its intrinsic Laplacian is compactly supported in the transition
 annulus and its Green pairing is still the planar logarithmic pairing. -/
@@ -270,6 +275,7 @@ theorem DiscCover.domainChartGreen_restrictedSurfaceLogCutoff
   exact p.domainChartLaplacianIntegral_eq_intrinsic hVU hc hv hvsource hV
     hwlocal hwsupport hint
 
+omit [CompactSpace X] in
 /-- The intrinsic Green pairing of a compactification cutoff is the negative
 sum of its raw planar end pairings.  This version does not normalize at a
 fixed cutoff, so its bound is uniform in the puncture stage. -/
@@ -374,8 +380,8 @@ theorem DiscCover.domainChartGreen_restrictedSurfaceLogCutoffDiff
   have hvsource : tsupport v ⊆ c.source :=
     D.tsupport_restrictedSurfaceLogCutoffDiff_subset_chartSource i O hON ht hs
   have hcReal : c ∈ IsManifold.maximalAtlas 𝓘(ℝ, ℂ) 2 O := by
-    letI : IsManifold 𝓘(ℝ, ℂ) ∞ X := isManifold_real_of_complex
-    letI : IsManifold 𝓘(ℝ, ℂ) ∞ O := isManifold_real_of_complex
+    let : IsManifold 𝓘(ℝ, ℂ) ∞ X := isManifold_real_of_complex
+    let : IsManifold 𝓘(ℝ, ℂ) ∞ O := isManifold_real_of_complex
     exact StructureGroupoid.subtypeRestr_mem_maximalAtlas
       (G := contDiffGroupoid 2 𝓘(ℝ, ℂ))
         (chart_mem_atlas ℂ (D.disc i).center) hON

@@ -13,6 +13,7 @@ variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
 
 namespace FinitePunctureDiscs
 
+omit [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ, ℂ) 1 X] in
 /-- Restricting an ambient function whose support stays in the open subtype
 preserves compact support when the ambient space is compact. -/
 theorem hasCompactSupport_restrict_of_tsupport_subset [CompactSpace X]
@@ -45,11 +46,13 @@ noncomputable def restrictedSurfaceLogCutoff
     (t : ℝ) : O → ℝ :=
   surfaceLogCutoff D t ∘ (Subtype.val : O → X)
 
+omit [IsManifold 𝓘(ℂ, ℂ) 1 X] [T2Space X] in
 theorem restrictedCutoff_apply {F : Finset X}
     (D : FinitePunctureDiscs F) (O : TopologicalSpace.Opens X)
     (t : ℝ) (x : O) :
     D.restrictedCutoff O t x = D.cutoff t (x : X) := rfl
 
+omit [IsManifold 𝓘(ℂ, ℂ) 1 X] [T2Space X] in
 theorem restrictedSurfaceLogCutoff_apply
     (D : RiemannDynamics.CoordDisk X) (O : TopologicalSpace.Opens X)
     (t : ℝ) (x : O) :
@@ -59,8 +62,8 @@ theorem restrictedCutoff_contMDiff {F : Finset X}
     (D : FinitePunctureDiscs F) (O : TopologicalSpace.Opens X)
     {t : ℝ} (ht : D.Admissible t) :
     ContMDiff 𝓘(ℝ, ℂ) 𝓘(ℝ) 2 (D.restrictedCutoff O t) := by
-  letI : IsManifold 𝓘(ℝ, ℂ) ∞ X := isManifold_real_of_complex
-  letI : IsManifold 𝓘(ℝ, ℂ) ∞ O := isManifold_real_of_complex
+  let : IsManifold 𝓘(ℝ, ℂ) ∞ X := isManifold_real_of_complex
+  let : IsManifold 𝓘(ℝ, ℂ) ∞ O := isManifold_real_of_complex
   exact (D.cutoff_contMDiff ht).comp
     (contMDiff_subtype_val (I := 𝓘(ℝ, ℂ)) (n := 2))
 
@@ -69,11 +72,12 @@ theorem restrictedSurfaceLogCutoff_contMDiff
     {t : ℝ} (ht : 0 < t) (hr : -Real.log D.radius ≤ t) :
     ContMDiff 𝓘(ℝ, ℂ) 𝓘(ℝ) 2
       (restrictedSurfaceLogCutoff D O t) := by
-  letI : IsManifold 𝓘(ℝ, ℂ) ∞ X := isManifold_real_of_complex
-  letI : IsManifold 𝓘(ℝ, ℂ) ∞ O := isManifold_real_of_complex
+  let : IsManifold 𝓘(ℝ, ℂ) ∞ X := isManifold_real_of_complex
+  let : IsManifold 𝓘(ℝ, ℂ) ∞ O := isManifold_real_of_complex
   exact (surfaceLogCutoff_contMDiff D ht hr).comp
     (contMDiff_subtype_val (I := 𝓘(ℝ, ℂ)) (n := 2))
 
+omit [IsManifold 𝓘(ℂ) 1 X] in
 /-- If the ambient cutoff support stays in the open subsurface, its
 restriction has compact support there. -/
 theorem restrictedCutoff_hasCompactSupport [CompactSpace X]
@@ -83,6 +87,7 @@ theorem restrictedCutoff_hasCompactSupport [CompactSpace X]
     HasCompactSupport (D.restrictedCutoff O t) :=
   hasCompactSupport_restrict_of_tsupport_subset O hDO
 
+omit [IsManifold 𝓘(ℂ, ℂ) 1 X] in
 /-- The restricted cutoff can only be supported over points which are not
 among the ambient punctures. -/
 theorem restrictedCutoff_tsupport_avoids {F : Finset X}
@@ -93,6 +98,7 @@ theorem restrictedCutoff_tsupport_avoids {F : Finset X}
   exact (tsupport_comp_subset_preimage (D.cutoff t)
     continuous_subtype_val).trans (preimage_mono (D.cutoff_tsupport_avoids ht))
 
+omit [IsManifold 𝓘(ℂ, ℂ) 1 X] in
 /-- On a compactification, including every missing point among the cutoff
 centres makes the restricted cutoff compactly supported. -/
 theorem restrictedCutoff_hasCompactSupport_of_compl_finset [CompactSpace X]
@@ -106,12 +112,14 @@ theorem restrictedCutoff_hasCompactSupport_of_compl_finset [CompactSpace X]
   exact (hO x).mpr (fun hxE =>
     D.cutoff_tsupport_avoids ht hx (hEF hxE))
 
+omit [IsManifold 𝓘(ℂ, ℂ) 1 X] in
 theorem restrictedCutoff_bounds {F : Finset X}
     (D : FinitePunctureDiscs F) (O : TopologicalSpace.Opens X)
     {t : ℝ} (ht : D.Admissible t) (x : O) :
     0 ≤ D.restrictedCutoff O t x ∧ D.restrictedCutoff O t x ≤ 1 :=
   D.cutoff_bounds ht (x : X)
 
+omit [IsManifold 𝓘(ℂ, ℂ) 1 X] [T2Space X] in
 theorem restrictedCutoff_eventually_one {F : Finset X}
     (D : FinitePunctureDiscs F) (O : TopologicalSpace.Opens X)
     {x : O} (hx : (x : X) ∉ F) :
@@ -133,12 +141,13 @@ theorem restrictedSurfaceLogCutoffDiff_contMDiff
     (hs : 0 < s) (hrs : -Real.log D.radius ≤ s) :
     ContMDiff 𝓘(ℝ, ℂ) 𝓘(ℝ) 2
       (restrictedSurfaceLogCutoffDiff D O t s) := by
-  letI : IsManifold 𝓘(ℝ, ℂ) ∞ X := isManifold_real_of_complex
-  letI : IsManifold 𝓘(ℝ, ℂ) ∞ O := isManifold_real_of_complex
+  let : IsManifold 𝓘(ℝ, ℂ) ∞ X := isManifold_real_of_complex
+  let : IsManifold 𝓘(ℝ, ℂ) ∞ O := isManifold_real_of_complex
   exact ((surfaceLogCutoff_contMDiff D ht hrt).sub
     (surfaceLogCutoff_contMDiff D hs hrs)).comp
       (contMDiff_subtype_val (I := 𝓘(ℝ, ℂ)) (n := 2))
 
+omit [IsManifold 𝓘(ℂ, ℂ) 1 X] in
 /-- The difference of two logarithmic cutoffs at one member of a disjoint
 finite family avoids every centre of that family. -/
 theorem tsupport_surfaceLogCutoff_sub_subset_compl
@@ -181,10 +190,11 @@ theorem tsupport_surfaceLogCutoff_sub_subset_compl
           (D.disc i) hs.1 (hs.2 i) h)
       filter_upwards [notMem_tsupport_iff_eventuallyEq.mp hnt,
         notMem_tsupport_iff_eventuallyEq.mp hns] with y hyt hys
-      simp [Pi.zero_apply] at hyt hys
+      simp at hyt hys
       simp [hyt, hys]
   exact (notMem_tsupport_iff_eventuallyEq.mpr hzero) hx
 
+omit [IsManifold 𝓘(ℂ, ℂ) 1 X] in
 theorem restrictedSurfaceLogCutoffDiff_hasCompactSupport [CompactSpace X]
     {F : Finset X} (D : FinitePunctureDiscs F) (i : ↑F)
     (O : TopologicalSpace.Opens X) (E : Finset X)
@@ -197,6 +207,7 @@ theorem restrictedSurfaceLogCutoffDiff_hasCompactSupport [CompactSpace X]
   exact (hO x).mpr (fun hxE =>
     D.tsupport_surfaceLogCutoff_sub_subset_compl i ht hs hx (hEF hxE))
 
+omit [IsManifold 𝓘(ℂ, ℂ) 1 X] in
 /-- Restricting a normalized end cutoff difference preserves avoidance of
 every centre in the ambient finite family. -/
 theorem restrictedSurfaceLogCutoffDiff_tsupport_avoids
@@ -210,6 +221,7 @@ theorem restrictedSurfaceLogCutoffDiff_tsupport_avoids
       continuous_subtype_val).trans
     (preimage_mono (D.tsupport_surfaceLogCutoff_sub_subset_compl i ht hs))
 
+omit [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ) 1 X] [T2Space X] in
 /-- Reading a restricted ambient function in the restricted chart gives the
 same zero extension as reading the ambient function, provided its support
 does not meet the deleted part of the surface. -/
@@ -244,6 +256,7 @@ theorem chartZeroExtensionIn_subtypeRestr
       exact hgzero.symm
     · simp [chartZeroExtensionIn, hzc]
 
+omit [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ, ℂ) 1 X] [T2Space X] in
 /-- Zero extension through a chart is linear under subtraction. -/
 theorem chartZeroExtensionIn_sub (c : OpenPartialHomeomorph X ℂ)
     (f g : X → ℝ) :
@@ -253,6 +266,7 @@ theorem chartZeroExtensionIn_sub (c : OpenPartialHomeomorph X ℂ)
   by_cases hz : z ∈ c.target <;>
     simp [chartZeroExtensionIn, hz, Pi.sub_apply]
 
+omit [IsManifold 𝓘(ℂ, ℂ) 1 X] in
 /-- A compactly supported difference of two end cutoffs reads in the
 restricted coordinate exactly as the corresponding planar difference. -/
 theorem chartZeroExtensionIn_restrictedSurfaceLogCutoffDiff

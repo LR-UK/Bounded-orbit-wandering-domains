@@ -13,6 +13,7 @@ namespace AreaDeficit.Surfaces.DiscCover
 variable {M : Type*} [TopologicalSpace M] [ChartedSpace ℂ M]
   [IsManifold 𝓘(ℂ) 1 M] [T2Space M] [SecondCountableTopology M]
 
+omit [T2Space M] [SecondCountableTopology M] in
 /-- At an old end, a chart parametrization which escapes every compact subset
 of the old surface sees the logarithmic metric quotient tend to zero.
 Consequently its Riesz boundary contribution vanishes. -/

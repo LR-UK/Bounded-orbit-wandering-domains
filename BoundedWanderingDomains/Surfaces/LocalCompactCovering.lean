@@ -18,6 +18,7 @@ variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
 def sourceCompact (f : LocalMap X) (K : Set X) : Set f.source :=
   (Subtype.val : f.source → X) ⁻¹' K
 
+omit [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ, ℂ) 1 X] [MeasurableSpace X] [BorelSpace X] [SecondCountableTopology X] [LocallyCompactSpace X] [T2Space X] [DecidableEq X] in
 theorem sourceCompact_isCompact (f : LocalMap X) {K : Set X}
     (hK : IsCompact K) (hKsource : K ⊆ f.source) :
     IsCompact (f.sourceCompact K) := by
@@ -50,6 +51,7 @@ noncomputable def localCompactCoverDomainHomeomorph (f : LocalMap X)
       IsEmbedding.subtypeVal).homeomorphImage
         (compactCoverDomain (f.sourceCompact K) S f.map hf : Set f.source)
 
+omit [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ, ℂ) 1 X] [MeasurableSpace X] [BorelSpace X] [SecondCountableTopology X] [LocallyCompactSpace X] [T2Space X] [DecidableEq X] in
 /-- A point in the ambient interior of the compact source model whose image
 lies in the target open set belongs to the ambient compact-cover domain. -/
 theorem mem_localCompactCoverDomain_of_mem_interior
@@ -66,6 +68,7 @@ theorem mem_localCompactCoverDomain_of_mem_interior
   change f.map xs ∈ S
   simpa only [xs] using hfx
 
+omit [MeasurableSpace X] [BorelSpace X] [SecondCountableTopology X] in
 /-- Away from finitely many branch values and the compact image of the
 source boundary, a local holomorphic map is a covering between ambient open
 surface domains.  This is the precise bridge needed by the area-advance
@@ -82,7 +85,7 @@ theorem exists_finite_branch_values_local_compact_covering
           MDifferentiable 𝓘(ℂ) 𝓘(ℂ) F ∧ IsCoveringMap F ∧
           (fun x : f.localCompactCoverDomain K S hf.2.continuous =>
             f.totalize x) = (fun x => (F x : X)) := by
-  letI : LocallyCompactSpace f.source := f.source.isOpen.locallyCompactSpace
+  let : LocallyCompactSpace f.source := f.source.isOpen.locallyCompactSpace
   let Ks := f.sourceCompact K
   have hKs : IsCompact Ks := f.sourceCompact_isCompact hK hKsource
   obtain ⟨E, hE⟩ :=

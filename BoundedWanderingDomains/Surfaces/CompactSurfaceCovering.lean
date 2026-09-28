@@ -19,7 +19,7 @@ theorem compact_surface_covering
     (hint : ∀ z ∈ K, f z ∈ S → z ∈ interior K)
     (hloc : IsLocalHomeomorphOn f (K ∩ f ⁻¹' S)) :
     IsCoveringMapOn (fun z : K => f z) S := by
-  letI : CompactSpace K := isCompact_iff_compactSpace.mp hK
+  let : CompactSpace K := isCompact_iff_compactSpace.mp hK
   apply IsCoveringMapOn.of_isLocalHomeomorphOn hf.continuousOn.domRestrict
   exact hloc.comp
     ((AreaDeficit.subtype_localHomeomorph_interior K).mono
@@ -34,6 +34,8 @@ variable {M N : Type*} [TopologicalSpace M] [ChartedSpace ℂ M]
   [SecondCountableTopology N] [LocallyCompactSpace N] [T2Space N]
   [DecidableEq N]
 
+omit [MeasurableSpace M] [BorelSpace M] [SecondCountableTopology M] [MeasurableSpace N]
+  [BorelSpace N] [SecondCountableTopology N] in
 /-- One finite branch-value set works for every target set whose compact
 restriction has no boundary fibres. -/
 theorem exists_finite_branch_values_compact_covering

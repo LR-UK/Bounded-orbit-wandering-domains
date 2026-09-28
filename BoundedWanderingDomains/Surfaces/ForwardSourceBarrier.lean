@@ -12,6 +12,7 @@ variable {X : Type*} [TopologicalSpace X] [T2Space X]
   [LocallyCompactSpace X] [SecondCountableTopology X]
   [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ) 1 X]
 
+omit [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X] [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ, ℂ) 1 X] in
 theorem sourceExhaustiveBackwardTree_forward (f : LocalMap X)
     (K : ℕ → Set f.source) (Q : ℕ → Set X)
     (hQ : ∀ n, Disjoint (Q n) (f.source : Set X)) (n : ℕ) :
@@ -40,7 +41,7 @@ theorem exists_forward_source_finitePuncture_barrier (f : LocalMap X)
         (x : X) ∈ closure (⋃ n, (P n : Set X))) ∧
       Disjoint (closure (⋃ n, (P n : Set X))) R := by
   classical
-  letI : LocallyCompactSpace f.source := f.source.isOpen.locallyCompactSpace
+  let : LocallyCompactSpace f.source := f.source.isOpen.locallyCompactSpace
   obtain ⟨Q, hQm, hQfront, hQcl⟩ :=
     AreaDeficit.Surfaces.closed_set_dense_finite_exhaustion
       (isClosed_frontier : IsClosed (frontier (f.source : Set X)))

@@ -10,8 +10,7 @@ open scoped Manifold Topology ContDiff
 
 namespace AreaDeficit.Surfaces
 
-variable {M : Type*} [TopologicalSpace M] [ChartedSpace ℂ M]
-  [IsManifold 𝓘(ℂ) 1 M] [T2Space M]
+variable {M : Type*} [TopologicalSpace M] [ChartedSpace ℂ M] [T2Space M]
 
 /-- The planar logarithmic cutoff at the centre of a coordinate disc,
 pulled back to the surface and extended by zero outside the chart. -/
@@ -20,6 +19,7 @@ noncomputable def surfaceLogCutoff
   chartPullbackExtension (chartAt ℂ D.center)
     (AreaDeficit.logCutoff (chartAt ℂ D.center D.center) (-2 * t) (-t))
 
+omit [T2Space M] in
 theorem exp_neg_le_coordDisk_radius
     (D : RiemannDynamics.CoordDisk M) {t : ℝ}
     (ht : -Real.log D.radius ≤ t) :
@@ -27,6 +27,7 @@ theorem exp_neg_le_coordDisk_radius
   rw [← Real.exp_log D.radius_pos]
   exact Real.exp_le_exp.mpr (by linarith)
 
+omit [T2Space M] in
 theorem surfaceLogCutoff_planar_tsupport_subset
     (D : RiemannDynamics.CoordDisk M) {t : ℝ} (ht : 0 < t)
     (hr : -Real.log D.radius ≤ t) :
@@ -37,7 +38,7 @@ theorem surfaceLogCutoff_planar_tsupport_subset
   exact (closedBall_subset_closedBall
     (exp_neg_le_coordDisk_radius D hr)).trans D.closedBall_subset
 
-theorem surfaceLogCutoff_contMDiff
+theorem surfaceLogCutoff_contMDiff [IsManifold 𝓘(ℂ) 1 M]
     (D : RiemannDynamics.CoordDisk M) {t : ℝ} (ht : 0 < t)
     (hr : -Real.log D.radius ≤ t) :
     ContMDiff 𝓘(ℝ, ℂ) 𝓘(ℝ) 2 (surfaceLogCutoff D t) := by
@@ -45,7 +46,7 @@ theorem surfaceLogCutoff_contMDiff
   · exact (AreaDeficit.logCutoff_contDiff _ (by linarith)).of_le (by norm_num)
   · exact AreaDeficit.logCutoff_hasCompactSupport _ (by linarith)
   · exact surfaceLogCutoff_planar_tsupport_subset D ht hr
-  · letI : IsManifold 𝓘(ℝ, ℂ) ∞ M := isManifold_real_of_complex
+  · let : IsManifold 𝓘(ℝ, ℂ) ∞ M := isManifold_real_of_complex
     exact (contDiffGroupoid 2 𝓘(ℝ, ℂ)).chart_mem_maximalAtlas D.center
 
 theorem surfaceLogCutoff_hasCompactSupport
@@ -56,6 +57,7 @@ theorem surfaceLogCutoff_hasCompactSupport
   · exact AreaDeficit.logCutoff_hasCompactSupport _ (by linarith)
   · exact surfaceLogCutoff_planar_tsupport_subset D ht hr
 
+omit [T2Space M] in
 theorem chartZeroExtensionIn_surfaceLogCutoff
     (D : RiemannDynamics.CoordDisk M) {t : ℝ} (ht : 0 < t)
     (hr : -Real.log D.radius ≤ t) :
@@ -75,6 +77,7 @@ theorem surfaceLogCutoff_tsupport_subset_closedCarrier
   exact closedBall_subset_closedBall (exp_neg_le_coordDisk_radius D hr)
     ((AreaDeficit.logCutoff_tsupport (by linarith)) (subset_closure hz))
 
+omit [T2Space M] in
 theorem surfaceLogCutoff_bounds
     (D : RiemannDynamics.CoordDisk M) (t : ℝ) (x : M) :
     0 ≤ surfaceLogCutoff D t x ∧ surfaceLogCutoff D t x ≤ 1 := by
@@ -83,6 +86,7 @@ theorem surfaceLogCutoff_bounds
     exact AreaDeficit.logCutoff_bounds _ _ _ _
   · simp [surfaceLogCutoff, chartPullbackExtension, hx]
 
+omit [T2Space M] in
 theorem surfaceLogCutoff_eq_one
     (D : RiemannDynamics.CoordDisk M) {t : ℝ} (ht : 0 < t)
     {x : M} (hx : x ∈ (chartAt ℂ D.center).source)
@@ -92,6 +96,7 @@ theorem surfaceLogCutoff_eq_one
   rw [surfaceLogCutoff, chartPullbackExtension_eq hx]
   exact AreaDeficit.logCutoff_eq_one (by linarith) hdist
 
+omit [T2Space M] in
 theorem surfaceLogCutoff_eq_zero
     (D : RiemannDynamics.CoordDisk M) {t : ℝ} (ht : 0 < t)
     {x : M} (hx : x ∈ (chartAt ℂ D.center).source)
@@ -101,12 +106,14 @@ theorem surfaceLogCutoff_eq_zero
   rw [surfaceLogCutoff, chartPullbackExtension_eq hx]
   exact AreaDeficit.logCutoff_eq_zero (by linarith) hdist
 
+omit [T2Space M] in
 theorem surfaceLogCutoff_center
     (D : RiemannDynamics.CoordDisk M) {t : ℝ} (ht : 0 < t) :
     surfaceLogCutoff D t D.center = 1 := by
   apply surfaceLogCutoff_eq_one D ht (mem_chart_source ℂ D.center)
   simpa using (Real.exp_pos (-(2 * t))).le
 
+omit [T2Space M] in
 theorem surfaceLogCutoff_eventuallyEq_one_center
     (D : RiemannDynamics.CoordDisk M) {t : ℝ} (ht : 0 < t) :
     surfaceLogCutoff D t =ᶠ[𝓝 D.center] (fun _ => (1 : ℝ)) := by
@@ -120,6 +127,7 @@ theorem surfaceLogCutoff_eventuallyEq_one_center
   exact surfaceLogCutoff_eq_one D ht hxs (by
     simpa only [dist_eq_norm] using (mem_ball.mp hxb).le)
 
+omit [T2Space M] in
 theorem surfaceLogCutoff_eventually_zero
     (D : RiemannDynamics.CoordDisk M) {x : M} (hx : x ≠ D.center) :
     ∀ᶠ t : ℝ in atTop, surfaceLogCutoff D t x = 0 := by

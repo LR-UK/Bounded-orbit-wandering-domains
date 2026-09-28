@@ -81,8 +81,7 @@ theorem diff_backwardExceptional_wandering_configuration_basic
             apply mem_iUnion.mpr
             exact ⟨k, x, hAstarsub hxA,
               f.iterate_eq_some_orbit k ⟨x, hxtrap⟩⟩
-          · change f.map w ∈ S
-            rwa [show f.map w = f.orbit (k + 1) ⟨x, hxtrap⟩ from
+          · rwa [show f.map w = f.orbit (k + 1) ⟨x, hxtrap⟩ from
               (f.orbit_succ k ⟨x, hxtrap⟩).symm]
     exact horbit n (hyorbit ▸ hys)
   exact ⟨hAstarmeas, hWmeas, f.subset_saturation Astar,
@@ -90,6 +89,7 @@ theorem diff_backwardExceptional_wandering_configuration_basic
     f.totalize_injOn_saturation hAstartrap hinjstar,
     f.totalize_image_saturation hAstartrap hdistar, hWdis⟩
 
+omit [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ, ℂ) 1 X] [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X] [MeasurableSpace X] [BorelSpace X] in
 /-- A backward-invariant exceptional set cannot be met by an orbit which
 starts outside it, provided the whole orbit remains in the working source. -/
 theorem saturation_diff_disjoint_of_backward_invariant
@@ -118,8 +118,7 @@ theorem saturation_diff_disjoint_of_backward_invariant
         · apply hsatV
           apply mem_iUnion.mpr
           exact ⟨k, x, hxA.1, f.iterate_eq_some_orbit k ⟨x, hxtrap⟩⟩
-        · change f.map w ∈ S
-          rwa [show f.map w = f.orbit (k + 1) ⟨x, hxtrap⟩ from
+        · rwa [show f.map w = f.orbit (k + 1) ⟨x, hxtrap⟩ from
             (f.orbit_succ k ⟨x, hxtrap⟩).symm]
   exact horbit n (hyorbit ▸ hys)
 
@@ -175,6 +174,7 @@ theorem diff_backwardExceptional_wandering_configuration
     f.totalize_injOn_saturation hAstartrap hinjstar,
     f.totalize_image_saturation hAstartrap hdistar, hWdis⟩
 
+omit [LocallyCompactSpace X] in
 /-- Enlarge the boundary stages by finitely many exceptional values and all
 their backward iterates.  Deleting the resulting countable union preserves
 measurability and positive chart area, while retaining density in the new

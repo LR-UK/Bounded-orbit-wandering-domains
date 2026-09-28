@@ -27,8 +27,8 @@ theorem components_restrictAmbient_restrictSource_of_compact_orbit
     ∀ n, ((f.restrictSource V hVs).restrictAmbient O hVO hm).IsComponent
       (Subtype.val ⁻¹' S n) ∧ IsSimplyConnected (Subtype.val ⁻¹' S n : Set O) := by
   classical
-  letI : LocallyPathConnectedSpace X := ChartedSpace.locallyPathConnectedSpace ℂ X
-  letI : LocallyPathConnectedSpace O := ChartedSpace.locallyPathConnectedSpace ℂ O
+  let : LocallyPathConnectedSpace X := ChartedSpace.locallyPathConnectedSpace ℂ X
+  let : LocallyPathConnectedSpace O := ChartedSpace.locallyPathConnectedSpace ℂ O
   let r := f.restrictSource V hVs
   let g := r.restrictAmbient O hVO hm
   have hr := f.isOpenHolomorphic_restrictSource hf V hVs
@@ -78,13 +78,13 @@ theorem components_restrictAmbient_restrictSource_of_compact_orbit
     exact hzK (m + n)
   have hRomega : ∀ n, (R n : Set O) ⊆ g.omega := by
     intro n
-    letI : SimplyConnectedSpace (R n) := hRsc n
+    let : SimplyConnectedSpace (R n) := hRsc n
     exact g.connected_trapped_open_subset_omega_of_compact_orbit hg p (R n) (hRtrap n)
       ⟨g.orbit n z, hzS n⟩ hK (hshiftK n)
   intro n
   let C := componentDomain ⟨g.omega, g.isOpen_omega⟩ (g.orbit n z)
   have hzn : g.orbit n z ∈ g.omega := hRomega n (hzS n)
-  letI : ConnectedSpace C := componentDomain_connected hzn
+  let : ConnectedSpace C := componentDomain_connected hzn
   have hCtrap : (C : Set O) ⊆ g.trapped :=
     (connectedComponentIn_subset _ _).trans (g.omega_subset_trapped_interior.trans interior_subset)
   have hComega : Subtype.val '' (C : Set O) ⊆ f.omega :=

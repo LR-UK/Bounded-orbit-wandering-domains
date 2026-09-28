@@ -28,11 +28,11 @@ theorem DiscCover.exists_finite_hyperbolizing_punctures :
       Nonempty (DiscCover U) := by
   classical
   let x₀ : X := Classical.choice (inferInstance : Nonempty X)
-  letI : T2Space (RiemannDynamics.PathCover x₀) :=
+  let : T2Space (RiemannDynamics.PathCover x₀) :=
     RiemannDynamics.t2space_pathCover x₀
-  letI : SimplyConnectedSpace (RiemannDynamics.PathCover x₀) :=
+  let : SimplyConnectedSpace (RiemannDynamics.PathCover x₀) :=
     RiemannDynamics.simplyConnectedSpace_pathCover x₀
-  letI : SecondCountableTopology (RiemannDynamics.PathCover x₀) :=
+  let : SecondCountableTopology (RiemannDynamics.PathCover x₀) :=
     RiemannDynamics.secondCountableTopology_pathCover x₀
   rcases RiemannDynamics.uniformization_trichotomy
       (RiemannDynamics.PathCover x₀) with hdisc | hplane | hsphere
@@ -55,7 +55,7 @@ theorem DiscCover.exists_finite_hyperbolizing_punctures :
     let a : X := Classical.choice (inferInstance : Nonempty X)
     obtain ⟨b, hb⟩ := ({a} : Finset X).exists_notMem
     obtain ⟨c, hc⟩ := ({a, b} : Finset X).exists_notMem
-    simp only [Finset.mem_singleton, not_false_eq_true] at hb
+    simp only [Finset.mem_singleton] at hb
     simp only [Finset.mem_insert, Finset.mem_singleton, not_or] at hc
     have hab : a ≠ b := fun h => hb h.symm
     have hac : a ≠ c := fun h => hc.1 h.symm
@@ -82,11 +82,11 @@ theorem DiscCover.nonempty_compl_finset_card_three (F : Finset X)
     Nonempty (DiscCover U) := by
   classical
   let x₀ : X := Classical.choice (inferInstance : Nonempty X)
-  letI : T2Space (RiemannDynamics.PathCover x₀) :=
+  let : T2Space (RiemannDynamics.PathCover x₀) :=
     RiemannDynamics.t2space_pathCover x₀
-  letI : SimplyConnectedSpace (RiemannDynamics.PathCover x₀) :=
+  let : SimplyConnectedSpace (RiemannDynamics.PathCover x₀) :=
     RiemannDynamics.simplyConnectedSpace_pathCover x₀
-  letI : SecondCountableTopology (RiemannDynamics.PathCover x₀) :=
+  let : SecondCountableTopology (RiemannDynamics.PathCover x₀) :=
     RiemannDynamics.secondCountableTopology_pathCover x₀
   rcases RiemannDynamics.uniformization_trichotomy
       (RiemannDynamics.PathCover x₀) with hdisc | hplane | hsphere
@@ -99,7 +99,7 @@ theorem DiscCover.nonempty_compl_finset_card_three (F : Finset X)
     let U : Opens X :=
       ⟨((↑({a, b, c} : Finset X) : Set X)ᶜ),
         ({a, b, c} : Finset X).finite_toSet.isClosed.isOpen_compl⟩
-    letI : ConnectedSpace U := Subtype.connectedSpace
+    let : ConnectedSpace U := Subtype.connectedSpace
       (RiemannDynamics.isConnected_compl_finset {a, b, c})
     obtain ⟨p⟩ := DiscCover.nonempty_compl_singleton_of_pathCover_plane x₀ e a
     apply DiscCover.nonempty_of_le_open V U p
@@ -135,7 +135,7 @@ theorem DiscCover.nonempty_compl_finset_of_three_le_card (F : Finset X)
     ⟨((↑E : Set X)ᶜ), E.finite_toSet.isClosed.isOpen_compl⟩
   let U : Opens X :=
     ⟨((↑F : Set X)ᶜ), F.finite_toSet.isClosed.isOpen_compl⟩
-  letI : ConnectedSpace U := Subtype.connectedSpace
+  let : ConnectedSpace U := Subtype.connectedSpace
     (RiemannDynamics.isConnected_compl_finset F)
   obtain ⟨p⟩ := DiscCover.nonempty_compl_finset_card_three E hEcard
   apply DiscCover.nonempty_of_le_open V U p

@@ -15,6 +15,7 @@ variable {X : Type*} [TopologicalSpace X] [T2Space X]
   [ConnectedSpace X]
   [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ) 1 X]
 
+omit [SecondCountableTopology X] [ConnectedSpace X] [IsManifold 𝓘(ℂ) 1 X] in
 /-- Delete a small closed coordinate disk in the initial wandering component,
 away from the marked point.  Every later component, and hence the marked tail
 orbit, lies in the resulting fixed hyperbolic surface. -/
@@ -32,7 +33,7 @@ theorem LocalMap.IsWanderingComponent.exists_anchorDisk_orbit_components
   obtain ⟨V, hztrapped, hV0, hcomp, horbit, hdis⟩ :=
     hU.exists_orbit_components f hz
   obtain ⟨w, hwomega, hVw⟩ := hcomp 0
-  letI : LocallyPathConnectedSpace X :=
+  let : LocallyPathConnectedSpace X :=
     ChartedSpace.locallyPathConnectedSpace ℂ X
   have hUopen : IsOpen U := by
     rw [← hV0, hVw]
@@ -51,7 +52,7 @@ theorem LocalMap.IsWanderingComponent.exists_hyperbolicAnchor_orbit_components
     {z : X} (hz : z ∈ U) :
     ∃ (V : ℕ → Set X) (hztrapped : z ∈ f.trapped)
       (D : RiemannDynamics.CoordDisk X)
-      (p : AreaDeficit.Surfaces.DiscCover D.compl),
+      (_p : AreaDeficit.Surfaces.DiscCover D.compl),
       V 0 = U ∧
       (∀ n, f.IsComponent (V n)) ∧
       (∀ n, f.orbit n ⟨z, hztrapped⟩ ∈ V n) ∧
@@ -60,7 +61,7 @@ theorem LocalMap.IsWanderingComponent.exists_hyperbolicAnchor_orbit_components
       (∀ n, 0 < n → V n ⊆ (D.compl : Set X)) := by
   obtain ⟨V, hztrapped, D, hV0, hcomp, horbit, hdis, hD, htail⟩ :=
     hU.exists_anchorDisk_orbit_components f hz
-  letI : IsManifold 𝓘(ℂ) ω X :=
+  let : IsManifold 𝓘(ℂ) ω X :=
     AreaDeficit.Surfaces.isManifold_analytic_of_complex
   let p : AreaDeficit.Surfaces.DiscCover D.compl :=
     Classical.choice (AreaDeficit.Surfaces.nonempty_discCover_coordDisk_compl D)
@@ -75,7 +76,7 @@ theorem LocalMap.IsWanderingComponent.exists_hyperbolic_restricted_tail
     {z : X} (hz : z ∈ U) :
     ∃ (V : ℕ → Set X) (hztrapped : z ∈ f.trapped)
       (D : RiemannDynamics.CoordDisk X)
-      (p : AreaDeficit.Surfaces.DiscCover D.compl),
+      (_p : AreaDeficit.Surfaces.DiscCover D.compl),
       let W : TopologicalSpace.Opens X := f.source ⊓ D.compl
       let hW : (W : Set X) ⊆ f.source := fun _ hx => hx.1
       let z₁ : f.trapped := f.trappedMap ⟨z, hztrapped⟩

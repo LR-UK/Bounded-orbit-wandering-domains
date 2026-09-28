@@ -42,7 +42,7 @@ theorem mem_omega_of_omits_finite_anchors
     intro n
     apply (mdifferentiable_subtypeVal_comp_iff O (F n)).mp
     exact (f.mdifferentiable_orbitOn hf W hW (s n)).comp hd
-  letI : UniformSpace (OnePoint X) := uniformSpaceOfCompactR1
+  let : UniformSpace (OnePoint X) := uniformSpaceOfCompactR1
   obtain ⟨a, G, ha, hconv⟩ := p.exists_normal_disc_subsequence_finite_complement E O hO F hF
   let e : unitDisc ≃ₜ V := D.isOpenEmbedding_param.toIsEmbedding.toHomeomorph
   let q : V → unitDisc := e.symm

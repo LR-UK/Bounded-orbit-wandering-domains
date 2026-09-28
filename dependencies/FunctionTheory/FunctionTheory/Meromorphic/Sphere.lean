@@ -37,11 +37,11 @@ noncomputable def meromorphicSphereValue (f : ℂ → ℂ) (z : ℂ) : OnePoint 
 
 theorem meromorphicSphereValue_of_analytic {f : ℂ → ℂ} {z : ℂ}
     (hz : AnalyticAt ℂ f z) : meromorphicSphereValue f z = (f z : OnePoint ℂ) := by
-  simp only [meromorphicSphereValue, if_pos hz]
+  simp only [meromorphicSphereValue, ite_eq_left hz]
 
 theorem meromorphicSphereValue_of_not_analytic {f : ℂ → ℂ} {z : ℂ}
     (hz : ¬ AnalyticAt ℂ f z) : meromorphicSphereValue f z = ∞ := by
-  simp only [meromorphicSphereValue, if_neg hz]
+  simp only [meromorphicSphereValue, ite_eq_right hz]
 
 /-- A globally meromorphic function in normal form defines a continuous
 sphere-valued function, including at its poles. -/

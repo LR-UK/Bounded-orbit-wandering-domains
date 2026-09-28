@@ -33,7 +33,7 @@ theorem disc_area_le_of_finite_model_bounds (p : DiscCover M)
   let O : TopologicalSpace.Opens M := ⟨Aᶜ, hA.isOpen_compl⟩
   let x : O := ⟨q.projection discZero, hcentre⟩
   have hUO : U = componentDomain O (x : M) := TopologicalSpace.Opens.ext hcomp
-  letI : ConnectedSpace U := hUO ▸ componentDomain_connected hcentre
+  let : ConnectedSpace U := hUO ▸ componentDomain_connected hcentre
   let hUN : Nonempty U := ⟨q.projection discZero⟩
   let D := {z : unitDisc | ‖(z : ℂ)‖ < r}
   let B := (fun z => (q.projection z : M)) '' D

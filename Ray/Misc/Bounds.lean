@@ -71,7 +71,7 @@ theorem late_series_sum {m : ℕ} {N : Finset ℕ} (h : Late N m) (f : ℕ → �
       assumption; exact Nat.sub_add_cancel (h k kN)
     · intro ha; rcases ha with ⟨a, aN, ak⟩
       rw [Nat.sub_add_cancel (h a aN)] at ak
-      rw [← ak]; assumption
+      rwa [← ak]
   rw [NNs]; apply Finset.sum_image
   intro a _ b _; exact Nat.add_right_cancel
 
@@ -341,7 +341,7 @@ theorem Real.log1p_small {x : ℝ} (xr : |x| ≤ 1/2) : |Real.log (1 + x)| ≤ 2
 /-- `log z` is small for `z ≈ 1` -/
 public theorem log_small {z : ℂ} (zs : ‖z - 1‖ ≤ 1 / 2) : ‖log z‖ ≤ 2 * ‖z - 1‖ := by
   generalize zw : z - 1 = z1; have wz : z = 1 + z1 := by rw [← zw]; ring
-  rw [wz]; refine log1p_small ?_; rw [← zw]; assumption
+  rw [wz]; refine log1p_small ?_; rwa [← zw]
 
 theorem weak_exp_small' {z : ℂ} {r : ℝ} (zr : ‖z‖ < r) (r1 : r ≤ 1) :
     ‖exp z - 1‖ ≤ (1 + r) * ‖z‖ := by

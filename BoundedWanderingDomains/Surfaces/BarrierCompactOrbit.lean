@@ -17,8 +17,9 @@ variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [IsManifold 𝓘(ℂ) 1 X] [T2Space X] [LocallyCompactSpace X]
   [SecondCountableTopology X]
 
+omit [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ, ℂ) 1 X] [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X] in
 theorem trapped_barrier_component (f : LocalMap X) (hf : Continuous f.map)
-    [LocallyConnectedSpace X] {A : Set X} (hA : IsClosed A)
+    [LocallyConnectedSpace X] {A : Set X} (_hA : IsClosed A)
     (hfront : frontier (f.source : Set X) ⊆ A)
     (hback : ∀ x : f.source, f.map x ∈ A → (x : X) ∈ A)
     {x : X} (hx : x ∈ f.trapped) (hxA : x ∉ A) :
@@ -52,6 +53,7 @@ theorem trapped_barrier_component (f : LocalMap X) (hf : Continuous f.map)
   rw [← f.trappedSet_totalize_eq_trapped]
   exact fun n => ((hit n).2 hy).1
 
+omit [LocallyCompactSpace X] in
 theorem compact_orbits_on_connected_trapped_open
     (f : LocalMap X) (hf : IsOpenHolomorphic f) (p : DiscCover X)
     (W : TopologicalSpace.Opens X) [ConnectedSpace W]
@@ -98,9 +100,9 @@ theorem barrier_component_subset_omega_of_compact_orbit
     {x : X} (hx : x ∈ f.trapped) (hxA : x ∉ A)
     {K : Set X} (hK : IsCompact K) (hxK : ∀ n, f.orbit n ⟨x, hx⟩ ∈ K) :
     connectedComponentIn Aᶜ x ⊆ f.omega := by
-  letI : LocallyPathConnectedSpace X := ChartedSpace.locallyPathConnectedSpace ℂ X
+  let : LocallyPathConnectedSpace X := ChartedSpace.locallyPathConnectedSpace ℂ X
   let W := componentDomain ⟨Aᶜ, hA.isOpen_compl⟩ x
-  letI : ConnectedSpace W := componentDomain_connected hxA
+  let : ConnectedSpace W := componentDomain_connected hxA
   exact f.connected_trapped_open_subset_omega_of_compact_orbit hf p W
     (f.trapped_barrier_component hf.2.continuous hA hfront hback hx hxA)
     ⟨x, mem_componentDomain hxA⟩ hK hxK

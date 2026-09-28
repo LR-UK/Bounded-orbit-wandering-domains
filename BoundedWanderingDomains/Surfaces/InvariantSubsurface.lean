@@ -22,7 +22,7 @@ theorem exists_invariant_hyperbolic_neighborhood_of_compact_saturation
     (hAtrap : A ⊆ f.trapped) (hK : IsCompact K) (hKne : K ≠ Set.univ)
     (hKsource : K ⊆ f.source) (hsatK : f.saturation A ⊆ K) :
     ∃ (D : RiemannDynamics.CoordDisk X)
-      (p : AreaDeficit.Surfaces.DiscCover D.compl)
+      (_p : AreaDeficit.Surfaces.DiscCover D.compl)
       (V : TopologicalSpace.Opens X)
       (hVsource : closure (V : Set X) ⊆ f.source),
       closure (f.saturation A) ⊆ V ∧

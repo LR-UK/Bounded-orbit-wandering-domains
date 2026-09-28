@@ -1,5 +1,21 @@
 # Dependency compatibility changes, 23 September 2026
 
+## 28 September 2026 linter update
+
+The current warning cleanup updates deprecated conditional-lemma names in
+`FunctionTheory/Meromorphic/Sphere.lean` and
+`RiemannDynamics/Uniformization/SphereManifold.lean`, and shortens seven tactic
+sequences in four attributed Ray modules. Original authorship, licences and
+headers are retained. No linter is disabled and the dependency pins are unchanged.
+The separate linter-update package records the complete source patch and checks.
+
+FunctionTheory's module maps were regenerated. Its standalone verifier was
+attempted, but its separate Mathlib fetch failed with a certificate error before
+compilation. This is not a standalone verification pass; the root project checks
+the dependency modules imported by its submitted, legacy and research targets.
+
+## Initial compatibility update, 23 September 2026
+
 This development updates deprecated Mathlib names and Lean style issues in the
 included source dependencies. The original frozen submission is unchanged.
 The changes replace deprecated set, conditional, graph and restriction lemmas;

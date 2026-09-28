@@ -15,11 +15,12 @@ def compactCoverDomain (K : Set M) (S : TopologicalSpace.Opens N)
     (f : M → N) (hf : Continuous f) : TopologicalSpace.Opens M :=
   ⟨interior K ∩ f ⁻¹' S, isOpen_interior.inter (S.isOpen.preimage hf)⟩
 
+omit [T2Space M] [T2Space N] in
 /-- A compact covering whose target fibres lie in the compact interior is
 equivalently a covering between the corresponding open surface domains. -/
 theorem compact_interior_isCoveringMap
     {f : M → N} {K : Set M} (S : TopologicalSpace.Opens N)
-    (hK : IsCompact K) (hf : Continuous f)
+    (_hK : IsCompact K) (hf : Continuous f)
     (hint : ∀ z ∈ K, f z ∈ S → z ∈ interior K)
     (hcov : IsCoveringMapOn (fun z : K => f z) S) :
     IsCoveringMap (fun z : compactCoverDomain K S f hf =>

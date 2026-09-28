@@ -92,9 +92,9 @@ theorem exists_uniform_area_advance_of_remote_covering
     p.domainArea_eq_image_of_openDomain_covering T _ F hF hcov hf
       hfm hW hWT hinj
   have hfW : MeasurableSet (f '' W) := by
-    letI : PolishSpace X := AreaDeficit.Surfaces.surfacePolishSpace
+    let : PolishSpace X := AreaDeficit.Surfaces.surfacePolishSpace
     have hfcont : ContinuousOn f T := by
-      rw [continuousOn_iff_continuous_restrict]
+      rw [continuousOn_iff_continuous_domRestrict]
       change Continuous (fun x : T => f x)
       rw [hf]
       exact continuous_subtype_val.comp hF.continuous

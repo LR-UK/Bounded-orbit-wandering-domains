@@ -18,7 +18,7 @@ variable {X : Type*} [TopologicalSpace X] [T2Space X]
 
 /-- The one-point compactification of a second-countable locally compact
 Hausdorff space is second countable. -/
-noncomputable def onePointSecondCountableTopology :
+theorem onePointSecondCountableTopology :
     SecondCountableTopology (OnePoint X) := by
   let K : CompactExhaustion X := default
   let B : Set (Set (OnePoint X)) :=
@@ -66,19 +66,17 @@ noncomputable def onePointSecondCountableTopology :
         exact htu hzt
   exact hB.secondCountableTopology hBc
 
-variable [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ) 1 X]
-
 /-- A second-countable locally compact Hausdorff surface is Polish. -/
-noncomputable def surfacePolishSpace : PolishSpace X := by
-  letI : SecondCountableTopology (OnePoint X) := onePointSecondCountableTopology
-  letI : MetrizableSpace (OnePoint X) :=
+theorem surfacePolishSpace : PolishSpace X := by
+  let : SecondCountableTopology (OnePoint X) := onePointSecondCountableTopology
+  let : MetrizableSpace (OnePoint X) :=
     metrizableSpace_of_t3_secondCountable (OnePoint X)
-  letI : MetricSpace (OnePoint X) :=
+  let : MetricSpace (OnePoint X) :=
     TopologicalSpace.metrizableSpaceMetric (OnePoint X)
-  letI : CompleteSpace (OnePoint X) := inferInstance
-  letI : PolishSpace (OnePoint X) := inferInstance
+  let : CompleteSpace (OnePoint X) := inferInstance
+  let : PolishSpace (OnePoint X) := inferInstance
   let R : Set (OnePoint X) := range ((↑) : X → OnePoint X)
-  letI : PolishSpace R := OnePoint.isOpen_range_coe.polishSpace
+  let : PolishSpace R := OnePoint.isOpen_range_coe.polishSpace
   exact OnePoint.isOpenEmbedding_coe.toIsEmbedding.toHomeomorph.isClosedEmbedding.polishSpace
 
 end AreaDeficit.Surfaces

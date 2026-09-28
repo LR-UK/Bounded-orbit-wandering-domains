@@ -16,6 +16,7 @@ variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [SecondCountableTopology X] [ConnectedSpace X]
   [MeasurableSpace X] [BorelSpace X] [DecidableEq X]
 
+omit [ConnectedSpace X] in
 /-- Once the wandering discs embed and the map is injective on their tail,
 finite-model cancellation bounds every disc radius by one fixed constant.
 The exact disc-area formula contradicts this bound. -/
@@ -96,7 +97,7 @@ theorem false_of_eventual_wandering_covering_discs
     exact disjoint_left.mp (hdis (by omega : n + 1 ≠ N))
       (hDU _ (hforward r hr1 n hx)) (hDU _ hy)
   have himagemeas : MeasurableSet (f.totalize '' W) := by
-    letI : PolishSpace X := AreaDeficit.Surfaces.surfacePolishSpace
+    let : PolishSpace X := AreaDeficit.Surfaces.surfacePolishSpace
     exact hW.measurableSet.image_of_continuousOn_injOn
       ((f.continuousOn_totalize hf.2.continuous).mono
         (hWK.trans (hKV.trans (subset_closure.trans hVsource)))) hiW

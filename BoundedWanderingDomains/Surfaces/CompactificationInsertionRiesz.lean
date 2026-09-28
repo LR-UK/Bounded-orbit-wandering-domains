@@ -18,6 +18,7 @@ variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
 
 namespace FinitePunctureDiscs
 
+omit [CompactSpace X] in
 /-- The intrinsic Green pairings of the compactification cutoffs have the
 same universal bound at every finite puncture stage. -/
 theorem DiscCover.eventually_bounded_compactification_intrinsicGreen
@@ -204,12 +205,12 @@ theorem DiscCover.compactification_uniformGlobalPointInsertionBound
     simp
   · let U := finitePunctureDomain P
     let a : U := ⟨a0, ha0⟩
-    letI : ConnectedSpace U := Subtype.connectedSpace
+    let : ConnectedSpace U := Subtype.connectedSpace
       (RiemannDynamics.isConnected_compl_finset P)
-    letI : Infinite U := Set.Infinite.to_subtype P.finite_toSet.infinite_compl
+    let : Infinite U := Set.Infinite.to_subtype P.finite_toSet.infinite_compl
     let q : DiscCover U := Classical.choice (p.nonempty_finitePuncture P)
     let W := finitePunctureDomain ({a} : Finset U)
-    letI : ConnectedSpace W := Subtype.connectedSpace
+    let : ConnectedSpace W := Subtype.connectedSpace
       (RiemannDynamics.isConnected_compl_finset ({a} : Finset U))
     let s : DiscCover W := Classical.choice (q.nonempty_finitePuncture
       ({a} : Finset U))

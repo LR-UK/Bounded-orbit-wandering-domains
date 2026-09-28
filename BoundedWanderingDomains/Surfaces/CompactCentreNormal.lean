@@ -50,8 +50,8 @@ theorem DiscCover.exists_normal_lift_subsequence (p : DiscCover M)
   obtain ⟨B, hB, hKB⟩ := p.compact_lift_set hK
   choose b hbB hbp using fun n => hKB (hcentre n)
   obtain ⟨w, hwB, φ₀, hφ₀, hwlim⟩ := hB.tendsto_subseq hbB
-  letI : SimplyConnectedSpace unitDisc := unitDisc_simplyConnected
-  letI : LocallyPathConnectedSpace unitDisc :=
+  let : SimplyConnectedSpace unitDisc := unitDisc_simplyConnected
+  let : LocallyPathConnectedSpace unitDisc :=
     ChartedSpace.locallyPathConnectedSpace ℂ unitDisc
   choose H₀ hH₀zero hH₀fac hH₀diff using fun n =>
     exists_holomorphic_lift p.holomorphic p.covering (hF (φ₀ n))
@@ -106,7 +106,7 @@ theorem DiscCover.exists_normal_disc_subsequence [T2Space M]
     ∃ (φ : ℕ → ℕ) (G : unitDisc → OnePoint M), StrictMono φ ∧
       TendstoLocallyUniformly
         (fun n z => ((F (φ n) z : M) : OnePoint M)) G atTop := by
-  letI : UniformSpace (OnePoint M) := uniformSpaceOfCompactR1
+  let : UniformSpace (OnePoint M) := uniformSpaceOfCompactR1
   obtain ⟨φ, H, g, w, B, hφ, hB, hHcentre, hHdiff, hfac, hlim, hg0, hgmap⟩ :=
     p.exists_normal_lift_subsequence hK F hF hcentre
   let G₀ : unitDisc → unitDisc := fun z => ⟨g (z : ℂ), hgmap z.property⟩
@@ -136,7 +136,7 @@ theorem DiscCover.exists_normal_disc_subsequence [T2Space M]
     have hSopen : IsOpen S := by
       have hSeq : S = Subtype.val ⁻¹' ball (0 : ℂ) r := by
         ext z
-        simp only [S, mem_setOf_eq, mem_preimage, mem_ball_zero_iff]
+        simp only [S, mem_ofPred_eq, mem_preimage, mem_ball_zero_iff]
       rw [hSeq]
       exact isOpen_ball.preimage continuous_subtype_val
     have hxS : x ∈ S := hxr
@@ -177,7 +177,7 @@ theorem DiscCover.exists_normal_disc_subsequence_ambient
     ∃ (φ : ℕ → ℕ) (G : unitDisc → OnePoint X), StrictMono φ ∧
       TendstoLocallyUniformly
         (fun n z => (((F (φ n) z : O) : X) : OnePoint X)) G atTop := by
-  letI : UniformSpace (OnePoint X) := uniformSpaceOfCompactR1
+  let : UniformSpace (OnePoint X) := uniformSpaceOfCompactR1
   obtain ⟨φ, H, g, w, B, hφ, hB, hHcentre, hHdiff, hfac, hlim, hg0, hgmap⟩ :=
     p.exists_normal_lift_subsequence hK F hF hcentre
   let G₀ : unitDisc → unitDisc := fun z => ⟨g (z : ℂ), hgmap z.property⟩
@@ -208,7 +208,7 @@ theorem DiscCover.exists_normal_disc_subsequence_ambient
     have hSopen : IsOpen S := by
       have hSeq : S = Subtype.val ⁻¹' ball (0 : ℂ) r := by
         ext z
-        simp only [S, mem_setOf_eq, mem_preimage, mem_ball_zero_iff]
+        simp only [S, mem_ofPred_eq, mem_preimage, mem_ball_zero_iff]
       rw [hSeq]
       exact isOpen_ball.preimage continuous_subtype_val
     have hxS : x ∈ S := hxr
@@ -251,9 +251,9 @@ theorem DiscCover.exists_normal_disc_subsequence_compact_range
     ∃ (a : ℕ → ℕ) (G : unitDisc → OnePoint X), StrictMono a ∧
       TendstoLocallyUniformly
         (fun n z => (((F (a n) z : O) : X) : OnePoint X)) G atTop := by
-  letI : LocallyCompactSpace O := O.isOpen.locallyCompactSpace
-  letI : UniformSpace (OnePoint O) := uniformSpaceOfCompactR1
-  letI : UniformSpace (OnePoint X) := uniformSpaceOfCompactR1
+  let : LocallyCompactSpace O := O.isOpen.locallyCompactSpace
+  let : UniformSpace (OnePoint O) := uniformSpaceOfCompactR1
+  let : UniformSpace (OnePoint X) := uniformSpaceOfCompactR1
   obtain ⟨a, G, ha, hconv⟩ :=
     p.exists_normal_disc_subsequence hC F hF (fun n => hrange n discZero)
   let r : OnePoint O → OnePoint X := OnePoint.map (Subtype.val : O → X)

@@ -12,11 +12,12 @@ namespace SurfaceDynamics
 variable {X : Type*} [TopologicalSpace X] [T2Space X]
   [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ) 1 X]
 
+omit [T2Space X] [IsManifold 𝓘(ℂ) 1 X] in
 /-- Every point of a nonempty open surface set has another point beside it. -/
 theorem exists_mem_ne_of_isOpen_surface {U : Set X} (hU : IsOpen U) {z : X}
     (hz : z ∈ U) : ∃ w ∈ U, w ≠ z := by
   by_contra h
-  push_neg at h
+  push Not at h
   have hUz : U = ({z} : Set X) := by
     apply Set.Subset.antisymm
     · intro w hw
@@ -24,6 +25,7 @@ theorem exists_mem_ne_of_isOpen_surface {U : Set X} (hU : IsOpen U) {z : X}
     · exact Set.singleton_subset_iff.mpr hz
   exact not_isOpen_singleton_surface z (hUz ▸ hU)
 
+omit [IsManifold 𝓘(ℂ) 1 X] in
 /-- Inside an open set, choose a closed coordinate disk avoiding one
 prescribed point. -/
 theorem exists_coordDisk_closedCarrier_subset_diff {U : Set X}
@@ -50,6 +52,7 @@ theorem exists_coordDisk_closedCarrier_subset_diff {U : Set X}
   rintro x ⟨y, hy, rfl⟩
   exact (hclosed hy).2
 
+omit [T2Space X] [IsManifold 𝓘(ℂ, ℂ) 1 X] in
 /-- A prescribed point has a closed coordinate disk centred at that point
 and contained in any given open neighbourhood. -/
 theorem exists_coordDisk_center_closedCarrier_subset {U : Set X}
@@ -82,7 +85,7 @@ theorem exists_discCovered_coordDisk_compl_of_isClosed
     {K : Set X} (hK : IsClosed K)
     (hKne : K ≠ Set.univ) :
     ∃ (D : RiemannDynamics.CoordDisk X)
-      (p : AreaDeficit.Surfaces.DiscCover D.compl),
+      (_p : AreaDeficit.Surfaces.DiscCover D.compl),
       K ⊆ (D.compl : Set X) := by
   obtain ⟨x, hx⟩ : ∃ x : X, x ∉ K := by
     by_contra h
@@ -90,7 +93,7 @@ theorem exists_discCovered_coordDisk_compl_of_isClosed
     exact hKne (eq_univ_iff_forall.mpr h)
   obtain ⟨D, hDcenter, hD⟩ :=
     exists_coordDisk_center_closedCarrier_subset hK.isOpen_compl hx
-  letI : IsManifold 𝓘(ℂ) ω X :=
+  let : IsManifold 𝓘(ℂ) ω X :=
     AreaDeficit.Surfaces.isManifold_analytic_of_complex
   let p : AreaDeficit.Surfaces.DiscCover D.compl :=
     Classical.choice

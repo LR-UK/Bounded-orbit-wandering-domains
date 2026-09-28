@@ -97,7 +97,6 @@ theorem DiscCover.nonempty_normalizedThricePuncturedSphere :
     have hzV : z ∈ (V : Set ℂ) ↔ ((z : ℂ̂) ∈ (U : Set ℂ̂)) := by
       constructor
       · intro hz
-        change (z : ℂ̂) ∈ (U : Set ℂ̂)
         rw [← hVimg]
         exact ⟨z, hz, rfl⟩
       · intro hz
@@ -139,7 +138,7 @@ theorem DiscCover.nonempty_sphere_compl_three {a b c : ℂ̂}
     have hegh : (eg.toHomeomorph : ℂ̂ → ℂ̂) = (g • ·) := heg
     rw [hegh]
     ext z
-    simp [hga, hgb, hgc, or_comm, or_left_comm, or_assoc]
+    simp [hga, hgb, hgc, or_comm, or_left_comm]
   subst V
   obtain ⟨p⟩ := DiscCover.nonempty_normalizedThricePuncturedSphere
   exact ⟨p.transDiffeomorph e.symm⟩
@@ -154,7 +153,7 @@ theorem DiscCover.nonempty_compl_three_of_diffeomorph_sphere
       ⟨({a, b, c} : Set X)ᶜ,
         (((Set.finite_singleton c).insert b).insert a).isClosed.isOpen_compl⟩
     Nonempty (DiscCover U) := by
-  letI : IsManifold 𝓘(ℂ) ω X := isManifold_analytic_of_complex
+  let : IsManifold 𝓘(ℂ) ω X := isManifold_analytic_of_complex
   let U : Opens X :=
     ⟨({a, b, c} : Set X)ᶜ,
       (((Set.finite_singleton c).insert b).insert a).isClosed.isOpen_compl⟩
@@ -196,9 +195,9 @@ theorem DiscCover.nonempty_compl_three_of_pathCover_sphere
   let U : Opens X :=
     ⟨({a, b, c} : Set X)ᶜ,
       (((Set.finite_singleton c).insert b).insert a).isClosed.isOpen_compl⟩
-  letI : ConnectedSpace U := Subtype.connectedSpace (by
+  let : ConnectedSpace U := Subtype.connectedSpace (by
     simpa [U, P] using RiemannDynamics.isConnected_compl_finset P)
-  letI : Infinite U := Set.Infinite.to_subtype
+  let : Infinite U := Set.Infinite.to_subtype
     (((Set.finite_singleton c).insert b).insert a).infinite_compl
   let π : ℂ̂ → X := RiemannDynamics.pathCoverProj x₀ ∘ e.symm
   have hproj := RiemannDynamics.contMDiff_pathCoverProj x₀
@@ -207,26 +206,26 @@ theorem DiscCover.nonempty_compl_three_of_pathCover_sphere
   have hcov : IsCoveringMap π :=
     (RiemannDynamics.pathCoverProj_isCoveringMap x₀).comp_homeomorph
       e.symm.toHomeomorph
-  letI : LocallyPathConnectedSpace X := ChartedSpace.locallyPathConnectedSpace ℂ X
-  letI : PathConnectedSpace X := PathConnectedSpace.of_locallyPathConnectedSpace
+  let : LocallyPathConnectedSpace X := ChartedSpace.locallyPathConnectedSpace ℂ X
+  let : PathConnectedSpace X := PathConnectedSpace.of_locallyPathConnectedSpace
   have hprojSurj : Surjective (RiemannDynamics.pathCoverProj x₀) := by
     intro y
     exact ⟨⟨y, Path.Homotopic.Quotient.mk
       (PathConnectedSpace.somePath x₀ y)⟩, rfl⟩
   have hsurj : Surjective π := hprojSurj.comp e.symm.surjective
   let y₀ : U := Classical.choice (inferInstance : Nonempty U)
-  letI : T2Space (RiemannDynamics.PathCover y₀) :=
+  let : T2Space (RiemannDynamics.PathCover y₀) :=
     RiemannDynamics.t2space_pathCover y₀
-  letI : SimplyConnectedSpace (RiemannDynamics.PathCover y₀) :=
+  let : SimplyConnectedSpace (RiemannDynamics.PathCover y₀) :=
     RiemannDynamics.simplyConnectedSpace_pathCover y₀
-  letI : SecondCountableTopology (RiemannDynamics.PathCover y₀) :=
+  let : SecondCountableTopology (RiemannDynamics.PathCover y₀) :=
     RiemannDynamics.secondCountableTopology_pathCover y₀
   have hmodels := RiemannDynamics.uniformization_trichotomy
     (RiemannDynamics.PathCover y₀)
   have hprojU := RiemannDynamics.contMDiff_pathCoverProj y₀
   have hprojUSurj : Surjective (RiemannDynamics.pathCoverProj y₀) := by
-    letI : LocallyPathConnectedSpace U := ChartedSpace.locallyPathConnectedSpace ℂ U
-    letI : PathConnectedSpace U := PathConnectedSpace.of_locallyPathConnectedSpace
+    let : LocallyPathConnectedSpace U := ChartedSpace.locallyPathConnectedSpace ℂ U
+    let : PathConnectedSpace U := PathConnectedSpace.of_locallyPathConnectedSpace
     intro y
     exact ⟨⟨y, Path.Homotopic.Quotient.mk
       (PathConnectedSpace.somePath y₀ y)⟩, rfl⟩
@@ -299,14 +298,14 @@ theorem DiscCover.nonempty_compl_three_of_pathCover_sphere
     obtain ⟨z, rfl⟩ := hFsurj y
     exact (hy (congrFun hFc z)).elim
   · obtain ⟨d⟩ := hsphere
-    letI : CompactSpace (RiemannDynamics.PathCover y₀) :=
+    let : CompactSpace (RiemannDynamics.PathCover y₀) :=
       d.toHomeomorph.symm.compactSpace
-    letI : CompactSpace U := hprojUSurj.compactSpace hprojU.continuous
+    let : CompactSpace U := hprojUSurj.compactSpace hprojU.continuous
     have hUc : IsCompact (U : Set X) := isCompact_iff_compactSpace.mpr inferInstance
     have hUuniv : (U : Set X) = Set.univ :=
       (show IsClopen (U : Set X) from ⟨hUc.isClosed, U.isOpen⟩).eq_univ
         ⟨y₀, y₀.property⟩
     have haU : a ∈ (U : Set X) := by rw [hUuniv]; trivial
-    exact (by simpa [U, P] using haU)
+    simp [U] at haU
 
 end AreaDeficit.Surfaces

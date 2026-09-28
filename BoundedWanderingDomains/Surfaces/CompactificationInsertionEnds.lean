@@ -23,6 +23,7 @@ noncomputable def compactificationInsertionEnds
     (E : Finset X) (O : Opens X) (P : Finset O) (a : O) : Finset X :=
   E ∪ P.image (Subtype.val : O → X) ∪ {(a : X)}
 
+omit [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ, ℂ) 1 X] [T2Space X] [SecondCountableTopology X] [CompactSpace X] in
 @[simp] theorem mem_compactificationInsertionEnds
     (E : Finset X) (O : Opens X) (P : Finset O) (a : O) (x : X) :
     x ∈ compactificationInsertionEnds E O P a ↔
@@ -32,18 +33,21 @@ noncomputable def compactificationInsertionEnds
     Finset.mem_singleton]
   aesop
 
+omit [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ, ℂ) 1 X] [T2Space X] [SecondCountableTopology X] [CompactSpace X] in
 theorem left_mem_compactificationInsertionEnds
     (E : Finset X) (O : Opens X) (P : Finset O) (a : O) :
     E ⊆ compactificationInsertionEnds E O P a := by
   intro x hx
   simp [compactificationInsertionEnds, hx]
 
+omit [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ, ℂ) 1 X] [T2Space X] [SecondCountableTopology X] [CompactSpace X] in
 theorem old_mem_compactificationInsertionEnds
     (E : Finset X) (O : Opens X) (P : Finset O) (a : O)
     {x : O} (hx : x ∈ P) :
     (x : X) ∈ compactificationInsertionEnds E O P a := by
   simp [compactificationInsertionEnds, hx]
 
+omit [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ, ℂ) 1 X] [T2Space X] [SecondCountableTopology X] [CompactSpace X] in
 theorem new_mem_compactificationInsertionEnds
     (E : Finset X) (O : Opens X) (P : Finset O) (a : O) :
     (a : X) ∈ compactificationInsertionEnds E O P a := by
@@ -51,6 +55,7 @@ theorem new_mem_compactificationInsertionEnds
 
 namespace FinitePunctureDiscs
 
+omit [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ, ℂ) 1 X] [SecondCountableTopology X] [CompactSpace X] in
 /-- Every end other than the inserted point is absent from the old
 finite-puncture subtype. -/
 theorem oldEnd_not_mem_oldDomain
@@ -70,6 +75,7 @@ theorem oldEnd_not_mem_oldDomain
     exact y.property (hyz ▸ hzP)
   · exact hia hia'.symm
 
+omit [CompactSpace X] in
 /-- Every old compactification end has vanishing ambient boundary mass for
 one-point insertion. -/
 theorem DiscCover.tendsto_compactification_oldEnd_boundary_zero
@@ -86,7 +92,7 @@ theorem DiscCover.tendsto_compactification_oldEnd_boundary_zero
     (hia : (i : X) ≠ (a0 : X)) :
     let U := finitePunctureDomain P
     let a : U := ⟨a0, ha0⟩
-    let W := finitePunctureDomain ({a} : Finset U)
+    let _W := finitePunctureDomain ({a} : Finset U)
     let V := finitePunctureDomain (insert a0 P)
     Tendsto (fun t : ℝ => ∫ z : ℂ,
       p.domainChartLogRatio U V
@@ -98,12 +104,12 @@ theorem DiscCover.tendsto_compactification_oldEnd_boundary_zero
   let a : U := ⟨a0, ha0⟩
   let W := finitePunctureDomain ({a} : Finset U)
   let V := finitePunctureDomain (insert a0 P)
-  letI : ConnectedSpace U := Subtype.connectedSpace
+  let : ConnectedSpace U := Subtype.connectedSpace
     (RiemannDynamics.isConnected_compl_finset P)
-  letI : Infinite U := Set.Infinite.to_subtype P.finite_toSet.infinite_compl
-  letI : ConnectedSpace W := Subtype.connectedSpace
+  let : Infinite U := Set.Infinite.to_subtype P.finite_toSet.infinite_compl
+  let : ConnectedSpace W := Subtype.connectedSpace
     (RiemannDynamics.isConnected_compl_finset ({a} : Finset U))
-  letI : ConnectedSpace V := Subtype.connectedSpace
+  let : ConnectedSpace V := Subtype.connectedSpace
     (RiemannDynamics.isConnected_compl_finset (insert a0 P))
   have hUN : Nonempty U := ⟨a⟩
   have hWN : Nonempty W := ⟨s.projection discZero⟩
@@ -148,6 +154,7 @@ theorem DiscCover.tendsto_compactification_oldEnd_boundary_zero
     (isCompact_singleton : IsCompact ({a} : Set U)) W hWK hWambient hWN s hc
     (D.disc i).radius_pos hball x hescape.1 hescape.2
 
+omit [CompactSpace X] in
 /-- The distinguished newly inserted compactification end has uniformly
 bounded ambient boundary mass. -/
 theorem DiscCover.eventually_bounded_compactification_newEnd_boundary
@@ -162,7 +169,7 @@ theorem DiscCover.eventually_bounded_compactification_newEnd_boundary
     (D : FinitePunctureDiscs (compactificationInsertionEnds E O P a0)) :
     let U := finitePunctureDomain P
     let a : U := ⟨a0, ha0⟩
-    let W := finitePunctureDomain ({a} : Finset U)
+    let _W := finitePunctureDomain ({a} : Finset U)
     let V := finitePunctureDomain (insert a0 P)
     let j : ↑(compactificationInsertionEnds E O P a0) :=
       ⟨a0, new_mem_compactificationInsertionEnds E O P a0⟩
@@ -180,12 +187,12 @@ theorem DiscCover.eventually_bounded_compactification_newEnd_boundary
   let V := finitePunctureDomain (insert a0 P)
   let j : ↑(compactificationInsertionEnds E O P a0) :=
     ⟨a0, new_mem_compactificationInsertionEnds E O P a0⟩
-  letI : ConnectedSpace U := Subtype.connectedSpace
+  let : ConnectedSpace U := Subtype.connectedSpace
     (RiemannDynamics.isConnected_compl_finset P)
-  letI : Infinite U := Set.Infinite.to_subtype P.finite_toSet.infinite_compl
-  letI : ConnectedSpace W := Subtype.connectedSpace
+  let : Infinite U := Set.Infinite.to_subtype P.finite_toSet.infinite_compl
+  let : ConnectedSpace W := Subtype.connectedSpace
     (RiemannDynamics.isConnected_compl_finset ({a} : Finset U))
-  letI : ConnectedSpace V := Subtype.connectedSpace
+  let : ConnectedSpace V := Subtype.connectedSpace
     (RiemannDynamics.isConnected_compl_finset (insert a0 P))
   have hUN : Nonempty U := ⟨a⟩
   have hWN : Nonempty W := ⟨s.projection discZero⟩
@@ -228,6 +235,7 @@ theorem DiscCover.eventually_bounded_compactification_newEnd_boundary
   exact p.eventually_bounded_domainChart_new_boundary_mass hVU hUN q W
     hWambient hWN s hc ha (D.disc j).radius_pos hball
 
+omit [CompactSpace X] in
 /-- The sum of all raw compactification-end boundary terms for one point
 insertion has one eventual bound. -/
 theorem DiscCover.eventually_bounded_compactification_boundary_sum
@@ -289,6 +297,7 @@ theorem DiscCover.eventually_bounded_compactification_boundary_sum
   simpa only [u, F, U, V, B, Finset.sum_singleton,
     Finset.sum_erase_add _ _ (Finset.mem_univ j)] using hsum
 
+omit [CompactSpace X] in
 /-- For all sufficiently deep readings, every raw end pairing in the finite
 compactification family is integrable. -/
 theorem DiscCover.eventually_integrable_compactification_boundary
@@ -297,7 +306,7 @@ theorem DiscCover.eventually_integrable_compactification_boundary
     [MeasurableSpace O] [BorelSpace O]
     [ConnectedSpace O] [Infinite O]
     (p : DiscCover O) (P : Finset O) (a0 : O) (ha0 : a0 ∉ P)
-    (q : DiscCover (finitePunctureDomain P))
+    (_q : DiscCover (finitePunctureDomain P))
     (s : DiscCover (finitePunctureDomain
       ({(⟨a0, ha0⟩ : finitePunctureDomain P)} : Finset _)))
     (D : FinitePunctureDiscs (compactificationInsertionEnds E O P a0)) :
@@ -314,12 +323,12 @@ theorem DiscCover.eventually_integrable_compactification_boundary
   let a : U := ⟨a0, ha0⟩
   let W := finitePunctureDomain ({a} : Finset U)
   let V := finitePunctureDomain (insert a0 P)
-  letI : ConnectedSpace U := Subtype.connectedSpace
+  let : ConnectedSpace U := Subtype.connectedSpace
     (RiemannDynamics.isConnected_compl_finset P)
-  letI : Infinite U := Set.Infinite.to_subtype P.finite_toSet.infinite_compl
-  letI : ConnectedSpace W := Subtype.connectedSpace
+  let : Infinite U := Set.Infinite.to_subtype P.finite_toSet.infinite_compl
+  let : ConnectedSpace W := Subtype.connectedSpace
     (RiemannDynamics.isConnected_compl_finset ({a} : Finset U))
-  letI : ConnectedSpace V := Subtype.connectedSpace
+  let : ConnectedSpace V := Subtype.connectedSpace
     (RiemannDynamics.isConnected_compl_finset (insert a0 P))
   have hUN : Nonempty U := ⟨a⟩
   have hWN : Nonempty W := ⟨s.projection discZero⟩

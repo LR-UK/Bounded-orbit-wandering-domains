@@ -11,6 +11,7 @@ namespace SurfaceDynamics
 variable {X : Type*} [TopologicalSpace X] [T2Space X]
   [LocallyCompactSpace X] [FirstCountableTopology X]
 
+omit [T2Space X] [LocallyCompactSpace X] [FirstCountableTopology X] in
 theorem compact_inter_finite_of_avoids_derived {S K : Set X}
     (hK : IsCompact K) (havoid : Disjoint K (derivedSet S)) : (S ∩ K).Finite := by
   by_contra hfin
@@ -19,6 +20,7 @@ theorem compact_inter_finite_of_avoids_derived {S K : Set X}
     hK inter_subset_right
   exact disjoint_left.mp havoid hxK (hxacc.mono (principal_mono.mpr inter_subset_left))
 
+omit [T2Space X] [LocallyCompactSpace X] [FirstCountableTopology X] in
 theorem eventually_mem_of_compact_cluster_subset
     (u : ℕ → X) {K O : Set X} (hK : IsCompact K) (hu : ∀ n, u n ∈ K)
     (hO : IsOpen O) (hcluster : ∀ x, MapClusterPt x atTop u → x ∈ O) :
@@ -29,6 +31,7 @@ theorem eventually_mem_of_compact_cluster_subset
   obtain ⟨x, hx, hxc⟩ := (hK.inter_right hO.isClosed_compl).exists_mapClusterPt_of_frequently hfreq
   exact hx.2 (hcluster x hxc)
 
+omit [FirstCountableTopology X] in
 theorem exists_compact_cluster_singular_separation
     (u : ℕ → X) {K S : Set X} (hK : IsCompact K) (hu : ∀ n, u n ∈ K)
     (hS : IsClosed S)

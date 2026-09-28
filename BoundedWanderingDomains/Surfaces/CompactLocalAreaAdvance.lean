@@ -18,6 +18,7 @@ variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [SecondCountableTopology X] [ConnectedSpace X]
   [MeasurableSpace X] [BorelSpace X] [DecidableEq X]
 
+omit [ConnectedSpace X] in
 /-- The local proper models cover a compact set and their area estimates
 assemble after making the cover into a measurable disjoint partition. -/
 theorem compactLocalAreaAdvanceClaim : CompactLocalAreaAdvanceClaim (X := X) := by
@@ -92,12 +93,12 @@ theorem compactLocalAreaAdvanceClaim : CompactLocalAreaAdvanceClaim (X := X) := 
   have hsourceW : W ⊆ f.source :=
     hWK.trans (hKV.trans (fun y hy => hVsource (subset_closure hy)))
   have himageMeas : MeasurableSet (f.totalize '' W) := by
-    letI : PolishSpace X := AreaDeficit.Surfaces.surfacePolishSpace
+    let : PolishSpace X := AreaDeficit.Surfaces.surfacePolishSpace
     exact hW.image_of_continuousOn_injOn
       ((f.continuousOn_totalize hf.2.continuous).mono hsourceW) hinj
   have hfiA : ∀ i, MeasurableSet (f.totalize '' A i) := by
     intro i
-    letI : PolishSpace X := AreaDeficit.Surfaces.surfacePolishSpace
+    let : PolishSpace X := AreaDeficit.Surfaces.surfacePolishSpace
     exact (hA i).image_of_continuousOn_injOn
       ((f.continuousOn_totalize hf.2.continuous).mono
         ((hAsubW i).trans hsourceW))
@@ -146,6 +147,7 @@ theorem compactLocalAreaAdvanceClaim : CompactLocalAreaAdvanceClaim (X := X) := 
         apply Set.disjoint_left.mp (hsep (idx i))
           (hfNL (idx i) ⟨y, (hAsubB i hy).2, rfl⟩) hh
 
+omit [ConnectedSpace X] in
 /-- The positive-area conclusion on every surface supplied with a
 holomorphic universal covering by the unit disc. -/
 theorem noCompactPositiveAreaWanderingSetClaim_of_discCover
@@ -159,7 +161,7 @@ hyperbolic Riemann surface. -/
 theorem noCompactPositiveAreaWanderingSetClaim_of_isHyperbolic
     (hX : RiemannDynamics.IsHyperbolic X) :
     NoCompactPositiveAreaWanderingSetClaim (X := X) := by
-  letI : IsManifold 𝓘(ℂ) ω X :=
+  let : IsManifold 𝓘(ℂ) ω X :=
     AreaDeficit.Surfaces.isManifold_analytic_of_complex
   exact noCompactPositiveAreaWanderingSetClaim_of_discCover
     (Classical.choice
@@ -189,8 +191,8 @@ theorem noProperCompactPositiveAreaWanderingSet
     fun _ hx => hVO (subset_closure hx)
   let g := r.restrictAmbient O hsourceO hmap
   let AO : Set O := (↑) ⁻¹' A
-  letI : LocallyCompactSpace O := O.isOpen.locallyCompactSpace
-  letI : ConnectedSpace O :=
+  let : LocallyCompactSpace O := O.isOpen.locallyCompactSpace
+  let : ConnectedSpace O :=
     Subtype.connectedSpace (RiemannDynamics.isConnected_coordDisk_compl D)
   have hAO : A ⊆ O := by
     intro x hx

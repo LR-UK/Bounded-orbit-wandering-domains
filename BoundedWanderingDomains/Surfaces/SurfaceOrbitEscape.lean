@@ -18,10 +18,10 @@ variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
 
 theorem noCompactWanderingOrbitClaim : NoCompactWanderingOrbitClaim (X := X) := by
   classical
-  letI : LocallyPathConnectedSpace X := ChartedSpace.locallyPathConnectedSpace ℂ X
+  let : LocallyPathConnectedSpace X := ChartedSpace.locallyPathConnectedSpace ℂ X
   intro f hf U hU z hz K hK hKs
   by_contra hescape
-  push_neg at hescape
+  push Not at hescape
   obtain ⟨S, hS0, hScomp, hSimage, hSdis⟩ := hU
   have hUomega : U ⊆ f.omega := by
     obtain ⟨w, hw, he⟩ := hScomp 0
@@ -38,13 +38,13 @@ theorem noCompactWanderingOrbitClaim : NoCompactWanderingOrbitClaim (X := X) := 
     f.orbit_mem_of_compactifiedIterate_mem_image zt.property hescape
   obtain ⟨D, hD⟩ := exists_coordDisk_closedCarrier_subset_diff hUopen hz
   let O := D.compl
-  letI : IsManifold 𝓘(ℂ) ω X := isManifold_analytic_of_complex
+  let : IsManifold 𝓘(ℂ) ω X := isManifold_analytic_of_complex
   let p : DiscCover O := Classical.choice (nonempty_discCover_coordDisk_compl D)
-  letI : ConnectedSpace O := Subtype.connectedSpace (RiemannDynamics.isConnected_coordDisk_compl D)
-  letI : NoncompactSpace O := RiemannDynamics.noncompactSpace_coordDisk_compl D
-  letI : LocallyCompactSpace O := O.isOpen.locallyCompactSpace
-  letI : MeasurableSpace O := borel O
-  letI : BorelSpace O := ⟨rfl⟩
+  let : ConnectedSpace O := Subtype.connectedSpace (RiemannDynamics.isConnected_coordDisk_compl D)
+  let : NoncompactSpace O := RiemannDynamics.noncompactSpace_coordDisk_compl D
+  let : LocallyCompactSpace O := O.isOpen.locallyCompactSpace
+  let : MeasurableSpace O := borel O
+  let : BorelSpace O := ⟨rfl⟩
   have hSO : ∀ n, S (n + 1) ⊆ O := by
     intro n x hx hxd
     exact disjoint_left.mp (hSdis (by omega : n + 1 ≠ 0)) hx

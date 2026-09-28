@@ -12,9 +12,9 @@ variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X] [IsManifold 𝓘(
 
 theorem injective_of_simplyConnected (p : DiscCover X) [SimplyConnectedSpace X] :
     Injective p.projection := by
-  letI : SimplyConnectedSpace unitDisc := unitDisc_simplyConnected
-  letI : LocallyPathConnectedSpace unitDisc := ChartedSpace.locallyPathConnectedSpace ℂ unitDisc
-  letI : LocallyPathConnectedSpace X := ChartedSpace.locallyPathConnectedSpace ℂ X
+  let : SimplyConnectedSpace unitDisc := unitDisc_simplyConnected
+  let : LocallyPathConnectedSpace unitDisc := ChartedSpace.locallyPathConnectedSpace ℂ unitDisc
+  let : LocallyPathConnectedSpace X := ChartedSpace.locallyPathConnectedSpace ℂ X
   have hA : IsSimplyConnected (univ : Set unitDisc) :=
     (Homeomorph.Set.univ _).toHomotopyEquiv.simplyConnectedSpace
   have hB : IsSimplyConnected (univ : Set X) :=
@@ -36,8 +36,8 @@ theorem injOn_of_simplyConnected_regular_image
     (hTo : IsOpen T) (hTsc : IsSimplyConnected T)
     (hDs : D ⊆ f.source) (hmap : MapsTo f.totalize D T)
     (hreg : T ⊆ f.singularValuesᶜ) : InjOn f.totalize D := by
-  letI : LocallyPathConnectedSpace X := ChartedSpace.locallyPathConnectedSpace ℂ X
-  letI : LocallyPathConnectedSpace f.source := ChartedSpace.locallyPathConnectedSpace ℂ f.source
+  let : LocallyPathConnectedSpace X := ChartedSpace.locallyPathConnectedSpace ℂ X
+  let : LocallyPathConnectedSpace f.source := ChartedSpace.locallyPathConnectedSpace ℂ f.source
   let D0 : Set f.source := Subtype.val ⁻¹' D
   have hD0o : IsOpen D0 := hDo.preimage continuous_subtype_val
   have hD0image : (Subtype.val : f.source → X) '' D0 = D := by

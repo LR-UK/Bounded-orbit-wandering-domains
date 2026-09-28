@@ -25,7 +25,7 @@ theorem isConnected_compl_finset [ConnectedSpace M] [Infinite M] [T2Space M]
   | @insert p F hp ih =>
       have hFclosed : IsClosed (↑F : Set M) := F.finite_toSet.isClosed
       let O : Opens M := ⟨(↑F : Set M)ᶜ, hFclosed.isOpen_compl⟩
-      letI : ConnectedSpace O := Subtype.connectedSpace ih
+      let : ConnectedSpace O := Subtype.connectedSpace ih
       have hpO : p ∈ O := by
         change p ∉ (↑F : Set M)
         exact fun h => hp (Finset.mem_coe.mp h)
@@ -61,6 +61,7 @@ theorem isConnected_compl_finset [ConnectedSpace M] [Infinite M] [T2Space M]
           exact hwp (congrArg Subtype.val (Set.mem_singleton_iff.mp h))
       rwa [heq] at himg
 
+omit [ChartedSpace ℂ M] in
 /-- The complement of a nonempty finite set in a connected analytic surface
 is noncompact. -/
 theorem noncompact_compl_finset [ConnectedSpace M] [Infinite M]
@@ -101,6 +102,7 @@ variable {M : Type*} [TopologicalSpace M] [ChartedSpace ℂ M]
   [IsManifold 𝓘(ℂ) 1 M] [T2Space M] [SecondCountableTopology M]
   [ConnectedSpace M] [Infinite M]
 
+omit [ConnectedSpace M] [Infinite M] in
 /-- A disc cover on an ambient open set restricts to any connected open set
 of the original surface contained in it. -/
 theorem nonempty_of_le_open (V U : TopologicalSpace.Opens M)
@@ -138,7 +140,7 @@ theorem nonempty_of_le_open (V U : TopologicalSpace.Opens M)
       right_inv := fun x => Subtype.ext rfl
       contMDiff_toFun := hF
       contMDiff_invFun := hG }
-  letI : ConnectedSpace O :=
+  let : ConnectedSpace O :=
     (e.toHomeomorph.connectedSpace_iff).mpr inferInstance
   obtain ⟨q⟩ := p.nonempty_subdomain O
   exact ⟨q.transDiffeomorph e⟩
@@ -151,7 +153,7 @@ theorem nonempty_finitePuncture (p : DiscCover M) (F : Finset M) :
     Nonempty (DiscCover O) := by
   let O : Opens M := ⟨(↑F : Set M)ᶜ,
     F.finite_toSet.isClosed.isOpen_compl⟩
-  letI : ConnectedSpace O :=
+  let : ConnectedSpace O :=
     Subtype.connectedSpace (RiemannDynamics.isConnected_compl_finset F)
   exact p.nonempty_subdomain O
 

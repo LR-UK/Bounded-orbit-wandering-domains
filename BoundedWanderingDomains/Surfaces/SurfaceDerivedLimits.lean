@@ -20,7 +20,7 @@ variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
 theorem nonEscapingWanderingOrbitClusterMeetsDerivedClaim :
     NonEscapingWanderingOrbitClusterMeetsDerivedClaim (X := X) := by
   classical
-  letI : LocallyPathConnectedSpace X := ChartedSpace.locallyPathConnectedSpace ℂ X
+  let : LocallyPathConnectedSpace X := ChartedSpace.locallyPathConnectedSpace ℂ X
   intro f hf U hU hsc z hz hno
   have hztrap := hU.subset_trapped f hz
   let zt : f.trapped := ⟨z, hztrap⟩
@@ -53,11 +53,11 @@ theorem nonEscapingWanderingOrbitClusterMeetsDerivedClaim :
   have hfS := f.mapsTo_component_of_imageAt hf hScomp hSimage hz hztrap
   obtain ⟨D, hD⟩ := exists_coordDisk_closedCarrier_subset_diff (hSo 0) (hS0.symm ▸ hz)
   let O := D.compl
-  letI : IsManifold 𝓘(ℂ) ω X := isManifold_analytic_of_complex
+  let : IsManifold 𝓘(ℂ) ω X := isManifold_analytic_of_complex
   let p : DiscCover O := Classical.choice (nonempty_discCover_coordDisk_compl D)
-  letI : LocallyCompactSpace O := O.isOpen.locallyCompactSpace
-  letI : MeasurableSpace O := borel O
-  letI : BorelSpace O := ⟨rfl⟩
+  let : LocallyCompactSpace O := O.isOpen.locallyCompactSpace
+  let : MeasurableSpace O := borel O
+  let : BorelSpace O := ⟨rfl⟩
   have hSs : ∀ n, S n ⊆ f.source := fun n => (hSomega n).trans f.omega_subset_source
   have hSO : ∀ n, S (n + 1) ⊆ O := by
     intro n x hx hd

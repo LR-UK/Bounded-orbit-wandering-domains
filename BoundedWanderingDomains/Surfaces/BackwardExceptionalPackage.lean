@@ -9,7 +9,6 @@ open scoped Manifold Topology
 namespace SurfaceDynamics.LocalMap
 
 variable {X : Type*} [TopologicalSpace X] [T2Space X]
-  [LocallyCompactSpace X] [SecondCountableTopology X]
   [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ) 1 X]
 
 /-- Enlarge an increasing finite puncture sequence by a fixed finite set and
@@ -67,9 +66,6 @@ theorem exists_backwardExceptionalFinsets
       exact Finset.mem_union_right (P n) hxE
   · intro n x hxV hxS
     change x ∈ (S n : Set X) at hxS
-    change f.map ⟨x, hVsource (subset_closure hxV)⟩ ∈
-      (S n : Set X) ∪ f.totalize ''
-        ((P n : Set X) ∪ (E : Set X))
     rw [hcoe] at hxS ⊢
     simpa only [R, Q, Finset.coe_union] using
       f.boundaryBackwardTree_forward_up_to_roots hVsource n x hxV hxS

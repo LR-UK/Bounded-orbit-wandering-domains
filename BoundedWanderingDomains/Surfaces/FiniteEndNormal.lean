@@ -65,7 +65,7 @@ theorem DiscCover.eventually_maps_radius_into_end_neighborhood
   filter_upwards [hescape.eventually hC.compl_mem_cocompact,
     hcentre.eventually (hVopen.mem_nhds haV')] with n hnC hnV
   let B := ball (0 : ℂ) r
-  letI : ConnectedSpace B := Subtype.connectedSpace (isConnected_ball hr)
+  let : ConnectedSpace B := Subtype.connectedSpace (isConnected_ball hr)
   let j : B → unitDisc := fun z => ⟨z, mem_ball_zero_iff.mpr
     ((mem_ball_zero_iff.mp z.property).trans hr1)⟩
   have hj : Continuous j := continuous_subtype_val.subtype_mk _

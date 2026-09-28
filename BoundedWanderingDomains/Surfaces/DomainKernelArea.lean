@@ -14,6 +14,7 @@ variable {M : Type*} [TopologicalSpace M] [ChartedSpace ℂ M]
   [IsManifold 𝓘(ℂ) 1 M] [T2Space M] [SecondCountableTopology M]
   [MeasurableSpace M] [BorelSpace M]
 
+omit [MeasurableSpace M] [BorelSpace M] in
 theorem domainDensityRatio_tendsto_finite_punctures (p : DiscCover M)
     {A : Set M} (hA : IsClosed A) (P : ℕ → Finset M) (hP : Monotone P)
     (hPA : ∀ n, (P n : Set M) ⊆ A)
@@ -79,7 +80,7 @@ theorem domainArea_component (p : DiscCover M) (U : TopologicalSpace.Opens M)
   congr 3
   let V := componentDomain U (x : M)
   have hVU : componentDomain V y = V := by
-    letI : ConnectedSpace V := componentDomain_connected x.property
+    let : ConnectedSpace V := componentDomain_connected x.property
     apply TopologicalSpace.Opens.ext
     exact (isConnected_iff_connectedSpace.mpr inferInstance).isPreconnected
       |>.connectedComponentIn (hBU hy)

@@ -20,11 +20,13 @@ noncomputable def chartPullbackExtension
   classical
   exact e.source.piecewise (g ∘ e) 0
 
+omit [ChartedSpace ℂ M] [IsManifold 𝓘(ℂ, ℂ) 1 M] [T2Space M] in
 theorem chartPullbackExtension_eq {e : OpenPartialHomeomorph M ℂ}
     {g : ℂ → ℝ} {x : M} (hx : x ∈ e.source) :
     chartPullbackExtension e g x = g (e x) := by
   simp [chartPullbackExtension, hx]
 
+omit [ChartedSpace ℂ M] [IsManifold 𝓘(ℂ, ℂ) 1 M] [T2Space M] in
 theorem support_chartPullbackExtension_subset
     {e : OpenPartialHomeomorph M ℂ} {g : ℂ → ℝ} :
     support (chartPullbackExtension e g) ⊆ e.symm '' support g := by
@@ -41,7 +43,7 @@ theorem contMDiff_chartPullbackExtension
     (hgtarget : tsupport g ⊆ e.target)
     (he : e ∈ IsManifold.maximalAtlas 𝓘(ℝ, ℂ) 2 M) :
     ContMDiff 𝓘(ℝ, ℂ) 𝓘(ℝ) 2 (chartPullbackExtension e g) := by
-  letI : IsManifold 𝓘(ℝ, ℂ) ∞ M := isManifold_real_of_complex
+  let : IsManifold 𝓘(ℝ, ℂ) ∞ M := isManifold_real_of_complex
   have hK : IsCompact (e.symm '' tsupport g) :=
     hgcompact.image_of_continuousOn (e.symm.continuousOn.mono hgtarget)
   have hsupp : tsupport (chartPullbackExtension e g) ⊆
@@ -67,6 +69,7 @@ theorem contMDiff_chartPullbackExtension
   · exact contMDiffAt_const.congr_of_eventuallyEq
       (notMem_tsupport_iff_eventuallyEq.mp hx)
 
+omit [ChartedSpace ℂ M] [IsManifold 𝓘(ℂ) 1 M] in
 theorem hasCompactSupport_chartPullbackExtension
     {e : OpenPartialHomeomorph M ℂ} {g : ℂ → ℝ}
     (hgcompact : HasCompactSupport g) (hgtarget : tsupport g ⊆ e.target) :
@@ -78,6 +81,7 @@ theorem hasCompactSupport_chartPullbackExtension
       (support_chartPullbackExtension_subset.trans (image_mono subset_closure))
       hK.isClosed
 
+omit [ChartedSpace ℂ M] [IsManifold 𝓘(ℂ) 1 M] [T2Space M] in
 /-- Pulling a planar function back through a chart and then reading it in
 the same chart recovers the original zero-extended planar function. -/
 theorem chartZeroExtensionIn_chartPullbackExtension

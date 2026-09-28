@@ -13,6 +13,7 @@ variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
   [ChartedSpace ℂ X] [ChartedSpace ℂ Y]
   [IsManifold 𝓘(ℂ) 1 X] [IsManifold 𝓘(ℂ) 1 Y]
 
+omit [IsManifold 𝓘(ℂ) 1 X] in
 /-- A complex one-dimensional manifold has no open singleton.  This local
 fact does not require a global connectedness assumption. -/
 theorem not_isOpen_singleton_surface (x : X) :
@@ -24,6 +25,7 @@ theorem not_isOpen_singleton_surface (x : X) :
   rw [Set.image_singleton] at himage
   exact not_isOpen_singleton (chartAt ℂ x x) himage
 
+omit [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ) 1 X] [IsManifold 𝓘(ℂ) 1 Y] in
 /-- An open map between complex one-dimensional manifolds cannot be locally
 constant. -/
 theorem not_eventuallyEq_const_of_isOpenMap {f : X → Y}
@@ -72,6 +74,7 @@ theorem analyticAt_writtenInExtChartAt {f : X → Y}
   rw [hI, differentiableWithinAt_univ, e.right_inv hyt] at hy
   exact hy.2
 
+omit [IsManifold 𝓘(ℂ) 1 X] [IsManifold 𝓘(ℂ) 1 Y] in
 /-- In extended coordinates, an open holomorphic surface map is not locally
 constant. -/
 theorem not_eventuallyEq_writtenInExtChartAt {f : X → Y}

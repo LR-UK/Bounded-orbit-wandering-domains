@@ -23,7 +23,7 @@ theorem integrable_truncated_inverse_square (b c : ℝ) (hc : 0 < c) :
   have he : c < -(t + -b) ↔ t < b - c := by constructor <;> intro h <;> linarith
   simp only [he]
   split_ifs
-  · congr 1 <;> ring
+  · congr 1; ring
   · rfl
 
 /-- The squared logarithmic cusp majorant is integrable on a smaller
@@ -68,7 +68,7 @@ theorem integrable_cusp_density_sq_majorant {R : ℝ} (hR : 0 < R) :
       rw [← Real.log_div hR.ne' hzn.ne']
       exact Real.log_pos ((one_lt_div hzn).mpr hzr)
     have hcond : z ≠ 0 ∧ ‖z‖ < R / 2 := ⟨hz, hzR⟩
-    simp only [hcond, ↓reduceIte]
+    simp only [hcond]
     rw [show (-2 : ℝ) = -(2 : ℝ) by norm_num,
       Real.rpow_neg hd.le, Real.rpow_two,
       Real.log_div hR.ne' hzn.ne']
@@ -116,10 +116,10 @@ theorem IsHolomorphicDiscCovering.integrableOn_density_sq_cusp
     (hcont.aestronglyMeasurable hBmeas)
   filter_upwards [ae_restrict_mem hBmeas] with z hz
   have hzR2 : ‖z - a‖ < R / 2 := by
-    simpa only [B, mem_diff, mem_ball, dist_eq_norm, mem_singleton_iff] using hz.1
+    simpa only [B, mem_sdiff, mem_ball, dist_eq_norm, mem_singleton_iff] using hz.1
   have hzR : ‖z - a‖ < R := hzR2.trans (by linarith)
   have hza : z ≠ a := by
-    simpa only [B, mem_diff, mem_ball, dist_eq_norm, mem_singleton_iff] using hz.2
+    simpa only [B, mem_sdiff, mem_ball, dist_eq_norm, mem_singleton_iff] using hz.2
   have hzs : z ∈ S := hball ⟨by
     simpa only [mem_ball, dist_eq_norm] using hzR, by
     simpa only [mem_singleton_iff] using hza⟩
@@ -133,7 +133,7 @@ theorem IsHolomorphicDiscCovering.integrableOn_density_sq_cusp
   rw [Real.norm_of_nonneg (sq_nonneg _)]
   have hcond : z ≠ a ∧ ‖z - a‖ < R / 2 := ⟨hza, hzR2⟩
   dsimp only [g]
-  rw [if_pos hcond]
+  rw [ite_eq_left hcond]
   have hupper_nonneg : 0 ≤ 2 / (‖z - a‖ * Real.log (R / ‖z - a‖)) :=
     div_nonneg (by norm_num) hd.le
   have hsquare : (coveringDensity p z) ^ 2 ≤

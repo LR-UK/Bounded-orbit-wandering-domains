@@ -14,6 +14,7 @@ variable {M : Type*} [TopologicalSpace M] [ChartedSpace ℂ M]
   [IsManifold 𝓘(ℂ) 1 M] [T2Space M] [SecondCountableTopology M]
   [MeasurableSpace M] [BorelSpace M]
 
+omit [T2Space M] in
 theorem hyperbolicArea_image_radius (p : DiscCover M)
     {c : OpenPartialHomeomorph M ℂ}
     (hc : MDifferentiableOn 𝓘(ℂ) 𝓘(ℂ) c c.source)

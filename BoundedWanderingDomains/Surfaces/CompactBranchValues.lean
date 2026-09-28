@@ -10,11 +10,9 @@ open scoped Manifold
 namespace SurfaceDynamics
 
 variable {M N : Type*} [TopologicalSpace M] [ChartedSpace ℂ M]
-  [IsManifold 𝓘(ℂ) 1 M] [MeasurableSpace M] [BorelSpace M]
-  [SecondCountableTopology M] [LocallyCompactSpace M]
+  [IsManifold 𝓘(ℂ) 1 M] [LocallyCompactSpace M]
   [TopologicalSpace N] [ChartedSpace ℂ N]
-  [IsManifold 𝓘(ℂ) 1 N] [MeasurableSpace N] [BorelSpace N]
-  [SecondCountableTopology N] [LocallyCompactSpace N] [T2Space N]
+  [IsManifold 𝓘(ℂ) 1 N] [LocallyCompactSpace N] [T2Space N]
   [DecidableEq N]
 
 /-- An open holomorphic map has only finitely many branch values coming from

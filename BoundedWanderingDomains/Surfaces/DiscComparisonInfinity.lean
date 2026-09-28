@@ -77,6 +77,7 @@ theorem domainDensity_ratio_near_one_outside_compact (p : DiscCover M)
     simpa only [one_mul] using p.domainDensity_mono hVU hc (x := x) hxc
   · simpa only [one_div_one_div] using hbound U V hVU hVK c hc x hxC hxc
 
+omit [T2Space M] [SecondCountableTopology M] in
 /-- Along any specified old end, removing a fixed compact set changes the
 hyperbolic density by a factor tending to one.  The hypothesis is deliberately
 phrased as escape in the old ambient surface: it excludes convergence to one
@@ -111,6 +112,7 @@ theorem densityRatio_tendsto_one_of_tendsto_cocompact
   dsimp only [δ] at hupper
   linarith
 
+omit [T2Space M] [SecondCountableTopology M] in
 /-- Logarithmic form of the old-end comparison. -/
 theorem log_densityRatio_tendsto_zero_of_tendsto_cocompact
     (p : DiscCover M) {K : Set M} (hK : IsCompact K)

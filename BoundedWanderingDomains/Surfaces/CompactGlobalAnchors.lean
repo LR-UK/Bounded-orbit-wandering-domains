@@ -14,6 +14,7 @@ variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [SecondCountableTopology X] [MeasurableSpace X] [BorelSpace X]
   [CompactSpace X]
 
+omit [MeasurableSpace X] [BorelSpace X] [LocallyCompactSpace X] in
 /-- The three anchors can be propagated backwards through finite stages, and
 every such stage has a disc-covered complement.  This combines the dynamical
 backward-tree construction with compact-surface hyperbolisation. -/
@@ -59,17 +60,17 @@ theorem exists_three_anchor_backward_hyperbolic_models
   have hVcompact : IsCompact (closure (V : Set X)) := by
     simpa [V] using (isCompact_univ : IsCompact (Set.univ : Set X))
   have hVsource : closure (V : Set X) ⊆ f.source := by
-    simpa [V, hsource]
+    simp [V, hsource]
   let Q : ℕ → Finset X := fun _ => ∅
   have hQmono : Monotone Q := fun _ _ _ => by simp [Q]
   obtain ⟨P, hPmono, hcontain, hforward, hback⟩ :=
     f.exists_backwardExceptionalFinsets hf V hVcompact hVsource Q hQmono E
-  letI : Nontrivial X := ⟨⟨a, b, Ne.symm hba⟩⟩
-  letI : Infinite X := Set.infinite_univ_iff.mp
+  let : Nontrivial X := ⟨⟨a, b, Ne.symm hba⟩⟩
+  let : Infinite X := Set.infinite_univ_iff.mp
     ((infinite_of_mem_nhds a
       ((chartAt ℂ a).open_source.mem_nhds (mem_chart_source ℂ a))).mono
         (subset_univ _))
-  letI : IsManifold 𝓘(ℂ) ω X :=
+  let : IsManifold 𝓘(ℂ) ω X :=
     AreaDeficit.Surfaces.isManifold_analytic_of_complex
   refine ⟨E, hEcard, hEA, P, hPmono, fun n => hcontain n |>.2,
     ?_, ?_, ?_⟩
@@ -133,7 +134,7 @@ theorem exists_three_anchor_positive_wandering_configuration
   have hVcompact : IsCompact (closure (V : Set X)) := by
     simpa [V] using (isCompact_univ : IsCompact (Set.univ : Set X))
   have hVsource : closure (V : Set X) ⊆ f.source := by
-    simpa [V, hsource]
+    simp [V, hsource]
   let P : ℕ → Finset X := fun _ => ∅
   have hPmono : Monotone P := fun _ _ _ => by simp [P]
   obtain ⟨Sseq, hSmono, hcontain, _hforward, hback⟩ :=

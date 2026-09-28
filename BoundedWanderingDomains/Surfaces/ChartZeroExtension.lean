@@ -19,11 +19,13 @@ noncomputable def chartZeroExtensionIn
   classical
   exact e.target.piecewise (v ∘ e.symm) 0
 
+omit [ChartedSpace ℂ M] [IsManifold 𝓘(ℂ, ℂ) 1 M] [T2Space M] in
 theorem chartZeroExtensionIn_eq {e : OpenPartialHomeomorph M ℂ}
     {v : M → ℝ} {z : ℂ} (hz : z ∈ e.target) :
     chartZeroExtensionIn e v z = v (e.symm z) := by
   simp [chartZeroExtensionIn, hz]
 
+omit [ChartedSpace ℂ M] [IsManifold 𝓘(ℂ, ℂ) 1 M] [T2Space M] in
 theorem support_chartZeroExtensionIn_subset
     {e : OpenPartialHomeomorph M ℂ} {v : M → ℝ} :
     support (chartZeroExtensionIn e v) ⊆ e '' support v := by
@@ -34,6 +36,7 @@ theorem support_chartZeroExtensionIn_subset
   refine ⟨e.symm z, ?_, e.right_inv hzt⟩
   exact fun hv => hz (by simp [chartZeroExtensionIn, hzt, hv])
 
+omit [IsManifold 𝓘(ℂ) 1 M] [T2Space M] in
 /-- Generic chart form of the zero-extension lemma. -/
 theorem contDiff_chartZeroExtensionIn
     {e : OpenPartialHomeomorph M ℂ} {v : M → ℝ}
@@ -62,6 +65,7 @@ theorem contDiff_chartZeroExtensionIn
   · exact contDiffAt_const.congr_of_eventuallyEq
       (notMem_tsupport_iff_eventuallyEq.mp hz)
 
+omit [ChartedSpace ℂ M] [IsManifold 𝓘(ℂ) 1 M] [T2Space M] in
 theorem hasCompactSupport_chartZeroExtensionIn
     {e : OpenPartialHomeomorph M ℂ} {v : M → ℝ}
     (hvcompact : HasCompactSupport v) (hvsource : tsupport v ⊆ e.source) :
@@ -80,11 +84,13 @@ noncomputable def chartZeroExtension (a : M) (v : M → ℝ) : ℂ → ℝ :=
     classical
     exact (chartAt ℂ a).target.piecewise (v ∘ (chartAt ℂ a).symm) 0
 
+omit [IsManifold 𝓘(ℂ, ℂ) 1 M] [T2Space M] in
 theorem chartZeroExtension_eq {a : M} {v : M → ℝ} {z : ℂ}
     (hz : z ∈ (chartAt ℂ a).target) :
     chartZeroExtension a v z = v ((chartAt ℂ a).symm z) := by
   simp [chartZeroExtension, hz]
 
+omit [IsManifold 𝓘(ℂ, ℂ) 1 M] [T2Space M] in
 theorem support_chartZeroExtension_subset {a : M} {v : M → ℝ} :
     support (chartZeroExtension a v) ⊆ (chartAt ℂ a) '' support v := by
   intro z hz
@@ -94,6 +100,7 @@ theorem support_chartZeroExtension_subset {a : M} {v : M → ℝ} :
   refine ⟨(chartAt ℂ a).symm z, ?_, (chartAt ℂ a).right_inv hzt⟩
   exact fun hv => hz (by simp [chartZeroExtension, hzt, hv])
 
+omit [T2Space M] in
 /-- A smooth compactly supported surface function whose topological support
 lies in one chart has a globally `C²` zero-extended chart reading. -/
 theorem contDiff_chartZeroExtension
@@ -102,7 +109,7 @@ theorem contDiff_chartZeroExtension
     (hvcompact : HasCompactSupport v)
     (hvsource : tsupport v ⊆ (chartAt ℂ a).source) :
     ContDiff ℝ 2 (chartZeroExtension a v) := by
-  letI : IsManifold 𝓘(ℝ, ℂ) ∞ M := isManifold_real_of_complex
+  let : IsManifold 𝓘(ℝ, ℂ) ∞ M := isManifold_real_of_complex
   have hK : IsCompact ((chartAt ℂ a) '' tsupport v) := by
     exact hvcompact.image_of_continuousOn
       ((chartAt ℂ a).continuousOn.mono hvsource)
@@ -130,6 +137,7 @@ theorem contDiff_chartZeroExtension
   · exact contDiffAt_const.congr_of_eventuallyEq
       (notMem_tsupport_iff_eventuallyEq.mp hz)
 
+omit [IsManifold 𝓘(ℂ) 1 M] [T2Space M] in
 theorem hasCompactSupport_chartZeroExtension
     {a : M} {v : M → ℝ} (hvcompact : HasCompactSupport v)
     (hvsource : tsupport v ⊆ (chartAt ℂ a).source) :

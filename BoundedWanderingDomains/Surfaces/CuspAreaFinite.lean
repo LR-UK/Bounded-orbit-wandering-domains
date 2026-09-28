@@ -14,6 +14,7 @@ variable {M : Type*} [TopologicalSpace M] [ChartedSpace ℂ M]
   [IsManifold 𝓘(ℂ) 1 M] [T2Space M] [MeasurableSpace M] [BorelSpace M]
   [SecondCountableTopology M]
 
+omit [T2Space M] in
 /-- The inverse image of a small punctured coordinate disc has finite
 intrinsic hyperbolic area. -/
 theorem hyperbolicArea_cusp_chart_finite (p : DiscCover M)

@@ -12,13 +12,12 @@ open scoped Manifold Topology
 
 namespace SurfaceDynamics.LocalMap
 
-variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
-  [IsManifold 𝓘(ℂ) 1 X]
+variable {X : Type*} [TopologicalSpace X]
 
 /-- A local map whose source and image lie in an open subsurface, read as a
 local self-map of that subsurface. -/
 def restrictAmbient (f : LocalMap X) (O : TopologicalSpace.Opens X)
-    (hsource : (f.source : Set X) ⊆ O)
+    (_hsource : (f.source : Set X) ⊆ O)
     (hmap : ∀ x : f.source, f.map x ∈ O) : LocalMap O where
   source := ⟨{x : O | (x : X) ∈ f.source},
     f.source.isOpen.preimage continuous_subtype_val⟩
@@ -60,7 +59,8 @@ def restrictAmbientSourceHomeomorph (f : LocalMap X)
 
 /-- Openness and holomorphicity are unchanged when both source and target
 are read in an invariant open subsurface. -/
-theorem isOpenHolomorphic_restrictAmbient (f : LocalMap X)
+theorem isOpenHolomorphic_restrictAmbient [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ) 1 X]
+    (f : LocalMap X)
     (hf : IsOpenHolomorphic f) (O : TopologicalSpace.Opens X)
     (hsource : (f.source : Set X) ⊆ O)
     (hmap : ∀ x : f.source, f.map x ∈ O) :
@@ -141,7 +141,7 @@ theorem mem_restrictAmbient_trapped_iff (f : LocalMap X)
         have hzyo : z = yo := Subtype.ext hzy
         refine ⟨yo, ?_, ?_⟩
         · exact hy
-        · simpa [he, hzyo]
+        · simp [hzyo]
 
 /-- Finite images commute with inclusion of the invariant subsurface. -/
 theorem image_restrictAmbient_imageAt (f : LocalMap X)
@@ -222,6 +222,7 @@ normal for the subsurface reading was already normal for the original local
 map.  Compact-range Montel identifies both questions with interior
 trappedness. -/
 theorem omega_restrictAmbient_restrictSource_subset
+    [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ) 1 X]
     [T2Space X] [LocallyCompactSpace X]
     (f : LocalMap X) (hf : IsOpenHolomorphic f)
     (O V : TopologicalSpace.Opens X)

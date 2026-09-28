@@ -90,7 +90,7 @@ theorem measure_univ_le_of_eventually_bounded_riesz_cutoffs
     (hlim : ∀ᵐ x ∂μ, Tendsto (fun n => χ n x) atTop (𝓝 1))
     (boundary : ℕ → ℝ)
     (hgreen : ∀ n, (∫⁻ x, χ n x ∂μ) = ENNReal.ofReal (boundary n))
-    {B : ℝ} (hB : 0 ≤ B)
+    {B : ℝ} (_hB : 0 ≤ B)
     (hbound : ∀ᶠ n : ℕ in atTop, |boundary n| ≤ B) :
     μ Set.univ ≤ ENNReal.ofReal B := by
   obtain ⟨N, hN⟩ := eventually_atTop.mp hbound

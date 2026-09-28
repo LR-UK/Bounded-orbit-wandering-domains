@@ -21,7 +21,7 @@ variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
 theorem compactComponentOrbitImpossibleClaim_of_discCover
     (p : DiscCover X) : CompactComponentOrbitImpossibleClaim (X := X) := by
   classical
-  letI : LocallyPathConnectedSpace X := ChartedSpace.locallyPathConnectedSpace ℂ X
+  let : LocallyPathConnectedSpace X := ChartedSpace.locallyPathConnectedSpace ℂ X
   intro f hf R hR hdisR z hz hznR K hK hKsource hznK
   let a : ℕ → X := fun n => f.orbit n ⟨z, hz⟩
   have haomega : ∀ n, a n ∈ f.omega := by
@@ -80,7 +80,7 @@ theorem compactComponentOrbitImpossibleClaim_of_discCover
     fun n m hnm => (hdisR hnm).mono (hUR n) (hUR m)
   have hq : ∀ n, ∃ q : DiscCover (U n), (q.projection discZero : X) = a n := by
     intro n
-    letI : ConnectedSpace (U n) := componentDomain_connected (haT n)
+    let : ConnectedSpace (U n) := componentDomain_connected (haT n)
     obtain ⟨q, hq⟩ := (Classical.choice (p.nonempty_subdomain (U n))).exists_centred ⟨a n, haU n⟩
     exact ⟨q, congrArg Subtype.val hq⟩
   choose q hq0 using hq

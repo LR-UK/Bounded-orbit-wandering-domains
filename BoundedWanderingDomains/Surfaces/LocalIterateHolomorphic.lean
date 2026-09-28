@@ -18,10 +18,12 @@ noncomputable def orbitOn (f : LocalMap X) (W : TopologicalSpace.Opens X)
     (hW : (W : Set X) ⊆ f.trapped) (n : ℕ) (x : W) : X :=
   f.orbit n ⟨x, hW x.property⟩
 
+omit [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ, ℂ) 1 X] in
 @[simp] theorem orbitOn_zero (f : LocalMap X) (W : TopologicalSpace.Opens X)
     (hW : (W : Set X) ⊆ f.trapped) (x : W) :
     f.orbitOn W hW 0 x = x := rfl
 
+omit [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ, ℂ) 1 X] in
 theorem orbitOn_succ (f : LocalMap X) (W : TopologicalSpace.Opens X)
     (hW : (W : Set X) ⊆ f.trapped) (n : ℕ) (x : W) :
     f.orbitOn W hW (n + 1) x =

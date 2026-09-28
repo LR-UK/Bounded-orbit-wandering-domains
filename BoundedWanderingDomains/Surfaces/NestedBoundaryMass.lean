@@ -15,6 +15,7 @@ variable {M : Type*} [TopologicalSpace M] [ChartedSpace ℂ M]
   [IsManifold 𝓘(ℂ) 1 M] [T2Space M] [SecondCountableTopology M]
   [MeasurableSpace M] [BorelSpace M]
 
+omit [ChartedSpace ℂ M] [IsManifold 𝓘(ℂ, ℂ) 1 M] [T2Space M] [SecondCountableTopology M] [MeasurableSpace M] [BorelSpace M] in
 /-- A point in a twice-restricted chart target lies in the ambient chart
 set of the corresponding nested domain. -/
 theorem mem_domainChartSet_of_mem_nested_target
@@ -41,6 +42,7 @@ theorem mem_domainChartSet_of_mem_nested_target
   rw [← he']
   exact (e.symm z).property
 
+omit [MeasurableSpace M] [BorelSpace M] in
 /-- On sufficiently small logarithmic annuli, the ambient componentwise
 boundary pairing is exactly the pairing of supplied covers of the two nested
 open subtypes. -/
@@ -78,6 +80,7 @@ theorem eventually_domainChart_boundary_eq_nested
         by simpa only [mem_singleton_iff] using hza⟩
     rw [p.domainChartLogRatio_eq_nested hVU hUN q W hW hWN s hc hzt]
 
+omit [MeasurableSpace M] [BorelSpace M] in
 /-- Old-end vanishing for supplied nested covers, read back as an ambient
 componentwise boundary pairing. -/
 theorem tendsto_domainChart_old_boundary_mass_zero
@@ -111,6 +114,7 @@ theorem tendsto_domainChart_old_boundary_mass_zero
   filter_upwards [heq] with t ht
   exact ht.symm
 
+omit [MeasurableSpace M] [BorelSpace M] in
 /-- The new-end uniform bound for supplied nested covers, read back as an
 ambient componentwise boundary pairing. -/
 theorem eventually_bounded_domainChart_new_boundary_mass

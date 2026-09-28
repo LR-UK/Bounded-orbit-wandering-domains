@@ -13,15 +13,16 @@ variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [SecondCountableTopology X] [ConnectedSpace X]
   [MeasurableSpace X] [BorelSpace X]
 
+omit [SecondCountableTopology X] [MeasurableSpace X] [BorelSpace X] in
 theorem exists_finite_singularValues_of_compact_global
     (f : LocalMap X) (hf : IsOpenHolomorphic f) (hsource : f.source = ⊤) :
     ∃ B : Finset X, f.singularValues ⊆ B := by
   classical
   have hall : ∀ x : X, x ∈ f.source := by intro x; rw [hsource]; trivial
-  letI : Nonempty f.source := ⟨⟨Classical.arbitrary X, hall _⟩⟩
-  letI : CompactSpace f.source := isCompact_iff_compactSpace.mp
+  let : Nonempty f.source := ⟨⟨Classical.arbitrary X, hall _⟩⟩
+  let : CompactSpace f.source := isCompact_iff_compactSpace.mp
     (show IsCompact (f.source : Set X) by simpa only [hsource, TopologicalSpace.Opens.coe_top] using (isCompact_univ : IsCompact (univ : Set X)))
-  letI : LocallyCompactSpace f.source := f.source.isOpen.locallyCompactSpace
+  let : LocallyCompactSpace f.source := f.source.isOpen.locallyCompactSpace
   have hclosed : IsClosed (range f.map) := by
     simpa only [image_univ] using (isCompact_univ.image hf.2.continuous).isClosed
   have hrange : range f.map = univ :=

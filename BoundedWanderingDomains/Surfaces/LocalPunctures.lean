@@ -13,6 +13,7 @@ variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
   [T2Space X] [T2Space Y] [ChartedSpace ℂ X] [ChartedSpace ℂ Y]
   [IsManifold 𝓘(ℂ) 1 X] [IsManifold 𝓘(ℂ) 1 Y]
 
+omit [T2Space X] in
 /-- The inverse image of a finite set, restricted to a compact set, is finite
 for an open holomorphic surface map. -/
 theorem finite_compact_inter_preimage_of_finite {f : X → Y}

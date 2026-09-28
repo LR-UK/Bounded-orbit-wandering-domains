@@ -87,7 +87,7 @@ theorem integrable_abs_laplacian_logCutoff (a : ℂ) {A B : ℝ} (hAB : A < B) :
   apply h.congr
   filter_upwards with z
   rw [laplacian_logCutoff_eq_kernel a z hAB]
-  simp only [sub_eq_add_neg, abs_div, abs_pow, sq_abs,
+  simp only [sub_eq_add_neg, abs_div, abs_pow,
     abs_norm, Real.norm_eq_abs]
 
 theorem integral_abs_laplacian_logCutoff (a : ℂ) {A B : ℝ} (hAB : A < B) :

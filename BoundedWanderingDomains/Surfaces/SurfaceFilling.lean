@@ -27,6 +27,7 @@ theorem compactFill_subset_coordDisk {C : Set X}
   compactFill_subset_compact_of_connected_complement hCD D.isCompact_closedCarrier
     (RiemannDynamics.isConnected_coordDisk_compl D).isPreconnected
 
+omit [ConnectedSpace X] [NoncompactSpace X] in
 /-- The planar filling in a coordinate disc maps into the intrinsic
 surface filling. This comparison allows the planar Jordan theorem to be
 reused only where a coordinate chart is actually available. -/
@@ -63,6 +64,7 @@ theorem chart_symm_image_fill_subset_compactFill
   rw [compactFill_complex_eq_fill, heq] at hh
   exact hh
 
+omit [ConnectedSpace X] [NoncompactSpace X] in
 /-- A compact connected set in a coordinate disc whose filling lies in an
 open set has a simply connected open neighbourhood inside that open set. -/
 theorem exists_simplyConnected_neighborhood_of_compactFill_subset
@@ -106,7 +108,7 @@ theorem exists_simplyConnected_neighborhood_of_compactFill_subset
   have himage : c '' W = S := c.image_symm_image_of_subset_target hStarget
   let e : W ≃ₜ S := c.homeomorphOfImageSubsetSource hWc himage
   have hSsc : SimplyConnectedSpace S := (J 0).simplyConnectedInterior
-  letI := hSsc
+  let := hSsc
   refine ⟨W, c.isOpen_image_symm_of_subset_target isOpen_interior hStarget,
     e.toHomotopyEquiv.simplyConnectedSpace, ?_, ?_⟩
   · intro x hx

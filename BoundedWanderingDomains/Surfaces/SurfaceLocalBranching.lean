@@ -10,11 +10,8 @@ open scoped Manifold Topology
 namespace SurfaceDynamics
 
 variable {M N : Type*} [TopologicalSpace M] [ChartedSpace ℂ M]
-  [IsManifold 𝓘(ℂ) 1 M] [MeasurableSpace M] [BorelSpace M]
-  [SecondCountableTopology M]
+  [IsManifold 𝓘(ℂ) 1 M]
   [TopologicalSpace N] [ChartedSpace ℂ N]
-  [IsManifold 𝓘(ℂ) 1 N] [MeasurableSpace N] [BorelSpace N]
-  [SecondCountableTopology N]
 
 /-- A nonzero coordinate derivative of an open holomorphic surface map gives
 a local homeomorphism at the corresponding point. -/
@@ -54,7 +51,7 @@ theorem isLocalHomeomorphOn_of_chart_deriv_ne_zero
     hopen.domRestrict isOpen_interior⟩
 
 variable [LocallyCompactSpace M] [LocallyCompactSpace N] [T2Space N]
-  [DecidableEq N]
+  [DecidableEq N] [IsManifold 𝓘(ℂ) 1 N]
 
 /-- On a compact set, deleting one finite set of branch values makes the
 open holomorphic map a local homeomorphism at every remaining point. -/

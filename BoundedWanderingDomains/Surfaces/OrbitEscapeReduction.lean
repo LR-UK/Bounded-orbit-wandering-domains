@@ -25,13 +25,13 @@ def CompactComponentOrbitImpossibleClaim : Prop :=
         ∀ K : Set X, IsCompact K → K ⊆ f.source →
           (∀ n, f.orbit n ⟨z, hz⟩ ∈ K) → False
 
+omit [SecondCountableTopology X] [ConnectedSpace X] in
 theorem noCompactWanderingOrbitClaim_of_componentOrbitImpossible
     (hcore : CompactComponentOrbitImpossibleClaim (X := X)) :
     NoCompactWanderingOrbitClaim (X := X) := by
-  intro f hf U hU z hz
-  intro K hK hKsource
+  intro f hf U hU z hz K hK hKsource
   by_contra hescape
-  push_neg at hescape
+  push Not at hescape
   obtain ⟨V, hztrapped, hV0, hcomp, horbit, hdis⟩ :=
     hU.exists_orbit_components f hz
   apply hcore f hf V hcomp hdis z hztrapped horbit K hK hKsource

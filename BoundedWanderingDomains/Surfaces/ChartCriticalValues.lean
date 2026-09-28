@@ -11,11 +11,8 @@ open scoped Manifold Topology
 namespace SurfaceDynamics
 
 variable {M N : Type*} [TopologicalSpace M] [ChartedSpace ℂ M]
-  [IsManifold 𝓘(ℂ) 1 M] [MeasurableSpace M] [BorelSpace M]
-  [SecondCountableTopology M]
+  [IsManifold 𝓘(ℂ) 1 M]
   [TopologicalSpace N] [ChartedSpace ℂ N]
-  [IsManifold 𝓘(ℂ) 1 N] [MeasurableSpace N] [BorelSpace N]
-  [SecondCountableTopology N]
 
 /-- A holomorphic surface map written in a fixed source/target chart pair is
 analytic at every point where both charts apply. -/
@@ -45,6 +42,7 @@ theorem analyticAt_writtenInCharts
   rw [c.right_inv hzc] at hh
   exact hh.differentiableAt
 
+omit [IsManifold 𝓘(ℂ) 1 M] in
 /-- Openness rules out a constant germ in every fixed chart reading. -/
 theorem not_eventuallyConst_writtenInCharts
     {c : OpenPartialHomeomorph M ℂ} {d : OpenPartialHomeomorph N ℂ}

@@ -21,7 +21,7 @@ theorem compact_range_of_no_escaping_subsequence (u : ℕ → X)
   have hout : ∀ n m : ℕ, ∃ k, m < k ∧ u k ∉ K n := by
     intro n m
     by_contra hh
-    push_neg at hh
+    push Not at hh
     apply hn
     refine ⟨K n ∪ u '' (↑(Finset.range (m + 1)) : Set ℕ),
       (K.isCompact n).union ((Finset.finite_toSet _).image u).isCompact, ?_⟩

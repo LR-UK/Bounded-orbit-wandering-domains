@@ -20,9 +20,9 @@ structure AmbientChartPartition (M : Type*) [TopologicalSpace M]
   subordinate : rho.IsSubordinate (fun x : M => (chartAt ℂ x).source)
 
 theorem exists_ambientChartPartition : Nonempty (AmbientChartPartition M) := by
-  letI : IsManifold 𝓘(ℝ, ℂ) ∞ M := isManifold_real_of_complex
-  letI : LocallyCompactSpace M := ChartedSpace.locallyCompactSpace ℂ M
-  letI : SigmaCompactSpace M := sigmaCompactSpace_of_locallyCompact_secondCountable
+  let : IsManifold 𝓘(ℝ, ℂ) ∞ M := isManifold_real_of_complex
+  let : LocallyCompactSpace M := ChartedSpace.locallyCompactSpace ℂ M
+  let : SigmaCompactSpace M := sigmaCompactSpace_of_locallyCompact_secondCountable
   let V : M → Set M := fun x => (chartAt ℂ x).source
   have hVopen : ∀ x, IsOpen (V x) := fun x => (chartAt ℂ x).open_source
   have hcover : (Set.univ : Set M) ⊆ ⋃ x, V x := by
@@ -33,9 +33,10 @@ theorem exists_ambientChartPartition : Nonempty (AmbientChartPartition M) := by
       isClosed_univ V hVopen hcover
   exact ⟨⟨rho, hrho⟩⟩
 
+omit [T2Space M] [SecondCountableTopology M] in
 theorem ambientChart_mem_real_maximalAtlas (x : M) :
     chartAt ℂ x ∈ IsManifold.maximalAtlas 𝓘(ℝ, ℂ) 2 M := by
-  letI : IsManifold 𝓘(ℝ, ℂ) ∞ M := isManifold_real_of_complex
+  let : IsManifold 𝓘(ℝ, ℂ) ∞ M := isManifold_real_of_complex
   exact (contDiffGroupoid 2 𝓘(ℝ, ℂ)).chart_mem_maximalAtlas x
 
 namespace AmbientChartPartition
@@ -45,12 +46,14 @@ noncomputable def active (P : AmbientChartPartition M)
     (chi : M → ℝ) (hchi : HasCompactSupport chi) : Finset M :=
   (P.rho.locallyFinite.finite_nonempty_inter_compact hchi).toFinset
 
+omit [T2Space M] [SecondCountableTopology M] in
 theorem mem_active_iff (P : AmbientChartPartition M)
     {chi : M → ℝ} (hchi : HasCompactSupport chi) (i : M) :
     i ∈ P.active chi hchi ↔
       (support (P.rho i) ∩ tsupport chi).Nonempty := by
   simp [active]
 
+omit [T2Space M] [SecondCountableTopology M] in
 theorem sum_active_mul (P : AmbientChartPartition M)
     {chi : M → ℝ} (hchi : HasCompactSupport chi) (x : M) :
     (∑ i ∈ P.active chi hchi, P.rho i x * chi x) = chi x := by

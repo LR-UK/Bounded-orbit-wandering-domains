@@ -9,8 +9,7 @@ open scoped Manifold
 
 namespace SurfaceDynamics.LocalMap
 
-variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
-  [IsManifold 𝓘(ℂ) 1 X] [T2Space X] [LocallyCompactSpace X]
+variable {X : Type*} [TopologicalSpace X] [T2Space X] [LocallyCompactSpace X]
 
 /-- If the whole forward saturation of `A` lies in a smaller source, then
 every point of `A` is trapped for the restricted map.  Points outside the
@@ -31,6 +30,7 @@ theorem subset_restrictSource_trapped_diff_omega_of_saturation_subset
   intro homega
   exact (hA hx).2 (f.restrictSource_omega_subset V hV homega)
 
+omit [T2Space X] [LocallyCompactSpace X] in
 /-- When the old saturation remains in the smaller source, source
 restriction does not change that saturation. -/
 theorem restrictSource_saturation_eq_of_saturation_subset
@@ -59,6 +59,7 @@ theorem restrictSource_saturation_eq_of_saturation_subset
       (hArestrict hx) n]
     exact hxy
 
+omit [T2Space X] [LocallyCompactSpace X] in
 /-- Each finite image is unchanged when the whole saturation stays in the
 smaller source. -/
 theorem restrictSource_imageAt_eq_of_saturation_subset
@@ -84,6 +85,7 @@ theorem restrictSource_imageAt_eq_of_saturation_subset
       (hArestrict hx) n]
     exact hxy
 
+omit [T2Space X] [LocallyCompactSpace X] in
 /-- Injectivity on a saturation is preserved by a source restriction which
 contains that saturation. -/
 theorem injectiveOnSaturation_restrictSource

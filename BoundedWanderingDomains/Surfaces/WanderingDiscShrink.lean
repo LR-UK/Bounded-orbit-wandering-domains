@@ -34,8 +34,8 @@ theorem disjoint_disc_images_eventually_in_cover
   have hbC : ∀ n, b n ∈ C := fun n => ⟨hbB n, by
     change p.projection (b n) ∈ K
     rw [hbp]; exact hcentre n⟩
-  letI : SimplyConnectedSpace unitDisc := unitDisc_simplyConnected
-  letI : LocallyPathConnectedSpace unitDisc :=
+  let : SimplyConnectedSpace unitDisc := unitDisc_simplyConnected
+  let : LocallyPathConnectedSpace unitDisc :=
     ChartedSpace.locallyPathConnectedSpace ℂ unitDisc
   choose H hH0 hfac hH using fun n =>
     exists_holomorphic_lift p.holomorphic p.covering (hF n)

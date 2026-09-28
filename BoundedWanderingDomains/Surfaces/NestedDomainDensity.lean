@@ -15,6 +15,7 @@ variable {M : Type*} [TopologicalSpace M] [ChartedSpace ℂ M]
   [IsManifold 𝓘(ℂ) 1 M] [T2Space M] [SecondCountableTopology M]
   [MeasurableSpace M] [BorelSpace M]
 
+omit [MeasurableSpace M] [BorelSpace M] in
 /-- Componentwise density is unchanged when nested ambient open sets are
 read as an open set of the old-domain subtype. -/
 theorem domainDensity_nested_open
@@ -104,6 +105,7 @@ theorem domainDensity_nested_open
   rw [hder, norm_one, mul_one] at hpull
   simpa only [d, f, xU] using hpull
 
+omit [MeasurableSpace M] [BorelSpace M] in
 /-- In a chart restricted successively to the old and new domains, the
 ambient componentwise log quotient is the ordinary log quotient of the two
 supplied subtype disc covers. -/
@@ -159,7 +161,6 @@ theorem domainChartLogRatio_eq_nested
   have hU := p.domainDensity_eq_connected U q hUN hc xU hxsource
   have hV := p.domainDensity_nested_open hVU hUN q W hW hc xW hxsource
   have hWdens := q.domainDensity_eq_connected W s hWN hd xW (by
-    change (xW : U) ∈ d.source
     exact hxds)
   unfold domainChartLogRatio chartLogRatio
   rw [p.domainChartDensity_of_mem U c hzU,
@@ -168,7 +169,7 @@ theorem domainChartLogRatio_eq_nested
     exact (d.symm_apply_eq hxds hzd).mpr hxd.symm
   have hesymm : e.symm z = xW := by
     exact (e.symm_apply_eq hxwe hz).mpr hxe.symm
-  simp only [hsymm, hdsymm, hesymm]
+  simp only [hsymm]
   change Real.log (p.domainDensity V c ⟨(xU : M), hxV⟩) -
       Real.log (p.domainDensity U c ⟨(xU : M), xU.property⟩) =
     Real.log (s.density e (e.symm z)) - Real.log (q.density d (d.symm z))

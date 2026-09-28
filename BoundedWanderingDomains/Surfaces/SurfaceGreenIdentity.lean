@@ -14,6 +14,7 @@ variable {M : Type*} [TopologicalSpace M] [ChartedSpace ℂ M]
   [IsManifold 𝓘(ℂ) 1 M] [T2Space M]
   [MeasurableSpace M] [BorelSpace M] [SecondCountableTopology M]
 
+omit [T2Space M] in
 /-- A nonnegative compactly supported cutoff in one restricted ambient chart
 converts intrinsic area gain into its planar Green boundary pairing. -/
 theorem areaGain_lintegral_eq_chart_green
@@ -113,6 +114,7 @@ theorem areaGain_lintegral_eq_chart_green
   congr 1
   exact AreaDeficit.green_laplacian hf htest htestCompact
 
+omit [MeasurableSpace M] [BorelSpace M] [SecondCountableTopology M] [T2Space M] in
 /-- The chart Green boundary pairing above is nonnegative, because before
 integration by parts it is the integral of the nonnegative area-gain
 density. -/

@@ -32,23 +32,23 @@ theorem DiscCover.nonempty_compl_singleton_of_plane_cover
     let U : Opens X := ⟨({a} : Set X)ᶜ, isOpen_compl_singleton⟩
     Nonempty (DiscCover U) := by
   let U : Opens X := ⟨({a} : Set X)ᶜ, isOpen_compl_singleton⟩
-  letI : ConnectedSpace U := Subtype.connectedSpace
+  let : ConnectedSpace U := Subtype.connectedSpace
     (RiemannDynamics.isConnected_compl_singleton_of_connected
       (exists_pair_ne X) a)
-  letI : Infinite U := Set.Infinite.to_subtype (Set.finite_singleton a).infinite_compl
+  let : Infinite U := Set.Infinite.to_subtype (Set.finite_singleton a).infinite_compl
   let x₀ : U := Classical.choice (inferInstance : Nonempty U)
-  letI : T2Space (RiemannDynamics.PathCover x₀) :=
+  let : T2Space (RiemannDynamics.PathCover x₀) :=
     RiemannDynamics.t2space_pathCover x₀
-  letI : SimplyConnectedSpace (RiemannDynamics.PathCover x₀) :=
+  let : SimplyConnectedSpace (RiemannDynamics.PathCover x₀) :=
     RiemannDynamics.simplyConnectedSpace_pathCover x₀
-  letI : SecondCountableTopology (RiemannDynamics.PathCover x₀) :=
+  let : SecondCountableTopology (RiemannDynamics.PathCover x₀) :=
     RiemannDynamics.secondCountableTopology_pathCover x₀
   have hmodels := RiemannDynamics.uniformization_trichotomy
     (RiemannDynamics.PathCover x₀)
   have hproj := RiemannDynamics.contMDiff_pathCoverProj x₀
   have hprojSurj : Surjective (RiemannDynamics.pathCoverProj x₀) := by
-    letI : LocallyPathConnectedSpace U := ChartedSpace.locallyPathConnectedSpace ℂ U
-    letI : PathConnectedSpace U := PathConnectedSpace.of_locallyPathConnectedSpace
+    let : LocallyPathConnectedSpace U := ChartedSpace.locallyPathConnectedSpace ℂ U
+    let : PathConnectedSpace U := PathConnectedSpace.of_locallyPathConnectedSpace
     intro y
     exact ⟨⟨y, Path.Homotopic.Quotient.mk
       (PathConnectedSpace.somePath x₀ y)⟩, rfl⟩
@@ -101,15 +101,15 @@ theorem DiscCover.nonempty_compl_singleton_of_plane_cover
     obtain ⟨z, rfl⟩ := hFsurj y
     exact (hy (congrFun hFc z)).elim
   · obtain ⟨e⟩ := hsphere
-    letI : CompactSpace (RiemannDynamics.PathCover x₀) :=
+    let : CompactSpace (RiemannDynamics.PathCover x₀) :=
       e.toHomeomorph.symm.compactSpace
-    letI : CompactSpace U := hprojSurj.compactSpace hproj.continuous
+    let : CompactSpace U := hprojSurj.compactSpace hproj.continuous
     have hUc : IsCompact (U : Set X) := isCompact_iff_compactSpace.mpr inferInstance
     have hUuniv : (U : Set X) = Set.univ :=
       (show IsClopen (U : Set X) from ⟨hUc.isClosed, U.isOpen⟩).eq_univ
         ⟨x₀, x₀.property⟩
     have haU : a ∈ (U : Set X) := by rw [hUuniv]; trivial
-    exact (by simpa [U] using haU)
+    simp [U] at haU
 
 /-- On a compact surface whose universal path cover is the plane, every
 point has at least two lifts.  Removing any one point therefore gives a disc
@@ -126,8 +126,8 @@ theorem DiscCover.nonempty_compl_singleton_of_pathCover_plane
   have hcov : IsCoveringMap π :=
     (RiemannDynamics.pathCoverProj_isCoveringMap x₀).comp_homeomorph
       e.symm.toHomeomorph
-  letI : LocallyPathConnectedSpace X := ChartedSpace.locallyPathConnectedSpace ℂ X
-  letI : PathConnectedSpace X := PathConnectedSpace.of_locallyPathConnectedSpace
+  let : LocallyPathConnectedSpace X := ChartedSpace.locallyPathConnectedSpace ℂ X
+  let : PathConnectedSpace X := PathConnectedSpace.of_locallyPathConnectedSpace
   have hprojSurj : Surjective (RiemannDynamics.pathCoverProj x₀) := by
     intro y
     exact ⟨⟨y, Path.Homotopic.Quotient.mk
@@ -141,8 +141,8 @@ theorem DiscCover.nonempty_compl_singleton_of_pathCover_plane
         ⟨hinj, hprojSurj⟩⟩
     let h : RiemannDynamics.PathCover x₀ ≃ₜ X :=
       IsHomeomorph.homeomorph _ hhome
-    letI : CompactSpace (RiemannDynamics.PathCover x₀) := h.symm.compactSpace
-    letI : CompactSpace ℂ := e.toHomeomorph.compactSpace
+    let : CompactSpace (RiemannDynamics.PathCover x₀) := h.symm.compactSpace
+    let : CompactSpace ℂ := e.toHomeomorph.compactSpace
     exact noncompact_univ ℂ isCompact_univ
   obtain ⟨pc, qc, hpqproj, hpq⟩ := Function.not_injective_iff.mp hninj
   obtain ⟨γ, hγpc⟩ :=

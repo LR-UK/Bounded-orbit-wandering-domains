@@ -20,7 +20,7 @@ theorem DiscCover.exists_normal_disc_subsequence_finite_complement
     ∃ (φ : ℕ → ℕ) (G : unitDisc → OnePoint X), StrictMono φ ∧
       TendstoLocallyUniformly (fun n z => ((F (φ n) z : X) : OnePoint X)) G atTop := by
   classical
-  letI : UniformSpace (OnePoint X) := uniformSpaceOfCompactR1
+  let : UniformSpace (OnePoint X) := uniformSpaceOfCompactR1
   obtain ⟨a, ha, φ, hφ, hlim⟩ := (isCompact_univ : IsCompact (univ : Set X)).tendsto_subseq
     (fun n => show (F n discZero : X) ∈ univ from mem_univ _)
   by_cases haE : a ∈ E

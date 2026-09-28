@@ -12,6 +12,8 @@ variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [IsManifold 𝓘(ℂ) 1 X] [T2Space X] [LocallyCompactSpace X]
   [SecondCountableTopology X]
 
+omit [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ) 1 X]
+  [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X] in
 theorem restrictAmbient_orbit_val (f : LocalMap X)
     (O : TopologicalSpace.Opens X) (hs : (f.source : Set X) ⊆ O)
     (hm : ∀ x : f.source, f.map x ∈ O)

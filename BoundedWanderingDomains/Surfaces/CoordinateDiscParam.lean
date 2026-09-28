@@ -19,6 +19,7 @@ noncomputable def param (D : RiemannDynamics.CoordDisk X) (z : unitDisc) : X :=
   (chartAt ℂ D.center).symm
     ((chartAt ℂ D.center D.center) + ((D.radius / 2 : ℝ) : ℂ) * (z : ℂ))
 
+omit [IsManifold 𝓘(ℂ, ℂ) 1 X] in
 theorem param_argument_mem_target (D : RiemannDynamics.CoordDisk X)
     (z : unitDisc) :
     (chartAt ℂ D.center D.center) + ((D.radius / 2 : ℝ) : ℂ) * (z : ℂ) ∈
@@ -52,6 +53,7 @@ theorem mdifferentiable_param (D : RiemannDynamics.CoordDisk X) :
       (IsManifold.chart_mem_maximalAtlas _) (D.param_argument_mem_target z)
   exact hs.comp z ha
 
+omit [IsManifold 𝓘(ℂ, ℂ) 1 X] in
 @[simp] theorem param_zero (D : RiemannDynamics.CoordDisk X) :
     D.param discZero = D.center := by
   unfold param
@@ -60,6 +62,7 @@ theorem mdifferentiable_param (D : RiemannDynamics.CoordDisk X) :
   rw [mul_zero, add_zero]
   exact (chartAt ℂ D.center).left_inv (mem_chart_source ℂ D.center)
 
+omit [IsManifold 𝓘(ℂ, ℂ) 1 X] in
 theorem param_mem_closedCarrier (D : RiemannDynamics.CoordDisk X)
     (z : unitDisc) : D.param z ∈ D.closedCarrier := by
   refine ⟨(chartAt ℂ D.center D.center) +
@@ -70,6 +73,7 @@ theorem param_mem_closedCarrier (D : RiemannDynamics.CoordDisk X)
   have hz : ‖(z : ℂ)‖ < 1 := mem_ball_zero_iff.mp z.property
   nlinarith [D.radius_pos]
 
+omit [IsManifold 𝓘(ℂ) 1 X] in
 theorem injective_param (D : RiemannDynamics.CoordDisk X) :
     Function.Injective D.param := by
   intro z w hzw

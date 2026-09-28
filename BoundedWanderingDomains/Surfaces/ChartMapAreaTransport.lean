@@ -17,6 +17,7 @@ variable {M N : Type*} [TopologicalSpace M] [ChartedSpace ℂ M]
   [IsManifold 𝓘(ℂ) 1 N] [MeasurableSpace N] [BorelSpace N]
   [SecondCountableTopology N]
 
+omit [MeasurableSpace M] [BorelSpace M] [SecondCountableTopology M] [IsManifold 𝓘(ℂ, ℂ) 1 N] [MeasurableSpace N] [BorelSpace N] [SecondCountableTopology N] in
 /-- A holomorphic surface map, written in holomorphic source and target
 charts, has the expected ordinary complex derivative. -/
 theorem hasDerivAt_writtenInCharts

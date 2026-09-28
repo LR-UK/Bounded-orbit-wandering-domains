@@ -23,6 +23,7 @@ noncomputable def intrinsicLaplacian (p : DiscCover M)
   AreaDeficit.Surfaces.chartLaplacian u x /
     (p.density (chartAt ℂ x) x) ^ 2
 
+omit [MeasurableSpace M] [BorelSpace M] [SecondCountableTopology M] in
 /-- The intrinsic Laplacian can be computed in any holomorphic chart. -/
 theorem intrinsicLaplacian_eq_in_chart (p : DiscCover M)
     {c : OpenPartialHomeomorph M ℂ}
@@ -57,6 +58,7 @@ theorem intrinsicLaplacian_eq_in_chart (p : DiscCover M)
   rw [hs]
   field_simp
 
+omit [MeasurableSpace M] [BorelSpace M] [SecondCountableTopology M] in
 theorem intrinsicLaplacian_eq_in_chart_of_contMDiff (p : DiscCover M)
     {c : OpenPartialHomeomorph M ℂ}
     (hc : MDifferentiableOn 𝓘(ℂ) 𝓘(ℂ) c c.source)
@@ -66,13 +68,14 @@ theorem intrinsicLaplacian_eq_in_chart_of_contMDiff (p : DiscCover M)
       Δ (u ∘ c.symm) (c x) / (p.density c x) ^ 2 := by
   apply p.intrinsicLaplacian_eq_in_chart hc hxc
   rw [← contMDiffAt_iff_contDiffAt]
-  letI : IsManifold 𝓘(ℝ, ℂ) ∞ M :=
+  let : IsManifold 𝓘(ℝ, ℂ) ∞ M :=
     AreaDeficit.Surfaces.isManifold_real_of_complex
   exact hu.contMDiffAt.comp _
     (contMDiffAt_symm_of_mem_maximalAtlas
       ((contDiffGroupoid 2 𝓘(ℝ, ℂ)).chart_mem_maximalAtlas x)
       ((chartAt ℂ x).map_source (mem_chart_source ℂ x)))
 
+omit [MeasurableSpace M] [BorelSpace M] [SecondCountableTopology M] in
 /-- For a `C²` scalar function, the intrinsic Laplacian is continuous. -/
 theorem intrinsicLaplacian_continuous (p : DiscCover M)
     {u : M → ℝ} (hu : ContMDiff 𝓘(ℝ, ℂ) 𝓘(ℝ) 2 u) :
@@ -86,7 +89,7 @@ theorem intrinsicLaplacian_continuous (p : DiscCover M)
   let g : ℂ → ℝ := u ∘ c.symm
   have hg : ContDiffAt ℝ 2 g (c x) := by
     rw [← contMDiffAt_iff_contDiffAt]
-    letI : IsManifold 𝓘(ℝ, ℂ) ∞ M :=
+    let : IsManifold 𝓘(ℝ, ℂ) ∞ M :=
       AreaDeficit.Surfaces.isManifold_real_of_complex
     exact hu.contMDiffAt.comp _
       (contMDiffAt_symm_of_mem_maximalAtlas
@@ -107,7 +110,7 @@ theorem intrinsicLaplacian_continuous (p : DiscCover M)
   have huy : ContDiffAt ℝ 2 (u ∘ (chartAt ℂ y).symm)
       (chartAt ℂ y y) := by
     rw [← contMDiffAt_iff_contDiffAt]
-    letI : IsManifold 𝓘(ℝ, ℂ) ∞ M :=
+    let : IsManifold 𝓘(ℝ, ℂ) ∞ M :=
       AreaDeficit.Surfaces.isManifold_real_of_complex
     exact hu.contMDiffAt.comp _
       (contMDiffAt_symm_of_mem_maximalAtlas
@@ -117,6 +120,7 @@ theorem intrinsicLaplacian_continuous (p : DiscCover M)
   dsimp only [g, chartDensity, Function.comp_apply]
   rw [c.left_inv hy]
 
+omit [MeasurableSpace M] [BorelSpace M] [SecondCountableTopology M] in
 theorem intrinsicLaplacian_eq_zero_of_notMem_tsupport
     (p : DiscCover M) {u : M → ℝ} {x : M} (hx : x ∉ tsupport u) :
     p.intrinsicLaplacian u x = 0 := by
@@ -125,6 +129,7 @@ theorem intrinsicLaplacian_eq_zero_of_notMem_tsupport
     (notMem_tsupport_iff_eventuallyEq.mp hx)]
   exact zero_div _
 
+omit [MeasurableSpace M] [BorelSpace M] [SecondCountableTopology M] in
 theorem tsupport_intrinsicLaplacian_subset (p : DiscCover M)
     (u : M → ℝ) : tsupport (p.intrinsicLaplacian u) ⊆ tsupport u := by
   apply closure_minimal _ (isClosed_tsupport u)
@@ -132,17 +137,19 @@ theorem tsupport_intrinsicLaplacian_subset (p : DiscCover M)
   by_contra hxu
   exact hx (p.intrinsicLaplacian_eq_zero_of_notMem_tsupport hxu)
 
+omit [MeasurableSpace M] [BorelSpace M] [SecondCountableTopology M] in
 private theorem contDiffAt_comp_preferredChart_symm
     {u : M → ℝ} (hu : ContMDiff 𝓘(ℝ, ℂ) 𝓘(ℝ) 2 u) (x : M) :
     ContDiffAt ℝ 2 (u ∘ (chartAt ℂ x).symm) (chartAt ℂ x x) := by
   rw [← contMDiffAt_iff_contDiffAt]
-  letI : IsManifold 𝓘(ℝ, ℂ) ∞ M :=
+  let : IsManifold 𝓘(ℝ, ℂ) ∞ M :=
     AreaDeficit.Surfaces.isManifold_real_of_complex
   exact hu.contMDiffAt.comp _
     (contMDiffAt_symm_of_mem_maximalAtlas
       ((contDiffGroupoid 2 𝓘(ℝ, ℂ)).chart_mem_maximalAtlas x)
       ((chartAt ℂ x).map_source (mem_chart_source ℂ x)))
 
+omit [MeasurableSpace M] [BorelSpace M] [SecondCountableTopology M] in
 theorem intrinsicLaplacian_add (p : DiscCover M)
     {u v : M → ℝ} (hu : ContMDiff 𝓘(ℝ, ℂ) 𝓘(ℝ) 2 u)
     (hv : ContMDiff 𝓘(ℝ, ℂ) 𝓘(ℝ) 2 v) (x : M) :
@@ -157,14 +164,16 @@ theorem intrinsicLaplacian_add (p : DiscCover M)
   rw [h]
   ring
 
+omit [MeasurableSpace M] [BorelSpace M] [SecondCountableTopology M] in
 theorem intrinsicLaplacian_const (p : DiscCover M) (a : ℝ) (x : M) :
     p.intrinsicLaplacian (fun _ => a) x = 0 := by
   unfold intrinsicLaplacian AreaDeficit.Surfaces.chartLaplacian
   change Δ (fun _ : ℂ => a) (chartAt ℂ x x) / _ = 0
   simp
 
+omit [MeasurableSpace M] [BorelSpace M] [SecondCountableTopology M] in
 theorem intrinsicLaplacian_neg (p : DiscCover M)
-    {u : M → ℝ} (hu : ContMDiff 𝓘(ℝ, ℂ) 𝓘(ℝ) 2 u) (x : M) :
+    {u : M → ℝ} (_hu : ContMDiff 𝓘(ℝ, ℂ) 𝓘(ℝ) 2 u) (x : M) :
     p.intrinsicLaplacian (-u) x = -p.intrinsicLaplacian u x := by
   unfold intrinsicLaplacian AreaDeficit.Surfaces.chartLaplacian
   change Δ (-(u ∘ (chartAt ℂ x).symm)) (chartAt ℂ x x) / _ =
@@ -172,6 +181,7 @@ theorem intrinsicLaplacian_neg (p : DiscCover M)
   rw [laplacian_neg]
   exact neg_div _ _
 
+omit [MeasurableSpace M] [BorelSpace M] [SecondCountableTopology M] in
 theorem intrinsicLaplacian_sub (p : DiscCover M)
     {u v : M → ℝ} (hu : ContMDiff 𝓘(ℝ, ℂ) 𝓘(ℝ) 2 u)
     (hv : ContMDiff 𝓘(ℝ, ℂ) 𝓘(ℝ) 2 v) (x : M) :
@@ -185,6 +195,7 @@ theorem intrinsicLaplacian_sub (p : DiscCover M)
   rw [h]
   ring
 
+omit [MeasurableSpace M] [BorelSpace M] [SecondCountableTopology M] in
 theorem intrinsicLaplacian_finsetSum (p : DiscCover M)
     {ι : Type*} (s : Finset ι) (u : ι → M → ℝ)
     (hu : ∀ i ∈ s, ContMDiff 𝓘(ℝ, ℂ) 𝓘(ℝ) 2 (u i)) (x : M) :

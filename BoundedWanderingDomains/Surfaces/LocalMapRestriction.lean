@@ -11,8 +11,7 @@ open scoped Manifold Topology
 namespace SurfaceDynamics
 namespace LocalMap
 
-variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
-  [IsManifold 𝓘(ℂ) 1 X]
+variable {X : Type*} [TopologicalSpace X]
 
 /-- Restrict the source of a local map to a smaller open set. -/
 def restrictSource (f : LocalMap X) (V : TopologicalSpace.Opens X)
@@ -135,6 +134,8 @@ theorem restrictSource_iterate_eq_some_orbit (f : LocalMap X)
   · intro k hk
     exact ⟨f.orbit k ⟨x, hx⟩, hstay k,
       f.iterate_eq_some_orbit k ⟨x, hx⟩⟩
+
+variable [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ) 1 X]
 
 /-- Openness and holomorphicity pass to a restriction of the open source. -/
 theorem isOpenHolomorphic_restrictSource (f : LocalMap X)

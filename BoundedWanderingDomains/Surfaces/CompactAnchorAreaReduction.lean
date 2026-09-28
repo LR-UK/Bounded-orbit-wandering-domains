@@ -19,6 +19,7 @@ variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [LocallyCompactSpace X] [MeasurableSpace X] [BorelSpace X]
   [DecidableEq X]
 
+omit [LocallyCompactSpace X] [DecidableEq X] in
 /-- A fixed finite anchor complement in a compact surface has finite total
 hyperbolic area. -/
 theorem anchorComplement_hyperbolicArea_lt_top [CompactSpace X]
@@ -30,6 +31,7 @@ theorem anchorComplement_hyperbolicArea_lt_top [CompactSpace X]
     E (AreaDeficit.Surfaces.anchorComplement E) (fun _ => Iff.rfl)
       ⟨p.projection AreaDeficit.Surfaces.discZero⟩ p
 
+omit [DecidableEq X] in
 /-- Every further finite stage inside the anchor complement also has finite
 total domain area. -/
 theorem anchorComplement_finiteStage_area_lt_top [CompactSpace X]
@@ -40,7 +42,7 @@ theorem anchorComplement_finiteStage_area_lt_top [CompactSpace X]
       (AreaDeficit.Surfaces.finitePunctureDomain
         (AreaDeficit.Surfaces.finiteStageOnAnchorComplement E F))
       Set.univ < ⊤ := by
-  letI : LocallyCompactSpace
+  let : LocallyCompactSpace
       (AreaDeficit.Surfaces.anchorComplement E) :=
     (AreaDeficit.Surfaces.anchorComplement E).isOpen.locallyCompactSpace
   exact p.finitePunctureDomain_area_univ_finite_of_hyperbolicArea_univ_finite
@@ -58,7 +60,7 @@ theorem anchorComplement_globalFinitePunctureAreaPackage_of_pointInsertion
     (q : ℕ) {C : ℝ≥0∞} (hC : C ≠ ⊤)
     (hpoint : p.UniformGlobalPointInsertionBound C) :
     p.GlobalFinitePunctureAreaPackage q := by
-  letI : LocallyCompactSpace
+  let : LocallyCompactSpace
       (AreaDeficit.Surfaces.anchorComplement E) :=
     (AreaDeficit.Surfaces.anchorComplement E).isOpen.locallyCompactSpace
   exact p.globalFinitePunctureAreaPackage_of_pointInsertion q
@@ -72,10 +74,10 @@ theorem anchorComplement_globalFinitePunctureAreaPackage
       (AreaDeficit.Surfaces.anchorComplement E)) (q : ℕ) :
     p.GlobalFinitePunctureAreaPackage q := by
   let O := AreaDeficit.Surfaces.anchorComplement E
-  letI : LocallyCompactSpace O := O.isOpen.locallyCompactSpace
-  letI : ConnectedSpace O := Subtype.connectedSpace
+  let : LocallyCompactSpace O := O.isOpen.locallyCompactSpace
+  let : ConnectedSpace O := Subtype.connectedSpace
     (RiemannDynamics.isConnected_compl_finset E)
-  letI : Infinite O := Set.Infinite.to_subtype E.finite_toSet.infinite_compl
+  let : Infinite O := Set.Infinite.to_subtype E.finite_toSet.infinite_compl
   exact anchorComplement_globalFinitePunctureAreaPackage_of_pointInsertion
     E p q ENNReal.ofReal_ne_top
     (AreaDeficit.Surfaces.FinitePunctureDiscs.DiscCover.compactification_uniformGlobalPointInsertionBound
@@ -113,7 +115,7 @@ theorem anchorComplement_pointInsertion_iff_totalArea_increment
             (AreaDeficit.Surfaces.finitePunctureDomain (insert a P)) Set.univ ≤
           p.domainArea
             (AreaDeficit.Surfaces.finitePunctureDomain P) Set.univ + C := by
-  letI : LocallyCompactSpace
+  let : LocallyCompactSpace
       (AreaDeficit.Surfaces.anchorComplement E) :=
     (AreaDeficit.Surfaces.anchorComplement E).isOpen.locallyCompactSpace
   apply p.uniformGlobalPointInsertionBound_iff_totalArea_increment
@@ -150,7 +152,7 @@ theorem false_of_anchorComplement_global_area_advances
             (AreaDeficit.Surfaces.finitePunctureDomain (Q n)) (f '' W) + D) :
     False := by
   let O := AreaDeficit.Surfaces.anchorComplement E
-  letI : LocallyCompactSpace O := O.isOpen.locallyCompactSpace
+  let : LocallyCompactSpace O := O.isOpen.locallyCompactSpace
   let Q : ℕ → Finset O := fun n =>
     AreaDeficit.Surfaces.finiteStageOnAnchorComplement E (P n)
   let AO : Set O := (Subtype.val : O → X) ⁻¹' A
@@ -196,7 +198,7 @@ theorem false_of_anchorComplement_global_package
             (AreaDeficit.Surfaces.finitePunctureDomain (Q n ∪ R)) (f '' W) + C) :
     False := by
   let O := AreaDeficit.Surfaces.anchorComplement E
-  letI : LocallyCompactSpace O := O.isOpen.locallyCompactSpace
+  let : LocallyCompactSpace O := O.isOpen.locallyCompactSpace
   let Q : ℕ → Finset O := fun n =>
     AreaDeficit.Surfaces.finiteStageOnAnchorComplement E (P n)
   let AO : Set O := (Subtype.val : O → X) ⁻¹' A

@@ -16,6 +16,7 @@ variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [IsManifold 𝓘(ℂ) 1 X] [T2Space X] [LocallyCompactSpace X]
   [SecondCountableTopology X] [MeasurableSpace X] [BorelSpace X] [DecidableEq X]
 
+omit [SecondCountableTopology X] [MeasurableSpace X] [BorelSpace X] in
 /-- Shrinking, eventually simply connected forward discs eventually lie
 on individual sheets of the finitely many compact local covering models. -/
 theorem eventually_injOn_wandering_discs
@@ -35,7 +36,7 @@ theorem eventually_injOn_wandering_discs
       (F n '' {z : unitDisc | ‖(z : ℂ)‖ < r})) :
     ∀ᶠ n in atTop, InjOn f.totalize (F n '' {z : unitDisc | ‖(z : ℂ)‖ < r}) := by
   classical
-  letI : LocallyPathConnectedSpace X := ChartedSpace.locallyPathConnectedSpace ℂ X
+  let : LocallyPathConnectedSpace X := ChartedSpace.locallyPathConnectedSpace ℂ X
   have hpatch : ∀ x : K, ∃ Ks L N : Set X,
       IsCompact Ks ∧ Ks ⊆ f.source ∧ IsCompact L ∧ Ks ⊆ f.source ∧
       IsOpen N ∧ (x : X) ∈ N ∧ N ⊆ interior Ks ∧
@@ -106,9 +107,9 @@ theorem eventually_injOn_wandering_discs
     apply (Topology.IsEmbedding.subtypeVal (p := fun x : X => x ∈ Q)).isSimplyConnected_image.mp
     rw [heq]
     exact hnsc
-  letI : LocallyPathConnectedSpace Q := Q.isOpen.locallyPathConnectedSpace
-  letI : LocallyPathConnectedSpace S := S.isOpen.locallyPathConnectedSpace
-  letI : SimplyConnectedSpace S := hnsc'
+  let : LocallyPathConnectedSpace Q := Q.isOpen.locallyPathConnectedSpace
+  let : LocallyPathConnectedSpace S := S.isOpen.locallyPathConnectedSpace
+  let : SimplyConnectedSpace S := hnsc'
   have hSuniv : IsSimplyConnected (univ : Set S) :=
     (Homeomorph.Set.univ S).toHomotopyEquiv.simplyConnectedSpace
   obtain ⟨a, ha⟩ := hnsc.nonempty

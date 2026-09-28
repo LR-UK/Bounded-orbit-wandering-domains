@@ -75,6 +75,7 @@ def WanderingOrbitClusterMeetsDerivedClaim : Prop :=
             Tendsto (fun k => f.compactifiedIterate (φ k) z) atTop
               (𝓝 (a : OnePoint X))
 
+omit [SecondCountableTopology X] [ConnectedSpace X] in
 /-- A derived singular cluster point supplies the required subsequence.  The
 compact-escape alternative remains available separately, so no assertion
 about all other finite cluster points is needed. -/
@@ -99,6 +100,7 @@ def NonEscapingWanderingOrbitClusterMeetsDerivedClaim : Prop :=
             Tendsto (fun k => f.compactifiedIterate (φ k) z) atTop
               (𝓝 (a : OnePoint X))
 
+omit [SecondCountableTopology X] [ConnectedSpace X] in
 /-- Separate the escape alternative before invoking the area argument.
 The exact independent paper statement is preserved. -/
 theorem wanderingDerivedSingularLimitClaim_of_nonEscapingClusterMeetsDerived

@@ -14,6 +14,7 @@ variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [SecondCountableTopology X] [LocallyCompactSpace X] [T2Space X]
   [DecidableEq X]
 
+omit [MeasurableSpace X] [BorelSpace X] [SecondCountableTopology X] [DecidableEq X] in
 /-- Every source point has a compact source model and a compact target
 neighbourhood separated from the image of the model boundary. -/
 theorem exists_local_compact_model_patch (f : LocalMap X)

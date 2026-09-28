@@ -26,16 +26,16 @@ theorem false_of_compact_global_positive_area_wandering
     (hinj : f.InjectiveOnSaturation A) (hApos : HasPositiveChartArea A) : False := by
   classical
   obtain ⟨a, ha, b, hb, hba, c, hc, hca, hcb⟩ := hApos.exists_three
-  letI : Nontrivial X := ⟨⟨a, b, Ne.symm hba⟩⟩
-  letI : Infinite X := Set.infinite_univ_iff.mp
+  let : Nontrivial X := ⟨⟨a, b, Ne.symm hba⟩⟩
+  let : Infinite X := Set.infinite_univ_iff.mp
     ((infinite_of_mem_nhds (Classical.arbitrary X)
       ((chartAt ℂ (Classical.arbitrary X)).open_source.mem_nhds (mem_chart_source ℂ _))).mono
       (subset_univ _))
-  letI : IsManifold 𝓘(ℂ) ω X := isManifold_analytic_of_complex
+  let : IsManifold 𝓘(ℂ) ω X := isManifold_analytic_of_complex
   obtain ⟨E, hEcard, hEA, P, hP, hEP, hPf, hPb, hPcover⟩ :=
     f.exists_three_anchor_backward_hyperbolic_models hf hsource hApos
   let O := anchorComplement E
-  letI : LocallyCompactSpace O := O.isOpen.locallyCompactSpace
+  let : LocallyCompactSpace O := O.isOpen.locallyCompactSpace
   let p : DiscCover O := Classical.choice
     (DiscCover.nonempty_compl_finset_of_card_three_subset E E hEcard (Subset.refl _))
   have hAP : A ⊆ closure (⋃ n, (P n : Set X)) := by

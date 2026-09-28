@@ -15,6 +15,7 @@ variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [SecondCountableTopology X] [LocallyCompactSpace X] [T2Space X]
   [DecidableEq X]
 
+omit [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ, ℂ) 1 X] [MeasurableSpace X] [BorelSpace X] [SecondCountableTopology X] [LocallyCompactSpace X] [DecidableEq X] in
 /-- Forward invariance of an old finite puncture set inside the working
 domain is exactly what makes the compact covering source a subdomain of the
 old punctured model. -/

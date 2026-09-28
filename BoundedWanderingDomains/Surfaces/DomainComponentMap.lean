@@ -30,12 +30,14 @@ noncomputable def domainComponentMap
       exact (F (iC z)).property
   exact fun z => ⟨fv z, hrange (mem_range_self z)⟩
 
+omit [IsManifold 𝓘(ℂ, ℂ) 1 M] [IsManifold 𝓘(ℂ, ℂ) 1 N] in
 @[simp] theorem domainComponentMap_coe
     {U : TopologicalSpace.Opens M} {V : TopologicalSpace.Opens N}
     (F : U → V) (hF : Continuous F) (x : U)
     (z : componentDomain U (x : M)) :
     (domainComponentMap F hF x z : N) = F ⟨z, componentDomain_le U (x : M) z.property⟩ := rfl
 
+omit [IsManifold 𝓘(ℂ, ℂ) 1 M] [IsManifold 𝓘(ℂ, ℂ) 1 N] in
 theorem domainComponentMap_mdifferentiable
     {U : TopologicalSpace.Opens M} {V : TopologicalSpace.Opens N}
     (F : U → V) (hF : MDifferentiable 𝓘(ℂ) 𝓘(ℂ) F) (x : U) :
@@ -59,6 +61,7 @@ theorem domainComponentMap_mdifferentiable
   rw [he]
   exact (mdifferentiable_subtype_val V).comp (hF.comp hiC)
 
+omit [IsManifold 𝓘(ℂ, ℂ) 1 M] [IsManifold 𝓘(ℂ, ℂ) 1 N] in
 @[simp] theorem domainComponentMap_componentPoint
     {U : TopologicalSpace.Opens M} {V : TopologicalSpace.Opens N}
     (F : U → V) (hF : Continuous F) (x : U) :

@@ -81,7 +81,7 @@ theorem wandering_orbit_locallyUniform_infty_of_unbounded
     exact connectedComponentIn_subset _ _
   have hUpole : U 0 ⊆ poleAvoidingSet f :=
     hUfatou.trans (fatouSet_subset_poleAvoidingSet f)
-  letI : LocallyCompactSpace (U 0) := hUo.locallyCompactSpace
+  let : LocallyCompactSpace (U 0) := hUo.locallyCompactSpace
   let F : ℕ → (U 0) → OnePoint ℂ := fun n w => ((f^[σ n]) (w : ℂ) : OnePoint ℂ)
   have hFc : ∀ n, Continuous (F n) := by
     intro n
