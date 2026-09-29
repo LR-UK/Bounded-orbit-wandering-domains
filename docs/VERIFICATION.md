@@ -1,4 +1,20 @@
-# Verification — version 1.8.0, 29 September 2026
+# Verification - version 1.8.0, 29 September 2026
+
+## Comparator configuration correction
+
+The first v1.8.0 CI run completed both Lean builds but rejected
+`SurfaceDynamics.EmbeddedDisc` in Comparator's `definition_names`: it is an
+inductive structure, not a definition hole. This entry has been removed.
+The structure remains checked transitively by Comparator and explicitly by
+the local supporting-declaration comparison; its carrier definition stays
+in `definition_names`. No mathematical statement or proof was changed.
+
+Both declaration exporters now validate configured constant kinds against
+the Lean environment. The local audit runs the Challenge check before the
+Solution build, so this class of configuration error fails earlier.
+See `verification/comparator-kind-fix.json` for the correction's checks.
+
+## Mathematical verification
 
 The full configured Lean build passed (4,301 Lake jobs), including
 `Solution`, the sole independent `Challenge`, and `BoundedWanderingDomains.All`.

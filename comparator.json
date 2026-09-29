@@ -58,7 +58,6 @@
     "MeromorphicDynamics.regularValues",
     "MeromorphicDynamics.singularValues",
     "AreaDeficit.Surfaces.unitDisc",
-    "SurfaceDynamics.EmbeddedDisc",
     "SurfaceDynamics.EmbeddedDisc.carrier",
     "SurfaceDynamics.LocalMap.restrictSource",
     "SurfaceDynamics.LocalMap.totalize",
