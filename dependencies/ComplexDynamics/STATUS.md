@@ -1,11 +1,3 @@
-> **Version 1.7.1 module-system migration (bounded-wandering submission).**
-> The included Lean sources now use module headers, public imports and exposed
-> definitions where required. Mathematical statement and proof bodies are retained;
-> the source transformation record is in the root
-> `verification/module-system-migration.json`. The root `docs/VERIFICATION.md`
-> records the actual checked import closure. Earlier standalone results below
-> are historical and do not assert a full standalone audit of this migrated copy.
-
 > **Submission copy, 23 September 2026.** Toolchain and dependency pins have
 > been updated to Lean 4.35.0-rc2 and Mathlib
 > `065356127b1dc0016f66b7283ce0ce2c4055aa55` for the unconditional submission.

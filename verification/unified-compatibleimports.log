@@ -1,5 +1,0 @@
-BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire {f : ℂ → ℂ} (hf : Differentiable ℂ f)
-  (htrans : ¬∃ p, ∀ (z : ℂ), f z = Polynomial.eval z p) {U : ℕ → Set ℂ} {z : ℂ}
-  (hU : ∀ (n : ℕ), ComplexDynamics.IsFatouComponent f (U n)) (hz : z ∈ U 0)
-  (hforward : ∀ (n : ℕ), Set.MapsTo f (U n) (U (n + 1))) (hbounded : Bornology.IsBounded (Set.range fun n => f^[n] z)) :
-  ¬Pairwise fun n m => Disjoint (U n) (U m)

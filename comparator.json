@@ -17,7 +17,10 @@
     "SurfaceDynamics.positive_area_wandering_saturation_not_compactly_contained_away_from_derived",
     "SurfaceDynamics.almost_every_wandering_point_has_escaping_or_derived_singular_subsequence",
     "SurfaceDynamics.no_wandering_domains_finite_type",
-    "MeromorphicDynamics.no_wandering_domains_transcendental_meromorphic_finite_singularValues"
+    "MeromorphicDynamics.no_wandering_domains_transcendental_meromorphic_finite_singularValues",
+    "SurfaceDynamics.wandering_domain_has_escaping_or_singular_encounter_sequence",
+    "SurfaceDynamics.almost_every_wandering_point_has_escaping_or_singular_encounter_sequence",
+    "MeromorphicDynamics.wandering_orbit_accumulates_on_derived_singular_values"
   ],
   "definition_names": [
     "ComplexDynamics.IsNormalSequenceOn",
@@ -53,7 +56,17 @@
     "SurfaceDynamics.LocalMap.HasEscapingOrDerivedSingularSubsequence",
     "FunctionTheory.meromorphicSphereValue",
     "MeromorphicDynamics.regularValues",
-    "MeromorphicDynamics.singularValues"
+    "MeromorphicDynamics.singularValues",
+    "AreaDeficit.Surfaces.unitDisc",
+    "SurfaceDynamics.EmbeddedDisc",
+    "SurfaceDynamics.EmbeddedDisc.carrier",
+    "SurfaceDynamics.LocalMap.restrictSource",
+    "SurfaceDynamics.LocalMap.totalize",
+    "SurfaceDynamics.LocalMap.inverseComponentSource",
+    "SurfaceDynamics.LocalMap.inverseComponentMap",
+    "SurfaceDynamics.LocalMap.componentSingularValues",
+    "SurfaceDynamics.LocalMap.HasSingularEncounterSequence",
+    "SurfaceDynamics.LocalMap.HasEscapingOrSingularEncounterSequence"
   ],
   "permitted_axioms": [
     "propext",

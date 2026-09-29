@@ -1,69 +1,11 @@
 module
 
-/- Supporting development for the bounded wandering domain submission. -/
-public import BoundedWanderingDomains.AreaCancellation
-public import BoundedWanderingDomains.AreaDeficit
-public import BoundedWanderingDomains.AreaDeficitCore
-public import BoundedWanderingDomains.AreaLimits
-public import BoundedWanderingDomains.AreaTransport
-public import BoundedWanderingDomains.BarrierComponents
-public import BoundedWanderingDomains.ChartAreaLimit
-public import BoundedWanderingDomains.ChartDiscs
-public import BoundedWanderingDomains.CompactCutoff
-public import BoundedWanderingDomains.CompactDeficit
-public import BoundedWanderingDomains.ConditionalPositiveArea
-public import BoundedWanderingDomains.ConditionalWanderingDomains
-public import BoundedWanderingDomains.ConformalLaplacian
-public import BoundedWanderingDomains.DensityDeficit
-public import BoundedWanderingDomains.DiscArea
-public import BoundedWanderingDomains.DiscMetric
-public import BoundedWanderingDomains.DiscRestriction
-public import BoundedWanderingDomains.DiscSchwarzPick
-public import BoundedWanderingDomains.EntireFatouBridge
-public import BoundedWanderingDomains.EventualCompactDiscs
-public import BoundedWanderingDomains.ExceptionalSets
-public import BoundedWanderingDomains.FinitePunctureMetricInput
-public import BoundedWanderingDomains.GreenIdentity
-public import BoundedWanderingDomains.HolomorphicLifting
-public import BoundedWanderingDomains.HolomorphicTransport
-public import BoundedWanderingDomains.InteriorDensityLimit
-public import BoundedWanderingDomains.LaplacianChain
-public import BoundedWanderingDomains.LocalCovering
-public import BoundedWanderingDomains.LocalDynamicalAreaBound
-public import BoundedWanderingDomains.LocalIntegratedDeficit
-public import BoundedWanderingDomains.LocalMetricComparison
-public import BoundedWanderingDomains.LocalPunctureSequence
-public import BoundedWanderingDomains.LocalPunctures
-public import BoundedWanderingDomains.LocalTrappedTopology
-public import BoundedWanderingDomains.LogBarrier
-public import BoundedWanderingDomains.NormalFamilies
-public import BoundedWanderingDomains.OmittedPairCompactness
-public import BoundedWanderingDomains.PositivePart
-public import BoundedWanderingDomains.PunctureDensityLimits
-public import BoundedWanderingDomains.PunctureRegularisation
-public import BoundedWanderingDomains.Regularisation
-public import BoundedWanderingDomains.RiemannMappingFull
-public import BoundedWanderingDomains.ShrinkingImages
-public import BoundedWanderingDomains.ShrinkingChartDiscs
-public import BoundedWanderingDomains.SubmissionDefinitions
-public import BoundedWanderingDomains.TotalAreaCost
-public import BoundedWanderingDomains.TrappedComponentCovering
-public import BoundedWanderingDomains.TrappedFilling
-public import BoundedWanderingDomains.TrappedSimpleConnectivity
-public import BoundedWanderingDomains.UniformLocalLifting
-public import BoundedWanderingDomains.UnitDiscShift
-public import BoundedWanderingDomains.WanderingSets
-public import BoundedWanderingDomains.PointOrbitBridge
-public import BoundedWanderingDomains.LocalDiscInjectivity
-public import BoundedWanderingDomains.BoundedPointWandering
-public import BoundedWanderingDomains.DiscCoveringMetric
-public import BoundedWanderingDomains.CoveringMetricInput
-public import BoundedWanderingDomains.IdealTriangleIntegral
-public import BoundedWanderingDomains.IdealTriangleArea
-public import BoundedWanderingDomains.CoveringExhaustion
-public import BoundedWanderingDomains.CoveringLimitBranches
-public import BoundedWanderingDomains.CoveringAreaTransport
-public import BoundedWanderingDomains.CuspDensityBounds
-public import BoundedWanderingDomains.CoveringTotalArea
+/- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
+public import BoundedWanderingDomains.GlobalLimitStatements
+public import BoundedWanderingDomains.MeromorphicDerivedSingular
+public import BoundedWanderingDomains.NoWanderingCorollaries
+public import BoundedWanderingDomains.Surfaces.SurfacePositiveArea
+public import BoundedWanderingDomains.Surfaces.AlmostEverywhere.Results
+public import BoundedWanderingDomains.Surfaces.SingularEncounters.Results
 
-@[expose] public section
+/-! # The current wandering-domain and wandering-set proof library -/

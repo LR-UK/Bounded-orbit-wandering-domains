@@ -72,25 +72,3 @@ removal of unused simp arguments/tactic sequencing. Public theorem statements an
 original attribution are retained. The patch and paths are recorded under
 verification/update-warning-compatibility.patch and update-warning-files.json.
 The root strict build accepts only the three intentional Challenge placeholders.
-
-## Version 1.7.1 module-system migration
-
-The contained Lean sources now use the module system, including the vendored
-sources. The standard migration makes their imports public and places their
-declarations in an exposed public section, preserving the previously available
-definitions. Existing copyright notices, authorship, licences, theorem names,
-and mathematical statements are retained. Lean and dependency pins are unchanged.
-
-`verification/module-system-migration.json` records the changed files relative
-to submitted commit `4c99efadab83bde22a17dee28118c67cf17c2ae8`, with normalized
-source hashes and any additional visibility adjustments. The all-source header
-check is `python scripts/verify_modules.py`; compilation and statement/axiom
-checks are performed separately by `python scripts/verify_paper.py --all`.
-See `docs/VERIFICATION.md` for the actual scope and results of those checks.
-
-The project now has one independent specification, `Challenge.lean`. The two
-obsolete specifications under `Legacy/` and their four comparison exporters
-have been removed. Their proved library results are retained, and the
-current sixteen-statement selection includes the original registered
-entire-function theorem unchanged. Historical audit records describe their
-original release rather than additional current submission targets.

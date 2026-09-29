@@ -15,6 +15,7 @@ public import Mathlib.Analysis.CStarAlgebra.Classes
 public import Mathlib.Topology.DerivedSet
 public import Mathlib.Geometry.Manifold.Complex
 public import Mathlib.Geometry.Manifold.IsManifold.Basic
+public import Mathlib.Geometry.Manifold.MFDeriv.Basic
 public import Mathlib.MeasureTheory.Measure.Lebesgue.Complex
 public import Mathlib.Analysis.Meromorphic.NormalForm
 
@@ -22,7 +23,7 @@ public import Mathlib.Analysis.Meromorphic.NormalForm
 
 /-! # Independent challenge for wandering-domain and wandering-set results
 
-Sixteen targets cover entire and meromorphic escape, local compact-orbit and
+Nineteen targets cover entire and meromorphic escape, local compact-orbit and
 derived-singular accumulation, positive-area and almost-everywhere wandering
 sets, the unchanged original entire theorem, and classical no-wandering
 corollaries. Descriptive names do not depend on manuscript numbering.
@@ -552,3 +553,153 @@ theorem no_wandering_domains_transcendental_meromorphic_finite_singularValues
   sorry
 
 end MeromorphicDynamics
+
+/-! ## Combined componentwise singular-encounter statements
+
+The definitions below specify full inverse components in the actual source,
+genuine singular obstructions of their restrictions, and common visit times.
+No injectivity or degree hypothesis is imposed on the wandering-domain map.
+-/
+
+attribute [-instance] instCommCStarAlgebraComplex
+
+open Set Function Filter Topology OnePoint
+open scoped Manifold
+
+namespace AreaDeficit.Surfaces
+
+def unitDisc : TopologicalSpace.Opens ℂ := ⟨Metric.ball 0 1, Metric.isOpen_ball⟩
+
+end AreaDeficit.Surfaces
+
+open AreaDeficit.Surfaces
+
+namespace SurfaceDynamics
+
+structure EmbeddedDisc (X : Type*) [TopologicalSpace X] [ChartedSpace ℂ X] where
+  param : unitDisc → X
+  holomorphic : MDifferentiable 𝓘(ℂ) 𝓘(ℂ) param
+  embedding : IsOpenEmbedding param
+
+namespace EmbeddedDisc
+
+variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
+
+def carrier (Q : EmbeddedDisc X) : TopologicalSpace.Opens X :=
+  ⟨range Q.param, Q.embedding.isOpen_range⟩
+
+end EmbeddedDisc
+end SurfaceDynamics
+
+namespace SurfaceDynamics.LocalMap
+
+variable {X : Type*} [TopologicalSpace X]
+
+def restrictSource (f : LocalMap X) (V : TopologicalSpace.Opens X)
+    (hV : (V : Set X) ⊆ f.source) : LocalMap X where
+  source := V
+  map := fun x => f.map ⟨x, hV x.property⟩
+
+noncomputable def totalize (f : LocalMap X) (x : X) : X := by
+  classical
+  exact if hx : x ∈ f.source then f.map ⟨x, hx⟩ else x
+
+
+variable [ChartedSpace ℂ X]
+
+def inverseComponentSource (f : LocalMap X) (hf : Continuous f.map)
+    (D : TopologicalSpace.Opens X) (a : f.source) : TopologicalSpace.Opens X := by
+  let : LocallyConnectedSpace f.source := ChartedSpace.locallyConnectedSpace ℂ f.source
+  exact ⟨Subtype.val '' connectedComponentIn (f.map ⁻¹' (D : Set X)) a,
+    f.source.isOpen.isOpenMap_subtype_val _ ((D.isOpen.preimage hf).connectedComponentIn)⟩
+
+theorem inverseComponentSource_subset (f : LocalMap X) (hf : Continuous f.map)
+    (D : TopologicalSpace.Opens X) (a : f.source) :
+    (f.inverseComponentSource hf D a : Set X) ⊆ f.source := by
+  rintro x ⟨w, _, rfl⟩
+  exact w.2
+
+/-- The restriction to a full inverse component. Its target remains X. -/
+def inverseComponentMap (f : LocalMap X) (hf : Continuous f.map)
+    (D : TopologicalSpace.Opens X) (a : f.source) : LocalMap X :=
+  f.restrictSource (f.inverseComponentSource hf D a) (f.inverseComponentSource_subset hf D a)
+
+/-- Singular obstructions which are approached by image values of this
+component. Merely omitted open regions are excluded. -/
+def componentSingularValues (f : LocalMap X) (hf : Continuous f.map)
+    (D : TopologicalSpace.Opens X) (a : f.source) : Set X :=
+  (f.inverseComponentMap hf D a).singularValues ∩
+    closure (range (f.inverseComponentMap hf D a).map) ∩ (D : Set X)
+
+/-- Distinct singular values converge to x through shrinking analytic discs.
+The selected full inverse components capture every compact subset of W at
+common increasing times. The base points c merely name the components. -/
+def HasSingularEncounterSequence (f : LocalMap X) (hf : Continuous f.map)
+    (W : Set X) (x : X) : Prop :=
+  ∃ (Q : ℕ → EmbeddedDisc X) (φ : ℕ → ℕ) (s : ℕ → X) (c : ℕ → f.source),
+    StrictMono φ ∧ Injective s ∧ Tendsto s atTop (𝓝 x) ∧
+    (∀ n, s n ∈ f.singularValues) ∧ (∀ n, x ∈ (Q n).carrier) ∧
+    (∀ O ∈ 𝓝 x, ∀ᶠ n in atTop, ((Q n).carrier : Set X) ⊆ O) ∧
+    (∀ n, s n ∈ f.componentSingularValues hf (Q n).carrier (c n)) ∧
+    ∀ L : Set X, IsCompact L → L ⊆ W → ∀ᶠ n in atTop,
+      MapsTo (f.totalize^[φ n]) L (f.inverseComponentSource hf (Q n).carrier (c n))
+
+/-- Ambient escape or a componentwise singular-encounter sequence for the point. -/
+def HasEscapingOrSingularEncounterSequence (f : LocalMap X) (hf : Continuous f.map)
+    (x : X) : Prop :=
+  (∃ φ : ℕ → ℕ, StrictMono φ ∧
+    Tendsto (fun n => f.compactifiedIterate (φ n) x) atTop (𝓝 (∞ : OnePoint X))) ∨
+  ∃ a ∈ derivedSet f.singularValues, f.HasSingularEncounterSequence hf {x} a
+
+
+end SurfaceDynamics.LocalMap
+
+namespace SurfaceDynamics
+
+variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
+  [T2Space X] [IsManifold 𝓘(ℂ) 1 X]
+  [LocallyCompactSpace X] [SecondCountableTopology X] [ConnectedSpace X]
+
+/-- Unless there is ambient escape, all points of a wandering domain visit
+full inverse components carrying distinct singular values in shrinking discs.
+The visits are uniform on each compact subset of the initial domain. -/
+theorem wandering_domain_has_escaping_or_singular_encounter_sequence
+    (f : LocalMap X) (hf : IsOpenHolomorphic f)
+    {U : Set X} (hU : f.IsWanderingComponent U) {z : X} (hz : z ∈ U) :
+    (∃ φ : ℕ → ℕ, StrictMono φ ∧
+      Tendsto (fun n => f.compactifiedIterate (φ n) z) atTop (𝓝 (∞ : OnePoint X))) ∨
+    ∃ a ∈ derivedSet f.singularValues, f.HasSingularEncounterSequence hf.2.continuous U a := by
+  sorry
+
+variable [MeasurableSpace X] [BorelSpace X]
+
+/-- The same componentwise alternative holds almost everywhere in any
+measurable wandering set outside normality whose iterates are injective. -/
+theorem almost_every_wandering_point_has_escaping_or_singular_encounter_sequence
+    (f : LocalMap X) (hf : IsOpenHolomorphic f)
+    {A : Set X} (hA : MeasurableSet A) (hAbad : A ⊆ f.trapped \ f.omega)
+    (hdis : Pairwise (fun n m : ℕ => Disjoint (f.imageAt n A) (f.imageAt m A)))
+    (hinj : ∀ n, InjOn (f.compactifiedIterate n) A) :
+    ChartAlmostEverywhere A (f.HasEscapingOrSingularEncounterSequence hf.2.continuous) := by
+  sorry
+
+end SurfaceDynamics
+
+attribute [instance] instCommCStarAlgebraComplex
+
+namespace MeromorphicDynamics
+
+/-- Every meromorphic wandering orbit accumulates on the spherical derived
+singular set. The compact sphere target rules out ambient escape. -/
+theorem wandering_orbit_accumulates_on_derived_singular_values
+    {f : ℂ → ℂ} (hf : MeromorphicNFOn f univ) (htrans : ¬ IsRationalMeromorphic f)
+    {U : ℕ → Set ℂ} {z : ℂ}
+    (hU : ∀ n, IsFatouComponent f (U n)) (hz : z ∈ U 0)
+    (hforward : ∀ n, MapsTo f (U n) (U (n + 1)))
+    (hdis : Pairwise (fun n m : ℕ => Disjoint (U n) (U m))) :
+    ∃ a ∈ derivedSet (singularValues f), ∃ φ : ℕ → ℕ, StrictMono φ ∧
+      Tendsto (fun n => (((f^[φ n]) z : ℂ) : OnePoint ℂ)) atTop (𝓝 a) := by
+  sorry
+
+end MeromorphicDynamics
+

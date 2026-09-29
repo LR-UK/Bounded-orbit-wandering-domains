@@ -1,8 +1,7 @@
 module
 
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-public import BoundedWanderingDomains.Surfaces.CompactGlobalPositiveArea
-public import BoundedWanderingDomains.Surfaces.CompactLocalAreaAdvance
+public import BoundedWanderingDomains.Surfaces.AlmostEverywhere.CompactSource
 
 @[expose] public section
 
@@ -20,18 +19,14 @@ variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
 an arbitrary Riemann surface. -/
 theorem noCompactPositiveAreaWanderingSetClaim :
     NoCompactPositiveAreaWanderingSetClaim (X := X) := by
-  classical
   intro f hf A hA hAbad hdis hinj hApos
   rintro ⟨K, hK, hKs, hsatK⟩
-  by_cases hKuniv : K = univ
-  · let : CompactSpace X := isCompact_univ_iff.mp (hKuniv ▸ hK)
-    have hsource : f.source = ⊤ := by
-      ext x
-      constructor
-      · intro _; trivial
-      · intro _; exact hKs (hKuniv.symm ▸ mem_univ x)
-    exact false_of_compact_global_positive_area_wandering f hf hsource hA hAbad hdis hinj hApos
-  · exact noProperCompactPositiveAreaWanderingSet f hf A hA hAbad hdis hinj hApos
-      ⟨K, hK, hKuniv, hKs, hsatK⟩
+  obtain ⟨x, hx, φ, _, hleave⟩ := hApos.exists_of_chartAlmostEverywhere
+    (f.ae_has_source_escaping_subsequence hf hA hAbad hdis hinj)
+  obtain ⟨n, hn⟩ := (hleave K hK hKs).exists
+  let z : f.trapped := ⟨x, (hAbad hx).1⟩
+  exact hn ⟨f.orbit (φ n) z,
+    hsatK (mem_iUnion.mpr ⟨φ n, x, hx, f.iterate_eq_some_orbit (φ n) z⟩),
+    (f.compactifiedIterate_eq_orbit (φ n) z).symm⟩
 
 end SurfaceDynamics

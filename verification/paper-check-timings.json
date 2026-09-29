@@ -4,13 +4,9 @@
       "build",
       "Solution",
       "Challenge",
-      "Research.SurfaceResearch",
-      "Legacy.Solution",
-      "BoundedWanderingDomains.CoveringSolution",
-      "Research.NewResults",
-      "Legacy.SingularLimitsSolution"
+      "BoundedWanderingDomains.All"
     ],
-    "seconds": 163.85670430003665
+    "seconds": 63.2976398000028
   },
   {
     "command": [
@@ -18,7 +14,7 @@
       "lean",
       "verification/ExportPaperChallenge.lean"
     ],
-    "seconds": 56.281540699943434
+    "seconds": 53.04453369998373
   },
   {
     "command": [
@@ -26,6 +22,6 @@
       "lean",
       "verification/ExportPaperSolution.lean"
     ],
-    "seconds": 62.73161389998859
+    "seconds": 60.909918799996376
   }
 ]

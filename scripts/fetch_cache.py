@@ -21,7 +21,7 @@ CACHE = {'Mathlib', 'Batteries', 'Aesop', 'Qq', 'ProofWidgets', 'LeanSearchClien
          'ImportGraph', 'Plausible'}
 CORE = {'Init', 'Lean', 'Std', 'Lake'}
 seen, imports = set(), set()
-pending = ['Solution', 'Challenge', 'Legacy.Solution', 'BoundedWanderingDomains.CoveringSolution', 'Research.NewResults', 'Legacy.SingularLimitsSolution', 'Research.SurfaceResearch']
+pending = ['Solution', 'Challenge', 'BoundedWanderingDomains.All']
 while pending:
     module = pending.pop()
     if module in seen:

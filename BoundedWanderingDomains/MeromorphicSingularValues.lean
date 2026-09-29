@@ -2,7 +2,7 @@ module
 
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
 public import BoundedWanderingDomains.MeromorphicSurfaceModel
-public import BoundedWanderingDomains.SingularValues
+public import BoundedWanderingDomains.SphericalSingularValues
 public import FunctionTheory.Conformal.LittlePicardBloch
 
 @[expose] public section
@@ -52,25 +52,14 @@ theorem meromorphicSphereValue_eq_coe_of_entire {f : ℂ → ℂ}
   funext z
   exact FunctionTheory.meromorphicSphereValue_of_analytic (hf.analyticAt z)
 
-/-- A finite plane singular set gives a finite sphere singular set.
-The auxiliary omitted-value set is at most a singleton by Little Picard;
-this also reconciles the plane covering convention, which permits empty fibres.
--/
-theorem finite_singularValues_of_entire {f : ℂ → ℂ}
-    (hf : Differentiable ℂ f)
-    (hnonconst : ¬ ∃ c, ∀ z, f z = c)
-    (hfinite : (ComplexDynamics.singularValues f).Finite) :
-    (singularValues f).Finite := by
+/-- The sphere convention adds at most infinity and omitted finite values. -/
+theorem singularValues_subset_of_entire {f : ℂ → ℂ}
+    (hf : Differentiable ℂ f) (hnonconst : ¬ ∃ c, ∀ z, f z = c) :
+    singularValues f ⊆ insert ∞ (((↑) : ℂ → OnePoint ℂ) ''
+      (ComplexDynamics.singularValues f ∪ (range f)ᶜ)) := by
   have hopen : IsOpenMap f :=
     (show AnalyticOnNhd ℂ f univ from fun z _ => hf.analyticAt z).is_constant_or_isOpenMap.resolve_left
       hnonconst
-  have homit : (range f)ᶜ.Subsingleton := by
-    intro a ha b hb
-    by_contra hab
-    obtain ⟨c, hc⟩ := FunctionTheory.exists_eq_const_of_two_omitted_values hf hab
-      (fun z h => ha ⟨z, h⟩) (fun z h => hb ⟨z, h⟩)
-    exact hnonconst ⟨c, fun z => congrFun hc z⟩
-  apply ((hfinite.union homit.finite).image ((↑) : ℂ → OnePoint ℂ)).insert ∞ |>.subset
   intro y hy
   cases y with
   | infty => exact mem_insert _ _
@@ -102,5 +91,39 @@ theorem finite_singularValues_of_entire {f : ℂ → ℂ}
         (finiteSphereHomeomorph ∘ f) h
       rw [meromorphicSphereValue_eq_coe_of_entire hf]
       exact h'.to_isEvenlyCovered_preimage
+
+theorem omitted_values_subsingleton_of_entire {f : ℂ → ℂ}
+    (hf : Differentiable ℂ f) (hnonconst : ¬ ∃ c, ∀ z, f z = c) :
+    (range f)ᶜ.Subsingleton := by
+  intro a ha b hb
+  by_contra hab
+  obtain ⟨c, hc⟩ := FunctionTheory.exists_eq_const_of_two_omitted_values hf hab
+    (fun z h => ha ⟨z, h⟩) (fun z h => hb ⟨z, h⟩)
+  exact hnonconst ⟨c, fun z => congrFun hc z⟩
+
+/-- Entire finite singular sets remain finite in the sphere convention. -/
+theorem finite_singularValues_of_entire {f : ℂ → ℂ}
+    (hf : Differentiable ℂ f) (hnonconst : ¬ ∃ c, ∀ z, f z = c)
+    (hfinite : (ComplexDynamics.singularValues f).Finite) :
+    (singularValues f).Finite :=
+  (((hfinite.union (omitted_values_subsingleton_of_entire hf hnonconst).finite).image
+    ((↑) : ℂ → OnePoint ℂ)).insert ∞).subset (singularValues_subset_of_entire hf hnonconst)
+
+/-- Finite convention differences disappear on taking the derived set. -/
+theorem derived_singularValues_subset_of_entire {f : ℂ → ℂ}
+    (hf : Differentiable ℂ f) (hnonconst : ¬ ∃ c, ∀ z, f z = c) :
+    derivedSet (singularValues f) ⊆ derivedSet (ComplexDynamics.sphericalSingularValues f) := by
+  let E := ((↑) : ℂ → OnePoint ℂ) '' (range f)ᶜ
+  have hE : E.Finite := (omitted_values_subsingleton_of_entire hf hnonconst).finite.image _
+  have hsub : singularValues f ⊆ ComplexDynamics.sphericalSingularValues f ∪ E := by
+    intro y hy
+    rcases singularValues_subset_of_entire hf hnonconst hy with he | ⟨w, hw | hw, rfl⟩
+    · exact Or.inl (Or.inl he)
+    · exact Or.inl (Or.inr ⟨w, hw, rfl⟩)
+    · exact Or.inr ⟨w, hw, rfl⟩
+  intro x hx
+  have hh := derivedSet_mono _ _ hsub hx
+  rw [derivedSet_union] at hh
+  exact hh.elim id (fun he => False.elim ((Set.Infinite.of_accPt he) hE))
 
 end MeromorphicDynamics

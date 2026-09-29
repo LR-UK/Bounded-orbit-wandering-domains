@@ -1,42 +1,41 @@
-# Verification — version 1.7.1
+# Verification — version 1.8.0, 29 September 2026
 
-This release addresses the module-format rejection of the submitted 1.7.0 commit
-`4c99efadab83bde22a17dee28118c67cf17c2ae8`. All 1,385 tracked Lean files now
-pass the module-header check. 1,191 files were
-ported from the legacy format, with public imports and exposed definitions;
-additional visibility adjustments are recorded in
-`verification/module-system-migration.json`. Mathematical statement and proof
-bodies are unchanged. The user's README is preserved, and the public abstract
-retains the edited background with precise wandering-set and escape wording.
+The full configured Lean build passed (4,301 Lake jobs), including
+`Solution`, the sole independent `Challenge`, and `BoundedWanderingDomains.All`.
+All nineteen selected theorem declarations and 51 supporting declarations match
+between Challenge and Solution. All 57 declaration records exported by version
+1.7.1 are unchanged, including the exact original entire-function bounded-orbit
+statement. The three additions are the combined wandering-domain theorem, its
+almost-everywhere counterpart, and explicit meromorphic derived-singular accumulation.
 
-The full configured verification build passed (4,334 Lake jobs), including
-the current submission, retained proof modules and research entry points. All
-sixteen selected theorem declarations and 41 supporting declarations agree
-between independent Challenge and Solution and exactly match version 1.7.0.
-This includes the entire, meromorphic, local-surface, BKL, positive-area,
-almost-everywhere and finite-type result families. No theorem was weakened.
+The main bounded-source, derived-singular and area statements now follow from
+the combined componentwise encounter proof. Finite-type and classical
+no-wandering corollaries follow through derived-singular accumulation. The
+meromorphic model has the compact sphere as its target, so ambient escape is
+impossible; its new selected theorem states derived-singular accumulation
+without that alternative. See [statement alignment](PAPER_STATEMENT_ALIGNMENT.md)
+and the [proof guide](PAPER_PROOF_GUIDE.md).
+
+The cleanup removed 118 obsolete first-party, legacy and research Lean files,
+including earlier independent main proofs. Attributed supporting libraries,
+their source snapshots and licence texts are retained. The selected solution
+closure contains 778 local modules; the current
+proof-library entry point adds one. These 779
+proof modules passed the scan for proof holes, custom axioms, `native_decide`
+and imports of independent challenges. All 1,336
+retained Lean sources pass the module-header check. This does not claim that
+unused vendored modules were compiled.
 
 Every selected proof uses only `propext`, `Classical.choice` and `Quot.sound`.
-The active proof closure contains 789 local
-modules; the full retained proof closure contains
-810. Both passed the scan for proof
-holes, custom axioms, `native_decide`, and imports of independent challenges.
-Checking every source header does not claim that every unused vendored module
-was compiled. The standalone dependency checks were attempted but their
-separate Mathlib fetch failed certificate validation before compilation;
-the root proof closure uses the existing pinned cache. Dependency STATUS files
-distinguish this scope from historical standalone audits.
-
-The configured verification build has zero ordinary compiler or linter warnings.
-Its 16 warnings are intentional placeholders in the sole project specification,
-`Challenge.lean`, which is never imported by proofs. The two obsolete specifications
-under `Legacy/` and their four exporters have been removed. The corresponding
-proved library results remain available. No linter was disabled.
-The verification script now rejects all other build warnings.
+The configured build has zero ordinary compiler or linter warnings. Its nineteen
+warnings are intentional statement placeholders in `Challenge.lean`, which the
+proofs never import. No linter was disabled.
 
 The pinned metadata contract, attribution and source-structure checks passed.
-The Lean and Mathlib pins remain `leanprover/lean4:v4.35.0-rc2` and
-`065356127b1dc0016f66b7283ce0ce2c4055aa55`.
+The attribution audit covers 12 licence texts, 51 attribution files and 274
+vendored headers. The abstract explicitly includes the combined, positive-area,
+almost-everywhere and classical no-wandering results, and explains the compact
+sphere target for entire and meromorphic functions.
 
 ## Reproduce the checks
 
@@ -47,22 +46,25 @@ python3 scripts/audit_structure.py
 python3 -X utf8 scripts/audit_attribution.py
 ```
 
-The first command includes the module-header check. The metadata checker needs
-PyYAML. For a fresh checkout run `python3 scripts/fetch_cache.py` first. Preserve
-existing `.lake` directories when updating. The module-format change requires
-one substantial rebuild of changed project modules; the final cached recheck
-timings are not an estimate for that rebuild or for a fresh machine.
+The metadata checker needs PyYAML. For a fresh checkout run
+`python3 scripts/fetch_cache.py` first. Preserve existing `.lake` directories
+when updating. The Lean and Mathlib pins are unchanged:
+`leanprover/lean4:v4.35.0-rc2` and
+`065356127b1dc0016f66b7283ce0ce2c4055aa55`.
+Changed project modules need rebuilding; unchanged dependencies remain cached.
+Recorded recheck timings use existing compiled artifacts and are not estimates
+for a fresh build or another computer.
 
-Evidence is in `verification/module-system-release.json`,
-`verification/module-system-migration.json`, `verification/module-headers.json`,
+Evidence is in `verification/combined-release.json`,
 `verification/paper-submission.json`, the paper build/declaration/axiom logs,
-`verification/paper-check-timings.json`, `verification/metadata.json`,
-`verification/attribution.json` and `verification/structure-audit.json`.
-Earlier release reports are historical.
+`verification/paper-check-timings.json`, `verification/module-headers.json`,
+`verification/metadata.json`, `verification/attribution.json` and
+`verification/structure-audit.json`. The source manifest records the exact
+released files. Obsolete release reports, handoffs and diagnostic logs are removed.
 
 ## External verification
 
 The official sandboxed Palomar Comparator and NanoDa/con-ron replay were not run
 locally for this version. The included Linux workflow runs them after upload.
 Local declaration comparison, Lean kernel checks and axiom audits are distinct
-from those external checks and from registry review or acceptance.
+from those external checks and registry review or acceptance.

@@ -1,6 +1,6 @@
 # Statement alignment
 
-The independent `Challenge.lean` and proved `Solution.lean` select sixteen
+The independent `Challenge.lean` and proved `Solution.lean` select nineteen
 theorems. All names are descriptive, without unpublished manuscript numbering.
 The original entire-function bounded-orbit theorem keeps its exact name and
 statement. The current challenge imports only Mathlib; the proofs never import it.
@@ -11,8 +11,9 @@ statement. The current challenge imports only Mathlib; the proofs never import i
   neighbourhoods avoid poles and prepoles.
 - **Local compact-source exclusion:** an orbit in a wandering normality
   component is not contained in a compact subset of the actual open source.
-- **Entire derived-singular accumulation:** a marked wandering orbit has a
+- **Entire and meromorphic derived-singular accumulation:** a marked wandering orbit has a
   subsequence converging to a derived spherical singular value, possibly infinity.
+  The target surface is the compact sphere; there is no ambient-escape alternative.
 - **Local derived-singular accumulation:** a marked wandering orbit has a
   subsequence escaping every ambient compact set or converging to a derived
   singular value of the actual local map. No simple-connectivity hypothesis
@@ -40,14 +41,20 @@ statement. The current challenge imports only Mathlib; the proofs never import i
   coverings, including omitted values. The pole-avoiding Fatou components agree
   with the normality components of the local sphere model.
 
-The almost-everywhere and compact-source area formulations are equivalent by
-countable exhaustion, finite-prefix compactness and countable stability of null
-sets. For the derived-singular statement, failure of both subsequence alternatives
-puts an orbit tail in a compact set avoiding the derived singular set. Such tails
-form a countable family after fixing the exhaustion level and starting time.
-Injective holomorphic iterates preserve positive area, so these exceptional sets
-are null. Pairwise disjoint forward images make the iterate-injectivity
-hypothesis sufficient for the saturation-injectivity used in the area proofs.
+The combined statement strengthens these conclusions. It supplies distinct
+singular values s_n tending to s, analytic target discs D_n containing s and
+shrinking to {s}, and full inverse components U_n of f^{-1}(D_n). Each s_n is
+a genuine singular value of f restricted to U_n. At common strictly increasing
+times, the U_n capture each compact subset of the initial wandering domain.
+In particular every orbit enters every sufficiently late selected U_n.
+For measurable wandering sets the analogous pointwise assertion holds almost
+everywhere, with sequences allowed to depend on the point. No infinite-degree
+condition is imposed on the selected components.
+
+The earlier main theorems are derived from this combined proof. Distinct
+shrinking obstructions force a source-escaping subsequence, while the images
+of the selected source points converge to s. The compact positive-area
+formulations are consequences of the chartwise almost-everywhere conclusions.
 
 Escape always has the meaning explicitly shown in the statement: compact
 avoidance along the chosen subsequence. No assertion here requires the full

@@ -1,14 +1,3 @@
-> **Version 1.7.1 module-system migration (bounded-wandering submission).**
-> The included Lean sources now use module headers, public imports and exposed
-> definitions where required. Mathematical statement and proof bodies are retained;
-> the source transformation record is in the root
-> `verification/module-system-migration.json`. The root `docs/VERIFICATION.md`
-> records the actual checked import closure. Earlier standalone results below
-> are historical and do not assert a full standalone audit of this migrated copy.
-> The standalone checks were attempted for this update but stopped before
-> compilation because the separate pinned Mathlib fetch failed certificate
-> validation. The root build uses the existing matching dependency cache.
-
 > **24 September 2026 compatibility update.** Topology/Arakelian received only
 > deprecated-name replacements and removal of an already-closing simp proof.
 > This module is checked through the root project's strict build; no new full

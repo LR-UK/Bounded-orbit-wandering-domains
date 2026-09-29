@@ -22,7 +22,7 @@ ALLOWED = {'propext', 'Classical.choice', 'Quot.sound'}
 ENV = dict(os.environ)
 ENV.setdefault('LEAN_NUM_THREADS', '2')
 parser = argparse.ArgumentParser(description=__doc__)
-parser.add_argument('--all', action='store_true', help='Also build the retained legacy and research entry points.')
+parser.add_argument('--all', action='store_true', help='Also build the current proof-library entry point.')
 args = parser.parse_args()
 audit_module_headers()
 timings = []
@@ -42,8 +42,7 @@ def run(args, filename):
 
 targets = ['Solution', 'Challenge']
 if args.all:
-    targets += ['Research.SurfaceResearch', 'Legacy.Solution', 'BoundedWanderingDomains.CoveringSolution',
-                'Research.NewResults', 'Legacy.SingularLimitsSolution']
+    targets += ['BoundedWanderingDomains.All']
 run(['build', *targets], 'paper-build.log')
 
 # The independent Challenge deliberately contains statement placeholders.
@@ -131,8 +130,7 @@ def visit(module):
 visit('Solution')
 paper_visited = dict(visited)
 if args.all:
-    for module in ['Research.SurfaceResearch', 'Legacy.Solution', 'BoundedWanderingDomains.CoveringSolution', 'Research.NewResults',
-                   'Legacy.SingularLimitsSolution']:
+    for module in ['BoundedWanderingDomains.All']:
         visit(module)
 report = {
     'result': 'passed', 'scope': 'Local Lean build, independent declaration equality, source closure and transitive axioms',
