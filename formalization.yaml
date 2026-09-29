@@ -11,9 +11,9 @@ project:
     theorems and almost-everywhere versions of each local theorem for subsets of the Julia set.
     That is, suppose that A is measurable, that all iterates are defined and injective on A,
     that its forward images are pairwise disjoint, and that A is disjoint from the locus of normality.
-    Then almost every point in A has a subsequence escaping every compact subset of the domain of
-    definition, and also a subsequence converging to a derived singular value or escaping every
-    compact subset of the target Riemann surface.
+    Then almost every point in A either has a subsequence escaping every compact subset of the 
+    target Riemann surface, or it has both a subsequence escaping every compact subset of the domain of
+    definition and a subsequence converging to a derived singular value. 
     We deduce a classical corollary that excludes wandering domains for finite-type maps on arbitrary open subsets of
     compact Riemann surfaces (due to Epstein). Absence of wandering domains for rational maps,
     compact-surface self-maps and class S entire and meromorphic functions are
