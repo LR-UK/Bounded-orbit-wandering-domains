@@ -1,8 +1,0 @@
-'AreaDeficit.Surfaces.DiscCover.density_nested_subdomains' depends on axioms: [propext, Classical.choice, Quot.sound]
-'AreaDeficit.Surfaces.DiscCover.density_sequence_bounded_by_subdomain' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]
-'AreaDeficit.Surfaces.normal_lift_limit_maps_disc' depends on axioms: [propext, Classical.choice, Quot.sound]
-'AreaDeficit.Surfaces.DiscCover.density_tendsto_of_dense_punctures' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]

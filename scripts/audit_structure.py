@@ -22,14 +22,11 @@ spec.loader.exec_module(lexer)
 bases = [root] + [root / 'dependencies' / n for n in
     ['FunctionTheory', 'ComplexDynamics', 'ComplexApproximation', 'EremenkosConjecture']]
 bases.append(root / 'dependencies/EremenkosConjecture/vendor/schoenflies')
-if (root / '.git').exists():
-    tracked = subprocess.check_output(['git', '-C', str(root), 'ls-files', '-z'], text=True).split('\0')
-else:
-    tracked = []
-    for directory, folders, names in os.walk(root):
-        folders[:] = [f for f in folders if f not in {'.git', '.lake', '__pycache__'}]
-        tracked.extend((Path(directory) / name).relative_to(root).as_posix()
-                       for name in names if name.endswith('.lean'))
+tracked = []
+for directory, folders, names in os.walk(root):
+    folders[:] = [f for f in folders if f not in {'.git', '.lake', '__pycache__'}]
+    tracked.extend((Path(directory) / name).relative_to(root).as_posix()
+                   for name in names if name.endswith('.lean'))
 files = [root / p for p in tracked if p.endswith('.lean')]
 imports = {}
 paths = {}
@@ -64,8 +61,7 @@ def closure(start):
         pending.extend(imports.get(name, []))
     return found
 
-root_names = ['Solution', 'Challenge', 'Legacy.Solution', 'Research.NewResults',
-              'Legacy.SingularLimitsSolution', 'Research.SurfaceResearch', 'BoundedWanderingDomains.CoveringSolution']
+root_names = ['Solution', 'Challenge', 'BoundedWanderingDomains.All']
 closure_by_root = {n: closure([n]) for n in root_names}
 paper = closure_by_root['Solution']
 all_roots = closure(root_names)
@@ -81,7 +77,7 @@ data = {
     'root_closures': {n: {'local': len(s & imports.keys()), 'external_frontier': len(s - imports.keys())}
                       for n, s in closure_by_root.items()},
     'all_root_local_modules': len(all_roots & imports.keys()),
-    'extra_local_modules_in_legacy_build': sorted((all_roots - paper) & imports.keys()),
+    'extra_local_modules_in_optional_library_build': sorted((all_roots - paper) & imports.keys()),
     'unused_local_modules': sorted(imports.keys() - all_roots),
     'diagnostic_commands': sum(file_diagnostics.values()),
     'paper_diagnostic_commands': sum(len(diagnostics[n]) for n in paper & imports.keys()),

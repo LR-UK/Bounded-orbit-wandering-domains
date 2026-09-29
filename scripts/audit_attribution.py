@@ -18,7 +18,6 @@ def audit():
                ROOT / 'verification/update-warning-compatibility.patch',
                ROOT / 'LICENSE', ROOT / 'THIRD_PARTY_NOTICES.md',
                ROOT / 'DEPENDENCY_COMPATIBILITY.md',
-               ROOT / 'verification/module-system-migration.json',
                ROOT / 'verification/linter-updated-files.json',
                ROOT / 'verification/linter-compatibility.patch',
                ROOT / 'RIEMANN_DYNAMICS_LICENSE', ROOT / 'RMT4_LICENSE',

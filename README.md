@@ -14,10 +14,19 @@ statement unchanged and includes the following results.
 
 - **Entire and meromorphic escape:** a wandering Fatou component has a
   subsequence of iterates converging locally uniformly to infinity.
-- **Entire derived-singular accumulation:** every wandering point has an orbit
+- **Entire and meromorphic derived-singular accumulation:** every wandering point has an orbit
   subsequence converging to the derived set of the spherical singular values.
-  This proves the assertion announced without proof in [PRW]. Učakar has informed
+  For meromorphic maps the ambient target is the compact Riemann sphere, so
+  there is no ambient-escape alternative. This proves the assertion announced
+  without proof in [PRW]. Učakar has informed
   the authors that he independently obtained a proof of this theorem.
+- **Combined singular-encounter theorem:** unless a wandering orbit has an
+  ambient-escaping subsequence, there are distinct singular values tending to
+  a derived singular value, shrinking analytic target discs, and full inverse
+  components carrying those singular values. At common increasing times the
+  components capture every compact subset of the initial wandering domain.
+  The analogous pointwise alternative holds almost everywhere in measurable
+  wandering sets with injective iterates outside the normality locus.
 - **Local compact-orbit exclusion:** for an open holomorphic map on an open
   subset $O$ of a Riemann surface, no wandering normality component contains a
   point whose whole orbit stays in a compact subset of $O$.
@@ -81,11 +90,14 @@ All the above statements are proved in Lean.
 The independent specifications are in [Challenge.lean](Challenge.lean);
 the proofs are exposed by [Solution.lean](Solution.lean). The original
 entire-function bounded-orbit theorem is also included under its unchanged name
-and statement. The current challenge selects sixteen theorem declarations, with descriptive
+and statement. The current challenge selects nineteen theorem declarations, with descriptive
 names independent of unpublished manuscript numbering.
 
 | Paper statement | Proved declaration |
 |---|---|
+| Combined wandering-domain singular encounters | `SurfaceDynamics.wandering_domain_has_escaping_or_singular_encounter_sequence` |
+| Almost-everywhere componentwise singular encounters | `SurfaceDynamics.almost_every_wandering_point_has_escaping_or_singular_encounter_sequence` |
+| Meromorphic derived-singular accumulation | `MeromorphicDynamics.wandering_orbit_accumulates_on_derived_singular_values` |
 | Finite-type local maps on compact surfaces: no wandering domains | `SurfaceDynamics.no_wandering_domains_finite_type` |
 | Class S transcendental meromorphic functions: no wandering domains | `MeromorphicDynamics.no_wandering_domains_transcendental_meromorphic_finite_singularValues` |
 | Entire escape | `BoundedWanderingDomains.wandering_domain_has_locally_uniform_escaping_subsequence` |
@@ -113,7 +125,7 @@ for the precise hypotheses and [proof guide](docs/PAPER_PROOF_GUIDE.md) for the 
 
 The independent challenge and solution are compared declaration by declaration.
 The transitive axiom and source audits are recorded in [verification](docs/VERIFICATION.md).
-The complete build also checks the retained earlier results.
+The complete build also checks the current proof-library entry point.
 
 The rational-map corollary is stated intrinsically for open holomorphic maps
 on the whole Riemann sphere, including poles and infinity. Its proof specialises
@@ -137,32 +149,34 @@ The local derived-singular theorem uses a local adaptation of the covering and f
 Critically Finite Functions*, Results in Mathematics 22 (1992), 651–656,
 [doi:10.1007/BF03323112](https://doi.org/10.1007/BF03323112).
 
-The proof uses the full preimages of regular punctured discs, fills removable
-points, and controls the backward orbits of finitely many singular values.
-It proves eventual injectivity on each fixed-radius covering disc inside the
-wandering components, which is sufficient for the area argument. The new
-supporting proofs are grouped into six files in
-`BoundedWanderingDomains/Surfaces/BKL/`.
+The combined proof uses full preimages of punctured target discs and the
+BKL covering and filling argument. The bounded-source and derived-singular
+conclusions are corollaries of the resulting encounter sequence. The area
+version uses the same local estimates with a countable measurable cover;
+on compact surfaces its target-area budgets are computed in overlapping
+hyperbolic subsurfaces. The earlier independent main proofs have been removed.
 
 ## Project layout
 
-The only top-level Lean files are the two current submission files.
+The only top-level Lean files are the current challenge and solution.
 
 ```text
-Challenge.lean        All sixteen current statements
-Solution.lean         Proved versions of those statements
-BoundedWanderingDomains/   Main proof library, including CoveringSolution.lean
-RiemannDynamics/           Meromorphic dynamics proofs
-RMT4/, Ray/, EremenkoLyubichConstant/   Supporting libraries
-Legacy/                   Earlier challenge and solution pairs
-Research/                 Optional entry points for additional results
-verification/             Audit sources, reports and logs
-dependencies/             Contained source dependencies
+Challenge.lean            All nineteen current statements
+Solution.lean             Proved versions of those statements
+BoundedWanderingDomains/   Main proof library
+  Surfaces/SingularEncounters/  Combined theorem and its area estimates
+  Surfaces/BKL/                Covering and removable-completion lemmas
+RiemannDynamics/           Surface and uniformisation foundations
+RMT4/, Ray/, EremenkoLyubichConstant/   Attributed supporting libraries
+verification/             Current audit sources and reports; provenance
+scripts/                  Build, comparison and packaging tools
+docs/                     Statement alignment, proof guide and verification
+dependencies/            Contained source dependencies
 ```
 
-The earlier entry points remain available under their folder-qualified module
-names. The original entire-function statement retains its exact declaration name and
-hypotheses. The current and legacy solutions share its proof.
+The original entire-function theorem retains its exact declaration name and
+hypotheses. Its proof now follows from the combined surface theorem. Obsolete
+independent proof branches and the legacy/research entry points are removed.
 
 ## Build and check
 
@@ -178,7 +192,7 @@ python3 scripts/audit_attribution.py
 ```
 
 `lake build` builds the two paper entry points. The `--all` audit also builds
-the retained earlier and research results. Fetch the pinned dependency cache
+the current proof-library entry point. Fetch the pinned dependency cache
 before the first build; a build without it may compile Mathlib from source.
 Keep the `.lake` directory when updating an existing checkout so that unchanged
 dependencies remain cached.
@@ -192,7 +206,7 @@ Linux with working bubblewrap user namespaces:
 bash scripts/verify-comparator.sh comparator.json
 ```
 
-`comparator.json` selects all sixteen targets. Challenge `sorry` placeholders are
+`comparator.json` selects all nineteen targets. Challenge `sorry` placeholders are
 intentional specifications and are never imported by the proofs.
 
 See [VERIFICATION.md](docs/VERIFICATION.md) for actual check results and the distinction
@@ -208,4 +222,4 @@ Third-party proofs retain their authorship and licences; see
 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md), [LICENSE](LICENSE), and
 `formalization.yaml`. Local path dependencies are included in the source
 archive; Mathlib and its pinned dependencies are fetched by Lake. Caches are
-not distributed. Earlier status documents are historical, not current scope.
+not distributed. The current scope is the nineteen statements selected in `comparator.json`.

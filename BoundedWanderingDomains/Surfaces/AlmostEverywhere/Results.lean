@@ -3,6 +3,7 @@ module
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
 public import Mathlib.Analysis.CStarAlgebra.Classes
 public import BoundedWanderingDomains.Surfaces.AlmostEverywhere.DerivedSingular
+public import BoundedWanderingDomains.Surfaces.AlmostEverywhere.CompactSource
 public import BoundedWanderingDomains.Surfaces.SurfaceDerivedLimits
 
 @[expose] public section
@@ -64,9 +65,20 @@ theorem positive_area_wandering_saturation_not_compactly_contained_away_from_der
     (hinj : ∀ n, InjOn (f.compactifiedIterate n) A) (hpos : HasPositiveChartArea A) :
     ¬ ∃ K : Set X, IsCompact K ∧ Disjoint K (derivedSet f.singularValues) ∧ f.saturation A ⊆ K := by
   rintro ⟨K, hK, havoid, hsat⟩
-  exact no_compact_positive_area_saturation_away_from_derived f hf hA hAbad hdis
-    (f.injectiveOnSaturation_of_iterates_injective (fun _ hx => (hAbad hx).1) hdis hinj)
-    hpos hK havoid hsat
+  obtain ⟨x, hx, φ, _, hesc | ⟨a, ha, hlim⟩⟩ := hpos.exists_of_chartAlmostEverywhere
+    (f.ae_has_escaping_or_derived_singular_subsequence hf hA hAbad hdis
+      (f.injectiveOnSaturation_of_iterates_injective (fun _ hx => (hAbad hx).1) hdis hinj))
+  · let z : f.trapped := ⟨x, (hAbad hx).1⟩
+    exact not_tendsto_infty_of_range_subset_compact (fun n => f.orbit (φ n) z) hK
+      (fun n => hsat (mem_iUnion.mpr ⟨φ n, x, hx, f.iterate_eq_some_orbit (φ n) z⟩))
+      (hesc.congr' (Eventually.of_forall fun n => f.compactifiedIterate_eq_orbit (φ n) z))
+  · have hmem : (a : OnePoint X) ∈ ((↑) : X → OnePoint X) '' K :=
+      (hK.image OnePoint.continuous_coe).isClosed.mem_of_tendsto hlim
+        (Eventually.of_forall fun n => ⟨f.orbit (φ n) ⟨x, (hAbad hx).1⟩,
+          hsat (mem_iUnion.mpr ⟨φ n, x, hx, f.iterate_eq_some_orbit (φ n) ⟨x, (hAbad hx).1⟩⟩),
+          (f.compactifiedIterate_eq_orbit (φ n) ⟨x, (hAbad hx).1⟩).symm⟩)
+    obtain ⟨y, hy, he⟩ := hmem
+    exact disjoint_left.mp havoid (OnePoint.coe_injective he ▸ hy) ha
 
 /-- Almost every point of a measurable wandering set with injective iterates,
 outside normality, has an escaping or derived-singular subsequence. -/

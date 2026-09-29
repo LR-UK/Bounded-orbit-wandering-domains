@@ -1,6 +1,0 @@
-24 September 2026
-Command: bwrap --unshare-user --ro-bind / / -- /bin/true
-Result: bwrap: setting up uid map: Operation not permitted
-Official Comparator replay was not attempted after this failed prerequisite.
-No sandbox or independent-kernel check was disabled. Both configurations are
-included in the GitHub Actions workflow for replay in a supported environment.

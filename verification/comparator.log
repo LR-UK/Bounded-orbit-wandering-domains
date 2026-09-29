@@ -1,3 +1,0 @@
-Official Comparator was not rerun for project version 1.1.0.
-The previous attempt failed before comparison because bubblewrap could not create its user-namespace mapping.
-See history/version-1.0.0/comparator.log for that attempt, comparator-status.json for current status, and .github/workflows/ci.yml for the required CI check.

@@ -1,5 +1,5 @@
 name = "area_deficit"
-version = "1.7.1"
+version = "1.8.0"
 defaultTargets = ["Solution", "Challenge"]
 
 [[require]]
@@ -30,7 +30,7 @@ globs = ["BoundedWanderingDomains.+"]
 
 [[lean_lib]]
 name = "RiemannDynamics"
-roots = ["RiemannDynamics.BoundedWanderingSolution"]
+roots = ["RiemannDynamics.Uniformization.Trichotomy"]
 globs = ["RiemannDynamics.+"]
 
 [[lean_lib]]
@@ -47,13 +47,3 @@ name = "Challenge"
 
 [[lean_lib]]
 name = "Solution"
-
-[[lean_lib]]
-name = "Legacy"
-roots = ["Legacy.Solution", "Legacy.SingularLimitsSolution"]
-globs = ["Legacy.+"]
-
-[[lean_lib]]
-name = "Research"
-roots = ["Research.SurfaceResearch", "Research.NewResults"]
-globs = ["Research.+"]

@@ -9,6 +9,8 @@ public import BoundedWanderingDomains.NoWanderingCorollaries
 public import BoundedWanderingDomains.EntireBoundedOrbit
 public import BoundedWanderingDomains.GlobalLimitStatements
 public import BoundedWanderingDomains.MeromorphicEscape
+public import BoundedWanderingDomains.MeromorphicDerivedSingular
+public import BoundedWanderingDomains.Surfaces.SingularEncounters.Results
 public import BoundedWanderingDomains.Surfaces.SurfaceOrbitEscape
 public import BoundedWanderingDomains.Surfaces.SurfaceDerivedLimits
 public import BoundedWanderingDomains.Surfaces.SurfacePositiveArea
@@ -98,19 +100,21 @@ variable
 theorem positive_area_wandering_saturation_not_compactly_contained : NoCompactPositiveAreaWanderingSetClaim (X := X) :=
   noCompactPositiveAreaWanderingSetClaim
 
-/-- The exact positive-area statement of the positive-area wandering-set theorem for every
-noncompact Riemann surface. -/
-theorem positive_area_wandering_saturation_not_compactly_contained_noncompact [NoncompactSpace X] :
-    NoCompactPositiveAreaWanderingSetClaim (X := X) := by
-  let : DecidableEq X := Classical.decEq X
-  exact noCompactPositiveAreaWanderingSetClaim_of_noncompact
-
-/-- The exact positive-area statement of the positive-area wandering-set theorem for every
-hyperbolic Riemann surface, including compact ones. -/
-theorem positive_area_wandering_saturation_not_compactly_contained_hyperbolic
-    (hX : RiemannDynamics.IsHyperbolic X) :
-    NoCompactPositiveAreaWanderingSetClaim (X := X) := by
-  let : DecidableEq X := Classical.decEq X
-  exact noCompactPositiveAreaWanderingSetClaim_of_isHyperbolic hX
 
 end SurfaceDynamics
+
+namespace MeromorphicDynamics
+
+/-- Every meromorphic wandering orbit accumulates on the spherical derived
+singular set. The compact sphere target rules out ambient escape. -/
+theorem wandering_orbit_accumulates_on_derived_singular_values
+    {f : ℂ → ℂ} (hf : MeromorphicNFOn f univ) (htrans : ¬ IsRationalMeromorphic f)
+    {U : ℕ → Set ℂ} {z : ℂ}
+    (hU : ∀ n, IsFatouComponent f (U n)) (hz : z ∈ U 0)
+    (hforward : ∀ n, MapsTo f (U n) (U (n + 1)))
+    (hdis : Pairwise (fun n m : ℕ => Disjoint (U n) (U m))) :
+    ∃ a ∈ derivedSet (singularValues f), ∃ φ : ℕ → ℕ, StrictMono φ ∧
+      Tendsto (fun n => (((f^[φ n]) z : ℂ) : OnePoint ℂ)) atTop (𝓝 a) := by
+  exact wandering_derived_singular_limit hf htrans hU hforward hdis hz
+
+end MeromorphicDynamics
