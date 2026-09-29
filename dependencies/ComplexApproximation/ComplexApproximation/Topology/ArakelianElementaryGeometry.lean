@@ -1,7 +1,11 @@
-import ComplexApproximation.Topology.HorizontalEscape
-import Mathlib.Analysis.Convex.Star
-import Mathlib.Analysis.Convex.Topology
-import Mathlib.Analysis.Normed.Module.Convex
+module
+
+public import ComplexApproximation.Topology.HorizontalEscape
+public import Mathlib.Analysis.Convex.Star
+public import Mathlib.Analysis.Convex.Topology
+public import Mathlib.Analysis.Normed.Module.Convex
+
+@[expose] public section
 
 open Set Metric Bornology Complex
 

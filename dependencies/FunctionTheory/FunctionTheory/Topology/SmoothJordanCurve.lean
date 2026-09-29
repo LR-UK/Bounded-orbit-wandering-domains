@@ -1,7 +1,11 @@
-import TauCeti.Topology.JordanCurve.Basic
-import Mathlib.Analysis.Calculus.ContDiff.Comp
-import Mathlib.Analysis.Calculus.ContDiff.Operations
-import Mathlib.Topology.OpenPartialHomeomorph.Composition
+module
+
+public import TauCeti.Topology.JordanCurve.Basic
+public import Mathlib.Analysis.Calculus.ContDiff.Comp
+public import Mathlib.Analysis.Calculus.ContDiff.Operations
+public import Mathlib.Topology.OpenPartialHomeomorph.Composition
+
+@[expose] public section
 
 open Set Metric
 open scoped Topology ContDiff

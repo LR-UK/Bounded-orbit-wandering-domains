@@ -1,5 +1,9 @@
-import Runge.IntegralTransforms
-import Runge.RectangleKernel
+module
+
+public import Runge.IntegralTransforms
+public import Runge.RectangleKernel
+
+@[expose] public section
 
 open Complex Polynomial MeasureTheory Set Function
 open scoped Topology ContDiff

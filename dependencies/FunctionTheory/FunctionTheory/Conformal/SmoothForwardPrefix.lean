@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.SmoothForwardCoordinate
-import FunctionTheory.Analytic.FinitePreimageStability
+module
+
+public import FunctionTheory.Conformal.SmoothForwardCoordinate
+public import FunctionTheory.Analytic.FinitePreimageStability
+
+@[expose] public section
 
 open Set Function Filter
 open scoped Topology ContDiff

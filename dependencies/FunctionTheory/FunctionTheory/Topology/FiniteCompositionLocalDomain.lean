@@ -1,5 +1,9 @@
-import FunctionTheory.Topology.FiniteComposition
-import FunctionTheory.Holomorphic
+module
+
+public import FunctionTheory.Topology.FiniteComposition
+public import FunctionTheory.Holomorphic
+
+@[expose] public section
 
 open Set Metric
 

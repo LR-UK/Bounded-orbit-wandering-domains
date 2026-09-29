@@ -1,5 +1,9 @@
-import EremenkosConjecture.SineChainPaths
-import EremenkosConjecture.AmbientExtension
+module
+
+public import EremenkosConjecture.SineChainPaths
+public import EremenkosConjecture.AmbientExtension
+
+@[expose] public section
 
 open Set Metric Filter Topology Real
 

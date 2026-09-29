@@ -1,11 +1,15 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
-import Schoenflies.SimpleArc
-import Schoenflies.Accessible
-import Schoenflies.LocallyPolygonal
+public import Schoenflies.SimpleArc
+public import Schoenflies.Accessible
+public import Schoenflies.LocallyPolygonal
+
+@[expose] public section
 
 /-!
 # Joining accessible boundary points

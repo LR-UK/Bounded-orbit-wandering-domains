@@ -1,4 +1,8 @@
-import EremenkosConjecture.UniformIterateControl
+module
+
+public import EremenkosConjecture.UniformIterateControl
+
+@[expose] public section
 
 /-! # Composing quantitative ambient charts along an orbit -/
 

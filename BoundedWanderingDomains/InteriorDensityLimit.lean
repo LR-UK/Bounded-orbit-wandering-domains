@@ -1,5 +1,9 @@
-import BoundedWanderingDomains.OmittedPairCompactness
-import BoundedWanderingDomains.DiscSchwarzPick
+module
+
+public import BoundedWanderingDomains.OmittedPairCompactness
+public import BoundedWanderingDomains.DiscSchwarzPick
+
+@[expose] public section
 
 open Set Metric Function Filter
 open scoped Topology

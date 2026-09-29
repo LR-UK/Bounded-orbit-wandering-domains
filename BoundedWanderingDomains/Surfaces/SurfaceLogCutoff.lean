@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.ChartPullbackExtension
-import BoundedWanderingDomains.Surfaces.CoordinateDiskSelection
-import BoundedWanderingDomains.LogarithmicCutoff
+public import BoundedWanderingDomains.Surfaces.ChartPullbackExtension
+public import BoundedWanderingDomains.Surfaces.CoordinateDiskSelection
+public import BoundedWanderingDomains.LogarithmicCutoff
+
+@[expose] public section
 
 /-! # Logarithmic cutoffs in surface charts -/
 

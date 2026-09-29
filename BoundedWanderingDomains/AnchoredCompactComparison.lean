@@ -1,9 +1,13 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.UnconditionalPointRemoval
-import FunctionTheory.Conformal.SchottkyConfinement
+public import BoundedWanderingDomains.UnconditionalPointRemoval
+public import FunctionTheory.Conformal.SchottkyConfinement
+
+@[expose] public section
 
 /-!
 # Uniform metric comparison away from a compact deleted set

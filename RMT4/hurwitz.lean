@@ -1,6 +1,10 @@
-import Mathlib.Analysis.Complex.LocallyUniformLimit
-import RMT4.uniform
-import RMT4.cindex
+module
+
+public import Mathlib.Analysis.Complex.LocallyUniformLimit
+public import RMT4.uniform
+public import RMT4.cindex
+
+@[expose] public section
 
 open Filter Topology Set Metric Uniformity
 

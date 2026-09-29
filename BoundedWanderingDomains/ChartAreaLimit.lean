@@ -1,6 +1,10 @@
-import BoundedWanderingDomains.InteriorDensityLimit
-import BoundedWanderingDomains.LocalIntegratedDeficit
-import BoundedWanderingDomains.DiscArea
+module
+
+public import BoundedWanderingDomains.InteriorDensityLimit
+public import BoundedWanderingDomains.LocalIntegratedDeficit
+public import BoundedWanderingDomains.DiscArea
+
+@[expose] public section
 
 open Set Metric Function Filter MeasureTheory
 open scoped Topology ENNReal

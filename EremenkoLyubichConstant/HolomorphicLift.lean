@@ -1,11 +1,17 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Lasse Rempe
 -/
 
-import EremenkoLyubichConstant.UniversalCover
-import Ray.Dynamics.Multiple
+public import EremenkoLyubichConstant.UniversalCover
+public import Ray.Dynamics.Multiple
+
+public import Mathlib.Analysis.Complex.CauchyIntegral
+
+@[expose] public section
 
 open Set Filter Function
 open scoped Topology

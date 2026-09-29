@@ -1,7 +1,11 @@
-import Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected
-import Mathlib.Analysis.Complex.Basic
-import Mathlib.Topology.Connected.LocallyPathConnected
-import Mathlib.Analysis.LocallyConvex.WithSeminorms
+module
+
+public import Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected
+public import Mathlib.Analysis.Complex.Basic
+public import Mathlib.Topology.Connected.LocallyPathConnected
+public import Mathlib.Analysis.LocallyConvex.WithSeminorms
+
+@[expose] public section
 
 /-! # Simple connectivity detected on compact connected subsets
 

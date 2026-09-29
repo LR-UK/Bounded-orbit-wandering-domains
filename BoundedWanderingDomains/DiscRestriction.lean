@@ -1,5 +1,9 @@
-import Mathlib.Analysis.Complex.Schwarz
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.Complex.Schwarz
+public import Mathlib.Tactic
+
+@[expose] public section
 
 open Set Filter Metric
 open scoped Topology

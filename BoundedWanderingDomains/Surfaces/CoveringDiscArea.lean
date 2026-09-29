@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.HyperbolicArea
-import BoundedWanderingDomains.Surfaces.PointedCoveringDiscs
-import BoundedWanderingDomains.DiscArea
+public import BoundedWanderingDomains.Surfaces.HyperbolicArea
+public import BoundedWanderingDomains.Surfaces.PointedCoveringDiscs
+public import BoundedWanderingDomains.DiscArea
+
+@[expose] public section
 
 /-! # Exact area of an embedded covering disc in one surface chart -/
 

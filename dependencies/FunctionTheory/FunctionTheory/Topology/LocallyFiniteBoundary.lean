@@ -1,5 +1,9 @@
-import Mathlib.Topology.LocallyFinite
-import Mathlib.Topology.Closure
+module
+
+public import Mathlib.Topology.LocallyFinite
+public import Mathlib.Topology.Closure
+
+@[expose] public section
 
 open Set
 

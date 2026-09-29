@@ -1,7 +1,11 @@
-import BoundedWanderingDomains.WanderingSets
-import Mathlib.MeasureTheory.Measure.WithDensity
-import Mathlib.MeasureTheory.Integral.Lebesgue.Add
-import Mathlib.MeasureTheory.Integral.Lebesgue.Markov
+module
+
+public import BoundedWanderingDomains.WanderingSets
+public import Mathlib.MeasureTheory.Measure.WithDensity
+public import Mathlib.MeasureTheory.Integral.Lebesgue.Add
+public import Mathlib.MeasureTheory.Integral.Lebesgue.Markov
+
+@[expose] public section
 
 open Set MeasureTheory Filter
 open scoped ENNReal Topology

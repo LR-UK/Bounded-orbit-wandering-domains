@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.DomainFiniteCutoff
-import BoundedWanderingDomains.Surfaces.DomainChartKernel
-import BoundedWanderingDomains.Surfaces.GainFatou
+public import BoundedWanderingDomains.Surfaces.DomainFiniteCutoff
+public import BoundedWanderingDomains.Surfaces.DomainChartKernel
+public import BoundedWanderingDomains.Surfaces.GainFatou
+
+@[expose] public section
 
 /-! # Passing the uniform remote area estimate to arbitrary subdomains
 

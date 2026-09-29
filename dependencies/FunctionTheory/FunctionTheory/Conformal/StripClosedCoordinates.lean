@@ -1,4 +1,8 @@
-import FunctionTheory.Conformal.StripCoordinates
+module
+
+public import FunctionTheory.Conformal.StripCoordinates
+
+@[expose] public section
 
 /-! # Finite boundary coordinates of a horizontal strip
 

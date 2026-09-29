@@ -1,7 +1,11 @@
-import Mathlib.Analysis.Complex.Basic
-import Mathlib.Analysis.Normed.Field.Lemmas
-import Mathlib.Topology.Connected.Basic
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.Complex.Basic
+public import Mathlib.Analysis.Normed.Field.Lemmas
+public import Mathlib.Topology.Connected.Basic
+public import Mathlib.Tactic
+
+@[expose] public section
 
 open Set Metric Complex Bornology
 open scoped Topology

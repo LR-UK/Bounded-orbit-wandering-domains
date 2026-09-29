@@ -1,5 +1,9 @@
-import ComplexApproximation.Conformal.BoundedKernel
-import FunctionTheory.Conformal.KernelConvergence
+module
+
+public import ComplexApproximation.Conformal.BoundedKernel
+public import FunctionTheory.Conformal.KernelConvergence
+
+@[expose] public section
 
 /-! # Compatibility imports for FunctionTheory
 

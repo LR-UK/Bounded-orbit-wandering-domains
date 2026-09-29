@@ -1,5 +1,9 @@
-import EremenkosConjecture.Runge
-import Mathlib.Topology.Separation.Regular
+module
+
+public import EremenkosConjecture.Runge
+public import Mathlib.Topology.Separation.Regular
+
+@[expose] public section
 
 /-!
 # Holomorphic gluing on separated compact sets

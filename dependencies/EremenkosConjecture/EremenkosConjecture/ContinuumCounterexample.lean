@@ -1,6 +1,10 @@
-import EremenkosConjecture.ContinuumEntireLimit
-import EremenkosConjecture.ContinuumFrontierSequence
-import EremenkosConjecture.ContinuumNormalization
+module
+
+public import EremenkosConjecture.ContinuumEntireLimit
+public import EremenkosConjecture.ContinuumFrontierSequence
+public import EremenkosConjecture.ContinuumNormalization
+
+@[expose] public section
 
 open Set Metric Function Filter ComplexDynamics
 open scoped Topology

@@ -1,10 +1,14 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.GeneralDomainCovering
-import BoundedWanderingDomains.TrappedComponentCovering
-import BoundedWanderingDomains.ShrinkingImages
+public import BoundedWanderingDomains.GeneralDomainCovering
+public import BoundedWanderingDomains.TrappedComponentCovering
+public import BoundedWanderingDomains.ShrinkingImages
+
+@[expose] public section
 
 /-! # Pointed universal covering discs -/
 

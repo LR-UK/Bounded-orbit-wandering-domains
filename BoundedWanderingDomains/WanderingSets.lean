@@ -1,11 +1,15 @@
-import Mathlib.Dynamics.FixedPoints.Basic
-import Mathlib.Data.Set.Pairwise.Basic
-import Mathlib.Data.Set.Lattice.Bounded
-import Mathlib.Data.Set.Lattice.Disjoint
-import Mathlib.Data.Set.Lattice.Image
-import Mathlib.Data.Set.Lattice.Indexed
-import Mathlib.Data.Set.Lattice.Order
-import Mathlib.Tactic.Ext
+module
+
+public import Mathlib.Dynamics.FixedPoints.Basic
+public import Mathlib.Data.Set.Pairwise.Basic
+public import Mathlib.Data.Set.Lattice.Bounded
+public import Mathlib.Data.Set.Lattice.Disjoint
+public import Mathlib.Data.Set.Lattice.Image
+public import Mathlib.Data.Set.Lattice.Indexed
+public import Mathlib.Data.Set.Lattice.Order
+public import Mathlib.Tactic.Ext
+
+@[expose] public section
 open Set Function
 
 namespace AreaDeficit

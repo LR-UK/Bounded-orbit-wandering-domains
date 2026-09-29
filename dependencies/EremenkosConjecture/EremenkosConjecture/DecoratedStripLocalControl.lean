@@ -1,5 +1,9 @@
-import EremenkosConjecture.StripInsetControl
-import FunctionTheory.Conformal.StripEndMapLocal
+module
+
+public import EremenkosConjecture.StripInsetControl
+public import FunctionTheory.Conformal.StripEndMapLocal
+
+@[expose] public section
 
 /-! # Controlled strip maps using only local end geometry
 

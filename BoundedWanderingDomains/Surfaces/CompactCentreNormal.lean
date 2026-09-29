@@ -1,9 +1,14 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.NormalFamilies
-import BoundedWanderingDomains.Surfaces.CompactDiscImages
-import BoundedWanderingDomains.Surfaces.KernelNormal
-import Mathlib.Topology.Compactification.OnePoint.Basic
-import Mathlib.Topology.UniformSpace.Uniformizable
+public import BoundedWanderingDomains.NormalFamilies
+public import BoundedWanderingDomains.Surfaces.CompactDiscImages
+public import BoundedWanderingDomains.Surfaces.KernelNormal
+public import Mathlib.Topology.Compactification.OnePoint.Basic
+public import Mathlib.Topology.UniformSpace.Uniformizable
+public import Mathlib.Topology.UniformSpace.OfCompactT2
+
+@[expose] public section
 
 /-! # Normal lifts of holomorphic discs with compact centre values -/
 

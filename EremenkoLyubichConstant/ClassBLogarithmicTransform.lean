@@ -1,11 +1,15 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Lasse Rempe
 -/
 
-import EremenkoLyubichConstant.ClassBTracts
-import EremenkoLyubichConstant.Growth
+public import EremenkoLyubichConstant.ClassBTracts
+public import EremenkoLyubichConstant.Growth
+
+@[expose] public section
 
 open Set Function
 open scoped Topology

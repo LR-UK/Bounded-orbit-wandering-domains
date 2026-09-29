@@ -1,8 +1,12 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.CompactPunctureMontel
-import BoundedWanderingDomains.Surfaces.CompactOrbitNormal
-import BoundedWanderingDomains.Surfaces.LocalMapPunctureBarrier
-import BoundedWanderingDomains.Surfaces.SaturationDynamics
+public import BoundedWanderingDomains.Surfaces.CompactPunctureMontel
+public import BoundedWanderingDomains.Surfaces.CompactOrbitNormal
+public import BoundedWanderingDomains.Surfaces.LocalMapPunctureBarrier
+public import BoundedWanderingDomains.Surfaces.SaturationDynamics
+
+@[expose] public section
 
 open Set Function Filter Topology
 open AreaDeficit.Surfaces

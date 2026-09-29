@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.KernelConvergence
-import FunctionTheory.Conformal.ImaginaryBounds
+module
+
+public import FunctionTheory.Conformal.KernelConvergence
+public import FunctionTheory.Conformal.ImaginaryBounds
+
+@[expose] public section
 
 /-! # Kernel convergence for domains in a horizontal halfplane
 

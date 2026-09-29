@@ -1,3 +1,5 @@
+module
+
 /-
 Copyright (c) 2026 Will (Ziang) Li. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
@@ -6,11 +8,13 @@ Authors: Will (Ziang) Li
 Extracted unchanged from Dynamics/JuliaFatou/RepellingCycles.lean at
 0a6497b0cc9ed39a6a705bf013449635894b56d0. The rational-dynamics imports are unnecessary here.
 -/
-import NoWanderingDomains.NormalFamilies.Spherical
-import NoWanderingDomains.Sphere.MobiusAction
-import Mathlib.Tactic.FieldSimp
-import Mathlib.Tactic.Positivity
-import Mathlib.Tactic.Ring
+public import NoWanderingDomains.NormalFamilies.Spherical
+public import NoWanderingDomains.Sphere.MobiusAction
+public import Mathlib.Tactic.FieldSimp
+public import Mathlib.Tactic.Positivity
+public import Mathlib.Tactic.Ring
+
+@[expose] public section
 open OnePoint Polynomial Filter Topology Metric Function
 namespace NoWanderingDomains
 

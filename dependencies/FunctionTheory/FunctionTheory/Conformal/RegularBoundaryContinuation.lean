@@ -1,6 +1,10 @@
-import FunctionTheory.Conformal.MonomialSymmetries
-import TauCeti.Analysis.Complex.Conformal.LocalDegree
-import Mathlib.Analysis.Analytic.IsolatedZeros
+module
+
+public import FunctionTheory.Conformal.MonomialSymmetries
+public import TauCeti.Analysis.Complex.Conformal.LocalDegree
+public import Mathlib.Analysis.Analytic.IsolatedZeros
+
+@[expose] public section
 
 open Set Metric Filter Function
 open scoped Topology

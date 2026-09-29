@@ -1,5 +1,9 @@
-import BoundedWanderingDomains.PositivePart
-import Mathlib.Analysis.SpecialFunctions.Log.Deriv
+module
+
+public import BoundedWanderingDomains.PositivePart
+public import Mathlib.Analysis.SpecialFunctions.Log.Deriv
+
+@[expose] public section
 
 open MeasureTheory Filter Set InnerProductSpace Laplacian
 open scoped Topology ContDiff ENNReal

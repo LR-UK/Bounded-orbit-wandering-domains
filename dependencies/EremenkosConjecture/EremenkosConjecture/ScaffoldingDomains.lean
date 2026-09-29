@@ -1,4 +1,8 @@
-import EremenkosConjecture.ScaffoldingBranches
+module
+
+public import EremenkosConjecture.ScaffoldingBranches
+
+@[expose] public section
 
 /-! # Connected strip inverse domains and their unbounded real parts -/
 

@@ -1,6 +1,10 @@
-import ComplexDynamics.Transcendence
-import Mathlib.Analysis.Complex.Polynomial.Basic
-import Mathlib.Analysis.SpecialFunctions.ExpDeriv
+module
+
+public import ComplexDynamics.Transcendence
+public import Mathlib.Analysis.Complex.Polynomial.Basic
+public import Mathlib.Analysis.SpecialFunctions.ExpDeriv
+
+@[expose] public section
 
 /-! # Transcendental entire perturbations of polynomials -/
 

@@ -1,6 +1,10 @@
-import Mathlib.Analysis.Complex.LocallyUniformLimit
-import Mathlib.Topology.Algebra.InfiniteSum.Real
-import Mathlib.Tactic.Abel
+module
+
+public import Mathlib.Analysis.Complex.LocallyUniformLimit
+public import Mathlib.Topology.Algebra.InfiniteSum.Real
+public import Mathlib.Tactic.Abel
+
+@[expose] public section
 
 /-!
 # Limits of successive entire approximations

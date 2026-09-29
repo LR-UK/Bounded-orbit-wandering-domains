@@ -1,12 +1,16 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Lasse Rempe
 -/
 
-import Mathlib.Topology.Homotopy.Lifting
-import Mathlib.Analysis.Calculus.InverseFunctionTheorem.Deriv
-import Mathlib.Analysis.SpecialFunctions.ExpDeriv
+public import Mathlib.Topology.Homotopy.Lifting
+public import Mathlib.Analysis.Calculus.InverseFunctionTheorem.Deriv
+public import Mathlib.Analysis.SpecialFunctions.ExpDeriv
+
+@[expose] public section
 
 /-!
 # Uniqueness of universal covering spaces

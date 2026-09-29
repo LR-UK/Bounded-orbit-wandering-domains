@@ -1,4 +1,8 @@
-import FunctionTheory.Conformal.ImaginaryBounds
+module
+
+public import FunctionTheory.Conformal.ImaginaryBounds
+
+@[expose] public section
 
 /-! # Compatibility imports for FunctionTheory
 

@@ -1,5 +1,9 @@
-import Runge.MeromorphicIncrement
-import FunctionTheory.Analytic.JetLocalDegree
+module
+
+public import Runge.MeromorphicIncrement
+public import FunctionTheory.Analytic.JetLocalDegree
+
+@[expose] public section
 
 open Set Filter Polynomial FunctionTheory
 open scoped Topology

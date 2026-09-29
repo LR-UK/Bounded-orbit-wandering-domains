@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.DomainSchwarz
-import BoundedWanderingDomains.Surfaces.DomainChartDensity
-import BoundedWanderingDomains.GeneralDomainMetric
+public import BoundedWanderingDomains.Surfaces.DomainSchwarz
+public import BoundedWanderingDomains.Surfaces.DomainChartDensity
+public import BoundedWanderingDomains.GeneralDomainMetric
+
+@[expose] public section
 
 /-! # Identification with the existing planar hyperbolic density
 

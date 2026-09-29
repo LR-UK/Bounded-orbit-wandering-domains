@@ -1,5 +1,9 @@
-import FunctionTheory.Analytic.UniformPreimageStability
-import Mathlib.Analysis.Analytic.Order
+module
+
+public import FunctionTheory.Analytic.UniformPreimageStability
+public import Mathlib.Analysis.Analytic.Order
+
+@[expose] public section
 
 open Set Filter Metric
 open scoped Topology

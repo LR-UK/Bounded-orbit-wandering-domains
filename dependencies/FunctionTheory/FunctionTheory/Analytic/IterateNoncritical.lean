@@ -1,7 +1,11 @@
-import Mathlib.Analysis.Calculus.Deriv.Comp
-import Mathlib.Analysis.Analytic.Basic
-import Mathlib.Analysis.Calculus.Deriv.Basic
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.Calculus.Deriv.Comp
+public import Mathlib.Analysis.Analytic.Basic
+public import Mathlib.Analysis.Calculus.Deriv.Basic
+public import Mathlib.Tactic
+
+@[expose] public section
 
 open Function
 

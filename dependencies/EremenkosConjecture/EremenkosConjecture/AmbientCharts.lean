@@ -1,5 +1,9 @@
-import EremenkosConjecture.UnivalentIterates
-import EremenkosConjecture.OrbitControl
+module
+
+public import EremenkosConjecture.UnivalentIterates
+public import EremenkosConjecture.OrbitControl
+
+@[expose] public section
 
 /-! # A persistent conformal-chart invariant for the induction -/
 

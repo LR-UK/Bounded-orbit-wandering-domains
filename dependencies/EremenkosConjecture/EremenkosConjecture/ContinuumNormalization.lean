@@ -1,6 +1,10 @@
-import EremenkosConjecture.ContinuumCounterexampleCriterion
-import ComplexDynamics.Conjugacy
-import ComplexDynamics.Scaling
+module
+
+public import EremenkosConjecture.ContinuumCounterexampleCriterion
+public import ComplexDynamics.Conjugacy
+public import ComplexDynamics.Scaling
+
+@[expose] public section
 
 /-! # Affine coordinate changes for prescribed escaping components
 

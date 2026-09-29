@@ -1,4 +1,8 @@
-import EremenkosConjecture.NormalizedData
+module
+
+public import EremenkosConjecture.NormalizedData
+
+@[expose] public section
 
 /-! # Nonempty finite boundary sets for nonempty compacta -/
 

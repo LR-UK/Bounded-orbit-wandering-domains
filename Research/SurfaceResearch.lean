@@ -1,14 +1,18 @@
-/- Optional aggregate of the completed surface development and its supporting results. -/
-import BoundedWanderingDomains.Surfaces.GeometricArea
-import BoundedWanderingDomains.Surfaces.RemoteChartCompact
-import BoundedWanderingDomains.Surfaces.WanderingCompactTail
-import BoundedWanderingDomains.Surfaces.CoveringComponents
-import BoundedWanderingDomains.Surfaces.SurfaceChartPartition
-import Research.SurfaceGeometry
-import Research.SurfaceFiniteRemoval
-import Research.SurfaceKernel
-import Research.SurfaceDynamicsTargets
+module
 
-import BoundedWanderingDomains.Surfaces.SurfaceOrbitEscape
-import BoundedWanderingDomains.Surfaces.SurfaceDerivedLimits
-import BoundedWanderingDomains.Surfaces.SurfacePositiveArea
+/- Optional aggregate of the completed surface development and its supporting results. -/
+public import BoundedWanderingDomains.Surfaces.GeometricArea
+public import BoundedWanderingDomains.Surfaces.RemoteChartCompact
+public import BoundedWanderingDomains.Surfaces.WanderingCompactTail
+public import BoundedWanderingDomains.Surfaces.CoveringComponents
+public import BoundedWanderingDomains.Surfaces.SurfaceChartPartition
+public import Research.SurfaceGeometry
+public import Research.SurfaceFiniteRemoval
+public import Research.SurfaceKernel
+public import Research.SurfaceDynamicsTargets
+
+public import BoundedWanderingDomains.Surfaces.SurfaceOrbitEscape
+public import BoundedWanderingDomains.Surfaces.SurfaceDerivedLimits
+public import BoundedWanderingDomains.Surfaces.SurfacePositiveArea
+
+@[expose] public section

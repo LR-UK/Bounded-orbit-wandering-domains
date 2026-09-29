@@ -20,6 +20,9 @@ import Mathlib.Tactic.Convert
 import Mathlib.Tactic.Ext
 import Mathlib.Tactic.Linarith
 import Aesop
+
+@[expose] section
+
 /-- Same model abbreviation as Ray.Manifold.Defs. -/
 public noncomputable abbrev OneDimension.I := modelWithCornersSelf ℂ ℂ
 

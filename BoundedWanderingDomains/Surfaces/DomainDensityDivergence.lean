@@ -1,9 +1,13 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.SmallChartDomain
-import BoundedWanderingDomains.Surfaces.DomainRemoteBound
-import BoundedWanderingDomains.Surfaces.ChartPunctures
-import BoundedWanderingDomains.UnconditionalPointRemoval
-import BoundedWanderingDomains.PunctureDensityLimits
+public import BoundedWanderingDomains.Surfaces.SmallChartDomain
+public import BoundedWanderingDomains.Surfaces.DomainRemoteBound
+public import BoundedWanderingDomains.Surfaces.ChartPunctures
+public import BoundedWanderingDomains.UnconditionalPointRemoval
+public import BoundedWanderingDomains.PunctureDensityLimits
+
+@[expose] public section
 
 /-! # Density divergence at accumulated punctures
 

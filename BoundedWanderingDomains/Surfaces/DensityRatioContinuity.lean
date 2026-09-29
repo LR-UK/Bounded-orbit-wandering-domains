@@ -1,8 +1,12 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.Surfaces.DensityRatioInvariance
+public import BoundedWanderingDomains.Surfaces.DensityRatioInvariance
+
+@[expose] public section
 
 /-! # Continuity of the intrinsic metric ratio -/
 open Set Function Filter Metric MeasureTheory

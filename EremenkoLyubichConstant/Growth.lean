@@ -1,11 +1,15 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Lasse Rempe
 -/
 
-import EremenkoLyubichConstant.Consequences
-import Mathlib.Topology.MetricSpace.ProperSpace
+public import EremenkoLyubichConstant.Consequences
+public import Mathlib.Topology.MetricSpace.ProperSpace
+
+@[expose] public section
 
 /-! # Maximum modulus and growth consequences -/
 

@@ -1,6 +1,10 @@
-import BoundedWanderingDomains.WanderingSets
-import Mathlib.Analysis.Analytic.IsolatedZeros
-import Mathlib.Analysis.Complex.OpenMapping
+module
+
+public import BoundedWanderingDomains.WanderingSets
+public import Mathlib.Analysis.Analytic.IsolatedZeros
+public import Mathlib.Analysis.Complex.OpenMapping
+
+@[expose] public section
 
 open Set Function Filter
 open scoped Topology

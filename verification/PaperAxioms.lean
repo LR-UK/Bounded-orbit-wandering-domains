@@ -1,4 +1,8 @@
-import Solution
+module
+
+public import Solution
+
+@[expose] public section
 
 #print axioms BoundedWanderingDomains.wandering_domain_has_locally_uniform_escaping_subsequence
 #print axioms MeromorphicDynamics.wandering_domain_has_locally_uniform_escaping_subsequence

@@ -1,3 +1,5 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
@@ -7,8 +9,10 @@ Authors: Álvaro Begué
 /- Compatibility update, 23 September 2026: current Mathlib names and Lean
 linter suggestions; original mathematical statements and attribution retained. -/
 
-import Schoenflies.FiniteTransferTargetMesh
-import Schoenflies.SkeletonLocal
+public import Schoenflies.FiniteTransferTargetMesh
+public import Schoenflies.SkeletonLocal
+
+@[expose] public section
 
 /-!
 # Overlaying a target skeleton with the anchored square mesh

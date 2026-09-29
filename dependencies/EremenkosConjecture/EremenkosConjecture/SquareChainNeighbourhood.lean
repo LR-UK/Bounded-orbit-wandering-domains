@@ -1,5 +1,9 @@
-import EremenkosConjecture.FinitePath
-import Schoenflies.JordanClosed
+module
+
+public import EremenkosConjecture.FinitePath
+public import Schoenflies.JordanClosed
+
+@[expose] public section
 
 /-! # Finite chains of overlapping squares around a continuum -/
 

@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.ChartArea
-import Mathlib.MeasureTheory.Measure.WithDensity
+public import BoundedWanderingDomains.Surfaces.ChartArea
+public import Mathlib.MeasureTheory.Measure.WithDensity
+
+@[expose] public section
 open Set Function Filter Metric MeasureTheory
 open scoped Manifold Topology ENNReal
 namespace AreaDeficit.Surfaces

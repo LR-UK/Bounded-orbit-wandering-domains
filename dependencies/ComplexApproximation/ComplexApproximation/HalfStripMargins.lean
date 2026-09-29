@@ -1,4 +1,8 @@
-import ComplexApproximation.Topology.HalfStripBands
+module
+
+public import ComplexApproximation.Topology.HalfStripBands
+
+@[expose] public section
 
 /-! # Uniform neighbourhoods of half-strips and their boundary bands -/
 

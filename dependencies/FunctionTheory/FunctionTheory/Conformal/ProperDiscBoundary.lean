@@ -1,10 +1,14 @@
-import Mathlib.Analysis.Analytic.IsolatedZeros
-import Mathlib.Topology.DiscreteSubset
-import Mathlib.Topology.Maps.Proper.CompactlyGenerated
-import Mathlib.Topology.Order.Compact
-import Mathlib.Analysis.Complex.Basic
-import Mathlib.Analysis.Normed.Group.Bounded
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.Analytic.IsolatedZeros
+public import Mathlib.Topology.DiscreteSubset
+public import Mathlib.Topology.Maps.Proper.CompactlyGenerated
+public import Mathlib.Topology.Order.Compact
+public import Mathlib.Analysis.Complex.Basic
+public import Mathlib.Analysis.Normed.Group.Bounded
+public import Mathlib.Tactic
+
+@[expose] public section
 
 open Set Metric Filter
 open scoped Topology

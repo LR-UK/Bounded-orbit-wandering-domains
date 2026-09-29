@@ -1,15 +1,19 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Lasse Rempe
 -/
 
-import EremenkoLyubichConstant.CoveringSections
-import Mathlib.Topology.Homotopy.Lifting
-import Mathlib.Analysis.Convex.Contractible
-import Mathlib.Analysis.Complex.Convex
-import Mathlib.Analysis.Normed.Module.Connected
-import Mathlib.Analysis.LocallyConvex.WithSeminorms
+public import EremenkoLyubichConstant.CoveringSections
+public import Mathlib.Topology.Homotopy.Lifting
+public import Mathlib.Analysis.Convex.Contractible
+public import Mathlib.Analysis.Complex.Convex
+public import Mathlib.Analysis.Normed.Module.Connected
+public import Mathlib.Analysis.LocallyConvex.WithSeminorms
+
+@[expose] public section
 
 open Set Function Metric
 open scoped Topology

@@ -1,12 +1,16 @@
+module
+
 /-
 Copyright (c) 2026 Will (Ziang) Li. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Will (Ziang) Li
 -/
-import RiemannDynamics.Uniformization.Trichotomy
-import RiemannDynamics.Hyperbolic.DiskModel.DiskMetric
-import RiemannDynamics.Hyperbolic.DiskModel.SchwarzPick
-import RiemannDynamics.Hyperbolic.DiskModel.MobiusDisk
+public import RiemannDynamics.Uniformization.Trichotomy
+public import RiemannDynamics.Hyperbolic.DiskModel.DiskMetric
+public import RiemannDynamics.Hyperbolic.DiskModel.SchwarzPick
+public import RiemannDynamics.Hyperbolic.DiskModel.MobiusDisk
+
+@[expose] public section
 
 /-!
 # Hyperbolic surfaces and the hyperbolic metric

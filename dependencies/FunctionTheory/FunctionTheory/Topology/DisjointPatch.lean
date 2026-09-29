@@ -1,5 +1,9 @@
-import Mathlib.Topology.LocallyFinite
-import Mathlib.Tactic
+module
+
+public import Mathlib.Topology.LocallyFinite
+public import Mathlib.Tactic
+
+@[expose] public section
 
 open Set Filter
 open scoped Topology

@@ -1,6 +1,10 @@
-import FunctionTheory.Meromorphic.RationalInfinity
-import Mathlib.Analysis.SpecialFunctions.ExpDeriv
-import Mathlib.Analysis.Complex.CauchyIntegral
+module
+
+public import FunctionTheory.Meromorphic.RationalInfinity
+public import Mathlib.Analysis.SpecialFunctions.ExpDeriv
+public import Mathlib.Analysis.Complex.CauchyIntegral
+
+@[expose] public section
 
 open Set Filter Bornology
 open scoped Topology

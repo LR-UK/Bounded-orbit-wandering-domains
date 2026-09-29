@@ -1,5 +1,9 @@
-import EremenkosConjecture.FilledRayComplement
-import EremenkosConjecture.FilledAttachmentBounds
+module
+
+public import EremenkosConjecture.FilledRayComplement
+public import EremenkosConjecture.FilledAttachmentBounds
+
+@[expose] public section
 
 open Set Metric Complex
 

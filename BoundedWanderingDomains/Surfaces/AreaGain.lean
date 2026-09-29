@@ -1,9 +1,13 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.Surfaces.DensityRatioContinuity
-import BoundedWanderingDomains.Surfaces.AreaIntegration
+public import BoundedWanderingDomains.Surfaces.DensityRatioContinuity
+public import BoundedWanderingDomains.Surfaces.AreaIntegration
+
+@[expose] public section
 
 /-! # Intrinsic area gain without subtraction of infinite total areas -/
 open Set Function Filter Metric MeasureTheory

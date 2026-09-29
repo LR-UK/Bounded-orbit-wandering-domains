@@ -1,19 +1,23 @@
+module
+
 /-
 Copyright (c) 2026 Yury Kudryashov. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Yury Kudryashov
 -/
 
-import Mathlib.Analysis.Analytic.Order
-import Mathlib.Analysis.Calculus.InverseFunctionTheorem.Deriv
-import Mathlib.Analysis.Complex.CoveringMap
-import Mathlib.Analysis.Complex.LocallyUniformLimit
-import BoundedWanderingDomains.UnitDiscShift
-import Mathlib.Analysis.Complex.Schwarz
-import Mathlib.Analysis.Real.Sqrt
-import Mathlib.Tactic.ContinuousFunctionalCalculus
-import Mathlib.Topology.Homotopy.Lifting
-import Mathlib.Topology.UniformSpace.Ascoli
+public import Mathlib.Analysis.Analytic.Order
+public import Mathlib.Analysis.Calculus.InverseFunctionTheorem.Deriv
+public import Mathlib.Analysis.Complex.CoveringMap
+public import Mathlib.Analysis.Complex.LocallyUniformLimit
+public import BoundedWanderingDomains.UnitDiscShift
+public import Mathlib.Analysis.Complex.Schwarz
+public import Mathlib.Analysis.Real.Sqrt
+public import Mathlib.Tactic.ContinuousFunctionalCalculus
+public import Mathlib.Topology.Homotopy.Lifting
+public import Mathlib.Topology.UniformSpace.Ascoli
+
+@[expose] public section
 
 /-!
 # Riemann mapping theorem

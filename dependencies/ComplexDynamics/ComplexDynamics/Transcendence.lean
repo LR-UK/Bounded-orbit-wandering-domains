@@ -1,5 +1,9 @@
-import ComplexDynamics.Basic
-import Mathlib.Topology.Algebra.Polynomial
+module
+
+public import ComplexDynamics.Basic
+public import Mathlib.Topology.Algebra.Polynomial
+
+@[expose] public section
 
 /-! # A criterion for transcendence using escaping and bounded values -/
 

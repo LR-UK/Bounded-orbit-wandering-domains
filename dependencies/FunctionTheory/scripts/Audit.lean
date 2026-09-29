@@ -1,4 +1,8 @@
-import FunctionTheory
+module
+
+public import FunctionTheory
+
+@[expose] public section
 
 #print axioms FunctionTheory.schottky_centre_displacement
 #print axioms FunctionTheory.exists_uniform_radius_of_two_omitted_values

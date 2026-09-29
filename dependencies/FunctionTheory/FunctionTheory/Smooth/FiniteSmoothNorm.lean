@@ -1,6 +1,10 @@
-import Mathlib.Analysis.Complex.Basic
-import Mathlib.Analysis.Calculus.ContDiff.Bounds
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.Complex.Basic
+public import Mathlib.Analysis.Calculus.ContDiff.Bounds
+public import Mathlib.Tactic
+
+@[expose] public section
 
 open Set
 open scoped ENNReal ContDiff

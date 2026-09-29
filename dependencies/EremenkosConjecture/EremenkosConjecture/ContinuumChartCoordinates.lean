@@ -1,4 +1,8 @@
-import EremenkosConjecture.ContinuumStage
+module
+
+public import EremenkosConjecture.ContinuumStage
+
+@[expose] public section
 
 open Set Function
 

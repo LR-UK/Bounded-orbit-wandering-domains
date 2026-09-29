@@ -1,5 +1,9 @@
-import EremenkosConjecture.LakeDensity
-import EremenkosConjecture.NewLake
+module
+
+public import EremenkosConjecture.LakeDensity
+public import EremenkosConjecture.NewLake
+
+@[expose] public section
 
 open Set Metric Function
 

@@ -1,5 +1,9 @@
-import Research.NewResults
-import Legacy.Solution
+module
+
+public import Research.NewResults
+public import Legacy.Solution
+
+@[expose] public section
 
 #print axioms AreaDeficit.uniform_compact_gain_sphere
 #print axioms AreaDeficit.sphere_finite_puncture_gain_le_two_pi_mul_card

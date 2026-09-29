@@ -1,11 +1,15 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
-import Schoenflies.CrosscutCells
-import Schoenflies.CrosscutAtMostTwo
-import Schoenflies.TwoArcs
+public import Schoenflies.CrosscutCells
+public import Schoenflies.CrosscutAtMostTwo
+public import Schoenflies.TwoArcs
+
+@[expose] public section
 
 /-!
 # The crosscut theorem for a general Jordan curve

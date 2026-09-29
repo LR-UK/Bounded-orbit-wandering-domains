@@ -1,4 +1,8 @@
-import EremenkosConjecture.ContinuumReferenceOrbits
+module
+
+public import EremenkosConjecture.ContinuumReferenceOrbits
+
+@[expose] public section
 
 open Set Metric Function
 

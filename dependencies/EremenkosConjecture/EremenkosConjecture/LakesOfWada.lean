@@ -1,5 +1,9 @@
-import EremenkosConjecture.WadaFilled
-import EremenkosConjecture.FastEscape
+module
+
+public import EremenkosConjecture.WadaFilled
+public import EremenkosConjecture.FastEscape
+
+@[expose] public section
 
 open Set Metric Function ComplexDynamics
 

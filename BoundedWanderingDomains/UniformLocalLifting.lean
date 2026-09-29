@@ -1,5 +1,9 @@
-import BoundedWanderingDomains.HolomorphicLifting
-import FunctionTheory.Conformal.SchottkyConfinement
+module
+
+public import BoundedWanderingDomains.HolomorphicLifting
+public import FunctionTheory.Conformal.SchottkyConfinement
+
+@[expose] public section
 
 open Set Metric Function
 

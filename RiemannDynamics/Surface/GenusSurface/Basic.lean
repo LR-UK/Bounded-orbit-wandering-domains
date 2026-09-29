@@ -1,14 +1,18 @@
+module
+
 /-
 Copyright (c) 2026 Will (Ziang) Li. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Will (Ziang) Li
 -/
-import Mathlib.Analysis.SpecialFunctions.Complex.Circle
-import Mathlib.Geometry.Manifold.IsManifold.Basic
-import Mathlib.Topology.OpenPartialHomeomorph.Basic
-import RiemannDynamics.Analysis.Winding.Basic
-import Mathlib.Analysis.SpecialFunctions.ExpDeriv
-import Mathlib.Analysis.Complex.CauchyIntegral
+public import Mathlib.Analysis.SpecialFunctions.Complex.Circle
+public import Mathlib.Geometry.Manifold.IsManifold.Basic
+public import Mathlib.Topology.OpenPartialHomeomorph.Basic
+public import RiemannDynamics.Analysis.Winding.Basic
+public import Mathlib.Analysis.SpecialFunctions.ExpDeriv
+public import Mathlib.Analysis.Complex.CauchyIntegral
+
+@[expose] public section
 
 /-!
 # The genus-`g` surface: polygon data, the quotient, and the interior chart

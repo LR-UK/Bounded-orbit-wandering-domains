@@ -1,5 +1,9 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.BKL.DerivedLimits
+public import BoundedWanderingDomains.Surfaces.BKL.DerivedLimits
+
+@[expose] public section
 
 /-! # The derived-singular-limit theorem without a simple-connectivity hypothesis -/
 

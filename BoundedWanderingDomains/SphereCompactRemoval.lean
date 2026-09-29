@@ -1,11 +1,15 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.SpherePointRemoval
-import BoundedWanderingDomains.SpherePole
-import BoundedWanderingDomains.SphereChartCompact
-import BoundedWanderingDomains.AreaGainSubadditivity
+public import BoundedWanderingDomains.SpherePointRemoval
+public import BoundedWanderingDomains.SpherePole
+public import BoundedWanderingDomains.SphereChartCompact
+public import BoundedWanderingDomains.AreaGainSubadditivity
+
+@[expose] public section
 
 /-!
 # Uniform compact-removal area bound on the sphere

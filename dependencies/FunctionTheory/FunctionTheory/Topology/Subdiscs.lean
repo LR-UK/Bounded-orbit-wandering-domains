@@ -1,6 +1,10 @@
-import Mathlib.Analysis.Complex.Basic
-import Mathlib.Topology.MetricSpace.ProperSpace
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.Complex.Basic
+public import Mathlib.Topology.MetricSpace.ProperSpace
+public import Mathlib.Tactic
+
+@[expose] public section
 
 open Set Metric
 

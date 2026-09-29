@@ -1,7 +1,11 @@
-import TauCeti.Analysis.Complex.Conformal.Rouche
-import TauCeti.Analysis.Complex.IsolatedZero
-import Mathlib.Analysis.Complex.OpenMapping
-import Mathlib.Topology.MetricSpace.HausdorffDistance
+module
+
+public import TauCeti.Analysis.Complex.Conformal.Rouche
+public import TauCeti.Analysis.Complex.IsolatedZero
+public import Mathlib.Analysis.Complex.OpenMapping
+public import Mathlib.Topology.MetricSpace.HausdorffDistance
+
+@[expose] public section
 
 open Set Filter Metric
 open scoped Topology

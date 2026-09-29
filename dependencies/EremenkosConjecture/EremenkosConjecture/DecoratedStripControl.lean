@@ -1,5 +1,9 @@
-import EremenkosConjecture.StripInsetControl
-import FunctionTheory.Conformal.StripEndMap
+module
+
+public import EremenkosConjecture.StripInsetControl
+public import FunctionTheory.Conformal.StripEndMap
+
+@[expose] public section
 
 /-! # Controlled strip maps from geometric hypotheses
 

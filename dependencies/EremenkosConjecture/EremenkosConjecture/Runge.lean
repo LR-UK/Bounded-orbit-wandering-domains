@@ -1,4 +1,8 @@
-import Runge.LocalDomain
+module
+
+public import Runge.LocalDomain
+
+@[expose] public section
 
 namespace EremenkosConjecture
 

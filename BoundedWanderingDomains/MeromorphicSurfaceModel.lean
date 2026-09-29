@@ -1,9 +1,13 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.MeromorphicSphereHolomorphic
-import BoundedWanderingDomains.Surfaces.LocalDynamics
-import BoundedWanderingDomains.Surfaces.OpenMapping
-import BoundedWanderingDomains.Surfaces.PlaneReading
-import FunctionTheory.Meromorphic.RationalInfinity
+public import BoundedWanderingDomains.MeromorphicSphereHolomorphic
+public import BoundedWanderingDomains.Surfaces.LocalDynamics
+public import BoundedWanderingDomains.Surfaces.OpenMapping
+public import BoundedWanderingDomains.Surfaces.PlaneReading
+public import FunctionTheory.Meromorphic.RationalInfinity
+
+@[expose] public section
 
 /-! # A meromorphic plane map as a local map of the sphere -/
 

@@ -1,7 +1,11 @@
-import ComplexApproximation.Topology.FullFamilyFilling
-import FunctionTheory.Topology.LocallyFiniteCompactFamily
-import Mathlib.Topology.Compactness.LocallyFinite
-import Mathlib.Data.Nat.Find
+module
+
+public import ComplexApproximation.Topology.FullFamilyFilling
+public import FunctionTheory.Topology.LocallyFiniteCompactFamily
+public import Mathlib.Topology.Compactness.LocallyFinite
+public import Mathlib.Data.Nat.Find
+
+@[expose] public section
 
 open Set Filter Metric Bornology Polynomial
 open scoped Topology

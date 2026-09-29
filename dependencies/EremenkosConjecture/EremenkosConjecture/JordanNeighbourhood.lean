@@ -1,7 +1,11 @@
+module
+
 /- Compatibility update, 23 September 2026: current Lean linter suggestions;
 mathematical statements and original attribution retained. -/
 
-import EremenkosConjecture.SquareChainNeighbourhood
+public import EremenkosConjecture.SquareChainNeighbourhood
+
+@[expose] public section
 
 /-! # Jordan neighbourhoods from outer faces of finite plane graphs -/
 

@@ -1,11 +1,15 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.AnchorComplementModels
-import BoundedWanderingDomains.Surfaces.PositiveAreaAdvanceReduction
-import BoundedWanderingDomains.Surfaces.PositiveAreaBridge
-import BoundedWanderingDomains.Surfaces.GlobalFinitePunctureArea
-import BoundedWanderingDomains.Surfaces.CompactFinitePunctureArea
-import BoundedWanderingDomains.Surfaces.SphereGlobalPointInsertion
-import BoundedWanderingDomains.Surfaces.CompactificationInsertionRiesz
+public import BoundedWanderingDomains.Surfaces.AnchorComplementModels
+public import BoundedWanderingDomains.Surfaces.PositiveAreaAdvanceReduction
+public import BoundedWanderingDomains.Surfaces.PositiveAreaBridge
+public import BoundedWanderingDomains.Surfaces.GlobalFinitePunctureArea
+public import BoundedWanderingDomains.Surfaces.CompactFinitePunctureArea
+public import BoundedWanderingDomains.Surfaces.SphereGlobalPointInsertion
+public import BoundedWanderingDomains.Surfaces.CompactificationInsertionRiesz
+
+@[expose] public section
 
 /-! # Compact anchor-complement area reduction -/
 

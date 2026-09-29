@@ -1,7 +1,11 @@
-import Mathlib.Analysis.Analytic.Composition
-import Mathlib.Analysis.Analytic.Linear
-import Mathlib.Logic.Function.Iterate
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.Analytic.Composition
+public import Mathlib.Analysis.Analytic.Linear
+public import Mathlib.Logic.Function.Iterate
+public import Mathlib.Tactic
+
+@[expose] public section
 
 open Set
 

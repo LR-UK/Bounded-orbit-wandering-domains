@@ -1,7 +1,11 @@
-import Runge.CauchyGreen
-import Mathlib.Analysis.Calculus.ContDiff.Convolution
-import Mathlib.Analysis.SpecialFunctions.Pow.Integral
-import Mathlib.Analysis.Complex.Conformal
+module
+
+public import Runge.CauchyGreen
+public import Mathlib.Analysis.Calculus.ContDiff.Convolution
+public import Mathlib.Analysis.SpecialFunctions.Pow.Integral
+public import Mathlib.Analysis.Complex.Conformal
+
+@[expose] public section
 
 /-!
 # The planar Cauchy transform

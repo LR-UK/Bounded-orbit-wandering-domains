@@ -1,6 +1,10 @@
-import EremenkosConjecture.FastNormalizedConstruction
-import EremenkosConjecture.UniformEscape
-import ComplexDynamics.FastEscapeScaling
+module
+
+public import EremenkosConjecture.FastNormalizedConstruction
+public import EremenkosConjecture.UniformEscape
+public import ComplexDynamics.FastEscapeScaling
+
+@[expose] public section
 
 /-! # Proposition 3.3: fast escaping wandering compacta -/
 

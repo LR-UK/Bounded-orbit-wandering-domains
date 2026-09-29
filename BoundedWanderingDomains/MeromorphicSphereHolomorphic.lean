@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import FunctionTheory.Meromorphic.Sphere
-import NoWanderingDomains.Sphere.SphereHolomorphic
-import BoundedWanderingDomains.SphereHolomorphicManifold
+public import FunctionTheory.Meromorphic.Sphere
+public import NoWanderingDomains.Sphere.SphereHolomorphic
+public import BoundedWanderingDomains.SphereHolomorphicManifold
+
+@[expose] public section
 
 /-! # Normal meromorphic functions as holomorphic sphere-valued maps -/
 

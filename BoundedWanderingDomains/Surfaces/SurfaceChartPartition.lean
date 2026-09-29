@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.SurfaceGreenIdentity
-import Mathlib.Topology.Compactness.LocallyFinite
+public import BoundedWanderingDomains.Surfaces.SurfaceGreenIdentity
+public import Mathlib.Topology.Compactness.LocallyFinite
+
+@[expose] public section
 
 /-! # Smooth partitions subordinate to restricted ambient charts -/
 

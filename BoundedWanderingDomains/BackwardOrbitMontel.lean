@@ -1,11 +1,15 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.BackwardOrbitModels
-import FunctionTheory.NormalFamilies.ZalcmanMontel
-import ComplexDynamics.Basic
-import Mathlib.Order.OrderIsoNat
+public import BoundedWanderingDomains.BackwardOrbitModels
+public import FunctionTheory.NormalFamilies.ZalcmanMontel
+public import ComplexDynamics.Basic
+public import Mathlib.Order.OrderIsoNat
+
+@[expose] public section
 
 /-! # Montel normality off the closure of a two-point backward orbit -/
 

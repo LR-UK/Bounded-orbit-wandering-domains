@@ -1,4 +1,8 @@
-import FunctionTheory.Conformal.SchottkyEstimate
+module
+
+public import FunctionTheory.Conformal.SchottkyEstimate
+
+@[expose] public section
 
 open Set Metric
 namespace FunctionTheory

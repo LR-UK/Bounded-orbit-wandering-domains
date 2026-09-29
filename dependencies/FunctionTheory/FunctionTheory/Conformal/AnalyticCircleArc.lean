@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.RegularAnalyticArc
-import FunctionTheory.Conformal.CompactConformalInverse
+module
+
+public import FunctionTheory.Conformal.RegularAnalyticArc
+public import FunctionTheory.Conformal.CompactConformalInverse
+
+@[expose] public section
 
 open Set Metric Complex Filter
 open scoped Topology

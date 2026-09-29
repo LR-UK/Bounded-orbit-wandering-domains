@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.CoveringDiscArea
-import BoundedWanderingDomains.Surfaces.DomainKernelArea
-import BoundedWanderingDomains.Surfaces.DomainAreaSubtype
+public import BoundedWanderingDomains.Surfaces.CoveringDiscArea
+public import BoundedWanderingDomains.Surfaces.DomainKernelArea
+public import BoundedWanderingDomains.Surfaces.DomainAreaSubtype
+
+@[expose] public section
 
 /-! # Finite-model bounds control embedded covering discs of the limit -/
 

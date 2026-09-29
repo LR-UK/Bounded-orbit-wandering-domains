@@ -1,5 +1,9 @@
-import ComplexDynamics.FatouComponents
-import ComplexDynamics.Iteration
+module
+
+public import ComplexDynamics.FatouComponents
+public import ComplexDynamics.Iteration
+
+@[expose] public section
 
 /-!
 # Wandering components from uniform escape and trapped boundary points

@@ -1,9 +1,13 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.LocalSingularLimits
-import BoundedWanderingDomains.NormalFamilies
+public import BoundedWanderingDomains.LocalSingularLimits
+public import BoundedWanderingDomains.NormalFamilies
+
+@[expose] public section
 
 /-! # A genuine local derived-singular limit function
 

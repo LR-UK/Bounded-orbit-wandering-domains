@@ -1,10 +1,15 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import TauCeti.Analysis.Complex.Conformal.RiemannMapping.Conformal
-import ComplexApproximation.Topology.LocalHomeomorphNonseparation
-import ComplexApproximation.Topology.FilledContinua
+public import TauCeti.Analysis.Complex.Conformal.RiemannMapping.Conformal
+public import ComplexApproximation.Topology.LocalHomeomorphNonseparation
+public import ComplexApproximation.Topology.FilledContinua
+public import Mathlib.Topology.MetricSpace.ProperSpace.Lemmas
+
+@[expose] public section
 
 /-! # Compact fillings in simply connected plane domains -/
 

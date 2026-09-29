@@ -1,5 +1,9 @@
-import FunctionTheory.RiemannSphere.Basic
-import Mathlib.Geometry.Manifold.ContMDiff.NormedSpace
+module
+
+public import FunctionTheory.RiemannSphere.Basic
+public import Mathlib.Geometry.Manifold.ContMDiff.NormedSpace
+
+@[expose] public section
 
 /-! The finite-chart and inversion proofs follow Geoffrey Irving's Ray/Manifold/RiemannSphere.lean
 at 753f7131cf96f4651294de4398368abf136c34de (Apache 2.0), using Mathlib's

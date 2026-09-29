@@ -1,5 +1,9 @@
-import EremenkosConjecture.PlaneTopology
-import Mathlib.Topology.Separation.Hausdorff
+module
+
+public import EremenkosConjecture.PlaneTopology
+public import Mathlib.Topology.Separation.Hausdorff
+
+@[expose] public section
 
 open Set
 

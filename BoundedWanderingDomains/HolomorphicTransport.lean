@@ -1,8 +1,12 @@
-import BoundedWanderingDomains.AreaTransport
-import Mathlib.Analysis.Calculus.Deriv.Basic
-import Mathlib.Analysis.Calculus.FDeriv.RestrictScalars
-import Mathlib.RingTheory.Complex
-import Mathlib.RingTheory.Norm.Transitivity
+module
+
+public import BoundedWanderingDomains.AreaTransport
+public import Mathlib.Analysis.Calculus.Deriv.Basic
+public import Mathlib.Analysis.Calculus.FDeriv.RestrictScalars
+public import Mathlib.RingTheory.Complex
+public import Mathlib.RingTheory.Norm.Transitivity
+
+@[expose] public section
 
 open Set Function MeasureTheory
 open scoped ENNReal

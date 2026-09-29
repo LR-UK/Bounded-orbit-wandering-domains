@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.GlobalPointInsertion
-import BoundedWanderingDomains.Surfaces.SpherePunctureCover
-import BoundedWanderingDomains.SphereHyperbolicArea
+public import BoundedWanderingDomains.Surfaces.GlobalPointInsertion
+public import BoundedWanderingDomains.Surfaces.SpherePunctureCover
+public import BoundedWanderingDomains.SphereHyperbolicArea
+
+@[expose] public section
 
 /-! # Global point insertion on the normalized punctured sphere -/
 

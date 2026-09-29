@@ -1,4 +1,8 @@
-import FunctionTheory.Smooth.ExtensionNorm
+module
+
+public import FunctionTheory.Smooth.ExtensionNorm
+
+@[expose] public section
 
 open Set Function Filter
 open scoped Topology ContDiff

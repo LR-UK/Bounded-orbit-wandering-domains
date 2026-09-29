@@ -1,4 +1,8 @@
-import EremenkosConjecture.RayReferenceOrbits
+module
+
+public import EremenkosConjecture.RayReferenceOrbits
+
+@[expose] public section
 
 /-! # Uniform trapping of the boundary barrier -/
 

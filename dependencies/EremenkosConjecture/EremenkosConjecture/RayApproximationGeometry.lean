@@ -1,5 +1,9 @@
-import EremenkosConjecture.QuantitativeGeometry
-import ComplexApproximation.HalfStripApproximation
+module
+
+public import EremenkosConjecture.QuantitativeGeometry
+public import ComplexApproximation.HalfStripApproximation
+
+@[expose] public section
 
 /-! # The Arakelian set at one stage of the ray construction -/
 

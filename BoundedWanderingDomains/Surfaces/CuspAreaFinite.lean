@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.CuspDensityBounds
-import BoundedWanderingDomains.Surfaces.FinitePunctureAreaBridge
-import BoundedWanderingDomains.Surfaces.HyperbolicAreaFinite
+public import BoundedWanderingDomains.Surfaces.CuspDensityBounds
+public import BoundedWanderingDomains.Surfaces.FinitePunctureAreaBridge
+public import BoundedWanderingDomains.Surfaces.HyperbolicAreaFinite
+
+@[expose] public section
 
 /-! # Finite intrinsic area near an isolated surface puncture -/
 

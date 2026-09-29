@@ -1,7 +1,11 @@
-import ComplexApproximation.Topology.StripLocalisation
-import ComplexApproximation.Topology.ArakelianHomeomorphism
-import ComplexApproximation.Topology.ArakelianElementaryGeometry
-import Mathlib.Topology.OpenPartialHomeomorph.Basic
+module
+
+public import ComplexApproximation.Topology.StripLocalisation
+public import ComplexApproximation.Topology.ArakelianHomeomorphism
+public import ComplexApproximation.Topology.ArakelianElementaryGeometry
+public import Mathlib.Topology.OpenPartialHomeomorph.Basic
+
+@[expose] public section
 
 open Set Metric Bornology
 

@@ -1,5 +1,9 @@
-import EremenkosConjecture.FilledAttachmentBounds
-import FunctionTheory.Conformal.ShrinkingGateKernel
+module
+
+public import EremenkosConjecture.FilledAttachmentBounds
+public import FunctionTheory.Conformal.ShrinkingGateKernel
+
+@[expose] public section
 
 open Set Metric Complex Filter
 open scoped Topology

@@ -1,7 +1,11 @@
-import ComplexApproximation.ArakelianGluing
-import ComplexApproximation.Topology.ArakelianHomeomorphism
-import ComplexApproximation.Topology.StripArakelian
-import ComplexApproximation.Topology.HalfStripBands
+module
+
+public import ComplexApproximation.ArakelianGluing
+public import ComplexApproximation.Topology.ArakelianHomeomorphism
+public import ComplexApproximation.Topology.StripArakelian
+public import ComplexApproximation.Topology.HalfStripBands
+
+@[expose] public section
 
 /-! # Arakelian approximation on the model Section 7 configuration -/
 

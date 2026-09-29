@@ -1,6 +1,10 @@
-import Runge.LocalDomain
-import ComplexApproximation.Topology.Nonseparation
-import ComplexApproximation.ArakelianLocalDomain
+module
+
+public import Runge.LocalDomain
+public import ComplexApproximation.Topology.Nonseparation
+public import ComplexApproximation.ArakelianLocalDomain
+
+@[expose] public section
 
 /-!
 # Main statements for mathematical review

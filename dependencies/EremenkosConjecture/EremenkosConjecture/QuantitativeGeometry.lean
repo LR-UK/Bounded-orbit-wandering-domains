@@ -1,5 +1,9 @@
-import EremenkosConjecture.RayStage
-import ComplexApproximation.HalfStripMargins
+module
+
+public import EremenkosConjecture.RayStage
+public import ComplexApproximation.HalfStripMargins
+
+@[expose] public section
 
 /-! # Uniform tubes and quantitative changes of coordinates -/
 

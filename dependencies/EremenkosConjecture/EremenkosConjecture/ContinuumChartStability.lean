@@ -1,5 +1,9 @@
-import EremenkosConjecture.ContinuumStage
-import TauCeti.Analysis.Complex.Conformal.LocalDegree
+module
+
+public import EremenkosConjecture.ContinuumStage
+public import TauCeti.Analysis.Complex.Conformal.LocalDegree
+
+@[expose] public section
 
 open Set Metric Function
 open scoped NNReal

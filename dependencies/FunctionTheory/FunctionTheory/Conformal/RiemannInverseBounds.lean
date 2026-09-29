@@ -1,6 +1,10 @@
-import FunctionTheory.Conformal.RiemannMapping
-import TauCeti.Analysis.Complex.Conformal.Inverse.Function
-import TauCeti.Analysis.Complex.Conformal.NormalFamilies
+module
+
+public import FunctionTheory.Conformal.RiemannMapping
+public import TauCeti.Analysis.Complex.Conformal.Inverse.Function
+public import TauCeti.Analysis.Complex.Conformal.NormalFamilies
+
+@[expose] public section
 
 /-! # Nondegeneration of inverse Riemann maps
 

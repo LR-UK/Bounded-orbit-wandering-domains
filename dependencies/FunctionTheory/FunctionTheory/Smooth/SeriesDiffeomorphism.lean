@@ -1,6 +1,10 @@
-import FunctionTheory.Smooth.NearIdentitySmooth
-import Mathlib.Analysis.Calculus.SmoothSeries
-import Mathlib.Tactic
+module
+
+public import FunctionTheory.Smooth.NearIdentitySmooth
+public import Mathlib.Analysis.Calculus.SmoothSeries
+public import Mathlib.Tactic
+
+@[expose] public section
 
 open Set Function Filter
 open scoped Topology ContDiff NNReal

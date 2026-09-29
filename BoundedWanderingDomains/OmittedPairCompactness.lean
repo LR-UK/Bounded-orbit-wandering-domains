@@ -1,4 +1,8 @@
-import BoundedWanderingDomains.PunctureDensityLimits
+module
+
+public import BoundedWanderingDomains.PunctureDensityLimits
+
+@[expose] public section
 
 open Set Metric Function Filter
 open scoped Topology

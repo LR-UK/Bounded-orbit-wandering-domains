@@ -1,9 +1,13 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.PositiveAreaBridge
-import Mathlib.MeasureTheory.Measure.Regular
-import BoundedWanderingDomains.Surfaces.ChartCriticalValues
-import BoundedWanderingDomains.Surfaces.SaturationDynamics
-import BoundedWanderingDomains.Surfaces.AlmostEverywhere.OrbitShift
+public import BoundedWanderingDomains.Surfaces.PositiveAreaBridge
+public import Mathlib.MeasureTheory.Measure.Regular
+public import BoundedWanderingDomains.Surfaces.ChartCriticalValues
+public import BoundedWanderingDomains.Surfaces.SaturationDynamics
+public import BoundedWanderingDomains.Surfaces.AlmostEverywhere.OrbitShift
+
+@[expose] public section
 
 /-! # Positive chart area under injective holomorphic maps -/
 

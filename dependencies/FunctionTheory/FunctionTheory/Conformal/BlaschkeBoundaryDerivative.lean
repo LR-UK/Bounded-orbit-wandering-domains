@@ -1,6 +1,10 @@
-import FunctionTheory.Conformal.FiniteBlaschke
-import Mathlib.Analysis.Calculus.LogDeriv
-import Mathlib.Tactic
+module
+
+public import FunctionTheory.Conformal.FiniteBlaschke
+public import Mathlib.Analysis.Calculus.LogDeriv
+public import Mathlib.Tactic
+
+@[expose] public section
 
 open Set Metric
 open scoped Topology BigOperators ComplexConjugate

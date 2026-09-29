@@ -1,8 +1,12 @@
+module
+
 /- 
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.SphericalDerivedSet
+public import BoundedWanderingDomains.SphericalDerivedSet
+
+@[expose] public section
 
 /-!
 # Spherical escape subsequences

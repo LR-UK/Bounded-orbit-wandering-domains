@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.OpenMapping
-import Mathlib.Topology.DiscreteSubset
+public import BoundedWanderingDomains.Surfaces.OpenMapping
+public import Mathlib.Topology.DiscreteSubset
+
+@[expose] public section
 
 /-! # Finite fibres of open holomorphic surface maps -/
 

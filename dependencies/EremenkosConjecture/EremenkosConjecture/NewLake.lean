@@ -1,5 +1,9 @@
-import EremenkosConjecture.LakeConfiguration
-import Mathlib.Data.Fin.Tuple.Basic
+module
+
+public import EremenkosConjecture.LakeConfiguration
+public import Mathlib.Data.Fin.Tuple.Basic
+
+@[expose] public section
 
 open Set Metric Function
 

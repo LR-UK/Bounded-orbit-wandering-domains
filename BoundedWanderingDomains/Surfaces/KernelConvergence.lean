@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.KernelDomains
-import BoundedWanderingDomains.Surfaces.KernelNormal
+public import BoundedWanderingDomains.Surfaces.KernelDomains
+public import BoundedWanderingDomains.Surfaces.KernelNormal
+
+@[expose] public section
 
 /-! # Kernel convergence of intrinsic densities in a covered ambient surface
 

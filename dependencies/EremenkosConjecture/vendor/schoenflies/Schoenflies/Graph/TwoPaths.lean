@@ -1,10 +1,14 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
-import Schoenflies.Graph.PathGraph
-import Schoenflies.Graph.TwoConnected
+public import Schoenflies.Graph.PathGraph
+public import Schoenflies.Graph.TwoConnected
+
+@[expose] public section
 
 /-!
 # A cycle, as two paths sharing their ends, is 2-connected

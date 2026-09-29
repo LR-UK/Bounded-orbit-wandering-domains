@@ -1,6 +1,10 @@
-import EremenkosConjecture.NestedContinua
-import FunctionTheory.Conformal.StripBounds
-import Mathlib.Analysis.SpecificLimits.Basic
+module
+
+public import EremenkosConjecture.NestedContinua
+public import FunctionTheory.Conformal.StripBounds
+public import Mathlib.Analysis.SpecificLimits.Basic
+
+@[expose] public section
 
 open Set Metric Complex Filter
 open scoped Topology

@@ -1,6 +1,10 @@
-import FunctionTheory.Conformal.KernelSeparation
-import Mathlib.Analysis.Complex.LocallyUniformLimit
-import Mathlib.Analysis.Complex.OpenMapping
+module
+
+public import FunctionTheory.Conformal.KernelSeparation
+public import Mathlib.Analysis.Complex.LocallyUniformLimit
+public import Mathlib.Analysis.Complex.OpenMapping
+
+@[expose] public section
 
 /-! # Images of nondegenerate conformal limits
 

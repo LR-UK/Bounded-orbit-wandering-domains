@@ -9,6 +9,7 @@ import re
 import shutil
 import subprocess
 import time
+from verify_modules import audit as audit_module_headers
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'verification'
@@ -23,6 +24,7 @@ ENV.setdefault('LEAN_NUM_THREADS', '2')
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--all', action='store_true', help='Also build the retained legacy and research entry points.')
 args = parser.parse_args()
+audit_module_headers()
 timings = []
 (OUT / 'paper-declaration-mismatches.json').unlink(missing_ok=True)
 report_path = OUT / 'paper-submission.json'
@@ -40,9 +42,20 @@ def run(args, filename):
 
 targets = ['Solution', 'Challenge']
 if args.all:
-    targets += ['Research.SurfaceResearch', 'Legacy.Solution', 'Legacy.Challenge', 'BoundedWanderingDomains.CoveringSolution',
-                'Research.NewResults', 'Legacy.SingularLimitsChallenge', 'Legacy.SingularLimitsSolution']
+    targets += ['Research.SurfaceResearch', 'Legacy.Solution', 'BoundedWanderingDomains.CoveringSolution',
+                'Research.NewResults', 'Legacy.SingularLimitsSolution']
 run(['build', *targets], 'paper-build.log')
+
+# The independent Challenge deliberately contains statement placeholders.
+# Every other compiler/linter warning is a release failure.
+warning_lines = [line for line in (OUT / 'paper-build.log').read_text(encoding='utf-8').splitlines()
+                 if re.match(r'^warning:', line)]
+placeholder_warning = re.compile(
+    r'^warning: Challenge\.lean:'
+    r'\d+:\d+: declaration uses `sorry`$')
+ordinary_warnings = [line for line in warning_lines if not placeholder_warning.fullmatch(line)]
+if ordinary_warnings:
+    raise AssertionError('Unexpected build warnings: ' + repr(ordinary_warnings))
 for module in ['Challenge', 'Solution']:
     run(['env', 'lean', f'verification/ExportPaper{module}.lean'], 'paper' + module.lower() + '-declarations.log')
 
@@ -128,6 +141,8 @@ report = {
     'supporting_declarations_compared': len(challenge) - len(CONFIG['theorem_names']),
     'local_proof_modules_scanned': len(paper_visited), 'axioms': axioms,
     'built_all_entry_points': args.all,
+    'ordinary_linter_warnings': len(ordinary_warnings),
+    'intentional_challenge_placeholder_warnings': len(warning_lines),
     'all_local_proof_modules_scanned': len(visited),
     'source_hash_encoding': 'UTF-8 with LF line endings',
     'declarations_sha256': hashlib.sha256(json.dumps(challenge, sort_keys=True).encode()).hexdigest(),

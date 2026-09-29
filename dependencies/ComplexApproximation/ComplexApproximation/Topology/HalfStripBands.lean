@@ -1,5 +1,9 @@
-import ComplexApproximation.HalfStripProjection
-import ComplexApproximation.Topology.HorizontalEscape
+module
+
+public import ComplexApproximation.HalfStripProjection
+public import ComplexApproximation.Topology.HorizontalEscape
+
+@[expose] public section
 
 /-! # A U-shaped band together with a nested half-strip
 

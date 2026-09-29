@@ -1,5 +1,9 @@
-import BoundedWanderingDomains.LaplacianChain
-import BoundedWanderingDomains.LogBarrier
+module
+
+public import BoundedWanderingDomains.LaplacianChain
+public import BoundedWanderingDomains.LogBarrier
+
+@[expose] public section
 
 open MeasureTheory Filter Set InnerProductSpace Laplacian
 open scoped Topology ContDiff

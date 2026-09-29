@@ -1,16 +1,20 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.SphereCompactRemoval
-import BoundedWanderingDomains.SphereFiniteRemoval
-import BoundedWanderingDomains.SphereCombinedRemoval
-import BoundedWanderingDomains.PlaneUniformFiniteRemoval
-import BoundedWanderingDomains.LocallyUniformSingularLimits
-import BoundedWanderingDomains.LocalUniformSingularLimits
-import BoundedWanderingDomains.MeromorphicSphereHolomorphic
-import BoundedWanderingDomains.MeromorphicSurfaceModel
-import BoundedWanderingDomains.MeromorphicNormalityBridge
+public import BoundedWanderingDomains.SphereCompactRemoval
+public import BoundedWanderingDomains.SphereFiniteRemoval
+public import BoundedWanderingDomains.SphereCombinedRemoval
+public import BoundedWanderingDomains.PlaneUniformFiniteRemoval
+public import BoundedWanderingDomains.LocallyUniformSingularLimits
+public import BoundedWanderingDomains.LocalUniformSingularLimits
+public import BoundedWanderingDomains.MeromorphicSphereHolomorphic
+public import BoundedWanderingDomains.MeromorphicSurfaceModel
+public import BoundedWanderingDomains.MeromorphicNormalityBridge
+
+@[expose] public section
 
 /-!
 # Sphere area and derived singular limits

@@ -1,5 +1,9 @@
-import ComplexDynamics.Wandering
-import Mathlib.Topology.Algebra.GroupWithZero
+module
+
+public import ComplexDynamics.Wandering
+public import Mathlib.Topology.Algebra.GroupWithZero
+
+@[expose] public section
 
 /-! # Nonzero linear changes of coordinate -/
 

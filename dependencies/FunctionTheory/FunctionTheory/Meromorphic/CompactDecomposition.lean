@@ -1,6 +1,10 @@
-import FunctionTheory.Analytic.FiniteInterpolation
-import Mathlib.Analysis.Meromorphic.Basic
-import Mathlib.Topology.DiscreteSubset
+module
+
+public import FunctionTheory.Analytic.FiniteInterpolation
+public import Mathlib.Analysis.Meromorphic.Basic
+public import Mathlib.Topology.DiscreteSubset
+
+@[expose] public section
 
 open Set Filter Polynomial
 open scoped Topology BigOperators

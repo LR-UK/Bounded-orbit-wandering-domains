@@ -1,6 +1,10 @@
-import FunctionTheory.Conformal.StraightBoundaryContinuous
-import FunctionTheory.Conformal.HalfDiskCircleReflection
-import FunctionTheory.Conformal.RiemannMapping
+module
+
+public import FunctionTheory.Conformal.StraightBoundaryContinuous
+public import FunctionTheory.Conformal.HalfDiskCircleReflection
+public import FunctionTheory.Conformal.RiemannMapping
+
+@[expose] public section
 
 open Set Metric Complex Function Filter
 open scoped Topology ComplexConjugate

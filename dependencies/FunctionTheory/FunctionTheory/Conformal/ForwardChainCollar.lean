@@ -1,4 +1,8 @@
-import FunctionTheory.Conformal.UnivalentCompositionStability
+module
+
+public import FunctionTheory.Conformal.UnivalentCompositionStability
+
+@[expose] public section
 
 open Set Function Filter Metric
 open scoped Topology

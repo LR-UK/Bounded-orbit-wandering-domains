@@ -1,12 +1,16 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.Surfaces.DiscCover
-import Mathlib.Geometry.Manifold.MFDeriv.Atlas
-import Mathlib.Geometry.Manifold.MFDeriv.FDeriv
-import Mathlib.Topology.Homotopy.Lifting
-import TauCeti.Analysis.Complex.Conformal.Inverse.Function
+public import BoundedWanderingDomains.Surfaces.DiscCover
+public import Mathlib.Geometry.Manifold.MFDeriv.Atlas
+public import Mathlib.Geometry.Manifold.MFDeriv.FDeriv
+public import Mathlib.Topology.Homotopy.Lifting
+public import TauCeti.Analysis.Complex.Conformal.Inverse.Function
+
+@[expose] public section
 
 /-! # Holomorphic inverse branches and lifts on Riemann surfaces
 

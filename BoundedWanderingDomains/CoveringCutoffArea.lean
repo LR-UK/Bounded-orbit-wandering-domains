@@ -1,9 +1,13 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.CoveringEndIntegrals
-import BoundedWanderingDomains.PuncturedCutoff
+public import BoundedWanderingDomains.CoveringEndIntegrals
+public import BoundedWanderingDomains.PuncturedCutoff
+
+@[expose] public section
 
 open Set Filter MeasureTheory InnerProductSpace Laplacian Metric
 open scoped Topology ContDiff

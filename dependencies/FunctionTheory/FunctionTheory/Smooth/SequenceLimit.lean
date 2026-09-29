@@ -1,5 +1,9 @@
-import FunctionTheory.Smooth.SeriesDiffeomorphism
-import Mathlib.Topology.MetricSpace.Pseudo.Basic
+module
+
+public import FunctionTheory.Smooth.SeriesDiffeomorphism
+public import Mathlib.Topology.MetricSpace.Pseudo.Basic
+
+@[expose] public section
 
 open Set Function Filter
 open scoped Topology ContDiff

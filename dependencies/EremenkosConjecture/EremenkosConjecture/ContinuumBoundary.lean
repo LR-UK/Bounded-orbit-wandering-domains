@@ -1,5 +1,9 @@
-import EremenkosConjecture.ContinuumCounterexampleCriterion
-import ComplexDynamics.UniformEscape
+module
+
+public import EremenkosConjecture.ContinuumCounterexampleCriterion
+public import ComplexDynamics.UniformEscape
+
+@[expose] public section
 
 /-! # Uniform escape and Julia boundaries for the continuum construction
 

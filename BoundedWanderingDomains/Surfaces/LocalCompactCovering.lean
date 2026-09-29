@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.CompactInteriorCover
-import BoundedWanderingDomains.Surfaces.LocalMapTotalization
+public import BoundedWanderingDomains.Surfaces.CompactInteriorCover
+public import BoundedWanderingDomains.Surfaces.LocalMapTotalization
+
+@[expose] public section
 
 /-! # Compact covering models for an open-source local map -/
 

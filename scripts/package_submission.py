@@ -19,6 +19,8 @@ files = []
 for directory, dirs, names in os.walk(root, followlinks=False):
     dirs[:] = sorted(d for d in dirs if d not in excluded)
     for name in sorted(names):
+        if name in excluded:
+            continue
         path = Path(directory) / name
         assert not path.is_symlink(), f"Unexpected symlink: {path}"
         if path.relative_to(root).as_posix() in {"verification/cache435.log", "verification/cache-closure435.log", "verification/build435.log"}:
@@ -32,7 +34,7 @@ manifest = {p.relative_to(root).as_posix(): hashlib.sha256(p.read_bytes()).hexdi
 (root / "verification/package-sources.json").write_text(json.dumps(manifest, indent=2) + "\n")
 files = [p for p in files if p.name != "package-sources.json"]
 files.append(root / "verification/package-sources.json")
-archive = root.parent / "bounded-wandering-palomar-v1.7.0.zip"
+archive = root.parent / "bounded-wandering-palomar-v1.7.1.zip"
 with zipfile.ZipFile(archive, "w", zipfile.ZIP_DEFLATED) as z:
     for path in files:
         z.write(path, Path(root.name) / path.relative_to(root))

@@ -1,6 +1,10 @@
-import Mathlib.Analysis.Analytic.Order
-import Mathlib.Analysis.Complex.Basic
-import Mathlib.Topology.Separation.Basic
+module
+
+public import Mathlib.Analysis.Analytic.Order
+public import Mathlib.Analysis.Complex.Basic
+public import Mathlib.Topology.Separation.Basic
+
+@[expose] public section
 
 open Set Filter
 open scoped Topology

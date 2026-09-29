@@ -1,6 +1,10 @@
-import EremenkosConjecture.HalfStripInterior
-import ComplexApproximation.Topology.FillingInterior
-import ComplexApproximation.Topology.FillingCoordinateBounds
+module
+
+public import EremenkosConjecture.HalfStripInterior
+public import ComplexApproximation.Topology.FillingInterior
+public import ComplexApproximation.Topology.FillingCoordinateBounds
+
+@[expose] public section
 
 open Set Metric Complex
 

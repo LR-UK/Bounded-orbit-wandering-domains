@@ -1,7 +1,11 @@
-import EremenkosConjecture.ContinuumTargetMap
-import EremenkosConjecture.LocalReturnCharts
-import EremenkosConjecture.ContinuumStageChoices
-import EremenkosConjecture.ScaffoldingReturnMap
+module
+
+public import EremenkosConjecture.ContinuumTargetMap
+public import EremenkosConjecture.LocalReturnCharts
+public import EremenkosConjecture.ContinuumStageChoices
+public import EremenkosConjecture.ScaffoldingReturnMap
+
+@[expose] public section
 
 open Set Function
 

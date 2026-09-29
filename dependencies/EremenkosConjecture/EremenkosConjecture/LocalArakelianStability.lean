@@ -1,5 +1,9 @@
-import EremenkosConjecture.UniformAmbientExtension
-import ComplexApproximation.Topology.ArakelianHomeomorphism
+module
+
+public import EremenkosConjecture.UniformAmbientExtension
+public import ComplexApproximation.Topology.ArakelianHomeomorphism
+
+@[expose] public section
 
 open Set Metric Function
 open scoped NNReal

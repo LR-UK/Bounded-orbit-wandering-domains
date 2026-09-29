@@ -1,4 +1,8 @@
-import EremenkosConjecture.BiLipschitzCharts
+module
+
+public import EremenkosConjecture.BiLipschitzCharts
+
+@[expose] public section
 
 /-! # Uniform iterate control supplied by ambient charts -/
 

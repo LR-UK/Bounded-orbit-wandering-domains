@@ -1,6 +1,10 @@
-import Mathlib.Analysis.Analytic.Order
-import Mathlib.Analysis.Complex.Basic
-import Mathlib.Logic.Function.Iterate
+module
+
+public import Mathlib.Analysis.Analytic.Order
+public import Mathlib.Analysis.Complex.Basic
+public import Mathlib.Logic.Function.Iterate
+
+@[expose] public section
 open Set Filter
 open scoped Topology
 

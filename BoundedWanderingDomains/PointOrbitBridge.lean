@@ -1,9 +1,13 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.TrappedSimpleConnectivity
-import BoundedWanderingDomains.OmittedPairCompactness
+public import BoundedWanderingDomains.TrappedSimpleConnectivity
+public import BoundedWanderingDomains.OmittedPairCompactness
+
+@[expose] public section
 
 open Set Metric Function Filter
 open scoped Topology

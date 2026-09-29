@@ -1,9 +1,13 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.CompactOrbitFiniteModels
-import BoundedWanderingDomains.Surfaces.CompactClusterSeparation
-import BoundedWanderingDomains.Surfaces.EventualRegularArea
-import BoundedWanderingDomains.Surfaces.SimplyConnectedCoveringDiscs
-import BoundedWanderingDomains.Surfaces.ConditionalDiscShrink
+public import BoundedWanderingDomains.Surfaces.CompactOrbitFiniteModels
+public import BoundedWanderingDomains.Surfaces.CompactClusterSeparation
+public import BoundedWanderingDomains.Surfaces.EventualRegularArea
+public import BoundedWanderingDomains.Surfaces.SimplyConnectedCoveringDiscs
+public import BoundedWanderingDomains.Surfaces.ConditionalDiscShrink
+
+@[expose] public section
 
 /-! # A compact simply connected wandering orbit accumulates at derived singular values -/
 

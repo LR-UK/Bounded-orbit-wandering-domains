@@ -1,6 +1,10 @@
-import EremenkosConjecture.AmbientExtension
-import EremenkosConjecture.UniformConformalStability
-import ComplexApproximation.BiLipschitzExtension
+module
+
+public import EremenkosConjecture.AmbientExtension
+public import EremenkosConjecture.UniformConformalStability
+public import ComplexApproximation.BiLipschitzExtension
+
+@[expose] public section
 
 /-! # Ambient stability on unbounded sets with a uniform margin -/
 

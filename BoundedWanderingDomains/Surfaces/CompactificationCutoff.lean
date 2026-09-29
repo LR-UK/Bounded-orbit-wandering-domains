@@ -1,5 +1,9 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.FiniteSurfacePunctureCutoff
+public import BoundedWanderingDomains.Surfaces.FiniteSurfacePunctureCutoff
+
+@[expose] public section
 
 /-! # Restricting compact-surface puncture cutoffs to an open subsurface -/
 

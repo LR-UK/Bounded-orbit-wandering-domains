@@ -1,6 +1,10 @@
-import FunctionTheory.Conformal.SchottkyDisc
-import Mathlib.Analysis.Complex.Schwarz
-import Mathlib.Analysis.Normed.Group.Bounded
+module
+
+public import FunctionTheory.Conformal.SchottkyDisc
+public import Mathlib.Analysis.Complex.Schwarz
+public import Mathlib.Analysis.Normed.Group.Bounded
+
+@[expose] public section
 
 /-! # Uniform confinement near the centre of an omitted-values disc map
 

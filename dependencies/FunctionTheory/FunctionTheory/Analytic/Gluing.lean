@@ -1,5 +1,9 @@
-import Mathlib.Analysis.Analytic.Basic
-import Mathlib.Analysis.Complex.Basic
+module
+
+public import Mathlib.Analysis.Analytic.Basic
+public import Mathlib.Analysis.Complex.Basic
+
+@[expose] public section
 
 open Set Filter Metric
 open scoped Topology

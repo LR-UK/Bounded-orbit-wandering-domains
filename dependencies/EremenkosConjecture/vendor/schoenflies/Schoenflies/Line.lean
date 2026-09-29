@@ -1,13 +1,17 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
-import Schoenflies.Plane
-import Mathlib.Analysis.Normed.Affine.AddTorsor
-import Mathlib.Topology.Order.Bornology
-import Mathlib.Topology.Connected.LocallyConnected
-import Mathlib.LinearAlgebra.AffineSpace.FiniteDimensional
+public import Schoenflies.Plane
+public import Mathlib.Analysis.Normed.Affine.AddTorsor
+public import Mathlib.Topology.Order.Bornology
+public import Mathlib.Topology.Connected.LocallyConnected
+public import Mathlib.LinearAlgebra.AffineSpace.FiniteDimensional
+
+@[expose] public section
 
 /-!
 # Lines in the plane

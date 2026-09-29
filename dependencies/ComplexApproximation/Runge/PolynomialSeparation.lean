@@ -1,4 +1,8 @@
-import Runge.Holomorphic
+module
+
+public import Runge.Holomorphic
+
+@[expose] public section
 
 /-!
 # Polynomial separation of full compact sets

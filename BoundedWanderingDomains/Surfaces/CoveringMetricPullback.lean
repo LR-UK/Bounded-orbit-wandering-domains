@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.SurfaceSchwarz
-import BoundedWanderingDomains.Surfaces.ExtremalDisc
+public import BoundedWanderingDomains.Surfaces.SurfaceSchwarz
+public import BoundedWanderingDomains.Surfaces.ExtremalDisc
+
+@[expose] public section
 
 /-! # Exact pullback of the hyperbolic metric through a holomorphic covering -/
 open Set Function Filter Metric

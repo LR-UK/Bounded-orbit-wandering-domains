@@ -1,13 +1,17 @@
+module
+
 /- Intrinsic curvature −1 density, Schwarz–Pick, and coordinate-invariant area. -/
-import BoundedWanderingDomains.Surfaces.DensityRegularity
-import BoundedWanderingDomains.Surfaces.DensityRatioInvariance
-import BoundedWanderingDomains.Surfaces.AreaGain
-import BoundedWanderingDomains.Surfaces.AreaNullSets
-import BoundedWanderingDomains.Surfaces.PositiveAreaBridge
-import BoundedWanderingDomains.Surfaces.UniformizationBridge
-import BoundedWanderingDomains.Surfaces.SubdomainCover
-import BoundedWanderingDomains.Surfaces.DomainChartDensity
-import BoundedWanderingDomains.Surfaces.DomainSchwarz
-import BoundedWanderingDomains.Surfaces.DiscComparisonInfinity
-import BoundedWanderingDomains.Surfaces.HyperbolicAreaFinite
-import BoundedWanderingDomains.Surfaces.DomainArea
+public import BoundedWanderingDomains.Surfaces.DensityRegularity
+public import BoundedWanderingDomains.Surfaces.DensityRatioInvariance
+public import BoundedWanderingDomains.Surfaces.AreaGain
+public import BoundedWanderingDomains.Surfaces.AreaNullSets
+public import BoundedWanderingDomains.Surfaces.PositiveAreaBridge
+public import BoundedWanderingDomains.Surfaces.UniformizationBridge
+public import BoundedWanderingDomains.Surfaces.SubdomainCover
+public import BoundedWanderingDomains.Surfaces.DomainChartDensity
+public import BoundedWanderingDomains.Surfaces.DomainSchwarz
+public import BoundedWanderingDomains.Surfaces.DiscComparisonInfinity
+public import BoundedWanderingDomains.Surfaces.HyperbolicAreaFinite
+public import BoundedWanderingDomains.Surfaces.DomainArea
+
+@[expose] public section

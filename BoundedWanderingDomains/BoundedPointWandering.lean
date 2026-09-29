@@ -1,10 +1,14 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.PointOrbitBridge
-import BoundedWanderingDomains.LocalDiscInjectivity
-import BoundedWanderingDomains.EventualCompactDiscs
+public import BoundedWanderingDomains.PointOrbitBridge
+public import BoundedWanderingDomains.LocalDiscInjectivity
+public import BoundedWanderingDomains.EventualCompactDiscs
+
+@[expose] public section
 
 open Set Metric Function Filter
 open scoped Topology

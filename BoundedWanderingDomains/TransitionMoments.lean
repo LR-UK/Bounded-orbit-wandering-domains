@@ -1,9 +1,13 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.Regularisation
-import Mathlib.Analysis.Calculus.LocalExtr.Basic
+public import BoundedWanderingDomains.Regularisation
+public import Mathlib.Analysis.Calculus.LocalExtr.Basic
+
+@[expose] public section
 
 open Set Filter MeasureTheory
 open scoped Topology ContDiff

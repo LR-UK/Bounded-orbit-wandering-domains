@@ -1,7 +1,11 @@
-import RMT4.Spaces
-import RMT4.etape2
-import RMT4.has_sqrt
-import RMT4.Montel
+module
+
+public import RMT4.Spaces
+public import RMT4.etape2
+public import RMT4.has_sqrt
+public import RMT4.Montel
+
+@[expose] public section
 
 open UniformConvergence Topology Filter Set Metric Function
 

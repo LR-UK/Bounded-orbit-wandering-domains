@@ -1,6 +1,10 @@
-import BoundedWanderingDomains.RiemannMappingFull
-import BoundedWanderingDomains.LocalPunctures
-import Mathlib.Topology.Sequences
+module
+
+public import BoundedWanderingDomains.RiemannMappingFull
+public import BoundedWanderingDomains.LocalPunctures
+public import Mathlib.Topology.Sequences
+
+@[expose] public section
 
 open Set Metric Function Filter
 open scoped Topology Uniformity UniformConvergence

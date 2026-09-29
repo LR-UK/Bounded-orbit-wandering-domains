@@ -1,11 +1,15 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
-import Schoenflies.StageTransition
-import Schoenflies.LimitMap
-import Schoenflies.BoundaryContinuity2
+public import Schoenflies.StageTransition
+public import Schoenflies.LimitMap
+public import Schoenflies.BoundaryContinuity2
+
+@[expose] public section
 
 /-!
 # From a sequence of transferred stages to a `LimitTower`

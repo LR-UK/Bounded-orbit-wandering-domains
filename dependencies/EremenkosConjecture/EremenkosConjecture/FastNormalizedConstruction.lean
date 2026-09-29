@@ -1,6 +1,10 @@
-import EremenkosConjecture.NonemptyBoundaryData
-import EremenkosConjecture.VariableDynamics
-import EremenkosConjecture.NormalizedConstruction
+module
+
+public import EremenkosConjecture.NonemptyBoundaryData
+public import EremenkosConjecture.VariableDynamics
+public import EremenkosConjecture.NormalizedConstruction
+
+@[expose] public section
 
 /-! # Fast wandering compacta in the unit disk -/
 

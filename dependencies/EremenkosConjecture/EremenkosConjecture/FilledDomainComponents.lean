@@ -1,5 +1,9 @@
-import EremenkosConjecture.PlaneSimpleConnectivity
-import ComplexApproximation.Topology.FillingInterior
+module
+
+public import EremenkosConjecture.PlaneSimpleConnectivity
+public import ComplexApproximation.Topology.FillingInterior
+
+@[expose] public section
 
 open Set
 

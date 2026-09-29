@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.FinitePunctureInsertion
-import BoundedWanderingDomains.Surfaces.DomainAreaSubtype
-import BoundedWanderingDomains.Surfaces.HyperbolicAreaFinite
+public import BoundedWanderingDomains.Surfaces.FinitePunctureInsertion
+public import BoundedWanderingDomains.Surfaces.DomainAreaSubtype
+public import BoundedWanderingDomains.Surfaces.HyperbolicAreaFinite
+
+@[expose] public section
 
 /-! # From a global one-point cost to bounded finite insertion
 

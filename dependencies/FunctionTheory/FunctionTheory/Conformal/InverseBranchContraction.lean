@@ -1,7 +1,11 @@
-import TauCeti.Analysis.Complex.Conformal.Biholomorph
-import Mathlib.Analysis.Calculus.MeanValue
-import Mathlib.Analysis.Calculus.Deriv.Comp
-import Mathlib.Tactic
+module
+
+public import TauCeti.Analysis.Complex.Conformal.Biholomorph
+public import Mathlib.Analysis.Calculus.MeanValue
+public import Mathlib.Analysis.Calculus.Deriv.Comp
+public import Mathlib.Tactic
+
+@[expose] public section
 
 open Set Filter Metric
 open scoped Topology

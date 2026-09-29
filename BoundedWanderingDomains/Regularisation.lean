@@ -1,8 +1,12 @@
-import BoundedWanderingDomains.AreaDeficitCore
-import Mathlib.Analysis.SpecialFunctions.SmoothTransition
-import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
-import Mathlib.Analysis.Calculus.ContDiff.Deriv
-import Mathlib.Analysis.Calculus.Deriv.Slope
+module
+
+public import BoundedWanderingDomains.AreaDeficitCore
+public import Mathlib.Analysis.SpecialFunctions.SmoothTransition
+public import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
+public import Mathlib.Analysis.Calculus.ContDiff.Deriv
+public import Mathlib.Analysis.Calculus.Deriv.Slope
+
+@[expose] public section
 
 open MeasureTheory Filter Set
 open scoped Topology ContDiff ENNReal

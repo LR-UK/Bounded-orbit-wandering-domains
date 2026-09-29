@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.StripUniformity
-import EremenkosConjecture.UniformConformalStability
+module
+
+public import FunctionTheory.Conformal.StripUniformity
+public import EremenkosConjecture.UniformConformalStability
+
+@[expose] public section
 
 /-! # Uniform iterate control from strip-end estimates
 

@@ -1,6 +1,10 @@
-import EremenkosConjecture.ComponentBarriers
-import EremenkosConjecture.UniformConformalStability
-import Mathlib.Topology.OpenPartialHomeomorph.Basic
+module
+
+public import EremenkosConjecture.ComponentBarriers
+public import EremenkosConjecture.UniformConformalStability
+public import Mathlib.Topology.OpenPartialHomeomorph.Basic
+
+@[expose] public section
 
 open Set Metric Function
 

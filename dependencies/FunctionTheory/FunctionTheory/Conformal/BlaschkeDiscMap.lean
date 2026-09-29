@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.FiniteBlaschke
-import TauCeti.Analysis.Complex.Conformal.Moebius
+module
+
+public import FunctionTheory.Conformal.FiniteBlaschke
+public import TauCeti.Analysis.Complex.Conformal.Moebius
+
+@[expose] public section
 
 open Set Metric
 

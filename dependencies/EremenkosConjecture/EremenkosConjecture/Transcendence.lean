@@ -1,5 +1,9 @@
-import EremenkosConjecture.DiscGeometry
-import Mathlib.Topology.Algebra.Polynomial
+module
+
+public import EremenkosConjecture.DiscGeometry
+public import Mathlib.Topology.Algebra.Polynomial
+
+@[expose] public section
 
 /-!
 # Transcendence from the disk itinerary and trapping

@@ -1,5 +1,9 @@
-import EremenkosConjecture.BoundarySelection
-import Mathlib.Topology.Order.Compact
+module
+
+public import EremenkosConjecture.BoundarySelection
+public import Mathlib.Topology.Order.Compact
+
+@[expose] public section
 
 open Set Metric Filter
 open scoped Topology

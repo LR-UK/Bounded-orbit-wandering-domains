@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.CompactBranchValues
-import Mathlib.Topology.IsLocalHomeomorph
+public import BoundedWanderingDomains.Surfaces.CompactBranchValues
+public import Mathlib.Topology.IsLocalHomeomorph
+
+@[expose] public section
 
 /-! # Local homeomorphisms away from surface branch values -/
 

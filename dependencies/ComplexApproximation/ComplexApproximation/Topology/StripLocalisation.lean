@@ -1,5 +1,9 @@
-import ComplexApproximation.Topology.HorizontalEscape
-import ComplexApproximation.Topology.Nonseparation
+module
+
+public import ComplexApproximation.Topology.HorizontalEscape
+public import ComplexApproximation.Topology.Nonseparation
+
+@[expose] public section
 
 /-! # Restricting escape to a horizontal strip
 

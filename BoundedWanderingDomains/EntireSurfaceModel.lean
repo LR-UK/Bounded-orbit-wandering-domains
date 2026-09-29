@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.MeromorphicNormalityBridge
-import BoundedWanderingDomains.MeromorphicSingularValues
+public import BoundedWanderingDomains.MeromorphicNormalityBridge
+public import BoundedWanderingDomains.MeromorphicSingularValues
+
+@[expose] public section
 
 /-! # The entire-function specialization of the meromorphic sphere model -/
 

@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.BoundaryBarrierPackage
-import BoundedWanderingDomains.Surfaces.WanderingAnchorDisk
+public import BoundedWanderingDomains.Surfaces.BoundaryBarrierPackage
+public import BoundedWanderingDomains.Surfaces.WanderingAnchorDisk
+
+@[expose] public section
 
 /-! # A compact wandering tail in a fixed covered subsurface -/
 

@@ -1,4 +1,8 @@
-import EremenkosConjecture.WadaLimits
+module
+
+public import EremenkosConjecture.WadaLimits
+
+@[expose] public section
 
 open Set Metric Function
 

@@ -1,4 +1,8 @@
-import EremenkosConjecture.VariableReferenceMap
+module
+
+public import EremenkosConjecture.VariableReferenceMap
+
+@[expose] public section
 
 /-! # Finite orbits of the piecewise reference map -/
 

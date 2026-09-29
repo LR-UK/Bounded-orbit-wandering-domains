@@ -1,13 +1,17 @@
+module
+
 /-
 Copyright (c) 2026 Will (Ziang) Li. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Will (Ziang) Li
 -/
-import RiemannDynamics.Sphere.Basic
-import RiemannDynamics.Sphere.MobiusAction
-import RiemannDynamics.NormalFamilies.Spherical
-import FunctionTheory.RiemannSphere.Basic
-import Mathlib.Geometry.Manifold.IsManifold.Basic
+public import RiemannDynamics.Sphere.Basic
+public import RiemannDynamics.Sphere.MobiusAction
+public import RiemannDynamics.NormalFamilies.Spherical
+public import FunctionTheory.RiemannSphere.Basic
+public import Mathlib.Geometry.Manifold.IsManifold.Basic
+
+@[expose] public section
 
 /-!
 # The Riemann sphere as a complex-analytic manifold

@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.DomainCoveringMetricPullback
-import BoundedWanderingDomains.Surfaces.DomainMapAreaTransport
+public import BoundedWanderingDomains.Surfaces.DomainCoveringMetricPullback
+public import BoundedWanderingDomains.Surfaces.DomainMapAreaTransport
+
+@[expose] public section
 
 /-! # Exact area transport through a covering of open surface domains -/
 

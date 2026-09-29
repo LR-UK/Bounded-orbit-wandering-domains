@@ -1,10 +1,14 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.DiscCoveringMetric
-import FunctionTheory.Conformal.SchottkyDisc
-import Mathlib.Analysis.Complex.BorelCaratheodory
+public import BoundedWanderingDomains.DiscCoveringMetric
+public import FunctionTheory.Conformal.SchottkyDisc
+public import Mathlib.Analysis.Complex.BorelCaratheodory
+
+@[expose] public section
 
 open Set Metric Function
 

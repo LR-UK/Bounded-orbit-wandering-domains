@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.CayleyCoordinates
-import Mathlib.Analysis.SpecialFunctions.Complex.LogDeriv
+module
+
+public import FunctionTheory.Conformal.CayleyCoordinates
+public import Mathlib.Analysis.SpecialFunctions.Complex.LogDeriv
+
+@[expose] public section
 
 /-! # Explicit conformal coordinates for the horizontal strip -/
 

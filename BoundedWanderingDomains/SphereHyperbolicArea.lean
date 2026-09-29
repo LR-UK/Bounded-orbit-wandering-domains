@@ -1,9 +1,13 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.SphereChartTransition
-import Mathlib.MeasureTheory.Constructions.BorelSpace.Basic
+public import BoundedWanderingDomains.SphereChartTransition
+public import Mathlib.MeasureTheory.Constructions.BorelSpace.Basic
+
+@[expose] public section
 
 /-!
 # Intrinsic hyperbolic area of sphere domains
@@ -46,7 +50,7 @@ def SphereHyperbolicMetricData.mono
   anchorOne_mem := hAB D.anchorOne_mem
   anchorTwo_mem := hAB D.anchorTwo_mem
 
-private noncomputable def metricDataWithPoleOfTwoPoints
+noncomputable def metricDataWithPoleOfTwoPoints
     {A : Set (OnePoint ℂ)} (p s t : OnePoint ℂ)
     (hp : p ∈ A) (hs : s ∈ A) (ht : t ∈ A)
     (hst : s ≠ t) (hsp : s ≠ p) (htp : t ≠ p) :

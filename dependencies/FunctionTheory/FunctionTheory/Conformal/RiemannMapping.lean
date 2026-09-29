@@ -1,7 +1,11 @@
-import FunctionTheory.Holomorphic
-import TauCeti.Analysis.Complex.Conformal.RiemannMapping.Conformal
-import TauCeti.Analysis.Complex.Conformal.RiemannMapping.Normalization
-import TauCeti.Analysis.Complex.Conformal.Reflection.Principle
+module
+
+public import FunctionTheory.Holomorphic
+public import TauCeti.Analysis.Complex.Conformal.RiemannMapping.Conformal
+public import TauCeti.Analysis.Complex.Conformal.RiemannMapping.Normalization
+public import TauCeti.Analysis.Complex.Conformal.Reflection.Principle
+
+@[expose] public section
 
 /-! # Riemann maps on their actual domains
 

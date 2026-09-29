@@ -1,4 +1,8 @@
-import FunctionTheory.Conformal.StraightBoundaryExtension
+module
+
+public import FunctionTheory.Conformal.StraightBoundaryExtension
+
+@[expose] public section
 
 /-! # The direct coordinate at a straight boundary
 

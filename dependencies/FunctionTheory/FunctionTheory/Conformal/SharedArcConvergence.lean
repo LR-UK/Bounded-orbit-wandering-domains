@@ -1,6 +1,10 @@
-import FunctionTheory.Conformal.UnivalentBoundaryConvergence
-import FunctionTheory.Conformal.CircleCollar
-import FunctionTheory.Conformal.KernelSeparation
+module
+
+public import FunctionTheory.Conformal.UnivalentBoundaryConvergence
+public import FunctionTheory.Conformal.CircleCollar
+public import FunctionTheory.Conformal.KernelSeparation
+
+@[expose] public section
 
 /-! # Boundary convergence on eventually preserved circle arcs
 

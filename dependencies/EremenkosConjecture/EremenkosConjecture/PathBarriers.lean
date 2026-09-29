@@ -1,6 +1,10 @@
-import EremenkosConjecture.BoundaryGates
-import Mathlib.Topology.Order.MonotoneConvergence
-import Mathlib.Topology.Order.Compact
+module
+
+public import EremenkosConjecture.BoundaryGates
+public import Mathlib.Topology.Order.MonotoneConvergence
+public import Mathlib.Topology.Order.Compact
+
+@[expose] public section
 
 /-! # Alternating openings prohibit paths across nested boundaries -/
 

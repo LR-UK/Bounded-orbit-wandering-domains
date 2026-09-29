@@ -1,5 +1,9 @@
-import ComplexApproximation.Arakelian
-import Mathlib.Topology.Separation.Regular
+module
+
+public import ComplexApproximation.Arakelian
+public import Mathlib.Topology.Separation.Regular
+
+@[expose] public section
 
 /-! # Simultaneous approximation on disjoint closed pieces -/
 

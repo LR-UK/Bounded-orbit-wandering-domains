@@ -1,6 +1,10 @@
-import EremenkosConjecture.ContinuumReferenceOrbits
-import EremenkosConjecture.LocalChartMargins
-import EremenkosConjecture.UniformIterateControl
+module
+
+public import EremenkosConjecture.ContinuumReferenceOrbits
+public import EremenkosConjecture.LocalChartMargins
+public import EremenkosConjecture.UniformIterateControl
+
+@[expose] public section
 
 open Set Metric Function
 open scoped NNReal

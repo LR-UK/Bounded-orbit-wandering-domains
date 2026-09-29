@@ -1,4 +1,8 @@
-import EremenkosConjecture.ContinuumChartStability
+module
+
+public import EremenkosConjecture.ContinuumChartStability
+
+@[expose] public section
 
 open Set Function
 open scoped NNReal

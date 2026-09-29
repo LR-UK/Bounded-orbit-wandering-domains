@@ -1,8 +1,12 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.CompactCentreNormal
-import BoundedWanderingDomains.Surfaces.DiscComparisonInfinity
-import BoundedWanderingDomains.Surfaces.BoundaryEscape
-import Mathlib.Topology.Connected.Clopen
+public import BoundedWanderingDomains.Surfaces.CompactCentreNormal
+public import BoundedWanderingDomains.Surfaces.DiscComparisonInfinity
+public import BoundedWanderingDomains.Surfaces.BoundaryEscape
+public import Mathlib.Topology.Connected.Clopen
+
+@[expose] public section
 
 /-! # Normal convergence at a finite compactification end
 

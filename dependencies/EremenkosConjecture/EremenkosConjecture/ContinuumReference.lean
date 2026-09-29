@@ -1,8 +1,12 @@
-import EremenkosConjecture.ContinuumReturnChannel
-import EremenkosConjecture.ContinuumRegionGeometry
-import EremenkosConjecture.LocalReferenceOrbits
-import EremenkosConjecture.FilledRayBandArakelian
-import ComplexApproximation.Topology.StripArakelian
+module
+
+public import EremenkosConjecture.ContinuumReturnChannel
+public import EremenkosConjecture.ContinuumRegionGeometry
+public import EremenkosConjecture.LocalReferenceOrbits
+public import EremenkosConjecture.FilledRayBandArakelian
+public import ComplexApproximation.Topology.StripArakelian
+
+@[expose] public section
 
 open Set Metric Function
 

@@ -1,5 +1,9 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.DomainArea
+public import BoundedWanderingDomains.Surfaces.DomainArea
+
+@[expose] public section
 
 /-! # Comparing ambient domain area with intrinsic subtype area -/
 

@@ -1,4 +1,8 @@
-import ComplexApproximation.Topology.HorizontalSets
+module
+
+public import ComplexApproximation.Topology.HorizontalSets
+
+@[expose] public section
 
 /-! # Outward horizontal rays as witnesses of unbounded components -/
 

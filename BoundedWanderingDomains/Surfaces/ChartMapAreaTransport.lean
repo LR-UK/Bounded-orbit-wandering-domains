@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.HyperbolicArea
-import BoundedWanderingDomains.Surfaces.CoveringMetricPullback
-import BoundedWanderingDomains.HolomorphicTransport
+public import BoundedWanderingDomains.Surfaces.HyperbolicArea
+public import BoundedWanderingDomains.Surfaces.CoveringMetricPullback
+public import BoundedWanderingDomains.HolomorphicTransport
+
+@[expose] public section
 
 /-! # Area transport for a surface map in one pair of charts -/
 

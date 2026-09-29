@@ -1,9 +1,13 @@
+module
+
 /-
 Copyright (c) 2026 Will (Ziang) Li. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Will (Ziang) Li
 -/
-import RiemannDynamics.Analysis.Winding.GridPrimitives.Join
+public import RiemannDynamics.Analysis.Winding.GridPrimitives.Join
+
+@[expose] public section
 
 /-!
 # An essential grid loop from a bounded complementary component

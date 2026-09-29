@@ -1,3 +1,5 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
@@ -5,9 +7,11 @@ Released under Apache 2.0 licence; see LICENSE.
 The projection-smoothness argument adapts Will (Ziang) Li's proof in
 RiemannDynamics/Uniformization/Fuchsian.lean (Apache 2.0).
 -/
-import RiemannDynamics.Uniformization.CoverCountable
-import BoundedWanderingDomains.DiscCoveringMetric
-import FunctionTheory.Conformal.LittlePicardBloch
+public import RiemannDynamics.Uniformization.CoverCountable
+public import BoundedWanderingDomains.DiscCoveringMetric
+public import FunctionTheory.Conformal.LittlePicardBloch
+
+@[expose] public section
 
 open Set Metric Function Filter Topology TopologicalSpace
 open scoped Manifold ContDiff

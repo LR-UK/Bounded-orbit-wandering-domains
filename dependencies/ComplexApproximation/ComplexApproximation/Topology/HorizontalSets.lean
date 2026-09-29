@@ -1,4 +1,8 @@
-import ComplexApproximation.Topology.Arakelian
+module
+
+public import ComplexApproximation.Topology.Arakelian
+
+@[expose] public section
 
 /-! # Horizontal approximation sets
 

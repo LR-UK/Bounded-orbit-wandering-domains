@@ -1,5 +1,9 @@
-import Mathlib.Topology.OpenPartialHomeomorph.IsImage
-import Mathlib.Topology.Separation.Hausdorff
+module
+
+public import Mathlib.Topology.OpenPartialHomeomorph.IsImage
+public import Mathlib.Topology.Separation.Hausdorff
+
+@[expose] public section
 
 open Set
 open scoped Topology

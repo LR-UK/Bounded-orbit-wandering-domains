@@ -1,6 +1,10 @@
-import EremenkosConjecture.FilledAttachmentKernel
-import FunctionTheory.Conformal.RightEndKernel
-import Mathlib.Analysis.Convex.Contractible
+module
+
+public import EremenkosConjecture.FilledAttachmentKernel
+public import FunctionTheory.Conformal.RightEndKernel
+public import Mathlib.Analysis.Convex.Contractible
+
+@[expose] public section
 
 open Set Metric Complex Filter FunctionTheory
 open scoped Topology

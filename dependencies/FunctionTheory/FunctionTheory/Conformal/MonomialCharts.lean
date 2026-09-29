@@ -1,6 +1,10 @@
-import FunctionTheory.Conformal.BlaschkeMonomial
-import FunctionTheory.Conformal.LocalConjugacyCritical
-import FunctionTheory.Conformal.InjectiveImageChart
+module
+
+public import FunctionTheory.Conformal.BlaschkeMonomial
+public import FunctionTheory.Conformal.LocalConjugacyCritical
+public import FunctionTheory.Conformal.InjectiveImageChart
+
+@[expose] public section
 
 open Set Filter Metric
 open scoped Topology

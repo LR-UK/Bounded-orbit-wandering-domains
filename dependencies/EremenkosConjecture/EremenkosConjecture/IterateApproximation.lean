@@ -1,7 +1,11 @@
-import Mathlib.Topology.MetricSpace.Thickening
-import Mathlib.Topology.UniformSpace.HeineCantor
-import Mathlib.Dynamics.FixedPoints.Basic
-import Mathlib.Tactic.Linarith
+module
+
+public import Mathlib.Topology.MetricSpace.Thickening
+public import Mathlib.Topology.UniformSpace.HeineCantor
+public import Mathlib.Dynamics.FixedPoints.Basic
+public import Mathlib.Tactic.Linarith
+
+@[expose] public section
 
 /-!
 # Stability of finite iterates (Lemma 2.5)

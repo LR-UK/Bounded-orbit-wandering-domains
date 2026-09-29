@@ -1,9 +1,13 @@
-import EremenkosConjecture.ExteriorSlitTip
-import EremenkosConjecture.JordanBoundaryEquivalence
-import EremenkosConjecture.JordanCompactRecognition
-import FunctionTheory.Conformal.SlitTipJordanCurve
-import FunctionTheory.Conformal.TangentEnclosure
-import FunctionTheory.Conformal.TangentEnclosureNeighbourhood
+module
+
+public import EremenkosConjecture.ExteriorSlitTip
+public import EremenkosConjecture.JordanBoundaryEquivalence
+public import EremenkosConjecture.JordanCompactRecognition
+public import FunctionTheory.Conformal.SlitTipJordanCurve
+public import FunctionTheory.Conformal.TangentEnclosure
+public import FunctionTheory.Conformal.TangentEnclosureNeighbourhood
+
+@[expose] public section
 
 open Set Metric Complex Function
 

@@ -1,8 +1,12 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import RiemannDynamics.Uniformization.Perron.GreensFunction.Basic
-import BoundedWanderingDomains.Surfaces.SubdomainCover
-import BoundedWanderingDomains.Surfaces.LegacyDiscCoverBridge
-import BoundedWanderingDomains.Surfaces.SubtypeHolomorphic
+public import RiemannDynamics.Uniformization.Perron.GreensFunction.Basic
+public import BoundedWanderingDomains.Surfaces.SubdomainCover
+public import BoundedWanderingDomains.Surfaces.LegacyDiscCoverBridge
+public import BoundedWanderingDomains.Surfaces.SubtypeHolomorphic
+
+@[expose] public section
 
 /-! # Topology of finitely punctured analytic surfaces -/
 

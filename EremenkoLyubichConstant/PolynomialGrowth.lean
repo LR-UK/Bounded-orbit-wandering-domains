@@ -1,14 +1,18 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Lasse Rempe
 -/
 
-import EremenkoLyubichConstant.ClassB
-import Mathlib.Analysis.Complex.TaylorSeries
-import Mathlib.Analysis.Complex.Liouville
-import Mathlib.Analysis.Asymptotics.SpecificAsymptotics
-import Mathlib.Analysis.Meromorphic.Basic
+public import EremenkoLyubichConstant.ClassB
+public import Mathlib.Analysis.Complex.TaylorSeries
+public import Mathlib.Analysis.Complex.Liouville
+public import Mathlib.Analysis.Asymptotics.SpecificAsymptotics
+public import Mathlib.Analysis.Meromorphic.Basic
+
+@[expose] public section
 
 open Filter Metric Set Polynomial
 open scoped Topology

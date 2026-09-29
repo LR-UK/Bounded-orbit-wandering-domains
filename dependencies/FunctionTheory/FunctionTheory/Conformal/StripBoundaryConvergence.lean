@@ -1,6 +1,10 @@
-import FunctionTheory.Conformal.StraightBoundaryConvergence
-import FunctionTheory.Conformal.StripEndMapLocal
-import Mathlib.Analysis.Normed.Field.Lemmas
+module
+
+public import FunctionTheory.Conformal.StraightBoundaryConvergence
+public import FunctionTheory.Conformal.StripEndMapLocal
+public import Mathlib.Analysis.Normed.Field.Lemmas
+
+@[expose] public section
 
 open Set Metric Complex Filter Function
 open scoped Topology

@@ -1,5 +1,9 @@
-import Mathlib.Geometry.Manifold.PartitionOfUnity
-import Mathlib.Analysis.Complex.Basic
+module
+
+public import Mathlib.Geometry.Manifold.PartitionOfUnity
+public import Mathlib.Analysis.Complex.Basic
+
+@[expose] public section
 
 /-!
 # A smooth compactly supported extension near a compact set

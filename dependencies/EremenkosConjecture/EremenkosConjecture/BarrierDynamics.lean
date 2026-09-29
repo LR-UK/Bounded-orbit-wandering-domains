@@ -1,7 +1,11 @@
-import EremenkosConjecture.PathBarrierData
-import EremenkosConjecture.FastEscape
-import ComplexDynamics.BoundedNormality
-import ComplexDynamics.PathComponents
+module
+
+public import EremenkosConjecture.PathBarrierData
+public import EremenkosConjecture.FastEscape
+public import ComplexDynamics.BoundedNormality
+public import ComplexDynamics.PathComponents
+
+@[expose] public section
 
 open Set Metric Function Filter ComplexDynamics
 

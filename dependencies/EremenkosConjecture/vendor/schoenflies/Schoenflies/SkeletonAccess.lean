@@ -1,3 +1,5 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
@@ -7,9 +9,11 @@ Authors: Álvaro Begué
 /- Compatibility update, 23 September 2026: current Mathlib names and Lean
 linter suggestions; original mathematical statements and attribution retained. -/
 
-import Schoenflies.SkeletonSectors
-import Schoenflies.AccessibleJoin
-import Schoenflies.Square
+public import Schoenflies.SkeletonSectors
+public import Schoenflies.AccessibleJoin
+public import Schoenflies.Square
+
+@[expose] public section
 
 /-!
 # The sector decomposition at every point, and polygonal-side accessibility

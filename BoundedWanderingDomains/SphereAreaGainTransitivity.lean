@@ -1,9 +1,13 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.SphereHyperbolicArea
-import BoundedWanderingDomains.AreaGainSubadditivity
+public import BoundedWanderingDomains.SphereHyperbolicArea
+public import BoundedWanderingDomains.AreaGainSubadditivity
+
+@[expose] public section
 
 /-!
 # Subadditivity of intrinsic sphere area gain

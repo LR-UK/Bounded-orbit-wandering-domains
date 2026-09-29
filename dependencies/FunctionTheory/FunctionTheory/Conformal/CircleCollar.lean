@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.ReflectionBounds
-import Mathlib.Analysis.Normed.Module.Convex
+module
+
+public import FunctionTheory.Conformal.ReflectionBounds
+public import Mathlib.Analysis.Normed.Module.Convex
+
+@[expose] public section
 
 /-! # Symmetric neighbourhoods of unit-circle points
 

@@ -1,7 +1,11 @@
-import Mathlib.Analysis.Complex.Basic
-import Mathlib.Analysis.Calculus.ContDiff.Bounds
-import Mathlib.Data.Nat.Choose.Sum
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.Complex.Basic
+public import Mathlib.Analysis.Calculus.ContDiff.Bounds
+public import Mathlib.Data.Nat.Choose.Sum
+public import Mathlib.Tactic
+
+@[expose] public section
 
 open Set Function Filter
 open scoped Topology ContDiff

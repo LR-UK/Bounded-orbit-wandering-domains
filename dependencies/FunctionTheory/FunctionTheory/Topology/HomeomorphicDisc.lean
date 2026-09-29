@@ -1,8 +1,12 @@
-import TauCeti.Topology.JordanCurve.Basic
-import TauCeti.Analysis.Complex.Conformal.Biholomorph
-import FunctionTheory.Holomorphic
-import Mathlib.Analysis.Convex.Contractible
-import Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected
+module
+
+public import TauCeti.Topology.JordanCurve.Basic
+public import TauCeti.Analysis.Complex.Conformal.Biholomorph
+public import FunctionTheory.Holomorphic
+public import Mathlib.Analysis.Convex.Contractible
+public import Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected
+
+@[expose] public section
 
 open Set Metric
 

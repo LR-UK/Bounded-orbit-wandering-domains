@@ -1,5 +1,9 @@
-import Runge.Interpolation
-import Runge.LocalDomain
+module
+
+public import Runge.Interpolation
+public import Runge.LocalDomain
+
+@[expose] public section
 
 /-!
 # Finite interpolation for functions with their actual domain

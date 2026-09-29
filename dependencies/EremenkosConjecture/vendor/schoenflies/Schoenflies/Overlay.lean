@@ -1,13 +1,17 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
-import Schoenflies.Subdivide
-import Schoenflies.SegmentOrder
-import Schoenflies.SegmentMeet
-import Schoenflies.Polygonal
-import Schoenflies.Graph.Drawing
+public import Schoenflies.Subdivide
+public import Schoenflies.SegmentOrder
+public import Schoenflies.SegmentMeet
+public import Schoenflies.Polygonal
+public import Schoenflies.Graph.Drawing
+
+@[expose] public section
 
 /-!
 # The polygonal overlay

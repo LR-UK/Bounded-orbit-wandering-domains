@@ -1,7 +1,11 @@
-import BoundedWanderingDomains.RiemannMappingFull
-import TauCeti.Analysis.Complex.Conformal.Inverse.Function
-import TauCeti.Analysis.Complex.Conformal.ImageSimplyConnected
-import Mathlib.Analysis.Normed.Module.Connected
+module
+
+public import BoundedWanderingDomains.RiemannMappingFull
+public import TauCeti.Analysis.Complex.Conformal.Inverse.Function
+public import TauCeti.Analysis.Complex.Conformal.ImageSimplyConnected
+public import Mathlib.Analysis.Normed.Module.Connected
+
+@[expose] public section
 
 open Set Metric Function
 open scoped Topology

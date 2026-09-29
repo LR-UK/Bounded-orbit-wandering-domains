@@ -1,8 +1,12 @@
-import Mathlib.Analysis.Complex.Convex
-import Mathlib.Analysis.SpecialFunctions.Complex.Log
-import Mathlib.Analysis.Complex.AbsMax
-import Mathlib.Analysis.Calculus.Deriv.Polynomial
-import Mathlib.Topology.Connected.LocallyConnected
+module
+
+public import Mathlib.Analysis.Complex.Convex
+public import Mathlib.Analysis.SpecialFunctions.Complex.Log
+public import Mathlib.Analysis.Complex.AbsMax
+public import Mathlib.Analysis.Calculus.Deriv.Polynomial
+public import Mathlib.Topology.Connected.LocallyConnected
+
+@[expose] public section
 
 /-!
 # Full compact sets and complementary components

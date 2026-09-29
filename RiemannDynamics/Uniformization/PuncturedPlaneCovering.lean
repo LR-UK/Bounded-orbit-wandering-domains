@@ -1,10 +1,14 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import RiemannDynamics.Uniformization.PuncturedPlaneBridge
-import RiemannDynamics.Uniformization.Trichotomy
-import Mathlib.Analysis.Normed.Module.Connected
+public import RiemannDynamics.Uniformization.PuncturedPlaneBridge
+public import RiemannDynamics.Uniformization.Trichotomy
+public import Mathlib.Analysis.Normed.Module.Connected
+
+@[expose] public section
 
 open Set Metric Function TopologicalSpace
 open scoped Manifold ContDiff

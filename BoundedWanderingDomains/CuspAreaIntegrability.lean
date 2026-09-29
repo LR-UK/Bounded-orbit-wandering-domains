@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.LogRadialIntegral
-import BoundedWanderingDomains.CuspDensityBounds
-import Mathlib.Analysis.SpecialFunctions.ImproperIntegrals
+public import BoundedWanderingDomains.LogRadialIntegral
+public import BoundedWanderingDomains.CuspDensityBounds
+public import Mathlib.Analysis.SpecialFunctions.ImproperIntegrals
+
+@[expose] public section
 
 /-! # Integrability of the model cusp area kernel -/
 

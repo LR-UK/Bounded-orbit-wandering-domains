@@ -1,8 +1,12 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.CountablePatchTransport
-import BoundedWanderingDomains.Surfaces.CountableChartPartition
-import BoundedWanderingDomains.Surfaces.SurfacePolish
-import Mathlib.Data.Nat.Pairing
+public import BoundedWanderingDomains.Surfaces.CountablePatchTransport
+public import BoundedWanderingDomains.Surfaces.CountableChartPartition
+public import BoundedWanderingDomains.Surfaces.SurfacePolish
+public import Mathlib.Data.Nat.Pairing
+
+@[expose] public section
 
 /-! # Covering transport from canonical countable chart partitions -/
 

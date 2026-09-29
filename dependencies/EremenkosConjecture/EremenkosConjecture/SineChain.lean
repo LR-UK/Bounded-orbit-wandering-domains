@@ -1,5 +1,9 @@
-import EremenkosConjecture.TruncatedSineCurve
-import Mathlib.Analysis.SpecificLimits.Basic
+module
+
+public import EremenkosConjecture.TruncatedSineCurve
+public import Mathlib.Analysis.SpecificLimits.Basic
+
+@[expose] public section
 
 open Set Metric Filter Topology Real
 

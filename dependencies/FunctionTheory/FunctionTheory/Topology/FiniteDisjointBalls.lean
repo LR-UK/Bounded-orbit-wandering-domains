@@ -1,6 +1,10 @@
-import Mathlib.Topology.MetricSpace.Basic
-import Mathlib.Topology.Order.Compact
-import Mathlib.Tactic.Linarith
+module
+
+public import Mathlib.Topology.MetricSpace.Basic
+public import Mathlib.Topology.Order.Compact
+public import Mathlib.Tactic.Linarith
+
+@[expose] public section
 
 open Set Metric
 

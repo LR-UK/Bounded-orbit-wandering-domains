@@ -1,9 +1,13 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.AreaCancellation
-import Mathlib.MeasureTheory.Measure.Continuity
+public import BoundedWanderingDomains.AreaCancellation
+public import Mathlib.MeasureTheory.Measure.Continuity
+
+@[expose] public section
 
 /-! # Area obstruction for an infinite-area geometric limit
 

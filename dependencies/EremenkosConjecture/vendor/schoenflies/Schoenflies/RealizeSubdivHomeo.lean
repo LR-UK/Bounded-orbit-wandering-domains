@@ -1,10 +1,14 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
-import Schoenflies.RealizeSubdiv
-import Schoenflies.ArcMonotone
+public import Schoenflies.RealizeSubdiv
+public import Schoenflies.ArcMonotone
+
+@[expose] public section
 
 /-!
 # Transporting a skeleton homeomorphism across an edge subdivision

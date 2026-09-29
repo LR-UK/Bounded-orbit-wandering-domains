@@ -1,8 +1,12 @@
-import Mathlib.Analysis.Complex.Liouville
-import Mathlib.Analysis.Calculus.ContDiff.RestrictScalars
-import Mathlib.Analysis.Calculus.IteratedDeriv.Defs
-import Mathlib.Topology.MetricSpace.Thickening
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.Complex.Liouville
+public import Mathlib.Analysis.Calculus.ContDiff.RestrictScalars
+public import Mathlib.Analysis.Calculus.IteratedDeriv.Defs
+public import Mathlib.Topology.MetricSpace.Thickening
+public import Mathlib.Tactic
+
+@[expose] public section
 
 open Set Metric
 open scoped ContDiff

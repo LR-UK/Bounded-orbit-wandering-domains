@@ -1,4 +1,8 @@
-import EremenkosConjecture.NestedFilledRayNeighbourhoods
+module
+
+public import EremenkosConjecture.NestedFilledRayNeighbourhoods
+
+@[expose] public section
 
 open Set Metric Complex Filter
 open scoped Topology

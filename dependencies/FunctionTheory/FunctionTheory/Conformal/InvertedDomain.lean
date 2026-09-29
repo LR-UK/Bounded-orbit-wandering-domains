@@ -1,4 +1,8 @@
-import FunctionTheory.Conformal.ExteriorCoordinate
+module
+
+public import FunctionTheory.Conformal.ExteriorCoordinate
+
+@[expose] public section
 
 open Set Metric Complex Filter Bornology
 open scoped Topology

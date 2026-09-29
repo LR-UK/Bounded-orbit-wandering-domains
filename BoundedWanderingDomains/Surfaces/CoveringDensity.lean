@@ -1,9 +1,13 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.Surfaces.CoordinateDerivative
-import BoundedWanderingDomains.Surfaces.DiscSchwarz
+public import BoundedWanderingDomains.Surfaces.CoordinateDerivative
+public import BoundedWanderingDomains.Surfaces.DiscSchwarz
+
+@[expose] public section
 
 /-! # Intrinsic hyperbolic density in surface coordinates
 

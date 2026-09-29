@@ -1,10 +1,14 @@
+module
+
 /-
 Copyright (c) 2026 Will (Ziang) Li. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Will (Ziang) Li
 -/
-import RiemannDynamics.Uniformization.Perron.PathCover
-import RiemannDynamics.Uniformization.Perron.GreenSymmetry.Symmetry
+public import RiemannDynamics.Uniformization.Perron.PathCover
+public import RiemannDynamics.Uniformization.Perron.GreenSymmetry.Symmetry
+
+@[expose] public section
 
 /-!
 # Directed suprema and the deck sum of Green envelopes

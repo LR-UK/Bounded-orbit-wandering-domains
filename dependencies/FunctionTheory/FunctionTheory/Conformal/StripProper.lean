@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.StripUniformity
-import Mathlib.Topology.Maps.Proper.CompactlyGenerated
+module
+
+public import FunctionTheory.Conformal.StripUniformity
+public import Mathlib.Topology.Maps.Proper.CompactlyGenerated
+
+@[expose] public section
 
 /-! # Properness on closed strip insets
 

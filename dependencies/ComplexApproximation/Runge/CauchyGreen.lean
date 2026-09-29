@@ -1,6 +1,10 @@
-import Runge.SmoothCutoff
-import Mathlib.Analysis.Complex.CauchyIntegral
-import Mathlib.Tactic.Ring
+module
+
+public import Runge.SmoothCutoff
+public import Mathlib.Analysis.Complex.CauchyIntegral
+public import Mathlib.Tactic.Ring
+
+@[expose] public section
 
 /-!
 # The Cauchy–Riemann defect and the Cauchy–Green kernel

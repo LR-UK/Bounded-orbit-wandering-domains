@@ -1,4 +1,8 @@
-import FunctionTheory.Conformal.StraightBoundaryCoordinates
+module
+
+public import FunctionTheory.Conformal.StraightBoundaryCoordinates
+
+@[expose] public section
 
 open Set Metric Complex Filter
 open scoped Topology

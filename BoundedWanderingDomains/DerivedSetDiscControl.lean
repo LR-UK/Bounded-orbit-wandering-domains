@@ -1,11 +1,15 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.SphereCompactSeparation
-import BoundedWanderingDomains.DerivedSetExceptionalAvoidance
-import BoundedWanderingDomains.SphericalShrinking
-import BoundedWanderingDomains.SingularDiscInjectivity
+public import BoundedWanderingDomains.SphereCompactSeparation
+public import BoundedWanderingDomains.DerivedSetExceptionalAvoidance
+public import BoundedWanderingDomains.SphericalShrinking
+public import BoundedWanderingDomains.SingularDiscInjectivity
+
+@[expose] public section
 
 /-!
 # Intrinsic discs away from a spherical derived set

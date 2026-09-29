@@ -1,7 +1,11 @@
-import ComplexApproximation.Topology.FullCompactSets
-import FunctionTheory.Topology.LocallyFiniteCompactFamily
-import FunctionTheory.Topology.BoundaryBarriers
-import Mathlib.Analysis.Normed.Module.Connected
+module
+
+public import ComplexApproximation.Topology.FullCompactSets
+public import FunctionTheory.Topology.LocallyFiniteCompactFamily
+public import FunctionTheory.Topology.BoundaryBarriers
+public import Mathlib.Analysis.Normed.Module.Connected
+
+@[expose] public section
 
 open Set Filter Metric
 open scoped Topology

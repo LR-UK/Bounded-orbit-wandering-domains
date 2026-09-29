@@ -1,6 +1,10 @@
-import BoundedWanderingDomains.FinitePunctureMetricInput
-import BoundedWanderingDomains.NormalFamilies
-import FunctionTheory.Conformal.SchottkyConfinement
+module
+
+public import BoundedWanderingDomains.FinitePunctureMetricInput
+public import BoundedWanderingDomains.NormalFamilies
+public import FunctionTheory.Conformal.SchottkyConfinement
+
+@[expose] public section
 
 open Set Metric Filter Function MeasureTheory
 open scoped Topology

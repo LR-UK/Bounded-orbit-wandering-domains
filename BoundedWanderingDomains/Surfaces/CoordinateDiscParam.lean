@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.CoordinateDiskSelection
-import BoundedWanderingDomains.Surfaces.DiscDilation
-import BoundedWanderingDomains.Surfaces.HolomorphicLifting
+public import BoundedWanderingDomains.Surfaces.CoordinateDiskSelection
+public import BoundedWanderingDomains.Surfaces.DiscDilation
+public import BoundedWanderingDomains.Surfaces.HolomorphicLifting
+
+@[expose] public section
 
 /-! # Holomorphic parametrisation of a surface coordinate disc -/
 

@@ -1,3 +1,5 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
@@ -7,11 +9,13 @@ Authors: Álvaro Begué
 /- Compatibility update, 23 September 2026: current Mathlib names and Lean
 linter suggestions; original mathematical statements and attribution retained. -/
 
-import Schoenflies.Inversion
-import Schoenflies.JordanClosed
-import Schoenflies.ModelCurve
-import Schoenflies.SquareMover
-import Schoenflies.Topology
+public import Schoenflies.Inversion
+public import Schoenflies.JordanClosed
+public import Schoenflies.ModelCurve
+public import Schoenflies.SquareMover
+public import Schoenflies.Topology
+
+@[expose] public section
 
 /-!
 # The endgame: from the square extension to the relative Jordan–Schönflies theorem

@@ -1,8 +1,12 @@
-import EremenkosConjecture.PrescribedBoundaryConstruction
-import EremenkosConjecture.PathComponentTheorem
-import EremenkosConjecture.LakesOfWada
-import EremenkosConjecture.Theorem71
-import EremenkosConjecture.ContinuumCounterexample
+module
+
+public import EremenkosConjecture.PrescribedBoundaryConstruction
+public import EremenkosConjecture.PathComponentTheorem
+public import EremenkosConjecture.LakesOfWada
+public import EremenkosConjecture.Theorem71
+public import EremenkosConjecture.ContinuumCounterexample
+
+@[expose] public section
 
 /-!
 # Main statements for mathematical review

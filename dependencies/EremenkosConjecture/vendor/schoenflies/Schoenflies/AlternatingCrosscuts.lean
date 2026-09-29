@@ -1,10 +1,14 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
-import Schoenflies.PolygonalCrosscut
-import Schoenflies.Subarc
+public import Schoenflies.PolygonalCrosscut
+public import Schoenflies.Subarc
+
+@[expose] public section
 
 /-!
 # Corollary 2.9: alternating crosscuts intersect

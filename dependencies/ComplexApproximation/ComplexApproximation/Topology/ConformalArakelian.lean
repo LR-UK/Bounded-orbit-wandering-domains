@@ -1,6 +1,10 @@
-import ComplexApproximation.Topology.HomeomorphicTail
-import ComplexApproximation.BiLipschitzExtension
-import FunctionTheory.Conformal.StripProper
+module
+
+public import ComplexApproximation.Topology.HomeomorphicTail
+public import ComplexApproximation.BiLipschitzExtension
+public import FunctionTheory.Conformal.StripProper
+
+@[expose] public section
 
 open Set Metric Filter Asymptotics
 open scoped Topology NNReal

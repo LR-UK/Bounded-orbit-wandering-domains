@@ -1,7 +1,11 @@
-import EremenkosConjecture.ContinuumNeighbourhoods
-import EremenkosConjecture.RayStage
-import EremenkosConjecture.ConformalEmbedding
-import ComplexApproximation.Topology.HomeomorphicTail
+module
+
+public import EremenkosConjecture.ContinuumNeighbourhoods
+public import EremenkosConjecture.RayStage
+public import EremenkosConjecture.ConformalEmbedding
+public import ComplexApproximation.Topology.HomeomorphicTail
+
+@[expose] public section
 
 open Set Metric Function
 

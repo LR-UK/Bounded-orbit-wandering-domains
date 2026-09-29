@@ -1,5 +1,9 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.CompactPointRemoval
+public import BoundedWanderingDomains.Surfaces.CompactPointRemoval
+
+@[expose] public section
 
 /-! # Uniform compact area budget for a fixed finite removed set -/
 open Set Function Filter MeasureTheory

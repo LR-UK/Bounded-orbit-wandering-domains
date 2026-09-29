@@ -1,4 +1,8 @@
-import FunctionTheory.Conformal.RightEndNormalization
+module
+
+public import FunctionTheory.Conformal.RightEndNormalization
+
+@[expose] public section
 
 open Set Metric Complex Function Filter
 open scoped Topology

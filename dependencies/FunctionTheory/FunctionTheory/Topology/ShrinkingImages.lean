@@ -1,5 +1,9 @@
-import Mathlib.Topology.Sequences
-import Mathlib.Topology.UniformSpace.UniformConvergence
+module
+
+public import Mathlib.Topology.Sequences
+public import Mathlib.Topology.UniformSpace.UniformConvergence
+
+@[expose] public section
 
 open Set Filter
 open scoped Topology Uniformity

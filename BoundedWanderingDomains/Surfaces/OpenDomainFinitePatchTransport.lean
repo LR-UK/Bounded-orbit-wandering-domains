@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.OpenDomainAreaTransport
-import BoundedWanderingDomains.Surfaces.FinitePatchTransport
+public import BoundedWanderingDomains.Surfaces.OpenDomainAreaTransport
+public import BoundedWanderingDomains.Surfaces.FinitePatchTransport
+
+@[expose] public section
 
 /-! # Finite-patch area transport through an open-domain covering -/
 

@@ -1,5 +1,9 @@
-import EremenkosConjecture.DiskMargins
-import EremenkosConjecture.DryLand
+module
+
+public import EremenkosConjecture.DiskMargins
+public import EremenkosConjecture.DryLand
+
+@[expose] public section
 
 open Set Metric Function
 

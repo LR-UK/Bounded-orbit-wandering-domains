@@ -1,16 +1,20 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.CompactOrbitFiniteModels
-import BoundedWanderingDomains.Surfaces.CompactClusterSeparation
-import BoundedWanderingDomains.Surfaces.EventualRegularArea
-import BoundedWanderingDomains.Surfaces.SimplyConnectedCoveringDiscs
-import BoundedWanderingDomains.Surfaces.ConditionalDiscShrink
-import BoundedWanderingDomains.Surfaces.BKL.ShrinkingFillings
-import BoundedWanderingDomains.Surfaces.SubdomainCover
-import BoundedWanderingDomains.Surfaces.SubsurfaceCompactNormal
-import BoundedWanderingDomains.Surfaces.SaturationDynamics
-import BoundedWanderingDomains.Surfaces.SubsurfaceRegularValues
-import BoundedWanderingDomains.Surfaces.NoEscapeCompactRange
-import BoundedWanderingDomains.Surfaces.WanderingAnchorDisk
+public import BoundedWanderingDomains.Surfaces.CompactOrbitFiniteModels
+public import BoundedWanderingDomains.Surfaces.CompactClusterSeparation
+public import BoundedWanderingDomains.Surfaces.EventualRegularArea
+public import BoundedWanderingDomains.Surfaces.SimplyConnectedCoveringDiscs
+public import BoundedWanderingDomains.Surfaces.ConditionalDiscShrink
+public import BoundedWanderingDomains.Surfaces.BKL.ShrinkingFillings
+public import BoundedWanderingDomains.Surfaces.SubdomainCover
+public import BoundedWanderingDomains.Surfaces.SubsurfaceCompactNormal
+public import BoundedWanderingDomains.Surfaces.SaturationDynamics
+public import BoundedWanderingDomains.Surfaces.SubsurfaceRegularValues
+public import BoundedWanderingDomains.Surfaces.NoEscapeCompactRange
+public import BoundedWanderingDomains.Surfaces.WanderingAnchorDisk
+
+@[expose] public section
 
 section
 

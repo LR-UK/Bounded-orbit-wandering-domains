@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.InverseBranchChain
-import TauCeti.Analysis.Complex.Conformal.Biholomorph
+module
+
+public import FunctionTheory.Conformal.InverseBranchChain
+public import TauCeti.Analysis.Complex.Conformal.Biholomorph
+
+@[expose] public section
 
 open Set Filter
 open scoped Topology

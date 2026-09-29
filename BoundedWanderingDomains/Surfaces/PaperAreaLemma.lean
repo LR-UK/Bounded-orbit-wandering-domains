@@ -1,5 +1,9 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.UniformFiniteRemoval
+public import BoundedWanderingDomains.Surfaces.UniformFiniteRemoval
+
+@[expose] public section
 
 /-! # Uniform area budget used in the revised paper -/
 

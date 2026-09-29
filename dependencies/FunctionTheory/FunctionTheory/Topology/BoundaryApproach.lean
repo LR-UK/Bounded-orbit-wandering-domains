@@ -1,5 +1,9 @@
-import TauCeti.Topology.ClusterSet
-import Mathlib.Analysis.Normed.Module.Convex
+module
+
+public import TauCeti.Topology.ClusterSet
+public import Mathlib.Analysis.Normed.Module.Convex
+
+@[expose] public section
 
 /-! # Connected approach regions and relative boundary charts
 

@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.LocalMapSubsurface
-import BoundedWanderingDomains.Surfaces.SurfaceSingularCovering
+public import BoundedWanderingDomains.Surfaces.LocalMapSubsurface
+public import BoundedWanderingDomains.Surfaces.SurfaceSingularCovering
+
+@[expose] public section
 
 open Set Function Topology
 open scoped Manifold Topology

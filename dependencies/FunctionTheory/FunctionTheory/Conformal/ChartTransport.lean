@@ -1,6 +1,10 @@
-import FunctionTheory.Holomorphic
-import Mathlib.Analysis.Calculus.FDeriv.Comp
-import Mathlib.Topology.Homeomorph.Lemmas
+module
+
+public import FunctionTheory.Holomorphic
+public import Mathlib.Analysis.Calculus.FDeriv.Comp
+public import Mathlib.Topology.Homeomorph.Lemmas
+
+@[expose] public section
 
 open Set Filter
 open scoped Topology

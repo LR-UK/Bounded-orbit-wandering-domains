@@ -1,5 +1,9 @@
-import ComplexApproximation.Topology.Filling
-import ComplexApproximation.Topology.Nonseparation
+module
+
+public import ComplexApproximation.Topology.Filling
+public import ComplexApproximation.Topology.Nonseparation
+
+@[expose] public section
 
 open Set Bornology
 

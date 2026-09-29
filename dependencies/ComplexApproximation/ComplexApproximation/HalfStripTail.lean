@@ -1,4 +1,8 @@
-import ComplexApproximation.HalfStripNormalisation
+module
+
+public import ComplexApproximation.HalfStripNormalisation
+
+@[expose] public section
 
 /-! # Uniform rightward escape along a closed half-strip -/
 

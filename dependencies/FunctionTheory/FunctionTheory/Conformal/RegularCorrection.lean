@@ -1,6 +1,10 @@
-import FunctionTheory.Conformal.LocalUnivalenceStability
-import FunctionTheory.Conformal.CorrectionGluing
-import FunctionTheory.Analytic.UniformPreimageStability
+module
+
+public import FunctionTheory.Conformal.LocalUnivalenceStability
+public import FunctionTheory.Conformal.CorrectionGluing
+public import FunctionTheory.Analytic.UniformPreimageStability
+
+@[expose] public section
 
 open Set Filter Metric
 open scoped Topology

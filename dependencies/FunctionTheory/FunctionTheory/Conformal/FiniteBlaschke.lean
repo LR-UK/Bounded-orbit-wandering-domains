@@ -1,9 +1,13 @@
-import Mathlib.Analysis.Complex.CanonicalDecomposition
-import Mathlib.Analysis.Complex.OpenMapping
-import Mathlib.Analysis.Complex.Polynomial.Basic
-import Mathlib.Analysis.Analytic.Constructions
-import Mathlib.Analysis.Normed.Module.Ball.Pointwise
-import FunctionTheory.Holomorphic
+module
+
+public import Mathlib.Analysis.Complex.CanonicalDecomposition
+public import Mathlib.Analysis.Complex.OpenMapping
+public import Mathlib.Analysis.Complex.Polynomial.Basic
+public import Mathlib.Analysis.Analytic.Constructions
+public import Mathlib.Analysis.Normed.Module.Ball.Pointwise
+public import FunctionTheory.Holomorphic
+
+@[expose] public section
 
 open Set Metric Filter
 open scoped Topology ComplexConjugate BigOperators

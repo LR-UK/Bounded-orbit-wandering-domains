@@ -1,4 +1,8 @@
-import RMT4.cindex
+module
+
+public import RMT4.cindex
+
+@[expose] public section
 
 open Set Complex Metric Topology
 

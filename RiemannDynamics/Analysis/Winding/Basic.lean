@@ -1,13 +1,17 @@
+module
+
 /-
 Copyright (c) 2026 Will (Ziang) Li. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Will (Ziang) Li
 -/
-import Mathlib.Analysis.SpecialFunctions.Complex.Circle
-import Mathlib.Topology.Homotopy.Lifting
-import Mathlib.Topology.Algebra.Polynomial
-import Mathlib.Algebra.Polynomial.Roots
-import Mathlib.Topology.ContinuousMap.Algebra
+public import Mathlib.Analysis.SpecialFunctions.Complex.Circle
+public import Mathlib.Topology.Homotopy.Lifting
+public import Mathlib.Topology.Algebra.Polynomial
+public import Mathlib.Algebra.Polynomial.Roots
+public import Mathlib.Topology.ContinuousMap.Algebra
+
+@[expose] public section
 
 /-!
 # Winding numbers of loops in the plane

@@ -1,7 +1,11 @@
-import FunctionTheory.Conformal.StableInverseBranch
-import Mathlib.Analysis.Complex.Basic
-import Mathlib.Analysis.Normed.Group.Bounded
-import Mathlib.Tactic
+module
+
+public import FunctionTheory.Conformal.StableInverseBranch
+public import Mathlib.Analysis.Complex.Basic
+public import Mathlib.Analysis.Normed.Group.Bounded
+public import Mathlib.Tactic
+
+@[expose] public section
 
 open Set Metric Bornology
 

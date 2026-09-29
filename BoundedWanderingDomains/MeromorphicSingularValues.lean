@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.MeromorphicSurfaceModel
-import BoundedWanderingDomains.SingularValues
-import FunctionTheory.Conformal.LittlePicardBloch
+public import BoundedWanderingDomains.MeromorphicSurfaceModel
+public import BoundedWanderingDomains.SingularValues
+public import FunctionTheory.Conformal.LittlePicardBloch
+
+@[expose] public section
 
 /-! # Singular values of the sphere model
 

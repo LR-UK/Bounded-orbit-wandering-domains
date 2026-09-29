@@ -1,8 +1,12 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.SurfaceSingularCovering
-import BoundedWanderingDomains.Surfaces.ChartPartitionCoveringTransport
-import BoundedWanderingDomains.Surfaces.CompactFiniteRemoval
-import BoundedWanderingDomains.Surfaces.SaturationDynamics
+public import BoundedWanderingDomains.Surfaces.SurfaceSingularCovering
+public import BoundedWanderingDomains.Surfaces.ChartPartitionCoveringTransport
+public import BoundedWanderingDomains.Surfaces.CompactFiniteRemoval
+public import BoundedWanderingDomains.Surfaces.SaturationDynamics
+
+@[expose] public section
 
 /-! # Exact area transport over regular values of the actual local map -/
 

@@ -1,5 +1,9 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.AreaGain
+public import BoundedWanderingDomains.Surfaces.AreaGain
+
+@[expose] public section
 
 /-! # Integration against intrinsic hyperbolic area gain -/
 

@@ -1,5 +1,9 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.ChartCriticalValues
+public import BoundedWanderingDomains.Surfaces.ChartCriticalValues
+
+@[expose] public section
 
 /-! # Finite branch-value sets from finitely many compact chart patches -/
 

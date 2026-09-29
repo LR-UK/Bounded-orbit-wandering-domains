@@ -1,11 +1,15 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
-import Schoenflies.Graph.K33
-import Schoenflies.Graph.Redrawing
-import Schoenflies.AlternatingCrosscuts
+public import Schoenflies.Graph.K33
+public import Schoenflies.Graph.Redrawing
+public import Schoenflies.AlternatingCrosscuts
+
+@[expose] public section
 
 /-!
 # Lemma 3.10: the utility graph is not planar, and Corollary 3.11 for its subdivisions

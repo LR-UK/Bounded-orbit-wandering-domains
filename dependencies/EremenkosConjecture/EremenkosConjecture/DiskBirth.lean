@@ -1,4 +1,8 @@
-import EremenkosConjecture.DiskMargins
+module
+
+public import EremenkosConjecture.DiskMargins
+
+@[expose] public section
 
 open Set Metric
 

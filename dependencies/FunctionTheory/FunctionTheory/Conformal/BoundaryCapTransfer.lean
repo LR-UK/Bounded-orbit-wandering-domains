@@ -1,6 +1,10 @@
-import FunctionTheory.Conformal.SeparatingCrosscut
-import FunctionTheory.Conformal.CircularArcCap
-import Mathlib.Topology.MetricSpace.HausdorffDistance
+module
+
+public import FunctionTheory.Conformal.SeparatingCrosscut
+public import FunctionTheory.Conformal.CircularArcCap
+public import Mathlib.Topology.MetricSpace.HausdorffDistance
+
+@[expose] public section
 
 open Set Metric Complex Filter Function
 open scoped Topology

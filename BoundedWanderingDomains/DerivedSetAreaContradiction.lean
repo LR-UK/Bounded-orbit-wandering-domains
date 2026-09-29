@@ -1,11 +1,15 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.SingularAreaGain
-import BoundedWanderingDomains.FiniteModelCancellation
-import BoundedWanderingDomains.IntrinsicChartAreaLimit
-import BoundedWanderingDomains.DerivedSetDiscControl
+public import BoundedWanderingDomains.SingularAreaGain
+public import BoundedWanderingDomains.FiniteModelCancellation
+public import BoundedWanderingDomains.IntrinsicChartAreaLimit
+public import BoundedWanderingDomains.DerivedSetDiscControl
+
+@[expose] public section
 
 /-! # The area contradiction for a singular-set-free cluster set
 

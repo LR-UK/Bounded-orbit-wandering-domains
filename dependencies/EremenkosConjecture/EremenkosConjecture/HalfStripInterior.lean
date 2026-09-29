@@ -1,6 +1,10 @@
-import EremenkosConjecture.RayGeometry
-import Mathlib.Analysis.SpecialFunctions.Complex.CircleMap
-import Mathlib.Analysis.Convex.Topology
+module
+
+public import EremenkosConjecture.RayGeometry
+public import Mathlib.Analysis.SpecialFunctions.Complex.CircleMap
+public import Mathlib.Analysis.Convex.Topology
+
+@[expose] public section
 
 open Set Metric Complex
 

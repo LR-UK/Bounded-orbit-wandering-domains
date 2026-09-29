@@ -1,5 +1,9 @@
-import Mathlib.Analysis.SpecialFunctions.Complex.CircleMap
-import Mathlib.Topology.Order.Basic
+module
+
+public import Mathlib.Analysis.SpecialFunctions.Complex.CircleMap
+public import Mathlib.Topology.Order.Basic
+
+@[expose] public section
 
 open Set Metric Complex
 

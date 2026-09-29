@@ -1,5 +1,9 @@
-import EremenkosConjecture.RayReturnChannel
-import EremenkosConjecture.RayApproximationGeometry
+module
+
+public import EremenkosConjecture.RayReturnChannel
+public import EremenkosConjecture.RayApproximationGeometry
+
+@[expose] public section
 
 /-! # The holomorphic reference function at a ray-construction stage -/
 

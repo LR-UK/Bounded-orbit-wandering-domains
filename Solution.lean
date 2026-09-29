@@ -1,15 +1,19 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.Surfaces.AlmostEverywhere.Results
-import BoundedWanderingDomains.NoWanderingCorollaries
-import BoundedWanderingDomains.EntireBoundedOrbit
-import BoundedWanderingDomains.GlobalLimitStatements
-import BoundedWanderingDomains.MeromorphicEscape
-import BoundedWanderingDomains.Surfaces.SurfaceOrbitEscape
-import BoundedWanderingDomains.Surfaces.SurfaceDerivedLimits
-import BoundedWanderingDomains.Surfaces.SurfacePositiveArea
+public import BoundedWanderingDomains.Surfaces.AlmostEverywhere.Results
+public import BoundedWanderingDomains.NoWanderingCorollaries
+public import BoundedWanderingDomains.EntireBoundedOrbit
+public import BoundedWanderingDomains.GlobalLimitStatements
+public import BoundedWanderingDomains.MeromorphicEscape
+public import BoundedWanderingDomains.Surfaces.SurfaceOrbitEscape
+public import BoundedWanderingDomains.Surfaces.SurfaceDerivedLimits
+public import BoundedWanderingDomains.Surfaces.SurfacePositiveArea
+
+@[expose] public section
 
 /-! # Proofs of the revised paper statements
 

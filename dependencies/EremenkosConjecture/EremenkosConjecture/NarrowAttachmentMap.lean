@@ -1,5 +1,9 @@
-import EremenkosConjecture.FilledAttachmentCompression
-import Mathlib.Analysis.SpecificLimits.Basic
+module
+
+public import EremenkosConjecture.FilledAttachmentCompression
+public import Mathlib.Analysis.SpecificLimits.Basic
+
+@[expose] public section
 
 open Set Metric Complex Filter FunctionTheory
 open scoped Topology

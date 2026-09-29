@@ -1,5 +1,9 @@
-import Mathlib.Analysis.Complex.Convex
-import Mathlib.Topology.MetricSpace.Lipschitz
+module
+
+public import Mathlib.Analysis.Complex.Convex
+public import Mathlib.Topology.MetricSpace.Lipschitz
+
+@[expose] public section
 
 /-! # The nonexpansive projection onto a closed horizontal half-strip -/
 

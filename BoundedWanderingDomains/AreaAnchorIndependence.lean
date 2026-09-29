@@ -1,9 +1,13 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.AnchoredCompactArea
-import BoundedWanderingDomains.AreaGainSubadditivity
+public import BoundedWanderingDomains.AnchoredCompactArea
+public import BoundedWanderingDomains.AreaGainSubadditivity
+
+@[expose] public section
 
 /-!
 # Independence of the auxiliary omitted points

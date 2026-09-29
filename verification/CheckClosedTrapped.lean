@@ -1,11 +1,15 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.EntireFatouBridge
-import ComplexApproximation.Topology.Filling
-import ComplexApproximation.Topology.Nonseparation
-import Mathlib.Analysis.Complex.AbsMax
+public import BoundedWanderingDomains.EntireFatouBridge
+public import ComplexApproximation.Topology.Filling
+public import ComplexApproximation.Topology.Nonseparation
+public import Mathlib.Analysis.Complex.AbsMax
+
+@[expose] public section
 
 open Set Metric Function
 

@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.FiniteBoundaryMassAssembly
-import BoundedWanderingDomains.Surfaces.GlobalPointInsertion
+public import BoundedWanderingDomains.Surfaces.FiniteBoundaryMassAssembly
+public import BoundedWanderingDomains.Surfaces.GlobalPointInsertion
+
+@[expose] public section
 
 /-! # Global point insertion from a Riesz exhaustion
 

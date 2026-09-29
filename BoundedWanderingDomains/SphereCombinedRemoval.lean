@@ -1,10 +1,14 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.SphereCompactRemoval
-import BoundedWanderingDomains.SphereFiniteRemoval
-import BoundedWanderingDomains.SphereAreaGainTransitivity
+public import BoundedWanderingDomains.SphereCompactRemoval
+public import BoundedWanderingDomains.SphereFiniteRemoval
+public import BoundedWanderingDomains.SphereAreaGainTransitivity
+
+@[expose] public section
 
 /-!
 # Compact removal together with finitely many punctures

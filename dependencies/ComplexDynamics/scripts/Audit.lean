@@ -1,4 +1,8 @@
-import ComplexDynamics
+module
+
+public import ComplexDynamics
+
+@[expose] public section
 
 #print axioms ComplexDynamics.mem_bungeeSet_of_subsequences
 #print axioms ComplexDynamics.mem_juliaSet_of_escape_subsequence_of_closure_trappedSet

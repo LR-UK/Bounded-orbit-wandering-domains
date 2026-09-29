@@ -1,5 +1,9 @@
-import BoundedWanderingDomains.LocalTrappedTopology
-import Mathlib.Analysis.Complex.AbsMax
+module
+
+public import BoundedWanderingDomains.LocalTrappedTopology
+public import Mathlib.Analysis.Complex.AbsMax
+
+@[expose] public section
 
 open Set Metric Function
 

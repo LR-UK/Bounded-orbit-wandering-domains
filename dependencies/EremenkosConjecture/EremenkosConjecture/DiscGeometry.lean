@@ -1,5 +1,9 @@
-import EremenkosConjecture.FullUnions
-import ComplexDynamics.UniformEscape
+module
+
+public import EremenkosConjecture.FullUnions
+public import ComplexDynamics.UniformEscape
+
+@[expose] public section
 
 /-! # The disks used in the uniform-escape construction -/
 

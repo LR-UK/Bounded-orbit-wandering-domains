@@ -1,9 +1,13 @@
+module
+
 /- 
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.AreaAnchorIndependence
-import BoundedWanderingDomains.UnnormalisedPointRemoval
+public import BoundedWanderingDomains.AreaAnchorIndependence
+public import BoundedWanderingDomains.UnnormalisedPointRemoval
+
+@[expose] public section
 
 /-!
 # Uniform compact-removal area bound for plane domains

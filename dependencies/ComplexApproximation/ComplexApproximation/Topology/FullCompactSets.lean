@@ -1,8 +1,12 @@
-import ComplexApproximation.Topology.Filling
-import ComplexApproximation.Topology.Nonseparation
-import Runge.PolynomialSeparation
-import Mathlib.Analysis.Complex.AbsMax
-import Mathlib.Analysis.Calculus.Deriv.Polynomial
+module
+
+public import ComplexApproximation.Topology.Filling
+public import ComplexApproximation.Topology.Nonseparation
+public import Runge.PolynomialSeparation
+public import Mathlib.Analysis.Complex.AbsMax
+public import Mathlib.Analysis.Calculus.Deriv.Polynomial
+
+@[expose] public section
 
 /-!
 # Full compact sets and their neighbourhoods

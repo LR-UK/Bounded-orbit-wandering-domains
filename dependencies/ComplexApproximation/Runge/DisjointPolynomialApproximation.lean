@@ -1,5 +1,9 @@
-import Runge.MarkedPolynomialApproximation
-import FunctionTheory.Meromorphic.CompactGluing
+module
+
+public import Runge.MarkedPolynomialApproximation
+public import FunctionTheory.Meromorphic.CompactGluing
+
+@[expose] public section
 
 open Set Filter Polynomial FunctionTheory
 open scoped Topology

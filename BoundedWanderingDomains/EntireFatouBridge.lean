@@ -1,5 +1,9 @@
-import BoundedWanderingDomains.ConditionalWanderingDomains
-import ComplexDynamics.BoundedNormality
+module
+
+public import BoundedWanderingDomains.ConditionalWanderingDomains
+public import ComplexDynamics.BoundedNormality
+
+@[expose] public section
 
 open Set Metric Function Filter
 open scoped Topology

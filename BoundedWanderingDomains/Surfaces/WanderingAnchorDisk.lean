@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.CoordinateDiskSelection
-import BoundedWanderingDomains.Surfaces.LocalMapRestriction
-import BoundedWanderingDomains.Surfaces.WanderingOrbitStructure
+public import BoundedWanderingDomains.Surfaces.CoordinateDiskSelection
+public import BoundedWanderingDomains.Surfaces.LocalMapRestriction
+public import BoundedWanderingDomains.Surfaces.WanderingOrbitStructure
+
+@[expose] public section
 
 /-! # A fixed hyperbolic anchor inside the first wandering component -/
 

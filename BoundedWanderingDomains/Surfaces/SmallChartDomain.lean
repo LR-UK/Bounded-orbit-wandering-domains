@@ -1,5 +1,9 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.DomainChartDensity
+public import BoundedWanderingDomains.Surfaces.DomainChartDensity
+
+@[expose] public section
 
 /-! # A small coordinate neighbourhood with two omitted coordinate values -/
 open Set Function Filter Metric

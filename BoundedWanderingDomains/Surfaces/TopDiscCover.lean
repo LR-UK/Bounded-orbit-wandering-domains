@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.DiscCover
-import BoundedWanderingDomains.Surfaces.SubtypeHolomorphic
+public import BoundedWanderingDomains.Surfaces.DiscCover
+public import BoundedWanderingDomains.Surfaces.SubtypeHolomorphic
+
+@[expose] public section
 
 /-! # A disc cover on the top open subtype -/
 

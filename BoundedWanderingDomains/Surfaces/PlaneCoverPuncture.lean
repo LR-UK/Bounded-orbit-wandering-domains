@@ -1,9 +1,13 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.HolomorphicLifting
-import BoundedWanderingDomains.Surfaces.LegacyDiscCoverBridge
-import BoundedWanderingDomains.Surfaces.FinitePunctureTopology
-import FunctionTheory.Conformal.LittlePicardBloch
-import RiemannDynamics.Uniformization.Trichotomy
+public import BoundedWanderingDomains.Surfaces.HolomorphicLifting
+public import BoundedWanderingDomains.Surfaces.LegacyDiscCoverBridge
+public import BoundedWanderingDomains.Surfaces.FinitePunctureTopology
+public import FunctionTheory.Conformal.LittlePicardBloch
+public import RiemannDynamics.Uniformization.Trichotomy
+
+@[expose] public section
 
 /-! # Puncturing a surface with a plane universal cover
 

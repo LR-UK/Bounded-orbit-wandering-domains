@@ -1,4 +1,8 @@
-import FunctionTheory.Topology.HomeomorphicDisc
+module
+
+public import FunctionTheory.Topology.HomeomorphicDisc
+
+@[expose] public section
 
 open Set
 

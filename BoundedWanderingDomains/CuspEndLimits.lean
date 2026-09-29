@@ -1,9 +1,13 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.CuspLogLimit
-import BoundedWanderingDomains.LogBarrier
+public import BoundedWanderingDomains.CuspLogLimit
+public import BoundedWanderingDomains.LogBarrier
+
+@[expose] public section
 
 open Set Filter Metric
 open scoped Topology

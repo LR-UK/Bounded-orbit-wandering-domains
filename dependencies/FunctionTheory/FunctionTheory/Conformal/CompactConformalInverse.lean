@@ -1,6 +1,10 @@
-import TauCeti.Analysis.Complex.Conformal.Biholomorph
-import TauCeti.Analysis.Complex.Conformal.LocalDegree
-import Mathlib.Topology.Separation.Hausdorff
+module
+
+public import TauCeti.Analysis.Complex.Conformal.Biholomorph
+public import TauCeti.Analysis.Complex.Conformal.LocalDegree
+public import Mathlib.Topology.Separation.Hausdorff
+
+@[expose] public section
 
 open Set Filter
 open scoped Topology

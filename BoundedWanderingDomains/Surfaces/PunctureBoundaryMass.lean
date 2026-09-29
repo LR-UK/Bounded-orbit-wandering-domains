@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.LogGrowthCutoff
-import BoundedWanderingDomains.Surfaces.PunctureLogRatioBound
+public import BoundedWanderingDomains.LogGrowthCutoff
+public import BoundedWanderingDomains.Surfaces.PunctureLogRatioBound
+
+@[expose] public section
 
 /-! # Uniform boundary mass at a newly inserted surface puncture -/
 

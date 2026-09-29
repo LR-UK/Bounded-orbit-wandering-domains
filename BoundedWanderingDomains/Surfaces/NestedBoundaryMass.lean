@@ -1,8 +1,12 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.NestedDomainDensity
-import BoundedWanderingDomains.Surfaces.OldPunctureBoundaryMass
-import BoundedWanderingDomains.Surfaces.PunctureBoundaryMass
-import BoundedWanderingDomains.CutoffError
+public import BoundedWanderingDomains.Surfaces.NestedDomainDensity
+public import BoundedWanderingDomains.Surfaces.OldPunctureBoundaryMass
+public import BoundedWanderingDomains.Surfaces.PunctureBoundaryMass
+public import BoundedWanderingDomains.CutoffError
+
+@[expose] public section
 
 /-! # Boundary-mass estimates transported to nested ambient domains -/
 

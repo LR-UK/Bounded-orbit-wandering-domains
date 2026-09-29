@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.AnalyticBoundaryContinuation
-import Mathlib.Analysis.Complex.Convex
+module
+
+public import FunctionTheory.Conformal.AnalyticBoundaryContinuation
+public import Mathlib.Analysis.Complex.Convex
+
+@[expose] public section
 
 open Set Metric Complex Filter
 open scoped Topology ComplexConjugate

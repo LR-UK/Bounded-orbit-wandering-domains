@@ -1,11 +1,15 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.LaplacianChain
-import BoundedWanderingDomains.LogBarrier
-import Mathlib.Analysis.InnerProductSpace.Calculus
-import Mathlib.MeasureTheory.Constructions.HaarToSphere
+public import BoundedWanderingDomains.LaplacianChain
+public import BoundedWanderingDomains.LogBarrier
+public import Mathlib.Analysis.InnerProductSpace.Calculus
+public import Mathlib.MeasureTheory.Constructions.HaarToSphere
+
+@[expose] public section
 
 open Metric Set Filter MeasureTheory InnerProductSpace Laplacian
 open scoped Topology ContDiff

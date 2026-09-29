@@ -1,5 +1,9 @@
-import Runge.PoleTopology
-import Mathlib.Analysis.Complex.Polynomial.Basic
+module
+
+public import Runge.PoleTopology
+public import Mathlib.Analysis.Complex.Polynomial.Basic
+
+@[expose] public section
 
 open Polynomial Set
 

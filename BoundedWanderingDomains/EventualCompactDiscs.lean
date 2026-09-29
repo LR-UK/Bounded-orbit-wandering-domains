@@ -1,8 +1,12 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.ConditionalWanderingDomains
+public import BoundedWanderingDomains.ConditionalWanderingDomains
+
+@[expose] public section
 
 open Set Metric Function Filter MeasureTheory
 open scoped Topology ENNReal

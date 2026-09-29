@@ -1,4 +1,8 @@
-import ComplexApproximation.CauchyTransformBounds
+module
+
+public import ComplexApproximation.CauchyTransformBounds
+
+@[expose] public section
 
 /-!
 # Correcting a smooth holomorphic gluing

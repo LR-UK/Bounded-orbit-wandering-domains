@@ -1,5 +1,9 @@
-import FunctionTheory.Analytic.FiniteComposition
-import Mathlib.Tactic
+module
+
+public import FunctionTheory.Analytic.FiniteComposition
+public import Mathlib.Tactic
+
+@[expose] public section
 
 open Set Filter
 open scoped Topology

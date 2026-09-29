@@ -1,8 +1,12 @@
-import EremenkosConjecture.NestedJordanNeighbourhoods
-import EremenkosConjecture.BoundaryApproximation
-import EremenkosConjecture.PathBarriers
-import EremenkosConjecture.ConstructionData
-import EremenkosConjecture.FullUnions
+module
+
+public import EremenkosConjecture.NestedJordanNeighbourhoods
+public import EremenkosConjecture.BoundaryApproximation
+public import EremenkosConjecture.PathBarriers
+public import EremenkosConjecture.ConstructionData
+public import EremenkosConjecture.FullUnions
+
+@[expose] public section
 
 open Set Metric Filter Function
 open scoped Topology

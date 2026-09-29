@@ -1,7 +1,11 @@
-import BoundedWanderingDomains.IdealTriangleIntegral
-import Mathlib.MeasureTheory.Measure.Prod
-import Mathlib.MeasureTheory.Measure.Lebesgue.Complex
-import Mathlib.Analysis.Complex.UpperHalfPlane.Measure
+module
+
+public import BoundedWanderingDomains.IdealTriangleIntegral
+public import Mathlib.MeasureTheory.Measure.Prod
+public import Mathlib.MeasureTheory.Measure.Lebesgue.Complex
+public import Mathlib.Analysis.Complex.UpperHalfPlane.Measure
+
+@[expose] public section
 
 /-!
 # Hyperbolic area of the model ideal triangle

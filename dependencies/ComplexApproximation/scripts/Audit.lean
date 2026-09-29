@@ -1,4 +1,8 @@
-import ComplexApproximation
+module
+
+public import ComplexApproximation
+
+@[expose] public section
 
 #print axioms Runge.exists_polynomial_separator
 

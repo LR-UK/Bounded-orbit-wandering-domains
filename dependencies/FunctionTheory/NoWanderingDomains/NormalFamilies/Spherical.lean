@@ -1,18 +1,22 @@
+module
+
 /- Adaptation: preserved declarations from 0a6497b0cc9ed39a6a705bf013449635894b56d0; explicit Mathlib imports for Lean 4.34. -/
-import Mathlib.Analysis.InnerProductSpace.Calculus
-import Mathlib.Analysis.Complex.LocallyUniformLimit
-import Mathlib.Topology.Sequences
-import Mathlib.Topology.UniformSpace.HeineCantor
-import Mathlib.Analysis.Calculus.MeanValue
-import Mathlib.Analysis.Calculus.FDeriv.Analytic
-import Mathlib.Tactic.Ext
+public import Mathlib.Analysis.InnerProductSpace.Calculus
+public import Mathlib.Analysis.Complex.LocallyUniformLimit
+public import Mathlib.Topology.Sequences
+public import Mathlib.Topology.UniformSpace.HeineCantor
+public import Mathlib.Analysis.Calculus.MeanValue
+public import Mathlib.Analysis.Calculus.FDeriv.Analytic
+public import Mathlib.Tactic.Ext
 /-
 Copyright (c) 2026 Will (Ziang) Li. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Will (Ziang) Li
 -/
-import NoWanderingDomains.NormalFamilies.Basic
-import NoWanderingDomains.Sphere.SphericalMetric
+public import NoWanderingDomains.NormalFamilies.Basic
+public import NoWanderingDomains.Sphere.SphericalMetric
+
+@[expose] public section
 
 /-!
 # Spherical-metric setup for meromorphic normal families

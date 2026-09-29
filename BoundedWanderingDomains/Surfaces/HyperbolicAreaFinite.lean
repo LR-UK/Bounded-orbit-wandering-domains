@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.AreaNullSets
-import Mathlib.MeasureTheory.Function.LocallyIntegrable
+public import BoundedWanderingDomains.Surfaces.AreaNullSets
+public import Mathlib.MeasureTheory.Function.LocallyIntegrable
+
+@[expose] public section
 
 /-! # Local finiteness and absence of atoms for intrinsic hyperbolic area -/
 open Set Function Filter MeasureTheory

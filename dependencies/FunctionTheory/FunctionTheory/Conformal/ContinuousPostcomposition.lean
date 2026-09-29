@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.StripCoordinates
-import Mathlib.Topology.UniformSpace.UniformApproximation
+module
+
+public import FunctionTheory.Conformal.StripCoordinates
+public import Mathlib.Topology.UniformSpace.UniformApproximation
+
+@[expose] public section
 
 open Set Filter
 open scoped Topology Uniformity

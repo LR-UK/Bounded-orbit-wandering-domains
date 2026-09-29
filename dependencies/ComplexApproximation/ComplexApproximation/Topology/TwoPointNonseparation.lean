@@ -1,5 +1,9 @@
-import ComplexApproximation.Topology.Nonseparation
-import ComplexApproximation.Topology.FilledContinua
+module
+
+public import ComplexApproximation.Topology.Nonseparation
+public import ComplexApproximation.Topology.FilledContinua
+
+@[expose] public section
 
 /-!
 # The two-point disjoint Janiszewski theorem and filling disjoint compacta

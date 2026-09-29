@@ -1,8 +1,12 @@
-import FunctionTheory.Conformal.ImaginaryReflection
-import TauCeti.Analysis.Complex.Conformal.Inverse.Function
-import Mathlib.Analysis.Complex.OpenMapping
-import Mathlib.Analysis.Complex.RealDeriv
-import Mathlib.Analysis.Calculus.Deriv.Slope
+module
+
+public import FunctionTheory.Conformal.ImaginaryReflection
+public import TauCeti.Analysis.Complex.Conformal.Inverse.Function
+public import Mathlib.Analysis.Complex.OpenMapping
+public import Mathlib.Analysis.Complex.RealDeriv
+public import Mathlib.Analysis.Calculus.Deriv.Slope
+
+@[expose] public section
 
 /-! # Injectivity across a reflected boundary
 

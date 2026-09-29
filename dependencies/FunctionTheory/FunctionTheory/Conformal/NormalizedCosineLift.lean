@@ -1,6 +1,10 @@
-import FunctionTheory.Conformal.CosineLift
-import FunctionTheory.Conformal.CosineBounds
-import Mathlib.Algebra.Order.ToIntervalMod
+module
+
+public import FunctionTheory.Conformal.CosineLift
+public import FunctionTheory.Conformal.CosineBounds
+public import Mathlib.Algebra.Order.ToIntervalMod
+
+@[expose] public section
 
 open Set Function
 

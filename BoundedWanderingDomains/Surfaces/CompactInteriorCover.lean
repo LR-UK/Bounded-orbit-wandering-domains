@@ -1,5 +1,9 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.CompactSurfaceCovering
+public import BoundedWanderingDomains.Surfaces.CompactSurfaceCovering
+
+@[expose] public section
 
 /-! # Open interior model of a compact surface covering -/
 

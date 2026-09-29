@@ -1,12 +1,16 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.GeneralDensityLimit
-import BoundedWanderingDomains.GeneralDomainMetric
-import BoundedWanderingDomains.AreaLimits
-import BoundedWanderingDomains.LocalIntegratedDeficit
-import Mathlib.MeasureTheory.Integral.Lebesgue.Sub
+public import BoundedWanderingDomains.GeneralDensityLimit
+public import BoundedWanderingDomains.GeneralDomainMetric
+public import BoundedWanderingDomains.AreaLimits
+public import BoundedWanderingDomains.LocalIntegratedDeficit
+public import Mathlib.MeasureTheory.Integral.Lebesgue.Sub
+
+@[expose] public section
 
 /-!
 # Area gained by puncturing a hyperbolic domain

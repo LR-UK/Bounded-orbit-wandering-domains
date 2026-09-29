@@ -1,7 +1,11 @@
-import FunctionTheory.Conformal.StraightBoundaryInverse
-import FunctionTheory.Conformal.StripCoordinates
-import FunctionTheory.Conformal.StripEndCoordinates
-import Mathlib.Analysis.Asymptotics.Lemmas
+module
+
+public import FunctionTheory.Conformal.StraightBoundaryInverse
+public import FunctionTheory.Conformal.StripCoordinates
+public import FunctionTheory.Conformal.StripEndCoordinates
+public import Mathlib.Analysis.Asymptotics.Lemmas
+
+@[expose] public section
 
 /-! # A normalized conformal strip map with end estimates
 

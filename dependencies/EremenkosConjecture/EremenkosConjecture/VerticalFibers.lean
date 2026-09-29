@@ -1,4 +1,8 @@
-import EremenkosConjecture.PlaneTopology
+module
+
+public import EremenkosConjecture.PlaneTopology
+
+@[expose] public section
 
 open Set Metric Bornology
 

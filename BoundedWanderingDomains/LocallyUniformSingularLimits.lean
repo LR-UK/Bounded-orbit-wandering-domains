@@ -1,9 +1,13 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.SingularLimits
-import BoundedWanderingDomains.NormalFamilyOnDomain
+public import BoundedWanderingDomains.SingularLimits
+public import BoundedWanderingDomains.NormalFamilyOnDomain
+
+@[expose] public section
 
 /-! # Locally uniform derived singular limits on the entire wandering component -/
 

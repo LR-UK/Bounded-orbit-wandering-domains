@@ -1,8 +1,12 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import Mathlib.Geometry.Manifold.Complex
-import Mathlib.Geometry.Manifold.MFDeriv.Atlas
-import Mathlib.MeasureTheory.MeasurableSpace.Constructions
-import Mathlib.Order.Disjointed
+public import Mathlib.Geometry.Manifold.Complex
+public import Mathlib.Geometry.Manifold.MFDeriv.Atlas
+public import Mathlib.MeasureTheory.MeasurableSpace.Constructions
+public import Mathlib.Order.Disjointed
+
+@[expose] public section
 open Set Function Filter Metric MeasureTheory
 open scoped Manifold Topology ENNReal
 namespace AreaDeficit.Surfaces

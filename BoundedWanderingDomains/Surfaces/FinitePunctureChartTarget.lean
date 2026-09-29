@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.FinitePunctureRemoteChart
-import BoundedWanderingDomains.CompactCutoff
-import BoundedWanderingDomains.Surfaces.ChartPunctures
+public import BoundedWanderingDomains.Surfaces.FinitePunctureRemoteChart
+public import BoundedWanderingDomains.CompactCutoff
+public import BoundedWanderingDomains.Surfaces.ChartPunctures
+
+@[expose] public section
 
 /-! # Ambient charts restricted through finite point removals -/
 

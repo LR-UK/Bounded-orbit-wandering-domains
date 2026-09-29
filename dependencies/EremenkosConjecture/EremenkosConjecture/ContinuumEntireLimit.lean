@@ -1,5 +1,9 @@
-import EremenkosConjecture.ContinuumSuccessor
-import EremenkosConjecture.EntireLimit
+module
+
+public import EremenkosConjecture.ContinuumSuccessor
+public import EremenkosConjecture.EntireLimit
+
+@[expose] public section
 
 open Set Metric Function Filter
 open scoped Topology

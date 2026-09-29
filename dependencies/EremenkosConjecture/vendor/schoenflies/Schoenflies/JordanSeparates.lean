@@ -1,14 +1,18 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
-import Schoenflies.Graph.K33Land
-import Schoenflies.Graph.OuterFace
-import Schoenflies.TwoArcs
-import Schoenflies.SimpleArc
-import Schoenflies.SegmentCut
-import Schoenflies.SegmentOrder
+public import Schoenflies.Graph.K33Land
+public import Schoenflies.Graph.OuterFace
+public import Schoenflies.TwoArcs
+public import Schoenflies.SimpleArc
+public import Schoenflies.SegmentCut
+public import Schoenflies.SegmentOrder
+
+@[expose] public section
 
 /-!
 # A Jordan curve separates the plane

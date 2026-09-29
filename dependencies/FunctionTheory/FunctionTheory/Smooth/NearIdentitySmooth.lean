@@ -1,8 +1,12 @@
-import FunctionTheory.Smooth.NearIdentityHomeomorph
-import Mathlib.Analysis.Complex.Basic
-import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
-import Mathlib.Analysis.Calculus.MeanValue
-import Mathlib.Analysis.SpecificLimits.Normed
+module
+
+public import FunctionTheory.Smooth.NearIdentityHomeomorph
+public import Mathlib.Analysis.Complex.Basic
+public import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
+public import Mathlib.Analysis.Calculus.MeanValue
+public import Mathlib.Analysis.SpecificLimits.Normed
+
+@[expose] public section
 
 open Set Filter
 open scoped Topology ContDiff NNReal

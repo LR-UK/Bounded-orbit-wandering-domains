@@ -1,5 +1,9 @@
-import Runge.MeromorphicInterpolation
-import FunctionTheory.Meromorphic.ApproximationRepresentative
+module
+
+public import Runge.MeromorphicInterpolation
+public import FunctionTheory.Meromorphic.ApproximationRepresentative
+
+@[expose] public section
 
 open Set Filter Polynomial FunctionTheory
 open scoped Topology

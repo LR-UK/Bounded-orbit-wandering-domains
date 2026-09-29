@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.ConformalLaplacian
-import BoundedWanderingDomains.Surfaces.ChartCriticalValues
+public import BoundedWanderingDomains.ConformalLaplacian
+public import BoundedWanderingDomains.Surfaces.ChartCriticalValues
+
+@[expose] public section
 
 /-! # Conformal change of the coordinate Laplacian -/
 

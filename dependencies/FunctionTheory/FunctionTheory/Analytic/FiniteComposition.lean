@@ -1,7 +1,11 @@
-import FunctionTheory.Topology.FiniteComposition
-import Mathlib.Analysis.Complex.OpenMapping
-import Mathlib.Analysis.Calculus.Deriv.Basic
-import Mathlib.Tactic
+module
+
+public import FunctionTheory.Topology.FiniteComposition
+public import Mathlib.Analysis.Complex.OpenMapping
+public import Mathlib.Analysis.Calculus.Deriv.Basic
+public import Mathlib.Tactic
+
+@[expose] public section
 
 open Set Filter Function
 open scoped Topology

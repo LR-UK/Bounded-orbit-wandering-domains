@@ -1,8 +1,12 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.ChartPointRemoval
-import BoundedWanderingDomains.Surfaces.DomainRemoteArea
-import BoundedWanderingDomains.Surfaces.DomainGainOrder
-import BoundedWanderingDomains.Surfaces.SmallChartDomain
+public import BoundedWanderingDomains.Surfaces.ChartPointRemoval
+public import BoundedWanderingDomains.Surfaces.DomainRemoteArea
+public import BoundedWanderingDomains.Surfaces.DomainGainOrder
+public import BoundedWanderingDomains.Surfaces.SmallChartDomain
+
+@[expose] public section
 
 /-! # Uniform finite puncture cost on compact subsets of a surface
 

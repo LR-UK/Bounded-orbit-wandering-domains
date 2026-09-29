@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.MeromorphicSurfaceModel
-import ComplexDynamics.Basic
+public import BoundedWanderingDomains.MeromorphicSurfaceModel
+public import ComplexDynamics.Basic
+
+@[expose] public section
 
 /-! # Normality of meromorphic iterates in the sphere model -/
 

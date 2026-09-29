@@ -1,5 +1,9 @@
-import EremenkosConjecture.FullNeighbourhoods
-import Mathlib.Analysis.SpecificLimits.Basic
+module
+
+public import EremenkosConjecture.FullNeighbourhoods
+public import Mathlib.Analysis.SpecificLimits.Basic
+
+@[expose] public section
 
 /-! # Finite boundary nets accumulating on a compact set's boundary -/
 

@@ -1,9 +1,13 @@
-import BoundedWanderingDomains.CoveringMetricInput
-import BoundedWanderingDomains.EntireFatouBridge
-import BoundedWanderingDomains.TrappedComponentCovering
-import BoundedWanderingDomains.TrappedSimpleConnectivity
-import BoundedWanderingDomains.BoundedPointWandering
-import BoundedWanderingDomains.LocalBoundedPointGeneral
+module
+
+public import BoundedWanderingDomains.CoveringMetricInput
+public import BoundedWanderingDomains.EntireFatouBridge
+public import BoundedWanderingDomains.TrappedComponentCovering
+public import BoundedWanderingDomains.TrappedSimpleConnectivity
+public import BoundedWanderingDomains.BoundedPointWandering
+public import BoundedWanderingDomains.LocalBoundedPointGeneral
+
+@[expose] public section
 
 /-! Both dynamical theorems with only disc-covering existence and its area
 formula as classical input. The local theorem requires only one compactly contained point orbit. -/

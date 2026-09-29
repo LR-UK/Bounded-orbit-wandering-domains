@@ -1,5 +1,9 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.SurfaceChartPartition
+public import BoundedWanderingDomains.Surfaces.SurfaceChartPartition
+
+@[expose] public section
 
 /-! # Global surface Green identity from a finite active chart partition -/
 

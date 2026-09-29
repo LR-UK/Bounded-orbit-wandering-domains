@@ -1,8 +1,12 @@
-import BoundedWanderingDomains.LocalDynamicalAreaBound
-import BoundedWanderingDomains.LocalPunctureSequence
-import BoundedWanderingDomains.BarrierComponents
-import BoundedWanderingDomains.ChartAreaLimit
-import BoundedWanderingDomains.ChartDiscs
+module
+
+public import BoundedWanderingDomains.LocalDynamicalAreaBound
+public import BoundedWanderingDomains.LocalPunctureSequence
+public import BoundedWanderingDomains.BarrierComponents
+public import BoundedWanderingDomains.ChartAreaLimit
+public import BoundedWanderingDomains.ChartDiscs
+
+@[expose] public section
 
 open Set Metric Function Filter MeasureTheory
 open scoped Topology ENNReal

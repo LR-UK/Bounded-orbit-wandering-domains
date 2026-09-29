@@ -1,6 +1,10 @@
-import FunctionTheory.Conformal.ClosedCriticalCorrection
-import FunctionTheory.Conformal.InversePerturbation
-import TauCeti.Analysis.Complex.Conformal.Biholomorph
+module
+
+public import FunctionTheory.Conformal.ClosedCriticalCorrection
+public import FunctionTheory.Conformal.InversePerturbation
+public import TauCeti.Analysis.Complex.Conformal.Biholomorph
+
+@[expose] public section
 
 open Set Filter Metric
 open scoped Topology

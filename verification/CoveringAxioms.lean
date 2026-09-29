@@ -1,10 +1,14 @@
-import BoundedWanderingDomains.CoveringTotalArea
-import BoundedWanderingDomains.CuspDensityBounds
-import BoundedWanderingDomains.CoveringAreaTransport
-import BoundedWanderingDomains.CoveringSolution
-import BoundedWanderingDomains.IdealTriangleArea
-import BoundedWanderingDomains.CoveringExhaustion
-import BoundedWanderingDomains.CoveringLimitBranches
+module
+
+public import BoundedWanderingDomains.CoveringTotalArea
+public import BoundedWanderingDomains.CuspDensityBounds
+public import BoundedWanderingDomains.CoveringAreaTransport
+public import BoundedWanderingDomains.CoveringSolution
+public import BoundedWanderingDomains.IdealTriangleArea
+public import BoundedWanderingDomains.CoveringExhaustion
+public import BoundedWanderingDomains.CoveringLimitBranches
+
+@[expose] public section
 
 #print axioms AreaDeficit.IsHolomorphicDiscCovering.deriv_ne_zero
 #print axioms AreaDeficit.IsHolomorphicDiscCovering.fibre_density_eq

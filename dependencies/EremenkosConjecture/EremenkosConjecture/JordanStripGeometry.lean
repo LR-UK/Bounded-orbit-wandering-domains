@@ -1,6 +1,10 @@
-import EremenkosConjecture.JordanSimplyConnected
-import EremenkosConjecture.JordanBoundaryCompatibility
-import FunctionTheory.Conformal.StripEndMap
+module
+
+public import EremenkosConjecture.JordanSimplyConnected
+public import EremenkosConjecture.JordanBoundaryCompatibility
+public import FunctionTheory.Conformal.StripEndMap
+
+@[expose] public section
 
 /-! # Strip maps with simple connectivity derived from Jordan geometry
 

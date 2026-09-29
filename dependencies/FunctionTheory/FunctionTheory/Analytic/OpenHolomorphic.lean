@@ -1,5 +1,9 @@
-import FunctionTheory.Holomorphic
-import Mathlib.Analysis.Complex.OpenMapping
+module
+
+public import FunctionTheory.Holomorphic
+public import Mathlib.Analysis.Complex.OpenMapping
+
+@[expose] public section
 
 open Set Filter Metric
 open scoped Topology

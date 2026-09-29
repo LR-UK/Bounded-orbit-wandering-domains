@@ -1,12 +1,16 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
-import Schoenflies.Strip
-import Schoenflies.Parity
-import Schoenflies.Polygonal
-import Schoenflies.Concatenate
+public import Schoenflies.Strip
+public import Schoenflies.Parity
+public import Schoenflies.Polygonal
+public import Schoenflies.Concatenate
+
+@[expose] public section
 
 /-!
 # The polygon bridge

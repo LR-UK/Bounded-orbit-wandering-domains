@@ -1,5 +1,9 @@
-import Runge.MeromorphicInterpolation
-import FunctionTheory.Meromorphic.LocalDomain
+module
+
+public import Runge.MeromorphicInterpolation
+public import FunctionTheory.Meromorphic.LocalDomain
+
+@[expose] public section
 
 open Set Filter Polynomial
 open scoped Topology

@@ -1,5 +1,9 @@
-import ComplexApproximation.Topology.FullCompactSets
-import FunctionTheory.Topology.LocallyFiniteCompactFamily
+module
+
+public import ComplexApproximation.Topology.FullCompactSets
+public import FunctionTheory.Topology.LocallyFiniteCompactFamily
+
+@[expose] public section
 
 /-!
 # Escaping families of full compact sets

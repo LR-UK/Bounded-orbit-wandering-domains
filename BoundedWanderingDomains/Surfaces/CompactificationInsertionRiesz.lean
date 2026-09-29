@@ -1,8 +1,12 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.CompactificationInsertionEnds
-import BoundedWanderingDomains.Surfaces.CompactificationCutoffGreen
-import BoundedWanderingDomains.Surfaces.FinitePunctureTopology
-import BoundedWanderingDomains.Surfaces.GlobalPointInsertion
+public import BoundedWanderingDomains.Surfaces.CompactificationInsertionEnds
+public import BoundedWanderingDomains.Surfaces.CompactificationCutoffGreen
+public import BoundedWanderingDomains.Surfaces.FinitePunctureTopology
+public import BoundedWanderingDomains.Surfaces.GlobalPointInsertion
+
+@[expose] public section
 
 /-! # Riesz bound for one insertion on a compactification complement -/
 

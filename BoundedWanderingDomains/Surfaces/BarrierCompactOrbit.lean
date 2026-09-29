@@ -1,9 +1,13 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.CompactOrbitNormal
-import BoundedWanderingDomains.Surfaces.LocalCoveringDiscs
-import BoundedWanderingDomains.Surfaces.SubdomainCover
-import BoundedWanderingDomains.Surfaces.ComponentDomains
-import BoundedWanderingDomains.BarrierComponents
+public import BoundedWanderingDomains.Surfaces.CompactOrbitNormal
+public import BoundedWanderingDomains.Surfaces.LocalCoveringDiscs
+public import BoundedWanderingDomains.Surfaces.SubdomainCover
+public import BoundedWanderingDomains.Surfaces.ComponentDomains
+public import BoundedWanderingDomains.BarrierComponents
+
+@[expose] public section
 
 /-! # A compact marked orbit makes its entire barrier component normal -/
 

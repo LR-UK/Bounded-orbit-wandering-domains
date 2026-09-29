@@ -1,10 +1,14 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.LocalCompactModelPatches
-import BoundedWanderingDomains.Surfaces.InvariantSubsurface
-import BoundedWanderingDomains.Surfaces.LocalMapSubsurface
-import BoundedWanderingDomains.Surfaces.PositiveAreaFinalReduction
-import BoundedWanderingDomains.Surfaces.UniformizationBridge
-import Mathlib.Order.Disjointed
+public import BoundedWanderingDomains.Surfaces.LocalCompactModelPatches
+public import BoundedWanderingDomains.Surfaces.InvariantSubsurface
+public import BoundedWanderingDomains.Surfaces.LocalMapSubsurface
+public import BoundedWanderingDomains.Surfaces.PositiveAreaFinalReduction
+public import BoundedWanderingDomains.Surfaces.UniformizationBridge
+public import Mathlib.Order.Disjointed
+
+@[expose] public section
 
 /-! # Compact local area advance from finitely many proper patches -/
 

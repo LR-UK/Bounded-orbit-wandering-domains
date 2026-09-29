@@ -1,15 +1,19 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import Mathlib.Analysis.Complex.Basic
-import Mathlib.Topology.Compactification.OnePoint.Basic
-import Mathlib.Topology.MetricSpace.Bounded
-import Mathlib.Topology.ClusterPt
-import Mathlib.Topology.DerivedSet
-import Mathlib.Topology.Separation.Regular
-import Mathlib.Topology.Sequences
-import RiemannDynamics.Sphere.SphericalMetric
+public import Mathlib.Analysis.Complex.Basic
+public import Mathlib.Topology.Compactification.OnePoint.Basic
+public import Mathlib.Topology.MetricSpace.Bounded
+public import Mathlib.Topology.ClusterPt
+public import Mathlib.Topology.DerivedSet
+public import Mathlib.Topology.Separation.Regular
+public import Mathlib.Topology.Sequences
+public import RiemannDynamics.Sphere.SphericalMetric
+
+@[expose] public section
 
 /-!
 # Spherical accumulation of finite singular values

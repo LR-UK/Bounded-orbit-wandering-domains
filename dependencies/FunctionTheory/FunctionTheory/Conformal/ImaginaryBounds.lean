@@ -1,5 +1,9 @@
-import TauCeti.Analysis.Complex.Conformal.NormalFamilies
-import Mathlib.Analysis.Complex.BorelCaratheodory
+module
+
+public import TauCeti.Analysis.Complex.Conformal.NormalFamilies
+public import Mathlib.Analysis.Complex.BorelCaratheodory
+
+@[expose] public section
 
 open Set Metric
 

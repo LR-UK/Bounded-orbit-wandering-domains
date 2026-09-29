@@ -1,5 +1,9 @@
-import RMT4.to_mathlib
-import RMT4.deriv_inj
+module
+
+public import RMT4.to_mathlib
+public import RMT4.deriv_inj
+
+@[expose] public section
 
 open Complex Metric Set
 

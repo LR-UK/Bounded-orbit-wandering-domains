@@ -1,11 +1,15 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
-import Schoenflies.Curve
-import Schoenflies.Concatenate
-import Schoenflies.Topology
+public import Schoenflies.Curve
+public import Schoenflies.Concatenate
+public import Schoenflies.Topology
+
+@[expose] public section
 
 /-!
 # Separating curves, absorption, and the two cells of a crosscut

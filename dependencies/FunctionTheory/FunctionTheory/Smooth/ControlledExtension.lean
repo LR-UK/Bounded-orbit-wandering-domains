@@ -1,7 +1,11 @@
-import FunctionTheory.Smooth.CutoffBounds
-import FunctionTheory.Smooth.NearIdentitySmooth
-import FunctionTheory.Smooth.Cutoff
-import Mathlib.Tactic
+module
+
+public import FunctionTheory.Smooth.CutoffBounds
+public import FunctionTheory.Smooth.NearIdentitySmooth
+public import FunctionTheory.Smooth.Cutoff
+public import Mathlib.Tactic
+
+@[expose] public section
 
 open Set Function Filter
 open scoped Topology ContDiff NNReal

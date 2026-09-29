@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.StripEndMap
-import FunctionTheory.Conformal.StraightBoundaryDirect
+module
+
+public import FunctionTheory.Conformal.StripEndMap
+public import FunctionTheory.Conformal.StraightBoundaryDirect
+
+@[expose] public section
 
 open Set Metric Complex Function Filter Asymptotics
 open scoped Topology

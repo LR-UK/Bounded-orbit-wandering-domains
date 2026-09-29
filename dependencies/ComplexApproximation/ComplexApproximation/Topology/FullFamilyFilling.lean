@@ -1,5 +1,9 @@
-import ComplexApproximation.Topology.TwoPointNonseparation
-import ComplexApproximation.Topology.FullCompactSets
+module
+
+public import ComplexApproximation.Topology.TwoPointNonseparation
+public import ComplexApproximation.Topology.FullCompactSets
+
+@[expose] public section
 
 open Set Metric Bornology
 open scoped Topology

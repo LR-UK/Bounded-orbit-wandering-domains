@@ -1,14 +1,18 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
-import Schoenflies.AccessibleJoin
-import Schoenflies.JordanClosed
-import Schoenflies.Inversion
-import Schoenflies.ModelCurve
-import Schoenflies.ArcComplementPrep
-import Schoenflies.Graph.Drawing
+public import Schoenflies.AccessibleJoin
+public import Schoenflies.JordanClosed
+public import Schoenflies.Inversion
+public import Schoenflies.ModelCurve
+public import Schoenflies.ArcComplementPrep
+public import Schoenflies.Graph.Drawing
+
+@[expose] public section
 
 /-!
 # `lem:skeleton-crosscuts`: a crosscut inside one stage of the skeleton

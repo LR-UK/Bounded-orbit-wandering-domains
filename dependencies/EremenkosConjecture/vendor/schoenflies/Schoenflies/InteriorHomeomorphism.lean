@@ -1,11 +1,15 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
-import Schoenflies.InitialGenerated
-import Schoenflies.InitialOuterCycle
-import Schoenflies.QuantitativeRecursion
+public import Schoenflies.InitialGenerated
+public import Schoenflies.InitialOuterCycle
+public import Schoenflies.QuantitativeRecursion
+
+@[expose] public section
 
 /-!
 # The interior homeomorphism

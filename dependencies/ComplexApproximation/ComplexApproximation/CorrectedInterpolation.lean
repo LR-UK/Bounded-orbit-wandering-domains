@@ -1,4 +1,8 @@
-import ComplexApproximation.SmoothLocalization
+module
+
+public import ComplexApproximation.SmoothLocalization
+
+@[expose] public section
 
 /-! # A holomorphic correction of a cutoff interpolation -/
 

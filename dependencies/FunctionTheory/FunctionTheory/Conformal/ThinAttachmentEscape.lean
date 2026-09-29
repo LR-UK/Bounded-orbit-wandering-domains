@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.ThinAttachment
-import FunctionTheory.Conformal.RadialKernelControl
+module
+
+public import FunctionTheory.Conformal.ThinAttachment
+public import FunctionTheory.Conformal.RadialKernelControl
+
+@[expose] public section
 
 open Set Metric Filter Complex
 open scoped Topology

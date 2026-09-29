@@ -1,4 +1,8 @@
-import ComplexDynamics.Trapping
+module
+
+public import ComplexDynamics.Trapping
+
+@[expose] public section
 
 /-! # Bungee orbits and a Julia criterion from escaping subsequences -/
 

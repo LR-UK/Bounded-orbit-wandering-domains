@@ -1,6 +1,10 @@
-import EremenkosConjecture.LakeSeparation
-import EremenkosConjecture.NestedContinua
-import Mathlib.Analysis.SpecificLimits.Basic
+module
+
+public import EremenkosConjecture.LakeSeparation
+public import EremenkosConjecture.NestedContinua
+public import Mathlib.Analysis.SpecificLimits.Basic
+
+@[expose] public section
 
 open Set Metric Function Filter
 open scoped Topology

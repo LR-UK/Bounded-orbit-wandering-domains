@@ -1,10 +1,14 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.AlmostEverywhere.CompactDerivedArea
-import BoundedWanderingDomains.Surfaces.AlmostEverywhere.ThreePointHyperbolization
-import BoundedWanderingDomains.Surfaces.AnchorComplementModels
-import BoundedWanderingDomains.Surfaces.SubsurfaceCompactNormal
-import BoundedWanderingDomains.Surfaces.SubsurfaceRegularValues
-import BoundedWanderingDomains.Surfaces.RestrictionSaturationBridge
+public import BoundedWanderingDomains.Surfaces.AlmostEverywhere.CompactDerivedArea
+public import BoundedWanderingDomains.Surfaces.AlmostEverywhere.ThreePointHyperbolization
+public import BoundedWanderingDomains.Surfaces.AnchorComplementModels
+public import BoundedWanderingDomains.Surfaces.SubsurfaceCompactNormal
+public import BoundedWanderingDomains.Surfaces.SubsurfaceRegularValues
+public import BoundedWanderingDomains.Surfaces.RestrictionSaturationBridge
+
+@[expose] public section
 
 /-! # Ambient restriction and the compact area theorem -/
 

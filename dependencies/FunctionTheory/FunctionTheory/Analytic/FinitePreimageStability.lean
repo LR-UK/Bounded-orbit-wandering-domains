@@ -1,7 +1,11 @@
-import FunctionTheory.Analytic.FiniteComposition
-import FunctionTheory.Topology.FiniteOrbitDomain
-import FunctionTheory.Analytic.PreimageStability
-import Mathlib.Tactic
+module
+
+public import FunctionTheory.Analytic.FiniteComposition
+public import FunctionTheory.Topology.FiniteOrbitDomain
+public import FunctionTheory.Analytic.PreimageStability
+public import Mathlib.Tactic
+
+@[expose] public section
 
 open Set Filter Metric
 open scoped Topology

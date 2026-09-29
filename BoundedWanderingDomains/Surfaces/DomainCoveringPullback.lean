@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.DomainMapAreaTransport
-import BoundedWanderingDomains.Surfaces.SubtypeHolomorphic
+public import BoundedWanderingDomains.Surfaces.DomainMapAreaTransport
+public import BoundedWanderingDomains.Surfaces.SubtypeHolomorphic
+
+@[expose] public section
 
 /-! # Pullback of componentwise hyperbolic subdomain metrics -/
 

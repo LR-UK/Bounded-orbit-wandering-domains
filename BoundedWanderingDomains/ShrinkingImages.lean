@@ -1,4 +1,8 @@
-import BoundedWanderingDomains.NormalFamilies
+module
+
+public import BoundedWanderingDomains.NormalFamilies
+
+@[expose] public section
 
 open Set Metric Function Filter
 open scoped Topology Uniformity UniformConvergence

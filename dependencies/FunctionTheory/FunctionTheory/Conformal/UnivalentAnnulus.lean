@@ -1,5 +1,9 @@
-import TauCeti.Analysis.Complex.Conformal.Rouche
-import Mathlib.Analysis.Complex.LocallyUniformLimit
+module
+
+public import TauCeti.Analysis.Complex.Conformal.Rouche
+public import Mathlib.Analysis.Complex.LocallyUniformLimit
+
+@[expose] public section
 
 /-! # Image disks and uniform nonvanishing on an outer annulus
 

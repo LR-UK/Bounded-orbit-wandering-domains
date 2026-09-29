@@ -1,5 +1,9 @@
-import FunctionTheory.Analytic.CompactCriticalPoints
-import Mathlib.Topology.Separation.Regular
+module
+
+public import FunctionTheory.Analytic.CompactCriticalPoints
+public import Mathlib.Topology.Separation.Regular
+
+@[expose] public section
 
 open Set Filter
 open scoped Topology

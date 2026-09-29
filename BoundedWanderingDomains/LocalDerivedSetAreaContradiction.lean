@@ -1,9 +1,13 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.DerivedSetAreaContradiction
-import BoundedWanderingDomains.LocalCoveringArea
+public import BoundedWanderingDomains.DerivedSetAreaContradiction
+public import BoundedWanderingDomains.LocalCoveringArea
+
+@[expose] public section
 
 /-! # Derived singular accumulation from local finite models -/
 

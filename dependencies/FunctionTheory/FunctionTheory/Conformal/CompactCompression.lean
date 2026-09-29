@@ -1,6 +1,10 @@
-import FunctionTheory.Conformal.ContinuousPostcomposition
-import FunctionTheory.Conformal.ThinAttachmentEscape
-import Mathlib.Analysis.Normed.Group.Bounded
+module
+
+public import FunctionTheory.Conformal.ContinuousPostcomposition
+public import FunctionTheory.Conformal.ThinAttachmentEscape
+public import Mathlib.Analysis.Normed.Group.Bounded
+
+@[expose] public section
 
 open Set Metric Filter Complex
 open scoped Topology

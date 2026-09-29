@@ -1,5 +1,9 @@
-import EremenkosConjecture.ScaffoldingAmbientBranches
-import EremenkosConjecture.LocalChartImageChange
+module
+
+public import EremenkosConjecture.ScaffoldingAmbientBranches
+public import EremenkosConjecture.LocalChartImageChange
+
+@[expose] public section
 
 open Set Function
 open scoped NNReal

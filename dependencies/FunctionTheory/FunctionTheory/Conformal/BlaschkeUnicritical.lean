@@ -1,7 +1,11 @@
-import FunctionTheory.Conformal.BlaschkeBoundaryDerivative
-import FunctionTheory.Conformal.UnicriticalQuotient
-import FunctionTheory.Conformal.ProperDiscBlaschke
-import FunctionTheory.Conformal.BlaschkeProper
+module
+
+public import FunctionTheory.Conformal.BlaschkeBoundaryDerivative
+public import FunctionTheory.Conformal.UnicriticalQuotient
+public import FunctionTheory.Conformal.ProperDiscBlaschke
+public import FunctionTheory.Conformal.BlaschkeProper
+
+@[expose] public section
 
 open Set Metric Filter
 open scoped Topology BigOperators

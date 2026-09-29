@@ -1,12 +1,16 @@
+module
+
 /-
 Copyright (c) 2026 Will (Ziang) Li. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Will (Ziang) Li
 -/
-import Mathlib.Topology.UniformSpace.UniformConvergenceTopology
-import Mathlib.Analysis.Complex.Basic
-import Mathlib.Analysis.Calculus.FDeriv.Basic
-import Mathlib.Topology.Defs.Sequences
+public import Mathlib.Topology.UniformSpace.UniformConvergenceTopology
+public import Mathlib.Analysis.Complex.Basic
+public import Mathlib.Analysis.Calculus.FDeriv.Basic
+public import Mathlib.Topology.Defs.Sequences
+
+@[expose] public section
 
 /-!
 # Normal families

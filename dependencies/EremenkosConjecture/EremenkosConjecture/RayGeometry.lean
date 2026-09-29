@@ -1,6 +1,10 @@
-import Mathlib.Analysis.Complex.Convex
-import Mathlib.Analysis.SpecificLimits.Basic
-import Mathlib.Tactic.Linarith
+module
+
+public import Mathlib.Analysis.Complex.Convex
+public import Mathlib.Analysis.SpecificLimits.Basic
+public import Mathlib.Tactic.Linarith
+
+@[expose] public section
 
 /-! # Horizontal rays and their closed half-strip neighbourhoods -/
 

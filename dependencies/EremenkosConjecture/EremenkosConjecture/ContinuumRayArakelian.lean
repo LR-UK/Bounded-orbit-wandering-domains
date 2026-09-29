@@ -1,5 +1,9 @@
-import EremenkosConjecture.ContinuumRayGeometry
-import EremenkosConjecture.DiscGeometry
+module
+
+public import EremenkosConjecture.ContinuumRayGeometry
+public import EremenkosConjecture.DiscGeometry
+
+@[expose] public section
 
 /-! # Arakelian geometry of a continuum with an attached ray
 

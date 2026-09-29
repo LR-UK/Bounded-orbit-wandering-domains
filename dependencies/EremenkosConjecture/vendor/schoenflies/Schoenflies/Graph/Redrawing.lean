@@ -1,13 +1,17 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
-import Schoenflies.Graph.VertexSquares
-import Schoenflies.Graph.CycleJordan
-import Schoenflies.PolyLocal
-import Schoenflies.Polygonal
-import Schoenflies.Concatenate
+public import Schoenflies.Graph.VertexSquares
+public import Schoenflies.Graph.CycleJordan
+public import Schoenflies.PolyLocal
+public import Schoenflies.Polygonal
+public import Schoenflies.Concatenate
+
+@[expose] public section
 
 /-!
 # The polygonal redrawing of a finite plane graph

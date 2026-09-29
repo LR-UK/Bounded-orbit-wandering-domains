@@ -1,8 +1,12 @@
-import FunctionTheory.Topology.LocallyFiniteSeparation
-import FunctionTheory.Topology.EscapingDiscs
-import Mathlib.Analysis.Complex.Basic
-import Mathlib.Analysis.Convex.Topology
-import Mathlib.Tactic
+module
+
+public import FunctionTheory.Topology.LocallyFiniteSeparation
+public import FunctionTheory.Topology.EscapingDiscs
+public import Mathlib.Analysis.Complex.Basic
+public import Mathlib.Analysis.Convex.Topology
+public import Mathlib.Tactic
+
+@[expose] public section
 
 open Set Filter Metric Bornology
 open scoped Topology

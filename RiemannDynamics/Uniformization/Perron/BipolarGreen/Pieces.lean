@@ -1,10 +1,14 @@
+module
+
 /-
 Copyright (c) 2026 Will (Ziang) Li. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Will (Ziang) Li
 -/
-import RiemannDynamics.Uniformization.Perron.GreensFunction.Injective
-import RiemannDynamics.Uniformization.Perron.Myrberg.Transfer
+public import RiemannDynamics.Uniformization.Perron.GreensFunction.Injective
+public import RiemannDynamics.Uniformization.Perron.Myrberg.Transfer
+
+@[expose] public section
 
 /-!
 # Bipolar Green: coordinate disks and hyperbolic pieces

@@ -1,6 +1,10 @@
-import BoundedWanderingDomains.DiscMetric
-import Mathlib.Analysis.InnerProductSpace.Harmonic.Constructions
-import Mathlib.Analysis.InnerProductSpace.Calculus
+module
+
+public import BoundedWanderingDomains.DiscMetric
+public import Mathlib.Analysis.InnerProductSpace.Harmonic.Constructions
+public import Mathlib.Analysis.InnerProductSpace.Calculus
+
+@[expose] public section
 
 open Set Filter InnerProductSpace Laplacian
 open scoped Topology ContDiff

@@ -1,5 +1,9 @@
-import EremenkosConjecture.ContinuumNeighbourhoods
-import EremenkosConjecture.ClosedStripNeighbourhoods
+module
+
+public import EremenkosConjecture.ContinuumNeighbourhoods
+public import EremenkosConjecture.ClosedStripNeighbourhoods
+
+@[expose] public section
 
 open Set Metric Complex Filter
 open scoped Topology

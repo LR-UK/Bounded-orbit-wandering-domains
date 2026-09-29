@@ -1,6 +1,10 @@
-import EremenkosConjecture.FilledAttachmentDomains
-import ComplexApproximation.Topology.FillingCoordinateBounds
-import FunctionTheory.Conformal.StripCoordinates
+module
+
+public import EremenkosConjecture.FilledAttachmentDomains
+public import ComplexApproximation.Topology.FillingCoordinateBounds
+public import FunctionTheory.Conformal.StripCoordinates
+
+@[expose] public section
 
 open Set Metric Complex
 

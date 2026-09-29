@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.GlobalSurfaceGreen
-import BoundedWanderingDomains.Surfaces.FiniteBoundaryMassAssembly
-import BoundedWanderingDomains.Surfaces.SmoothCompactExhaustion
+public import BoundedWanderingDomains.Surfaces.GlobalSurfaceGreen
+public import BoundedWanderingDomains.Surfaces.FiniteBoundaryMassAssembly
+public import BoundedWanderingDomains.Surfaces.SmoothCompactExhaustion
+
+@[expose] public section
 
 /-! # Smooth Riesz exhaustions imply finite global area gain -/
 

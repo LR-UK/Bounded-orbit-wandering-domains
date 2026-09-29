@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.DomainAreaBlowup
-import BoundedWanderingDomains.Surfaces.PositiveAreaBridge
+public import BoundedWanderingDomains.Surfaces.DomainAreaBlowup
+public import BoundedWanderingDomains.Surfaces.PositiveAreaBridge
+
+@[expose] public section
 
 /-! # The final contradiction from uniformly bounded finite models -/
 

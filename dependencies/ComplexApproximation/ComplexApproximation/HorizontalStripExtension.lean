@@ -1,4 +1,8 @@
-import ComplexApproximation.BiLipschitzExtension
+module
+
+public import ComplexApproximation.BiLipschitzExtension
+
+@[expose] public section
 
 /-! # Quantitative extensions from complete horizontal strips -/
 

@@ -1,6 +1,10 @@
-import Mathlib.Analysis.Analytic.IsolatedZeros
-import Mathlib.Analysis.Complex.RemovableSingularity
-import Mathlib.MeasureTheory.Integral.CircleIntegral
+module
+
+public import Mathlib.Analysis.Analytic.IsolatedZeros
+public import Mathlib.Analysis.Complex.RemovableSingularity
+public import Mathlib.MeasureTheory.Integral.CircleIntegral
+
+@[expose] public section
 
 open Real Complex Function TopologicalSpace Filter Topology Metric MeasureTheory Nat
 

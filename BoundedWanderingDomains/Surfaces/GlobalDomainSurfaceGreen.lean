@@ -1,5 +1,9 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.AmbientChartPartition
+public import BoundedWanderingDomains.Surfaces.AmbientChartPartition
+
+@[expose] public section
 
 /-! # Global Green identity for nested ambient domains -/
 

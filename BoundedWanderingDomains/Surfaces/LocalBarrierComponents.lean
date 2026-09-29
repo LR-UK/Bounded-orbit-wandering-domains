@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.BarrierComponents
-import BoundedWanderingDomains.Surfaces.LocalMapTotalization
+public import BoundedWanderingDomains.BarrierComponents
+public import BoundedWanderingDomains.Surfaces.LocalMapTotalization
+
+@[expose] public section
 
 /-! # Barrier components for open-source local maps -/
 

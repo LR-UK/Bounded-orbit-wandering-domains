@@ -1,7 +1,11 @@
-import Mathlib.Topology.LocallyFinite
-import Mathlib.Topology.Connected.Clopen
-import Mathlib.Topology.MetricSpace.ProperSpace
-import Mathlib.Tactic
+module
+
+public import Mathlib.Topology.LocallyFinite
+public import Mathlib.Topology.Connected.Clopen
+public import Mathlib.Topology.MetricSpace.ProperSpace
+public import Mathlib.Tactic
+
+@[expose] public section
 
 open Set Filter Metric
 open scoped Topology

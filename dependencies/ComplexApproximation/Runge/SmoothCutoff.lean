@@ -1,4 +1,8 @@
-import FunctionTheory.Smooth.Cutoff
+module
+
+public import FunctionTheory.Smooth.Cutoff
+
+@[expose] public section
 
 /-!
 # Compatibility names for smooth cutoff and compact extension

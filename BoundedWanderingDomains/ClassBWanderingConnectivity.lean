@@ -1,11 +1,15 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.ClassBFillLimits
-import BoundedWanderingDomains.CompactWanderingLimits
-import BoundedWanderingDomains.BackwardOrbitMontel
-import EremenkosConjecture.PlaneSimpleConnectivity
+public import BoundedWanderingDomains.ClassBFillLimits
+public import BoundedWanderingDomains.CompactWanderingLimits
+public import BoundedWanderingDomains.BackwardOrbitMontel
+public import EremenkosConjecture.PlaneSimpleConnectivity
+
+@[expose] public section
 
 /-! # Simple connectivity of class-B wandering components
 

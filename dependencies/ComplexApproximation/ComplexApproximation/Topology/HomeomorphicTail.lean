@@ -1,4 +1,8 @@
-import ComplexApproximation.Topology.LocalHomeomorphNonseparation
+module
+
+public import ComplexApproximation.Topology.LocalHomeomorphNonseparation
+
+@[expose] public section
 
 open Set Metric Bornology Function
 

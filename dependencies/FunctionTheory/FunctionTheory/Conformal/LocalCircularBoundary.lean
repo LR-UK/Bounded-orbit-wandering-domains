@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.CircularArcCap
-import FunctionTheory.Conformal.SeparatingCrosscut
+module
+
+public import FunctionTheory.Conformal.CircularArcCap
+public import FunctionTheory.Conformal.SeparatingCrosscut
+
+@[expose] public section
 
 open Set Metric Complex Filter Function
 open scoped Topology

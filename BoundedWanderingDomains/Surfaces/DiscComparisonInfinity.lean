@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.CompactDiscImages
-import BoundedWanderingDomains.Surfaces.DomainSchwarz
-import BoundedWanderingDomains.Surfaces.DiscAvoidanceRatio
+public import BoundedWanderingDomains.Surfaces.CompactDiscImages
+public import BoundedWanderingDomains.Surfaces.DomainSchwarz
+public import BoundedWanderingDomains.Surfaces.DiscAvoidanceRatio
+
+@[expose] public section
 
 /-! # Uniform metric comparison tending to one outside compact sets
 

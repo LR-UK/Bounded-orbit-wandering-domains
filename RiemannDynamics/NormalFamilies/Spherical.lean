@@ -1,10 +1,14 @@
+module
+
 /-
 Copyright (c) 2026 Will (Ziang) Li. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Will (Ziang) Li
 -/
-import RiemannDynamics.NormalFamilies.Basic
-import RiemannDynamics.Sphere.SphericalMetric
+public import RiemannDynamics.NormalFamilies.Basic
+public import RiemannDynamics.Sphere.SphericalMetric
+
+@[expose] public section
 
 /-!
 # Spherical-metric setup for meromorphic normal families

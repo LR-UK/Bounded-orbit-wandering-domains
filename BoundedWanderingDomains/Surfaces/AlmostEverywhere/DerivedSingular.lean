@@ -1,9 +1,13 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.AlmostEverywhere.Definitions
-import BoundedWanderingDomains.Surfaces.AlmostEverywhere.CompactSource
-import BoundedWanderingDomains.Surfaces.CompactClusterSeparation
-import BoundedWanderingDomains.Surfaces.AlmostEverywhere.CompactAreaRestriction
-import BoundedWanderingDomains.Surfaces.AlmostEverywhere.PositiveAreaImage
+public import BoundedWanderingDomains.Surfaces.AlmostEverywhere.Definitions
+public import BoundedWanderingDomains.Surfaces.AlmostEverywhere.CompactSource
+public import BoundedWanderingDomains.Surfaces.CompactClusterSeparation
+public import BoundedWanderingDomains.Surfaces.AlmostEverywhere.CompactAreaRestriction
+public import BoundedWanderingDomains.Surfaces.AlmostEverywhere.PositiveAreaImage
+
+@[expose] public section
 
 /-! # Almost-everywhere escape or derived-singular accumulation -/
 

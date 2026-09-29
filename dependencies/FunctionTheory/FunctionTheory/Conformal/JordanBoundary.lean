@@ -1,7 +1,11 @@
-import TauCeti.Analysis.Complex.Conformal.Caratheodory
-import TauCeti.Analysis.Complex.Conformal.BoundaryCorrespondence
-import FunctionTheory.Conformal.RiemannMapping
-import Mathlib.Analysis.Complex.Isometry
+module
+
+public import TauCeti.Analysis.Complex.Conformal.Caratheodory
+public import TauCeti.Analysis.Complex.Conformal.BoundaryCorrespondence
+public import FunctionTheory.Conformal.RiemannMapping
+public import Mathlib.Analysis.Complex.Isometry
+
+@[expose] public section
 
 /-! # Boundary extension and a distinguished boundary point
 

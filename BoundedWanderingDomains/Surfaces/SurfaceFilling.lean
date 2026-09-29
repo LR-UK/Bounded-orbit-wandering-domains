@@ -1,8 +1,12 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.CompactFilling
-import BoundedWanderingDomains.Surfaces.CoordinateDiskSelection
-import BoundedWanderingDomains.HolomorphicFilling
-import EremenkosConjecture.PlaneSimpleConnectivity
+public import BoundedWanderingDomains.Surfaces.CompactFilling
+public import BoundedWanderingDomains.Surfaces.CoordinateDiskSelection
+public import BoundedWanderingDomains.HolomorphicFilling
+public import EremenkosConjecture.PlaneSimpleConnectivity
+
+@[expose] public section
 
 /-! # Coordinate neighbourhoods of surface fillings -/
 

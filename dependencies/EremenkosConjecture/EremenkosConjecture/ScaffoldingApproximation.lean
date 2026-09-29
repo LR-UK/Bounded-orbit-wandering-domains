@@ -1,5 +1,9 @@
-import EremenkosConjecture.ScaffoldingGeometry
-import ComplexApproximation.Arakelian
+module
+
+public import EremenkosConjecture.ScaffoldingGeometry
+public import ComplexApproximation.Arakelian
+
+@[expose] public section
 
 /-!
 # The initial entire approximation in Section 4

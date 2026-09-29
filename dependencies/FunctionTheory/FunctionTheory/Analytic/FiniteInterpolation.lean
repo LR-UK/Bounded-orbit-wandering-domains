@@ -1,9 +1,13 @@
-import Mathlib.Analysis.Analytic.Order
-import Mathlib.Analysis.Analytic.Polynomial
-import Mathlib.Analysis.Calculus.IteratedDeriv.Lemmas
-import Mathlib.Analysis.Complex.Basic
-import Mathlib.Analysis.Complex.CauchyIntegral
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.Analytic.Order
+public import Mathlib.Analysis.Analytic.Polynomial
+public import Mathlib.Analysis.Calculus.IteratedDeriv.Lemmas
+public import Mathlib.Analysis.Complex.Basic
+public import Mathlib.Analysis.Complex.CauchyIntegral
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Finite analytic interpolation

@@ -1,3 +1,5 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
@@ -7,10 +9,12 @@ Authors: Álvaro Begué
 /- Compatibility update, 23 September 2026: current Mathlib names and Lean
 linter suggestions; original mathematical statements and attribution retained. -/
 
-import Schoenflies.SourceJoining
-import Schoenflies.QuantitativeStages
-import Schoenflies.StageTower
-import Schoenflies.Windows
+public import Schoenflies.SourceJoining
+public import Schoenflies.QuantitativeStages
+public import Schoenflies.StageTower
+public import Schoenflies.Windows
+
+@[expose] public section
 
 /-!
 # Quantitative forward local-grid stages

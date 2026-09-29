@@ -1,8 +1,12 @@
-import EremenkosConjecture.RayGeometry
-import EremenkosConjecture.ComponentBarriers
-import EremenkosConjecture.ScaffoldingOrbits
-import ComplexDynamics.BoundedNormality
-import ComplexDynamics.Transcendence
+module
+
+public import EremenkosConjecture.RayGeometry
+public import EremenkosConjecture.ComponentBarriers
+public import EremenkosConjecture.ScaffoldingOrbits
+public import ComplexDynamics.BoundedNormality
+public import ComplexDynamics.Transcendence
+
+@[expose] public section
 
 /-! # Dynamical conclusion of the Section 7 construction
 

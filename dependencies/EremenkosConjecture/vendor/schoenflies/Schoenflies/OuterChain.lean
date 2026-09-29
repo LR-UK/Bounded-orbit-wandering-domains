@@ -1,3 +1,5 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
@@ -7,8 +9,10 @@ Authors: Álvaro Begué
 /- Compatibility update, 23 September 2026: current Mathlib names and Lean
 linter suggestions; original mathematical statements and attribution retained. -/
 
-import Schoenflies.FaceCyclesLand
-import Schoenflies.Graph.TwoConnected
+public import Schoenflies.FaceCyclesLand
+public import Schoenflies.Graph.TwoConnected
+
+@[expose] public section
 
 /-!
 # The outer face of a chain of plane graphs

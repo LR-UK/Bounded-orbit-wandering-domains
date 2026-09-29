@@ -1,6 +1,10 @@
-import EremenkosConjecture.StageStability
-import EremenkosConjecture.EntireLimit
-import Mathlib.Analysis.SpecificLimits.Basic
+module
+
+public import EremenkosConjecture.StageStability
+public import EremenkosConjecture.EntireLimit
+public import Mathlib.Analysis.SpecificLimits.Basic
+
+@[expose] public section
 
 /-!
 # The entire function obtained by successive polynomial approximation

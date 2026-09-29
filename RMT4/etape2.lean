@@ -1,6 +1,10 @@
-import Mathlib.Analysis.Complex.Schwarz
-import RMT4.defs
-import RMT4.to_mathlib
+module
+
+public import Mathlib.Analysis.Complex.Schwarz
+public import RMT4.defs
+public import RMT4.to_mathlib
+
+@[expose] public section
 
 open Complex ComplexConjugate Set Metric Topology Filter
 

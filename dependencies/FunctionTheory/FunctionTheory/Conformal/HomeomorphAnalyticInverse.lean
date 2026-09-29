@@ -1,4 +1,8 @@
-import TauCeti.Analysis.Complex.Conformal.Biholomorph
+module
+
+public import TauCeti.Analysis.Complex.Conformal.Biholomorph
+
+@[expose] public section
 
 open Set Filter Function
 open scoped Topology

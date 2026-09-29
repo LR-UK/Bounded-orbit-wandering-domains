@@ -1,4 +1,8 @@
-import FunctionTheory.Conformal.UnivalentFiniteComposition
+module
+
+public import FunctionTheory.Conformal.UnivalentFiniteComposition
+
+@[expose] public section
 
 open Set Function Filter
 open scoped Topology

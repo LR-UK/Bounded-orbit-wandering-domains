@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.FiniteFibers
-import BoundedWanderingDomains.Surfaces.LocalCompactAreaAdvance
+public import BoundedWanderingDomains.Surfaces.FiniteFibers
+public import BoundedWanderingDomains.Surfaces.LocalCompactAreaAdvance
+
+@[expose] public section
 
 /-! # Local compact models separated from their boundary images -/
 

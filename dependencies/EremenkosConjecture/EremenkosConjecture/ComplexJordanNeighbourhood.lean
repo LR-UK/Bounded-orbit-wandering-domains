@@ -1,6 +1,10 @@
-import EremenkosConjecture.JordanNeighbourhood
-import EremenkosConjecture.FullNeighbourhoods
-import Mathlib.Topology.Homeomorph.Lemmas
+module
+
+public import EremenkosConjecture.JordanNeighbourhood
+public import EremenkosConjecture.FullNeighbourhoods
+public import Mathlib.Topology.Homeomorph.Lemmas
+
+@[expose] public section
 
 open Set Metric
 open scoped Topology

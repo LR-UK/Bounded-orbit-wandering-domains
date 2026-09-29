@@ -1,9 +1,13 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.SingularValues
-import BoundedWanderingDomains.ChartDiscs
+public import BoundedWanderingDomains.SingularValues
+public import BoundedWanderingDomains.ChartDiscs
+
+@[expose] public section
 
 /-!
 # Injectivity on intrinsic discs avoiding singular values

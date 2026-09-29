@@ -1,4 +1,8 @@
-import ComplexApproximation.CauchyRiemannGluing
+module
+
+public import ComplexApproximation.CauchyRiemannGluing
+
+@[expose] public section
 
 /-! # Smooth localization with pointwise control -/
 

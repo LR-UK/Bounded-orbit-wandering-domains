@@ -1,6 +1,10 @@
-import FunctionTheory.Conformal.KernelSeparation
-import Mathlib.Analysis.Complex.Basic
-import Mathlib.Analysis.Normed.Group.Bounded
+module
+
+public import FunctionTheory.Conformal.KernelSeparation
+public import Mathlib.Analysis.Complex.Basic
+public import Mathlib.Analysis.Normed.Group.Bounded
+
+@[expose] public section
 
 /-! # Uniform escape from convergence on a closed strip
 

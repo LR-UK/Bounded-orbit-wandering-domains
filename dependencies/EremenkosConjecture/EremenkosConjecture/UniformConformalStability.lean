@@ -1,6 +1,10 @@
-import EremenkosConjecture.UniformUnivalence
-import EremenkosConjecture.IterateApproximation
-import Mathlib.Analysis.Calculus.MeanValue
+module
+
+public import EremenkosConjecture.UniformUnivalence
+public import EremenkosConjecture.IterateApproximation
+public import Mathlib.Analysis.Calculus.MeanValue
+
+@[expose] public section
 
 /-! # Uniform stability on possibly unbounded sets
 

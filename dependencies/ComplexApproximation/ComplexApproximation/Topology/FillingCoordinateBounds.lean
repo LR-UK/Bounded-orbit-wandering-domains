@@ -1,4 +1,8 @@
-import ComplexApproximation.Topology.FillingStraightChannels
+module
+
+public import ComplexApproximation.Topology.FillingStraightChannels
+
+@[expose] public section
 
 open Set Complex
 

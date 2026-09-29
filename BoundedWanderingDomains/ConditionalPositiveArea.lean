@@ -1,7 +1,11 @@
-import BoundedWanderingDomains.LocalIntegratedDeficit
-import BoundedWanderingDomains.LocalPunctureSequence
-import BoundedWanderingDomains.PunctureDensityLimits
-import BoundedWanderingDomains.ExceptionalSets
+module
+
+public import BoundedWanderingDomains.LocalIntegratedDeficit
+public import BoundedWanderingDomains.LocalPunctureSequence
+public import BoundedWanderingDomains.PunctureDensityLimits
+public import BoundedWanderingDomains.ExceptionalSets
+
+@[expose] public section
 
 open Set Metric MeasureTheory Filter Function
 open scoped Topology ENNReal

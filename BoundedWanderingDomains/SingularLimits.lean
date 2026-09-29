@@ -1,11 +1,15 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.ClassBWanderingConnectivity
-import BoundedWanderingDomains.SimplyConnectedSingularLimits
-import BoundedWanderingDomains.SphericalSingularUnbounded
-import BoundedWanderingDomains.SingularLimitConsequences
+public import BoundedWanderingDomains.ClassBWanderingConnectivity
+public import BoundedWanderingDomains.SimplyConnectedSingularLimits
+public import BoundedWanderingDomains.SphericalSingularUnbounded
+public import BoundedWanderingDomains.SingularLimitConsequences
+
+@[expose] public section
 
 /-! # Derived singular accumulation for every entire wandering orbit
 

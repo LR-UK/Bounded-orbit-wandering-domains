@@ -1,7 +1,11 @@
-import Mathlib.Analysis.Complex.Convex
-import Mathlib.Analysis.SpecialFunctions.Complex.Log
-import Mathlib.Topology.Connected.LocallyConnected
-import Mathlib.Analysis.LocallyConvex.WithSeminorms
+module
+
+public import Mathlib.Analysis.Complex.Convex
+public import Mathlib.Analysis.SpecialFunctions.Complex.Log
+public import Mathlib.Topology.Connected.LocallyConnected
+public import Mathlib.Analysis.LocallyConvex.WithSeminorms
+
+@[expose] public section
 
 /-!
 # Filling bounded complementary components

@@ -1,6 +1,10 @@
-import FunctionTheory.Conformal.BoundaryPointExtension
-import TauCeti.Topology.JordanCurve.Basic
-import Mathlib.Analysis.InnerProductSpace.Convex
+module
+
+public import FunctionTheory.Conformal.BoundaryPointExtension
+public import TauCeti.Topology.JordanCurve.Basic
+public import Mathlib.Analysis.InnerProductSpace.Convex
+
+@[expose] public section
 
 open Set Metric Complex
 

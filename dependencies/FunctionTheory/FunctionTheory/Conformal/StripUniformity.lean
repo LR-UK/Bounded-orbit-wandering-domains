@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.StripBounds
-import Mathlib.Topology.MetricSpace.Thickening
+module
+
+public import FunctionTheory.Conformal.StripBounds
+public import Mathlib.Topology.MetricSpace.Thickening
+
+@[expose] public section
 
 /-! # Uniform neighbourhoods and continuity on closed strip insets
 

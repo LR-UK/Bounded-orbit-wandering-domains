@@ -1,6 +1,10 @@
-import Mathlib.Topology.MetricSpace.Thickening
-import Mathlib.Topology.UniformSpace.HeineCantor
-import Mathlib.Tactic.Linarith
+module
+
+public import Mathlib.Topology.MetricSpace.Thickening
+public import Mathlib.Topology.UniformSpace.HeineCantor
+public import Mathlib.Tactic.Linarith
+
+@[expose] public section
 
 open Set Metric
 open scoped Topology Uniformity

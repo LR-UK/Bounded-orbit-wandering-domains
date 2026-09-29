@@ -1,4 +1,8 @@
-import Runge.PoleTopology
+module
+
+public import Runge.PoleTopology
+
+@[expose] public section
 
 open Polynomial Filter Set
 open scoped BigOperators Topology

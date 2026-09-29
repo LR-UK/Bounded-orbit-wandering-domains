@@ -1,5 +1,9 @@
-import Mathlib.Data.Set.Image
-import Mathlib.Logic.Function.Iterate
+module
+
+public import Mathlib.Data.Set.Image
+public import Mathlib.Logic.Function.Iterate
+
+@[expose] public section
 
 open Set Function
 

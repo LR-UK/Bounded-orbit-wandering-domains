@@ -1,6 +1,10 @@
-import EremenkosConjecture.PlaneTopology
-import Runge.PolynomialSeparation
-import ComplexApproximation.Topology.Arakelian
+module
+
+public import EremenkosConjecture.PlaneTopology
+public import Runge.PolynomialSeparation
+public import ComplexApproximation.Topology.Arakelian
+
+@[expose] public section
 
 /-! # Ruling out holes using full compact pieces
 

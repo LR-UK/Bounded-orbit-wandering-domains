@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.CompactificationCutoff
-import BoundedWanderingDomains.Surfaces.GlobalIntrinsicGreen
-import BoundedWanderingDomains.CutoffEndLimits
+public import BoundedWanderingDomains.Surfaces.CompactificationCutoff
+public import BoundedWanderingDomains.Surfaces.GlobalIntrinsicGreen
+public import BoundedWanderingDomains.CutoffEndLimits
+
+@[expose] public section
 
 /-! # Green pairings for compactification end cutoffs -/
 

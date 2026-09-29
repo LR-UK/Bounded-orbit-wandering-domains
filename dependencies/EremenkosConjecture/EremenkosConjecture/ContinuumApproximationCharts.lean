@@ -1,5 +1,9 @@
-import EremenkosConjecture.ContinuumReferenceCharts
-import EremenkosConjecture.LocalIterateStability
+module
+
+public import EremenkosConjecture.ContinuumReferenceCharts
+public import EremenkosConjecture.LocalIterateStability
+
+@[expose] public section
 
 open Set Metric Function
 open scoped NNReal

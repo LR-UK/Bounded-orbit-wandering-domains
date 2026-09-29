@@ -1,5 +1,9 @@
-import Mathlib.Topology.LocallyFinite
-import Mathlib.Topology.Connected.Clopen
+module
+
+public import Mathlib.Topology.LocallyFinite
+public import Mathlib.Topology.Connected.Clopen
+
+@[expose] public section
 
 open Set
 

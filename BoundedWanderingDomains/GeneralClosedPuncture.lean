@@ -1,9 +1,13 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.GeneralPunctureCost
-import Mathlib.Topology.Metrizable.Basic
+public import BoundedWanderingDomains.GeneralPunctureCost
+public import Mathlib.Topology.Metrizable.Basic
+
+@[expose] public section
 
 /-!
 # Uniform area cost of deleting a point of a plane domain

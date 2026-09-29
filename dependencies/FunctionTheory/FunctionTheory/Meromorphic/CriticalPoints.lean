@@ -1,6 +1,10 @@
-import FunctionTheory.Analytic.CompactCriticalPoints
-import Mathlib.Analysis.Meromorphic.NormalForm
-import Mathlib.Analysis.Normed.Group.Bounded
+module
+
+public import FunctionTheory.Analytic.CompactCriticalPoints
+public import Mathlib.Analysis.Meromorphic.NormalForm
+public import Mathlib.Analysis.Normed.Group.Bounded
+
+@[expose] public section
 
 open Set Filter Metric Function
 open scoped Topology

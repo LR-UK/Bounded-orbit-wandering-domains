@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.ReflectionBounds
-import FunctionTheory.Conformal.AnalyticContinuationConvergence
+module
+
+public import FunctionTheory.Conformal.ReflectionBounds
+public import FunctionTheory.Conformal.AnalyticContinuationConvergence
+
+@[expose] public section
 
 /-! # Convergence across a circle arc by reflection and Vitali
 

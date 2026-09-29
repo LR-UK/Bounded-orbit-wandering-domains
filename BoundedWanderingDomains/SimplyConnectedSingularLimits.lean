@@ -1,9 +1,13 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.DerivedSetAreaContradiction
-import BoundedWanderingDomains.BackwardOrbitMontel
+public import BoundedWanderingDomains.DerivedSetAreaContradiction
+public import BoundedWanderingDomains.BackwardOrbitMontel
+
+@[expose] public section
 
 /-! # Derived singular limits for simply connected wandering orbits
 

@@ -1,6 +1,10 @@
-import ComplexApproximation.HalfStrip
-import Mathlib.Analysis.Calculus.MeanValue
-import Mathlib.Analysis.Complex.Convex
+module
+
+public import ComplexApproximation.HalfStrip
+public import Mathlib.Analysis.Calculus.MeanValue
+public import Mathlib.Analysis.Complex.Convex
+
+@[expose] public section
 
 /-! # Uniform derivative bounds for the explicit half-strip map -/
 

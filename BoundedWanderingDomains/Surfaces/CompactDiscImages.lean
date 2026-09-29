@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.UniformDiscAvoidance
-import BoundedWanderingDomains.Surfaces.SubtypeHolomorphic
-import RiemannDynamics.Hyperbolic.DiskModel.SchwarzPick
+public import BoundedWanderingDomains.Surfaces.UniformDiscAvoidance
+public import BoundedWanderingDomains.Surfaces.SubtypeHolomorphic
+public import RiemannDynamics.Hyperbolic.DiskModel.SchwarzPick
+
+@[expose] public section
 
 /-! # Compact control of holomorphic discs with compact centres
 

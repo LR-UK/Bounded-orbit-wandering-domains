@@ -1,5 +1,9 @@
-import ComplexDynamics.FastEscape
-import ComplexDynamics.Scaling
+module
+
+public import ComplexDynamics.FastEscape
+public import ComplexDynamics.Scaling
+
+@[expose] public section
 
 /-! # Scaling of maximum modulus and fast escape -/
 

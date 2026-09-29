@@ -1,10 +1,14 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Lasse Rempe
 -/
 
-import EremenkoLyubichConstant.Tract
+public import EremenkoLyubichConstant.Tract
+
+@[expose] public section
 
 /-!
 # Real-variable consequences of the tract estimate

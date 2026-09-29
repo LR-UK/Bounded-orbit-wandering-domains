@@ -1,6 +1,10 @@
-import ComplexApproximation.CorrectedInterpolation
-import ComplexApproximation.Topology.Filling
-import Runge.Holomorphic
+module
+
+public import ComplexApproximation.CorrectedInterpolation
+public import ComplexApproximation.Topology.Filling
+public import Runge.Holomorphic
+
+@[expose] public section
 
 /-!
 # The Rosay–Rudin extension step

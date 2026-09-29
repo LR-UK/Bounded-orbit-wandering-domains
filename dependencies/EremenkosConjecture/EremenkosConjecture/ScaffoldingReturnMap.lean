@@ -1,6 +1,10 @@
-import EremenkosConjecture.ScaffoldingAmbientBranches
-import EremenkosConjecture.ScaffoldingRealEstimates
-import EremenkosConjecture.RayStage
+module
+
+public import EremenkosConjecture.ScaffoldingAmbientBranches
+public import EremenkosConjecture.ScaffoldingRealEstimates
+public import EremenkosConjecture.RayStage
+
+@[expose] public section
 
 /-! # Pulling an explicit map back through a return branch -/
 

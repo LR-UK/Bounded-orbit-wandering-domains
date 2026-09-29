@@ -1,5 +1,9 @@
-import FunctionTheory.Analytic.CriticalNeighborhood
-import FunctionTheory.Conformal.FiniteCriticalCorrection
+module
+
+public import FunctionTheory.Analytic.CriticalNeighborhood
+public import FunctionTheory.Conformal.FiniteCriticalCorrection
+
+@[expose] public section
 
 open Set Filter
 open scoped Topology

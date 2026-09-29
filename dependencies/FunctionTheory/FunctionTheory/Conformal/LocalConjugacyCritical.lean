@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.InversePerturbation
-import Mathlib.Analysis.Calculus.Deriv.Comp
+module
+
+public import FunctionTheory.Conformal.InversePerturbation
+public import Mathlib.Analysis.Calculus.Deriv.Comp
+
+@[expose] public section
 
 open Set Filter
 open scoped Topology

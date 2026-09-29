@@ -1,7 +1,11 @@
-import Mathlib.Analysis.Meromorphic.NormalForm
-import Mathlib.Analysis.Complex.OpenMapping
-import Mathlib.Analysis.Normed.Field.Lemmas
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.Meromorphic.NormalForm
+public import Mathlib.Analysis.Complex.OpenMapping
+public import Mathlib.Analysis.Normed.Field.Lemmas
+public import Mathlib.Tactic
+
+@[expose] public section
 
 open Set Filter Metric Function Bornology
 open scoped Topology

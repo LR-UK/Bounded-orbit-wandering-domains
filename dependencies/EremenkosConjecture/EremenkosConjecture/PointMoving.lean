@@ -1,4 +1,8 @@
-import EremenkosConjecture.AmbientExtension
+module
+
+public import EremenkosConjecture.AmbientExtension
+
+@[expose] public section
 
 open Set Metric Function
 open scoped NNReal

@@ -253,7 +253,7 @@
         {
           "kind": "theorem",
           "name": "finite_critical_points_of_locally_nonconstant",
-          "line": 13
+          "line": 17
         }
       ]
     },
@@ -271,12 +271,12 @@
         {
           "kind": "theorem",
           "name": "countable_fibre_of_analyticOnNhd",
-          "line": 12
+          "line": 16
         },
         {
           "kind": "theorem",
           "name": "countable_preimage_of_analyticOnNhd",
-          "line": 27
+          "line": 31
         }
       ]
     },
@@ -293,7 +293,7 @@
         {
           "kind": "theorem",
           "name": "exists_critical_control_neighborhood",
-          "line": 15
+          "line": 19
         }
       ]
     },
@@ -312,22 +312,22 @@
         {
           "kind": "theorem",
           "name": "locally_nonconstant_comp_of_analyticAt",
-          "line": 15
+          "line": 19
         },
         {
           "kind": "theorem",
           "name": "analyticAt_finiteComposition",
-          "line": 26
+          "line": 30
         },
         {
           "kind": "theorem",
           "name": "locally_nonconstant_finiteComposition",
-          "line": 38
+          "line": 42
         },
         {
           "kind": "theorem",
           "name": "finiteComposition_conjugacy_eventually",
-          "line": 60
+          "line": 64
         }
       ]
     },
@@ -348,32 +348,32 @@
         {
           "kind": "theorem",
           "name": "analyticOnNhd_dslope",
-          "line": 23
+          "line": 27
         },
         {
           "kind": "theorem",
           "name": "exists_polynomial_analytic_remainder_pow",
-          "line": 39
+          "line": 43
         },
         {
           "kind": "def",
           "name": "vanishingPolynomial",
-          "line": 55
-        },
-        {
-          "kind": "theorem",
-          "name": "exists_polynomial_analytic_remainder",
           "line": 59
         },
         {
           "kind": "theorem",
+          "name": "exists_polynomial_analytic_remainder",
+          "line": 63
+        },
+        {
+          "kind": "theorem",
           "name": "iteratedDeriv_eq_of_sub_eq_pow_mul",
-          "line": 77
+          "line": 81
         },
         {
           "kind": "theorem",
           "name": "iteratedDeriv_eq_of_sub_eq_vanishingPolynomial_mul",
-          "line": 91
+          "line": 95
         }
       ]
     },
@@ -391,22 +391,22 @@
         {
           "kind": "theorem",
           "name": "iterate_eq_of_finite_orbit_values",
-          "line": 13
+          "line": 17
         },
         {
           "kind": "theorem",
           "name": "analyticAt_iterate_of_finite_orbit",
-          "line": 25
+          "line": 29
         },
         {
           "kind": "theorem",
           "name": "centered_local_degree_comp",
-          "line": 37
+          "line": 41
         },
         {
           "kind": "theorem",
           "name": "iterate_value_and_local_degree_eq_of_finite_orbit_data",
-          "line": 49
+          "line": 53
         }
       ]
     },
@@ -424,22 +424,22 @@
         {
           "kind": "theorem",
           "name": "not_eventually_constant_at_orbit_point",
-          "line": 15
+          "line": 19
         },
         {
           "kind": "def",
           "name": "finiteOrbitMarks",
-          "line": 35
-        },
-        {
-          "kind": "theorem",
-          "name": "mem_finiteOrbitMarks",
           "line": 39
         },
         {
           "kind": "theorem",
+          "name": "mem_finiteOrbitMarks",
+          "line": 43
+        },
+        {
+          "kind": "theorem",
           "name": "finiteOrbitMarks_analytic_and_nonconstant",
-          "line": 47
+          "line": 51
         }
       ]
     },
@@ -458,7 +458,7 @@
         {
           "kind": "theorem",
           "name": "exists_finite_composition_preimage_stability",
-          "line": 17
+          "line": 21
         }
       ]
     },
@@ -475,12 +475,12 @@
         {
           "kind": "theorem",
           "name": "exists_analyticOnNhd_gluing",
-          "line": 14
+          "line": 18
         },
         {
           "kind": "theorem",
           "name": "exists_glued_analytic_lift_of_injOn_overlaps",
-          "line": 37
+          "line": 41
         }
       ]
     },
@@ -497,7 +497,7 @@
         {
           "kind": "theorem",
           "name": "iterate_germ_eq_of_regular_orbit_germs",
-          "line": 13
+          "line": 17
         }
       ]
     },
@@ -516,7 +516,7 @@
         {
           "kind": "theorem",
           "name": "deriv_iterate_ne_zero_of_orbit",
-          "line": 14
+          "line": 18
         }
       ]
     },
@@ -533,7 +533,7 @@
         {
           "kind": "theorem",
           "name": "tendsto_iterates_of_closed_regular_domains",
-          "line": 14
+          "line": 18
         }
       ]
     },
@@ -551,17 +551,17 @@
         {
           "kind": "theorem",
           "name": "analyticOrderAt_eq_of_equal_jets",
-          "line": 14
+          "line": 18
         },
         {
           "kind": "theorem",
           "name": "centered_local_degree_eq_of_equal_jets",
-          "line": 30
+          "line": 34
         },
         {
           "kind": "theorem",
           "name": "exists_jet_order_preserving_value_and_local_degree",
-          "line": 47
+          "line": 51
         }
       ]
     },
@@ -578,12 +578,12 @@
         {
           "kind": "theorem",
           "name": "isOpenMap_restrict_iff_locally_nonconstant",
-          "line": 13
+          "line": 17
         },
         {
           "kind": "theorem",
           "name": "IsHolomorphicFunctionOn.isOpenMap_iff_locally_nonconstant",
-          "line": 45
+          "line": 49
         }
       ]
     },
@@ -600,22 +600,22 @@
         {
           "kind": "theorem",
           "name": "exists_analytic_power_quotient",
-          "line": 13
+          "line": 17
         },
         {
           "kind": "theorem",
           "name": "norm_analytic_power_quotient_le",
-          "line": 47
+          "line": 51
         },
         {
           "kind": "theorem",
           "name": "exists_bounded_analytic_power_quotient",
-          "line": 64
+          "line": 68
         },
         {
           "kind": "theorem",
           "name": "le_analyticOrderAt_sub_of_equal_local_degree",
-          "line": 77
+          "line": 81
         }
       ]
     },
@@ -634,17 +634,17 @@
         {
           "kind": "theorem",
           "name": "exists_preimage_of_circle_bound",
-          "line": 14
+          "line": 18
         },
         {
           "kind": "theorem",
           "name": "exists_stable_local_image",
-          "line": 41
+          "line": 45
         },
         {
           "kind": "theorem",
           "name": "compact_preimage_density_of_approximation",
-          "line": 77
+          "line": 81
         }
       ]
     },
@@ -661,7 +661,7 @@
         {
           "kind": "theorem",
           "name": "compact_preimage_density_on_domain",
-          "line": 13
+          "line": 17
         }
       ]
     },
@@ -679,12 +679,12 @@
         {
           "kind": "theorem",
           "name": "exists_analytic_uniform_limit_of_summable_increments",
-          "line": 14
+          "line": 18
         },
         {
           "kind": "theorem",
           "name": "tendsto_uniformlyOn_at_moving_points",
-          "line": 52
+          "line": 56
         }
       ]
     },
@@ -700,7 +700,7 @@
         {
           "kind": "theorem",
           "name": "exists_uniform_stable_local_image",
-          "line": 12
+          "line": 16
         }
       ]
     },
@@ -720,12 +720,12 @@
         {
           "kind": "theorem",
           "name": "tendsto_norm_atTop_of_injective_zeros",
-          "line": 16
+          "line": 20
         },
         {
           "kind": "theorem",
           "name": "tendsto_norm_atTop_of_injective_critical_points",
-          "line": 44
+          "line": 48
         }
       ]
     },
@@ -744,12 +744,12 @@
         {
           "kind": "theorem",
           "name": "exists_expanding_affine_ball_cover",
-          "line": 14
+          "line": 18
         },
         {
           "kind": "theorem",
           "name": "exists_stable_expanding_affine_channel",
-          "line": 44
+          "line": 48
         }
       ]
     },
@@ -767,7 +767,7 @@
         {
           "kind": "theorem",
           "name": "exists_affine_target_noncontraction_tolerance",
-          "line": 15
+          "line": 19
         }
       ]
     },
@@ -785,17 +785,17 @@
         {
           "kind": "theorem",
           "name": "exists_conformal_reflection_in_analytic_coordinate",
-          "line": 13
+          "line": 17
         },
         {
           "kind": "theorem",
           "name": "exists_disc_continuation_of_half_disc_extension",
-          "line": 64
+          "line": 68
         },
         {
           "kind": "theorem",
           "name": "exists_disc_continuation_across_analytic_target_arc",
-          "line": 131
+          "line": 135
         }
       ]
     },
@@ -812,12 +812,12 @@
         {
           "kind": "theorem",
           "name": "re_eq_zero_of_boundary_coordinate",
-          "line": 11
+          "line": 15
         },
         {
           "kind": "theorem",
           "name": "exists_disc_continuation_of_boundary_coordinate",
-          "line": 34
+          "line": 38
         }
       ]
     },
@@ -833,7 +833,7 @@
         {
           "kind": "theorem",
           "name": "exists_occupied_side_of_boundary_coordinate",
-          "line": 11
+          "line": 15
         }
       ]
     },
@@ -850,7 +850,7 @@
         {
           "kind": "theorem",
           "name": "hasRegularAnalyticArcAt_sphere",
-          "line": 11
+          "line": 15
         }
       ]
     },
@@ -866,7 +866,7 @@
         {
           "kind": "theorem",
           "name": "locallyUniform_of_vitali_with_holomorphic_limit",
-          "line": 15
+          "line": 19
         }
       ]
     },
@@ -884,7 +884,7 @@
         {
           "kind": "theorem",
           "name": "exists_arc_parameter_of_frontier_half_disc_image",
-          "line": 13
+          "line": 17
         }
       ]
     },
@@ -901,7 +901,7 @@
         {
           "kind": "theorem",
           "name": "exists_boundary_cap_at_analytic_side",
-          "line": 12
+          "line": 16
         }
       ]
     },
@@ -918,7 +918,7 @@
         {
           "kind": "theorem",
           "name": "exists_continuous_extension_at_analytic_side",
-          "line": 12
+          "line": 16
         }
       ]
     },
@@ -929,13 +929,14 @@
       "title": "AnalyticSideInverse",
       "imports": [
         "FunctionTheory.Conformal.AnalyticSideContinuous",
-        "FunctionTheory.Conformal.HalfDiskCircleReflection"
+        "FunctionTheory.Conformal.HalfDiskCircleReflection",
+        "TauCeti.Analysis.Complex.Conformal.ImageSimplyConnected"
       ],
       "declarations": [
         {
           "kind": "theorem",
           "name": "exists_local_inverse_extension_at_analytic_side",
-          "line": 12
+          "line": 17
         }
       ]
     },
@@ -952,7 +953,7 @@
         {
           "kind": "theorem",
           "name": "exists_boundary_limit_at_analytic_side",
-          "line": 12
+          "line": 16
         }
       ]
     },
@@ -970,27 +971,27 @@
         {
           "kind": "theorem",
           "name": "analyticAt_blaschkeFactor_of_norm_le_one",
-          "line": 10
+          "line": 14
         },
         {
           "kind": "theorem",
           "name": "mul_logDeriv_blaschkeFactor_on_circle",
-          "line": 18
+          "line": 22
         },
         {
           "kind": "theorem",
           "name": "mul_logDeriv_on_circle",
-          "line": 54
+          "line": 58
         },
         {
           "kind": "theorem",
           "name": "re_mul_logDeriv_pos_on_circle",
-          "line": 72
+          "line": 76
         },
         {
           "kind": "theorem",
           "name": "deriv_ne_zero_on_circle",
-          "line": 89
+          "line": 93
         }
       ]
     },
@@ -1007,22 +1008,22 @@
         {
           "kind": "theorem",
           "name": "blaschkeFactor_eq_unitDiscMoebius",
-          "line": 9
+          "line": 13
         },
         {
           "kind": "def",
           "name": "discMap",
-          "line": 14
-        },
-        {
-          "kind": "theorem",
-          "name": "coe_discMap",
           "line": 18
         },
         {
           "kind": "theorem",
+          "name": "coe_discMap",
+          "line": 22
+        },
+        {
+          "kind": "theorem",
           "name": "surjective_discMap",
-          "line": 21
+          "line": 25
         }
       ]
     },
@@ -1040,27 +1041,27 @@
         {
           "kind": "def",
           "name": "monomial",
-          "line": 13
+          "line": 17
         },
         {
           "kind": "theorem",
           "name": "eval_monomial",
-          "line": 20
+          "line": 24
         },
         {
           "kind": "theorem",
           "name": "monomial_eval_eq_zero_iff",
-          "line": 26
+          "line": 30
         },
         {
           "kind": "theorem",
           "name": "deriv_monomial",
-          "line": 31
+          "line": 35
         },
         {
           "kind": "theorem",
           "name": "deriv_monomial_eq_zero_iff",
-          "line": 38
+          "line": 42
         }
       ]
     },
@@ -1077,17 +1078,17 @@
         {
           "kind": "theorem",
           "name": "continuous_discMap",
-          "line": 12
+          "line": 16
         },
         {
           "kind": "theorem",
           "name": "isProperMap_discMap",
-          "line": 20
+          "line": 24
         },
         {
           "kind": "theorem",
           "name": "isProperMap_of_disc_charts",
-          "line": 60
+          "line": 64
         }
       ]
     },
@@ -1106,17 +1107,17 @@
         {
           "kind": "theorem",
           "name": "zeros_eq_zero_of_unicritical",
-          "line": 16
+          "line": 20
         },
         {
           "kind": "theorem",
           "name": "eval_eq_monomial_of_unicritical",
-          "line": 56
+          "line": 60
         },
         {
           "kind": "theorem",
           "name": "exists_monomial_of_isProperMap_unicritical_disc",
-          "line": 68
+          "line": 72
         }
       ]
     },
@@ -1132,12 +1133,12 @@
         {
           "kind": "theorem",
           "name": "exists_bloch_ball_subset_image",
-          "line": 10
+          "line": 14
         },
         {
           "kind": "theorem",
           "name": "norm_deriv_le_of_no_image_ball",
-          "line": 49
+          "line": 53
         }
       ]
     },
@@ -1156,7 +1157,7 @@
         {
           "kind": "theorem",
           "name": "bloch_local_image_of_derivative_bound",
-          "line": 19
+          "line": 23
         }
       ]
     },
@@ -1176,7 +1177,7 @@
         {
           "kind": "theorem",
           "name": "exists_bloch_selection",
-          "line": 16
+          "line": 20
         }
       ]
     },
@@ -1193,7 +1194,7 @@
         {
           "kind": "theorem",
           "name": "exists_bloch_disc_of_analytic_closedUnitDisc",
-          "line": 12
+          "line": 16
         }
       ]
     },
@@ -1211,12 +1212,12 @@
         {
           "kind": "theorem",
           "name": "image_closed_piece_subset_boundary_cap",
-          "line": 13
+          "line": 17
         },
         {
           "kind": "theorem",
           "name": "exists_boundary_cap_of_short_arc_and_circle_clusters",
-          "line": 62
+          "line": 66
         }
       ]
     },
@@ -1233,7 +1234,7 @@
         {
           "kind": "theorem",
           "name": "exists_continuous_injective_extension_at_boundary_point",
-          "line": 11
+          "line": 15
         }
       ]
     },
@@ -1250,12 +1251,12 @@
         {
           "kind": "theorem",
           "name": "exists_normalized_riemann_kernel_subsequence_of_locallyBounded",
-          "line": 17
+          "line": 21
         },
         {
           "kind": "theorem",
           "name": "exists_normalized_riemann_kernel_subsequence",
-          "line": 77
+          "line": 81
         }
       ]
     },
@@ -1274,77 +1275,77 @@
         {
           "kind": "def",
           "name": "cayleyCoordinate",
-          "line": 17
+          "line": 21
         },
         {
           "kind": "theorem",
           "name": "cayleyCoordinate_zero",
-          "line": 19
+          "line": 23
         },
         {
           "kind": "theorem",
           "name": "cayleyCoordinate_one",
-          "line": 22
+          "line": 26
         },
         {
           "kind": "theorem",
           "name": "cayley_denominator_ne_zero",
-          "line": 25
+          "line": 29
         },
         {
           "kind": "theorem",
           "name": "differentiableAt_cayleyCoordinate",
-          "line": 31
+          "line": 35
         },
         {
           "kind": "theorem",
           "name": "cayleyCoordinate_injOn",
-          "line": 36
+          "line": 40
         },
         {
           "kind": "theorem",
           "name": "one_add_cayleyCoordinate_ne_zero",
-          "line": 41
+          "line": 45
         },
         {
           "kind": "theorem",
           "name": "cayleyCoordinate_involution",
-          "line": 50
+          "line": 54
         },
         {
           "kind": "theorem",
           "name": "cayleyCoordinate_mem_closedBall",
-          "line": 63
+          "line": 67
         },
         {
           "kind": "theorem",
           "name": "cayleyCoordinate_mem_ball",
-          "line": 73
+          "line": 77
         },
         {
           "kind": "theorem",
           "name": "cayleyCoordinate_mem_sphere",
-          "line": 83
+          "line": 87
         },
         {
           "kind": "theorem",
           "name": "cayley_denominator_ne_zero_of_mem_ball",
-          "line": 93
+          "line": 97
         },
         {
           "kind": "theorem",
           "name": "re_cayleyCoordinate",
-          "line": 99
+          "line": 103
         },
         {
           "kind": "theorem",
           "name": "re_cayleyCoordinate_pos_of_mem_ball",
-          "line": 105
+          "line": 109
         },
         {
           "kind": "theorem",
           "name": "bijOn_cayleyCoordinate_ball",
-          "line": 116
+          "line": 120
         }
       ]
     },
@@ -1362,37 +1363,37 @@
         {
           "kind": "theorem",
           "name": "IsHolomorphicFunctionOn.comp",
-          "line": 12
+          "line": 16
         },
         {
           "kind": "def",
           "name": "pullbackChart",
-          "line": 33
+          "line": 37
         },
         {
           "kind": "theorem",
           "name": "pullbackChart_step",
-          "line": 35
+          "line": 39
         },
         {
           "kind": "theorem",
           "name": "pullbackChart_associated_eq_id",
-          "line": 40
+          "line": 44
         },
         {
           "kind": "theorem",
           "name": "pullbackChart_prescribed_step",
-          "line": 46
+          "line": 50
         },
         {
           "kind": "theorem",
           "name": "pullbackChart_tail_step",
-          "line": 57
+          "line": 61
         },
         {
           "kind": "theorem",
           "name": "pullbackChart_holomorphic",
-          "line": 70
+          "line": 74
         }
       ]
     },
@@ -1409,7 +1410,7 @@
         {
           "kind": "theorem",
           "name": "exists_symmetric_circle_collar",
-          "line": 15
+          "line": 19
         }
       ]
     },
@@ -1426,12 +1427,12 @@
         {
           "kind": "theorem",
           "name": "dist_image_circle_arc_lt_of_length_lt",
-          "line": 8
+          "line": 12
         },
         {
           "kind": "theorem",
           "name": "exists_boundary_cap_containing_short_circular_arc",
-          "line": 32
+          "line": 36
         }
       ]
     },
@@ -1448,12 +1449,12 @@
         {
           "kind": "theorem",
           "name": "exists_conformal_correction_of_critical_control_on_closure_order_le",
-          "line": 14
+          "line": 18
         },
         {
           "kind": "theorem",
           "name": "exists_conformal_correction_of_critical_control_on_closure",
-          "line": 49
+          "line": 53
         }
       ]
     },
@@ -1471,12 +1472,12 @@
         {
           "kind": "theorem",
           "name": "exists_uniform_scale_on_compact_of_locallyUniform",
-          "line": 12
+          "line": 16
         },
         {
           "kind": "theorem",
           "name": "exists_scaled_map_with_compact_control_and_left_escape",
-          "line": 43
+          "line": 47
         }
       ]
     },
@@ -1494,7 +1495,7 @@
         {
           "kind": "theorem",
           "name": "exists_conformal_neighbourhood_of_compact_injective",
-          "line": 15
+          "line": 19
         }
       ]
     },
@@ -1511,12 +1512,12 @@
         {
           "kind": "theorem",
           "name": "exists_uniform_injective_radius",
-          "line": 13
+          "line": 17
         },
         {
           "kind": "theorem",
           "name": "exists_uniform_injective_radius_of_deriv_ne_zero",
-          "line": 35
+          "line": 39
         }
       ]
     },
@@ -1534,7 +1535,7 @@
         {
           "kind": "theorem",
           "name": "exists_glued_conformal_lift_with_collar",
-          "line": 14
+          "line": 18
         }
       ]
     },
@@ -1551,12 +1552,12 @@
         {
           "kind": "theorem",
           "name": "locallyUniformOn_continuous_postcomposition",
-          "line": 12
+          "line": 16
         },
         {
           "kind": "theorem",
           "name": "locallyUniform_discToHorizontalStrip",
-          "line": 34
+          "line": 38
         }
       ]
     },
@@ -1573,7 +1574,7 @@
         {
           "kind": "theorem",
           "name": "exists_conformal_correction_of_uniform_local_injectivity",
-          "line": 14
+          "line": 18
         }
       ]
     },
@@ -1592,12 +1593,12 @@
         {
           "kind": "theorem",
           "name": "norm_cos_sq",
-          "line": 10
+          "line": 14
         },
         {
           "kind": "theorem",
           "name": "abs_im_le_norm_cos",
-          "line": 30
+          "line": 34
         }
       ]
     },
@@ -1609,6 +1610,7 @@
       "imports": [
         "TauCeti.Analysis.Complex.BranchLogRoot",
         "Mathlib.Analysis.Complex.Trigonometric",
+        "Mathlib.Analysis.Complex.CauchyIntegral",
         "Mathlib.Tactic.NormNum",
         "Mathlib.Tactic.Ring"
       ],
@@ -1616,7 +1618,7 @@
         {
           "kind": "theorem",
           "name": "exists_analytic_cosine_lift",
-          "line": 14
+          "line": 19
         }
       ]
     },
@@ -1634,7 +1636,7 @@
         {
           "kind": "theorem",
           "name": "exists_conformal_correction_on_power_coordinate_disk",
-          "line": 15
+          "line": 19
         }
       ]
     },
@@ -1651,7 +1653,7 @@
         {
           "kind": "theorem",
           "name": "exists_correction_disk_at_locally_nonconstant",
-          "line": 14
+          "line": 18
         }
       ]
     },
@@ -1667,7 +1669,7 @@
         {
           "kind": "theorem",
           "name": "exists_finite_critical_neighborhood_chain",
-          "line": 14
+          "line": 18
         }
       ]
     },
@@ -1685,12 +1687,12 @@
         {
           "kind": "theorem",
           "name": "locally_nonconstant_of_finite_critical_set",
-          "line": 15
+          "line": 19
         },
         {
           "kind": "theorem",
           "name": "analyticOrderAt_sub_eq_of_deriv_order_eq",
-          "line": 29
+          "line": 33
         }
       ]
     },
@@ -1708,12 +1710,12 @@
         {
           "kind": "theorem",
           "name": "norm_le_of_disc_boundary_limsup",
-          "line": 12
+          "line": 16
         },
         {
           "kind": "theorem",
           "name": "eq_unimodular_const_of_disc_boundary_bounds",
-          "line": 44
+          "line": 48
         }
       ]
     },
@@ -1732,32 +1734,32 @@
         {
           "kind": "def",
           "name": "invertedExterior",
-          "line": 13
+          "line": 17
         },
         {
           "kind": "theorem",
           "name": "invertedExterior_eq_insert_image",
-          "line": 15
+          "line": 19
         },
         {
           "kind": "theorem",
           "name": "isOpen_invertedExterior",
-          "line": 26
+          "line": 30
         },
         {
           "kind": "theorem",
           "name": "zero_mem_closure_inv_exterior",
-          "line": 52
+          "line": 56
         },
         {
           "kind": "theorem",
           "name": "isConnected_invertedExterior",
-          "line": 75
+          "line": 79
         },
         {
           "kind": "theorem",
           "name": "not_isBounded_inv_image_of_zero_mem_closure",
-          "line": 89
+          "line": 93
         }
       ]
     },
@@ -1778,72 +1780,72 @@
         {
           "kind": "structure",
           "name": "FiniteBlaschkeProduct",
-          "line": 17
+          "line": 21
         },
         {
           "kind": "def",
           "name": "blaschkeFactor",
-          "line": 24
-        },
-        {
-          "kind": "theorem",
-          "name": "blaschke_norm_difference",
           "line": 28
         },
         {
           "kind": "theorem",
+          "name": "blaschke_norm_difference",
+          "line": 32
+        },
+        {
+          "kind": "theorem",
           "name": "blaschke_denominator_ne_zero",
-          "line": 36
+          "line": 40
         },
         {
           "kind": "theorem",
           "name": "norm_blaschkeFactor_lt_one",
-          "line": 47
+          "line": 51
         },
         {
           "kind": "theorem",
           "name": "norm_blaschkeFactor_eq_one",
-          "line": 58
+          "line": 62
         },
         {
           "kind": "def",
           "name": "eval",
-          "line": 69
+          "line": 73
         },
         {
           "kind": "theorem",
           "name": "analyticOnNhd_closedBall",
-          "line": 72
+          "line": 76
         },
         {
           "kind": "theorem",
           "name": "norm_eval_sphere",
-          "line": 84
+          "line": 88
         },
         {
           "kind": "theorem",
           "name": "eval_zero",
-          "line": 91
+          "line": 95
         },
         {
           "kind": "theorem",
           "name": "norm_eval_lt_one",
-          "line": 99
+          "line": 103
         },
         {
           "kind": "theorem",
           "name": "mapsTo_closedBall",
-          "line": 112
+          "line": 116
         },
         {
           "kind": "theorem",
           "name": "exists_open_holomorphic_neighborhood",
-          "line": 126
+          "line": 130
         },
         {
           "kind": "theorem",
           "name": "image_ball",
-          "line": 152
+          "line": 156
         }
       ]
     },
@@ -1859,12 +1861,12 @@
         {
           "kind": "theorem",
           "name": "exists_finite_conformal_chain_order_le",
-          "line": 12
+          "line": 16
         },
         {
           "kind": "theorem",
           "name": "exists_finite_conformal_chain",
-          "line": 113
+          "line": 117
         }
       ]
     },
@@ -1885,12 +1887,12 @@
         {
           "kind": "theorem",
           "name": "exists_conformal_correction_of_finite_critical_set_order_le",
-          "line": 19
+          "line": 23
         },
         {
           "kind": "theorem",
           "name": "exists_conformal_correction_of_finite_critical_set",
-          "line": 169
+          "line": 173
         }
       ]
     },
@@ -1909,12 +1911,12 @@
         {
           "kind": "theorem",
           "name": "exists_tolerance_forces_fixed_marks",
-          "line": 15
+          "line": 19
         },
         {
           "kind": "theorem",
           "name": "fixes_marks_of_injective_conjugacy",
-          "line": 40
+          "line": 44
         }
       ]
     },
@@ -1930,7 +1932,7 @@
         {
           "kind": "theorem",
           "name": "exists_compact_target_collar_for_finite_orbit",
-          "line": 11
+          "line": 15
         }
       ]
     },
@@ -1947,7 +1949,7 @@
         {
           "kind": "theorem",
           "name": "forward_coordinate_eventually_eq_prefix",
-          "line": 15
+          "line": 19
         }
       ]
     },
@@ -1964,7 +1966,7 @@
         {
           "kind": "theorem",
           "name": "exists_reflection_of_half_disk_map_to_circle",
-          "line": 12
+          "line": 16
         }
       ]
     },
@@ -1981,17 +1983,17 @@
         {
           "kind": "theorem",
           "name": "locallyBoundedOn_inverse_riemannMaps_of_im_lower_bound",
-          "line": 15
+          "line": 19
         },
         {
           "kind": "theorem",
           "name": "normalized_riemannMaps_tendsto_on_halfPlane_kernel",
-          "line": 32
+          "line": 36
         },
         {
           "kind": "theorem",
           "name": "exists_normalized_riemannMap_of_halfPlane_kernel",
-          "line": 48
+          "line": 52
         }
       ]
     },
@@ -2008,7 +2010,7 @@
         {
           "kind": "theorem",
           "name": "rightEndRiemannMap_halfstrip_left_limit",
-          "line": 11
+          "line": 15
         }
       ]
     },
@@ -2024,12 +2026,12 @@
         {
           "kind": "theorem",
           "name": "analyticAt_homeomorph_symm",
-          "line": 11
+          "line": 15
         },
         {
           "kind": "theorem",
           "name": "analyticOnNhd_homeomorph_symm_image",
-          "line": 26
+          "line": 30
         }
       ]
     },
@@ -2046,7 +2048,7 @@
         {
           "kind": "theorem",
           "name": "locallyBoundedOn_of_im_lower_bound",
-          "line": 8
+          "line": 12
         }
       ]
     },
@@ -2063,7 +2065,7 @@
         {
           "kind": "theorem",
           "name": "exists_holomorphic_reflection_across_imaginary_axis",
-          "line": 16
+          "line": 20
         }
       ]
     },
@@ -2079,7 +2081,7 @@
         {
           "kind": "theorem",
           "name": "exists_holomorphic_image_chart_of_injOn",
-          "line": 11
+          "line": 15
         }
       ]
     },
@@ -2098,37 +2100,37 @@
         {
           "kind": "def",
           "name": "pullbackChain",
-          "line": 13
-        },
-        {
-          "kind": "theorem",
-          "name": "mapsTo_pullbackChain",
           "line": 17
         },
         {
           "kind": "theorem",
+          "name": "mapsTo_pullbackChain",
+          "line": 21
+        },
+        {
+          "kind": "theorem",
           "name": "analyticOnNhd_pullbackChain",
-          "line": 25
+          "line": 29
         },
         {
           "kind": "theorem",
           "name": "iterate_pullbackChain_rightInv",
-          "line": 37
+          "line": 41
         },
         {
           "kind": "theorem",
           "name": "iterate_pullbackChain_mem",
-          "line": 53
+          "line": 57
         },
         {
           "kind": "theorem",
           "name": "dist_pullbackChain_le",
-          "line": 75
+          "line": 79
         },
         {
           "kind": "theorem",
           "name": "return_iterate_eq_of_pullback_head",
-          "line": 91
+          "line": 95
         }
       ]
     },
@@ -2144,7 +2146,7 @@
         {
           "kind": "theorem",
           "name": "iterate_pullbackChain_mem_branch_image",
-          "line": 11
+          "line": 15
         }
       ]
     },
@@ -2163,12 +2165,12 @@
         {
           "kind": "theorem",
           "name": "inverse_branch_dist_le_of_deriv_lower_bound",
-          "line": 16
+          "line": 20
         },
         {
           "kind": "theorem",
           "name": "inverse_branch_dist_le_of_one_le_deriv",
-          "line": 45
+          "line": 49
         }
       ]
     },
@@ -2185,12 +2187,12 @@
         {
           "kind": "theorem",
           "name": "analyticAt_of_holomorphic_right_inverse",
-          "line": 14
+          "line": 18
         },
         {
           "kind": "theorem",
           "name": "iterate_pullbackChain_analytic",
-          "line": 35
+          "line": 39
         }
       ]
     },
@@ -2208,17 +2210,17 @@
         {
           "kind": "theorem",
           "name": "mapsTo_unitBall_of_holomorphic_limit",
-          "line": 14
+          "line": 18
         },
         {
           "kind": "theorem",
           "name": "leftInvOn_of_locallyUniform_limits",
-          "line": 36
+          "line": 40
         },
         {
           "kind": "theorem",
           "name": "invOn_of_locallyUniform_limits",
-          "line": 53
+          "line": 57
         }
       ]
     },
@@ -2235,12 +2237,12 @@
         {
           "kind": "theorem",
           "name": "analyticOrderAt_centered_postcomp_of_deriv_ne_zero",
-          "line": 12
+          "line": 16
         },
         {
           "kind": "theorem",
           "name": "exists_uniform_inverse_tolerance_near_compact",
-          "line": 26
+          "line": 30
         }
       ]
     },
@@ -2256,27 +2258,27 @@
         {
           "kind": "theorem",
           "name": "invertedExterior_mem_nhds_iff",
-          "line": 10
+          "line": 14
         },
         {
           "kind": "theorem",
           "name": "zero_mem_interior_invertedExterior",
-          "line": 26
+          "line": 30
         },
         {
           "kind": "theorem",
           "name": "isClosed_invertedExterior_of_isOpen",
-          "line": 42
+          "line": 46
         },
         {
           "kind": "theorem",
           "name": "isCompact_invertedExterior_of_isOpen",
-          "line": 60
+          "line": 64
         },
         {
           "kind": "theorem",
           "name": "frontier_invertedExterior_of_bounded_open",
-          "line": 78
+          "line": 82
         }
       ]
     },
@@ -2295,17 +2297,17 @@
         {
           "kind": "theorem",
           "name": "exists_continuous_extension_of_jordan_bijOn",
-          "line": 18
+          "line": 22
         },
         {
           "kind": "theorem",
           "name": "exists_boundary_normalized_disc_map",
-          "line": 39
+          "line": 43
         },
         {
           "kind": "theorem",
           "name": "exists_boundary_normalized_disc_map_on_domain",
-          "line": 91
+          "line": 95
         }
       ]
     },
@@ -2324,22 +2326,22 @@
         {
           "kind": "theorem",
           "name": "locallyUniformOn_of_subsequence_limits",
-          "line": 18
+          "line": 22
         },
         {
           "kind": "theorem",
           "name": "normalized_riemannMaps_tendsto_on_kernel_of_locallyBounded",
-          "line": 36
+          "line": 40
         },
         {
           "kind": "theorem",
           "name": "normalized_riemannMaps_tendsto_on_bounded_kernel",
-          "line": 90
+          "line": 94
         },
         {
           "kind": "theorem",
           "name": "exists_normalized_riemannMap_of_bounded_kernel",
-          "line": 111
+          "line": 115
         }
       ]
     },
@@ -2357,17 +2359,17 @@
         {
           "kind": "theorem",
           "name": "image_subset_interior_iInter_of_holomorphic_limit",
-          "line": 19
+          "line": 23
         },
         {
           "kind": "theorem",
           "name": "nonconstant_of_derivative_lower_bound_of_tendstoLocallyUniformlyOn",
-          "line": 36
+          "line": 40
         },
         {
           "kind": "theorem",
           "name": "image_subset_kernel_of_derivative_lower_bound",
-          "line": 55
+          "line": 59
         }
       ]
     },
@@ -2384,22 +2386,22 @@
         {
           "kind": "theorem",
           "name": "locallyUniformOn_reindex",
-          "line": 18
+          "line": 22
         },
         {
           "kind": "theorem",
           "name": "eventually_disjoint_image_of_tendstoUniformlyOn",
-          "line": 27
+          "line": 31
         },
         {
           "kind": "theorem",
           "name": "eventually_disjoint_image_of_tendstoLocallyUniformlyOn",
-          "line": 42
+          "line": 46
         },
         {
           "kind": "theorem",
           "name": "eventually_disjoint_direct_image_of_inverse_convergence",
-          "line": 54
+          "line": 58
         }
       ]
     },
@@ -2417,12 +2419,12 @@
         {
           "kind": "theorem",
           "name": "exists_biholomorphic_kernel_subsequence_of_locallyBounded",
-          "line": 18
+          "line": 22
         },
         {
           "kind": "theorem",
           "name": "exists_biholomorphic_kernel_subsequence",
-          "line": 83
+          "line": 87
         }
       ]
     },
@@ -2441,17 +2443,17 @@
         {
           "kind": "theorem",
           "name": "eq_const_of_no_image_ball",
-          "line": 12
+          "line": 16
         },
         {
           "kind": "theorem",
           "name": "eq_const_of_omits_one_neg_one",
-          "line": 34
+          "line": 38
         },
         {
           "kind": "theorem",
           "name": "exists_eq_const_of_two_omitted_values",
-          "line": 66
+          "line": 70
         }
       ]
     },
@@ -2469,7 +2471,7 @@
         {
           "kind": "theorem",
           "name": "exists_disc_continuation_at_regular_analytic_boundary",
-          "line": 14
+          "line": 18
         }
       ]
     },
@@ -2486,12 +2488,12 @@
         {
           "kind": "theorem",
           "name": "exists_boundary_cap_for_circular_approach",
-          "line": 11
+          "line": 15
         },
         {
           "kind": "theorem",
           "name": "exists_boundary_limit_of_circular_approach",
-          "line": 69
+          "line": 73
         }
       ]
     },
@@ -2508,17 +2510,17 @@
         {
           "kind": "theorem",
           "name": "deriv_eq_zero_iff_of_local_conjugacy",
-          "line": 12
+          "line": 16
         },
         {
           "kind": "theorem",
           "name": "locally_nonconstant_of_local_conjugacy",
-          "line": 33
+          "line": 37
         },
         {
           "kind": "theorem",
           "name": "critical_control_on_image_of_local_conjugacy",
-          "line": 53
+          "line": 57
         }
       ]
     },
@@ -2535,17 +2537,17 @@
         {
           "kind": "theorem",
           "name": "exists_local_power_coordinate_of_order",
-          "line": 13
+          "line": 17
         },
         {
           "kind": "theorem",
           "name": "exists_local_power_coordinate",
-          "line": 39
+          "line": 43
         },
         {
           "kind": "theorem",
           "name": "exists_local_conformal_correction_of_equal_order",
-          "line": 62
+          "line": 66
         }
       ]
     },
@@ -2563,7 +2565,7 @@
         {
           "kind": "theorem",
           "name": "exists_uniform_injective_approximation_radius",
-          "line": 13
+          "line": 17
         }
       ]
     },
@@ -2581,22 +2583,22 @@
         {
           "kind": "theorem",
           "name": "mapsTo_of_monomial_chart",
-          "line": 13
+          "line": 17
         },
         {
           "kind": "theorem",
           "name": "map_centre_of_monomial_chart",
-          "line": 24
+          "line": 28
         },
         {
           "kind": "theorem",
           "name": "eq_centre_iff_of_monomial_chart",
-          "line": 32
+          "line": 36
         },
         {
           "kind": "theorem",
           "name": "deriv_eq_zero_iff_of_monomial_chart",
-          "line": 54
+          "line": 58
         }
       ]
     },
@@ -2615,57 +2617,57 @@
         {
           "kind": "def",
           "name": "monomialPrefixDegree",
-          "line": 14
+          "line": 18
         },
         {
           "kind": "def",
           "name": "monomialPrefixCoefficient",
-          "line": 19
+          "line": 23
         },
         {
           "kind": "theorem",
           "name": "finiteComposition_monomials",
-          "line": 24
+          "line": 28
         },
         {
           "kind": "theorem",
           "name": "monomialPrefixDegree_ge",
-          "line": 34
+          "line": 38
         },
         {
           "kind": "theorem",
           "name": "monomialPrefixDegree_tendsto",
-          "line": 43
+          "line": 47
         },
         {
           "kind": "def",
           "name": "elementaryRootRotation",
-          "line": 50
+          "line": 54
         },
         {
           "kind": "theorem",
           "name": "elementaryRootRotation_pow",
-          "line": 53
+          "line": 57
         },
         {
           "kind": "theorem",
           "name": "elementaryRootRotation_ne_one",
-          "line": 60
+          "line": 64
         },
         {
           "kind": "theorem",
           "name": "elementaryRootRotation_norm",
-          "line": 68
+          "line": 72
         },
         {
           "kind": "theorem",
           "name": "elementaryRootRotation_tendsto",
-          "line": 71
+          "line": 75
         },
         {
           "kind": "theorem",
           "name": "finiteComposition_monomials_rotation",
-          "line": 80
+          "line": 84
         }
       ]
     },
@@ -2683,17 +2685,17 @@
         {
           "kind": "theorem",
           "name": "exists_cosine_period_translate_norm_le",
-          "line": 12
+          "line": 16
         },
         {
           "kind": "theorem",
           "name": "exists_normalized_analytic_cosine_lift",
-          "line": 33
+          "line": 37
         },
         {
           "kind": "theorem",
           "name": "exists_normalized_scaled_cosine_lift",
-          "line": 49
+          "line": 53
         }
       ]
     },
@@ -2710,7 +2712,7 @@
         {
           "kind": "theorem",
           "name": "exists_power_coordinate_disk",
-          "line": 13
+          "line": 17
         }
       ]
     },
@@ -2726,17 +2728,17 @@
         {
           "kind": "theorem",
           "name": "exists_normalized_analytic_nth_root_at_one",
-          "line": 11
+          "line": 15
         },
         {
           "kind": "theorem",
           "name": "exists_controlled_analytic_nth_root",
-          "line": 32
+          "line": 36
         },
         {
           "kind": "theorem",
           "name": "exists_close_power_coordinate_of_close_unit",
-          "line": 47
+          "line": 51
         }
       ]
     },
@@ -2752,12 +2754,12 @@
         {
           "kind": "theorem",
           "name": "bijOn_div_unit_disk",
-          "line": 8
+          "line": 12
         },
         {
           "kind": "theorem",
           "name": "exists_strip_end_normalization_of_disk_map",
-          "line": 23
+          "line": 27
         }
       ]
     },
@@ -2775,12 +2777,12 @@
         {
           "kind": "theorem",
           "name": "exists_weighted_blaschke_of_isProperMap_holomorphic_disc",
-          "line": 13
+          "line": 17
         },
         {
           "kind": "theorem",
           "name": "exists_finiteBlaschkeProduct_of_isProperMap_holomorphic_disc",
-          "line": 114
+          "line": 118
         }
       ]
     },
@@ -2802,12 +2804,12 @@
         {
           "kind": "theorem",
           "name": "exists_boundary_collar_of_isProperMap_disc",
-          "line": 17
+          "line": 21
         },
         {
           "kind": "theorem",
           "name": "finite_fibre_of_isProperMap_holomorphic_disc",
-          "line": 57
+          "line": 61
         }
       ]
     },
@@ -2824,12 +2826,12 @@
         {
           "kind": "theorem",
           "name": "exists_boundary_collar_of_continuousOn_disc",
-          "line": 11
+          "line": 15
         },
         {
           "kind": "theorem",
           "name": "eq_unimodular_const_of_proper_disc_factor",
-          "line": 44
+          "line": 48
         }
       ]
     },
@@ -2846,17 +2848,17 @@
         {
           "kind": "theorem",
           "name": "order_ne_top_of_isProperMap_holomorphic_disc",
-          "line": 11
+          "line": 15
         },
         {
           "kind": "theorem",
           "name": "finite_divisor_support_of_isProperMap_holomorphic_disc",
-          "line": 34
+          "line": 38
         },
         {
           "kind": "theorem",
           "name": "exists_zero_factorisation_of_isProperMap_holomorphic_disc",
-          "line": 48
+          "line": 52
         }
       ]
     },
@@ -2873,7 +2875,7 @@
         {
           "kind": "theorem",
           "name": "eventually_rotation_identity_on_regular_domains",
-          "line": 12
+          "line": 16
         }
       ]
     },
@@ -2890,12 +2892,12 @@
         {
           "kind": "theorem",
           "name": "eventually_close_on_radial_segment",
-          "line": 11
+          "line": 15
         },
         {
           "kind": "theorem",
           "name": "exists_outer_radius_for_radial_kernel_control",
-          "line": 34
+          "line": 38
         }
       ]
     },
@@ -2911,12 +2913,12 @@
         {
           "kind": "theorem",
           "name": "norm_unit_circle_inversion",
-          "line": 14
+          "line": 18
         },
         {
           "kind": "theorem",
           "name": "norm_circleSchwarzReflection_le",
-          "line": 17
+          "line": 21
         }
       ]
     },
@@ -2933,12 +2935,12 @@
         {
           "kind": "theorem",
           "name": "reflected_maps_tendsto_of_inner_convergence",
-          "line": 16
+          "line": 20
         },
         {
           "kind": "theorem",
           "name": "locallyUniformOn_closedSide_of_reflected_convergence",
-          "line": 56
+          "line": 60
         }
       ]
     },
@@ -2958,32 +2960,32 @@
         {
           "kind": "theorem",
           "name": "injOn_of_open_images_of_injOn_dense_preimage",
-          "line": 19
+          "line": 23
         },
         {
           "kind": "theorem",
           "name": "dense_re_ne_zero",
-          "line": 38
+          "line": 42
         },
         {
           "kind": "theorem",
           "name": "injOn_of_imaginary_reflection",
-          "line": 53
+          "line": 57
         },
         {
           "kind": "theorem",
           "name": "exists_conformal_reflection_at_zero",
-          "line": 105
+          "line": 109
         },
         {
           "kind": "theorem",
           "name": "deriv_positive_real_of_halfplane_map",
-          "line": 127
+          "line": 131
         },
         {
           "kind": "theorem",
           "name": "exists_positive_conformal_reflection_at_zero",
-          "line": 167
+          "line": 171
         }
       ]
     },
@@ -3000,27 +3002,27 @@
         {
           "kind": "theorem",
           "name": "exists_conformal_reflection_of_axis_avoidance",
-          "line": 11
+          "line": 15
         },
         {
           "kind": "theorem",
           "name": "exists_conformal_reflection_in_analytic_coordinate_of_axis_avoidance",
-          "line": 48
+          "line": 52
         },
         {
           "kind": "theorem",
           "name": "exists_disc_continuation_across_analytic_arc_of_axis_avoidance",
-          "line": 98
+          "line": 102
         },
         {
           "kind": "def",
           "name": "HasRegularAnalyticArcAt",
-          "line": 158
+          "line": 162
         },
         {
           "kind": "theorem",
           "name": "exists_disc_continuation_of_regular_analytic_boundary_arc",
-          "line": 166
+          "line": 170
         }
       ]
     },
@@ -3038,17 +3040,17 @@
         {
           "kind": "theorem",
           "name": "exists_regular_circle_point_of_injOn_cap",
-          "line": 13
+          "line": 17
         },
         {
           "kind": "theorem",
           "name": "exists_analytic_gluing",
-          "line": 49
+          "line": 53
         },
         {
           "kind": "theorem",
           "name": "exists_regular_disc_continuation_of_analytic_extension",
-          "line": 74
+          "line": 78
         }
       ]
     },
@@ -3066,7 +3068,7 @@
         {
           "kind": "theorem",
           "name": "exists_conformal_correction_of_deriv_ne_zero",
-          "line": 16
+          "line": 20
         }
       ]
     },
@@ -3084,7 +3086,7 @@
         {
           "kind": "theorem",
           "name": "normalized_inverse_derivative_lower_bound",
-          "line": 17
+          "line": 21
         }
       ]
     },
@@ -3103,7 +3105,7 @@
         {
           "kind": "theorem",
           "name": "exists_riemannMap_on_domain",
-          "line": 20
+          "line": 24
         }
       ]
     },
@@ -3120,27 +3122,27 @@
         {
           "kind": "def",
           "name": "rightCircularCut",
-          "line": 10
+          "line": 14
         },
         {
           "kind": "theorem",
           "name": "continuous_rightCircularCut",
-          "line": 13
+          "line": 17
         },
         {
           "kind": "theorem",
           "name": "rightCircularCut_neg_of_re_lt",
-          "line": 18
-        },
-        {
-          "kind": "theorem",
-          "name": "rightCircularCut_pos_iff",
           "line": 22
         },
         {
           "kind": "theorem",
+          "name": "rightCircularCut_pos_iff",
+          "line": 26
+        },
+        {
+          "kind": "theorem",
           "name": "exists_right_semicircle_of_rightCircularCut_eq_zero",
-          "line": 28
+          "line": 32
         }
       ]
     },
@@ -3156,7 +3158,7 @@
         {
           "kind": "theorem",
           "name": "rightEndRiemannMaps_tendsto_on_kernel",
-          "line": 11
+          "line": 15
         }
       ]
     },
@@ -3173,27 +3175,27 @@
         {
           "kind": "structure",
           "name": "IsRightEndRiemannMapOn",
-          "line": 11
+          "line": 15
         },
         {
           "kind": "theorem",
           "name": "zero_mem_closure_exponentialImage_of_straight_tail",
-          "line": 18
+          "line": 22
         },
         {
           "kind": "theorem",
           "name": "IsRightEndRiemannMapOn.eqOn",
-          "line": 27
+          "line": 31
         },
         {
           "kind": "theorem",
           "name": "exists_rightEndRiemannMapOn",
-          "line": 47
+          "line": 51
         },
         {
           "kind": "theorem",
           "name": "IsRightEndRiemannMapOn.strip_end_estimates",
-          "line": 67
+          "line": 71
         }
       ]
     },
@@ -3210,12 +3212,12 @@
         {
           "kind": "theorem",
           "name": "IsRightEndRiemannMapOn.conj_eq",
-          "line": 10
+          "line": 14
         },
         {
           "kind": "theorem",
           "name": "IsRightEndRiemannMapOn.tendsto_real_atTop",
-          "line": 57
+          "line": 61
         }
       ]
     },
@@ -3234,12 +3236,12 @@
         {
           "kind": "theorem",
           "name": "eventually_rotations_map_collar",
-          "line": 15
+          "line": 19
         },
         {
           "kind": "theorem",
           "name": "eventually_rotation_identity_across_circle",
-          "line": 36
+          "line": 40
         }
       ]
     },
@@ -3257,22 +3259,22 @@
         {
           "kind": "theorem",
           "name": "schottky_centre_displacement",
-          "line": 19
+          "line": 23
         },
         {
           "kind": "theorem",
           "name": "exists_uniform_radius_of_two_omitted_values",
-          "line": 41
+          "line": 45
         },
         {
           "kind": "theorem",
           "name": "exists_uniform_radius_of_compact_centres",
-          "line": 67
+          "line": 71
         },
         {
           "kind": "theorem",
           "name": "exists_uniform_radius_of_compact_centres_omit_pair",
-          "line": 80
+          "line": 84
         }
       ]
     },
@@ -3288,17 +3290,17 @@
         {
           "kind": "def",
           "name": "schottkyZeroOneMajorant",
-          "line": 8
-        },
-        {
-          "kind": "theorem",
-          "name": "norm_le_schottkyZeroOneMajorant",
           "line": 12
         },
         {
           "kind": "theorem",
+          "name": "norm_le_schottkyZeroOneMajorant",
+          "line": 16
+        },
+        {
+          "kind": "theorem",
           "name": "norm_le_schottkyZeroOneMajorant_on_disc",
-          "line": 42
+          "line": 46
         }
       ]
     },
@@ -3318,22 +3320,22 @@
         {
           "kind": "theorem",
           "name": "norm_cos_le_exp_norm",
-          "line": 12
+          "line": 16
         },
         {
           "kind": "theorem",
           "name": "norm_sub_le_of_no_image_ball",
-          "line": 24
+          "line": 28
         },
         {
           "kind": "def",
           "name": "schottkyMajorant",
-          "line": 57
+          "line": 61
         },
         {
           "kind": "theorem",
           "name": "norm_le_schottkyMajorant",
-          "line": 61
+          "line": 65
         }
       ]
     },
@@ -3356,22 +3358,22 @@
         {
           "kind": "theorem",
           "name": "arcosh_add_one_le",
-          "line": 15
+          "line": 19
         },
         {
           "kind": "theorem",
           "name": "exists_nearby_integer_cosh",
-          "line": 34
+          "line": 38
         },
         {
           "kind": "theorem",
           "name": "exists_nearby_integer_cosine",
-          "line": 76
+          "line": 80
         },
         {
           "kind": "theorem",
           "name": "no_ball_subset_double_cosine_lift_image",
-          "line": 105
+          "line": 109
         }
       ]
     },
@@ -3388,7 +3390,7 @@
         {
           "kind": "theorem",
           "name": "exists_bounded_subsequence_or_inverse_on_disc",
-          "line": 11
+          "line": 15
         }
       ]
     },
@@ -3406,17 +3408,17 @@
         {
           "kind": "theorem",
           "name": "nonpositive_side_subset_boundary_cap",
-          "line": 12
+          "line": 16
         },
         {
           "kind": "theorem",
           "name": "re_discToHorizontalStrip_le_log_of_mem_left_cap",
-          "line": 28
+          "line": 32
         },
         {
           "kind": "theorem",
           "name": "leftward_strip_bound_of_separating_barrier",
-          "line": 55
+          "line": 59
         }
       ]
     },
@@ -3434,12 +3436,12 @@
         {
           "kind": "theorem",
           "name": "exists_boundary_neighbourhood_convergence_of_shared_arc",
-          "line": 18
+          "line": 22
         },
         {
           "kind": "theorem",
           "name": "univalent_convergence_on_closedDisk_away_from_exceptional_set",
-          "line": 44
+          "line": 48
         }
       ]
     },
@@ -3455,17 +3457,17 @@
         {
           "kind": "theorem",
           "name": "open_set_avoids_vertical_line_of_singleton_intersection",
-          "line": 8
+          "line": 12
         },
         {
           "kind": "theorem",
           "name": "preconnected_subset_right_of_avoiding_vertical_line",
-          "line": 26
+          "line": 30
         },
         {
           "kind": "theorem",
           "name": "kernel_component_right_of_shrinking_gate",
-          "line": 43
+          "line": 47
         }
       ]
     },
@@ -3482,17 +3484,17 @@
         {
           "kind": "theorem",
           "name": "exists_boundary_limit_at_slit_bank",
-          "line": 11
+          "line": 15
         },
         {
           "kind": "theorem",
           "name": "sq_mem_slitPlane_of_re_pos",
-          "line": 43
+          "line": 47
         },
         {
           "kind": "theorem",
           "name": "injOn_sq_right_halfplane",
-          "line": 56
+          "line": 60
         }
       ]
     },
@@ -3508,17 +3510,17 @@
         {
           "kind": "theorem",
           "name": "circleMap_mem_slitPlane_of_angle",
-          "line": 8
+          "line": 12
         },
         {
           "kind": "theorem",
           "name": "circular_approach_of_local_slit",
-          "line": 19
+          "line": 23
         },
         {
           "kind": "theorem",
           "name": "exists_boundary_limit_at_slit_tip",
-          "line": 78
+          "line": 82
         }
       ]
     },
@@ -3534,7 +3536,7 @@
         {
           "kind": "theorem",
           "name": "exists_boundary_limit_at_reflected_slit_tip",
-          "line": 9
+          "line": 13
         }
       ]
     },
@@ -3551,12 +3553,12 @@
         {
           "kind": "theorem",
           "name": "exists_analytic_inverse_extension_at_slit_tip",
-          "line": 12
+          "line": 16
         },
         {
           "kind": "theorem",
           "name": "exists_inverse_boundary_limit_at_slit_tip",
-          "line": 103
+          "line": 107
         }
       ]
     },
@@ -3573,12 +3575,12 @@
         {
           "kind": "theorem",
           "name": "exists_inverse_boundary_limit_at_reflected_slit_tip",
-          "line": 11
+          "line": 15
         },
         {
           "kind": "theorem",
           "name": "exists_corresponding_boundary_limits_at_reflected_slit_tip",
-          "line": 49
+          "line": 53
         }
       ]
     },
@@ -3595,12 +3597,12 @@
         {
           "kind": "theorem",
           "name": "exists_jordan_curves_through_reflected_slit_tip",
-          "line": 12
+          "line": 16
         },
         {
           "kind": "theorem",
           "name": "image_zero_notMem_image_tangent_sphere",
-          "line": 59
+          "line": 63
         }
       ]
     },
@@ -3617,12 +3619,12 @@
         {
           "kind": "theorem",
           "name": "re_squared_slit_bank_coordinate",
-          "line": 9
+          "line": 13
         },
         {
           "kind": "theorem",
           "name": "exists_continuous_extension_on_unwrapped_slit",
-          "line": 19
+          "line": 23
         }
       ]
     },
@@ -3641,7 +3643,7 @@
         {
           "kind": "theorem",
           "name": "exists_smooth_finite_conformal_chain",
-          "line": 38
+          "line": 42
         }
       ]
     },
@@ -3659,7 +3661,7 @@
         {
           "kind": "theorem",
           "name": "exists_smooth_forward_chain_tolerance",
-          "line": 15
+          "line": 19
         }
       ]
     },
@@ -3676,7 +3678,7 @@
         {
           "kind": "theorem",
           "name": "exists_smooth_forward_coordinate_tolerance",
-          "line": 14
+          "line": 18
         }
       ]
     },
@@ -3693,7 +3695,7 @@
         {
           "kind": "theorem",
           "name": "exists_smooth_forward_prefix_tolerance",
-          "line": 14
+          "line": 18
         }
       ]
     },
@@ -3710,7 +3712,7 @@
         {
           "kind": "theorem",
           "name": "exists_smooth_univalent_forward_corrections",
-          "line": 13
+          "line": 17
         }
       ]
     },
@@ -3730,7 +3732,7 @@
         {
           "kind": "theorem",
           "name": "exists_stable_inverse_branch_on_compact",
-          "line": 17
+          "line": 21
         }
       ]
     },
@@ -3748,7 +3750,7 @@
         {
           "kind": "theorem",
           "name": "exists_backward_conformal_correction_tolerance",
-          "line": 15
+          "line": 19
         }
       ]
     },
@@ -3764,12 +3766,12 @@
         {
           "kind": "theorem",
           "name": "mem_closure_right_half_ball",
-          "line": 8
+          "line": 12
         },
         {
           "kind": "theorem",
           "name": "exists_continuous_extension_at_straight_side",
-          "line": 31
+          "line": 35
         }
       ]
     },
@@ -3786,12 +3788,12 @@
         {
           "kind": "theorem",
           "name": "dist_boundary_limit_le_of_boundary_cap",
-          "line": 9
+          "line": 13
         },
         {
           "kind": "theorem",
           "name": "boundary_limits_tendsto_of_common_straight_side",
-          "line": 34
+          "line": 38
         }
       ]
     },
@@ -3807,7 +3809,7 @@
         {
           "kind": "theorem",
           "name": "exists_boundary_limit_at_straight_side_in_coordinates",
-          "line": 10
+          "line": 14
         }
       ]
     },
@@ -3825,12 +3827,12 @@
         {
           "kind": "theorem",
           "name": "exists_positive_cayley_coordinate_of_disk_map_at_straight_boundary",
-          "line": 13
+          "line": 17
         },
         {
           "kind": "theorem",
           "name": "exists_disk_map_with_positive_cayley_coordinate_at_straight_boundary",
-          "line": 97
+          "line": 101
         }
       ]
     },
@@ -3848,17 +3850,17 @@
         {
           "kind": "theorem",
           "name": "re_eq_zero_of_mem_frontier_of_halfplane_neighbourhood",
-          "line": 18
+          "line": 22
         },
         {
           "kind": "theorem",
           "name": "exists_positive_reflection_of_disc_map_at_one",
-          "line": 33
+          "line": 37
         },
         {
           "kind": "theorem",
           "name": "exists_boundary_normalized_disc_map_with_positive_reflection",
-          "line": 115
+          "line": 119
         }
       ]
     },
@@ -3874,12 +3876,12 @@
         {
           "kind": "theorem",
           "name": "exists_analytic_cayley_inverse_at_zero",
-          "line": 16
+          "line": 20
         },
         {
           "kind": "theorem",
           "name": "exists_analytic_extension_of_cayley_inverse",
-          "line": 75
+          "line": 79
         }
       ]
     },
@@ -3895,12 +3897,12 @@
         {
           "kind": "theorem",
           "name": "exists_boundary_cap_at_straight_side",
-          "line": 10
+          "line": 14
         },
         {
           "kind": "theorem",
           "name": "exists_boundary_limit_at_straight_side",
-          "line": 112
+          "line": 116
         }
       ]
     },
@@ -3918,17 +3920,17 @@
         {
           "kind": "theorem",
           "name": "bijOn_neg_log_exponentialImage",
-          "line": 10
+          "line": 14
         },
         {
           "kind": "theorem",
           "name": "boundary_values_tendsto_at_common_strip_end",
-          "line": 25
+          "line": 29
         },
         {
           "kind": "theorem",
           "name": "locallyUniform_div_boundary_values",
-          "line": 75
+          "line": 79
         }
       ]
     },
@@ -3947,27 +3949,27 @@
         {
           "kind": "theorem",
           "name": "isCompact_left_truncation_of_strip_bounds",
-          "line": 18
+          "line": 22
         },
         {
           "kind": "theorem",
           "name": "exists_norm_bounds_of_strip_tail",
-          "line": 34
+          "line": 38
         },
         {
           "kind": "theorem",
           "name": "exists_derivative_bounds_of_strip_tail",
-          "line": 62
+          "line": 66
         },
         {
           "kind": "theorem",
           "name": "exists_derivative_bounds_of_strip_limit",
-          "line": 79
+          "line": 83
         },
         {
           "kind": "theorem",
           "name": "exists_derivative_bounds_of_strip_asymptotic",
-          "line": 96
+          "line": 100
         }
       ]
     },
@@ -3983,47 +3985,47 @@
         {
           "kind": "def",
           "name": "closedHorizontalStrip",
-          "line": 15
+          "line": 19
         },
         {
           "kind": "def",
           "name": "horizontalStripToDisc",
-          "line": 17
+          "line": 21
         },
         {
           "kind": "theorem",
           "name": "re_exp_neg_nonneg_of_mem_closedStrip",
-          "line": 19
+          "line": 23
         },
         {
           "kind": "theorem",
           "name": "horizontalStripToDisc_mem_closedBall",
-          "line": 24
-        },
-        {
-          "kind": "theorem",
-          "name": "horizontalStripToDisc_ne_one",
           "line": 28
         },
         {
           "kind": "theorem",
+          "name": "horizontalStripToDisc_ne_one",
+          "line": 32
+        },
+        {
+          "kind": "theorem",
           "name": "continuousOn_horizontalStripToDisc",
-          "line": 37
+          "line": 41
         },
         {
           "kind": "theorem",
           "name": "horizontalStripToDisc_mem_ball",
-          "line": 45
-        },
-        {
-          "kind": "theorem",
-          "name": "discToHorizontalStrip_horizontalStripToDisc",
           "line": 49
         },
         {
           "kind": "theorem",
+          "name": "discToHorizontalStrip_horizontalStripToDisc",
+          "line": 53
+        },
+        {
+          "kind": "theorem",
           "name": "continuousOn_logarithmic_strip_inverse",
-          "line": 57
+          "line": 61
         }
       ]
     },
@@ -4040,72 +4042,72 @@
         {
           "kind": "def",
           "name": "standardHorizontalStrip",
-          "line": 10
+          "line": 14
         },
         {
           "kind": "theorem",
           "name": "isOpen_standardHorizontalStrip",
-          "line": 12
+          "line": 16
         },
         {
           "kind": "theorem",
           "name": "re_exp_neg_pos_of_mem_strip",
-          "line": 15
+          "line": 19
         },
         {
           "kind": "theorem",
           "name": "neg_log_mem_strip",
-          "line": 20
+          "line": 24
         },
         {
           "kind": "theorem",
           "name": "neg_log_exp_neg_of_mem_strip",
-          "line": 25
+          "line": 29
         },
         {
           "kind": "theorem",
           "name": "exp_neg_neg_log_of_re_pos",
-          "line": 31
+          "line": 35
         },
         {
           "kind": "theorem",
           "name": "bijOn_exp_neg_strip",
-          "line": 37
+          "line": 41
         },
         {
           "kind": "theorem",
           "name": "bijOn_neg_log_rightHalfPlane",
-          "line": 46
+          "line": 50
         },
         {
           "kind": "theorem",
           "name": "differentiableOn_neg_log_rightHalfPlane",
-          "line": 55
+          "line": 59
         },
         {
           "kind": "def",
           "name": "discToHorizontalStrip",
-          "line": 60
+          "line": 64
         },
         {
           "kind": "theorem",
           "name": "bijOn_discToHorizontalStrip",
-          "line": 62
-        },
-        {
-          "kind": "theorem",
-          "name": "differentiableOn_discToHorizontalStrip",
           "line": 66
         },
         {
           "kind": "theorem",
+          "name": "differentiableOn_discToHorizontalStrip",
+          "line": 70
+        },
+        {
+          "kind": "theorem",
           "name": "discToHorizontalStrip_zero",
-          "line": 73
+          "line": 77
         },
         {
           "kind": "theorem",
           "name": "exp_neg_discToHorizontalStrip",
-          "line": 76
+          "line": 80
         }
       ]
     },
@@ -4124,37 +4126,37 @@
         {
           "kind": "theorem",
           "name": "analyticAt_dslope",
-          "line": 18
+          "line": 22
         },
         {
           "kind": "theorem",
           "name": "isBigO_mul_logDeriv_sub_one_at_simple_zero",
-          "line": 25
+          "line": 29
         },
         {
           "kind": "theorem",
           "name": "isBigO_log_quotient_sub_log_deriv",
-          "line": 46
+          "line": 50
         },
         {
           "kind": "theorem",
           "name": "tendsto_exp_neg_re_atTop",
-          "line": 68
+          "line": 72
         },
         {
           "kind": "theorem",
           "name": "isBigO_comp_exp_neg",
-          "line": 78
+          "line": 82
         },
         {
           "kind": "theorem",
           "name": "stripEnd_logDeriv_estimate",
-          "line": 87
+          "line": 91
         },
         {
           "kind": "theorem",
           "name": "stripEnd_log_quotient_estimate",
-          "line": 96
+          "line": 100
         }
       ]
     },
@@ -4171,27 +4173,27 @@
         {
           "kind": "theorem",
           "name": "deriv_eq_logDeriv_of_exp_identity",
-          "line": 17
+          "line": 21
         },
         {
           "kind": "theorem",
           "name": "stripEnd_derivative_estimate_of_exp_identity",
-          "line": 36
+          "line": 40
         },
         {
           "kind": "theorem",
           "name": "sub_eq_neg_log_quotient_of_exp_identity",
-          "line": 51
+          "line": 55
         },
         {
           "kind": "theorem",
           "name": "stripEnd_value_estimate_of_exp_identity",
-          "line": 62
+          "line": 66
         },
         {
           "kind": "theorem",
           "name": "stripEnd_estimates_of_reflected_map",
-          "line": 78
+          "line": 82
         }
       ]
     },
@@ -4210,32 +4212,32 @@
         {
           "kind": "def",
           "name": "exponentialImage",
-          "line": 23
+          "line": 27
         },
         {
           "kind": "theorem",
           "name": "zero_mem_frontier_of_halfplane_neighbourhood",
-          "line": 25
+          "line": 29
         },
         {
           "kind": "theorem",
           "name": "isBounded_exponentialImage_of_re_lower_bound",
-          "line": 42
+          "line": 46
         },
         {
           "kind": "theorem",
           "name": "exponentialImage_agrees_with_halfplane_at_zero",
-          "line": 50
+          "line": 54
         },
         {
           "kind": "theorem",
           "name": "tendsto_re_atTop_of_strip_translation_asymptotic",
-          "line": 68
+          "line": 72
         },
         {
           "kind": "theorem",
           "name": "exists_normalized_strip_map_of_jordan_exponential_image",
-          "line": 91
+          "line": 95
         }
       ]
     },
@@ -4252,7 +4254,7 @@
         {
           "kind": "theorem",
           "name": "exists_normalized_strip_map_of_straight_tail",
-          "line": 12
+          "line": 16
         }
       ]
     },
@@ -4269,7 +4271,7 @@
         {
           "kind": "theorem",
           "name": "uniformContinuousOn_inverse_of_strip_translation_limit",
-          "line": 11
+          "line": 15
         }
       ]
     },
@@ -4287,7 +4289,7 @@
         {
           "kind": "theorem",
           "name": "eventually_abs_re_gt_of_inverse_closed_strip_convergence",
-          "line": 17
+          "line": 21
         }
       ]
     },
@@ -4304,32 +4306,32 @@
         {
           "kind": "theorem",
           "name": "exists_norm_bound_of_strip_limit",
-          "line": 16
+          "line": 20
         },
         {
           "kind": "theorem",
           "name": "isCompact_inter_preimage_of_bounded_displacement",
-          "line": 40
+          "line": 44
         },
         {
           "kind": "theorem",
           "name": "isProperMap_restrict_of_bounded_displacement",
-          "line": 57
+          "line": 61
         },
         {
           "kind": "theorem",
           "name": "isProperMap_restrict_of_strip_translation_limit",
-          "line": 72
+          "line": 76
         },
         {
           "kind": "theorem",
           "name": "isClosed_image_of_strip_translation_limit",
-          "line": 82
+          "line": 86
         },
         {
           "kind": "theorem",
           "name": "isProperMap_restrict_of_strip_translation_asymptotic",
-          "line": 91
+          "line": 95
         }
       ]
     },
@@ -4346,17 +4348,17 @@
         {
           "kind": "theorem",
           "name": "exists_uniform_neighbourhood_of_strip_tail",
-          "line": 15
+          "line": 19
         },
         {
           "kind": "theorem",
           "name": "uniformContinuousOn_of_strip_limit",
-          "line": 32
+          "line": 36
         },
         {
           "kind": "theorem",
           "name": "uniformContinuousOn_of_strip_translation_limit",
-          "line": 66
+          "line": 70
         }
       ]
     },
@@ -4374,22 +4376,22 @@
         {
           "kind": "theorem",
           "name": "tangent_closedBall_subset_insert_ball",
-          "line": 11
+          "line": 15
         },
         {
           "kind": "theorem",
           "name": "tangency_point_mem_sphere",
-          "line": 40
+          "line": 44
         },
         {
           "kind": "theorem",
           "name": "zero_mem_tangent_ball",
-          "line": 46
+          "line": 50
         },
         {
           "kind": "theorem",
           "name": "isJordanCurve_image_tangent_sphere",
-          "line": 55
+          "line": 59
         }
       ]
     },
@@ -4406,7 +4408,7 @@
         {
           "kind": "theorem",
           "name": "tangent_disk_gives_compact_jordan_enclosure",
-          "line": 12
+          "line": 16
         }
       ]
     },
@@ -4423,7 +4425,7 @@
         {
           "kind": "theorem",
           "name": "tangent_enclosures_eventually_subset_neighbourhood",
-          "line": 11
+          "line": 15
         }
       ]
     },
@@ -4440,12 +4442,12 @@
         {
           "kind": "theorem",
           "name": "tangent_ball_subset_unitDisk",
-          "line": 8
+          "line": 12
         },
         {
           "kind": "theorem",
           "name": "tangent_disk_image_is_bounded_jordan_domain",
-          "line": 22
+          "line": 26
         }
       ]
     },
@@ -4463,12 +4465,12 @@
         {
           "kind": "theorem",
           "name": "leftward_bound_of_short_semicircle",
-          "line": 12
+          "line": 16
         },
         {
           "kind": "theorem",
           "name": "exists_gate_size_for_uniform_leftward_bound",
-          "line": 45
+          "line": 49
         }
       ]
     },
@@ -4485,12 +4487,12 @@
         {
           "kind": "theorem",
           "name": "uniform_left_escape_of_shrinking_attachment",
-          "line": 12
+          "line": 16
         },
         {
           "kind": "theorem",
           "name": "uniform_left_escape_affine",
-          "line": 55
+          "line": 59
         }
       ]
     },
@@ -4508,7 +4510,7 @@
         {
           "kind": "theorem",
           "name": "exists_monomial_in_unicritical_conformal_charts",
-          "line": 13
+          "line": 17
         }
       ]
     },
@@ -4526,12 +4528,12 @@
         {
           "kind": "theorem",
           "name": "re_pos_on_closedDisc_of_re_pos_on_circle",
-          "line": 12
+          "line": 16
         },
         {
           "kind": "theorem",
           "name": "exists_analytic_quotient_by_mul_deriv",
-          "line": 37
+          "line": 41
         }
       ]
     },
@@ -4548,12 +4550,12 @@
         {
           "kind": "theorem",
           "name": "exists_uniform_annulus_of_bounded_image",
-          "line": 11
+          "line": 15
         },
         {
           "kind": "theorem",
           "name": "dist_image_right_semicircle_lt_of_length_lt",
-          "line": 54
+          "line": 58
         }
       ]
     },
@@ -4569,7 +4571,7 @@
         {
           "kind": "theorem",
           "name": "exists_uniform_boundary_cap_at_straight_side",
-          "line": 11
+          "line": 15
         }
       ]
     },
@@ -4588,27 +4590,27 @@
         {
           "kind": "theorem",
           "name": "injOn_of_close_to_id",
-          "line": 24
+          "line": 28
         },
         {
           "kind": "theorem",
           "name": "mapsTo_of_close_to_id",
-          "line": 61
+          "line": 65
         },
         {
           "kind": "theorem",
           "name": "exists_injective_approximation_tolerance",
-          "line": 69
+          "line": 73
         },
         {
           "kind": "theorem",
           "name": "exists_derivative_approximation_tolerance",
-          "line": 100
+          "line": 104
         },
         {
           "kind": "theorem",
           "name": "approximation_of_univalent_on_compact",
-          "line": 131
+          "line": 135
         }
       ]
     },
@@ -4625,17 +4627,17 @@
         {
           "kind": "theorem",
           "name": "ball_subset_image_of_close_to_identity_on_sphere",
-          "line": 17
+          "line": 21
         },
         {
           "kind": "theorem",
           "name": "norm_ge_on_outer_annulus_of_close_to_identity",
-          "line": 45
+          "line": 49
         },
         {
           "kind": "theorem",
           "name": "eventually_norm_ge_on_outer_annulus",
-          "line": 64
+          "line": 68
         }
       ]
     },
@@ -4653,12 +4655,12 @@
         {
           "kind": "theorem",
           "name": "locallyUniformOn_of_nat_tail",
-          "line": 18
+          "line": 22
         },
         {
           "kind": "theorem",
           "name": "univalent_boundary_convergence_on_symmetric_collar",
-          "line": 30
+          "line": 34
         }
       ]
     },
@@ -4676,7 +4678,7 @@
         {
           "kind": "theorem",
           "name": "exists_univalent_finite_composition_tolerance",
-          "line": 15
+          "line": 19
         }
       ]
     },
@@ -4693,17 +4695,17 @@
         {
           "kind": "theorem",
           "name": "image_finiteComposition",
-          "line": 12
+          "line": 16
         },
         {
           "kind": "theorem",
           "name": "exists_conformal_finite_composition",
-          "line": 25
+          "line": 29
         },
         {
           "kind": "theorem",
           "name": "finiteComposition_forward_coordinate_step",
-          "line": 71
+          "line": 75
         }
       ]
     },
@@ -4719,7 +4721,7 @@
         {
           "kind": "theorem",
           "name": "exists_univalent_forward_coordinates",
-          "line": 13
+          "line": 17
         }
       ]
     },
@@ -4736,27 +4738,27 @@
         {
           "kind": "def",
           "name": "IsHolomorphicFunctionOn",
-          "line": 17
+          "line": 21
         },
         {
           "kind": "def",
           "name": "domainExtension",
-          "line": 22
+          "line": 26
         },
         {
           "kind": "theorem",
           "name": "domainExtension_apply",
-          "line": 27
-        },
-        {
-          "kind": "theorem",
-          "name": "IsHolomorphicFunctionOn.differentiableOn_extension",
           "line": 31
         },
         {
           "kind": "theorem",
+          "name": "IsHolomorphicFunctionOn.differentiableOn_extension",
+          "line": 35
+        },
+        {
+          "kind": "theorem",
           "name": "isHolomorphicFunctionOn_restrict",
-          "line": 41
+          "line": 45
         }
       ]
     },
@@ -4780,77 +4782,77 @@
         {
           "kind": "theorem",
           "name": "riemann_mapping",
-          "line": 24
+          "line": 28
         },
         {
           "kind": "theorem",
           "name": "normalized_riemann_mapping",
-          "line": 31
+          "line": 35
         },
         {
           "kind": "theorem",
           "name": "riemann_mapping_on_domain",
-          "line": 38
+          "line": 42
         },
         {
           "kind": "alias",
           "name": "schwarz_reflection",
-          "line": 46
+          "line": 50
         },
         {
           "kind": "alias",
           "name": "montel",
-          "line": 47
-        },
-        {
-          "kind": "alias",
-          "name": "hurwitz_injectivity",
-          "line": 48
-        },
-        {
-          "kind": "alias",
-          "name": "bounded_kernel_convergence",
-          "line": 49
-        },
-        {
-          "kind": "alias",
-          "name": "halfplane_kernel_convergence",
           "line": 51
         },
         {
           "kind": "alias",
-          "name": "reflected_strip_end_derivative_estimate",
+          "name": "hurwitz_injectivity",
           "line": 52
         },
         {
           "kind": "alias",
+          "name": "bounded_kernel_convergence",
+          "line": 53
+        },
+        {
+          "kind": "alias",
+          "name": "halfplane_kernel_convergence",
+          "line": 55
+        },
+        {
+          "kind": "alias",
+          "name": "reflected_strip_end_derivative_estimate",
+          "line": 56
+        },
+        {
+          "kind": "alias",
           "name": "conformal_schwarz_reflection",
-          "line": 54
+          "line": 58
         },
         {
           "kind": "alias",
           "name": "strip_end_asymptotics",
-          "line": 55
+          "line": 59
         },
         {
           "kind": "theorem",
           "name": "caratheodory_continuity",
-          "line": 58
+          "line": 62
         },
         {
           "kind": "theorem",
           "name": "boundary_normalized_riemann_map",
-          "line": 66
+          "line": 70
         },
         {
           "kind": "theorem",
           "name": "normalized_strip_map",
-          "line": 80
+          "line": 84
         },
         {
           "kind": "theorem",
           "name": "spherical_riemann_mapping",
-          "line": 96
+          "line": 100
         }
       ]
     },
@@ -4868,12 +4870,12 @@
         {
           "kind": "theorem",
           "name": "eventuallyEq_of_punctured_eq_of_continuousAt",
-          "line": 14
+          "line": 18
         },
         {
           "kind": "theorem",
           "name": "exists_meromorphic_approximation_representative",
-          "line": 31
+          "line": 35
         }
       ]
     },
@@ -4891,12 +4893,12 @@
         {
           "kind": "theorem",
           "name": "exists_polynomial_clearing_singularities",
-          "line": 14
+          "line": 18
         },
         {
           "kind": "theorem",
           "name": "exists_rational_analytic_remainder",
-          "line": 71
+          "line": 75
         }
       ]
     },
@@ -4913,7 +4915,7 @@
         {
           "kind": "theorem",
           "name": "exists_meromorphic_limit_on_compact_exhaustion",
-          "line": 14
+          "line": 18
         }
       ]
     },
@@ -4931,12 +4933,12 @@
         {
           "kind": "theorem",
           "name": "exists_function_with_germs_on_disjoint_compacts",
-          "line": 15
+          "line": 19
         },
         {
           "kind": "theorem",
           "name": "exists_meromorphic_gluing_on_disjoint_compacts",
-          "line": 34
+          "line": 38
         }
       ]
     },
@@ -4954,17 +4956,17 @@
         {
           "kind": "theorem",
           "name": "eventually_deriv_ne_zero_of_meromorphicNFAt",
-          "line": 12
+          "line": 16
         },
         {
           "kind": "theorem",
           "name": "finite_deriv_zeros_of_meromorphicNFOn",
-          "line": 41
+          "line": 45
         },
         {
           "kind": "theorem",
           "name": "tendsto_norm_atTop_of_injective_meromorphic_critical_points",
-          "line": 57
+          "line": 61
         }
       ]
     },
@@ -4982,7 +4984,7 @@
         {
           "kind": "theorem",
           "name": "not_rational_meromorphic_exp",
-          "line": 14
+          "line": 18
         }
       ]
     },
@@ -4999,22 +5001,22 @@
         {
           "kind": "def",
           "name": "IsMeromorphicFunctionOn",
-          "line": 13
+          "line": 17
         },
         {
           "kind": "theorem",
           "name": "IsMeromorphicFunctionOn.meromorphicOn_extension",
-          "line": 18
+          "line": 22
         },
         {
           "kind": "theorem",
           "name": "isMeromorphicFunctionOn_restrict",
-          "line": 29
+          "line": 33
         },
         {
           "kind": "theorem",
           "name": "isMeromorphicFunctionOn_iff_extension",
-          "line": 36
+          "line": 40
         }
       ]
     },
@@ -5033,7 +5035,7 @@
         {
           "kind": "theorem",
           "name": "eventually_exists_regular_preimage_of_pole",
-          "line": 14
+          "line": 18
         }
       ]
     },
@@ -5053,22 +5055,22 @@
         {
           "kind": "def",
           "name": "IsRationalMeromorphic",
-          "line": 15
+          "line": 19
         },
         {
           "kind": "theorem",
           "name": "rational_limit_at_infinity",
-          "line": 32
+          "line": 36
         },
         {
           "kind": "theorem",
           "name": "rational_meromorphic_limit_at_infinity",
-          "line": 48
+          "line": 52
         },
         {
           "kind": "theorem",
           "name": "not_rational_meromorphic_of_two_sequences",
-          "line": 72
+          "line": 76
         }
       ]
     },
@@ -5085,7 +5087,7 @@
         {
           "kind": "theorem",
           "name": "isConnected_analyticAt_of_meromorphic",
-          "line": 11
+          "line": 15
         }
       ]
     },
@@ -5103,7 +5105,7 @@
         {
           "kind": "theorem",
           "name": "exists_meromorphic_limit_of_summable_analytic_errors",
-          "line": 15
+          "line": 19
         }
       ]
     },
@@ -5122,32 +5124,32 @@
         {
           "kind": "theorem",
           "name": "normal_meromorphic_representative_germ",
-          "line": 15
+          "line": 19
         },
         {
           "kind": "theorem",
           "name": "exists_normal_meromorphic_representative",
-          "line": 23
+          "line": 27
         },
         {
           "kind": "def",
           "name": "meromorphicSphereValue",
-          "line": 34
-        },
-        {
-          "kind": "theorem",
-          "name": "meromorphicSphereValue_of_analytic",
           "line": 38
         },
         {
           "kind": "theorem",
-          "name": "meromorphicSphereValue_of_not_analytic",
+          "name": "meromorphicSphereValue_of_analytic",
           "line": 42
         },
         {
           "kind": "theorem",
+          "name": "meromorphicSphereValue_of_not_analytic",
+          "line": 46
+        },
+        {
+          "kind": "theorem",
           "name": "continuous_meromorphicSphereValue",
-          "line": 48
+          "line": 52
         }
       ]
     },
@@ -5163,7 +5165,7 @@
         {
           "kind": "theorem",
           "name": "exists_finite_chart_convergence",
-          "line": 21
+          "line": 25
         }
       ]
     },
@@ -5180,22 +5182,22 @@
         {
           "kind": "theorem",
           "name": "sphereHolomorphicOn_mono",
-          "line": 15
+          "line": 19
         },
         {
           "kind": "theorem",
           "name": "spherical_hurwitz_finite",
-          "line": 27
+          "line": 31
         },
         {
           "kind": "theorem",
           "name": "tendstoLocallyUniformlyOn_sphere_inversion",
-          "line": 88
+          "line": 92
         },
         {
           "kind": "theorem",
           "name": "spherical_hurwitz_infty",
-          "line": 100
+          "line": 104
         }
       ]
     },
@@ -5212,12 +5214,12 @@
         {
           "kind": "theorem",
           "name": "eventually_rescaled_ball_subset",
-          "line": 16
+          "line": 20
         },
         {
           "kind": "theorem",
           "name": "isNormalAt_of_two_omitted_values",
-          "line": 41
+          "line": 45
         }
       ]
     },
@@ -5245,292 +5247,292 @@
         {
           "kind": "abbrev",
           "name": "OneDimension.I",
-          "line": 24
+          "line": 27
         },
         {
           "kind": "def",
           "name": "OnePoint.toComplex",
-          "line": 53
+          "line": 56
         },
         {
           "kind": "theorem",
           "name": "coe_zero",
-          "line": 63
+          "line": 66
         },
         {
           "kind": "theorem",
           "name": "coe_eq_coe",
-          "line": 64
+          "line": 67
         },
         {
           "kind": "theorem",
           "name": "coe_eq_zero",
-          "line": 65
+          "line": 68
         },
         {
           "kind": "theorem",
           "name": "injective_coe",
-          "line": 69
-        },
-        {
-          "kind": "theorem",
-          "name": "continuous_coe",
           "line": 72
         },
         {
           "kind": "theorem",
-          "name": "rec_coe",
+          "name": "continuous_coe",
           "line": 75
         },
         {
           "kind": "theorem",
+          "name": "rec_coe",
+          "line": 78
+        },
+        {
+          "kind": "theorem",
           "name": "rec_inf",
-          "line": 77
+          "line": 80
         },
         {
           "kind": "theorem",
           "name": "map_rec",
-          "line": 79
+          "line": 82
         },
         {
           "kind": "theorem",
           "name": "inf_ne_coe",
-          "line": 86
+          "line": 89
         },
         {
           "kind": "theorem",
           "name": "inf_ne_zero",
-          "line": 88
-        },
-        {
-          "kind": "theorem",
-          "name": "zero_ne_inf",
-          "line": 90
-        },
-        {
-          "kind": "theorem",
-          "name": "coe_ne_inf",
           "line": 91
         },
         {
           "kind": "theorem",
-          "name": "coe_eq_inf_iff",
-          "line": 92
+          "name": "zero_ne_inf",
+          "line": 93
         },
         {
           "kind": "theorem",
-          "name": "toComplex_coe",
+          "name": "coe_ne_inf",
+          "line": 94
+        },
+        {
+          "kind": "theorem",
+          "name": "coe_eq_inf_iff",
           "line": 95
         },
         {
           "kind": "theorem",
+          "name": "toComplex_coe",
+          "line": 98
+        },
+        {
+          "kind": "theorem",
           "name": "toComplex_inf",
-          "line": 96
+          "line": 99
         },
         {
           "kind": "theorem",
           "name": "coe_toComplex",
-          "line": 97
+          "line": 100
         },
         {
           "kind": "lemma",
           "name": "toComplex_zero",
-          "line": 101
+          "line": 104
         },
         {
           "kind": "lemma",
           "name": "toComplex_eq_zero",
-          "line": 102
+          "line": 105
         },
         {
           "kind": "theorem",
           "name": "continuousAt_toComplex",
-          "line": 106
+          "line": 109
         },
         {
           "kind": "theorem",
           "name": "continuousOn_toComplex",
-          "line": 108
+          "line": 111
         },
         {
           "kind": "lemma",
           "name": "toComplex_inj",
-          "line": 114
+          "line": 117
         },
         {
           "kind": "def",
           "name": "inv",
-          "line": 121
+          "line": 124
         },
         {
           "kind": "theorem",
           "name": "inv_def",
-          "line": 123
+          "line": 126
         },
         {
           "kind": "lemma",
           "name": "inv_zero'",
-          "line": 134
+          "line": 137
         },
         {
           "kind": "theorem",
           "name": "inv_coe",
-          "line": 135
+          "line": 138
         },
         {
           "kind": "lemma",
           "name": "inv_eq_inf",
-          "line": 139
+          "line": 142
         },
         {
           "kind": "lemma",
           "name": "inv_eq_zero",
-          "line": 143
+          "line": 146
         },
         {
           "kind": "theorem",
           "name": "toComplex_inv",
-          "line": 150
+          "line": 153
         },
         {
           "kind": "theorem",
           "name": "coe_tendsto_inf",
-          "line": 158
+          "line": 161
         },
         {
           "kind": "theorem",
           "name": "coe_tendsto_inf'",
-          "line": 163
+          "line": 166
         },
         {
           "kind": "lemma",
           "name": "map_some_cobounded",
-          "line": 172
+          "line": 175
         },
         {
           "kind": "theorem",
           "name": "continuous_inv",
-          "line": 176
+          "line": 179
         },
         {
           "kind": "def",
           "name": "invEquiv",
-          "line": 212
+          "line": 215
         },
         {
           "kind": "def",
           "name": "invHomeomorph",
-          "line": 219
+          "line": 222
         },
         {
           "kind": "lemma",
           "name": "invEquiv_apply",
-          "line": 223
+          "line": 226
         },
         {
           "kind": "lemma",
           "name": "invEquiv_symm",
-          "line": 225
+          "line": 228
         },
         {
           "kind": "lemma",
           "name": "invHomeomorph_apply",
-          "line": 227
+          "line": 230
         },
         {
           "kind": "lemma",
           "name": "invHomeomorph_symm",
-          "line": 230
+          "line": 233
         },
         {
           "kind": "def",
           "name": "coePartialEquiv",
-          "line": 236
+          "line": 239
         },
         {
           "kind": "def",
           "name": "coeOpenPartialHomeomorph",
-          "line": 248
+          "line": 251
         },
         {
           "kind": "def",
           "name": "invCoeOpenPartialHomeomorph",
-          "line": 256
-        },
-        {
-          "kind": "lemma",
-          "name": "coePartialEquiv_target",
           "line": 259
         },
         {
           "kind": "lemma",
-          "name": "coeOpenPartialHomeomorph_target",
-          "line": 260
-        },
-        {
-          "kind": "lemma",
-          "name": "invCoeOpenPartialHomeomorph_target",
+          "name": "coePartialEquiv_target",
           "line": 262
         },
         {
           "kind": "lemma",
+          "name": "coeOpenPartialHomeomorph_target",
+          "line": 263
+        },
+        {
+          "kind": "lemma",
+          "name": "invCoeOpenPartialHomeomorph_target",
+          "line": 265
+        },
+        {
+          "kind": "lemma",
           "name": "coePartialEquiv_apply",
-          "line": 268
-        },
-        {
-          "kind": "lemma",
-          "name": "coePartialEquiv_symm_apply",
-          "line": 269
-        },
-        {
-          "kind": "lemma",
-          "name": "invCoeOpenPartialHomeomorph_apply",
           "line": 271
         },
         {
           "kind": "lemma",
+          "name": "coePartialEquiv_symm_apply",
+          "line": 272
+        },
+        {
+          "kind": "lemma",
+          "name": "invCoeOpenPartialHomeomorph_apply",
+          "line": 274
+        },
+        {
+          "kind": "lemma",
           "name": "invCoeOpenPartialHomeomorph_symm_apply",
-          "line": 273
+          "line": 276
         },
         {
           "kind": "theorem",
           "name": "two_charts",
-          "line": 294
+          "line": 297
         },
         {
           "kind": "lemma",
           "name": "chartAt_coe",
-          "line": 298
+          "line": 301
         },
         {
           "kind": "lemma",
           "name": "chartAt_inf",
-          "line": 299
+          "line": 302
         },
         {
           "kind": "theorem",
           "name": "extChartAt_coe",
-          "line": 300
+          "line": 303
         },
         {
           "kind": "theorem",
           "name": "extChartAt_zero",
-          "line": 304
+          "line": 307
         },
         {
           "kind": "theorem",
           "name": "extChartAt_inf",
-          "line": 306
+          "line": 309
         },
         {
           "kind": "theorem",
           "name": "extChartAt_inf_apply",
-          "line": 338
+          "line": 341
         },
         {
           "kind": "theorem",
           "name": "riemannSphere_isManifold",
-          "line": 377
+          "line": 380
         }
       ]
     },
@@ -5547,82 +5549,82 @@
         {
           "kind": "theorem",
           "name": "mAnalytic_coe",
-          "line": 13
+          "line": 17
         },
         {
           "kind": "theorem",
           "name": "mAnalyticAt_toComplex",
-          "line": 21
+          "line": 25
         },
         {
           "kind": "theorem",
           "name": "mAnalyticAt_toComplex'",
-          "line": 29
+          "line": 33
         },
         {
           "kind": "theorem",
           "name": "mAnalytic_inv",
-          "line": 35
+          "line": 39
         },
         {
           "kind": "def",
           "name": "translation",
-          "line": 66
+          "line": 70
         },
         {
           "kind": "theorem",
           "name": "translation_coe",
-          "line": 69
-        },
-        {
-          "kind": "theorem",
-          "name": "translation_inf",
-          "line": 71
-        },
-        {
-          "kind": "theorem",
-          "name": "mAnalytic_translation",
           "line": 73
         },
         {
           "kind": "theorem",
+          "name": "translation_inf",
+          "line": 75
+        },
+        {
+          "kind": "theorem",
+          "name": "mAnalytic_translation",
+          "line": 77
+        },
+        {
+          "kind": "theorem",
           "name": "translation_symm_eq",
-          "line": 103
+          "line": 107
         },
         {
           "kind": "def",
           "name": "omittedPointParam",
-          "line": 109
+          "line": 113
         },
         {
           "kind": "theorem",
           "name": "omittedPointParam_source",
-          "line": 112
-        },
-        {
-          "kind": "theorem",
-          "name": "omittedPointParam_apply",
           "line": 116
         },
         {
           "kind": "theorem",
+          "name": "omittedPointParam_apply",
+          "line": 120
+        },
+        {
+          "kind": "theorem",
           "name": "omittedPointParam_symm_apply",
-          "line": 119
+          "line": 123
         },
         {
           "kind": "theorem",
           "name": "omittedPointParam_target",
-          "line": 124
+          "line": 128
         },
         {
           "kind": "theorem",
           "name": "mAnalytic_omittedPointParam",
-          "line": 139
+          "line": 143
         },
         {
           "kind": "theorem",
           "name": "mAnalyticAt_omittedPointParam_symm",
-          "line": 142
+          "line": 146
         }
       ]
     },
@@ -5640,17 +5642,17 @@
         {
           "kind": "def",
           "name": "unitDiskDomain",
-          "line": 11
+          "line": 15
         },
         {
           "kind": "theorem",
           "name": "exists_riemannMap_on_sphere_domain_of_omitted_point",
-          "line": 16
+          "line": 20
         },
         {
           "kind": "theorem",
           "name": "exists_riemannMap_on_sphere_domain",
-          "line": 70
+          "line": 74
         }
       ]
     },
@@ -5668,7 +5670,7 @@
         {
           "kind": "theorem",
           "name": "exists_uniform_comp_derivative_bound",
-          "line": 15
+          "line": 19
         }
       ]
     },
@@ -5688,17 +5690,17 @@
         {
           "kind": "theorem",
           "name": "norm_real_iteratedFDeriv_eq_complex_iteratedDeriv",
-          "line": 16
+          "line": 20
         },
         {
           "kind": "theorem",
           "name": "norm_real_iteratedFDeriv_le_of_circle_bound",
-          "line": 26
+          "line": 30
         },
         {
           "kind": "theorem",
           "name": "exists_uniform_real_derivative_bound_on_compact",
-          "line": 38
+          "line": 42
         }
       ]
     },
@@ -5716,7 +5718,7 @@
         {
           "kind": "theorem",
           "name": "exists_smooth_complex_diffeomorphism_limit_of_close_sequence",
-          "line": 15
+          "line": 19
         }
       ]
     },
@@ -5735,7 +5737,7 @@
         {
           "kind": "theorem",
           "name": "hasFDerivAt_complex_tsum_of_real_control",
-          "line": 17
+          "line": 21
         }
       ]
     },
@@ -5754,12 +5756,12 @@
         {
           "kind": "theorem",
           "name": "exists_controlled_cutoff_diffeomorphism",
-          "line": 16
+          "line": 20
         },
         {
           "kind": "theorem",
           "name": "exists_controlled_smooth_extension",
-          "line": 66
+          "line": 70
         }
       ]
     },
@@ -5776,12 +5778,12 @@
         {
           "kind": "theorem",
           "name": "exists_smooth_cutoff",
-          "line": 21
+          "line": 25
         },
         {
           "kind": "theorem",
           "name": "exists_smooth_compact_extension",
-          "line": 40
+          "line": 44
         }
       ]
     },
@@ -5800,12 +5802,12 @@
         {
           "kind": "theorem",
           "name": "contDiff_cutoff_smul",
-          "line": 16
+          "line": 20
         },
         {
           "kind": "theorem",
           "name": "exists_uniform_cutoff_derivative_bound",
-          "line": 31
+          "line": 35
         }
       ]
     },
@@ -5823,17 +5825,17 @@
         {
           "kind": "theorem",
           "name": "contDiff_disjointPatch",
-          "line": 14
+          "line": 18
         },
         {
           "kind": "theorem",
           "name": "disjointPatch_homeomorph_leftInverse",
-          "line": 31
+          "line": 35
         },
         {
           "kind": "theorem",
           "name": "exists_disjoint_smooth_homeomorph",
-          "line": 58
+          "line": 62
         }
       ]
     },
@@ -5851,17 +5853,17 @@
         {
           "kind": "theorem",
           "name": "exists_smooth_extension_in_Cm_norm",
-          "line": 15
+          "line": 19
         },
         {
           "kind": "theorem",
           "name": "exists_holomorphic_extension_comp_in_Cm_norm",
-          "line": 42
+          "line": 46
         },
         {
           "kind": "theorem",
           "name": "exists_holomorphic_extension_on_domain_comp_in_Cm_norm",
-          "line": 67
+          "line": 71
         }
       ]
     },
@@ -5879,27 +5881,27 @@
         {
           "kind": "def",
           "name": "finiteSmoothNormOn",
-          "line": 15
-        },
-        {
-          "kind": "theorem",
-          "name": "enorm_iteratedFDeriv_le_finiteSmoothNormOn",
           "line": 19
         },
         {
           "kind": "theorem",
+          "name": "enorm_iteratedFDeriv_le_finiteSmoothNormOn",
+          "line": 23
+        },
+        {
+          "kind": "theorem",
           "name": "norm_iteratedFDeriv_le_of_finiteSmoothNormOn_le",
-          "line": 33
+          "line": 37
         },
         {
           "kind": "theorem",
           "name": "finiteSmoothNormOn_le_of_uniform_bound",
-          "line": 43
+          "line": 47
         },
         {
           "kind": "theorem",
           "name": "finiteSmoothNormOn_lt_of_uniform_margin",
-          "line": 65
+          "line": 69
         }
       ]
     },
@@ -5918,7 +5920,7 @@
         {
           "kind": "theorem",
           "name": "exists_smooth_complex_limit_of_geometric_Cm_steps",
-          "line": 16
+          "line": 20
         }
       ]
     },
@@ -5937,7 +5939,7 @@
         {
           "kind": "theorem",
           "name": "exists_holomorphic_smooth_extension_comp",
-          "line": 18
+          "line": 22
         }
       ]
     },
@@ -5956,7 +5958,7 @@
         {
           "kind": "theorem",
           "name": "exists_homeomorph_eq_add_of_lipschitz_lt_one",
-          "line": 16
+          "line": 20
         }
       ]
     },
@@ -5976,12 +5978,12 @@
         {
           "kind": "theorem",
           "name": "exists_smooth_homeomorph_eq_add_of_lipschitz_lt_one",
-          "line": 16
+          "line": 20
         },
         {
           "kind": "theorem",
           "name": "exists_smooth_homeomorph_eq_add_of_derivative_bound",
-          "line": 59
+          "line": 63
         }
       ]
     },
@@ -5998,7 +6000,7 @@
         {
           "kind": "theorem",
           "name": "exists_smooth_diffeomorphism_limit_of_close_sequence",
-          "line": 14
+          "line": 18
         }
       ]
     },
@@ -6016,12 +6018,12 @@
         {
           "kind": "theorem",
           "name": "exists_smooth_diffeomorphism_of_summable_displacements",
-          "line": 16
+          "line": 20
         },
         {
           "kind": "theorem",
           "name": "exists_smooth_diffeomorphism_of_increasing_derivative_control",
-          "line": 63
+          "line": 67
         }
       ]
     },
@@ -6037,7 +6039,7 @@
         {
           "kind": "theorem",
           "name": "exists_smooth_finite_forward_extensions",
-          "line": 13
+          "line": 17
         }
       ]
     },
@@ -6054,17 +6056,17 @@
         {
           "kind": "theorem",
           "name": "isPreconnectedApproachAt_of_convex",
-          "line": 17
+          "line": 21
         },
         {
           "kind": "theorem",
           "name": "isPreconnectedApproachAt_of_relative_chart",
-          "line": 25
+          "line": 29
         },
         {
           "kind": "theorem",
           "name": "isPreconnectedApproachAt_preimage_homeomorph",
-          "line": 49
+          "line": 53
         }
       ]
     },
@@ -6082,12 +6084,12 @@
         {
           "kind": "theorem",
           "name": "exists_finite_subset_thickening_cover",
-          "line": 14
+          "line": 18
         },
         {
           "kind": "theorem",
           "name": "exists_boundary_barrier_neighborhood",
-          "line": 37
+          "line": 41
         }
       ]
     },
@@ -6106,7 +6108,7 @@
         {
           "kind": "theorem",
           "name": "isPathConnected_ball_sdiff_countable",
-          "line": 13
+          "line": 17
         }
       ]
     },
@@ -6125,12 +6127,12 @@
         {
           "kind": "theorem",
           "name": "iUnion_ne_univ_of_locallyFinite_disjoint_compacts",
-          "line": 15
+          "line": 19
         },
         {
           "kind": "theorem",
           "name": "exists_closedBall_disjoint_locallyFinite_compacts",
-          "line": 51
+          "line": 55
         }
       ]
     },
@@ -6147,22 +6149,22 @@
         {
           "kind": "def",
           "name": "disjointPatch",
-          "line": 12
+          "line": 16
         },
         {
           "kind": "theorem",
           "name": "disjointPatch_of_mem",
-          "line": 17
+          "line": 21
         },
         {
           "kind": "theorem",
           "name": "disjointPatch_of_notMem",
-          "line": 29
+          "line": 33
         },
         {
           "kind": "theorem",
           "name": "disjointPatch_eventuallyEq",
-          "line": 38
+          "line": 42
         }
       ]
     },
@@ -6182,7 +6184,7 @@
         {
           "kind": "theorem",
           "name": "exists_disjoint_escaping_discs",
-          "line": 17
+          "line": 21
         }
       ]
     },
@@ -6202,12 +6204,12 @@
         {
           "kind": "theorem",
           "name": "not_isBounded_compl_iUnion_locallyFinite_disjoint_compacts",
-          "line": 17
+          "line": 21
         },
         {
           "kind": "theorem",
           "name": "exists_escaping_discs_avoiding_compact_family",
-          "line": 48
+          "line": 52
         }
       ]
     },
@@ -6225,22 +6227,22 @@
         {
           "kind": "def",
           "name": "finiteComposition",
-          "line": 14
-        },
-        {
-          "kind": "theorem",
-          "name": "continuousOn_finiteComposition",
           "line": 18
         },
         {
           "kind": "theorem",
+          "name": "continuousOn_finiteComposition",
+          "line": 22
+        },
+        {
+          "kind": "theorem",
           "name": "exists_uniform_continuity_collar",
-          "line": 34
+          "line": 38
         },
         {
           "kind": "theorem",
           "name": "finiteComposition_approximation_on_compact",
-          "line": 53
+          "line": 57
         }
       ]
     },
@@ -6257,7 +6259,7 @@
         {
           "kind": "theorem",
           "name": "finiteComposition_approximation_on_domains",
-          "line": 12
+          "line": 16
         }
       ]
     },
@@ -6275,7 +6277,7 @@
         {
           "kind": "theorem",
           "name": "exists_pairwise_disjoint_closedBalls_of_finite",
-          "line": 13
+          "line": 17
         }
       ]
     },
@@ -6293,47 +6295,47 @@
         {
           "kind": "def",
           "name": "diskRegularRegion",
-          "line": 12
+          "line": 16
         },
         {
           "kind": "def",
           "name": "diskOverlapCollars",
-          "line": 16
+          "line": 20
         },
         {
           "kind": "theorem",
           "name": "isOpen_diskRegularRegion",
-          "line": 19
+          "line": 23
         },
         {
           "kind": "theorem",
           "name": "closure_diskRegularRegion_subset",
-          "line": 24
+          "line": 28
         },
         {
           "kind": "theorem",
           "name": "isCompact_closure_diskRegularRegion",
-          "line": 37
+          "line": 41
         },
         {
           "kind": "theorem",
           "name": "isCompact_diskOverlapCollars",
-          "line": 42
-        },
-        {
-          "kind": "theorem",
-          "name": "diskOverlapCollars_subset",
           "line": 46
         },
         {
           "kind": "theorem",
+          "name": "diskOverlapCollars_subset",
+          "line": 50
+        },
+        {
+          "kind": "theorem",
           "name": "diskRegularRegion_union_halfBalls",
-          "line": 64
+          "line": 68
         },
         {
           "kind": "theorem",
           "name": "diskRegularRegion_inter_halfBall_subset_collars",
-          "line": 80
+          "line": 84
         }
       ]
     },
@@ -6349,7 +6351,7 @@
         {
           "kind": "theorem",
           "name": "finiteComposition_eq_of_eqOn_along_orbit",
-          "line": 12
+          "line": 16
         }
       ]
     },
@@ -6366,32 +6368,32 @@
         {
           "kind": "def",
           "name": "finiteOrbitDomain",
-          "line": 13
+          "line": 17
         },
         {
           "kind": "theorem",
           "name": "finiteOrbitDomain_zero",
-          "line": 16
+          "line": 20
         },
         {
           "kind": "theorem",
           "name": "finiteOrbitDomain_succ",
-          "line": 21
+          "line": 25
         },
         {
           "kind": "theorem",
           "name": "isOpen_finiteOrbitDomain",
-          "line": 37
+          "line": 41
         },
         {
           "kind": "theorem",
           "name": "mapsTo_finiteComposition",
-          "line": 56
+          "line": 60
         },
         {
           "kind": "theorem",
           "name": "analyticOnNhd_finiteOrbitDomain",
-          "line": 68
+          "line": 72
         }
       ]
     },
@@ -6411,12 +6413,12 @@
         {
           "kind": "theorem",
           "name": "homeomorph_image_ball_geometry",
-          "line": 15
+          "line": 19
         },
         {
           "kind": "theorem",
           "name": "exists_holomorphic_image_chart",
-          "line": 43
+          "line": 47
         }
       ]
     },
@@ -6434,17 +6436,17 @@
         {
           "kind": "theorem",
           "name": "finiteComposition_const_eq_iterate",
-          "line": 13
+          "line": 17
         },
         {
           "kind": "theorem",
           "name": "iterate_approximation_on_compact_with_domains",
-          "line": 21
+          "line": 25
         },
         {
           "kind": "theorem",
           "name": "exists_open_finite_orbit_neighborhood",
-          "line": 39
+          "line": 43
         }
       ]
     },
@@ -6461,7 +6463,7 @@
         {
           "kind": "theorem",
           "name": "injOn_iterate_of_injOn_images",
-          "line": 13
+          "line": 17
         }
       ]
     },
@@ -6478,7 +6480,7 @@
         {
           "kind": "theorem",
           "name": "tendsto_iterates_of_neighborhood_uniform_limit",
-          "line": 14
+          "line": 18
         }
       ]
     },
@@ -6495,7 +6497,7 @@
         {
           "kind": "theorem",
           "name": "image_frontier_of_compact_closure",
-          "line": 13
+          "line": 17
         }
       ]
     },
@@ -6512,7 +6514,7 @@
         {
           "kind": "theorem",
           "name": "frontier_iUnion_subset_of_locallyFinite",
-          "line": 12
+          "line": 16
         }
       ]
     },
@@ -6531,22 +6533,22 @@
         {
           "kind": "theorem",
           "name": "locallyFinite_of_uniform_norm_escape",
-          "line": 15
+          "line": 19
         },
         {
           "kind": "theorem",
           "name": "uniform_norm_escape_cthickening",
-          "line": 31
+          "line": 35
         },
         {
           "kind": "theorem",
           "name": "exists_disjoint_closed_thickenings",
-          "line": 50
+          "line": 54
         },
         {
           "kind": "theorem",
           "name": "exists_disjoint_escaping_open_neighborhoods",
-          "line": 96
+          "line": 100
         }
       ]
     },
@@ -6563,7 +6565,7 @@
         {
           "kind": "theorem",
           "name": "preconnected_subset_member_of_locallyFinite_disjoint_closed",
-          "line": 12
+          "line": 16
         }
       ]
     },
@@ -6581,37 +6583,37 @@
         {
           "kind": "def",
           "name": "separatedExhaustion",
-          "line": 14
-        },
-        {
-          "kind": "theorem",
-          "name": "isCompact_separatedExhaustion",
           "line": 18
         },
         {
           "kind": "theorem",
+          "name": "isCompact_separatedExhaustion",
+          "line": 22
+        },
+        {
+          "kind": "theorem",
           "name": "monotone_separatedExhaustion",
-          "line": 26
+          "line": 30
         },
         {
           "kind": "theorem",
           "name": "subset_separatedExhaustion_of_disjoint",
-          "line": 40
+          "line": 44
         },
         {
           "kind": "theorem",
           "name": "earlier_subset_separatedExhaustion",
-          "line": 50
+          "line": 54
         },
         {
           "kind": "theorem",
           "name": "disjoint_separatedExhaustion_later",
-          "line": 60
+          "line": 64
         },
         {
           "kind": "theorem",
           "name": "compact_eventually_subset_interior_separatedExhaustion",
-          "line": 71
+          "line": 75
         }
       ]
     },
@@ -6628,7 +6630,7 @@
         {
           "kind": "theorem",
           "name": "exists_uniformly_convergent_subsequence_of_shrinking_images",
-          "line": 14
+          "line": 18
         }
       ]
     },
@@ -6647,7 +6649,7 @@
         {
           "kind": "theorem",
           "name": "isSimplyConnected_of_compact_connected_subsets",
-          "line": 17
+          "line": 21
         }
       ]
     },
@@ -6666,27 +6668,27 @@
         {
           "kind": "def",
           "name": "IsSmoothJordanCurve",
-          "line": 16
+          "line": 20
         },
         {
           "kind": "theorem",
           "name": "IsSmoothJordanCurve.isJordanCurve",
-          "line": 23
+          "line": 27
         },
         {
           "kind": "theorem",
           "name": "IsSmoothJordanCurve.image",
-          "line": 30
+          "line": 34
         },
         {
           "kind": "theorem",
           "name": "IsSmoothJordanCurve.of_image",
-          "line": 45
+          "line": 49
         },
         {
           "kind": "theorem",
           "name": "isSmoothJordanCurve_image_sphere",
-          "line": 65
+          "line": 69
         }
       ]
     },
@@ -6704,7 +6706,7 @@
         {
           "kind": "theorem",
           "name": "exists_two_disjoint_closed_subdiscs",
-          "line": 13
+          "line": 17
         }
       ]
     },
@@ -6723,7 +6725,7 @@
         {
           "kind": "theorem",
           "name": "mem_closure_iUnion_tail_of_approximations",
-          "line": 16
+          "line": 20
         }
       ]
     }
@@ -8295,6 +8297,11 @@
       "external": false
     },
     {
+      "from": "TauCeti.Analysis.Complex.Conformal.ImageSimplyConnected",
+      "to": "FunctionTheory.Conformal.AnalyticSideInverse",
+      "external": true
+    },
+    {
       "from": "FunctionTheory.Conformal.AnalyticSideCap",
       "to": "FunctionTheory.Conformal.AnalyticSideLimit",
       "external": false
@@ -8636,6 +8643,11 @@
     },
     {
       "from": "Mathlib.Analysis.Complex.Trigonometric",
+      "to": "FunctionTheory.Conformal.CosineLift",
+      "external": true
+    },
+    {
+      "from": "Mathlib.Analysis.Complex.CauchyIntegral",
       "to": "FunctionTheory.Conformal.CosineLift",
       "external": true
     },

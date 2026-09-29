@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.InvertedDomain
-import FunctionTheory.Conformal.TangentDiskGeometry
+module
+
+public import FunctionTheory.Conformal.InvertedDomain
+public import FunctionTheory.Conformal.TangentDiskGeometry
+
+@[expose] public section
 
 open Set Metric Complex Function
 

@@ -1,5 +1,9 @@
-import Runge.LocalDomain
-import FunctionTheory.Conformal.RiemannMapping
+module
+
+public import Runge.LocalDomain
+public import FunctionTheory.Conformal.RiemannMapping
+
+@[expose] public section
 
 /-! # Compatibility imports for FunctionTheory
 

@@ -1,5 +1,9 @@
-import BoundedWanderingDomains.FinitePunctureMetricInput
-import BoundedWanderingDomains.UniformLocalLifting
+module
+
+public import BoundedWanderingDomains.FinitePunctureMetricInput
+public import BoundedWanderingDomains.UniformLocalLifting
+
+@[expose] public section
 
 open Set Metric Filter Function
 open scoped Topology

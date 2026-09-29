@@ -1,6 +1,10 @@
-import FunctionTheory.RiemannSphere.Coordinates
-import FunctionTheory.Conformal.RiemannMapping
-import Mathlib.Geometry.Manifold.ContMDiff.Basic
+module
+
+public import FunctionTheory.RiemannSphere.Coordinates
+public import FunctionTheory.Conformal.RiemannMapping
+public import Mathlib.Geometry.Manifold.ContMDiff.Basic
+
+@[expose] public section
 
 open Set Metric OneDimension RiemannSphere
 open scoped Topology OnePoint RiemannSphere

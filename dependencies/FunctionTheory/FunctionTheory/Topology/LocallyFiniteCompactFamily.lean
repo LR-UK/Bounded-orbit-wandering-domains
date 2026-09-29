@@ -1,7 +1,11 @@
-import Mathlib.Topology.LocallyFinite
-import Mathlib.Topology.MetricSpace.Thickening
-import Mathlib.Analysis.Normed.Group.Basic
-import Mathlib.Tactic
+module
+
+public import Mathlib.Topology.LocallyFinite
+public import Mathlib.Topology.MetricSpace.Thickening
+public import Mathlib.Analysis.Normed.Group.Basic
+public import Mathlib.Tactic
+
+@[expose] public section
 
 open Set Filter Metric
 open scoped Topology

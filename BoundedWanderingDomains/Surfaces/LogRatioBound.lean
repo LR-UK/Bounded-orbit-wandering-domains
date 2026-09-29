@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.RemoteDensityBound
-import BoundedWanderingDomains.Surfaces.ChartGainCutoff
+public import BoundedWanderingDomains.Surfaces.RemoteDensityBound
+public import BoundedWanderingDomains.Surfaces.ChartGainCutoff
+
+@[expose] public section
 open Set Function Filter Metric MeasureTheory Laplacian
 open scoped Manifold Topology ENNReal ContDiff
 namespace AreaDeficit.Surfaces.DiscCover

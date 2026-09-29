@@ -1,10 +1,14 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import Mathlib.Geometry.Manifold.Metrizable
-import Mathlib.Geometry.Manifold.Complex
-import Mathlib.Topology.MetricSpace.Polish
-import Mathlib.Topology.UniformSpace.Cauchy
-import Mathlib.Topology.Compactification.OnePoint.Basic
-import Mathlib.Topology.Compactness.SigmaCompact
+public import Mathlib.Geometry.Manifold.Metrizable
+public import Mathlib.Geometry.Manifold.Complex
+public import Mathlib.Topology.MetricSpace.Polish
+public import Mathlib.Topology.UniformSpace.Cauchy
+public import Mathlib.Topology.Compactification.OnePoint.Basic
+public import Mathlib.Topology.Compactness.SigmaCompact
+
+@[expose] public section
 
 /-! # Polish presentations of second-countable locally compact surfaces -/
 

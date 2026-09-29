@@ -1,5 +1,9 @@
-import FunctionTheory.Analytic.FiniteComposition
-import FunctionTheory.Conformal.CompactConformalInverse
+module
+
+public import FunctionTheory.Analytic.FiniteComposition
+public import FunctionTheory.Conformal.CompactConformalInverse
+
+@[expose] public section
 
 open Set Function
 open scoped Topology

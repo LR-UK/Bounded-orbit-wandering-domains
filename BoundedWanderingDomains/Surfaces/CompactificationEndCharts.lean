@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.CompactificationCutoff
-import BoundedWanderingDomains.Surfaces.ComponentDomains
-import BoundedWanderingDomains.Surfaces.BoundaryEscape
+public import BoundedWanderingDomains.Surfaces.CompactificationCutoff
+public import BoundedWanderingDomains.Surfaces.ComponentDomains
+public import BoundedWanderingDomains.Surfaces.BoundaryEscape
+
+@[expose] public section
 
 /-! # End charts through compactification and finite-puncture restrictions -/
 

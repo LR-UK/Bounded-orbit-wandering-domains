@@ -1,4 +1,8 @@
-import ComplexApproximation.Topology.Filling
+module
+
+public import ComplexApproximation.Topology.Filling
+
+@[expose] public section
 
 /-!
 # Arakelian's bounded-holes condition and an exhaustion

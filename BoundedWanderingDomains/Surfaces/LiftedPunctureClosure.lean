@@ -1,5 +1,9 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.KernelLift
+public import BoundedWanderingDomains.Surfaces.KernelLift
+
+@[expose] public section
 
 /-! # Pulling dense finite punctures back to the fixed ambient disc -/
 

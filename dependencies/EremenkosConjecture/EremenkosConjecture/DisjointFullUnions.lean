@@ -1,4 +1,8 @@
-import ComplexApproximation.Topology.Nonseparation
+module
+
+public import ComplexApproximation.Topology.Nonseparation
+
+@[expose] public section
 
 /-!
 # Unions of disjoint full compact sets

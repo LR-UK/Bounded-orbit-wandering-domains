@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.LocalDynamics
-import BoundedWanderingDomains.Surfaces.PlaneReading
-import BoundedWanderingDomains.Surfaces.SubtypeHolomorphic
+public import BoundedWanderingDomains.Surfaces.LocalDynamics
+public import BoundedWanderingDomains.Surfaces.PlaneReading
+public import BoundedWanderingDomains.Surfaces.SubtypeHolomorphic
+
+@[expose] public section
 
 /-! # Restricting a local surface map to a smaller open source -/
 

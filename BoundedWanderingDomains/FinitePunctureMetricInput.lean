@@ -1,10 +1,14 @@
-import BoundedWanderingDomains.DiscMetric
-import BoundedWanderingDomains.TotalAreaCost
-import Mathlib.Analysis.Complex.Schwarz
-import Mathlib.Tactic.FunProp
-import Mathlib.Tactic.Linarith
-import Mathlib.Tactic.NormNum
-import Mathlib.Tactic.Positivity
+module
+
+public import BoundedWanderingDomains.DiscMetric
+public import BoundedWanderingDomains.TotalAreaCost
+public import Mathlib.Analysis.Complex.Schwarz
+public import Mathlib.Tactic.FunProp
+public import Mathlib.Tactic.Linarith
+public import Mathlib.Tactic.NormNum
+public import Mathlib.Tactic.Positivity
+
+@[expose] public section
 /-!
 # Classical input for finite-puncture hyperbolic geometry
 

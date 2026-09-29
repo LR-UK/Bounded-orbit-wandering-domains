@@ -1,5 +1,9 @@
-import EremenkosConjecture.ConstructionData
-import EremenkosConjecture.BoundarySelection
+module
+
+public import EremenkosConjecture.ConstructionData
+public import EremenkosConjecture.BoundarySelection
+
+@[expose] public section
 
 /-! # Choosing nested compacta and boundary points inside the unit disk -/
 

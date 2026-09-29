@@ -1,4 +1,8 @@
-import ComplexApproximation.CauchyPompeiu
+module
+
+public import ComplexApproximation.CauchyPompeiu
+
+@[expose] public section
 
 /-!
 # Uniform estimates for the Cauchy transform

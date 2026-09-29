@@ -1,7 +1,11 @@
-import EremenkosConjecture.NormalizedData
-import EremenkosConjecture.UniformEscapeConstruction
-import EremenkosConjecture.Transcendence
-import ComplexDynamics.Wandering
+module
+
+public import EremenkosConjecture.NormalizedData
+public import EremenkosConjecture.UniformEscapeConstruction
+public import EremenkosConjecture.Transcendence
+public import ComplexDynamics.Wandering
+
+@[expose] public section
 
 /-! # Wandering compacta contained in the unit disk -/
 

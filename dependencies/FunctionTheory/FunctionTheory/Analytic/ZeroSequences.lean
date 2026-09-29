@@ -1,8 +1,12 @@
-import Mathlib.Analysis.Complex.CauchyIntegral
-import Mathlib.Analysis.Analytic.IsolatedZeros
-import Mathlib.Topology.DiscreteSubset
-import Mathlib.Analysis.Normed.Group.Bounded
-import Mathlib.Analysis.Calculus.MeanValue
+module
+
+public import Mathlib.Analysis.Complex.CauchyIntegral
+public import Mathlib.Analysis.Analytic.IsolatedZeros
+public import Mathlib.Topology.DiscreteSubset
+public import Mathlib.Analysis.Normed.Group.Bounded
+public import Mathlib.Analysis.Calculus.MeanValue
+
+@[expose] public section
 
 /-! # Distinct zeros of a nonzero entire function escape every compact set -/
 

@@ -1,11 +1,15 @@
+module
+
 /- Compatibility update, 23 September 2026: current Lean linter suggestions;
 mathematical statements and original attribution retained. -/
 
-import ComplexDynamics.Basic
-import Mathlib.Analysis.Complex.Schwarz
-import Mathlib.Topology.ContinuousMap.Bounded.ArzelaAscoli
-import Mathlib.Topology.Sequences
-import Mathlib.Topology.UniformSpace.HeineCantor
+public import ComplexDynamics.Basic
+public import Mathlib.Analysis.Complex.Schwarz
+public import Mathlib.Topology.ContinuousMap.Bounded.ArzelaAscoli
+public import Mathlib.Topology.Sequences
+public import Mathlib.Topology.UniformSpace.HeineCantor
+
+@[expose] public section
 
 /-! # Normality of bounded holomorphic sequences on smaller disks
 

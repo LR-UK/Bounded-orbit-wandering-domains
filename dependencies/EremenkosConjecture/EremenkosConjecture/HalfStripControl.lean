@@ -1,6 +1,10 @@
-import ComplexApproximation.HalfStripBounds
-import EremenkosConjecture.ConformalEmbedding
-import EremenkosConjecture.IterateApproximation
+module
+
+public import ComplexApproximation.HalfStripBounds
+public import EremenkosConjecture.ConformalEmbedding
+public import EremenkosConjecture.IterateApproximation
+
+@[expose] public section
 
 /-! # Neighbourhood control of the half-strip map -/
 

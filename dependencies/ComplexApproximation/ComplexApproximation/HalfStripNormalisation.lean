@@ -1,5 +1,9 @@
-import ComplexApproximation.HalfStripExtension
-import Mathlib.Topology.Order.Compact
+module
+
+public import ComplexApproximation.HalfStripExtension
+public import Mathlib.Topology.Order.Compact
+
+@[expose] public section
 
 /-! # Normalising the explicit half-strip map
 

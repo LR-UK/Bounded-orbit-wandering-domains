@@ -1,4 +1,8 @@
-import Runge.PoleAlgebra
+module
+
+public import Runge.PoleAlgebra
+
+@[expose] public section
 
 open Polynomial Set
 

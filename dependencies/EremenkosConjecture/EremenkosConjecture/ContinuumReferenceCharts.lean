@@ -1,7 +1,11 @@
-import EremenkosConjecture.ContinuumReferenceOrbits
-import EremenkosConjecture.LocalChartImageChange
-import EremenkosConjecture.LocalChartMargins
-import EremenkosConjecture.IterateApproximation
+module
+
+public import EremenkosConjecture.ContinuumReferenceOrbits
+public import EremenkosConjecture.LocalChartImageChange
+public import EremenkosConjecture.LocalChartMargins
+public import EremenkosConjecture.IterateApproximation
+
+@[expose] public section
 
 open Set Metric Function
 open scoped NNReal

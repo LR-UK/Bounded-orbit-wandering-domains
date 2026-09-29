@@ -1,19 +1,24 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import Mathlib.Analysis.Complex.CauchyIntegral
-import Mathlib.Topology.UniformSpace.LocallyUniformConvergence
-import Mathlib.Topology.UniformSpace.Uniformizable
-import Mathlib.Topology.Compactification.OnePoint.Basic
-import Mathlib.Topology.Connected.LocallyConnected
-import Mathlib.Topology.Covering.Basic
-import Mathlib.Analysis.CStarAlgebra.Classes
-import Mathlib.Topology.DerivedSet
-import Mathlib.Geometry.Manifold.Complex
-import Mathlib.Geometry.Manifold.IsManifold.Basic
-import Mathlib.MeasureTheory.Measure.Lebesgue.Complex
-import Mathlib.Analysis.Meromorphic.NormalForm
+public import Mathlib.Analysis.Complex.CauchyIntegral
+public import Mathlib.Topology.UniformSpace.LocallyUniformConvergence
+public import Mathlib.Topology.UniformSpace.Uniformizable
+public import Mathlib.Topology.UniformSpace.OfCompactT2
+public import Mathlib.Topology.Compactification.OnePoint.Basic
+public import Mathlib.Topology.Connected.LocallyConnected
+public import Mathlib.Topology.Covering.Basic
+public import Mathlib.Analysis.CStarAlgebra.Classes
+public import Mathlib.Topology.DerivedSet
+public import Mathlib.Geometry.Manifold.Complex
+public import Mathlib.Geometry.Manifold.IsManifold.Basic
+public import Mathlib.MeasureTheory.Measure.Lebesgue.Complex
+public import Mathlib.Analysis.Meromorphic.NormalForm
+
+@[expose] public section
 
 /-! # Independent challenge for wandering-domain and wandering-set results
 

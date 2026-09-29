@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.TangentDiskGeometry
-import TauCeti.Analysis.Complex.Conformal.BoundaryCorrespondence
+module
+
+public import FunctionTheory.Conformal.TangentDiskGeometry
+public import TauCeti.Analysis.Complex.Conformal.BoundaryCorrespondence
+
+@[expose] public section
 
 open Set Metric Complex
 

@@ -1,8 +1,12 @@
-import Mathlib.Analysis.Complex.Basic
-import Mathlib.Analysis.Normed.Group.Bounded
-import Mathlib.Analysis.SpecificLimits.Basic
-import Mathlib.Topology.MetricSpace.ProperSpace
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.Complex.Basic
+public import Mathlib.Analysis.Normed.Group.Bounded
+public import Mathlib.Analysis.SpecificLimits.Basic
+public import Mathlib.Topology.MetricSpace.ProperSpace
+public import Mathlib.Tactic
+
+@[expose] public section
 
 open Set Filter Metric Bornology
 open scoped Topology

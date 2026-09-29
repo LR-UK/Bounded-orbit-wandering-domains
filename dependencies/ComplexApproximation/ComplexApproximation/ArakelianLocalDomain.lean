@@ -1,5 +1,9 @@
-import ComplexApproximation.Arakelian
-import Runge.LocalDomain
+module
+
+public import ComplexApproximation.Arakelian
+public import Runge.LocalDomain
+
+@[expose] public section
 
 /-! # Arakelian approximation for functions on their actual domain -/
 

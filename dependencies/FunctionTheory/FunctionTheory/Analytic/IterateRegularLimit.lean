@@ -1,5 +1,9 @@
-import FunctionTheory.Analytic.SequenceLimit
-import Mathlib.Logic.Function.Iterate
+module
+
+public import FunctionTheory.Analytic.SequenceLimit
+public import Mathlib.Logic.Function.Iterate
+
+@[expose] public section
 
 open Set Filter
 open scoped Topology

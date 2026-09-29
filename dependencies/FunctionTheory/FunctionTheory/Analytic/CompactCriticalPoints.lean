@@ -1,5 +1,9 @@
-import FunctionTheory.Analytic.FiniteInterpolation
-import Mathlib.Topology.DiscreteSubset
+module
+
+public import FunctionTheory.Analytic.FiniteInterpolation
+public import Mathlib.Topology.DiscreteSubset
+
+@[expose] public section
 
 open Set Filter
 open scoped Topology

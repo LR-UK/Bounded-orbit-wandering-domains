@@ -1,8 +1,12 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.DomainCoveringPullback
-import BoundedWanderingDomains.Surfaces.DomainAreaSubtype
-import BoundedWanderingDomains.Surfaces.DomainLogRatio
-import BoundedWanderingDomains.Surfaces.LogDensityRatio
+public import BoundedWanderingDomains.Surfaces.DomainCoveringPullback
+public import BoundedWanderingDomains.Surfaces.DomainAreaSubtype
+public import BoundedWanderingDomains.Surfaces.DomainLogRatio
+public import BoundedWanderingDomains.Surfaces.LogDensityRatio
+
+@[expose] public section
 
 /-! # Comparing an ambient nested domain with its open-subtype model -/
 

@@ -1,7 +1,11 @@
-import EremenkosConjecture.ScaffoldingBackground
-import EremenkosConjecture.ScaffoldingApproximation
-import EremenkosConjecture.UnboundedIterateStability
-import EremenkosConjecture.RayGeometry
+module
+
+public import EremenkosConjecture.ScaffoldingBackground
+public import EremenkosConjecture.ScaffoldingApproximation
+public import EremenkosConjecture.UnboundedIterateStability
+public import EremenkosConjecture.RayGeometry
+
+@[expose] public section
 
 /-! # Quantitative stages for the Section 7 construction
 

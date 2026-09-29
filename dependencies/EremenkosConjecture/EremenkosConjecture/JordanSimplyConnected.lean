@@ -1,7 +1,11 @@
-import EremenkosConjecture.JordanDomains
-import Schoenflies.JordanSchoenflies
-import Mathlib.Analysis.Convex.Contractible
-import Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected
+module
+
+public import EremenkosConjecture.JordanDomains
+public import Schoenflies.JordanSchoenflies
+public import Mathlib.Analysis.Convex.Contractible
+public import Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected
+
+@[expose] public section
 
 /-! # Simple connectivity of bounded Jordan domains
 

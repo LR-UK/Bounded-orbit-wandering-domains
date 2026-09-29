@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.LocalMapTotalization
-import BoundedWanderingDomains.Surfaces.Statements
-import BoundedWanderingDomains.Surfaces.SurfacePolish
+public import BoundedWanderingDomains.Surfaces.LocalMapTotalization
+public import BoundedWanderingDomains.Surfaces.Statements
+public import BoundedWanderingDomains.Surfaces.SurfacePolish
+
+@[expose] public section
 
 /-! # Measurable forward saturations for local surface dynamics -/
 

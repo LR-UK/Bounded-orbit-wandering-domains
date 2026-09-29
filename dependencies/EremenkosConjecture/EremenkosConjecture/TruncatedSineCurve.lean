@@ -1,6 +1,10 @@
-import Counterexamples.TopologistsSineCurve
-import Mathlib.Analysis.Convex.Topology
-import Mathlib.Analysis.Normed.Group.Constructions
+module
+
+public import Counterexamples.TopologistsSineCurve
+public import Mathlib.Analysis.Convex.Topology
+public import Mathlib.Analysis.Normed.Group.Constructions
+
+@[expose] public section
 
 /-! # A compact topologist's sine curve
 

@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.PlaneCoverPuncture
-import BoundedWanderingDomains.Surfaces.SpherePunctureCover
-import BoundedWanderingDomains.Surfaces.UniformizationBridge
+public import BoundedWanderingDomains.Surfaces.PlaneCoverPuncture
+public import BoundedWanderingDomains.Surfaces.SpherePunctureCover
+public import BoundedWanderingDomains.Surfaces.UniformizationBridge
+
+@[expose] public section
 
 /-! # Uniform finite hyperbolization of compact surfaces
 

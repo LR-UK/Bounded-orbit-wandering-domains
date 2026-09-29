@@ -1,5 +1,9 @@
-import FunctionTheory.NormalFamilies.FiniteChartConvergence
-import TauCeti.Analysis.Complex.Conformal.Hurwitz
+module
+
+public import FunctionTheory.NormalFamilies.FiniteChartConvergence
+public import TauCeti.Analysis.Complex.Conformal.Hurwitz
+
+@[expose] public section
 
 /-! # Omitted values in spherical limits
 Holomorphy and omission are only required eventually on each bounded disc.

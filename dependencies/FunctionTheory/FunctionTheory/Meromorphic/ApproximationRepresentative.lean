@@ -1,6 +1,10 @@
-import Mathlib.Analysis.Meromorphic.Basic
-import Mathlib.Topology.Separation.Hausdorff
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.Meromorphic.Basic
+public import Mathlib.Topology.Separation.Hausdorff
+public import Mathlib.Tactic
+
+@[expose] public section
 
 open Set Filter
 open scoped Topology

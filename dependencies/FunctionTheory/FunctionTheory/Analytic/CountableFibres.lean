@@ -1,6 +1,10 @@
-import Mathlib.Analysis.Analytic.IsolatedZeros
-import Mathlib.Topology.DiscreteSubset
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.Analytic.IsolatedZeros
+public import Mathlib.Topology.DiscreteSubset
+public import Mathlib.Tactic
+
+@[expose] public section
 
 open Set Metric Filter Function
 open scoped Topology

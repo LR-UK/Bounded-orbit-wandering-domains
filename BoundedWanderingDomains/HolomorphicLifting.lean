@@ -1,6 +1,10 @@
-import BoundedWanderingDomains.LocalCovering
-import Mathlib.Topology.Homotopy.Lifting
-import Mathlib.Analysis.Calculus.Deriv.Inverse
+module
+
+public import BoundedWanderingDomains.LocalCovering
+public import Mathlib.Topology.Homotopy.Lifting
+public import Mathlib.Analysis.Calculus.Deriv.Inverse
+
+@[expose] public section
 
 open Set Function Filter Topology
 open scoped Topology

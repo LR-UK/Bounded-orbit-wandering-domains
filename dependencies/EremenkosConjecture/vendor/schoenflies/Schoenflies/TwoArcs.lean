@@ -1,10 +1,14 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
-import Schoenflies.Subarc
-import Schoenflies.Concatenate
+public import Schoenflies.Subarc
+public import Schoenflies.Concatenate
+
+@[expose] public section
 
 /-!
 # Two points cut a Jordan curve into two arcs

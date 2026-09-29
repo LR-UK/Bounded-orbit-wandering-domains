@@ -1,13 +1,17 @@
+module
+
 /-
 Copyright (c) 2026 Will (Ziang) Li. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Will (Ziang) Li
 -/
-import RiemannDynamics.Uniformization.SphereManifold
-import Mathlib.Geometry.Manifold.Diffeomorph
-import Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected
-import Mathlib.Analysis.Complex.OpenMapping
-import Mathlib.Analysis.Complex.RemovableSingularity
+public import RiemannDynamics.Uniformization.SphereManifold
+public import Mathlib.Geometry.Manifold.Diffeomorph
+public import Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected
+public import Mathlib.Analysis.Complex.OpenMapping
+public import Mathlib.Analysis.Complex.RemovableSingularity
+
+@[expose] public section
 
 /-!
 # Biholomorphic equivalences of one-dimensional complex manifolds

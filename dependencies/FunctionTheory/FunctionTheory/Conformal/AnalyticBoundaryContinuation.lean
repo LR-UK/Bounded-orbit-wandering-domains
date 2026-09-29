@@ -1,6 +1,10 @@
-import FunctionTheory.Conformal.ReflectionInjectivity
-import FunctionTheory.Conformal.CayleyCoordinates
-import Mathlib.Topology.OpenPartialHomeomorph.Basic
+module
+
+public import FunctionTheory.Conformal.ReflectionInjectivity
+public import FunctionTheory.Conformal.CayleyCoordinates
+public import Mathlib.Topology.OpenPartialHomeomorph.Basic
+
+@[expose] public section
 
 open Set Metric Complex Filter
 open scoped Topology ComplexConjugate

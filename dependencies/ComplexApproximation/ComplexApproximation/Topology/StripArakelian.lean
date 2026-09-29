@@ -1,4 +1,8 @@
-import ComplexApproximation.Topology.StripLocalisation
+module
+
+public import ComplexApproximation.Topology.StripLocalisation
+
+@[expose] public section
 
 /-! # Adding an Arakelian set inside one horizontal gap -/
 

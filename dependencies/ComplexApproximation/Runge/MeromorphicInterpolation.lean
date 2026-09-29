@@ -1,5 +1,9 @@
-import Runge.Interpolation
-import FunctionTheory.Meromorphic.CompactDecomposition
+module
+
+public import Runge.Interpolation
+public import FunctionTheory.Meromorphic.CompactDecomposition
+
+@[expose] public section
 
 open Set Filter Polynomial FunctionTheory
 open scoped Topology

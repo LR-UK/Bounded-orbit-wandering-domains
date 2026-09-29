@@ -1,4 +1,8 @@
-import FunctionTheory.Topology.FiniteOrbitDomain
+module
+
+public import FunctionTheory.Topology.FiniteOrbitDomain
+
+@[expose] public section
 
 open Set
 

@@ -1,8 +1,12 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.DomainAreaGainIntegration
-import BoundedWanderingDomains.Surfaces.DomainLogRatio
-import BoundedWanderingDomains.Surfaces.ChartZeroExtension
-import BoundedWanderingDomains.GreenIdentity
+public import BoundedWanderingDomains.Surfaces.DomainAreaGainIntegration
+public import BoundedWanderingDomains.Surfaces.DomainLogRatio
+public import BoundedWanderingDomains.Surfaces.ChartZeroExtension
+public import BoundedWanderingDomains.GreenIdentity
+
+@[expose] public section
 
 /-! # Green's identity for ambient domain-area gain -/
 

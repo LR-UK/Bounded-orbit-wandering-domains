@@ -1,4 +1,8 @@
-import EremenkosConjecture.RayReference
+module
+
+public import EremenkosConjecture.RayReference
+
+@[expose] public section
 
 /-! # Exact orbit identities for the glued reference map -/
 

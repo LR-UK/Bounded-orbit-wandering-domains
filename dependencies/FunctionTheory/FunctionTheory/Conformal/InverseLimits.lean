@@ -1,6 +1,10 @@
-import FunctionTheory.Conformal.KernelImage
-import Mathlib.Analysis.Complex.AbsMax
-import Mathlib.Topology.UniformSpace.UniformApproximation
+module
+
+public import FunctionTheory.Conformal.KernelImage
+public import Mathlib.Analysis.Complex.AbsMax
+public import Mathlib.Topology.UniformSpace.UniformApproximation
+
+@[expose] public section
 
 /-! # Inverse identities in holomorphic limits -/
 

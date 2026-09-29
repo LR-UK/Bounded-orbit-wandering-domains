@@ -1,3 +1,5 @@
+module
+
 /-
 Copyright (c) 2026 Will (Ziang) Li. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
@@ -8,7 +10,9 @@ Lasse Rempe formalisation project: replace the finite chart subcover by a
 countable subcover; generalise the path-cover countability theorem.
 Original proofs and Apache 2.0 attribution retained.
 -/
-import RiemannDynamics.Uniformization.Perron.PathCover
+public import RiemannDynamics.Uniformization.Perron.PathCover
+
+@[expose] public section
 
 /-!
 # Second countability of the path cover

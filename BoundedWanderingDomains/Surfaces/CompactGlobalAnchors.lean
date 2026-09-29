@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.PositiveAreaExceptionalReduction
-import BoundedWanderingDomains.Surfaces.CompactFiniteHyperbolization
+public import BoundedWanderingDomains.Surfaces.PositiveAreaExceptionalReduction
+public import BoundedWanderingDomains.Surfaces.CompactFiniteHyperbolization
+
+@[expose] public section
 
 /-! # Finite anchors for the compact global surface case -/
 

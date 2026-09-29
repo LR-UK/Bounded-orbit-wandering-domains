@@ -1,4 +1,8 @@
-import EremenkosConjecture.FullNeighbourhoods
+module
+
+public import EremenkosConjecture.FullNeighbourhoods
+
+@[expose] public section
 
 /-!
 # Fullness of the compact unions in the approximation construction

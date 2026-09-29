@@ -1,10 +1,14 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.GeneralDomainCovering
-import BoundedWanderingDomains.GeneralDensityLimit
-import Mathlib.MeasureTheory.Constructions.BorelSpace.Basic
+public import BoundedWanderingDomains.GeneralDomainCovering
+public import BoundedWanderingDomains.GeneralDensityLimit
+public import Mathlib.MeasureTheory.Constructions.BorelSpace.Basic
+
+@[expose] public section
 
 /-!
 # Hyperbolic density of a plane domain

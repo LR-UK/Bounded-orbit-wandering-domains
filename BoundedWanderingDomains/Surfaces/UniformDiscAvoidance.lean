@@ -1,9 +1,13 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.Surfaces.PlaneReading
-import Mathlib.Analysis.Complex.Schwarz
+public import BoundedWanderingDomains.Surfaces.PlaneReading
+public import Mathlib.Analysis.Complex.Schwarz
+
+@[expose] public section
 
 /-! # Uniform avoidance by small holomorphic discs on a covered surface
 

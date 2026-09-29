@@ -1,10 +1,15 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.EntireSurfaceModel
-import BoundedWanderingDomains.Surfaces.FiniteType
-import BoundedWanderingDomains.Surfaces.CompactGlobalSingularValues
+public import Mathlib.Analysis.CStarAlgebra.Classes
+public import BoundedWanderingDomains.EntireSurfaceModel
+public import BoundedWanderingDomains.Surfaces.FiniteType
+public import BoundedWanderingDomains.Surfaces.CompactGlobalSingularValues
+
+@[expose] public section
 
 /-! # Classical no-wandering corollaries
 

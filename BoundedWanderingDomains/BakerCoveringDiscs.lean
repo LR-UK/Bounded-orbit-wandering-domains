@@ -1,12 +1,16 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.CoveringDiscs
-import BoundedWanderingDomains.LocalFilling
-import BoundedWanderingDomains.LocalDiscInjectivity
-import EremenkosConjecture.PlaneSimpleConnectivity
-import Mathlib.Topology.MetricSpace.Thickening
+public import BoundedWanderingDomains.CoveringDiscs
+public import BoundedWanderingDomains.LocalFilling
+public import BoundedWanderingDomains.LocalDiscInjectivity
+public import EremenkosConjecture.PlaneSimpleConnectivity
+public import Mathlib.Topology.MetricSpace.Thickening
+
+@[expose] public section
 
 /-! # Baker's filling argument for shrinking covering discs
 

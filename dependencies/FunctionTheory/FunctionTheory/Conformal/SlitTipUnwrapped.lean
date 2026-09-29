@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.SlitBankLimit
-import FunctionTheory.Conformal.StraightBoundaryContinuous
+module
+
+public import FunctionTheory.Conformal.SlitBankLimit
+public import FunctionTheory.Conformal.StraightBoundaryContinuous
+
+@[expose] public section
 
 open Set Metric Complex Filter
 open scoped Topology

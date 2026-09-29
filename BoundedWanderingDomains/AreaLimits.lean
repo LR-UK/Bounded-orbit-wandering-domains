@@ -1,5 +1,9 @@
-import BoundedWanderingDomains.AreaCancellation
-import Mathlib.MeasureTheory.Function.LocallyIntegrable
+module
+
+public import BoundedWanderingDomains.AreaCancellation
+public import Mathlib.MeasureTheory.Function.LocallyIntegrable
+
+@[expose] public section
 
 open Set MeasureTheory Filter
 open scoped ENNReal Topology

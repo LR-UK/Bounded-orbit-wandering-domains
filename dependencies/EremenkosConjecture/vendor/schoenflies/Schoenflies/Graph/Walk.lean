@@ -1,11 +1,15 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
-import Mathlib.Combinatorics.Graph.Subgraph
-import Mathlib.Combinatorics.Graph.Delete
-import Mathlib.Data.List.Basic
+public import Mathlib.Combinatorics.Graph.Subgraph
+public import Mathlib.Combinatorics.Graph.Delete
+public import Mathlib.Data.List.Basic
+
+@[expose] public section
 
 /-!
 # Walks and paths in a multigraph

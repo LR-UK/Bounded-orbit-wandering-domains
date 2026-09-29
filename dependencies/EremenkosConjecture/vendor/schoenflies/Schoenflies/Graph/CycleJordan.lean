@@ -1,12 +1,16 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
-import Schoenflies.Concatenate
-import Schoenflies.Graph.Cycle
-import Schoenflies.Graph.Drawing
-import Schoenflies.Polygonal
+public import Schoenflies.Concatenate
+public import Schoenflies.Graph.Cycle
+public import Schoenflies.Graph.Drawing
+public import Schoenflies.Polygonal
+
+@[expose] public section
 
 /-!
 # The realisation of a cycle is a Jordan curve

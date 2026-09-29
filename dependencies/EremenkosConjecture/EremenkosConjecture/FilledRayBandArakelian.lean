@@ -1,6 +1,10 @@
-import EremenkosConjecture.FilledRayInterior
-import EremenkosConjecture.FilledRayArakelian
-import ComplexApproximation.Topology.StraightBandArakelian
+module
+
+public import EremenkosConjecture.FilledRayInterior
+public import EremenkosConjecture.FilledRayArakelian
+public import ComplexApproximation.Topology.StraightBandArakelian
+
+@[expose] public section
 
 open Set Metric Complex Bornology
 

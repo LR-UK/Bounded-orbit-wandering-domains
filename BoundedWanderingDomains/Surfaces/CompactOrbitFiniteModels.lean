@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.BarrierCompactOrbit
-import BoundedWanderingDomains.Surfaces.ForwardSourceBarrier
-import BoundedWanderingDomains.Surfaces.OmegaDynamics
+public import BoundedWanderingDomains.Surfaces.BarrierCompactOrbit
+public import BoundedWanderingDomains.Surfaces.ForwardSourceBarrier
+public import BoundedWanderingDomains.Surfaces.OmegaDynamics
+
+@[expose] public section
 
 /-! # Exact finite-puncture models for a compact marked normal orbit -/
 

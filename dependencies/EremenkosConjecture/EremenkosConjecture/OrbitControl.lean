@@ -1,6 +1,10 @@
-import EremenkosConjecture.IterateApproximation
-import ComplexDynamics.Iteration
-import Mathlib.Data.Finset.Lattice.Fold
+module
+
+public import EremenkosConjecture.IterateApproximation
+public import ComplexDynamics.Iteration
+public import Mathlib.Data.Finset.Lattice.Fold
+
+@[expose] public section
 
 /-! # Stability of compact orbit constraints -/
 

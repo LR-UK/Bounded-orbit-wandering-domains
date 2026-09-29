@@ -1,6 +1,10 @@
-import FunctionTheory.Topology.DisjointPatch
-import Mathlib.Analysis.Calculus.ContDiff.Basic
-import Mathlib.Topology.Homeomorph.Defs
+module
+
+public import FunctionTheory.Topology.DisjointPatch
+public import Mathlib.Analysis.Calculus.ContDiff.Basic
+public import Mathlib.Topology.Homeomorph.Defs
+
+@[expose] public section
 
 open Set Filter
 open scoped Topology ContDiff

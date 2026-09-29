@@ -1,5 +1,9 @@
-import BoundedWanderingDomains.LocalPunctures
-import Mathlib.Topology.Connected.LocallyConnected
+module
+
+public import BoundedWanderingDomains.LocalPunctures
+public import Mathlib.Topology.Connected.LocallyConnected
+
+@[expose] public section
 
 open Set Function Filter
 open scoped Topology

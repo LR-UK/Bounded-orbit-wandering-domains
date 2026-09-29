@@ -1,10 +1,14 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.AnchoredCompactComparison
-import BoundedWanderingDomains.CompactDeficit
-import BoundedWanderingDomains.CompactCutoff
+public import BoundedWanderingDomains.AnchoredCompactComparison
+public import BoundedWanderingDomains.CompactDeficit
+public import BoundedWanderingDomains.CompactCutoff
+
+@[expose] public section
 
 /-!
 # Area gain for finite punctures away from a compact obstacle

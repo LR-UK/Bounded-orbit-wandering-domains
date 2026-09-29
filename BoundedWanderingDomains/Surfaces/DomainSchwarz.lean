@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.ComponentDensity
-import BoundedWanderingDomains.Surfaces.DiscDilation
+public import BoundedWanderingDomains.Surfaces.ComponentDensity
+public import BoundedWanderingDomains.Surfaces.DiscDilation
+
+@[expose] public section
 
 /-! # Schwarz comparison and extremal discs for disconnected open domains -/
 open Set Function Filter Metric

@@ -1,4 +1,8 @@
-import EremenkosConjecture.JordanDomains
+module
+
+public import EremenkosConjecture.JordanDomains
+
+@[expose] public section
 
 open Set Schoenflies
 

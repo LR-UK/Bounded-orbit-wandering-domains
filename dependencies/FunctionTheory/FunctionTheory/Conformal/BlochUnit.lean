@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.BlochSelection
-import FunctionTheory.Conformal.BlochLocalImage
+module
+
+public import FunctionTheory.Conformal.BlochSelection
+public import FunctionTheory.Conformal.BlochLocalImage
+
+@[expose] public section
 
 open Set Metric
 

@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.StraightBoundaryCoordinates
-import FunctionTheory.Conformal.SlitTipBoundary
+module
+
+public import FunctionTheory.Conformal.StraightBoundaryCoordinates
+public import FunctionTheory.Conformal.SlitTipBoundary
+
+@[expose] public section
 
 open Set Metric Complex Filter
 open scoped Topology

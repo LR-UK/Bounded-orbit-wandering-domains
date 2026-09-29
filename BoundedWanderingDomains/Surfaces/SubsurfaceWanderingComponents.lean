@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.SubsurfaceCompactNormal
-import BoundedWanderingDomains.Surfaces.SaturationDynamics
+public import BoundedWanderingDomains.Surfaces.SubsurfaceCompactNormal
+public import BoundedWanderingDomains.Surfaces.SaturationDynamics
+
+@[expose] public section
 
 open Set Function Topology
 open AreaDeficit.Surfaces

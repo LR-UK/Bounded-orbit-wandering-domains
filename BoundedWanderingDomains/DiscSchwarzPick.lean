@@ -1,5 +1,9 @@
-import BoundedWanderingDomains.DiscMetric
-import BoundedWanderingDomains.RiemannMappingFull
+module
+
+public import BoundedWanderingDomains.DiscMetric
+public import BoundedWanderingDomains.RiemannMappingFull
+
+@[expose] public section
 
 open Set Metric Function Filter
 open scoped Topology ComplexConjugate

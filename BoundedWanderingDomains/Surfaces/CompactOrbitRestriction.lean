@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.CompactOrbitNormal
-import BoundedWanderingDomains.Surfaces.LocalMapRestriction
+public import BoundedWanderingDomains.Surfaces.CompactOrbitNormal
+public import BoundedWanderingDomains.Surfaces.LocalMapRestriction
+
+@[expose] public section
 
 /-! # Compact interior orbits survive a relatively compact restriction -/
 

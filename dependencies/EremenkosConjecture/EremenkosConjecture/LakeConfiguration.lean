@@ -1,5 +1,9 @@
-import EremenkosConjecture.FiniteLakeExtension
-import EremenkosConjecture.DiskBirth
+module
+
+public import EremenkosConjecture.FiniteLakeExtension
+public import EremenkosConjecture.DiskBirth
+
+@[expose] public section
 
 open Set Metric Function
 

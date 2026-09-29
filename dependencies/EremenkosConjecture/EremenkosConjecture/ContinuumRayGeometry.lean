@@ -1,7 +1,11 @@
-import EremenkosConjecture.RayGeometry
-import EremenkosConjecture.PlaneTopology
-import ComplexApproximation.Topology.HorizontalEscape
-import Runge.PolynomialSeparation
+module
+
+public import EremenkosConjecture.RayGeometry
+public import EremenkosConjecture.PlaneTopology
+public import ComplexApproximation.Topology.HorizontalEscape
+public import Runge.PolynomialSeparation
+
+@[expose] public section
 
 /-! # Attaching a horizontal ray at a rightmost point
 

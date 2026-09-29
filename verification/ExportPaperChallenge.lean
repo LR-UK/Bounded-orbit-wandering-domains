@@ -1,5 +1,9 @@
-import Challenge
-import Lean
+module
+
+public import Challenge
+public import Lean
+
+@[expose] public section
 
 /- Erase only bound-variable display names and nonsemantic metadata.
    Bound occurrences are de Bruijn indices; constants and their names stay intact. -/

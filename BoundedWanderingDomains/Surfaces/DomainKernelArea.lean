@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.DomainArea
-import BoundedWanderingDomains.Surfaces.ComponentKernel
-import Mathlib.MeasureTheory.Integral.Lebesgue.Add
+public import BoundedWanderingDomains.Surfaces.DomainArea
+public import BoundedWanderingDomains.Surfaces.ComponentKernel
+public import Mathlib.MeasureTheory.Integral.Lebesgue.Add
+
+@[expose] public section
 
 /-! # Passing finite-model area bounds to the limiting open domain -/
 

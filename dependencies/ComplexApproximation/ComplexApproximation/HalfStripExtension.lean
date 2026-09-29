@@ -1,5 +1,9 @@
-import ComplexApproximation.BiLipschitzExtension
-import ComplexApproximation.HalfStripBounds
+module
+
+public import ComplexApproximation.BiLipschitzExtension
+public import ComplexApproximation.HalfStripBounds
+
+@[expose] public section
 
 /-! # Ambient extension of the explicit conformal half-strip map -/
 

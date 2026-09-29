@@ -1,11 +1,15 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
-import Schoenflies.FiniteTransfer
-import Schoenflies.InitialPairFixed
-import Schoenflies.BoundaryContinuity2
+public import Schoenflies.FiniteTransfer
+public import Schoenflies.InitialPairFixed
+public import Schoenflies.BoundaryContinuity2
+
+@[expose] public section
 
 /-!
 # Stage 0: the initial pair as a `GeneratedPair`

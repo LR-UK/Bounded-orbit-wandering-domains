@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.AlmostEverywhere.Definitions
-import BoundedWanderingDomains.Surfaces.SurfacePositiveArea
-import BoundedWanderingDomains.Surfaces.NoEscapeCompactRange
+public import BoundedWanderingDomains.Surfaces.AlmostEverywhere.Definitions
+public import BoundedWanderingDomains.Surfaces.SurfacePositiveArea
+public import BoundedWanderingDomains.Surfaces.NoEscapeCompactRange
+
+@[expose] public section
 
 /-! # Almost-everywhere escape from source compact sets -/
 

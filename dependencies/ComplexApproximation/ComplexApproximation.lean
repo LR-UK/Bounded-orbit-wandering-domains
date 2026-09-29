@@ -1,46 +1,50 @@
-import ComplexApproximation.Topology.FilledContinua
-import Runge
-import ComplexApproximation.MainTheorems
-import ComplexApproximation.Topology.Nonseparation
-import ComplexApproximation.Topology.HorizontalSets
-import ComplexApproximation.Topology.ArakelianHomeomorphism
-import ComplexApproximation.Topology.StripArakelian
-import ComplexApproximation.Topology.HalfStripBands
-import ComplexApproximation.HalfStripExtension
-import ComplexApproximation.HalfStripApproximation
-import ComplexApproximation.HalfStripMargins
-import ComplexApproximation.HalfStripTail
-import ComplexApproximation.HorizontalStripExtension
-import ComplexApproximation.Conformal.KernelConvergence
+module
 
-import ComplexApproximation.Topology.FillingStraightChannels
-import ComplexApproximation.Topology.FillingInterior
-import ComplexApproximation.Topology.FillingCoordinateBounds
+public import ComplexApproximation.Topology.FilledContinua
+public import Runge
+public import ComplexApproximation.MainTheorems
+public import ComplexApproximation.Topology.Nonseparation
+public import ComplexApproximation.Topology.HorizontalSets
+public import ComplexApproximation.Topology.ArakelianHomeomorphism
+public import ComplexApproximation.Topology.StripArakelian
+public import ComplexApproximation.Topology.HalfStripBands
+public import ComplexApproximation.HalfStripExtension
+public import ComplexApproximation.HalfStripApproximation
+public import ComplexApproximation.HalfStripMargins
+public import ComplexApproximation.HalfStripTail
+public import ComplexApproximation.HorizontalStripExtension
+public import ComplexApproximation.Conformal.KernelConvergence
 
-import ComplexApproximation.Topology.ArakelianElementaryGeometry
+public import ComplexApproximation.Topology.FillingStraightChannels
+public import ComplexApproximation.Topology.FillingInterior
+public import ComplexApproximation.Topology.FillingCoordinateBounds
 
-import ComplexApproximation.Topology.FillingDecreasingIntersection
+public import ComplexApproximation.Topology.ArakelianElementaryGeometry
 
-import ComplexApproximation.Topology.NestedBandNonseparation
+public import ComplexApproximation.Topology.FillingDecreasingIntersection
 
-import ComplexApproximation.Topology.StraightTailComplement
+public import ComplexApproximation.Topology.NestedBandNonseparation
 
-import ComplexApproximation.Topology.StraightBandArakelian
+public import ComplexApproximation.Topology.StraightTailComplement
 
-import ComplexApproximation.Topology.LocalHomeomorphNonseparation
+public import ComplexApproximation.Topology.StraightBandArakelian
 
-import ComplexApproximation.Topology.HomeomorphicTail
+public import ComplexApproximation.Topology.LocalHomeomorphNonseparation
 
-import ComplexApproximation.Topology.ConformalArakelian
+public import ComplexApproximation.Topology.HomeomorphicTail
 
-import ComplexApproximation.Topology.FullCompactSets
-import ComplexApproximation.Topology.EscapingFullFamily
-import ComplexApproximation.Topology.FullSubsetSeparation
+public import ComplexApproximation.Topology.ConformalArakelian
 
-import ComplexApproximation.Topology.TwoPointNonseparation
-import ComplexApproximation.Topology.FullFamilyFilling
-import ComplexApproximation.Topology.FullSeparatedExhaustion
-import ComplexApproximation.Topology.FullNeighborhoodFamily
+public import ComplexApproximation.Topology.FullCompactSets
+public import ComplexApproximation.Topology.EscapingFullFamily
+public import ComplexApproximation.Topology.FullSubsetSeparation
+
+public import ComplexApproximation.Topology.TwoPointNonseparation
+public import ComplexApproximation.Topology.FullFamilyFilling
+public import ComplexApproximation.Topology.FullSeparatedExhaustion
+public import ComplexApproximation.Topology.FullNeighborhoodFamily
+
+@[expose] public section
 
 /-!
 # Complex approximation theory

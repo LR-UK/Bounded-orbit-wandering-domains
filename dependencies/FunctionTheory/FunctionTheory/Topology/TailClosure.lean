@@ -1,7 +1,11 @@
-import Mathlib.Topology.MetricSpace.Pseudo.Defs
-import Mathlib.Order.Filter.AtTopBot.Basic
-import Mathlib.Topology.MetricSpace.Pseudo.Basic
-import Mathlib.Tactic
+module
+
+public import Mathlib.Topology.MetricSpace.Pseudo.Defs
+public import Mathlib.Order.Filter.AtTopBot.Basic
+public import Mathlib.Topology.MetricSpace.Pseudo.Basic
+public import Mathlib.Tactic
+
+@[expose] public section
 
 open Set Filter
 open scoped Topology

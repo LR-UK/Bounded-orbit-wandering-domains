@@ -1,9 +1,14 @@
-import BoundedWanderingDomains.HolomorphicLifting
-import BoundedWanderingDomains.DiscSchwarzPick
-import BoundedWanderingDomains.ConformalLaplacian
-import TauCeti.Analysis.Complex.Conformal.Inverse.Function
-import TauCeti.Analysis.Complex.Conformal.Moebius
-import Mathlib.Analysis.Convex.Contractible
+module
+
+public import BoundedWanderingDomains.HolomorphicLifting
+public import BoundedWanderingDomains.DiscSchwarzPick
+public import BoundedWanderingDomains.ConformalLaplacian
+public import TauCeti.Analysis.Complex.Conformal.Inverse.Function
+public import TauCeti.Analysis.Complex.Conformal.ImageSimplyConnected
+public import TauCeti.Analysis.Complex.Conformal.Moebius
+public import Mathlib.Analysis.Convex.Contractible
+
+@[expose] public section
 
 /-!
 # The curvature −1 metric induced by a holomorphic disc covering

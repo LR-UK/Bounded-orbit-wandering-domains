@@ -1,11 +1,15 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import Mathlib.Topology.Compactification.OnePoint.Basic
-import Mathlib.Topology.Sequences
-import Mathlib.Topology.UniformSpace.Uniformizable
-import Mathlib.Topology.UniformSpace.LocallyUniformConvergence
+public import Mathlib.Topology.Compactification.OnePoint.Basic
+public import Mathlib.Topology.Sequences
+public import Mathlib.Topology.UniformSpace.Uniformizable
+public import Mathlib.Topology.UniformSpace.LocallyUniformConvergence
+
+@[expose] public section
 
 /-! # Compact escape in the one-point compactification
 

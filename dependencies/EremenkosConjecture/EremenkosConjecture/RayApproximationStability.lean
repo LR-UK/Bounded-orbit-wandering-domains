@@ -1,5 +1,9 @@
-import EremenkosConjecture.RayOrbitProperty
-import EremenkosConjecture.RayBarrierStability
+module
+
+public import EremenkosConjecture.RayOrbitProperty
+public import EremenkosConjecture.RayBarrierStability
+
+@[expose] public section
 
 /-! # Choosing common tolerances for a ray-construction step -/
 

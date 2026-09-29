@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.FiniteModelCancellation
-import BoundedWanderingDomains.Surfaces.PositiveAreaContradiction
+public import BoundedWanderingDomains.Surfaces.FiniteModelCancellation
+public import BoundedWanderingDomains.Surfaces.PositiveAreaContradiction
+
+@[expose] public section
 
 /-! # Reduction of the positive-area theorem to one-step area advance -/
 

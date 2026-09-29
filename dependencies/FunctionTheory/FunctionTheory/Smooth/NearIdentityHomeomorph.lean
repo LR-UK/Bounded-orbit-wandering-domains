@@ -1,7 +1,11 @@
-import Mathlib.Topology.MetricSpace.Contracting
-import Mathlib.Analysis.Normed.Group.Uniform
-import Mathlib.Topology.Homeomorph.Defs
-import Mathlib.Tactic
+module
+
+public import Mathlib.Topology.MetricSpace.Contracting
+public import Mathlib.Analysis.Normed.Group.Uniform
+public import Mathlib.Topology.Homeomorph.Defs
+public import Mathlib.Tactic
+
+@[expose] public section
 
 open Set Metric
 open scoped NNReal

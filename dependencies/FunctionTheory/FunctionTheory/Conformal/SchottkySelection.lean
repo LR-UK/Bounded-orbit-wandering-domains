@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.SchottkyDisc
-import Mathlib.Order.Filter.AtTopBot.Basic
+module
+
+public import FunctionTheory.Conformal.SchottkyDisc
+public import Mathlib.Order.Filter.AtTopBot.Basic
+
+@[expose] public section
 
 open Set Metric Filter
 namespace FunctionTheory

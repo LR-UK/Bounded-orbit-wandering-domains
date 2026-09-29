@@ -1,5 +1,9 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import Mathlib.Topology.Homotopy.Lifting
+public import Mathlib.Topology.Homotopy.Lifting
+
+@[expose] public section
 
 /-! # Connected components of covering spaces -/
 

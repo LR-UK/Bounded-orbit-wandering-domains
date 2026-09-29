@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.AnalyticSideLimit
-import Mathlib.Topology.OpenPartialHomeomorph.Constructions
+module
+
+public import FunctionTheory.Conformal.AnalyticSideLimit
+public import Mathlib.Topology.OpenPartialHomeomorph.Constructions
+
+@[expose] public section
 
 open Set Metric Complex Filter Function
 open scoped Topology

@@ -1,5 +1,9 @@
-import EremenkosConjecture.ScaffoldingBranches
-import ComplexApproximation.HorizontalStripExtension
+module
+
+public import EremenkosConjecture.ScaffoldingBranches
+public import ComplexApproximation.HorizontalStripExtension
+
+@[expose] public section
 
 /-! # Quantitative ambient extensions of the Section 4 strip maps -/
 

@@ -1,6 +1,10 @@
-import FunctionTheory.Conformal.AnalyticSideInverse
-import FunctionTheory.Conformal.AnalyticBoundarySide
-import FunctionTheory.Conformal.RegularBoundaryContinuation
+module
+
+public import FunctionTheory.Conformal.AnalyticSideInverse
+public import FunctionTheory.Conformal.AnalyticBoundarySide
+public import FunctionTheory.Conformal.RegularBoundaryContinuation
+
+@[expose] public section
 
 open Set Metric Complex Filter Function
 open scoped Topology

@@ -1,10 +1,14 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
-import Schoenflies.Realization
-import Schoenflies.Graph.K33Planar
+public import Schoenflies.Realization
+public import Schoenflies.Graph.K33Planar
+
+@[expose] public section
 
 /-!
 # Discharging the realization hypothesis of `lem:k33`

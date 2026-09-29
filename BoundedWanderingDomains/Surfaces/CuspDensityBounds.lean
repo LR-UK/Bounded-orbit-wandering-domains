@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.CuspAreaIntegrability
-import BoundedWanderingDomains.Surfaces.SurfaceSchwarz
-import BoundedWanderingDomains.Surfaces.SubtypeHolomorphic
+public import BoundedWanderingDomains.CuspAreaIntegrability
+public import BoundedWanderingDomains.Surfaces.SurfaceSchwarz
+public import BoundedWanderingDomains.Surfaces.SubtypeHolomorphic
+
+@[expose] public section
 
 /-! # Cusp bounds in a surface chart -/
 

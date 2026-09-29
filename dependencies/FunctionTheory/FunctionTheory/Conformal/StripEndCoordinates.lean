@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.StripEndAsymptotics
-import Mathlib.Analysis.Calculus.Deriv.Comp
+module
+
+public import FunctionTheory.Conformal.StripEndAsymptotics
+public import Mathlib.Analysis.Calculus.Deriv.Comp
+
+@[expose] public section
 
 /-! # Recovering a strip map from its exponential coordinate
 

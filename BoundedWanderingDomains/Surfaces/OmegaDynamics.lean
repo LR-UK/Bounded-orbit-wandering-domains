@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.LocalCoveringDiscs
-import BoundedWanderingDomains.Surfaces.WanderingOrbitStructure
+public import BoundedWanderingDomains.Surfaces.LocalCoveringDiscs
+public import BoundedWanderingDomains.Surfaces.WanderingOrbitStructure
+
+@[expose] public section
 
 /-! # Forward invariance of the genuine normality components -/
 

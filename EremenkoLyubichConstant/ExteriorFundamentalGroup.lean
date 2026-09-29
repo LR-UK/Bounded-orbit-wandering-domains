@@ -1,12 +1,16 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Lasse Rempe
 -/
 
-import EremenkoLyubichConstant.LogarithmicTransform
-import Mathlib.Algebra.Group.Equiv.Opposite
-import Mathlib.GroupTheory.SpecificGroups.Cyclic
+public import EremenkoLyubichConstant.LogarithmicTransform
+public import Mathlib.Algebra.Group.Equiv.Opposite
+public import Mathlib.GroupTheory.SpecificGroups.Cyclic
+
+@[expose] public section
 
 open Function Set Complex
 open scoped Topology

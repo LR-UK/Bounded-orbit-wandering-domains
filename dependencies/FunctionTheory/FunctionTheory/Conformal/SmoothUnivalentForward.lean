@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.SmoothForwardChain
-import FunctionTheory.Conformal.ForwardChainCollar
+module
+
+public import FunctionTheory.Conformal.SmoothForwardChain
+public import FunctionTheory.Conformal.ForwardChainCollar
+
+@[expose] public section
 
 open Set Function Filter Metric
 open scoped Topology ContDiff

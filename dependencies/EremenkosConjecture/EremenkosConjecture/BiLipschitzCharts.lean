@@ -1,6 +1,10 @@
-import EremenkosConjecture.UniformAmbientExtension
-import EremenkosConjecture.ConformalEmbedding
-import Mathlib.Analysis.Calculus.Deriv.Slope
+module
+
+public import EremenkosConjecture.UniformAmbientExtension
+public import EremenkosConjecture.ConformalEmbedding
+public import Mathlib.Analysis.Calculus.Deriv.Slope
+
+@[expose] public section
 
 /-! # Holomorphic charts from quantitative ambient extensions -/
 

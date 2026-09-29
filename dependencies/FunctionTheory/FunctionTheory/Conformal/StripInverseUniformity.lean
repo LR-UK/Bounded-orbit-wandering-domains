@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.StripProper
-import Mathlib.Topology.OpenPartialHomeomorph.Basic
+module
+
+public import FunctionTheory.Conformal.StripProper
+public import Mathlib.Topology.OpenPartialHomeomorph.Basic
+
+@[expose] public section
 
 open Set Metric Filter
 open scoped Topology

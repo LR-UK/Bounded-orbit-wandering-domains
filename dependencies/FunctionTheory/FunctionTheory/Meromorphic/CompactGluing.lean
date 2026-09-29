@@ -1,6 +1,10 @@
-import FunctionTheory.Topology.LocallyFiniteCompactFamily
-import FunctionTheory.Topology.DisjointPatch
-import Mathlib.Analysis.Meromorphic.Basic
+module
+
+public import FunctionTheory.Topology.LocallyFiniteCompactFamily
+public import FunctionTheory.Topology.DisjointPatch
+public import Mathlib.Analysis.Meromorphic.Basic
+
+@[expose] public section
 
 open Set Filter Metric
 open scoped Topology

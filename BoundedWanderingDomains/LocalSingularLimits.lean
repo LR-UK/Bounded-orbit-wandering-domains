@@ -1,11 +1,15 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.LocalDerivedSetAreaContradiction
-import BoundedWanderingDomains.LocalPunctureSequence
-import BoundedWanderingDomains.BarrierComponents
-import BoundedWanderingDomains.SubmissionDefinitions
+public import BoundedWanderingDomains.LocalDerivedSetAreaContradiction
+public import BoundedWanderingDomains.LocalPunctureSequence
+public import BoundedWanderingDomains.BarrierComponents
+public import BoundedWanderingDomains.SubmissionDefinitions
+
+@[expose] public section
 
 /-! # Derived singular accumulation for bounded local analytic dynamics
 

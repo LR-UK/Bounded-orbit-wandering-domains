@@ -1,10 +1,14 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.Surfaces.ChartLaplacianSupport
-import BoundedWanderingDomains.Surfaces.SeparatingCutoff
-import Mathlib.Analysis.Complex.CauchyIntegral
+public import BoundedWanderingDomains.Surfaces.ChartLaplacianSupport
+public import BoundedWanderingDomains.Surfaces.SeparatingCutoff
+public import Mathlib.Analysis.Complex.CauchyIntegral
+
+@[expose] public section
 
 /-! # Smooth localisation on an arbitrary Riemann surface
 

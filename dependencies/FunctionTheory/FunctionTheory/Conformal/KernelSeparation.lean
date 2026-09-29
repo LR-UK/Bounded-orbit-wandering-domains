@@ -1,5 +1,9 @@
-import Mathlib.Topology.UniformSpace.LocallyUniformConvergence
-import Mathlib.Topology.MetricSpace.Thickening
+module
+
+public import Mathlib.Topology.UniformSpace.LocallyUniformConvergence
+public import Mathlib.Topology.MetricSpace.Thickening
+
+@[expose] public section
 
 /-! # Separation under convergence of inverse conformal maps
 

@@ -1,11 +1,15 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.SphereHyperbolicArea
-import BoundedWanderingDomains.UnnormalisedPointRemoval
-import BoundedWanderingDomains.SpherePointRemoval
-import BoundedWanderingDomains.SphereAreaGainTransitivity
+public import BoundedWanderingDomains.SphereHyperbolicArea
+public import BoundedWanderingDomains.UnnormalisedPointRemoval
+public import BoundedWanderingDomains.SpherePointRemoval
+public import BoundedWanderingDomains.SphereAreaGainTransitivity
+
+@[expose] public section
 
 /-!
 # Removing finitely many finite points from a sphere domain

@@ -1,12 +1,16 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import FunctionTheory.NormalFamilies.ZalcmanMontel
-import FunctionTheory.Analytic.UniformPreimageStability
-import Mathlib.Topology.LocallyConstant.Basic
-import BoundedWanderingDomains.ChartDiscs
-import BoundedWanderingDomains.SphericalClusterSet
+public import FunctionTheory.NormalFamilies.ZalcmanMontel
+public import FunctionTheory.Analytic.UniformPreimageStability
+public import Mathlib.Topology.LocallyConstant.Basic
+public import BoundedWanderingDomains.ChartDiscs
+public import BoundedWanderingDomains.SphericalClusterSet
+
+@[expose] public section
 
 /-!
 # Spherical shrinking for disjoint holomorphic images

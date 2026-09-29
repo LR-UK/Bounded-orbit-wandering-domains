@@ -1,7 +1,11 @@
-import ComplexApproximation.ArakelianStep
-import ComplexApproximation.HolomorphicLimit
-import ComplexApproximation.Topology.Arakelian
-import Mathlib.Analysis.SpecificLimits.Normed
+module
+
+public import ComplexApproximation.ArakelianStep
+public import ComplexApproximation.HolomorphicLimit
+public import ComplexApproximation.Topology.Arakelian
+public import Mathlib.Analysis.SpecificLimits.Normed
+
+@[expose] public section
 
 /-!
 # Neighbourhood-holomorphic Arakelian approximation

@@ -1,10 +1,14 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
-import Schoenflies.Strip
-import Schoenflies.PolyPath
+public import Schoenflies.Strip
+public import Schoenflies.PolyPath
+
+@[expose] public section
 
 /-!
 # The constants of a polygonal collar exist

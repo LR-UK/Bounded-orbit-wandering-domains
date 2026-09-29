@@ -1,12 +1,16 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.TrappedComponentCovering
-import BoundedWanderingDomains.ShrinkingChartDiscs
-import FunctionTheory.Conformal.LocalPowerCoordinate
-import Mathlib.Topology.Connected.TotallyDisconnected
-import Mathlib.Topology.MetricSpace.Pseudo.Lemmas
+public import BoundedWanderingDomains.TrappedComponentCovering
+public import BoundedWanderingDomains.ShrinkingChartDiscs
+public import FunctionTheory.Conformal.LocalPowerCoordinate
+public import Mathlib.Topology.Connected.TotallyDisconnected
+public import Mathlib.Topology.MetricSpace.Pseudo.Lemmas
+
+@[expose] public section
 
 open Set Metric Function Filter
 open scoped Topology

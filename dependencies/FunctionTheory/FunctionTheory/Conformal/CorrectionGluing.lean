@@ -1,5 +1,9 @@
-import TauCeti.Analysis.Complex.Conformal.Inverse.Function
-import Mathlib.Analysis.Calculus.InverseFunctionTheorem.Analytic
+module
+
+public import TauCeti.Analysis.Complex.Conformal.Inverse.Function
+public import Mathlib.Analysis.Calculus.InverseFunctionTheorem.Analytic
+
+@[expose] public section
 
 open Set Filter Metric
 open scoped Topology

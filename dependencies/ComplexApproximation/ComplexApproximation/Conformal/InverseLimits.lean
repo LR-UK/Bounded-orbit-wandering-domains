@@ -1,5 +1,9 @@
-import ComplexApproximation.Conformal.KernelImage
-import FunctionTheory.Conformal.InverseLimits
+module
+
+public import ComplexApproximation.Conformal.KernelImage
+public import FunctionTheory.Conformal.InverseLimits
+
+@[expose] public section
 
 /-! # Compatibility imports for FunctionTheory
 

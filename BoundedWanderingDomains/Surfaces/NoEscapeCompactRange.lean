@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.CompactificationEscape
-import Mathlib.Topology.Compactness.SigmaCompact
+public import BoundedWanderingDomains.Surfaces.CompactificationEscape
+public import Mathlib.Topology.Compactness.SigmaCompact
+
+@[expose] public section
 
 open Set Function Filter Topology OnePoint
 

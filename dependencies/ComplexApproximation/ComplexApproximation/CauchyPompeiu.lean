@@ -1,6 +1,10 @@
-import ComplexApproximation.CauchyTransform
-import ComplexApproximation.CauchyRectangle
-import Runge.RationalApproximation
+module
+
+public import ComplexApproximation.CauchyTransform
+public import ComplexApproximation.CauchyRectangle
+public import Runge.RationalApproximation
+
+@[expose] public section
 
 /-!
 # Cauchy–Pompeiu from rectangular Green's theorem

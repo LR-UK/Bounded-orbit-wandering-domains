@@ -1,5 +1,9 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.DomainAreaGain
+public import BoundedWanderingDomains.Surfaces.DomainAreaGain
+
+@[expose] public section
 
 /-! # Integration against ambient domain-area gain -/
 

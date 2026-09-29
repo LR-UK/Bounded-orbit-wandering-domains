@@ -1,8 +1,12 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.DiscCover
-import RiemannDynamics.Uniformization.HyperbolicSurface
-import RiemannDynamics.Uniformization.PuncturedPlaneBridge
-import RiemannDynamics.Uniformization.Perron.BipolarGreen.Pieces
+public import BoundedWanderingDomains.Surfaces.DiscCover
+public import RiemannDynamics.Uniformization.HyperbolicSurface
+public import RiemannDynamics.Uniformization.PuncturedPlaneBridge
+public import RiemannDynamics.Uniformization.Perron.BipolarGreen.Pieces
+
+@[expose] public section
 
 /-! # Disc-cover data from the uniformisation interface
 Uses Will (Ziang) Li's path-cover and hyperbolicity formalisation, with the

@@ -1,6 +1,10 @@
-import EremenkosConjecture.ContinuumApproximationCharts
-import EremenkosConjecture.ContinuumBarrierStability
-import EremenkosConjecture.ContinuumOrbitProperty
+module
+
+public import EremenkosConjecture.ContinuumApproximationCharts
+public import EremenkosConjecture.ContinuumBarrierStability
+public import EremenkosConjecture.ContinuumOrbitProperty
+
+@[expose] public section
 
 open Set Metric Function
 

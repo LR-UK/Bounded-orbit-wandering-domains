@@ -1,5 +1,9 @@
-import EremenkosConjecture.RadialDomains
-import EremenkosConjecture.PointMoving
+module
+
+public import EremenkosConjecture.RadialDomains
+public import EremenkosConjecture.PointMoving
+
+@[expose] public section
 
 open Set Metric Function
 

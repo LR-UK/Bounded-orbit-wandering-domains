@@ -1,9 +1,13 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.CompactificationEndCharts
-import BoundedWanderingDomains.Surfaces.NestedBoundaryMass
-import BoundedWanderingDomains.Surfaces.FinitePunctureTopology
-import BoundedWanderingDomains.Surfaces.FiniteBoundaryMassAssembly
-import BoundedWanderingDomains.CutoffEndLimits
+public import BoundedWanderingDomains.Surfaces.CompactificationEndCharts
+public import BoundedWanderingDomains.Surfaces.NestedBoundaryMass
+public import BoundedWanderingDomains.Surfaces.FinitePunctureTopology
+public import BoundedWanderingDomains.Surfaces.FiniteBoundaryMassAssembly
+public import BoundedWanderingDomains.CutoffEndLimits
+
+@[expose] public section
 
 /-! # The finite end set for one point insertion on an anchor complement -/
 

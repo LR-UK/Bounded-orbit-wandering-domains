@@ -1,5 +1,9 @@
-import EremenkosConjecture.Univalence
-import Mathlib.Analysis.Calculus.InverseFunctionTheorem.FiniteDimensional
+module
+
+public import EremenkosConjecture.Univalence
+public import Mathlib.Analysis.Calculus.InverseFunctionTheorem.FiniteDimensional
+
+@[expose] public section
 
 /-!
 # Ambient homeomorphisms for small holomorphic perturbations

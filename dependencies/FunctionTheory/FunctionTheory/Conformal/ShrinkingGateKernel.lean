@@ -1,4 +1,8 @@
-import FunctionTheory.Conformal.HalfPlaneKernel
+module
+
+public import FunctionTheory.Conformal.HalfPlaneKernel
+
+@[expose] public section
 
 open Set Metric Complex Filter
 open scoped Topology

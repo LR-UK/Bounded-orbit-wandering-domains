@@ -1,8 +1,12 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import Mathlib.MeasureTheory.Integral.DominatedConvergence
+public import Mathlib.MeasureTheory.Integral.DominatedConvergence
+
+@[expose] public section
 open Set Filter MeasureTheory
 open scoped Topology ENNReal
 

@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.OldPunctureBoundaryMass
-import BoundedWanderingDomains.Surfaces.PunctureBoundaryMass
-import Mathlib.MeasureTheory.Integral.DominatedConvergence
+public import BoundedWanderingDomains.Surfaces.OldPunctureBoundaryMass
+public import BoundedWanderingDomains.Surfaces.PunctureBoundaryMass
+public import Mathlib.MeasureTheory.Integral.DominatedConvergence
+
+@[expose] public section
 
 /-! # Finite assembly of puncture boundary masses
 

@@ -1,6 +1,10 @@
-import Runge.UniformClosure
-import Mathlib.MeasureTheory.Integral.Bochner.Set
-import Mathlib.MeasureTheory.Measure.Lebesgue.Complex
+module
+
+public import Runge.UniformClosure
+public import Mathlib.MeasureTheory.Integral.Bochner.Set
+public import Mathlib.MeasureTheory.Measure.Lebesgue.Complex
+
+@[expose] public section
 
 /-!
 # Uniform rational approximation of a Cauchy area integral

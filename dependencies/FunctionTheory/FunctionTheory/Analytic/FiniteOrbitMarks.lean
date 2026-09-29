@@ -1,6 +1,10 @@
-import FunctionTheory.Analytic.FiniteOrbitLocalDegree
-import Mathlib.Data.Finset.Union
-import Mathlib.Tactic
+module
+
+public import FunctionTheory.Analytic.FiniteOrbitLocalDegree
+public import Mathlib.Data.Finset.Union
+public import Mathlib.Tactic
+
+@[expose] public section
 
 open Set Filter
 open scoped Topology

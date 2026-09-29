@@ -1,6 +1,10 @@
-import ComplexApproximation.Topology.FillingStraightChannels
-import EremenkosConjecture.RayGeometry
-import Mathlib.Analysis.SpecialFunctions.Complex.CircleMap
+module
+
+public import ComplexApproximation.Topology.FillingStraightChannels
+public import EremenkosConjecture.RayGeometry
+public import Mathlib.Analysis.SpecialFunctions.Complex.CircleMap
+
+@[expose] public section
 
 open Set Metric Complex
 

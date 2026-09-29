@@ -1,4 +1,8 @@
-import RiemannDynamics.BoundedWanderingSolution
+module
+
+public import RiemannDynamics.BoundedWanderingSolution
+
+@[expose] public section
 
 #print axioms RiemannDynamics.exists_disc_covering_finitely_punctured_plane
 #print axioms AreaDeficit.IsHolomorphicDiscCovering.total_area

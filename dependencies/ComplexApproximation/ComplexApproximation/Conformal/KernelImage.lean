@@ -1,5 +1,9 @@
-import ComplexApproximation.Conformal.KernelSeparation
-import FunctionTheory.Conformal.KernelImage
+module
+
+public import ComplexApproximation.Conformal.KernelSeparation
+public import FunctionTheory.Conformal.KernelImage
+
+@[expose] public section
 
 /-! # Compatibility imports for FunctionTheory
 

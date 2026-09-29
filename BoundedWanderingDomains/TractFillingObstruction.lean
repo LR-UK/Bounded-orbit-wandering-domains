@@ -1,10 +1,14 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.SimplyConnectedFilling
-import BoundedWanderingDomains.SingularValues
-import EremenkoLyubichConstant.ClassBTracts
+public import BoundedWanderingDomains.SimplyConnectedFilling
+public import BoundedWanderingDomains.SingularValues
+public import EremenkoLyubichConstant.ClassBTracts
+
+@[expose] public section
 
 /-! # The tract obstruction to surrounding curves
 

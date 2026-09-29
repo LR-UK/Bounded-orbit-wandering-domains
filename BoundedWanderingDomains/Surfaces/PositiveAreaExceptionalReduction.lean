@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.BackwardExceptionalPackage
-import BoundedWanderingDomains.Surfaces.PositiveAreaBridge
-import BoundedWanderingDomains.Surfaces.SaturationDynamics
+public import BoundedWanderingDomains.Surfaces.BackwardExceptionalPackage
+public import BoundedWanderingDomains.Surfaces.PositiveAreaBridge
+public import BoundedWanderingDomains.Surfaces.SaturationDynamics
+
+@[expose] public section
 
 /-! # Removing backward exceptional points from a positive-area set -/
 

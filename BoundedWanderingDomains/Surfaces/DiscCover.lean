@@ -1,12 +1,16 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import Mathlib.Geometry.Manifold.Complex
-import Mathlib.Geometry.Manifold.IsManifold.Basic
-import Mathlib.Topology.Covering.Basic
-import Mathlib.Analysis.Convex.Contractible
-import Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected
+public import Mathlib.Geometry.Manifold.Complex
+public import Mathlib.Geometry.Manifold.IsManifold.Basic
+public import Mathlib.Topology.Covering.Basic
+public import Mathlib.Analysis.Convex.Contractible
+public import Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected
+
+@[expose] public section
 
 /-! # Riemann surfaces with a supplied holomorphic disc covering
 

@@ -1,5 +1,9 @@
-import FunctionTheory.Topology.CountableDisc
-import Mathlib.Analysis.Meromorphic.Basic
+module
+
+public import FunctionTheory.Topology.CountableDisc
+public import Mathlib.Analysis.Meromorphic.Basic
+
+@[expose] public section
 
 open Set Metric Filter Function
 open scoped Topology

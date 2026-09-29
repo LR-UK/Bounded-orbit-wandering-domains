@@ -1,6 +1,10 @@
-import FunctionTheory.Analytic.FinitePreimageStability
-import FunctionTheory.Conformal.UnivalenceStability
-import TauCeti.Analysis.Complex.Conformal.Biholomorph
+module
+
+public import FunctionTheory.Analytic.FinitePreimageStability
+public import FunctionTheory.Conformal.UnivalenceStability
+public import TauCeti.Analysis.Complex.Conformal.Biholomorph
+
+@[expose] public section
 
 open Set Function Filter Metric
 open scoped Topology

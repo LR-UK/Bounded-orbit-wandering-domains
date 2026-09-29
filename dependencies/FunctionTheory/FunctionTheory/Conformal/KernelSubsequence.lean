@@ -1,6 +1,10 @@
-import FunctionTheory.Conformal.InverseLimits
-import TauCeti.Analysis.Complex.Conformal.Montel.Basic
-import Mathlib.Topology.Connected.LocallyConnected
+module
+
+public import FunctionTheory.Conformal.InverseLimits
+public import TauCeti.Analysis.Complex.Conformal.Montel.Basic
+public import Mathlib.Topology.Connected.LocallyConnected
+
+@[expose] public section
 
 /-! # A convergent subsequence for locally bounded kernel systems
 

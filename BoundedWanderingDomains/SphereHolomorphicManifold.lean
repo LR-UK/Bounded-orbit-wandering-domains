@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import NoWanderingDomains.Sphere.SphereHolomorphic
-import RiemannDynamics.Uniformization.SphereManifold
-import Mathlib.Geometry.Manifold.MFDeriv.FDeriv
+public import NoWanderingDomains.Sphere.SphereHolomorphic
+public import RiemannDynamics.Uniformization.SphereManifold
+public import Mathlib.Geometry.Manifold.MFDeriv.FDeriv
+
+@[expose] public section
 
 /-! # Concrete sphere holomorphy in manifold language -/
 

@@ -1,5 +1,9 @@
-import Mathlib.Topology.UniformSpace.Compact
-import Mathlib.Topology.UniformSpace.UniformConvergence
+module
+
+public import Mathlib.Topology.UniformSpace.Compact
+public import Mathlib.Topology.UniformSpace.UniformConvergence
+
+@[expose] public section
 
 open Set Filter UniformSpace Function Uniformity Topology SetRel
 

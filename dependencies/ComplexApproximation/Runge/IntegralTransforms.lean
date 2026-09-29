@@ -1,7 +1,11 @@
-import Runge.CauchyKernel
-import Runge.UniformOperations
-import Runge.CauchyGreen
-import Mathlib.MeasureTheory.Integral.DominatedConvergence
+module
+
+public import Runge.CauchyKernel
+public import Runge.UniformOperations
+public import Runge.CauchyGreen
+public import Mathlib.MeasureTheory.Integral.DominatedConvergence
+
+@[expose] public section
 
 open Complex Polynomial MeasureTheory Set
 

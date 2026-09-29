@@ -1,6 +1,10 @@
-import FunctionTheory.Conformal.CompactLocalInjectivity
-import FunctionTheory.Conformal.UnivalenceStability
-import TauCeti.Analysis.Complex.Conformal.Biholomorph
+module
+
+public import FunctionTheory.Conformal.CompactLocalInjectivity
+public import FunctionTheory.Conformal.UnivalenceStability
+public import TauCeti.Analysis.Complex.Conformal.Biholomorph
+
+@[expose] public section
 
 open Set Metric
 

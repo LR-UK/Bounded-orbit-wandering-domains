@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.OmegaDynamics
-import BoundedWanderingDomains.Surfaces.SaturationDynamics
+public import BoundedWanderingDomains.Surfaces.OmegaDynamics
+public import BoundedWanderingDomains.Surfaces.SaturationDynamics
+
+@[expose] public section
 
 /-! # Injective iterates and shifts of wandering sets -/
 

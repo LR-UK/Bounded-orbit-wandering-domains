@@ -1,5 +1,9 @@
-import ComplexDynamics.UniformEscape
-import Mathlib.Topology.UniformSpace.UniformApproximation
+module
+
+public import ComplexDynamics.UniformEscape
+public import Mathlib.Topology.UniformSpace.UniformApproximation
+
+@[expose] public section
 
 open Function Filter Set Metric
 open scoped Topology Uniformity OnePoint

@@ -1,19 +1,23 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.LocalMapTotalization
-import BoundedWanderingDomains.Surfaces.SubtypeHolomorphic
-import BoundedWanderingDomains.Surfaces.PlaneReading
-import BoundedWanderingDomains.Surfaces.OpenMapping
-import BoundedWanderingDomains.Surfaces.HolomorphicLifting
-import BoundedWanderingDomains.Surfaces.BKL.PuncturedCovers
-import BoundedWanderingDomains.SimplyConnectedFilling
-import Mathlib.Topology.Covering.Basic
-import Mathlib.Topology.Compactness.LocallyCompact
-import BoundedWanderingDomains.Surfaces.CompactFilling
-import BoundedWanderingDomains.Surfaces.FiniteFibers
-import BoundedWanderingDomains.Surfaces.SurfaceSingularCovering
-import Mathlib.Topology.DerivedSet
-import BoundedWanderingDomains.Surfaces.SurfaceFilling
-import BoundedWanderingDomains.Surfaces.WanderingDiscShrink
+public import BoundedWanderingDomains.Surfaces.LocalMapTotalization
+public import BoundedWanderingDomains.Surfaces.SubtypeHolomorphic
+public import BoundedWanderingDomains.Surfaces.PlaneReading
+public import BoundedWanderingDomains.Surfaces.OpenMapping
+public import BoundedWanderingDomains.Surfaces.HolomorphicLifting
+public import BoundedWanderingDomains.Surfaces.BKL.PuncturedCovers
+public import BoundedWanderingDomains.SimplyConnectedFilling
+public import Mathlib.Topology.Covering.Basic
+public import Mathlib.Topology.Compactness.LocallyCompact
+public import BoundedWanderingDomains.Surfaces.CompactFilling
+public import BoundedWanderingDomains.Surfaces.FiniteFibers
+public import BoundedWanderingDomains.Surfaces.SurfaceSingularCovering
+public import Mathlib.Topology.DerivedSet
+public import BoundedWanderingDomains.Surfaces.SurfaceFilling
+public import BoundedWanderingDomains.Surfaces.WanderingDiscShrink
+
+@[expose] public section
 
 section
 

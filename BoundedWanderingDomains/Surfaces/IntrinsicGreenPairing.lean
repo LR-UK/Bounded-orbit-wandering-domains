@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.IntrinsicSurfaceLaplacian
-import BoundedWanderingDomains.Surfaces.DomainSurfaceGreenIdentity
-import BoundedWanderingDomains.Surfaces.AreaIntegration
+public import BoundedWanderingDomains.Surfaces.IntrinsicSurfaceLaplacian
+public import BoundedWanderingDomains.Surfaces.DomainSurfaceGreenIdentity
+public import BoundedWanderingDomains.Surfaces.AreaIntegration
+
+@[expose] public section
 
 /-! # Coordinate Green pairings as intrinsic surface integrals -/
 

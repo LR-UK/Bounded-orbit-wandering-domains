@@ -1,8 +1,12 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.AreaNullSets
-import BoundedWanderingDomains.Surfaces.HyperbolicAreaFinite
-import BoundedWanderingDomains.Surfaces.Statements
-import BoundedWanderingDomains.Surfaces.SubdomainDensity
+public import BoundedWanderingDomains.Surfaces.AreaNullSets
+public import BoundedWanderingDomains.Surfaces.HyperbolicAreaFinite
+public import BoundedWanderingDomains.Surfaces.Statements
+public import BoundedWanderingDomains.Surfaces.SubdomainDensity
+
+@[expose] public section
 
 /-! # Positive chart area implies positive intrinsic hyperbolic area
 

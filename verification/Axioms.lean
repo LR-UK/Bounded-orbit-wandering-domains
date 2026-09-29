@@ -1,8 +1,12 @@
-import Legacy.Solution
-import BoundedWanderingDomains.AreaDeficit
-import BoundedWanderingDomains.TrappedFilling
-import BoundedWanderingDomains.EventualCompactDiscs
-import BoundedWanderingDomains.ShrinkingChartDiscs
+module
+
+public import Legacy.Solution
+public import BoundedWanderingDomains.AreaDeficit
+public import BoundedWanderingDomains.TrappedFilling
+public import BoundedWanderingDomains.EventualCompactDiscs
+public import BoundedWanderingDomains.ShrinkingChartDiscs
+
+@[expose] public section
 
 #print axioms BoundedWanderingDomains.no_local_bounded_wandering_domains
 #print axioms BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire

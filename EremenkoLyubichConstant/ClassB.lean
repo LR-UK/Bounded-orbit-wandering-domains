@@ -1,12 +1,16 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Lasse Rempe
 -/
 
-import Mathlib.Analysis.Complex.Polynomial.Basic
-import Mathlib.Topology.Covering.Basic
-import Mathlib.Topology.MetricSpace.Bounded
+public import Mathlib.Analysis.Complex.Polynomial.Basic
+public import Mathlib.Topology.Covering.Basic
+public import Mathlib.Topology.MetricSpace.Bounded
+
+@[expose] public section
 
 /-!
 # The Eremenko--Lyubich class

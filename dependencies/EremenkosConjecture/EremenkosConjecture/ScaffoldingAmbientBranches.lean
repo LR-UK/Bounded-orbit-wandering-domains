@@ -1,5 +1,9 @@
-import EremenkosConjecture.ScaffoldingAmbient
-import EremenkosConjecture.BiLipschitzChains
+module
+
+public import EremenkosConjecture.ScaffoldingAmbient
+public import EremenkosConjecture.BiLipschitzChains
+
+@[expose] public section
 
 /-! # Section 4 inverse branches with quantitative ambient charts -/
 

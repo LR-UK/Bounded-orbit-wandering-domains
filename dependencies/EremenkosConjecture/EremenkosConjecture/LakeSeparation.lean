@@ -1,4 +1,8 @@
-import EremenkosConjecture.WadaStages
+module
+
+public import EremenkosConjecture.WadaStages
+
+@[expose] public section
 
 open Set Metric Function
 

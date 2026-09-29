@@ -1,7 +1,11 @@
-import Mathlib.Analysis.Complex.Schwarz
-import Mathlib.Topology.MetricSpace.Thickening
-import Mathlib.Topology.OpenPartialHomeomorph.Basic
-import Mathlib.Tactic.Linarith
+module
+
+public import Mathlib.Analysis.Complex.Schwarz
+public import Mathlib.Topology.MetricSpace.Thickening
+public import Mathlib.Topology.OpenPartialHomeomorph.Basic
+public import Mathlib.Tactic.Linarith
+
+@[expose] public section
 
 /-!
 # Stability of univalent maps

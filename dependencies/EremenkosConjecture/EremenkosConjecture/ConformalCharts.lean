@@ -1,6 +1,10 @@
-import EremenkosConjecture.AmbientExtension
-import Mathlib.Analysis.Calculus.Deriv.Inverse
-import Mathlib.Topology.OpenPartialHomeomorph.IsImage
+module
+
+public import EremenkosConjecture.AmbientExtension
+public import Mathlib.Analysis.Calculus.Deriv.Inverse
+public import Mathlib.Topology.OpenPartialHomeomorph.IsImage
+
+@[expose] public section
 
 /-!
 # Compact conformal charts with ambient extensions

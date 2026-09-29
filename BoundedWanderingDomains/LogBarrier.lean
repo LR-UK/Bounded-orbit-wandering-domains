@@ -1,6 +1,10 @@
-import BoundedWanderingDomains.GreenIdentity
-import Mathlib.Analysis.InnerProductSpace.Harmonic.Constructions
-import Mathlib.Analysis.Normed.Group.Bounded
+module
+
+public import BoundedWanderingDomains.GreenIdentity
+public import Mathlib.Analysis.InnerProductSpace.Harmonic.Constructions
+public import Mathlib.Analysis.Normed.Group.Bounded
+
+@[expose] public section
 
 open MeasureTheory Filter Set InnerProductSpace Laplacian
 open scoped Topology ContDiff

@@ -1,6 +1,10 @@
-import BoundedWanderingDomains.LocalPunctures
-import BoundedWanderingDomains.AreaCancellation
-import Mathlib.MeasureTheory.Measure.Lebesgue.Complex
+module
+
+public import BoundedWanderingDomains.LocalPunctures
+public import BoundedWanderingDomains.AreaCancellation
+public import Mathlib.MeasureTheory.Measure.Lebesgue.Complex
+
+@[expose] public section
 
 open Set Function Filter MeasureTheory
 open scoped Topology

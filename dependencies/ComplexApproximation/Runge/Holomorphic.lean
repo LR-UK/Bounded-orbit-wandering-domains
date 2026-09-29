@@ -1,4 +1,8 @@
-import Runge.PrescribedPoles
+module
+
+public import Runge.PrescribedPoles
+
+@[expose] public section
 
 /-!
 # Runge's theorem stated using complex differentiability

@@ -1,5 +1,9 @@
-import ComplexApproximation.Topology.HorizontalEscape
-import ComplexApproximation.Topology.Filling
+module
+
+public import ComplexApproximation.Topology.HorizontalEscape
+public import ComplexApproximation.Topology.Filling
+
+@[expose] public section
 
 open Set Metric Complex
 

@@ -1,11 +1,15 @@
+module
+
 /-
 Copyright (c) 2026 Will (Ziang) Li. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Will (Ziang) Li
 -/
-import Mathlib.LinearAlgebra.Matrix.Notation
-import Mathlib.Topology.Compactification.OnePoint.ProjectiveLine
-import RiemannDynamics.Sphere.Basic
+public import Mathlib.LinearAlgebra.Matrix.Notation
+public import Mathlib.Topology.Compactification.OnePoint.ProjectiveLine
+public import RiemannDynamics.Sphere.Basic
+
+@[expose] public section
 
 /-!
 # Möbius transformations of the Riemann sphere

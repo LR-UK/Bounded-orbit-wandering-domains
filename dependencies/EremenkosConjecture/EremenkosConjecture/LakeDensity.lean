@@ -1,4 +1,8 @@
-import EremenkosConjecture.LakeConfiguration
+module
+
+public import EremenkosConjecture.LakeConfiguration
+
+@[expose] public section
 
 open Set Metric Function
 

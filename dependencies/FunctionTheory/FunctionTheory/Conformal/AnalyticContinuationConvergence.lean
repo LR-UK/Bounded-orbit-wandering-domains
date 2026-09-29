@@ -1,4 +1,8 @@
-import TauCeti.Analysis.Complex.Conformal.Vitali
+module
+
+public import TauCeti.Analysis.Complex.Conformal.Vitali
+
+@[expose] public section
 
 /-! # Continuing convergence to a known holomorphic limit
 

@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.SmoothSurface
-import Mathlib.Geometry.Manifold.PartitionOfUnity
-import Mathlib.Topology.Compactness.SigmaCompact
+public import BoundedWanderingDomains.Surfaces.SmoothSurface
+public import Mathlib.Geometry.Manifold.PartitionOfUnity
+public import Mathlib.Topology.Compactness.SigmaCompact
+
+@[expose] public section
 
 /-! # Smooth compact exhaustions of Riemann surfaces -/
 

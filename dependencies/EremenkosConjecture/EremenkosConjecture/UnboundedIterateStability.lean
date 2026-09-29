@@ -1,4 +1,8 @@
-import EremenkosConjecture.UniformIterateControl
+module
+
+public import EremenkosConjecture.UniformIterateControl
+
+@[expose] public section
 
 /-! # Stability of unbounded iterates with quantitative ambient charts -/
 

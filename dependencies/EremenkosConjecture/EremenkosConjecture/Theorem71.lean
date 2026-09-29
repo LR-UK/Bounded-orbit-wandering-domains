@@ -1,5 +1,9 @@
-import EremenkosConjecture.RayCounterexample
-import ComplexDynamics.Conjugacy
+module
+
+public import EremenkosConjecture.RayCounterexample
+public import ComplexDynamics.Conjugacy
+
+@[expose] public section
 
 /-! # Theorem 7.1, with the endpoint at the origin -/
 

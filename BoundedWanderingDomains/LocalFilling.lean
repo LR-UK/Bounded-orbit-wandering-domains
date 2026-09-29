@@ -1,9 +1,13 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.HolomorphicFilling
-import BoundedWanderingDomains.TrappedComponentCovering
+public import BoundedWanderingDomains.HolomorphicFilling
+public import BoundedWanderingDomains.TrappedComponentCovering
+
+@[expose] public section
 
 /-! # Baker filling for a locally defined holomorphic map -/
 

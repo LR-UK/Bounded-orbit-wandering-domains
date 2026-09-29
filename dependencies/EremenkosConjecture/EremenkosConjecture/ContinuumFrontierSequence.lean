@@ -1,4 +1,8 @@
-import EremenkosConjecture.ContinuumRegionGeometry
+module
+
+public import EremenkosConjecture.ContinuumRegionGeometry
+
+@[expose] public section
 
 open Set Metric Complex Filter
 open scoped Topology

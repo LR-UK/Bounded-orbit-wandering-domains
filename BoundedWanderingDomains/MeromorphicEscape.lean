@@ -1,11 +1,15 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.MeromorphicNormalityBridge
-import BoundedWanderingDomains.BackwardOrbitMontel
-import BoundedWanderingDomains.NormalFamilyOnDomain
-import BoundedWanderingDomains.SphericalEscape
-import BoundedWanderingDomains.SphericalShrinking
-import BoundedWanderingDomains.Surfaces.Statements
-import FunctionTheory.Analytic.FiniteOrbitLocalDegree
+public import BoundedWanderingDomains.MeromorphicNormalityBridge
+public import BoundedWanderingDomains.BackwardOrbitMontel
+public import BoundedWanderingDomains.NormalFamilyOnDomain
+public import BoundedWanderingDomains.SphericalEscape
+public import BoundedWanderingDomains.SphericalShrinking
+public import BoundedWanderingDomains.Surfaces.Statements
+public import FunctionTheory.Analytic.FiniteOrbitLocalDegree
+
+@[expose] public section
 
 /-! # Meromorphic escape from the surface theorem -/
 

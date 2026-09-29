@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.SlitTipInverse
-import Mathlib.Topology.Separation.Basic
+module
+
+public import FunctionTheory.Conformal.SlitTipInverse
+public import Mathlib.Topology.Separation.Basic
+
+@[expose] public section
 
 open Set Metric Complex Filter Function
 open scoped Topology

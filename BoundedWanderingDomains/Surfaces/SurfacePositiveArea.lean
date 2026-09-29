@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.CompactGlobalPositiveArea
-import BoundedWanderingDomains.Surfaces.CompactLocalAreaAdvance
+public import BoundedWanderingDomains.Surfaces.CompactGlobalPositiveArea
+public import BoundedWanderingDomains.Surfaces.CompactLocalAreaAdvance
+
+@[expose] public section
 
 open Set Function MeasureTheory
 open scoped Manifold Topology

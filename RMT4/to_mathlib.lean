@@ -1,6 +1,10 @@
-import Mathlib.Analysis.Calculus.ParametricIntegral
-import Mathlib.MeasureTheory.Integral.IntervalIntegral.IntegrationByParts
-import RMT4.cindex
+module
+
+public import Mathlib.Analysis.Calculus.ParametricIntegral
+public import Mathlib.MeasureTheory.Integral.IntervalIntegral.IntegrationByParts
+public import RMT4.cindex
+
+@[expose] public section
 
 set_option backward.isDefEq.respectTransparency false
 

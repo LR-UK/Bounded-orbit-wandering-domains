@@ -1,5 +1,9 @@
-import EremenkosConjecture.NestedJordanNeighbourhoods
-import Schoenflies.JordanClosed
+module
+
+public import EremenkosConjecture.NestedJordanNeighbourhoods
+public import Schoenflies.JordanClosed
+
+@[expose] public section
 
 /-! # Recognizing bounded Jordan domains
 

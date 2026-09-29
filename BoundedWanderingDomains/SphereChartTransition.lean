@@ -1,9 +1,13 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.SphereChartCompact
-import BoundedWanderingDomains.ConformalDensityInvariance
+public import BoundedWanderingDomains.SphereChartCompact
+public import BoundedWanderingDomains.ConformalDensityInvariance
+
+@[expose] public section
 
 /-!
 # Transition maps between pole charts of the Riemann sphere

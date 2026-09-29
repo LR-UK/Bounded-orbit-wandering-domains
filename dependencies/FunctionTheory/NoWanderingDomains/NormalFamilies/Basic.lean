@@ -1,22 +1,26 @@
+module
+
 /- Adaptation: preserved declarations from 0a6497b0cc9ed39a6a705bf013449635894b56d0; explicit Mathlib imports for Lean 4.34. -/
-import Mathlib.Analysis.InnerProductSpace.Calculus
-import Mathlib.Analysis.Complex.LocallyUniformLimit
-import Mathlib.Topology.Sequences
-import Mathlib.Topology.UniformSpace.HeineCantor
-import Mathlib.Analysis.Calculus.MeanValue
-import Mathlib.Analysis.Calculus.FDeriv.Analytic
-import Mathlib.Tactic.Choose
-import Mathlib.Tactic.Linarith
-import Mathlib.Tactic.Positivity
+public import Mathlib.Analysis.InnerProductSpace.Calculus
+public import Mathlib.Analysis.Complex.LocallyUniformLimit
+public import Mathlib.Topology.Sequences
+public import Mathlib.Topology.UniformSpace.HeineCantor
+public import Mathlib.Analysis.Calculus.MeanValue
+public import Mathlib.Analysis.Calculus.FDeriv.Analytic
+public import Mathlib.Tactic.Choose
+public import Mathlib.Tactic.Linarith
+public import Mathlib.Tactic.Positivity
 /-
 Copyright (c) 2026 Will (Ziang) Li. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Will (Ziang) Li
 -/
-import Mathlib.Topology.UniformSpace.UniformConvergenceTopology
-import Mathlib.Analysis.Complex.Basic
-import Mathlib.Analysis.Calculus.FDeriv.Basic
-import Mathlib.Topology.Defs.Sequences
+public import Mathlib.Topology.UniformSpace.UniformConvergenceTopology
+public import Mathlib.Analysis.Complex.Basic
+public import Mathlib.Analysis.Calculus.FDeriv.Basic
+public import Mathlib.Topology.Defs.Sequences
+
+@[expose] public section
 
 /-!
 # Normal families

@@ -1,9 +1,13 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.SpherePole
-import Mathlib.Topology.Separation.Regular
+public import BoundedWanderingDomains.SpherePole
+public import Mathlib.Topology.Separation.Regular
+
+@[expose] public section
 
 /-!
 # Separating compact spherical cluster and singular sets

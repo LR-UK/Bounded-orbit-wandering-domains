@@ -1,5 +1,9 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.CompactChartPatches
+public import BoundedWanderingDomains.Surfaces.CompactChartPatches
+
+@[expose] public section
 
 /-! # Exhausting a closed complement by finite punctures -/
 

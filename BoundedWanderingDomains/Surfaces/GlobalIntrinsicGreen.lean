@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.GlobalDomainSurfaceGreen
-import BoundedWanderingDomains.Surfaces.IntrinsicGreenPairing
-import BoundedWanderingDomains.Surfaces.HyperbolicAreaFinite
+public import BoundedWanderingDomains.Surfaces.GlobalDomainSurfaceGreen
+public import BoundedWanderingDomains.Surfaces.IntrinsicGreenPairing
+public import BoundedWanderingDomains.Surfaces.HyperbolicAreaFinite
+
+@[expose] public section
 
 /-! # Cancellation of chart-partition terms in the global Green formula -/
 

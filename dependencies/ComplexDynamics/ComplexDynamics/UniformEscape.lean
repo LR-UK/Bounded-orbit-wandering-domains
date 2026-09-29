@@ -1,4 +1,8 @@
-import ComplexDynamics.Basic
+module
+
+public import ComplexDynamics.Basic
+
+@[expose] public section
 
 open Function Filter Set Metric
 open scoped Topology Uniformity OnePoint

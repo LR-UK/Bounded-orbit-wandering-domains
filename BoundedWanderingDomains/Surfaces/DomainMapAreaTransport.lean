@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.DomainArea
-import BoundedWanderingDomains.Surfaces.ChartMapAreaTransport
+public import BoundedWanderingDomains.Surfaces.DomainArea
+public import BoundedWanderingDomains.Surfaces.ChartMapAreaTransport
+
+@[expose] public section
 
 /-! # Area transport for hyperbolic subdomain metrics -/
 

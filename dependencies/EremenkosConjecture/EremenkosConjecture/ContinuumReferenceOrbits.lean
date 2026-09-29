@@ -1,4 +1,8 @@
-import EremenkosConjecture.ContinuumReference
+module
+
+public import EremenkosConjecture.ContinuumReference
+
+@[expose] public section
 
 open Set Metric Function
 

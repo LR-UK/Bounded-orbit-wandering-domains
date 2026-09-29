@@ -1,5 +1,9 @@
-import EremenkosConjecture.Univalence
-import Mathlib.Analysis.Complex.OpenMapping
+module
+
+public import EremenkosConjecture.Univalence
+public import Mathlib.Analysis.Complex.OpenMapping
+
+@[expose] public section
 
 /-!
 # Uniform local estimates without compactness

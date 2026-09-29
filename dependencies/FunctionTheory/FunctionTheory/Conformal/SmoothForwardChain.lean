@@ -1,6 +1,10 @@
-import FunctionTheory.Conformal.SmoothForwardPrefix
-import FunctionTheory.Conformal.UnivalentForwardCoordinates
-import Mathlib.Algebra.Order.Field.Pi
+module
+
+public import FunctionTheory.Conformal.SmoothForwardPrefix
+public import FunctionTheory.Conformal.UnivalentForwardCoordinates
+public import Mathlib.Algebra.Order.Field.Pi
+
+@[expose] public section
 
 open Set Function Filter Metric
 open scoped Topology ContDiff

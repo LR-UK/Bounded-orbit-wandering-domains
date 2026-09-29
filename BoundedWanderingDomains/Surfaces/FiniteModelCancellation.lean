@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.FinitePunctureInsertion
-import BoundedWanderingDomains.Surfaces.FiniteModelArea
-import BoundedWanderingDomains.AreaCancellation
+public import BoundedWanderingDomains.Surfaces.FinitePunctureInsertion
+public import BoundedWanderingDomains.Surfaces.FiniteModelArea
+public import BoundedWanderingDomains.AreaCancellation
+
+@[expose] public section
 
 /-! # Surface finite-model cancellation -/
 

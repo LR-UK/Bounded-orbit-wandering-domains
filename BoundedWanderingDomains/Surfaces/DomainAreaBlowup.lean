@@ -1,8 +1,12 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.DomainArea
-import BoundedWanderingDomains.Surfaces.DomainDensityDivergence
-import BoundedWanderingDomains.Surfaces.HyperbolicAreaFinite
-import BoundedWanderingDomains.AreaCancellation
+public import BoundedWanderingDomains.Surfaces.DomainArea
+public import BoundedWanderingDomains.Surfaces.DomainDensityDivergence
+public import BoundedWanderingDomains.Surfaces.HyperbolicAreaFinite
+public import BoundedWanderingDomains.AreaCancellation
+
+@[expose] public section
 
 /-! # Intrinsic area divergence on the limiting closed complement -/
 open Set Function Filter MeasureTheory

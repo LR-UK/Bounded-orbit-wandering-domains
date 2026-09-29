@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.DiscCover
-import Mathlib.Analysis.Complex.CauchyIntegral
+public import BoundedWanderingDomains.Surfaces.DiscCover
+public import Mathlib.Analysis.Complex.CauchyIntegral
+
+@[expose] public section
 
 /-! # Complex differentiable surface charts are analytic -/
 open Set Function

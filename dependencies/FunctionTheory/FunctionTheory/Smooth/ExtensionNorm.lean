@@ -1,6 +1,10 @@
-import FunctionTheory.Smooth.FiniteSmoothNorm
-import FunctionTheory.Smooth.HolomorphicSmoothExtension
-import FunctionTheory.Holomorphic
+module
+
+public import FunctionTheory.Smooth.FiniteSmoothNorm
+public import FunctionTheory.Smooth.HolomorphicSmoothExtension
+public import FunctionTheory.Holomorphic
+
+@[expose] public section
 
 open Set Function Filter
 open scoped Topology ContDiff

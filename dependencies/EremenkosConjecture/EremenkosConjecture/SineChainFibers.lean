@@ -1,5 +1,9 @@
-import EremenkosConjecture.SineChain
-import EremenkosConjecture.VerticalFibers
+module
+
+public import EremenkosConjecture.SineChain
+public import EremenkosConjecture.VerticalFibers
+
+@[expose] public section
 
 open Set Metric Filter Topology Real
 

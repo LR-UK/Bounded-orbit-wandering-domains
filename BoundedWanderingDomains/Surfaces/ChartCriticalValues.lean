@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.ChartMapAreaTransport
-import BoundedWanderingDomains.Surfaces.OpenMapping
-import BoundedWanderingDomains.LocalCovering
+public import BoundedWanderingDomains.Surfaces.ChartMapAreaTransport
+public import BoundedWanderingDomains.Surfaces.OpenMapping
+public import BoundedWanderingDomains.LocalCovering
+
+@[expose] public section
 
 /-! # Finiteness of branch values on one compact chart patch -/
 

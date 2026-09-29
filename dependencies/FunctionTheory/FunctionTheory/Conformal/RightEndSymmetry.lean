@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.RightEndNormalization
-import Mathlib.Analysis.Calculus.Deriv.Star
+module
+
+public import FunctionTheory.Conformal.RightEndNormalization
+public import Mathlib.Analysis.Calculus.Deriv.Star
+
+@[expose] public section
 
 open Set Metric Complex Function Filter
 open scoped Topology ComplexConjugate

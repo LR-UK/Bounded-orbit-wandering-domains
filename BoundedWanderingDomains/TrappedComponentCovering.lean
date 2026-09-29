@@ -1,5 +1,9 @@
-import BoundedWanderingDomains.HolomorphicLifting
-import BoundedWanderingDomains.LocalTrappedTopology
+module
+
+public import BoundedWanderingDomains.HolomorphicLifting
+public import BoundedWanderingDomains.LocalTrappedTopology
+
+@[expose] public section
 
 open Set Metric Function Filter
 open scoped Topology

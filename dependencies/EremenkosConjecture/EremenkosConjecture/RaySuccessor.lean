@@ -1,4 +1,8 @@
-import EremenkosConjecture.RayApproximationStability
+module
+
+public import EremenkosConjecture.RayApproximationStability
+
+@[expose] public section
 
 /-! # Existence of a successor stage in the ray construction -/
 

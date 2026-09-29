@@ -1,4 +1,8 @@
-import FunctionTheory.Conformal.StripBoundaryConvergence
+module
+
+public import FunctionTheory.Conformal.StripBoundaryConvergence
+
+@[expose] public section
 
 open Set Metric Complex Function Filter Asymptotics
 open scoped Topology

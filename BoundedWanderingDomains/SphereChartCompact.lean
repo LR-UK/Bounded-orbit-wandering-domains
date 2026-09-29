@@ -1,10 +1,14 @@
+module
+
 /- 
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.SpherePole
-import BoundedWanderingDomains.AreaAnchorFree
-import FunctionTheory.RiemannSphere.Coordinates
+public import BoundedWanderingDomains.SpherePole
+public import BoundedWanderingDomains.AreaAnchorFree
+public import FunctionTheory.RiemannSphere.Coordinates
+
+@[expose] public section
 
 /-!
 # Compact sets in sphere charts

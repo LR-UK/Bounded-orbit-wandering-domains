@@ -1,18 +1,22 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.RegularCoveringArea
-import BoundedWanderingDomains.Surfaces.PositiveAreaAdvanceReduction
-import BoundedWanderingDomains.Surfaces.PositiveAreaExceptionalReduction
-import BoundedWanderingDomains.Surfaces.ForwardSourceBarrier
-import BoundedWanderingDomains.Surfaces.BarrierCompactOrbit
-import BoundedWanderingDomains.Surfaces.CompactClusterSeparation
-import BoundedWanderingDomains.Surfaces.OmegaDynamics
-import BoundedWanderingDomains.Surfaces.CompactAnchorNormality
-import BoundedWanderingDomains.Surfaces.AnchorComplementModels
-import BoundedWanderingDomains.Surfaces.CompactGlobalAnchors
-import BoundedWanderingDomains.Surfaces.CompactGlobalSingularValues
-import BoundedWanderingDomains.Surfaces.CompactAnchorAreaReduction
-import BoundedWanderingDomains.Surfaces.FiniteDefectAreaAdvance
-import BoundedWanderingDomains.Surfaces.SubsurfaceRegularValues
+public import BoundedWanderingDomains.Surfaces.RegularCoveringArea
+public import BoundedWanderingDomains.Surfaces.PositiveAreaAdvanceReduction
+public import BoundedWanderingDomains.Surfaces.PositiveAreaExceptionalReduction
+public import BoundedWanderingDomains.Surfaces.ForwardSourceBarrier
+public import BoundedWanderingDomains.Surfaces.BarrierCompactOrbit
+public import BoundedWanderingDomains.Surfaces.CompactClusterSeparation
+public import BoundedWanderingDomains.Surfaces.OmegaDynamics
+public import BoundedWanderingDomains.Surfaces.CompactAnchorNormality
+public import BoundedWanderingDomains.Surfaces.AnchorComplementModels
+public import BoundedWanderingDomains.Surfaces.CompactGlobalAnchors
+public import BoundedWanderingDomains.Surfaces.CompactGlobalSingularValues
+public import BoundedWanderingDomains.Surfaces.CompactAnchorAreaReduction
+public import BoundedWanderingDomains.Surfaces.FiniteDefectAreaAdvance
+public import BoundedWanderingDomains.Surfaces.SubsurfaceRegularValues
+
+@[expose] public section
 
 /-! # Area exclusion away from derived singular values -/
 

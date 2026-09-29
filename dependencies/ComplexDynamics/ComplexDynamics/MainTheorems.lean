@@ -1,8 +1,12 @@
-import ComplexDynamics.Wandering
-import ComplexDynamics.BoundedNormality
-import ComplexDynamics.FastEscape
-import ComplexDynamics.TranscendentalApproximation
-import ComplexDynamics.CurvesToInfinity
+module
+
+public import ComplexDynamics.Wandering
+public import ComplexDynamics.BoundedNormality
+public import ComplexDynamics.FastEscape
+public import ComplexDynamics.TranscendentalApproximation
+public import ComplexDynamics.CurvesToInfinity
+
+@[expose] public section
 
 /-!
 # Main statements for mathematical review

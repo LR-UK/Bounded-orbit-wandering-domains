@@ -1,9 +1,13 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.SimplyConnectedFilling
-import Mathlib.Analysis.Complex.AbsMax
+public import BoundedWanderingDomains.SimplyConnectedFilling
+public import Mathlib.Analysis.Complex.AbsMax
+
+@[expose] public section
 
 /-! # Images and maximum-modulus bounds on filled compact sets -/
 

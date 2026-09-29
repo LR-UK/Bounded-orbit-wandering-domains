@@ -1,11 +1,15 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.BKL.AnalyticCompletion
-import BoundedWanderingDomains.Surfaces.LocalMapRestriction
-import BoundedWanderingDomains.Surfaces.BKL.ReturnLimits
-import BoundedWanderingDomains.Surfaces.OmegaDynamics
-import BoundedWanderingDomains.Surfaces.FiniteFibers
-import Mathlib.Order.Filter.Cofinite
-import BoundedWanderingDomains.Surfaces.LocalCoveringDiscs
+public import BoundedWanderingDomains.Surfaces.BKL.AnalyticCompletion
+public import BoundedWanderingDomains.Surfaces.LocalMapRestriction
+public import BoundedWanderingDomains.Surfaces.BKL.ReturnLimits
+public import BoundedWanderingDomains.Surfaces.OmegaDynamics
+public import BoundedWanderingDomains.Surfaces.FiniteFibers
+public import Mathlib.Order.Filter.Cofinite
+public import BoundedWanderingDomains.Surfaces.LocalCoveringDiscs
+
+@[expose] public section
 
 section
 

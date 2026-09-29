@@ -1,6 +1,10 @@
-import FunctionTheory.Analytic.SequenceLimit
-import Mathlib.Analysis.Meromorphic.Basic
-import Mathlib.Topology.Algebra.InfiniteSum.Real
+module
+
+public import FunctionTheory.Analytic.SequenceLimit
+public import Mathlib.Analysis.Meromorphic.Basic
+public import Mathlib.Topology.Algebra.InfiniteSum.Real
+
+@[expose] public section
 
 open Set Filter
 open scoped Topology

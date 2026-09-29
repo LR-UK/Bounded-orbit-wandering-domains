@@ -1,6 +1,10 @@
-import Runge.UniformClosure
-import Mathlib.Topology.ContinuousMap.Units
-import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
+module
+
+public import Runge.UniformClosure
+public import Mathlib.Topology.ContinuousMap.Units
+public import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
+
+@[expose] public section
 
 open Polynomial MeasureTheory Set
 

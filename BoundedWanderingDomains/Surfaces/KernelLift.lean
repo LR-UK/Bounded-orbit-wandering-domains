@@ -1,8 +1,12 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.HolomorphicLifting
-import BoundedWanderingDomains.Surfaces.SubtypeHolomorphic
-import BoundedWanderingDomains.Surfaces.ExtremalDisc
-import BoundedWanderingDomains.NormalFamilies
+public import BoundedWanderingDomains.Surfaces.HolomorphicLifting
+public import BoundedWanderingDomains.Surfaces.SubtypeHolomorphic
+public import BoundedWanderingDomains.Surfaces.ExtremalDisc
+public import BoundedWanderingDomains.NormalFamilies
+
+@[expose] public section
 
 /-! # Lifting varying subdomain covers to one fixed ambient disc -/
 

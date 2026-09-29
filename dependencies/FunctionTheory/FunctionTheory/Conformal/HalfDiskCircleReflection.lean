@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.ReflectionInjectivity
-import FunctionTheory.Conformal.CayleyCoordinates
+module
+
+public import FunctionTheory.Conformal.ReflectionInjectivity
+public import FunctionTheory.Conformal.CayleyCoordinates
+
+@[expose] public section
 
 open Set Metric Complex Filter
 open scoped Topology ComplexConjugate

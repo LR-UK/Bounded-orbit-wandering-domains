@@ -1,20 +1,24 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import Mathlib.Topology.Separation.Hausdorff
-import Mathlib.Topology.ContinuousOn
-import Mathlib.Logic.Function.Iterate
-import Mathlib.Topology.UniformSpace.LocallyUniformConvergence
-import Mathlib.Topology.Compactness.LocallyCompact
-import Mathlib.Topology.Maps.Basic
-import Mathlib.Data.Set.Function
-import Lean.Elab.Tactic.Omega
-import Mathlib.Analysis.Complex.Schwarz
-import Mathlib.Topology.OpenPartialHomeomorph.Basic
-import BoundedWanderingDomains.Surfaces.FiniteFibers
-import BoundedWanderingDomains.Surfaces.HolomorphicLifting
-import BoundedWanderingDomains.Surfaces.LocalPunctures
-import Mathlib.Order.Filter.AtTopBot.CountablyGenerated
-import BoundedWanderingDomains.Surfaces.FinitePunctureTopology
-import Mathlib.Topology.Separation.Regular
+public import Mathlib.Topology.Separation.Hausdorff
+public import Mathlib.Topology.ContinuousOn
+public import Mathlib.Logic.Function.Iterate
+public import Mathlib.Topology.UniformSpace.LocallyUniformConvergence
+public import Mathlib.Topology.Compactness.LocallyCompact
+public import Mathlib.Topology.Maps.Basic
+public import Mathlib.Data.Set.Function
+public import Lean.Elab.Tactic.Omega
+public import Mathlib.Analysis.Complex.Schwarz
+public import Mathlib.Topology.OpenPartialHomeomorph.Basic
+public import BoundedWanderingDomains.Surfaces.FiniteFibers
+public import BoundedWanderingDomains.Surfaces.HolomorphicLifting
+public import BoundedWanderingDomains.Surfaces.LocalPunctures
+public import Mathlib.Order.Filter.AtTopBot.CountablyGenerated
+public import BoundedWanderingDomains.Surfaces.FinitePunctureTopology
+public import Mathlib.Topology.Separation.Regular
+
+@[expose] public section
 
 section
 

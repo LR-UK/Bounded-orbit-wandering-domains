@@ -1,6 +1,10 @@
-import FunctionTheory.Conformal.ReflectionConvergence
-import FunctionTheory.Conformal.UnivalentAnnulus
-import Mathlib.Topology.Perfect
+module
+
+public import FunctionTheory.Conformal.ReflectionConvergence
+public import FunctionTheory.Conformal.UnivalentAnnulus
+public import Mathlib.Topology.Perfect
+
+@[expose] public section
 
 /-! # Convergence up to a shared circular boundary arc
 

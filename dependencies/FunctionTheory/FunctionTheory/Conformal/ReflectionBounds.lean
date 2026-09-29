@@ -1,4 +1,8 @@
-import TauCeti.Analysis.Complex.Conformal.Reflection.Circle.Principle
+module
+
+public import TauCeti.Analysis.Complex.Conformal.Reflection.Circle.Principle
+
+@[expose] public section
 
 /-! # Bounds for Schwarz reflection in the unit circle
 

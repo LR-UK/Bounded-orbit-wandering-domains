@@ -1,10 +1,14 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.EntireBoundedOrbit
-import BoundedWanderingDomains.GlobalLimitStatements
-import BoundedWanderingDomains.LocalUniformSingularLimits
+public import BoundedWanderingDomains.EntireBoundedOrbit
+public import BoundedWanderingDomains.GlobalLimitStatements
+public import BoundedWanderingDomains.LocalUniformSingularLimits
+
+@[expose] public section
 
 open Set Metric Function Filter
 open scoped Topology

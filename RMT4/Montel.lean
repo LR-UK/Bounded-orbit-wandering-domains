@@ -1,8 +1,12 @@
-import Mathlib.Analysis.Complex.Liouville
-import Mathlib.Topology.UniformSpace.Ascoli
-import RMT4.Spaces
-import RMT4.defs
-import RMT4.hurwitz
+module
+
+public import Mathlib.Analysis.Complex.Liouville
+public import Mathlib.Topology.UniformSpace.Ascoli
+public import RMT4.Spaces
+public import RMT4.defs
+public import RMT4.hurwitz
+
+@[expose] public section
 
 open Set Function Metric UniformConvergence Complex
 

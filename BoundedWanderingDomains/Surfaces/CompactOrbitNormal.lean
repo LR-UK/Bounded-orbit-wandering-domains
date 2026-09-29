@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.CompactCentreNormal
-import BoundedWanderingDomains.Surfaces.CoordinateDiscParam
-import BoundedWanderingDomains.Surfaces.LocalIterateHolomorphic
+public import BoundedWanderingDomains.Surfaces.CompactCentreNormal
+public import BoundedWanderingDomains.Surfaces.CoordinateDiscParam
+public import BoundedWanderingDomains.Surfaces.LocalIterateHolomorphic
+
+@[expose] public section
 
 /-! # Compact marked orbits give local normality -/
 

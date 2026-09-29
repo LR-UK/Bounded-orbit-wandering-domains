@@ -1,7 +1,11 @@
-import Mathlib.Analysis.Meromorphic.NormalForm
-import Mathlib.Analysis.Complex.Basic
-import Mathlib.Topology.Compactification.OnePoint.Basic
-import Mathlib.Topology.MetricSpace.ProperSpace
+module
+
+public import Mathlib.Analysis.Meromorphic.NormalForm
+public import Mathlib.Analysis.Complex.Basic
+public import Mathlib.Topology.Compactification.OnePoint.Basic
+public import Mathlib.Topology.MetricSpace.ProperSpace
+
+@[expose] public section
 
 open Set Filter
 open scoped Topology OnePoint

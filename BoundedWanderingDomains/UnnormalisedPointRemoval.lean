@@ -1,9 +1,13 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.UnconditionalPointRemoval
-import BoundedWanderingDomains.AnchoredCompactArea
+public import BoundedWanderingDomains.UnconditionalPointRemoval
+public import BoundedWanderingDomains.AnchoredCompactArea
+
+@[expose] public section
 
 /-!
 # Puncture cost in the curvature minus one hyperbolic metric

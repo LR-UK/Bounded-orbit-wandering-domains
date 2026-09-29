@@ -1,6 +1,10 @@
-import ComplexDynamics.Bungee
-import Mathlib.Topology.MetricSpace.Bounded
-import Mathlib.Topology.UniformSpace.HeineCantor
+module
+
+public import ComplexDynamics.Bungee
+public import Mathlib.Topology.MetricSpace.Bounded
+public import Mathlib.Topology.UniformSpace.HeineCantor
+
+@[expose] public section
 
 /-! # Dynamical sets under a homeomorphism of the plane -/
 

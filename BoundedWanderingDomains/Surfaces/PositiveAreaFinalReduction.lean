@@ -1,8 +1,12 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.PositiveAreaAdvanceReduction
-import BoundedWanderingDomains.Surfaces.PositiveAreaBarrierReduction
-import BoundedWanderingDomains.Surfaces.PositiveAreaExceptionalReduction
-import BoundedWanderingDomains.Surfaces.TopDiscCover
+public import BoundedWanderingDomains.Surfaces.PositiveAreaAdvanceReduction
+public import BoundedWanderingDomains.Surfaces.PositiveAreaBarrierReduction
+public import BoundedWanderingDomains.Surfaces.PositiveAreaExceptionalReduction
+public import BoundedWanderingDomains.Surfaces.TopDiscCover
+
+@[expose] public section
 
 /-! # Final reduction of the positive-area theorem to local metric comparison -/
 

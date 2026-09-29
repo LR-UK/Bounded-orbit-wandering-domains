@@ -1,5 +1,9 @@
-import EremenkosConjecture.RayEntireLimit
-import EremenkosConjecture.RayCounterexampleCriterion
+module
+
+public import EremenkosConjecture.RayEntireLimit
+public import EremenkosConjecture.RayCounterexampleCriterion
+
+@[expose] public section
 
 /-! # The singleton counterexample to Eremenko's conjecture
 

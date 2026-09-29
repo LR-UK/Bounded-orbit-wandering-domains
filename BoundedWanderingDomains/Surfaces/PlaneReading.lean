@@ -1,8 +1,12 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.Surfaces.HolomorphicLifting
+public import BoundedWanderingDomains.Surfaces.HolomorphicLifting
+
+@[expose] public section
 
 /-! # Ordinary complex derivatives of maps defined on open submanifolds
 

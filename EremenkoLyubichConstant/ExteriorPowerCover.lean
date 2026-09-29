@@ -1,11 +1,15 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Lasse Rempe
 -/
 
-import EremenkoLyubichConstant.ExteriorFundamentalGroup
-import EremenkoLyubichConstant.CoveringNaturality
+public import EremenkoLyubichConstant.ExteriorFundamentalGroup
+public import EremenkoLyubichConstant.CoveringNaturality
+
+@[expose] public section
 
 open Complex Set Function
 open scoped Topology

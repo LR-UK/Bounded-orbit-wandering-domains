@@ -1,10 +1,14 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.CoveringDiscInjectivity
-import BoundedWanderingDomains.EventualCoveringDiscs
-import Mathlib.Topology.MetricSpace.Thickening
+public import BoundedWanderingDomains.CoveringDiscInjectivity
+public import BoundedWanderingDomains.EventualCoveringDiscs
+public import Mathlib.Topology.MetricSpace.Thickening
+
+@[expose] public section
 
 /-! # The local bounded-point theorem without simple connectivity
 

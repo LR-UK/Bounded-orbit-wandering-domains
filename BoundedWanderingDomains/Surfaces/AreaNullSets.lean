@@ -1,5 +1,9 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.AreaIntegration
+public import BoundedWanderingDomains.Surfaces.AreaIntegration
+
+@[expose] public section
 open Set Function Filter Metric MeasureTheory
 open scoped Manifold Topology ENNReal
 namespace AreaDeficit.Surfaces.DiscCover

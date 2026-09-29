@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.LocalPowerCoordinate
-import FunctionTheory.Analytic.FiniteInterpolation
+module
+
+public import FunctionTheory.Conformal.LocalPowerCoordinate
+public import FunctionTheory.Analytic.FiniteInterpolation
+
+@[expose] public section
 
 open Set Filter Metric
 open scoped Topology

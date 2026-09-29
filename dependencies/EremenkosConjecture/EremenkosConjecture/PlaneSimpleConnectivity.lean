@@ -1,6 +1,10 @@
-import EremenkosConjecture.JordanSimplyConnected
-import ComplexApproximation.Topology.FilledContinua
-import FunctionTheory.Topology.SimpleConnectivity
+module
+
+public import EremenkosConjecture.JordanSimplyConnected
+public import ComplexApproximation.Topology.FilledContinua
+public import FunctionTheory.Topology.SimpleConnectivity
+
+@[expose] public section
 
 /-! # Simple connectivity from unbounded complementary components
 

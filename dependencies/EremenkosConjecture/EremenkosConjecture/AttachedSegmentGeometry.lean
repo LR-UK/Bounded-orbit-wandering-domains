@@ -1,5 +1,9 @@
-import EremenkosConjecture.ContinuumRayGeometry
-import ComplexApproximation.Topology.FilledContinua
+module
+
+public import EremenkosConjecture.ContinuumRayGeometry
+public import ComplexApproximation.Topology.FilledContinua
+
+@[expose] public section
 
 open Set Metric Complex Bornology
 

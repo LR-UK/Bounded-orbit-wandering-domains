@@ -1,6 +1,10 @@
-import EremenkosConjecture.BarrierScaling
-import EremenkosConjecture.SingletonContinuum
-import ComplexDynamics.CurvesToInfinity
+module
+
+public import EremenkosConjecture.BarrierScaling
+public import EremenkosConjecture.SingletonContinuum
+public import ComplexDynamics.CurvesToInfinity
+
+@[expose] public section
 
 open Set Metric Filter Function ComplexDynamics
 

@@ -1,5 +1,9 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.SurfaceLogCutoff
+public import BoundedWanderingDomains.Surfaces.SurfaceLogCutoff
+
+@[expose] public section
 
 /-! # A cutoff around finitely many surface punctures -/
 

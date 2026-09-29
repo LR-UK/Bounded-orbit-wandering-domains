@@ -1,4 +1,8 @@
-import EremenkosConjecture.ReferenceDynamics
+module
+
+public import EremenkosConjecture.ReferenceDynamics
+
+@[expose] public section
 
 /-! # Tolerances preserving a finite stage on its control disk -/
 

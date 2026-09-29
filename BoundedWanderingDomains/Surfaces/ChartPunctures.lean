@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import Mathlib.Topology.OpenPartialHomeomorph.Basic
-import Mathlib.Data.Finset.Image
-import Mathlib.Analysis.Complex.Basic
+public import Mathlib.Topology.OpenPartialHomeomorph.Basic
+public import Mathlib.Data.Finset.Image
+public import Mathlib.Analysis.Complex.Basic
+
+@[expose] public section
 
 /-! # Finite punctures in a partial chart -/
 open Set Function

@@ -1,9 +1,13 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.GeneralDomainMetric
-import BoundedWanderingDomains.DensityDeficit
+public import BoundedWanderingDomains.GeneralDomainMetric
+public import BoundedWanderingDomains.DensityDeficit
+
+@[expose] public section
 
 /-!
 # Curvature and the local hyperbolic area gain

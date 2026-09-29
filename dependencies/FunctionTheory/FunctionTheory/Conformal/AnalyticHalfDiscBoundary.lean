@@ -1,6 +1,10 @@
-import FunctionTheory.Topology.LocalHomeomorphBoundary
-import FunctionTheory.Conformal.CircularArcCap
-import Mathlib.Analysis.Complex.Convex
+module
+
+public import FunctionTheory.Topology.LocalHomeomorphBoundary
+public import FunctionTheory.Conformal.CircularArcCap
+public import Mathlib.Analysis.Complex.Convex
+
+@[expose] public section
 
 open Set Metric Complex Filter
 open scoped Topology

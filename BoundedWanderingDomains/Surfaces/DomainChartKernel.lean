@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.DomainChartDensity
-import BoundedWanderingDomains.Surfaces.ComponentKernel
+public import BoundedWanderingDomains.Surfaces.DomainChartDensity
+public import BoundedWanderingDomains.Surfaces.ComponentKernel
+
+@[expose] public section
 
 /-! # Finite-puncture convergence in ambient coordinates -/
 open Set Function Filter

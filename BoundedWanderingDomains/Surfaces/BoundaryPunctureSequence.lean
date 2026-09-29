@@ -1,10 +1,14 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.DenseFinitePunctures
-import BoundedWanderingDomains.Surfaces.LocalPunctures
-import BoundedWanderingDomains.Surfaces.LocalDynamics
-import BoundedWanderingDomains.Surfaces.LocalMapRestriction
-import BoundedWanderingDomains.Surfaces.LocalMapTotalization
-import Mathlib.Topology.Separation.Regular
+public import BoundedWanderingDomains.Surfaces.DenseFinitePunctures
+public import BoundedWanderingDomains.Surfaces.LocalPunctures
+public import BoundedWanderingDomains.Surfaces.LocalDynamics
+public import BoundedWanderingDomains.Surfaces.LocalMapRestriction
+public import BoundedWanderingDomains.Surfaces.LocalMapTotalization
+public import Mathlib.Topology.Separation.Regular
+
+@[expose] public section
 
 /-! # Finite backward punctures from the boundary of a working domain -/
 

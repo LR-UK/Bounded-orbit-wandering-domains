@@ -1,4 +1,8 @@
-import Runge.CauchyGreen
+module
+
+public import Runge.CauchyGreen
+
+@[expose] public section
 
 open Complex MeasureTheory Set
 

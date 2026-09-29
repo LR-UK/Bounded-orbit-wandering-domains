@@ -1,6 +1,10 @@
-import EremenkosConjecture.VariableEntireLimit
-import ComplexDynamics.Transcendence
-import ComplexDynamics.UniformEscape
+module
+
+public import EremenkosConjecture.VariableEntireLimit
+public import ComplexDynamics.Transcendence
+public import ComplexDynamics.UniformEscape
+
+@[expose] public section
 
 /-! # Fast escape and transcendence of the variable-disk construction -/
 

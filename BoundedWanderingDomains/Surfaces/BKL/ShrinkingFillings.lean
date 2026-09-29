@@ -1,17 +1,21 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import Mathlib.Topology.UniformSpace.LocallyUniformConvergence
-import Mathlib.Topology.Sequences
-import BoundedWanderingDomains.Surfaces.LocalMapTotalization
-import BoundedWanderingDomains.Surfaces.CompactFilling
-import BoundedWanderingDomains.Surfaces.LocalCoveringDiscs
-import BoundedWanderingDomains.Surfaces.WanderingDiscShrink
-import BoundedWanderingDomains.Surfaces.SurfaceFilling
-import BoundedWanderingDomains.Surfaces.CoordinateDiscParam
-import Mathlib.Topology.Sets.Opens
-import BoundedWanderingDomains.Surfaces.BKL.AnalyticCompletion
-import BoundedWanderingDomains.Surfaces.BKL.ComponentRecovery
-import BoundedWanderingDomains.Surfaces.PointedCoveringDiscs
-import BoundedWanderingDomains.Surfaces.CompactClusterSeparation
+public import Mathlib.Topology.UniformSpace.LocallyUniformConvergence
+public import Mathlib.Topology.Sequences
+public import BoundedWanderingDomains.Surfaces.LocalMapTotalization
+public import BoundedWanderingDomains.Surfaces.CompactFilling
+public import BoundedWanderingDomains.Surfaces.LocalCoveringDiscs
+public import BoundedWanderingDomains.Surfaces.WanderingDiscShrink
+public import BoundedWanderingDomains.Surfaces.SurfaceFilling
+public import BoundedWanderingDomains.Surfaces.CoordinateDiscParam
+public import Mathlib.Topology.Sets.Opens
+public import BoundedWanderingDomains.Surfaces.BKL.AnalyticCompletion
+public import BoundedWanderingDomains.Surfaces.BKL.ComponentRecovery
+public import BoundedWanderingDomains.Surfaces.PointedCoveringDiscs
+public import BoundedWanderingDomains.Surfaces.CompactClusterSeparation
+
+@[expose] public section
 
 section
 

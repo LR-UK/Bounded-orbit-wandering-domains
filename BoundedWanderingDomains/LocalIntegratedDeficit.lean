@@ -1,9 +1,13 @@
-import BoundedWanderingDomains.CompactCutoff
-import BoundedWanderingDomains.CompactDeficit
-import BoundedWanderingDomains.ConformalLaplacian
-import BoundedWanderingDomains.LocalMetricComparison
-import BoundedWanderingDomains.LocalPunctures
-import BoundedWanderingDomains.HolomorphicTransport
+module
+
+public import BoundedWanderingDomains.CompactCutoff
+public import BoundedWanderingDomains.CompactDeficit
+public import BoundedWanderingDomains.ConformalLaplacian
+public import BoundedWanderingDomains.LocalMetricComparison
+public import BoundedWanderingDomains.LocalPunctures
+public import BoundedWanderingDomains.HolomorphicTransport
+
+@[expose] public section
 
 open Set Metric MeasureTheory Filter Function Laplacian
 open scoped Topology ENNReal

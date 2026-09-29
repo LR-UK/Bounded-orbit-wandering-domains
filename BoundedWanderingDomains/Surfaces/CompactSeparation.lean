@@ -1,9 +1,13 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import Mathlib.Topology.Connected.LocallyConnected
-import Mathlib.Topology.Compactness.Compact
+public import Mathlib.Topology.Connected.LocallyConnected
+public import Mathlib.Topology.Compactness.Compact
+
+@[expose] public section
 
 /-! # Separation by a compact set
 

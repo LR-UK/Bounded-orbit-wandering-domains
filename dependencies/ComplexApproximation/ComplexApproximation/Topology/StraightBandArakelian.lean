@@ -1,7 +1,11 @@
-import ComplexApproximation.Topology.HalfStripBands
-import ComplexApproximation.Topology.ArakelianHomeomorphism
-import ComplexApproximation.Topology.ArakelianElementaryGeometry
-import FunctionTheory.Conformal.StripBounds
+module
+
+public import ComplexApproximation.Topology.HalfStripBands
+public import ComplexApproximation.Topology.ArakelianHomeomorphism
+public import ComplexApproximation.Topology.ArakelianElementaryGeometry
+public import FunctionTheory.Conformal.StripBounds
+
+@[expose] public section
 
 open Set Metric Complex Bornology
 

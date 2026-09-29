@@ -1,6 +1,10 @@
-import Mathlib.Analysis.Complex.AbsMax
-import Mathlib.Analysis.Complex.CauchyIntegral
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.Complex.AbsMax
+public import Mathlib.Analysis.Complex.CauchyIntegral
+public import Mathlib.Tactic
+
+@[expose] public section
 
 open Set Metric Filter
 open scoped Topology

@@ -1,6 +1,10 @@
-import EremenkosConjecture.VariableConstructionData
-import EremenkosConjecture.HolomorphicGluing
-import EremenkosConjecture.DisjointFullUnions
+module
+
+public import EremenkosConjecture.VariableConstructionData
+public import EremenkosConjecture.HolomorphicGluing
+public import EremenkosConjecture.DisjointFullUnions
+
+@[expose] public section
 
 /-! # The piecewise holomorphic reference map in Proposition 3.2 -/
 

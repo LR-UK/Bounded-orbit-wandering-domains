@@ -1,9 +1,13 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.SimplyConnectedSingularLimits
-import BoundedWanderingDomains.SphericalSingularValues
+public import BoundedWanderingDomains.SimplyConnectedSingularLimits
+public import BoundedWanderingDomains.SphericalSingularValues
+
+@[expose] public section
 
 /-! # Non-escape as a consequence of a derived singular limit
 

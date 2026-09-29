@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.PowerCoordinateDisk
-import FunctionTheory.Conformal.CriticalCorrectionLocal
+module
+
+public import FunctionTheory.Conformal.PowerCoordinateDisk
+public import FunctionTheory.Conformal.CriticalCorrectionLocal
+
+@[expose] public section
 
 open Set Filter Metric
 open scoped Topology

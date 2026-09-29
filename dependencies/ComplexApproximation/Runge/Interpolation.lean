@@ -1,5 +1,9 @@
-import Runge.Holomorphic
-import FunctionTheory.Analytic.FiniteInterpolation
+module
+
+public import Runge.Holomorphic
+public import FunctionTheory.Analytic.FiniteInterpolation
+
+@[expose] public section
 
 /-!
 # Runge approximation with finite jet interpolation

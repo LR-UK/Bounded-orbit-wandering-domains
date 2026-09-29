@@ -1,6 +1,10 @@
-import ComplexApproximation.Topology.NestedBandNonseparation
-import Mathlib.Analysis.Complex.Convex
-import Mathlib.Analysis.Normed.Module.Connected
+module
+
+public import ComplexApproximation.Topology.NestedBandNonseparation
+public import Mathlib.Analysis.Complex.Convex
+public import Mathlib.Analysis.Normed.Module.Connected
+
+@[expose] public section
 
 open Set Metric Complex Bornology
 

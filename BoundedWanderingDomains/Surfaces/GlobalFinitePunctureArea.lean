@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.PositiveAreaAdvanceReduction
-import BoundedWanderingDomains.Surfaces.GlobalPointInsertion
+public import BoundedWanderingDomains.Surfaces.PositiveAreaAdvanceReduction
+public import BoundedWanderingDomains.Surfaces.GlobalPointInsertion
+
+@[expose] public section
 
 /-! # Global finite-puncture area packages -/
 

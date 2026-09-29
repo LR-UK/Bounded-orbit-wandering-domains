@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.SlitTipUnwrapped
-import FunctionTheory.Conformal.HalfDiskCircleReflection
+module
+
+public import FunctionTheory.Conformal.SlitTipUnwrapped
+public import FunctionTheory.Conformal.HalfDiskCircleReflection
+
+@[expose] public section
 
 open Set Metric Complex Filter Function
 open scoped Topology ComplexConjugate

@@ -1,5 +1,9 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.RestrictedBarrierComponents
+public import BoundedWanderingDomains.Surfaces.RestrictedBarrierComponents
+
+@[expose] public section
 
 /-! # Complete boundary-preimage package inside a covered subsurface -/
 

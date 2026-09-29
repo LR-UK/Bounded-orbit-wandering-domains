@@ -1,3 +1,5 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
@@ -7,12 +9,14 @@ Authors: Álvaro Begué
 /- Compatibility update, 23 September 2026: current Mathlib names and Lean
 linter suggestions; original mathematical statements and attribution retained. -/
 
-import Schoenflies.PolygonalJordan
-import Schoenflies.ModelCurve
-import Schoenflies.SimpleArc
-import Schoenflies.SquareMover
-import Schoenflies.Graph.OuterFace
-import Schoenflies.UniformBound
+public import Schoenflies.PolygonalJordan
+public import Schoenflies.ModelCurve
+public import Schoenflies.SimpleArc
+public import Schoenflies.SquareMover
+public import Schoenflies.Graph.OuterFace
+public import Schoenflies.UniformBound
+
+@[expose] public section
 
 /-!
 # Scaffolding for the arc-complement theorem

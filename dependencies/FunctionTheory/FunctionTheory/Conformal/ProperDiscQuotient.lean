@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.ProperDiscBoundary
-import FunctionTheory.Conformal.DiscBoundaryMaximum
+module
+
+public import FunctionTheory.Conformal.ProperDiscBoundary
+public import FunctionTheory.Conformal.DiscBoundaryMaximum
+
+@[expose] public section
 
 open Set Metric Filter
 open scoped Topology

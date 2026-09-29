@@ -1,8 +1,12 @@
-import Mathlib.Analysis.SpecialFunctions.Sqrt
-import Mathlib.Topology.Instances.Real.Lemmas
-import Mathlib.Tactic.FieldSimp
-import Mathlib.Tactic.Linarith
-import Mathlib.Tactic.NormNum
+module
+
+public import Mathlib.Analysis.SpecialFunctions.Sqrt
+public import Mathlib.Topology.Instances.Real.Lemmas
+public import Mathlib.Tactic.FieldSimp
+public import Mathlib.Tactic.Linarith
+public import Mathlib.Tactic.NormNum
+
+@[expose] public section
 
 /-!
 # The numerical exhaustion step in the square-root covering construction

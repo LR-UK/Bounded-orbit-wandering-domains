@@ -1,8 +1,12 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.PointedCoveringDiscs
-import BoundedWanderingDomains.Surfaces.SurfaceFilling
-import BoundedWanderingDomains.Surfaces.WanderingDiscShrink
-import BoundedWanderingDomains.Surfaces.CoordinateDiscParam
+public import BoundedWanderingDomains.Surfaces.PointedCoveringDiscs
+public import BoundedWanderingDomains.Surfaces.SurfaceFilling
+public import BoundedWanderingDomains.Surfaces.WanderingDiscShrink
+public import BoundedWanderingDomains.Surfaces.CoordinateDiscParam
+
+@[expose] public section
 
 /-! # Baker's filling argument on a noncompact covered surface -/
 

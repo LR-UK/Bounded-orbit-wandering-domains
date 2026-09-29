@@ -1,8 +1,12 @@
-import FunctionTheory.Conformal.UnivalenceStability
-import FunctionTheory.Analytic.UniformPreimageStability
-import TauCeti.Analysis.Complex.Conformal.Biholomorph
-import Mathlib.Topology.MetricSpace.ProperSpace
-import Mathlib.Tactic
+module
+
+public import FunctionTheory.Conformal.UnivalenceStability
+public import FunctionTheory.Analytic.UniformPreimageStability
+public import TauCeti.Analysis.Complex.Conformal.Biholomorph
+public import Mathlib.Topology.MetricSpace.ProperSpace
+public import Mathlib.Tactic
+
+@[expose] public section
 
 open Set Filter Metric
 open scoped Topology

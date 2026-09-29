@@ -1,12 +1,16 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
-import Schoenflies.Square
-import Schoenflies.UniformBound
-import Schoenflies.Subarc
-import Schoenflies.Graph.Drawing
+public import Schoenflies.Square
+public import Schoenflies.UniformBound
+public import Schoenflies.Subarc
+public import Schoenflies.Graph.Drawing
+
+@[expose] public section
 
 /-!
 # The vertex squares, the last parameter inside a closed set, and the cores

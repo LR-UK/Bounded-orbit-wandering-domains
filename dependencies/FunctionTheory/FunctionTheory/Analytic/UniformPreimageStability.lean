@@ -1,4 +1,8 @@
-import FunctionTheory.Analytic.PreimageStability
+module
+
+public import FunctionTheory.Analytic.PreimageStability
+
+@[expose] public section
 
 open Set Filter Metric
 open scoped Topology

@@ -1,5 +1,9 @@
-import BoundedWanderingDomains.DensityDeficit
-import BoundedWanderingDomains.AreaTransport
+module
+
+public import BoundedWanderingDomains.DensityDeficit
+public import BoundedWanderingDomains.AreaTransport
+
+@[expose] public section
 
 open MeasureTheory Filter Set InnerProductSpace Laplacian
 open scoped Topology ContDiff ENNReal

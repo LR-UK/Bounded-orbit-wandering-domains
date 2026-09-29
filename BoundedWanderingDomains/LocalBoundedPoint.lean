@@ -1,10 +1,14 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.LocalDiscInjectivity
-import BoundedWanderingDomains.EventualCompactDiscs
-import Mathlib.Topology.MetricSpace.Thickening
+public import BoundedWanderingDomains.LocalDiscInjectivity
+public import BoundedWanderingDomains.EventualCompactDiscs
+public import Mathlib.Topology.MetricSpace.Thickening
+
+@[expose] public section
 
 /-!
 # The local theorem from one compactly contained point orbit

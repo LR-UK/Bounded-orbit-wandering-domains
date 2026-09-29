@@ -1,13 +1,17 @@
+module
+
 /-
 Copyright (c) 2026 Will (Ziang) Li. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Will (Ziang) Li
 -/
-import Mathlib.Analysis.Calculus.FDeriv.Basic
-import Mathlib.Analysis.Calculus.FDeriv.Mul
-import Mathlib.Analysis.Complex.Basic
-import Mathlib.Topology.Compactification.OnePoint.Basic
-import Mathlib.Topology.OpenPartialHomeomorph.Defs
+public import Mathlib.Analysis.Calculus.FDeriv.Basic
+public import Mathlib.Analysis.Calculus.FDeriv.Mul
+public import Mathlib.Analysis.Complex.Basic
+public import Mathlib.Topology.Compactification.OnePoint.Basic
+public import Mathlib.Topology.OpenPartialHomeomorph.Defs
+
+@[expose] public section
 
 /-!
 # The Riemann sphere

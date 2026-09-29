@@ -1,5 +1,9 @@
-import Solution
-import EremenkosConjecture
+module
+
+public import Solution
+public import EremenkosConjecture
+
+@[expose] public section
 
 #print axioms EremenkosConjecture.MainTheorems.theorem_1_2
 

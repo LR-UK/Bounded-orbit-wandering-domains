@@ -1,7 +1,11 @@
-import FunctionTheory.Conformal.FiniteChain
-import FunctionTheory.Conformal.CriticalNeighborhoodChain
-import FunctionTheory.Smooth.ExtensionNorm
-import Mathlib.Tactic
+module
+
+public import FunctionTheory.Conformal.FiniteChain
+public import FunctionTheory.Conformal.CriticalNeighborhoodChain
+public import FunctionTheory.Smooth.ExtensionNorm
+public import Mathlib.Tactic
+
+@[expose] public section
 
 open Set Function Filter
 open scoped Topology ContDiff

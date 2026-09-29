@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.RightEndSymmetry
-import Mathlib.Topology.Order.IntermediateValue
+module
+
+public import FunctionTheory.Conformal.RightEndSymmetry
+public import Mathlib.Topology.Order.IntermediateValue
+
+@[expose] public section
 
 open Set Metric Complex Function Filter
 open scoped Topology ComplexConjugate

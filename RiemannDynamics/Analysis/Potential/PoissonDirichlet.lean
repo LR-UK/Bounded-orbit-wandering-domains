@@ -1,14 +1,18 @@
+module
+
 /-
 Copyright (c) 2026 Will (Ziang) Li. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Will (Ziang) Li
 -/
-import Mathlib.Analysis.Complex.Poisson
-import Mathlib.Analysis.Complex.Harmonic.Poisson
-import Mathlib.Analysis.Complex.Harmonic.Analytic
-import Mathlib.Analysis.InnerProductSpace.Harmonic.Constructions
-import Mathlib.Analysis.Calculus.ParametricIntervalIntegral
-import Mathlib.MeasureTheory.Integral.CircleAverage
+public import Mathlib.Analysis.Complex.Poisson
+public import Mathlib.Analysis.Complex.Harmonic.Poisson
+public import Mathlib.Analysis.Complex.Harmonic.Analytic
+public import Mathlib.Analysis.InnerProductSpace.Harmonic.Constructions
+public import Mathlib.Analysis.Calculus.ParametricIntervalIntegral
+public import Mathlib.MeasureTheory.Integral.CircleAverage
+
+@[expose] public section
 
 /-!
 # The Dirichlet problem on a disk via the Poisson integral

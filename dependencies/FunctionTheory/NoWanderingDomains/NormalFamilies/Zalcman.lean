@@ -1,27 +1,31 @@
+module
+
 /- Adaptation: reduced imports only; declarations/proofs preserved from 0a6497b0cc9ed39a6a705bf013449635894b56d0. -/
-import Mathlib.Analysis.InnerProductSpace.Calculus
-import Mathlib.Analysis.Complex.LocallyUniformLimit
-import Mathlib.Topology.Sequences
-import Mathlib.Topology.UniformSpace.HeineCantor
-import Mathlib.Analysis.Calculus.MeanValue
-import Mathlib.Analysis.Calculus.FDeriv.Analytic
-import Mathlib.Tactic.Choose
-import Mathlib.Tactic.Continuity
-import Mathlib.Tactic.Ext
-import Mathlib.Tactic.FieldSimp
-import Mathlib.Tactic.FinCases
-import Mathlib.Tactic.Linarith
-import Mathlib.Tactic.NormNum
-import Mathlib.Tactic.Positivity
-import Mathlib.Tactic.Ring
+public import Mathlib.Analysis.InnerProductSpace.Calculus
+public import Mathlib.Analysis.Complex.LocallyUniformLimit
+public import Mathlib.Topology.Sequences
+public import Mathlib.Topology.UniformSpace.HeineCantor
+public import Mathlib.Analysis.Calculus.MeanValue
+public import Mathlib.Analysis.Calculus.FDeriv.Analytic
+public import Mathlib.Tactic.Choose
+public import Mathlib.Tactic.Continuity
+public import Mathlib.Tactic.Ext
+public import Mathlib.Tactic.FieldSimp
+public import Mathlib.Tactic.FinCases
+public import Mathlib.Tactic.Linarith
+public import Mathlib.Tactic.NormNum
+public import Mathlib.Tactic.Positivity
+public import Mathlib.Tactic.Ring
 /-
 Copyright (c) 2026 Will (Ziang) Li. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Will (Ziang) Li
 -/
-import NoWanderingDomains.NormalFamilies.Spherical
-import NoWanderingDomains.Sphere.SphereHolomorphic
-import NoWanderingDomains.Sphere.InversionIsometry
+public import NoWanderingDomains.NormalFamilies.Spherical
+public import NoWanderingDomains.Sphere.SphereHolomorphic
+public import NoWanderingDomains.Sphere.InversionIsometry
+
+@[expose] public section
 
 /-!
 # The spherical derivative, Marty's criterion, and Zalcman's lemma

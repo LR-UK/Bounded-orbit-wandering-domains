@@ -1,7 +1,11 @@
-import FunctionTheory.Topology.FiniteComposition
-import Mathlib.Analysis.SpecialFunctions.Complex.Log
-import Mathlib.Analysis.SpecificLimits.Basic
-import Mathlib.Tactic
+module
+
+public import FunctionTheory.Topology.FiniteComposition
+public import Mathlib.Analysis.SpecialFunctions.Complex.Log
+public import Mathlib.Analysis.SpecificLimits.Basic
+public import Mathlib.Tactic
+
+@[expose] public section
 
 open Set Filter Function
 open scoped Topology

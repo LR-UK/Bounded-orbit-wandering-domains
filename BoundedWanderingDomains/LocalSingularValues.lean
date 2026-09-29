@@ -1,8 +1,12 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.SphericalSingularValues
+public import BoundedWanderingDomains.SphericalSingularValues
+
+@[expose] public section
 
 /-! # Singular values of the restriction to an actual open domain -/
 

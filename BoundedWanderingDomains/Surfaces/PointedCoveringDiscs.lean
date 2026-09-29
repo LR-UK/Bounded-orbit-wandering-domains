@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.CompactDiscImages
-import BoundedWanderingDomains.Surfaces.HolomorphicLifting
-import Mathlib.Analysis.Complex.Schwarz
+public import BoundedWanderingDomains.Surfaces.CompactDiscImages
+public import BoundedWanderingDomains.Surfaces.HolomorphicLifting
+public import Mathlib.Analysis.Complex.Schwarz
+
+@[expose] public section
 
 /-! # Pointed covering discs on surfaces -/
 

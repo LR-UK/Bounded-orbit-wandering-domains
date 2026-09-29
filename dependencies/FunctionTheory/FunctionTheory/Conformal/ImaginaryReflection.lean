@@ -1,5 +1,9 @@
-import TauCeti.Analysis.Complex.Conformal.Reflection.Principle
-import Mathlib.Topology.Algebra.GroupWithZero
+module
+
+public import TauCeti.Analysis.Complex.Conformal.Reflection.Principle
+public import Mathlib.Topology.Algebra.GroupWithZero
+
+@[expose] public section
 
 /-! # Schwarz reflection across the imaginary axis
 

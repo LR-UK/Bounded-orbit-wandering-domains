@@ -1,4 +1,8 @@
-import EremenkosConjecture.ScaffoldingApproximation
+module
+
+public import EremenkosConjecture.ScaffoldingApproximation
+
+@[expose] public section
 
 /-! # Real-part bounds for the Section 4 return branches -/
 

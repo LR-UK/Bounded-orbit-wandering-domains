@@ -1,10 +1,14 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.TransitionMoments
-import BoundedWanderingDomains.LogRadialIntegral
-import Mathlib.MeasureTheory.Group.Integral
+public import BoundedWanderingDomains.TransitionMoments
+public import BoundedWanderingDomains.LogRadialIntegral
+public import Mathlib.MeasureTheory.Group.Integral
+
+@[expose] public section
 
 open Set Filter MeasureTheory
 open scoped Topology ContDiff

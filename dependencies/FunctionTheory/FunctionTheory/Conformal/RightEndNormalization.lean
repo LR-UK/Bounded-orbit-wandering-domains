@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.PrescribedStripEndMap
-import FunctionTheory.Conformal.HalfPlaneKernel
+module
+
+public import FunctionTheory.Conformal.PrescribedStripEndMap
+public import FunctionTheory.Conformal.HalfPlaneKernel
+
+@[expose] public section
 
 open Set Metric Complex Function Filter Asymptotics
 open scoped Topology

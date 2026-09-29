@@ -1,6 +1,10 @@
-import EremenkosConjecture.VariableStageStability
-import EremenkosConjecture.EntireLimit
-import Mathlib.Analysis.SpecificLimits.Basic
+module
+
+public import EremenkosConjecture.VariableStageStability
+public import EremenkosConjecture.EntireLimit
+public import Mathlib.Analysis.SpecificLimits.Basic
+
+@[expose] public section
 
 /-! # The entire limit with adaptively chosen control radii -/
 

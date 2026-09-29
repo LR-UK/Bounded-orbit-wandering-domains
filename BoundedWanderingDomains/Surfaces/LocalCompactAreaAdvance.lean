@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.LocalCompactCovering
-import BoundedWanderingDomains.Surfaces.RemoteCoveringAreaAdvance
-import BoundedWanderingDomains.Surfaces.SaturationDynamics
+public import BoundedWanderingDomains.Surfaces.LocalCompactCovering
+public import BoundedWanderingDomains.Surfaces.RemoteCoveringAreaAdvance
+public import BoundedWanderingDomains.Surfaces.SaturationDynamics
+
+@[expose] public section
 
 /-! # Uniform area advance for a compact local-map model -/
 

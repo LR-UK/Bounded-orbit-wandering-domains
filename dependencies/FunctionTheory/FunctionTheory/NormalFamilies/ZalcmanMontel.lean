@@ -1,5 +1,9 @@
-import FunctionTheory.NormalFamilies.SphericalHurwitz
-import FunctionTheory.Conformal.LittlePicardBloch
+module
+
+public import FunctionTheory.NormalFamilies.SphericalHurwitz
+public import FunctionTheory.Conformal.LittlePicardBloch
+
+@[expose] public section
 
 /-! # Omitted-values Montel via Zalcman
 The rescaling theorem is the attributed public result of Li and Luo.

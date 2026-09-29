@@ -1,6 +1,10 @@
-import FunctionTheory.Conformal.ProperDiscQuotient
-import FunctionTheory.Conformal.ProperDiscZeros
-import FunctionTheory.Conformal.FiniteBlaschke
+module
+
+public import FunctionTheory.Conformal.ProperDiscQuotient
+public import FunctionTheory.Conformal.ProperDiscZeros
+public import FunctionTheory.Conformal.FiniteBlaschke
+
+@[expose] public section
 
 open Set Metric Filter Function
 open scoped Topology BigOperators ComplexConjugate

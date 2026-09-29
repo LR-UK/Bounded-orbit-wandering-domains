@@ -1,5 +1,9 @@
-import ComplexApproximation.Topology.Arakelian
-import Mathlib.Topology.Homeomorph.Lemmas
+module
+
+public import ComplexApproximation.Topology.Arakelian
+public import Mathlib.Topology.Homeomorph.Lemmas
+
+@[expose] public section
 
 /-! # Topological invariance of the planar Arakelian condition -/
 

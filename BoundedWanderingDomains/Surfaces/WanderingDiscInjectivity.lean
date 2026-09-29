@@ -1,8 +1,12 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.ConditionalDiscShrink
-import BoundedWanderingDomains.Surfaces.PointedCoveringDiscs
-import BoundedWanderingDomains.Surfaces.LocalCompactModelPatches
-import BoundedWanderingDomains.TrappedComponentCovering
+public import BoundedWanderingDomains.Surfaces.ConditionalDiscShrink
+public import BoundedWanderingDomains.Surfaces.PointedCoveringDiscs
+public import BoundedWanderingDomains.Surfaces.LocalCompactModelPatches
+public import BoundedWanderingDomains.TrappedComponentCovering
+
+@[expose] public section
 
 /-! # Eventual injectivity from compact local covering models -/
 

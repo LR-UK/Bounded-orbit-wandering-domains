@@ -1,6 +1,10 @@
-import EremenkosConjecture.FilledAttachmentGeometry
-import EremenkosConjecture.FilledDomainComponents
-import EremenkosConjecture.HalfStripInterior
+module
+
+public import EremenkosConjecture.FilledAttachmentGeometry
+public import EremenkosConjecture.FilledDomainComponents
+public import EremenkosConjecture.HalfStripInterior
+
+@[expose] public section
 
 open Set Metric Complex
 

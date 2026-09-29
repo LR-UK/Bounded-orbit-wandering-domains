@@ -1,4 +1,8 @@
-import EremenkosConjecture.ContinuumApproximationStability
+module
+
+public import EremenkosConjecture.ContinuumApproximationStability
+
+@[expose] public section
 
 open Set Metric Function
 

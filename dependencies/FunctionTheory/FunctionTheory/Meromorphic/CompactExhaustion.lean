@@ -1,5 +1,9 @@
-import FunctionTheory.Meromorphic.SequenceLimit
-import Mathlib.Tactic
+module
+
+public import FunctionTheory.Meromorphic.SequenceLimit
+public import Mathlib.Tactic
+
+@[expose] public section
 
 open Set Filter
 open scoped Topology

@@ -1,9 +1,13 @@
-import EremenkosConjecture.HolomorphicGluing
-import EremenkosConjecture.ScaffoldingBackground
-import ComplexApproximation.Topology.HomeomorphicTail
-import ComplexApproximation.Arakelian
-import ComplexApproximation.ArakelianGluing
-import Mathlib.Topology.OpenPartialHomeomorph.Basic
+module
+
+public import EremenkosConjecture.HolomorphicGluing
+public import EremenkosConjecture.ScaffoldingBackground
+public import ComplexApproximation.Topology.HomeomorphicTail
+public import ComplexApproximation.Arakelian
+public import ComplexApproximation.ArakelianGluing
+public import Mathlib.Topology.OpenPartialHomeomorph.Basic
+
+@[expose] public section
 
 open Set Metric Function
 

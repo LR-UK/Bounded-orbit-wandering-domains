@@ -1,5 +1,9 @@
-import BoundedWanderingDomains.LaplacianChain
-import Mathlib.Analysis.SpecialFunctions.Log.Deriv
+module
+
+public import BoundedWanderingDomains.LaplacianChain
+public import Mathlib.Analysis.SpecialFunctions.Log.Deriv
+
+@[expose] public section
 
 open Set Filter InnerProductSpace Laplacian
 open scoped Topology ContDiff

@@ -1,4 +1,8 @@
-import EremenkosConjecture.DiscGeometry
+module
+
+public import EremenkosConjecture.DiscGeometry
+
+@[expose] public section
 
 /-! # Finite schedules of control and target disks with variable radii -/
 

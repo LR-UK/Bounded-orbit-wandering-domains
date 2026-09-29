@@ -1,6 +1,10 @@
-import FunctionTheory.Conformal.DiscBoundaryMaximum
-import Mathlib.Analysis.Meromorphic.NormalForm
-import Mathlib.Analysis.SpecialFunctions.ExpDeriv
+module
+
+public import FunctionTheory.Conformal.DiscBoundaryMaximum
+public import Mathlib.Analysis.Meromorphic.NormalForm
+public import Mathlib.Analysis.SpecialFunctions.ExpDeriv
+
+@[expose] public section
 
 open Set Metric Filter
 open scoped Topology

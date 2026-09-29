@@ -1,5 +1,9 @@
-import Runge.Holomorphic
-import FunctionTheory.Holomorphic
+module
+
+public import Runge.Holomorphic
+public import FunctionTheory.Holomorphic
+
+@[expose] public section
 
 /-!
 # Runge approximation for functions with their actual domain

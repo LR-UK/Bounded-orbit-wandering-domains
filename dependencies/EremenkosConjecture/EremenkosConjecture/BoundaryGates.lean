@@ -1,4 +1,8 @@
-import EremenkosConjecture.PlaneTopology
+module
+
+public import EremenkosConjecture.PlaneTopology
+
+@[expose] public section
 
 /-! # Removing a small opening from a surrounding boundary -/
 

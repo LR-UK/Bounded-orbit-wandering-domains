@@ -1,4 +1,8 @@
-import EremenkosConjecture.ComplexJordanNeighbourhood
+module
+
+public import EremenkosConjecture.ComplexJordanNeighbourhood
+
+@[expose] public section
 
 open Set Metric
 

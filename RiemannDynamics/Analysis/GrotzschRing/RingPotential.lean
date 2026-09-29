@@ -1,9 +1,13 @@
+module
+
 /-
 Copyright (c) 2026 Will (Ziang) Li. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Will (Ziang) Li
 -/
-import RiemannDynamics.Analysis.Potential.PerronEnvelope
+public import RiemannDynamics.Analysis.Potential.PerronEnvelope
+
+@[expose] public section
 
 /-!
 # Boundary regularity of the Perron solution and the harmonic potential of a ring

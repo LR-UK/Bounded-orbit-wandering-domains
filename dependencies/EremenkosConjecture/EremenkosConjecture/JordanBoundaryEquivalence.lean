@@ -1,5 +1,9 @@
-import EremenkosConjecture.JordanBoundaryCompatibility
-import Mathlib.Analysis.SpecialFunctions.Complex.Circle
+module
+
+public import EremenkosConjecture.JordanBoundaryCompatibility
+public import Mathlib.Analysis.SpecialFunctions.Complex.Circle
+
+@[expose] public section
 
 open Set
 

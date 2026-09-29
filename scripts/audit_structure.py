@@ -64,8 +64,8 @@ def closure(start):
         pending.extend(imports.get(name, []))
     return found
 
-root_names = ['Solution', 'Challenge', 'Legacy.Solution', 'Legacy.Challenge', 'Research.NewResults',
-              'Legacy.SingularLimitsChallenge', 'Legacy.SingularLimitsSolution', 'Research.SurfaceResearch', 'BoundedWanderingDomains.CoveringSolution']
+root_names = ['Solution', 'Challenge', 'Legacy.Solution', 'Research.NewResults',
+              'Legacy.SingularLimitsSolution', 'Research.SurfaceResearch', 'BoundedWanderingDomains.CoveringSolution']
 closure_by_root = {n: closure([n]) for n in root_names}
 paper = closure_by_root['Solution']
 all_roots = closure(root_names)

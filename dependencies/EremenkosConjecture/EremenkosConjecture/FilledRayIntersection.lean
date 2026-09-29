@@ -1,6 +1,10 @@
-import EremenkosConjecture.FilledRayInsets
-import ComplexApproximation.Topology.FillingDecreasingIntersection
-import FunctionTheory.Conformal.StripBounds
+module
+
+public import EremenkosConjecture.FilledRayInsets
+public import ComplexApproximation.Topology.FillingDecreasingIntersection
+public import FunctionTheory.Conformal.StripBounds
+
+@[expose] public section
 
 open Set Metric Complex Filter Bornology
 open scoped Topology

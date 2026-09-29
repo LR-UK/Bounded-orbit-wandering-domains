@@ -6,13 +6,15 @@ project:
     We formalise the proof of two major recent results on wandering domains of transcendental
     entire and meromorphic functions: Every orbit in a wandering domain must accumulate at infinity,
     and must also accumulate on a non-isolated (derived) point of the (spherical) set of singular
-    values. These results follow from more general results that apply to arbitrary open holomorphic 
-    functions defined on subsets of Riemann surfaces. We also prove a version of each local theorem
-    for subsets of the Julia set on which iterates are injective. That is, suppose that A is a set on
-    which all iterates are defined and injective, and such that A is disjoint from the locus of normality. 
-    Then almost every point in A must accumulate on the domain of definition, and also either on a derived
-    point of the singular set, or the boundary of the target Riemann surface. 
-    We deduce a classical corollary that exclude wandering domains for finite-type maps on arbitrary open subsets of
+    values. These results follow from more general results that apply to arbitrary open holomorphic
+    functions defined on subsets of Riemann surfaces. We also prove positive-area wandering-set
+    theorems and almost-everywhere versions of each local theorem for subsets of the Julia set.
+    That is, suppose that A is measurable, that all iterates are defined and injective on A,
+    that its forward images are pairwise disjoint, and that A is disjoint from the locus of normality.
+    Then almost every point in A has a subsequence escaping every compact subset of the domain of
+    definition, and also a subsequence converging to a derived singular value or escaping every
+    compact subset of the target Riemann surface.
+    We deduce a classical corollary that excludes wandering domains for finite-type maps on arbitrary open subsets of
     compact Riemann surfaces (due to Epstein). Absence of wandering domains for rational maps,
     compact-surface self-maps and class S entire and meromorphic functions are
     obtained as further corollaries.
@@ -447,7 +449,7 @@ alignment:
     lean: BoundedWanderingDomains.no_bounded_wandering_domains_transcendental_entire
     module: Solution
     status: proved
-    note: Same declaration name and exact statement as in the earlier challenge.
+    note: Same declaration name and exact statement as in the original registered submission.
   - source: Finite-type transcendental entire no-wandering corollary
     lean: BoundedWanderingDomains.no_wandering_domains_transcendental_entire_finite_singularValues
     module: Solution

@@ -1,11 +1,15 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.CoveringTotalArea
-import BoundedWanderingDomains.UnnormalisedPointRemoval
-import RiemannDynamics.Uniformization.PuncturedPlaneCovering
-import Mathlib.Analysis.Normed.Module.Connected
+public import BoundedWanderingDomains.CoveringTotalArea
+public import BoundedWanderingDomains.UnnormalisedPointRemoval
+public import RiemannDynamics.Uniformization.PuncturedPlaneCovering
+public import Mathlib.Analysis.Normed.Module.Connected
+
+@[expose] public section
 
 /-!
 # Curvature minus one area of a finitely punctured plane

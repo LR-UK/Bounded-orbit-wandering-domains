@@ -1,8 +1,12 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import Mathlib.Topology.Connected.LocallyConnected
-import Mathlib.Topology.Connected.Clopen
-import Mathlib.Topology.Compactness.Compact
-import Mathlib.Logic.Function.Iterate
+public import Mathlib.Topology.Connected.LocallyConnected
+public import Mathlib.Topology.Connected.Clopen
+public import Mathlib.Topology.Compactness.Compact
+public import Mathlib.Logic.Function.Iterate
+
+@[expose] public section
 
 /-! # Filling relatively compact complementary components
 

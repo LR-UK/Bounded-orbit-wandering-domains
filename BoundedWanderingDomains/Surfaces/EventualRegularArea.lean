@@ -1,9 +1,13 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.RegularCoveringArea
-import BoundedWanderingDomains.Surfaces.FiniteModelDiscArea
-import BoundedWanderingDomains.Surfaces.FiniteModelArea
-import BoundedWanderingDomains.AreaCancellation
-import BoundedWanderingDomains.TrappedComponentCovering
+public import BoundedWanderingDomains.Surfaces.RegularCoveringArea
+public import BoundedWanderingDomains.Surfaces.FiniteModelDiscArea
+public import BoundedWanderingDomains.Surfaces.FiniteModelArea
+public import BoundedWanderingDomains.AreaCancellation
+public import BoundedWanderingDomains.TrappedComponentCovering
+
+@[expose] public section
 
 /-! # The wandering-disc contradiction with remote singular values -/
 

@@ -1,5 +1,9 @@
-import EremenkosConjecture.NestedJordanNeighbourhoods
-import TauCeti.Topology.JordanCurve.Path
+module
+
+public import EremenkosConjecture.NestedJordanNeighbourhoods
+public import TauCeti.Topology.JordanCurve.Path
+
+@[expose] public section
 
 /-! # Compatibility of the two public Jordan-curve definitions
 

@@ -1,8 +1,12 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.CoordinateLaplacian
-import BoundedWanderingDomains.Surfaces.DensityCoordinateChange
-import BoundedWanderingDomains.Surfaces.ChartLaplacianSupport
-import BoundedWanderingDomains.Surfaces.SmoothSurface
+public import BoundedWanderingDomains.Surfaces.CoordinateLaplacian
+public import BoundedWanderingDomains.Surfaces.DensityCoordinateChange
+public import BoundedWanderingDomains.Surfaces.ChartLaplacianSupport
+public import BoundedWanderingDomains.Surfaces.SmoothSurface
+
+@[expose] public section
 
 /-! # The intrinsic Laplacian relative to a disc-cover metric -/
 

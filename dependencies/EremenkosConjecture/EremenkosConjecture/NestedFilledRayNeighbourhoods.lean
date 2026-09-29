@@ -1,7 +1,11 @@
-import EremenkosConjecture.FilledRayIntersection
-import EremenkosConjecture.FilledRayArakelian
-import EremenkosConjecture.NestedJordanNeighbourhoods
-import EremenkosConjecture.ContinuumRayGeometry
+module
+
+public import EremenkosConjecture.FilledRayIntersection
+public import EremenkosConjecture.FilledRayArakelian
+public import EremenkosConjecture.NestedJordanNeighbourhoods
+public import EremenkosConjecture.ContinuumRayGeometry
+
+@[expose] public section
 
 open Set Metric Complex Filter
 open scoped Topology

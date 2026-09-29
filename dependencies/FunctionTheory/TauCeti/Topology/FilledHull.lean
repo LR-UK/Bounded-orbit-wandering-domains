@@ -76,6 +76,7 @@ variable {E : Type*} [TopologicalSpace E] [Bornology E] {K L S : Set E} {x : E}
 /-- The **filled hull** of a set `K`: the points whose connected component in the complement of `K`
 is bounded. Equivalently, `K` together with the bounded connected components of `Kᶜ`; a point of
 `K` belongs because its component in `Kᶜ` is empty. -/
+@[expose]
 def filledHull (K : Set E) : Set E := {x | IsBounded (connectedComponentIn Kᶜ x)}
 
 @[simp]

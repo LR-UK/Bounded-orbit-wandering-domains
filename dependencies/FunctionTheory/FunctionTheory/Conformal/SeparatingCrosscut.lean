@@ -1,6 +1,10 @@
-import TauCeti.Analysis.Complex.Conformal.Crosscut.Basic
-import FunctionTheory.Conformal.StripCoordinates
-import Mathlib.Topology.Order.IntermediateValue
+module
+
+public import TauCeti.Analysis.Complex.Conformal.Crosscut.Basic
+public import FunctionTheory.Conformal.StripCoordinates
+public import Mathlib.Topology.Order.IntermediateValue
+
+@[expose] public section
 
 open Set Metric Complex
 

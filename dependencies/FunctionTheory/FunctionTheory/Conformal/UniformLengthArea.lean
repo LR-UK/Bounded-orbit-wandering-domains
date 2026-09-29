@@ -1,5 +1,9 @@
-import TauCeti.Analysis.Complex.Conformal.LengthArea
-import Mathlib.MeasureTheory.Measure.Lebesgue.Complex
+module
+
+public import TauCeti.Analysis.Complex.Conformal.LengthArea
+public import Mathlib.MeasureTheory.Measure.Lebesgue.Complex
+
+@[expose] public section
 
 open Set Metric Complex MeasureTheory
 open scoped ENNReal

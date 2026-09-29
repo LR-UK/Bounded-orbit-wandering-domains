@@ -1,4 +1,8 @@
-import EremenkosConjecture.LocalReference
+module
+
+public import EremenkosConjecture.LocalReference
+
+@[expose] public section
 
 open Set Function
 

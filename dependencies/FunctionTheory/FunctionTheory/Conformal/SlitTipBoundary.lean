@@ -1,4 +1,8 @@
-import FunctionTheory.Conformal.LocalCircularBoundary
+module
+
+public import FunctionTheory.Conformal.LocalCircularBoundary
+
+@[expose] public section
 
 open Set Metric Complex Filter
 open scoped Topology

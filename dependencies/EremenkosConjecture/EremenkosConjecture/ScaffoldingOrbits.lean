@@ -1,6 +1,10 @@
-import EremenkosConjecture.ScaffoldingGeometry
-import ComplexDynamics.Bungee
-import Mathlib.Analysis.SpecificLimits.Basic
+module
+
+public import EremenkosConjecture.ScaffoldingGeometry
+public import ComplexDynamics.Bungee
+public import Mathlib.Analysis.SpecificLimits.Basic
+
+@[expose] public section
 
 /-! # Orbit consequences of the Section 7 return schedule -/
 

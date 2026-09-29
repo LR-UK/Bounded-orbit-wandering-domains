@@ -1,10 +1,14 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
-import Schoenflies.SquareMesh
-import Schoenflies.JordanClosed
+public import Schoenflies.SquareMesh
+public import Schoenflies.JordanClosed
+
+@[expose] public section
 
 /-!
 # The local windows `W_n(p)` of the stage recursion

@@ -1,11 +1,15 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
-import Schoenflies.SquareCycle
-import Schoenflies.PolyArcRealize
-import Schoenflies.Jordan
+public import Schoenflies.SquareCycle
+public import Schoenflies.PolyArcRealize
+public import Schoenflies.Jordan
+
+@[expose] public section
 
 /-!
 # Part I, with nothing assumed

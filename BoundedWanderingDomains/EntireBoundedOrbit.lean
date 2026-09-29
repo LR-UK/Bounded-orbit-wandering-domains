@@ -1,9 +1,13 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import Mathlib.Analysis.CStarAlgebra.Classes
-import RiemannDynamics.BoundedWanderingSolution
+public import Mathlib.Analysis.CStarAlgebra.Classes
+public import RiemannDynamics.BoundedWanderingSolution
+
+@[expose] public section
 
 open Set Metric Function Filter
 open scoped Topology

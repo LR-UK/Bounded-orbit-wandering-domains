@@ -1,4 +1,8 @@
-import EremenkosConjecture.ScaffoldingReturnMap
+module
+
+public import EremenkosConjecture.ScaffoldingReturnMap
+
+@[expose] public section
 
 open Set Filter Function
 open scoped Topology

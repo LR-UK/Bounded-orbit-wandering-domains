@@ -1,6 +1,10 @@
-import ComplexApproximation.Topology.FilledContinua
-import Mathlib.Topology.Connected.LocallyPathConnected
-import Mathlib.Analysis.Normed.Module.Connected
+module
+
+public import ComplexApproximation.Topology.FilledContinua
+public import Mathlib.Topology.Connected.LocallyPathConnected
+public import Mathlib.Analysis.Normed.Module.Connected
+
+@[expose] public section
 
 open Set Metric Bornology
 

@@ -1,15 +1,19 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Lasse Rempe
 -/
 
-import EremenkoLyubichConstant.Tract
-import EremenkoLyubichConstant.UniversalCover
-import Ray.Dynamics.Multiple
-import Mathlib.Analysis.Complex.CoveringMap
-import Mathlib.Analysis.Complex.Convex
-import Mathlib.Analysis.Convex.Contractible
+public import EremenkoLyubichConstant.Tract
+public import EremenkoLyubichConstant.UniversalCover
+public import Ray.Dynamics.Multiple
+public import Mathlib.Analysis.Complex.CoveringMap
+public import Mathlib.Analysis.Complex.Convex
+public import Mathlib.Analysis.Convex.Contractible
+
+@[expose] public section
 
 /-!
 # Logarithmic transforms from universal covering maps

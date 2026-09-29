@@ -1,4 +1,8 @@
-import FunctionTheory.Conformal.KernelSeparation
+module
+
+public import FunctionTheory.Conformal.KernelSeparation
+
+@[expose] public section
 
 /-! # Compatibility imports for FunctionTheory
 

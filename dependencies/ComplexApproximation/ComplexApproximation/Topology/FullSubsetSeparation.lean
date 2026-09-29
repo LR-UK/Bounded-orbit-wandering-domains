@@ -1,6 +1,10 @@
-import ComplexApproximation.Topology.FullCompactSets
-import FunctionTheory.Topology.LocallyFiniteSeparation
-import FunctionTheory.Topology.LocallyFiniteCompactFamily
+module
+
+public import ComplexApproximation.Topology.FullCompactSets
+public import FunctionTheory.Topology.LocallyFiniteSeparation
+public import FunctionTheory.Topology.LocallyFiniteCompactFamily
+
+@[expose] public section
 
 open Set Filter Metric Bornology
 open scoped Topology

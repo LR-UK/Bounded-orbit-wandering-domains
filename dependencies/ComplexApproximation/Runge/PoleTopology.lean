@@ -1,6 +1,10 @@
-import Runge.PoleShift
-import Runge.UniformClosure
-import Mathlib.Topology.Connected.Clopen
+module
+
+public import Runge.PoleShift
+public import Runge.UniformClosure
+public import Mathlib.Topology.Connected.Clopen
+
+@[expose] public section
 
 open Polynomial Set
 open scoped BigOperators Topology

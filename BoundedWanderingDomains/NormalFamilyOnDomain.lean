@@ -1,9 +1,13 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.NormalFamilies
-import BoundedWanderingDomains.SphericalShrinking
+public import BoundedWanderingDomains.NormalFamilies
+public import BoundedWanderingDomains.SphericalShrinking
+
+@[expose] public section
 
 /-! # From local normality to a convergent subsequence on a plane domain -/
 

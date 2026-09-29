@@ -1,8 +1,12 @@
-import Runge.Rational
-import Mathlib.Topology.Algebra.Polynomial
-import Mathlib.Topology.ContinuousMap.Compact
-import Mathlib.Topology.Algebra.Algebra
-import Mathlib.MeasureTheory.Integral.Bochner.ContinuousLinearMap
+module
+
+public import Runge.Rational
+public import Mathlib.Topology.Algebra.Polynomial
+public import Mathlib.Topology.ContinuousMap.Compact
+public import Mathlib.Topology.Algebra.Algebra
+public import Mathlib.MeasureTheory.Integral.Bochner.ContinuousLinearMap
+
+@[expose] public section
 
 /-!
 # Uniform closure of rational functions

@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.BoundaryBarrierPackage
-import BoundedWanderingDomains.Surfaces.CoordinateDiskSelection
-import BoundedWanderingDomains.Surfaces.RestrictionSaturationBridge
+public import BoundedWanderingDomains.Surfaces.BoundaryBarrierPackage
+public import BoundedWanderingDomains.Surfaces.CoordinateDiskSelection
+public import BoundedWanderingDomains.Surfaces.RestrictionSaturationBridge
+
+@[expose] public section
 
 /-! # Boundary-puncture reduction for a compact wandering saturation -/
 

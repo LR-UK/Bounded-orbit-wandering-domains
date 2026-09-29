@@ -1,9 +1,13 @@
+module
+
 /-
 Copyright (c) 2026 Will (Ziang) Li. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Will (Ziang) Li; local-convergence statement generalised in this project.
 -/
-import NoWanderingDomains.NormalFamilies.Zalcman
+public import NoWanderingDomains.NormalFamilies.Zalcman
+
+@[expose] public section
 
 /-! # Local finite-chart convergence
 The proof below is extracted and generalised from

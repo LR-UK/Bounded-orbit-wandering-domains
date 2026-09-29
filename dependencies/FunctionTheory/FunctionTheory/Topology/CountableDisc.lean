@@ -1,7 +1,11 @@
-import Mathlib.Analysis.Normed.Module.Connected
-import Mathlib.Analysis.Normed.Module.Ball.Homeomorph
-import Mathlib.LinearAlgebra.Complex.FiniteDimensional
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.Normed.Module.Connected
+public import Mathlib.Analysis.Normed.Module.Ball.Homeomorph
+public import Mathlib.LinearAlgebra.Complex.FiniteDimensional
+public import Mathlib.Tactic
+
+@[expose] public section
 
 open Set Metric Filter Function
 open scoped Topology

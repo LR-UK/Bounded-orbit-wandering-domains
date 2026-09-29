@@ -1,5 +1,9 @@
-import EremenkosConjecture.PlaneTopology
-import Runge.PolynomialSeparation
+module
+
+public import EremenkosConjecture.PlaneTopology
+public import Runge.PolynomialSeparation
+
+@[expose] public section
 
 /-!
 # Full compact neighbourhoods

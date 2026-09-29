@@ -1,10 +1,14 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import RiemannDynamics.Uniformization.PuncturedPlaneCovering
-import BoundedWanderingDomains.CoveringTotalArea
-import BoundedWanderingDomains.CoveringSolution
+public import RiemannDynamics.Uniformization.PuncturedPlaneCovering
+public import BoundedWanderingDomains.CoveringTotalArea
+public import BoundedWanderingDomains.CoveringSolution
+
+@[expose] public section
 
 /-!
 # Bounded-orbit wandering domains: complete formalisation

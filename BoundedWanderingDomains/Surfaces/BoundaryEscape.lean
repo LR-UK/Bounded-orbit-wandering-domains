@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import Mathlib.Geometry.Manifold.Complex
-import Mathlib.Topology.Compactness.Compact
+public import Mathlib.Geometry.Manifold.Complex
+public import Mathlib.Topology.Compactness.Compact
+
+@[expose] public section
 
 /-! # Escape toward a deleted point
 

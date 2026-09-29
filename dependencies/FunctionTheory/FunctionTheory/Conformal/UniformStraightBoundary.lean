@@ -1,4 +1,8 @@
-import FunctionTheory.Conformal.StraightBoundaryLimit
+module
+
+public import FunctionTheory.Conformal.StraightBoundaryLimit
+
+@[expose] public section
 
 open Set Metric Complex Filter Function
 open scoped Topology

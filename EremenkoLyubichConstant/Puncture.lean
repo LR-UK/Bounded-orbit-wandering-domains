@@ -1,12 +1,16 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Lasse Rempe
 -/
 
-import EremenkoLyubichConstant.PolynomialGrowth
-import Mathlib.Analysis.Complex.RemovableSingularity
-import Ray.Dynamics.Multiple
+public import EremenkoLyubichConstant.PolynomialGrowth
+public import Mathlib.Analysis.Complex.RemovableSingularity
+public import Ray.Dynamics.Multiple
+
+@[expose] public section
 
 open Filter Metric Set Function
 open scoped Topology

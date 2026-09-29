@@ -1,4 +1,8 @@
-import FunctionTheory.Conformal.StepCorrection
+module
+
+public import FunctionTheory.Conformal.StepCorrection
+
+@[expose] public section
 
 open Set
 

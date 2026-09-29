@@ -1,4 +1,8 @@
-import BoundedWanderingDomains.PunctureRegularisation
+module
+
+public import BoundedWanderingDomains.PunctureRegularisation
+
+@[expose] public section
 
 open MeasureTheory Filter Set InnerProductSpace Laplacian
 open scoped Topology ContDiff ENNReal

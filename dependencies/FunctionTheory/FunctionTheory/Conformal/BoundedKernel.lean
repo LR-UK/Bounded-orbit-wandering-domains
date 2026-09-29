@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.KernelSubsequence
-import FunctionTheory.Conformal.RiemannInverseBounds
+module
+
+public import FunctionTheory.Conformal.KernelSubsequence
+public import FunctionTheory.Conformal.RiemannInverseBounds
+
+@[expose] public section
 
 /-! # Kernel convergence for bounded decreasing domains
 

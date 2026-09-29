@@ -1,6 +1,10 @@
-import Research.SurfaceResearch
-import BoundedWanderingDomains.MeromorphicSurfaceModel
-import BoundedWanderingDomains.MeromorphicNormalityBridge
+module
+
+public import Research.SurfaceResearch
+public import BoundedWanderingDomains.MeromorphicSurfaceModel
+public import BoundedWanderingDomains.MeromorphicNormalityBridge
+
+@[expose] public section
 
 #print axioms AreaDeficit.Surfaces.isManifold_analytic_of_complex
 #print axioms AreaDeficit.Surfaces.DiscCover.nonempty_subdomain

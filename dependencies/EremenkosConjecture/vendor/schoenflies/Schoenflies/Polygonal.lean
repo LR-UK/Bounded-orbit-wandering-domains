@@ -1,10 +1,14 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
-import Schoenflies.PolyPath
-import Schoenflies.Curve
+public import Schoenflies.PolyPath
+public import Schoenflies.Curve
+
+@[expose] public section
 
 /-!
 # Polygonal sets, and segments as arcs

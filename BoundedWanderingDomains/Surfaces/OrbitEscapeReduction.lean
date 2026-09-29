@@ -1,5 +1,9 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.WanderingOrbitStructure
+public import BoundedWanderingDomains.Surfaces.WanderingOrbitStructure
+
+@[expose] public section
 
 /-! # Reduction of compact orbit escape to the analytic area core -/
 

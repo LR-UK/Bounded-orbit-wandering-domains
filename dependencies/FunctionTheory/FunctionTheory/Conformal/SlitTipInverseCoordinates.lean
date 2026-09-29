@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.SlitTipInverse
-import FunctionTheory.Conformal.SlitTipCoordinates
+module
+
+public import FunctionTheory.Conformal.SlitTipInverse
+public import FunctionTheory.Conformal.SlitTipCoordinates
+
+@[expose] public section
 
 open Set Metric Complex Filter Function
 open scoped Topology

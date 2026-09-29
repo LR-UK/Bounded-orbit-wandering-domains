@@ -1,5 +1,9 @@
-import EremenkosConjecture.AmbientDisks
-import EremenkosConjecture.DisjointFullUnions
+module
+
+public import EremenkosConjecture.AmbientDisks
+public import EremenkosConjecture.DisjointFullUnions
+
+@[expose] public section
 
 open Set Metric
 

@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.DomainAreaGain
-import BoundedWanderingDomains.Surfaces.DomainSchwarz
+public import BoundedWanderingDomains.Surfaces.DomainAreaGain
+public import BoundedWanderingDomains.Surfaces.DomainSchwarz
+
+@[expose] public section
 
 /-! # Localisation and telescoping inequalities for intrinsic area gain -/
 open Set Function Filter MeasureTheory

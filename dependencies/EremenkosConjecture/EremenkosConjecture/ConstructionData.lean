@@ -1,5 +1,9 @@
-import EremenkosConjecture.AmbientCharts
-import EremenkosConjecture.DiscGeometry
+module
+
+public import EremenkosConjecture.AmbientCharts
+public import EremenkosConjecture.DiscGeometry
+
+@[expose] public section
 
 /-!
 # Data and finite-stage properties for Proposition 3.2

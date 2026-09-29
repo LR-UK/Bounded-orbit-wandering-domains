@@ -1,3 +1,5 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
@@ -7,9 +9,11 @@ Authors: Álvaro Begué
 /- Compatibility update, 23 September 2026: current Mathlib names and Lean
 linter suggestions; original mathematical statements and attribution retained. -/
 
-import Mathlib.Combinatorics.Graph.Subgraph
-import Mathlib.Data.Set.Card
-import Mathlib.Algebra.BigOperators.Group.Finset.Piecewise
+public import Mathlib.Combinatorics.Graph.Subgraph
+public import Mathlib.Data.Set.Card
+public import Mathlib.Algebra.BigOperators.Group.Finset.Piecewise
+
+@[expose] public section
 
 /-!
 # Degree and the handshake lemma

@@ -1,10 +1,14 @@
-import Mathlib.Analysis.Complex.BranchLogRoot
-import Mathlib.Analysis.Complex.CoveringMap
-import Mathlib.Analysis.Convex.Contractible
-import Mathlib.Topology.UrysohnsLemma
-import Mathlib.Topology.Piecewise
-import Mathlib.Topology.Connected.LocallyConnected
-import Mathlib.Topology.OpenPartialHomeomorph.Basic
+module
+
+public import Mathlib.Analysis.Complex.BranchLogRoot
+public import Mathlib.Analysis.Complex.CoveringMap
+public import Mathlib.Analysis.Convex.Contractible
+public import Mathlib.Topology.UrysohnsLemma
+public import Mathlib.Topology.Piecewise
+public import Mathlib.Topology.Connected.LocallyConnected
+public import Mathlib.Topology.OpenPartialHomeomorph.Basic
+
+@[expose] public section
 
 /-!
 # Nonseparation in plane domains

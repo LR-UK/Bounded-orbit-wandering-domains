@@ -1,8 +1,12 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.LogKernelBounds
+public import BoundedWanderingDomains.LogKernelBounds
+
+@[expose] public section
 
 open Set Filter MeasureTheory InnerProductSpace Laplacian Metric
 open scoped Topology ContDiff

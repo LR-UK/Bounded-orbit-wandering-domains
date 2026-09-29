@@ -1,12 +1,16 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
-import Schoenflies.Graph.CycleJordan
-import Schoenflies.Graph.RelativeEar
-import Schoenflies.Graph.OuterFace
-import Schoenflies.Subarc
+public import Schoenflies.Graph.CycleJordan
+public import Schoenflies.Graph.RelativeEar
+public import Schoenflies.Graph.OuterFace
+public import Schoenflies.Subarc
+
+@[expose] public section
 
 /-!
 # Face cycles: the base cycle, and the faces of a plane graph that grows by ears

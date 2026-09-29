@@ -1,3 +1,5 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
@@ -7,11 +9,13 @@ Authors: Álvaro Begué
 /- Compatibility update, 23 September 2026: current Mathlib names and Lean
 linter suggestions; original mathematical statements and attribution retained. -/
 
-import Schoenflies.Concatenate
-import Schoenflies.Polygonal
-import Schoenflies.Bounded
-import Mathlib.Topology.Homeomorph.Lemmas
-import Mathlib.Topology.Maps.Basic
+public import Schoenflies.Concatenate
+public import Schoenflies.Polygonal
+public import Schoenflies.Bounded
+public import Mathlib.Topology.Homeomorph.Lemmas
+public import Mathlib.Topology.Maps.Basic
+
+@[expose] public section
 
 /-!
 # The model curve, and the parametrization of a Jordan curve by it

@@ -1,9 +1,13 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.Surfaces.LogDensityRatio
-import BoundedWanderingDomains.DensityDeficit
+public import BoundedWanderingDomains.Surfaces.LogDensityRatio
+public import BoundedWanderingDomains.DensityDeficit
+
+@[expose] public section
 
 /-! # A proved local cutoff estimate for the surface area gain
 

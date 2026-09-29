@@ -1,7 +1,11 @@
-import TauCeti.Analysis.Complex.Conformal.Inverse.Function
-import Mathlib.Analysis.Complex.CauchyIntegral
-import Mathlib.Analysis.Asymptotics.Lemmas
-import Mathlib.Analysis.SpecialFunctions.Exp
+module
+
+public import TauCeti.Analysis.Complex.Conformal.Inverse.Function
+public import Mathlib.Analysis.Complex.CauchyIntegral
+public import Mathlib.Analysis.Asymptotics.Lemmas
+public import Mathlib.Analysis.SpecialFunctions.Exp
+
+@[expose] public section
 
 /-! # Uniform derivative bounds on closed insets of decorated strips
 

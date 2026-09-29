@@ -1,8 +1,12 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.UniformSphericalConstants
+public import BoundedWanderingDomains.UniformSphericalConstants
+
+@[expose] public section
 
 open Set Filter Metric Function OnePoint NoWanderingDomains
 open scoped Topology

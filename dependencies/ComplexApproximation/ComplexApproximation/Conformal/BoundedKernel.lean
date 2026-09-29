@@ -1,6 +1,10 @@
-import ComplexApproximation.Conformal.RiemannInverseBounds
-import ComplexApproximation.Conformal.KernelSubsequence
-import FunctionTheory.Conformal.BoundedKernel
+module
+
+public import ComplexApproximation.Conformal.RiemannInverseBounds
+public import ComplexApproximation.Conformal.KernelSubsequence
+public import FunctionTheory.Conformal.BoundedKernel
+
+@[expose] public section
 
 /-! # Compatibility imports for FunctionTheory
 

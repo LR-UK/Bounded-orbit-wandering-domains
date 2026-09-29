@@ -1,5 +1,9 @@
-import EremenkosConjecture.NarrowAttachmentMap
-import EremenkosConjecture.ComplexJordanNeighbourhood
+module
+
+public import EremenkosConjecture.NarrowAttachmentMap
+public import EremenkosConjecture.ComplexJordanNeighbourhood
+
+@[expose] public section
 
 open Set Metric Complex Filter FunctionTheory Asymptotics
 open scoped Topology

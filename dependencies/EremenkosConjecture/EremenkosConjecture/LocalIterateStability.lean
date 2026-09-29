@@ -1,5 +1,9 @@
-import EremenkosConjecture.LocalArakelianStability
-import EremenkosConjecture.IterateApproximation
+module
+
+public import EremenkosConjecture.LocalArakelianStability
+public import EremenkosConjecture.IterateApproximation
+
+@[expose] public section
 
 open Set Metric Function
 open scoped NNReal

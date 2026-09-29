@@ -1,5 +1,9 @@
-import FunctionTheory.Holomorphic
-import Mathlib.Analysis.Meromorphic.Basic
+module
+
+public import FunctionTheory.Holomorphic
+public import Mathlib.Analysis.Meromorphic.Basic
+
+@[expose] public section
 
 open Set Filter
 open scoped Topology

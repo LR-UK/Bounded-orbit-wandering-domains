@@ -1,12 +1,16 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
-import Schoenflies.PolygonBridge
-import Schoenflies.StripLocal
-import Schoenflies.CrosscutCells
-import Schoenflies.Bounded
+public import Schoenflies.PolygonBridge
+public import Schoenflies.StripLocal
+public import Schoenflies.CrosscutCells
+public import Schoenflies.Bounded
+
+@[expose] public section
 
 /-!
 # The polygonal Jordan curve theorem

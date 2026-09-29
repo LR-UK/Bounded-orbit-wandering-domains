@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.CuspAreaFinite
-import BoundedWanderingDomains.Surfaces.CoordinateDiskSelection
-import BoundedWanderingDomains.Surfaces.ComponentDomains
+public import BoundedWanderingDomains.Surfaces.CuspAreaFinite
+public import BoundedWanderingDomains.Surfaces.CoordinateDiskSelection
+public import BoundedWanderingDomains.Surfaces.ComponentDomains
+
+@[expose] public section
 
 /-! # Finite area of compact surfaces with finitely many punctures -/
 

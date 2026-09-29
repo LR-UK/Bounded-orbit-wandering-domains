@@ -1,6 +1,10 @@
-import ComplexApproximation.Topology.HorizontalSets
-import Mathlib.Topology.LocallyFinite
-import Mathlib.Tactic.Linarith
+module
+
+public import ComplexApproximation.Topology.HorizontalSets
+public import Mathlib.Topology.LocallyFinite
+public import Mathlib.Tactic.Linarith
+
+@[expose] public section
 
 /-! # The horizontal strips and return times of Section 4 -/
 

@@ -1,7 +1,11 @@
-import FunctionTheory.Smooth.ComplexSequenceLimit
-import FunctionTheory.Smooth.FiniteSmoothNorm
-import Mathlib.Analysis.SpecificLimits.Basic
-import Mathlib.Tactic
+module
+
+public import FunctionTheory.Smooth.ComplexSequenceLimit
+public import FunctionTheory.Smooth.FiniteSmoothNorm
+public import Mathlib.Analysis.SpecificLimits.Basic
+public import Mathlib.Tactic
+
+@[expose] public section
 
 open Set Filter
 open scoped Topology ContDiff

@@ -1,5 +1,9 @@
-import FunctionTheory.Analytic.FiniteComposition
-import Mathlib.Topology.OpenPartialHomeomorph.Continuity
+module
+
+public import FunctionTheory.Analytic.FiniteComposition
+public import Mathlib.Topology.OpenPartialHomeomorph.Continuity
+
+@[expose] public section
 
 open Set Function Filter
 open scoped Topology

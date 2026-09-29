@@ -1,5 +1,9 @@
-import FunctionTheory.Analytic.FiniteComposition
-import FunctionTheory.Topology.IterateApproximationDomains
+module
+
+public import FunctionTheory.Analytic.FiniteComposition
+public import FunctionTheory.Topology.IterateApproximationDomains
+
+@[expose] public section
 
 open Filter
 open scoped Topology

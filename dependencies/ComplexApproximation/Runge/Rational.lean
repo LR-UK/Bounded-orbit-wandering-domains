@@ -1,6 +1,10 @@
-import Mathlib.Basic.Complex.Basic
-import Mathlib.Algebra.Polynomial.Eval.Defs
-import Mathlib.Algebra.BigOperators.Field
+module
+
+public import Mathlib.Basic.Complex.Basic
+public import Mathlib.Algebra.Polynomial.Eval.Defs
+public import Mathlib.Algebra.BigOperators.Field
+
+@[expose] public section
 
 /-!
 # Rational functions without poles on a set

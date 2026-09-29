@@ -1,10 +1,14 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
-import Schoenflies.Plane
-import Mathlib.Topology.Connected.LocallyConnected
+public import Schoenflies.Plane
+public import Mathlib.Topology.Connected.LocallyConnected
+
+@[expose] public section
 
 /-!
 # Topology of the plane: the gaps Mathlib leaves

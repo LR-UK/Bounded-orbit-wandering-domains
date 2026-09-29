@@ -1,7 +1,11 @@
-import Mathlib.Analysis.Analytic.Uniqueness
-import Mathlib.Analysis.Normed.Module.Convex
-import Mathlib.Analysis.Complex.Basic
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.Analytic.Uniqueness
+public import Mathlib.Analysis.Normed.Module.Convex
+public import Mathlib.Analysis.Complex.Basic
+public import Mathlib.Tactic
+
+@[expose] public section
 
 open Set Filter Function Metric
 open scoped Topology

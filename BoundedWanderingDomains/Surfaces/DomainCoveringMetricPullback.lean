@@ -1,5 +1,9 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.DomainComponentMap
+public import BoundedWanderingDomains.Surfaces.DomainComponentMap
+
+@[expose] public section
 
 /-! # Componentwise metric pullback from an open-domain covering -/
 

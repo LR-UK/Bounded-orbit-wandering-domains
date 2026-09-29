@@ -1,5 +1,9 @@
-import BoundedWanderingDomains.AreaCancellation
-import Mathlib.MeasureTheory.Function.Jacobian
+module
+
+public import BoundedWanderingDomains.AreaCancellation
+public import Mathlib.MeasureTheory.Function.Jacobian
+
+@[expose] public section
 
 open Set Function MeasureTheory Filter
 open scoped ENNReal Topology

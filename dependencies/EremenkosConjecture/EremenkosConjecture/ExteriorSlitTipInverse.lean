@@ -1,5 +1,9 @@
-import EremenkosConjecture.ExteriorSlitTip
-import FunctionTheory.Conformal.SlitTipInverseCoordinates
+module
+
+public import EremenkosConjecture.ExteriorSlitTip
+public import FunctionTheory.Conformal.SlitTipInverseCoordinates
+
+@[expose] public section
 
 open Set Metric Complex Filter Function
 open scoped Topology

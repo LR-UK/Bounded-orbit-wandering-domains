@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.LocalPunctures
-import BoundedWanderingDomains.Surfaces.FiniteFibers
+public import BoundedWanderingDomains.LocalPunctures
+public import BoundedWanderingDomains.Surfaces.FiniteFibers
+
+@[expose] public section
 
 /-! # Finite local backward puncture trees on analytic surfaces -/
 

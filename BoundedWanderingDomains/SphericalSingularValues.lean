@@ -1,10 +1,14 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.SingularValues
-import BoundedWanderingDomains.SphericalDerivedSet
-import Mathlib.Topology.DiscreteSubset
+public import BoundedWanderingDomains.SingularValues
+public import BoundedWanderingDomains.SphericalDerivedSet
+public import Mathlib.Topology.DiscreteSubset
+
+@[expose] public section
 
 /-! # The singular set in the sphere
 

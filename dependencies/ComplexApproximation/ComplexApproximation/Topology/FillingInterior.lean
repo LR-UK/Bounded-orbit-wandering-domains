@@ -1,4 +1,8 @@
-import ComplexApproximation.Topology.FilledContinua
+module
+
+public import ComplexApproximation.Topology.FilledContinua
+
+@[expose] public section
 
 open Set
 

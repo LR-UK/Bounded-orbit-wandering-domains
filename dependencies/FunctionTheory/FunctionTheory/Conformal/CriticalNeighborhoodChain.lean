@@ -1,4 +1,8 @@
-import FunctionTheory.Analytic.CriticalNeighborhood
+module
+
+public import FunctionTheory.Analytic.CriticalNeighborhood
+
+@[expose] public section
 
 open Set Filter
 open scoped Topology

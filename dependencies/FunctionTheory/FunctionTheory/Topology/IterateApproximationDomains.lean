@@ -1,6 +1,10 @@
-import FunctionTheory.Topology.FiniteComposition
-import FunctionTheory.Analytic.FiniteOrbitLocalDegree
-import Mathlib.Topology.MetricSpace.ProperSpace
+module
+
+public import FunctionTheory.Topology.FiniteComposition
+public import FunctionTheory.Analytic.FiniteOrbitLocalDegree
+public import Mathlib.Topology.MetricSpace.ProperSpace
+
+@[expose] public section
 
 open Set Filter Metric
 open scoped Topology

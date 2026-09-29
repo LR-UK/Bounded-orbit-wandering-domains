@@ -1,6 +1,10 @@
-import EremenkosConjecture.PlaneTopology
-import Mathlib.Topology.Connected.PathConnected
-import Mathlib.Topology.Connected.LocallyPathConnected
+module
+
+public import EremenkosConjecture.PlaneTopology
+public import Mathlib.Topology.Connected.PathConnected
+public import Mathlib.Topology.Connected.LocallyPathConnected
+
+@[expose] public section
 
 open Set Metric Function
 

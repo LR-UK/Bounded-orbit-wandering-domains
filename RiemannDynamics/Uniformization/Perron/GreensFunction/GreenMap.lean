@@ -1,9 +1,13 @@
+module
+
 /-
 Copyright (c) 2026 Will (Ziang) Li. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Will (Ziang) Li
 -/
-import RiemannDynamics.Uniformization.Perron.GreensFunction.Envelope
+public import RiemannDynamics.Uniformization.Perron.GreensFunction.Envelope
+
+@[expose] public section
 
 /-!
 # The global Green map

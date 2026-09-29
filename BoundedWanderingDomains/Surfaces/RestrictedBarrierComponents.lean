@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.BoundaryPunctureSequence
-import BoundedWanderingDomains.Surfaces.LocalBarrierComponents
-import BoundedWanderingDomains.Surfaces.RestrictedOmega
+public import BoundedWanderingDomains.Surfaces.BoundaryPunctureSequence
+public import BoundedWanderingDomains.Surfaces.LocalBarrierComponents
+public import BoundedWanderingDomains.Surfaces.RestrictedOmega
+
+@[expose] public section
 
 /-! # Boundary barriers recover restricted normality components -/
 

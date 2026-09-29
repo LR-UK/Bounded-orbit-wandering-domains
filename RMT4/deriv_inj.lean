@@ -1,4 +1,8 @@
-import RMT4.hurwitz
+module
+
+public import RMT4.hurwitz
+
+@[expose] public section
 
 open Complex Metric circleIntegral Topology Filter Set
 

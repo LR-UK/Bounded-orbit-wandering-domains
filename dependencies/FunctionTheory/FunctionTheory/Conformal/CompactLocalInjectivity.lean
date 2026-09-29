@@ -1,5 +1,9 @@
-import TauCeti.Analysis.Complex.Conformal.LocalDegree
-import Mathlib.Topology.UniformSpace.Compact
+module
+
+public import TauCeti.Analysis.Complex.Conformal.LocalDegree
+public import Mathlib.Topology.UniformSpace.Compact
+
+@[expose] public section
 
 open Set Filter Metric
 open scoped Topology Uniformity

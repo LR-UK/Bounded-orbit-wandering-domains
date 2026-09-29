@@ -1,5 +1,9 @@
-import FunctionTheory.Smooth.ExtensionNorm
-import TauCeti.Analysis.Complex.Conformal.Biholomorph
+module
+
+public import FunctionTheory.Smooth.ExtensionNorm
+public import TauCeti.Analysis.Complex.Conformal.Biholomorph
+
+@[expose] public section
 
 open Set Function Filter
 open scoped Topology ContDiff

@@ -1,6 +1,10 @@
-import Mathlib.Topology.MetricSpace.Thickening
-import Mathlib.Topology.MetricSpace.ProperSpace
-import Mathlib.Tactic
+module
+
+public import Mathlib.Topology.MetricSpace.Thickening
+public import Mathlib.Topology.MetricSpace.ProperSpace
+public import Mathlib.Tactic
+
+@[expose] public section
 
 open Set Filter Metric
 open scoped Topology

@@ -1,8 +1,12 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.GeneralDomainMetric
+public import BoundedWanderingDomains.GeneralDomainMetric
+
+@[expose] public section
 
 /-!
 # Conformal invariance of the hyperbolic density

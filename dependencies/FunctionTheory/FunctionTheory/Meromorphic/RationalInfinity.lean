@@ -1,8 +1,12 @@
-import FunctionTheory.Meromorphic.Sphere
-import Mathlib.Analysis.Analytic.Polynomial
-import Mathlib.Analysis.Normed.Field.Lemmas
-import Mathlib.Algebra.Polynomial.Roots
-import Mathlib.Tactic.FunProp
+module
+
+public import FunctionTheory.Meromorphic.Sphere
+public import Mathlib.Analysis.Analytic.Polynomial
+public import Mathlib.Analysis.Normed.Field.Lemmas
+public import Mathlib.Algebra.Polynomial.Roots
+public import Mathlib.Tactic.FunProp
+
+@[expose] public section
 open Set Filter Polynomial Bornology
 open scoped Topology
 

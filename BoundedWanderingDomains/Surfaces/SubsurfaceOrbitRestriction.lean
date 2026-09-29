@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.CompactOrbitRestriction
-import BoundedWanderingDomains.Surfaces.InvariantSubsurface
+public import BoundedWanderingDomains.Surfaces.CompactOrbitRestriction
+public import BoundedWanderingDomains.Surfaces.InvariantSubsurface
+
+@[expose] public section
 
 /-! # Restricting compact orbits inside a prescribed covered subsurface -/
 

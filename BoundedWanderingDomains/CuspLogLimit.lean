@@ -1,9 +1,13 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.CuspAffineBounds
-import Mathlib.Analysis.SpecialFunctions.Log.Basic
+public import BoundedWanderingDomains.CuspAffineBounds
+public import Mathlib.Analysis.SpecialFunctions.Log.Basic
+
+@[expose] public section
 
 open Set Filter Metric
 open scoped Topology

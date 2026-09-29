@@ -1,5 +1,9 @@
-import BoundedWanderingDomains.GreenIdentity
-import BoundedWanderingDomains.Regularisation
+module
+
+public import BoundedWanderingDomains.GreenIdentity
+public import BoundedWanderingDomains.Regularisation
+
+@[expose] public section
 
 open MeasureTheory Filter Set InnerProductSpace Laplacian
 open scoped Topology ContDiff

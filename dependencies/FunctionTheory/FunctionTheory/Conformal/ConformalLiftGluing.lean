@@ -1,6 +1,10 @@
-import FunctionTheory.Analytic.Gluing
-import FunctionTheory.Conformal.UnivalenceStability
-import TauCeti.Analysis.Complex.Conformal.Inverse.Function
+module
+
+public import FunctionTheory.Analytic.Gluing
+public import FunctionTheory.Conformal.UnivalenceStability
+public import TauCeti.Analysis.Complex.Conformal.Inverse.Function
+
+@[expose] public section
 
 open Set Metric
 

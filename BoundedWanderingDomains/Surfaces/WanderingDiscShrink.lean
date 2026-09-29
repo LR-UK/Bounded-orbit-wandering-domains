@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.CompactDiscImages
-import BoundedWanderingDomains.ShrinkingImages
+public import BoundedWanderingDomains.Surfaces.CompactDiscImages
+public import BoundedWanderingDomains.ShrinkingImages
+
+@[expose] public section
 
 /-! # Shrinking disjoint holomorphic discs on a covered surface
 

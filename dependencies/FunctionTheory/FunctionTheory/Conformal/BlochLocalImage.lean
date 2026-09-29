@@ -1,10 +1,14 @@
+module
+
 /- Compatibility update, 23 September 2026: current Lean linter suggestions;
 mathematical statements and original attribution retained. -/
 
-import FunctionTheory.Analytic.PreimageStability
-import TauCeti.Analysis.Complex.Conformal.NormalFamilies
-import Mathlib.Analysis.Calculus.FDeriv.Analytic
-import Mathlib.Analysis.Calculus.MeanValue
+public import FunctionTheory.Analytic.PreimageStability
+public import TauCeti.Analysis.Complex.Conformal.NormalFamilies
+public import Mathlib.Analysis.Calculus.FDeriv.Analytic
+public import Mathlib.Analysis.Calculus.MeanValue
+
+@[expose] public section
 
 open Set Filter Metric
 open scoped Topology

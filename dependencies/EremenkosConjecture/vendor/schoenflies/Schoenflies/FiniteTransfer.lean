@@ -1,3 +1,5 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
@@ -7,16 +9,18 @@ Authors: Álvaro Begué
 /- Compatibility update, 23 September 2026: current Mathlib names and Lean
 linter suggestions; original mathematical statements and attribution retained. -/
 
-import Schoenflies.RefinementStars
-import Schoenflies.OverlayGraph
-import Schoenflies.SkeletonAccess
-import Schoenflies.Graph.RelativeEar
-import Schoenflies.Graph.Relabel
-import Schoenflies.Graph.CycleJordan
-import Schoenflies.JordanClosed
-import Schoenflies.BoundaryCyclesGenerated
-import Schoenflies.MatchedSplit
-import Schoenflies.MatchedArc
+public import Schoenflies.RefinementStars
+public import Schoenflies.OverlayGraph
+public import Schoenflies.SkeletonAccess
+public import Schoenflies.Graph.RelativeEar
+public import Schoenflies.Graph.Relabel
+public import Schoenflies.Graph.CycleJordan
+public import Schoenflies.JordanClosed
+public import Schoenflies.BoundaryCyclesGenerated
+public import Schoenflies.MatchedSplit
+public import Schoenflies.MatchedArc
+
+@[expose] public section
 
 /-!
 # Finite transfer, direction (a): toward the square

@@ -1,5 +1,9 @@
-import EremenkosConjecture.JordanSimplyConnected
-import FunctionTheory.Topology.BoundaryApproach
+module
+
+public import EremenkosConjecture.JordanSimplyConnected
+public import FunctionTheory.Topology.BoundaryApproach
+
+@[expose] public section
 
 /-! # Connected approach to a Jordan boundary
 

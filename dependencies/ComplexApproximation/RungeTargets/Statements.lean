@@ -1,6 +1,10 @@
-import Mathlib.Analysis.Analytic.Basic
-import Mathlib.Analysis.Complex.Basic
-import Runge.Holomorphic
+module
+
+public import Mathlib.Analysis.Analytic.Basic
+public import Mathlib.Analysis.Complex.Basic
+public import Runge.Holomorphic
+
+@[expose] public section
 
 /-!
 # Original target statements, now proved

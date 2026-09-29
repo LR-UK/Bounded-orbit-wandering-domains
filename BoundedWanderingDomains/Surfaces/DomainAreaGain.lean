@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.DomainChartDensity
-import BoundedWanderingDomains.Surfaces.DensityRatioInvariance
-import BoundedWanderingDomains.Surfaces.AreaIntegration
+public import BoundedWanderingDomains.Surfaces.DomainChartDensity
+public import BoundedWanderingDomains.Surfaces.DensityRatioInvariance
+public import BoundedWanderingDomains.Surfaces.AreaIntegration
+
+@[expose] public section
 
 /-! # Intrinsic area gain for possibly disconnected open subdomains
 

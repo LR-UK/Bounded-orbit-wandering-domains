@@ -1,7 +1,11 @@
-import EremenkosConjecture.ContinuumStage
-import FunctionTheory.Conformal.StripInverseUniformity
-import ComplexApproximation.Topology.ConformalArakelian
-import TauCeti.Analysis.Complex.Conformal.LocalDegree
+module
+
+public import EremenkosConjecture.ContinuumStage
+public import FunctionTheory.Conformal.StripInverseUniformity
+public import ComplexApproximation.Topology.ConformalArakelian
+public import TauCeti.Analysis.Complex.Conformal.LocalDegree
+
+@[expose] public section
 
 open Set Metric Filter Function Asymptotics
 open scoped Topology

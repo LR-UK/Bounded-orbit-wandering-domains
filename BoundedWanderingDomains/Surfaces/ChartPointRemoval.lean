@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.DomainPlanarDensity
-import BoundedWanderingDomains.Surfaces.DomainAreaGain
-import BoundedWanderingDomains.UnnormalisedPointRemoval
+public import BoundedWanderingDomains.Surfaces.DomainPlanarDensity
+public import BoundedWanderingDomains.Surfaces.DomainAreaGain
+public import BoundedWanderingDomains.UnnormalisedPointRemoval
+
+@[expose] public section
 
 /-! # Sharp point-removal cost for a surface domain in one chart -/
 open Set Function Filter MeasureTheory

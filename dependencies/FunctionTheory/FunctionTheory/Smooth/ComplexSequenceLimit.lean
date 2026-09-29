@@ -1,6 +1,10 @@
-import FunctionTheory.Smooth.SequenceLimit
-import FunctionTheory.Smooth.ComplexSeriesDerivative
-import Mathlib.Tactic
+module
+
+public import FunctionTheory.Smooth.SequenceLimit
+public import FunctionTheory.Smooth.ComplexSeriesDerivative
+public import Mathlib.Tactic
+
+@[expose] public section
 
 open Set Function Filter
 open scoped Topology ContDiff

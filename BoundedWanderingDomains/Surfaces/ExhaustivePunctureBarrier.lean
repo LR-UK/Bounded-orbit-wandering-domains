@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.DenseFinitePunctures
-import BoundedWanderingDomains.Surfaces.LocalPunctures
-import Mathlib.Topology.Compactness.SigmaCompact
+public import BoundedWanderingDomains.Surfaces.DenseFinitePunctures
+public import BoundedWanderingDomains.Surfaces.LocalPunctures
+public import Mathlib.Topology.Compactness.SigmaCompact
+
+@[expose] public section
 
 /-! # Globally exhaustive finite backward-puncture barriers -/
 

@@ -1,9 +1,13 @@
+module
+
 /-
 Copyright (c) 2026 Will (Ziang) Li. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Will (Ziang) Li
 -/
-import RiemannDynamics.Uniformization.Perron.BipolarGreen.Harnack
+public import RiemannDynamics.Uniformization.Perron.BipolarGreen.Harnack
+
+@[expose] public section
 
 /-!
 # Bipolar Green: the drift bound

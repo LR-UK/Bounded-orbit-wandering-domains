@@ -1,6 +1,10 @@
-import FunctionTheory.Conformal.RegularCorrection
-import FunctionTheory.Conformal.PowerCoordinatePerturbation
-import FunctionTheory.Analytic.PowerQuotient
+module
+
+public import FunctionTheory.Conformal.RegularCorrection
+public import FunctionTheory.Conformal.PowerCoordinatePerturbation
+public import FunctionTheory.Analytic.PowerQuotient
+
+@[expose] public section
 
 open Set Metric
 

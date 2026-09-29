@@ -1,3 +1,5 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
@@ -7,12 +9,16 @@ Authors: Álvaro Begué
 /- Compatibility update, 23 September 2026: current Mathlib names and Lean
 linter suggestions; original mathematical statements and attribution retained. -/
 
-import Schoenflies.CombinatorialInvariance
-import Schoenflies.GeneralCrosscut
-import Schoenflies.ModelCurve
-import Schoenflies.AccessibleJoin
-import Schoenflies.Jordan
-import Schoenflies.Line
+public import Schoenflies.CombinatorialInvariance
+public import Schoenflies.GeneralCrosscut
+public import Schoenflies.ModelCurve
+public import Schoenflies.AccessibleJoin
+public import Schoenflies.Jordan
+public import Schoenflies.Line
+
+import all Mathlib.Combinatorics.Graph.Delete
+
+@[expose] public section
 
 /-!
 # The initial matched pair

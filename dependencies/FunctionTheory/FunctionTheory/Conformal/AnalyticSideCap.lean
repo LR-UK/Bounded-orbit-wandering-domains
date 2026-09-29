@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.BoundaryCapTransfer
-import FunctionTheory.Conformal.AnalyticHalfDiscBoundary
+module
+
+public import FunctionTheory.Conformal.BoundaryCapTransfer
+public import FunctionTheory.Conformal.AnalyticHalfDiscBoundary
+
+@[expose] public section
 
 open Set Metric Complex Filter Function
 open scoped Topology

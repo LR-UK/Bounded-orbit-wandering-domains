@@ -1,5 +1,5 @@
 name = "area_deficit"
-version = "1.7.0"
+version = "1.7.1"
 defaultTargets = ["Solution", "Challenge"]
 
 [[require]]
@@ -50,7 +50,7 @@ name = "Solution"
 
 [[lean_lib]]
 name = "Legacy"
-roots = ["Legacy.Challenge", "Legacy.Solution", "Legacy.SingularLimitsChallenge", "Legacy.SingularLimitsSolution"]
+roots = ["Legacy.Solution", "Legacy.SingularLimitsSolution"]
 globs = ["Legacy.+"]
 
 [[lean_lib]]

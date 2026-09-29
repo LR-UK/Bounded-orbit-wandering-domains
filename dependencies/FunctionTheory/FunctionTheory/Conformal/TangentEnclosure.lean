@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.TangentJordanDomain
-import FunctionTheory.Conformal.InvertedDomain
+module
+
+public import FunctionTheory.Conformal.TangentJordanDomain
+public import FunctionTheory.Conformal.InvertedDomain
+
+@[expose] public section
 
 open Set Metric Complex Bornology
 open scoped Topology

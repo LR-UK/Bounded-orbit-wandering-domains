@@ -1,5 +1,9 @@
-import ComplexDynamics.FatouComponents
-import Mathlib.Topology.Connected.PathConnected
+module
+
+public import ComplexDynamics.FatouComponents
+public import Mathlib.Topology.Connected.PathConnected
+
+@[expose] public section
 
 open Set
 

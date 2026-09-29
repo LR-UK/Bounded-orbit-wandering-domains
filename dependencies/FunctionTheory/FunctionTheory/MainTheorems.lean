@@ -1,12 +1,16 @@
-import FunctionTheory.RiemannSphere.RiemannMapping
-import FunctionTheory.Conformal.ReflectionInjectivity
-import FunctionTheory.Conformal.StripEndCoordinates
-import FunctionTheory.Conformal.HalfPlaneKernel
-import FunctionTheory.Conformal.StripEndAsymptotics
-import FunctionTheory.Conformal.RiemannMapping
-import FunctionTheory.Conformal.KernelConvergence
-import FunctionTheory.Conformal.ImaginaryBounds
-import FunctionTheory.Conformal.StripEndMap
+module
+
+public import FunctionTheory.RiemannSphere.RiemannMapping
+public import FunctionTheory.Conformal.ReflectionInjectivity
+public import FunctionTheory.Conformal.StripEndCoordinates
+public import FunctionTheory.Conformal.HalfPlaneKernel
+public import FunctionTheory.Conformal.StripEndAsymptotics
+public import FunctionTheory.Conformal.RiemannMapping
+public import FunctionTheory.Conformal.KernelConvergence
+public import FunctionTheory.Conformal.ImaginaryBounds
+public import FunctionTheory.Conformal.StripEndMap
+
+@[expose] public section
 
 /-! # Main classical function-theory results
 

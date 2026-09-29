@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.DomainGainLimit
-import BoundedWanderingDomains.CompactCutoff
+public import BoundedWanderingDomains.Surfaces.DomainGainLimit
+public import BoundedWanderingDomains.CompactCutoff
+
+@[expose] public section
 
 /-! # A fixed compact chart set has uniformly bounded remote area gain -/
 open Set Function Filter MeasureTheory Laplacian

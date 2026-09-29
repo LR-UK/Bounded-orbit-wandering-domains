@@ -1,9 +1,13 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 -/
-import Schoenflies.Strip
+public import Schoenflies.Strip
+
+@[expose] public section
 
 /-!
 # The collar of a closed polygon is two-sided

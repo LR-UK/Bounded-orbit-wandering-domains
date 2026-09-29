@@ -1,7 +1,11 @@
-import FunctionTheory.Conformal.BlochDerivativeBound
-import FunctionTheory.Conformal.NormalizedCosineLift
-import FunctionTheory.Conformal.SchottkyGrid
-import Mathlib.Analysis.Normed.Module.Connected
+module
+
+public import FunctionTheory.Conformal.BlochDerivativeBound
+public import FunctionTheory.Conformal.NormalizedCosineLift
+public import FunctionTheory.Conformal.SchottkyGrid
+public import Mathlib.Analysis.Normed.Module.Connected
+
+@[expose] public section
 
 open Set Metric
 namespace FunctionTheory

@@ -1,5 +1,9 @@
-import ComplexDynamics.Basic
-import Mathlib.Analysis.Complex.AbsMax
+module
+
+public import ComplexDynamics.Basic
+public import Mathlib.Analysis.Complex.AbsMax
+
+@[expose] public section
 
 /-!
 # Maximum modulus and fast escape

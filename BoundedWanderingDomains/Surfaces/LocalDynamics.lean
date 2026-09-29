@@ -1,14 +1,19 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import Mathlib.Geometry.Manifold.Complex
-import Mathlib.Geometry.Manifold.IsManifold.Basic
-import Mathlib.Topology.Compactification.OnePoint.Basic
-import Mathlib.Topology.UniformSpace.Uniformizable
-import Mathlib.Topology.UniformSpace.LocallyUniformConvergence
-import Mathlib.Topology.Connected.LocallyConnected
-import Mathlib.Topology.Covering.Basic
+public import Mathlib.Geometry.Manifold.Complex
+public import Mathlib.Geometry.Manifold.IsManifold.Basic
+public import Mathlib.Topology.Compactification.OnePoint.Basic
+public import Mathlib.Topology.UniformSpace.Uniformizable
+public import Mathlib.Topology.UniformSpace.OfCompactT2
+public import Mathlib.Topology.UniformSpace.LocallyUniformConvergence
+public import Mathlib.Topology.Connected.LocallyConnected
+public import Mathlib.Topology.Covering.Basic
+
+@[expose] public section
 
 /-! # Local dynamics on a Riemann surface
 

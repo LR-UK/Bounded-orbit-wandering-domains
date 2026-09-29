@@ -1,10 +1,14 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.Surfaces.CompactSeparation
-import Mathlib.Geometry.Manifold.PartitionOfUnity
-import Mathlib.Topology.Separation.Regular
+public import BoundedWanderingDomains.Surfaces.CompactSeparation
+public import Mathlib.Geometry.Manifold.PartitionOfUnity
+public import Mathlib.Topology.Separation.Regular
+
+@[expose] public section
 
 /-! # Smooth cutoffs for compactly separated closed sets
 

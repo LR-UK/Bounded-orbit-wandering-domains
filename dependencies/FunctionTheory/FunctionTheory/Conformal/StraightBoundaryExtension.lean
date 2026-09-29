@@ -1,6 +1,10 @@
-import FunctionTheory.Conformal.JordanBoundary
-import FunctionTheory.Conformal.CayleyCoordinates
-import FunctionTheory.Conformal.ReflectionInjectivity
+module
+
+public import FunctionTheory.Conformal.JordanBoundary
+public import FunctionTheory.Conformal.CayleyCoordinates
+public import FunctionTheory.Conformal.ReflectionInjectivity
+
+@[expose] public section
 
 /-! # Conformal extension at a straight boundary point
 

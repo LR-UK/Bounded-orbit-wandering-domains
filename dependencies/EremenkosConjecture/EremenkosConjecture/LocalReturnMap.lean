@@ -1,5 +1,9 @@
-import EremenkosConjecture.ScaffoldingAmbientBranches
-import ComplexApproximation.Topology.HomeomorphicTail
+module
+
+public import EremenkosConjecture.ScaffoldingAmbientBranches
+public import ComplexApproximation.Topology.HomeomorphicTail
+
+@[expose] public section
 
 open Set Function
 

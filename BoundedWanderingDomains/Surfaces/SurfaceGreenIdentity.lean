@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.AreaGainIntegration
-import BoundedWanderingDomains.Surfaces.ChartZeroExtension
-import BoundedWanderingDomains.GreenIdentity
+public import BoundedWanderingDomains.Surfaces.AreaGainIntegration
+public import BoundedWanderingDomains.Surfaces.ChartZeroExtension
+public import BoundedWanderingDomains.GreenIdentity
+
+@[expose] public section
 
 /-! # Green's identity for a chart-supported surface cutoff -/
 

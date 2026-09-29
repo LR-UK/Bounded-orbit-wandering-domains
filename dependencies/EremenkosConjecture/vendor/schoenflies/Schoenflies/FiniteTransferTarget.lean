@@ -1,3 +1,5 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
@@ -7,10 +9,12 @@ Authors: Álvaro Begué
 /- Compatibility update, 23 September 2026: current Mathlib names and Lean
 linter suggestions; original mathematical statements and attribution retained. -/
 
-import Schoenflies.CommonSubdivision
-import Schoenflies.CrosscutExists
-import Schoenflies.FreshAccess
-import Schoenflies.Graph.VertexSquares
+public import Schoenflies.CommonSubdivision
+public import Schoenflies.CrosscutExists
+public import Schoenflies.FreshAccess
+public import Schoenflies.Graph.VertexSquares
+
+@[expose] public section
 
 /-!
 # Finite transfer, direction (b): toward the Jordan domain

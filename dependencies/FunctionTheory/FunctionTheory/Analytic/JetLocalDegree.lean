@@ -1,6 +1,10 @@
-import Mathlib.Analysis.Analytic.Order
-import Mathlib.Analysis.Calculus.IteratedDeriv.Lemmas
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.Analytic.Order
+public import Mathlib.Analysis.Calculus.IteratedDeriv.Lemmas
+public import Mathlib.Tactic
+
+@[expose] public section
 
 open Set Filter
 open scoped Topology

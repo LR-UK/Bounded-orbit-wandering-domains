@@ -1,4 +1,8 @@
-import BoundedWanderingDomains.LocalTrappedTopology
+module
+
+public import BoundedWanderingDomains.LocalTrappedTopology
+
+@[expose] public section
 
 open Set Function
 

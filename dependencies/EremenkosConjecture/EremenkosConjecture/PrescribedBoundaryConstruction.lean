@@ -1,6 +1,10 @@
-import EremenkosConjecture.UniformEscapeConstruction
-import EremenkosConjecture.Transcendence
-import ComplexDynamics.TranscendentalApproximation
+module
+
+public import EremenkosConjecture.UniformEscapeConstruction
+public import EremenkosConjecture.Transcendence
+public import ComplexDynamics.TranscendentalApproximation
+
+@[expose] public section
 
 /-! # Proposition 3.2 for compact nonseparating boundary subsets -/
 

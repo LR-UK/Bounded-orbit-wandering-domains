@@ -1,5 +1,10 @@
-import FunctionTheory.Conformal.AnalyticSideContinuous
-import FunctionTheory.Conformal.HalfDiskCircleReflection
+module
+
+public import FunctionTheory.Conformal.AnalyticSideContinuous
+public import FunctionTheory.Conformal.HalfDiskCircleReflection
+public import TauCeti.Analysis.Complex.Conformal.ImageSimplyConnected
+
+@[expose] public section
 
 open Set Metric Complex Filter Function
 open scoped Topology ComplexConjugate

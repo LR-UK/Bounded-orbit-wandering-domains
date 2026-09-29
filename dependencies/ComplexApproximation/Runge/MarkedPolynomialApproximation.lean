@@ -1,5 +1,9 @@
-import Runge.Interpolation
-import FunctionTheory.Analytic.JetLocalDegree
+module
+
+public import Runge.Interpolation
+public import FunctionTheory.Analytic.JetLocalDegree
+
+@[expose] public section
 
 open Set Filter Polynomial FunctionTheory
 open scoped Topology

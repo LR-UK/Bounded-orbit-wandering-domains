@@ -1,9 +1,13 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.CoveringCutoffArea
-import BoundedWanderingDomains.CutoffAreaLimit
+public import BoundedWanderingDomains.CoveringCutoffArea
+public import BoundedWanderingDomains.CutoffAreaLimit
+
+@[expose] public section
 
 open Set Filter MeasureTheory InnerProductSpace Laplacian Metric
 open scoped Topology ContDiff ENNReal

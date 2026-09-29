@@ -1,9 +1,13 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.EventualCoveringArea
-import BoundedWanderingDomains.Surfaces.BakerCoveringDiscs
-import BoundedWanderingDomains.Surfaces.LocalCoveringDiscs
-import BoundedWanderingDomains.Surfaces.CompactOrbitRestriction
-import BoundedWanderingDomains.Surfaces.OrbitEscapeReduction
+public import BoundedWanderingDomains.Surfaces.EventualCoveringArea
+public import BoundedWanderingDomains.Surfaces.BakerCoveringDiscs
+public import BoundedWanderingDomains.Surfaces.LocalCoveringDiscs
+public import BoundedWanderingDomains.Surfaces.CompactOrbitRestriction
+public import BoundedWanderingDomains.Surfaces.OrbitEscapeReduction
+
+@[expose] public section
 
 /-! # Compact wandering orbits are impossible on a noncompact covered surface -/
 

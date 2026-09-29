@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.FinitePunctureChartCutoff
-import BoundedWanderingDomains.Surfaces.RemoteDensityBound
+public import BoundedWanderingDomains.Surfaces.FinitePunctureChartCutoff
+public import BoundedWanderingDomains.Surfaces.RemoteDensityBound
+
+@[expose] public section
 
 /-! # A remote gain estimate with a fixed cutoff through finite punctures
 

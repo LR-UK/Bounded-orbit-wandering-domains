@@ -1,6 +1,10 @@
-import EremenkosConjecture.FilledAttachmentConvergence
-import FunctionTheory.Conformal.HalfStripEndpoint
-import FunctionTheory.Conformal.ThinAttachmentEscape
+module
+
+public import EremenkosConjecture.FilledAttachmentConvergence
+public import FunctionTheory.Conformal.HalfStripEndpoint
+public import FunctionTheory.Conformal.ThinAttachmentEscape
+
+@[expose] public section
 
 open Set Metric Complex Filter Function FunctionTheory
 open scoped Topology

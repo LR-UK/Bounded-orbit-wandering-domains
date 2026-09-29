@@ -1,5 +1,9 @@
-import Mathlib.Topology.Connected.Basic
-import EremenkosConjecture.BoundarySelection
+module
+
+public import Mathlib.Topology.Connected.Basic
+public import EremenkosConjecture.BoundarySelection
+
+@[expose] public section
 
 /-! # Closed barriers isolate connected components
 

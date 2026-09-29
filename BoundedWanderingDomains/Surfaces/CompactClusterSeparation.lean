@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.Statements
-import Mathlib.Topology.Separation.Regular
+public import BoundedWanderingDomains.Surfaces.Statements
+public import Mathlib.Topology.Separation.Regular
+
+@[expose] public section
 
 /-! # Singular values near a compact cluster set -/
 

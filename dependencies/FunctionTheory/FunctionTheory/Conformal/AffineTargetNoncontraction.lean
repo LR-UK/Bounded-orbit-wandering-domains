@@ -1,6 +1,10 @@
-import FunctionTheory.Conformal.AffineReturnChannel
-import Mathlib.Analysis.Calculus.MeanValue
-import Mathlib.Topology.Order.Compact
+module
+
+public import FunctionTheory.Conformal.AffineReturnChannel
+public import Mathlib.Analysis.Calculus.MeanValue
+public import Mathlib.Topology.Order.Compact
+
+@[expose] public section
 
 open Set Filter Metric
 open scoped Topology

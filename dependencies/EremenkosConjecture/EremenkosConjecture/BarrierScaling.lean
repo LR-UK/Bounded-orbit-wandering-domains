@@ -1,4 +1,8 @@
-import EremenkosConjecture.BarrierDynamics
+module
+
+public import EremenkosConjecture.BarrierDynamics
+
+@[expose] public section
 
 open Set Metric Function ComplexDynamics
 

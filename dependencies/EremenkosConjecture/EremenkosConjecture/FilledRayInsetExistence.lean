@@ -1,6 +1,10 @@
-import EremenkosConjecture.FilledRayInsets
-import EremenkosConjecture.ContinuumUniformTube
-import EremenkosConjecture.ComplexJordanNeighbourhood
+module
+
+public import EremenkosConjecture.FilledRayInsets
+public import EremenkosConjecture.ContinuumUniformTube
+public import EremenkosConjecture.ComplexJordanNeighbourhood
+
+@[expose] public section
 
 open Set Metric Complex
 

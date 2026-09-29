@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.OpenMapping
-import BoundedWanderingDomains.Surfaces.UniformizationBridge
+public import BoundedWanderingDomains.Surfaces.OpenMapping
+public import BoundedWanderingDomains.Surfaces.UniformizationBridge
+
+@[expose] public section
 
 /-! # Selecting a coordinate disk inside an open surface set -/
 

@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.FiniteChartCriticalCover
-import BoundedWanderingDomains.Surfaces.CompactChartPatches
+public import BoundedWanderingDomains.Surfaces.FiniteChartCriticalCover
+public import BoundedWanderingDomains.Surfaces.CompactChartPatches
+
+@[expose] public section
 
 /-! # Finite branch values on an arbitrary compact surface set -/
 

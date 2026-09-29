@@ -1,4 +1,8 @@
-import EremenkosConjecture.AmbientDisks
+module
+
+public import EremenkosConjecture.AmbientDisks
+
+@[expose] public section
 
 open Set Metric Function
 

@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.BlaschkeDiscMap
-import Mathlib.Topology.Maps.Proper.CompactlyGenerated
+module
+
+public import FunctionTheory.Conformal.BlaschkeDiscMap
+public import Mathlib.Topology.Maps.Proper.CompactlyGenerated
+
+@[expose] public section
 
 open Set Metric
 

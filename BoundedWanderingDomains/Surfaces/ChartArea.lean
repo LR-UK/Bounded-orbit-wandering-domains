@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.DensityCoordinateChange
-import BoundedWanderingDomains.HolomorphicTransport
+public import BoundedWanderingDomains.Surfaces.DensityCoordinateChange
+public import BoundedWanderingDomains.HolomorphicTransport
+
+@[expose] public section
 open Set Function Filter Metric MeasureTheory
 open scoped Manifold Topology ENNReal
 namespace AreaDeficit.Surfaces.DiscCover

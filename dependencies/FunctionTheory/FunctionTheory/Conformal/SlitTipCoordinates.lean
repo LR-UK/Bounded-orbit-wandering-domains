@@ -1,4 +1,8 @@
-import FunctionTheory.Conformal.SlitTipBoundary
+module
+
+public import FunctionTheory.Conformal.SlitTipBoundary
+
+@[expose] public section
 
 open Set Metric Complex Filter Function
 open scoped Topology

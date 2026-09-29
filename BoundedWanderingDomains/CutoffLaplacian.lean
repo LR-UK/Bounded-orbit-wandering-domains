@@ -1,10 +1,14 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.LogarithmicCutoff
-import BoundedWanderingDomains.TransitionMoments
-import BoundedWanderingDomains.ConformalLaplacian
+public import BoundedWanderingDomains.LogarithmicCutoff
+public import BoundedWanderingDomains.TransitionMoments
+public import BoundedWanderingDomains.ConformalLaplacian
+
+@[expose] public section
 
 open Metric Set Filter MeasureTheory InnerProductSpace Laplacian
 open scoped Topology ContDiff

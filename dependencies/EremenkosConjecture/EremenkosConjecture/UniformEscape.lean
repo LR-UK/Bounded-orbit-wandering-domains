@@ -1,5 +1,9 @@
-import EremenkosConjecture.NormalizedConstruction
-import ComplexDynamics.Scaling
+module
+
+public import EremenkosConjecture.NormalizedConstruction
+public import ComplexDynamics.Scaling
+
+@[expose] public section
 
 /-! # Theorem 3.1: wandering compacta with uniform escape -/
 

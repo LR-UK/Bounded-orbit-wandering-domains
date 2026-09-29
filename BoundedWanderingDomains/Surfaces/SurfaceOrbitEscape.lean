@@ -1,8 +1,12 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.HyperbolicOrbitEscape
-import BoundedWanderingDomains.Surfaces.SubsurfaceOrbitRestriction
-import BoundedWanderingDomains.Surfaces.LocalMapSubsurface
-import BoundedWanderingDomains.Surfaces.WanderingAnchorDisk
+public import BoundedWanderingDomains.Surfaces.HyperbolicOrbitEscape
+public import BoundedWanderingDomains.Surfaces.SubsurfaceOrbitRestriction
+public import BoundedWanderingDomains.Surfaces.LocalMapSubsurface
+public import BoundedWanderingDomains.Surfaces.WanderingAnchorDisk
+
+@[expose] public section
 
 /-! # No compact wandering orbit on an arbitrary Riemann surface -/
 

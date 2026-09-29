@@ -1,4 +1,8 @@
-import Mathlib.Topology.Covering.Basic
+module
+
+public import Mathlib.Topology.Covering.Basic
+
+@[expose] public section
 
 /-! # Coverings from globally extended inverse branches -/
 

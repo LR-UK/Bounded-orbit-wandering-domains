@@ -1,13 +1,17 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Lasse Rempe
 -/
 
-import EremenkoLyubichConstant.ExteriorCoverClassification
-import EremenkoLyubichConstant.HolomorphicLift
-import EremenkoLyubichConstant.Puncture
-import EremenkoLyubichConstant.TractCovering
+public import EremenkoLyubichConstant.ExteriorCoverClassification
+public import EremenkoLyubichConstant.HolomorphicLift
+public import EremenkoLyubichConstant.Puncture
+public import EremenkoLyubichConstant.TractCovering
+
+@[expose] public section
 
 open Set Function Metric
 open scoped Topology

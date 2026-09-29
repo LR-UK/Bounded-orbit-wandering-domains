@@ -1,7 +1,11 @@
-import EremenkosConjecture.JordanBoundaryApproach
-import EremenkosConjecture.JordanBoundaryCompatibility
-import FunctionTheory.Conformal.JordanBoundary
-import TauCeti.Analysis.Complex.Conformal.Inverse.BoundaryCluster
+module
+
+public import EremenkosConjecture.JordanBoundaryApproach
+public import EremenkosConjecture.JordanBoundaryCompatibility
+public import FunctionTheory.Conformal.JordanBoundary
+public import TauCeti.Analysis.Complex.Conformal.Inverse.BoundaryCluster
+
+@[expose] public section
 
 /-! # Carathéodory homeomorphism for bounded Jordan domains
 

@@ -1,4 +1,8 @@
-import ComplexDynamics.PathComponents
+module
+
+public import ComplexDynamics.PathComponents
+
+@[expose] public section
 
 open Set Metric Filter
 

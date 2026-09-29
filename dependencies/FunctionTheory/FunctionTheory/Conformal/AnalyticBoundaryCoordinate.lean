@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.AnalyticBoundaryContinuation
-import Mathlib.Topology.OpenPartialHomeomorph.Basic
+module
+
+public import FunctionTheory.Conformal.AnalyticBoundaryContinuation
+public import Mathlib.Topology.OpenPartialHomeomorph.Basic
+
+@[expose] public section
 
 open Set Metric Complex Filter
 open scoped Topology

@@ -1,6 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.AlmostEverywhere.DerivedSingular
-import BoundedWanderingDomains.Surfaces.SurfaceDerivedLimits
+public import Mathlib.Analysis.CStarAlgebra.Classes
+public import BoundedWanderingDomains.Surfaces.AlmostEverywhere.DerivedSingular
+public import BoundedWanderingDomains.Surfaces.SurfaceDerivedLimits
+
+@[expose] public section
 
 /-! # Public compact-orbit and almost-everywhere results -/
 

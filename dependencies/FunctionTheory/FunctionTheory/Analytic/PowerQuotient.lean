@@ -1,5 +1,9 @@
-import FunctionTheory.Analytic.FiniteInterpolation
-import Mathlib.Analysis.Complex.AbsMax
+module
+
+public import FunctionTheory.Analytic.FiniteInterpolation
+public import Mathlib.Analysis.Complex.AbsMax
+
+@[expose] public section
 
 open Set Filter Metric
 open scoped Topology

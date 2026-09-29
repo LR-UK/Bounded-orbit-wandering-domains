@@ -1,5 +1,9 @@
-import EremenkosConjecture.FilledRayInsets
-import ComplexApproximation.Topology.StraightTailComplement
+module
+
+public import EremenkosConjecture.FilledRayInsets
+public import ComplexApproximation.Topology.StraightTailComplement
+
+@[expose] public section
 
 open Set Metric Complex
 

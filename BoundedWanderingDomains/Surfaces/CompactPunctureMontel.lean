@@ -1,5 +1,9 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.FiniteEndNormal
+public import BoundedWanderingDomains.Surfaces.FiniteEndNormal
+
+@[expose] public section
 
 /-! # Normality for discs omitting hyperbolising finite anchors -/
 

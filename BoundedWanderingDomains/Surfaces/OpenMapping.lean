@@ -1,6 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.AnalyticSurface
-import Mathlib.Analysis.Complex.OpenMapping
+public import BoundedWanderingDomains.Surfaces.AnalyticSurface
+public import Mathlib.Analysis.Complex.OpenMapping
+public import Mathlib.Geometry.Manifold.MFDeriv.Basic
+
+@[expose] public section
 
 /-! # Open mapping on analytic surfaces -/
 

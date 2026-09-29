@@ -1,9 +1,13 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.SphericalDerivedSet
-import Mathlib.Dynamics.OmegaLimit
+public import BoundedWanderingDomains.SphericalDerivedSet
+public import Mathlib.Dynamics.OmegaLimit
+
+@[expose] public section
 
 /-!
 # Spherical cluster sets of sequences

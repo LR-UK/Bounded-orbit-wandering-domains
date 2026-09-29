@@ -1,11 +1,15 @@
+module
+
 /-
 Copyright (c) 2026 Will (Ziang) Li. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Will (Ziang) Li
 -/
-import RiemannDynamics.Uniformization.Perron.HarmonicTransfer
-import RiemannDynamics.Uniformization.SphereManifold
-import Mathlib.Geometry.Manifold.Diffeomorph
+public import RiemannDynamics.Uniformization.Perron.HarmonicTransfer
+public import RiemannDynamics.Uniformization.SphereManifold
+public import Mathlib.Geometry.Manifold.Diffeomorph
+
+@[expose] public section
 
 /-!
 # Harmonic and subharmonic functions on Riemann surfaces

@@ -1,3 +1,5 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
@@ -7,10 +9,12 @@ Authors: Álvaro Begué
 /- Compatibility update, 23 September 2026: current Mathlib names and Lean
 linter suggestions; original mathematical statements and attribution retained. -/
 
-import Schoenflies.LocalGrid
-import Schoenflies.Graph.Ear
-import Schoenflies.Line
-import Schoenflies.PolygonalCarrier
+public import Schoenflies.LocalGrid
+public import Schoenflies.Graph.Ear
+public import Schoenflies.Line
+public import Schoenflies.PolygonalCarrier
+
+@[expose] public section
 
 /-!
 # Attaching a local source grid — `prop:local-grid-attachment`

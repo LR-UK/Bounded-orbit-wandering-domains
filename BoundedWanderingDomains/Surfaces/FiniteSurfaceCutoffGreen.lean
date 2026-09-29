@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.GlobalIntrinsicGreen
-import BoundedWanderingDomains.Surfaces.FiniteSurfacePunctureCutoff
+public import BoundedWanderingDomains.Surfaces.GlobalIntrinsicGreen
+public import BoundedWanderingDomains.Surfaces.FiniteSurfacePunctureCutoff
+
+@[expose] public section
 
 /-! # Green pairings for finite surface-puncture cutoffs -/
 

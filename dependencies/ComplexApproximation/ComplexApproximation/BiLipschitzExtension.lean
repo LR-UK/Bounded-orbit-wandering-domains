@@ -1,7 +1,11 @@
-import ComplexApproximation.HalfStripProjection
-import Mathlib.Analysis.Calculus.InverseFunctionTheorem.FiniteDimensional
-import Mathlib.Analysis.Calculus.MeanValue
-import Mathlib.LinearAlgebra.Complex.FiniteDimensional
+module
+
+public import ComplexApproximation.HalfStripProjection
+public import Mathlib.Analysis.Calculus.InverseFunctionTheorem.FiniteDimensional
+public import Mathlib.Analysis.Calculus.MeanValue
+public import Mathlib.LinearAlgebra.Complex.FiniteDimensional
+
+@[expose] public section
 
 /-! # Quantitative ambient extensions
 

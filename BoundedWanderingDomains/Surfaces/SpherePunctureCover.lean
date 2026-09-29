@@ -1,10 +1,14 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.LegacyDiscCoverBridge
-import BoundedWanderingDomains.Surfaces.AnalyticSurface
-import BoundedWanderingDomains.Surfaces.HolomorphicLifting
-import BoundedWanderingDomains.Surfaces.FinitePunctureTopology
-import FunctionTheory.Conformal.LittlePicardBloch
-import RiemannDynamics.Uniformization.HolomorphicEquiv
+public import BoundedWanderingDomains.Surfaces.LegacyDiscCoverBridge
+public import BoundedWanderingDomains.Surfaces.AnalyticSurface
+public import BoundedWanderingDomains.Surfaces.HolomorphicLifting
+public import BoundedWanderingDomains.Surfaces.FinitePunctureTopology
+public import FunctionTheory.Conformal.LittlePicardBloch
+public import RiemannDynamics.Uniformization.HolomorphicEquiv
+
+@[expose] public section
 
 /-! # A concrete disc cover of the thrice-punctured sphere -/
 

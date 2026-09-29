@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.UniformLengthArea
-import TauCeti.Analysis.Complex.Conformal.ClusterSet
+module
+
+public import FunctionTheory.Conformal.UniformLengthArea
+public import TauCeti.Analysis.Complex.Conformal.ClusterSet
+
+@[expose] public section
 
 open Set Metric Complex
 

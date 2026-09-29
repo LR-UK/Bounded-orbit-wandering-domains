@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.SmoothSurface
-import BoundedWanderingDomains.Surfaces.ChartZeroExtension
-import Mathlib.Geometry.Manifold.ContMDiff.Atlas
+public import BoundedWanderingDomains.Surfaces.SmoothSurface
+public import BoundedWanderingDomains.Surfaces.ChartZeroExtension
+public import Mathlib.Geometry.Manifold.ContMDiff.Atlas
+
+@[expose] public section
 
 /-! # Compactly supported planar functions pulled back through a chart -/
 

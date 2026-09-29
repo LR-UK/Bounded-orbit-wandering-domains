@@ -1,9 +1,13 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.DiscCoveringMetric
-import BoundedWanderingDomains.HolomorphicTransport
+public import BoundedWanderingDomains.DiscCoveringMetric
+public import BoundedWanderingDomains.HolomorphicTransport
+
+@[expose] public section
 
 /-!
 # Area transport through an injective part of a disc covering

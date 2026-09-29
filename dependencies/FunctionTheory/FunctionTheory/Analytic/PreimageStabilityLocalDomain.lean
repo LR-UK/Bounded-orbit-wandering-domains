@@ -1,5 +1,9 @@
-import FunctionTheory.Analytic.PreimageStability
-import FunctionTheory.Analytic.OpenHolomorphic
+module
+
+public import FunctionTheory.Analytic.PreimageStability
+public import FunctionTheory.Analytic.OpenHolomorphic
+
+@[expose] public section
 
 open Set Filter Metric
 open scoped Topology

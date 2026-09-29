@@ -1,5 +1,9 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.ChartMapAreaTransport
+public import BoundedWanderingDomains.Surfaces.ChartMapAreaTransport
+
+@[expose] public section
 
 /-! # Assembly of one-step area transport over finitely many patches -/
 

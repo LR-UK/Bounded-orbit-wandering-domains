@@ -1,5 +1,9 @@
-import BoundedWanderingDomains.NormalFamilies
-import FunctionTheory.Conformal.InverseLimits
+module
+
+public import BoundedWanderingDomains.NormalFamilies
+public import FunctionTheory.Conformal.InverseLimits
+
+@[expose] public section
 
 /-!
 # Persistence of inverse branches in covering limits

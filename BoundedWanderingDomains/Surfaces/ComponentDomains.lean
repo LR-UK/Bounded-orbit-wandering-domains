@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.DiscCover
-import Mathlib.Topology.Connected.LocallyConnected
+public import BoundedWanderingDomains.Surfaces.DiscCover
+public import Mathlib.Topology.Connected.LocallyConnected
+
+@[expose] public section
 
 /-! # Open components and finite-puncture kernel domains -/
 open Set Function TopologicalSpace

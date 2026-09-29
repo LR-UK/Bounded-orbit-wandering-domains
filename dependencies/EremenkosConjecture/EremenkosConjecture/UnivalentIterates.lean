@@ -1,8 +1,12 @@
-import EremenkosConjecture.IterateApproximation
-import EremenkosConjecture.Univalence
-import EremenkosConjecture.ConformalCharts
-import ComplexDynamics.Iteration
-import Mathlib.Topology.OpenPartialHomeomorph.IsImage
+module
+
+public import EremenkosConjecture.IterateApproximation
+public import EremenkosConjecture.Univalence
+public import EremenkosConjecture.ConformalCharts
+public import ComplexDynamics.Iteration
+public import Mathlib.Topology.OpenPartialHomeomorph.IsImage
+
+@[expose] public section
 
 open Set Metric Function
 

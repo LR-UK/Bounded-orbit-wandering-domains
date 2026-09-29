@@ -1,25 +1,29 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.CoordinateDiscParam
-import EremenkoLyubichConstant.ExteriorCoverClassification
-import Mathlib.Analysis.Calculus.Deriv.Inv
-import BoundedWanderingDomains.Surfaces.BKL.ReturnLimits
-import BoundedWanderingDomains.Surfaces.LocalDynamics
-import Mathlib.Topology.DerivedSet
-import BoundedWanderingDomains.Surfaces.WanderingDiscShrink
-import BoundedWanderingDomains.TrappedComponentCovering
-import BoundedWanderingDomains.Surfaces.SurfaceFilling
-import BoundedWanderingDomains.Surfaces.PointedCoveringDiscs
-import BoundedWanderingDomains.Surfaces.PlaneReading
-import EremenkoLyubichConstant.TractCovering
-import BoundedWanderingDomains.Surfaces.CoveringComponents
-import BoundedWanderingDomains.Surfaces.HolomorphicLifting
-import BoundedWanderingDomains.Surfaces.SubtypeHolomorphic
-import BoundedWanderingDomains.Surfaces.SurfaceSingularCovering
-import BoundedWanderingDomains.Surfaces.LocalMapTotalization
-import Mathlib.Analysis.Complex.RemovableSingularity
-import TauCeti.Analysis.Complex.Conformal.Inverse.Function
-import TauCeti.Analysis.Complex.Conformal.ImageSimplyConnected
-import Mathlib.Analysis.Convex.Contractible
+public import BoundedWanderingDomains.Surfaces.CoordinateDiscParam
+public import EremenkoLyubichConstant.ExteriorCoverClassification
+public import Mathlib.Analysis.Calculus.Deriv.Inv
+public import BoundedWanderingDomains.Surfaces.BKL.ReturnLimits
+public import BoundedWanderingDomains.Surfaces.LocalDynamics
+public import Mathlib.Topology.DerivedSet
+public import BoundedWanderingDomains.Surfaces.WanderingDiscShrink
+public import BoundedWanderingDomains.TrappedComponentCovering
+public import BoundedWanderingDomains.Surfaces.SurfaceFilling
+public import BoundedWanderingDomains.Surfaces.PointedCoveringDiscs
+public import BoundedWanderingDomains.Surfaces.PlaneReading
+public import EremenkoLyubichConstant.TractCovering
+public import BoundedWanderingDomains.Surfaces.CoveringComponents
+public import BoundedWanderingDomains.Surfaces.HolomorphicLifting
+public import BoundedWanderingDomains.Surfaces.SubtypeHolomorphic
+public import BoundedWanderingDomains.Surfaces.SurfaceSingularCovering
+public import BoundedWanderingDomains.Surfaces.LocalMapTotalization
+public import Mathlib.Analysis.Complex.RemovableSingularity
+public import TauCeti.Analysis.Complex.Conformal.Inverse.Function
+public import TauCeti.Analysis.Complex.Conformal.ImageSimplyConnected
+public import Mathlib.Analysis.Convex.Contractible
+
+@[expose] public section
 
 section
 

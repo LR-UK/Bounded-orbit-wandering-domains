@@ -1,5 +1,9 @@
-import EremenkosConjecture.FilledAttachmentEscape
-import FunctionTheory.Conformal.CompactCompression
+module
+
+public import EremenkosConjecture.FilledAttachmentEscape
+public import FunctionTheory.Conformal.CompactCompression
+
+@[expose] public section
 
 open Set Metric Complex Filter FunctionTheory
 open scoped Topology

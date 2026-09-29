@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.LogRatioBound
-import BoundedWanderingDomains.DensityDeficit
+public import BoundedWanderingDomains.Surfaces.LogRatioBound
+public import BoundedWanderingDomains.DensityDeficit
+
+@[expose] public section
 
 /-! # A fixed chart cutoff through finitely many removed points
 

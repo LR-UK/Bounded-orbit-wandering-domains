@@ -1,4 +1,8 @@
-import EremenkosConjecture.RayCounterexampleCriterion
+module
+
+public import EremenkosConjecture.RayCounterexampleCriterion
+
+@[expose] public section
 
 /-! # Dynamical conclusion for an arbitrary continuum
 

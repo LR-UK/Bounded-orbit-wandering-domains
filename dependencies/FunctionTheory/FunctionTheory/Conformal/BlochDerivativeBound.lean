@@ -1,4 +1,8 @@
-import FunctionTheory.Conformal.BlochUnit
+module
+
+public import FunctionTheory.Conformal.BlochUnit
+
+@[expose] public section
 
 open Set Metric
 

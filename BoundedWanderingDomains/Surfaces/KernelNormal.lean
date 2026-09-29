@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.KernelNonconstant
-import Mathlib.Analysis.Complex.AbsMax
+public import BoundedWanderingDomains.Surfaces.KernelNonconstant
+public import Mathlib.Analysis.Complex.AbsMax
+
+@[expose] public section
 
 /-! # Normal limits of normalised lifts stay in the entire ambient disc
 

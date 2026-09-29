@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.CompactFiniteRemoval
-import BoundedWanderingDomains.Surfaces.DomainArea
-import BoundedWanderingDomains.Surfaces.SmallChartDomain
+public import BoundedWanderingDomains.Surfaces.CompactFiniteRemoval
+public import BoundedWanderingDomains.Surfaces.DomainArea
+public import BoundedWanderingDomains.Surfaces.SmallChartDomain
+
+@[expose] public section
 
 /-! # Uniform finite-puncture budgets on compact surface sets
 

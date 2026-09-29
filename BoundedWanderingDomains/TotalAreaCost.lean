@@ -1,4 +1,8 @@
-import BoundedWanderingDomains.AreaCancellation
+module
+
+public import BoundedWanderingDomains.AreaCancellation
+
+@[expose] public section
 
 open Set MeasureTheory
 open scoped ENNReal

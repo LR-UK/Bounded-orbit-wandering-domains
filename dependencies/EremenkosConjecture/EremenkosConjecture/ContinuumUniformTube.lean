@@ -1,5 +1,9 @@
-import EremenkosConjecture.RayGeometry
-import FunctionTheory.Conformal.StripUniformity
+module
+
+public import EremenkosConjecture.RayGeometry
+public import FunctionTheory.Conformal.StripUniformity
+
+@[expose] public section
 
 open Set Metric Complex
 

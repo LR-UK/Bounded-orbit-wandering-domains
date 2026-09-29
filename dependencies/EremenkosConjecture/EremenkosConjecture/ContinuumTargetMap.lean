@@ -1,7 +1,11 @@
-import EremenkosConjecture.ContinuumAttachmentMap
-import EremenkosConjecture.ContinuumStripChart
-import EremenkosConjecture.ContinuumChartCoordinates
-import EremenkosConjecture.QuantitativeGeometry
+module
+
+public import EremenkosConjecture.ContinuumAttachmentMap
+public import EremenkosConjecture.ContinuumStripChart
+public import EremenkosConjecture.ContinuumChartCoordinates
+public import EremenkosConjecture.QuantitativeGeometry
+
+@[expose] public section
 
 open Set Metric Function Complex FunctionTheory
 open scoped NNReal

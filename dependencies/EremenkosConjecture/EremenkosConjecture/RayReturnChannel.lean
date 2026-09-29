@@ -1,6 +1,10 @@
-import EremenkosConjecture.ScaffoldingReturnMap
-import EremenkosConjecture.QuantitativeGeometry
-import ComplexApproximation.HalfStripNormalisation
+module
+
+public import EremenkosConjecture.ScaffoldingReturnMap
+public import EremenkosConjecture.QuantitativeGeometry
+public import ComplexApproximation.HalfStripNormalisation
+
+@[expose] public section
 
 /-! # The explicit return channel for the ray construction -/
 

@@ -1,10 +1,14 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.HolomorphicFilling
-import BoundedWanderingDomains.TractFillingObstruction
-import BoundedWanderingDomains.UniformSphericalConstants
+public import BoundedWanderingDomains.HolomorphicFilling
+public import BoundedWanderingDomains.TractFillingObstruction
+public import BoundedWanderingDomains.UniformSphericalConstants
+
+@[expose] public section
 
 /-! # Extending constant limits across compact fillings in class B -/
 

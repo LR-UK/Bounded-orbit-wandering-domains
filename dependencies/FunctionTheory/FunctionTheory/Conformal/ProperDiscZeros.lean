@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.ProperDiscBoundary
-import Mathlib.Analysis.Meromorphic.FactorizedRational
+module
+
+public import FunctionTheory.Conformal.ProperDiscBoundary
+public import Mathlib.Analysis.Meromorphic.FactorizedRational
+
+@[expose] public section
 
 open Set Metric Filter Function
 open scoped Topology BigOperators

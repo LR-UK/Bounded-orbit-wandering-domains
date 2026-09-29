@@ -1,7 +1,11 @@
-import EremenkosConjecture.ContinuumNeighbourhoods
-import EremenkosConjecture.FilledRayInterior
-import EremenkosConjecture.QuantitativeGeometry
-import FunctionTheory.Conformal.StripUniformity
+module
+
+public import EremenkosConjecture.ContinuumNeighbourhoods
+public import EremenkosConjecture.FilledRayInterior
+public import EremenkosConjecture.QuantitativeGeometry
+public import FunctionTheory.Conformal.StripUniformity
+
+@[expose] public section
 
 open Set Metric Complex
 

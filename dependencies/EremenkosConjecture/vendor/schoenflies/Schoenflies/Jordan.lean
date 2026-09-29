@@ -1,3 +1,5 @@
+module
+
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
@@ -7,11 +9,13 @@ Authors: Álvaro Begué
 /- Compatibility update, 23 September 2026: current Mathlib names and Lean
 linter suggestions; original mathematical statements and attribution retained. -/
 
-import Schoenflies.AccessibleJoin
-import Schoenflies.CrosscutCells
-import Schoenflies.JordanSeparates
-import Schoenflies.TwoArcs
-import Schoenflies.Graph.K33Land
+public import Schoenflies.AccessibleJoin
+public import Schoenflies.CrosscutCells
+public import Schoenflies.JordanSeparates
+public import Schoenflies.TwoArcs
+public import Schoenflies.Graph.K33Land
+
+@[expose] public section
 
 /-!
 # The Jordan curve theorem

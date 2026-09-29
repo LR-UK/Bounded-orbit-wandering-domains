@@ -1,5 +1,9 @@
-import EremenkosConjecture.ScaffoldingApproximation
-import EremenkosConjecture.UniformUnivalence
+module
+
+public import EremenkosConjecture.ScaffoldingApproximation
+public import EremenkosConjecture.UniformUnivalence
+
+@[expose] public section
 
 /-! # Uniform injectivity, coverage, and derivative bounds on the strips -/
 

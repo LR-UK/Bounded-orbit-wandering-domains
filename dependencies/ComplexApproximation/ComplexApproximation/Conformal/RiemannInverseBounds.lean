@@ -1,5 +1,9 @@
-import ComplexApproximation.Conformal.RiemannMapping
-import FunctionTheory.Conformal.RiemannInverseBounds
+module
+
+public import ComplexApproximation.Conformal.RiemannMapping
+public import FunctionTheory.Conformal.RiemannInverseBounds
+
+@[expose] public section
 
 /-! # Compatibility imports for FunctionTheory
 

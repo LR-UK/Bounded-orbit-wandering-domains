@@ -1,4 +1,8 @@
-import TauCeti.Analysis.Complex.BranchLogRoot
+module
+
+public import TauCeti.Analysis.Complex.BranchLogRoot
+
+@[expose] public section
 
 open Set Filter Metric
 open scoped Topology

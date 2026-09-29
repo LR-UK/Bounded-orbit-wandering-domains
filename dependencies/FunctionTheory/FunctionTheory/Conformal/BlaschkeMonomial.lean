@@ -1,6 +1,10 @@
-import FunctionTheory.Conformal.BlaschkeDiscMap
-import Mathlib.Analysis.Calculus.Deriv.Pow
-import Mathlib.Tactic
+module
+
+public import FunctionTheory.Conformal.BlaschkeDiscMap
+public import Mathlib.Analysis.Calculus.Deriv.Pow
+public import Mathlib.Tactic
+
+@[expose] public section
 
 open Set Metric
 open scoped Topology

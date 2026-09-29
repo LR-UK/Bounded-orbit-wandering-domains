@@ -1,4 +1,8 @@
-import EremenkosConjecture.ScaffoldingDomains
+module
+
+public import EremenkosConjecture.ScaffoldingDomains
+
+@[expose] public section
 
 /-! # Section 4: the scaffolding lemma -/
 

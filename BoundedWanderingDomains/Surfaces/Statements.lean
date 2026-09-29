@@ -1,11 +1,15 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.Surfaces.LocalDynamics
-import BoundedWanderingDomains.Surfaces.CompactificationEscape
-import Mathlib.MeasureTheory.Measure.Lebesgue.Complex
-import Mathlib.Topology.DerivedSet
+public import BoundedWanderingDomains.Surfaces.LocalDynamics
+public import BoundedWanderingDomains.Surfaces.CompactificationEscape
+public import Mathlib.MeasureTheory.Measure.Lebesgue.Complex
+public import Mathlib.Topology.DerivedSet
+
+@[expose] public section
 
 /-! # Exact surface targets for the paper
 

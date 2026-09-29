@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.OpenDomainFinitePatchTransport
-import BoundedWanderingDomains.Surfaces.ChartPartitionCoveringTransport
-import BoundedWanderingDomains.Surfaces.UniformFiniteRemoval
+public import BoundedWanderingDomains.Surfaces.OpenDomainFinitePatchTransport
+public import BoundedWanderingDomains.Surfaces.ChartPartitionCoveringTransport
+public import BoundedWanderingDomains.Surfaces.UniformFiniteRemoval
+
+@[expose] public section
 
 /-! # Uniform one-step area advance from a remote covering model -/
 

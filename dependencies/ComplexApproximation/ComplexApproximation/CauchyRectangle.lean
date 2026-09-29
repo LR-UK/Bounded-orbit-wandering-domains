@@ -1,5 +1,9 @@
-import Runge.RectangleKernel
-import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
+module
+
+public import Runge.RectangleKernel
+public import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
+
+@[expose] public section
 
 /-! # The Cauchy kernel integral around a square -/
 

@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.FinitePunctureChartTarget
-import BoundedWanderingDomains.Surfaces.AreaGain
+public import BoundedWanderingDomains.Surfaces.FinitePunctureChartTarget
+public import BoundedWanderingDomains.Surfaces.AreaGain
+
+@[expose] public section
 
 /-! # Erasing finite exceptional chart points from area integrals -/
 

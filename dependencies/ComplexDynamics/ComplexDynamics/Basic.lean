@@ -1,14 +1,19 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 The spherical and Fatou-set definitions adapt LR-UK/exp-chaotic.
 -/
-import ComplexDynamics.Normality
-import Mathlib.Analysis.Complex.CauchyIntegral
-import Mathlib.Analysis.Normed.Group.Bounded
-import Mathlib.Topology.UniformSpace.Uniformizable
-import Mathlib.Topology.Compactification.OnePoint.Basic
-import Mathlib.Topology.Connected.LocallyConnected
+public import ComplexDynamics.Normality
+public import Mathlib.Analysis.Complex.CauchyIntegral
+public import Mathlib.Analysis.Normed.Group.Bounded
+public import Mathlib.Topology.UniformSpace.Uniformizable
+public import Mathlib.Topology.UniformSpace.OfCompactT2
+public import Mathlib.Topology.Compactification.OnePoint.Basic
+public import Mathlib.Topology.Connected.LocallyConnected
+
+@[expose] public section
 
 open Function Filter Set Metric
 open scoped Topology Uniformity

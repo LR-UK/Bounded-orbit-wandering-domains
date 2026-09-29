@@ -1,6 +1,10 @@
-import Mathlib.Analysis.Complex.OpenMapping
-import Mathlib.Analysis.Calculus.Deriv.Inverse
-import Mathlib.Topology.OpenPartialHomeomorph.Basic
+module
+
+public import Mathlib.Analysis.Complex.OpenMapping
+public import Mathlib.Analysis.Calculus.Deriv.Inverse
+public import Mathlib.Topology.OpenPartialHomeomorph.Basic
+
+@[expose] public section
 
 /-! # Conformal charts on open domains, without an ambient extension -/
 

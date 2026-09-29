@@ -1,7 +1,11 @@
-import EremenkosConjecture.AttachedSegmentGeometry
-import EremenkosConjecture.PlaneSimpleConnectivity
-import FunctionTheory.Conformal.ExteriorCoordinate
-import FunctionTheory.Conformal.RiemannMapping
+module
+
+public import EremenkosConjecture.AttachedSegmentGeometry
+public import EremenkosConjecture.PlaneSimpleConnectivity
+public import FunctionTheory.Conformal.ExteriorCoordinate
+public import FunctionTheory.Conformal.RiemannMapping
+
+@[expose] public section
 
 open Set Metric Complex Bornology
 

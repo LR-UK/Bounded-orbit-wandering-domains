@@ -1,5 +1,9 @@
-import Mathlib.Topology.Connected.LocallyPathConnected
-import Mathlib.Data.Finset.Basic
+module
+
+public import Mathlib.Topology.Connected.LocallyPathConnected
+public import Mathlib.Data.Finset.Basic
+
+@[expose] public section
 
 open Set
 

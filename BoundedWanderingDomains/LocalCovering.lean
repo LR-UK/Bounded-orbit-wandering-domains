@@ -1,7 +1,11 @@
-import BoundedWanderingDomains.LocalPunctures
-import Mathlib.Analysis.Calculus.InverseFunctionTheorem.Deriv
-import Mathlib.Topology.Covering.Basic
-import Mathlib.Topology.LocalAtTarget
+module
+
+public import BoundedWanderingDomains.LocalPunctures
+public import Mathlib.Analysis.Calculus.InverseFunctionTheorem.Deriv
+public import Mathlib.Topology.Covering.Basic
+public import Mathlib.Topology.LocalAtTarget
+
+@[expose] public section
 
 open Set Filter Topology Metric
 open scoped Topology

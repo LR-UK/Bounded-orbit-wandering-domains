@@ -1,10 +1,14 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.CompactGlobalAnchors
-import BoundedWanderingDomains.Surfaces.CompactAnchorNormality
-import BoundedWanderingDomains.Surfaces.CompactGlobalSingularValues
-import BoundedWanderingDomains.Surfaces.CompactAnchorAreaReduction
-import BoundedWanderingDomains.Surfaces.FiniteDefectAreaAdvance
-import BoundedWanderingDomains.Surfaces.SubsurfaceRegularValues
+public import BoundedWanderingDomains.Surfaces.CompactGlobalAnchors
+public import BoundedWanderingDomains.Surfaces.CompactAnchorNormality
+public import BoundedWanderingDomains.Surfaces.CompactGlobalSingularValues
+public import BoundedWanderingDomains.Surfaces.CompactAnchorAreaReduction
+public import BoundedWanderingDomains.Surfaces.FiniteDefectAreaAdvance
+public import BoundedWanderingDomains.Surfaces.SubsurfaceRegularValues
+
+@[expose] public section
 
 /-! # Positive-area wandering sets for compact global surface maps -/
 

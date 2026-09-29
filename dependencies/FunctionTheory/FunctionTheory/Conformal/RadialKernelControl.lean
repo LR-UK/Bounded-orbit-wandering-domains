@@ -1,5 +1,9 @@
-import Mathlib.Analysis.Complex.LocallyUniformLimit
-import Mathlib.Topology.Order.LeftRightNhds
+module
+
+public import Mathlib.Analysis.Complex.LocallyUniformLimit
+public import Mathlib.Topology.Order.LeftRightNhds
+
+@[expose] public section
 
 open Set Metric Filter Complex
 open scoped Topology

@@ -1,5 +1,9 @@
-import EremenkosConjecture.ConstructionData
-import EremenkosConjecture.VariableDiscs
+module
+
+public import EremenkosConjecture.ConstructionData
+public import EremenkosConjecture.VariableDiscs
+
+@[expose] public section
 
 open Set Metric Function
 

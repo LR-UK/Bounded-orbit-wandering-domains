@@ -1,5 +1,9 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.Statements
+public import BoundedWanderingDomains.Surfaces.Statements
+
+@[expose] public section
 
 /-! # Topological reduction for the derived-singular-limit theorem
 

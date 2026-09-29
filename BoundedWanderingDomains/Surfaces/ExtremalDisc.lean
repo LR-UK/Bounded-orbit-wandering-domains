@@ -1,10 +1,14 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.Surfaces.SurfaceSchwarz
-import BoundedWanderingDomains.Surfaces.SubtypeHolomorphic
-import BoundedWanderingDomains.Surfaces.UniformDiscAvoidance
+public import BoundedWanderingDomains.Surfaces.SurfaceSchwarz
+public import BoundedWanderingDomains.Surfaces.SubtypeHolomorphic
+public import BoundedWanderingDomains.Surfaces.UniformDiscAvoidance
+
+@[expose] public section
 
 /-! # Extremal holomorphic discs for the intrinsic hyperbolic density -/
 open Set Function Filter Metric

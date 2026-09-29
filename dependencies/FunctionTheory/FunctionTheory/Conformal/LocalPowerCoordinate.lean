@@ -1,5 +1,9 @@
-import TauCeti.Analysis.Complex.BranchLogRoot
-import TauCeti.Analysis.Complex.Conformal.Inverse.Function
+module
+
+public import TauCeti.Analysis.Complex.BranchLogRoot
+public import TauCeti.Analysis.Complex.Conformal.Inverse.Function
+
+@[expose] public section
 
 open Set Filter
 open scoped Topology

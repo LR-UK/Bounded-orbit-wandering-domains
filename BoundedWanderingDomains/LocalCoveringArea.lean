@@ -1,9 +1,13 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.FiniteModelCancellation
-import BoundedWanderingDomains.LocalSingularValues
+public import BoundedWanderingDomains.FiniteModelCancellation
+public import BoundedWanderingDomains.LocalSingularValues
+
+@[expose] public section
 
 /-! # Area transport for a covering with an open, local source domain -/
 

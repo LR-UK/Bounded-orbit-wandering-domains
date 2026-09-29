@@ -1,4 +1,8 @@
-import FunctionTheory.Conformal.InverseBranchChain
+module
+
+public import FunctionTheory.Conformal.InverseBranchChain
+
+@[expose] public section
 
 open Set
 

@@ -1,6 +1,10 @@
-import FunctionTheory.Conformal.UniformLengthArea
-import FunctionTheory.Conformal.SeparatingCrosscut
-import FunctionTheory.Conformal.RightCircularCut
+module
+
+public import FunctionTheory.Conformal.UniformLengthArea
+public import FunctionTheory.Conformal.SeparatingCrosscut
+public import FunctionTheory.Conformal.RightCircularCut
+
+@[expose] public section
 
 open Set Metric Complex
 open scoped ENNReal

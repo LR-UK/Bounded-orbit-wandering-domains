@@ -1,10 +1,14 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.GeneralClosedPuncture
-import BoundedWanderingDomains.CoveringTotalArea
-import RiemannDynamics.Uniformization.PuncturedPlaneCovering
+public import BoundedWanderingDomains.GeneralClosedPuncture
+public import BoundedWanderingDomains.CoveringTotalArea
+public import RiemannDynamics.Uniformization.PuncturedPlaneCovering
+
+@[expose] public section
 
 /-!
 # Unconditional point-removal estimate on hyperbolic plane domains

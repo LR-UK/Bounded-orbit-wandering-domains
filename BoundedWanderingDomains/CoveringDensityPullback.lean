@@ -1,11 +1,15 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.GeneralDomainMetric
-import BoundedWanderingDomains.HolomorphicLifting
-import BoundedWanderingDomains.UnnormalisedPointRemoval
-import Mathlib.MeasureTheory.Integral.Lebesgue.Basic
+public import BoundedWanderingDomains.GeneralDomainMetric
+public import BoundedWanderingDomains.HolomorphicLifting
+public import BoundedWanderingDomains.UnnormalisedPointRemoval
+public import Mathlib.MeasureTheory.Integral.Lebesgue.Basic
+
+@[expose] public section
 
 /-!
 # Pullback of the intrinsic density under a holomorphic covering

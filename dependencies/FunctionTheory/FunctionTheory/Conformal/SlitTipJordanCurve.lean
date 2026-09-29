@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.SlitTipInverseCoordinates
-import FunctionTheory.Conformal.TangentDiskGeometry
+module
+
+public import FunctionTheory.Conformal.SlitTipInverseCoordinates
+public import FunctionTheory.Conformal.TangentDiskGeometry
+
+@[expose] public section
 
 open Set Metric Complex Filter Function
 open scoped Topology

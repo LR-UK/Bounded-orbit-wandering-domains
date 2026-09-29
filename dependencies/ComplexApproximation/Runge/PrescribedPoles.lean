@@ -1,6 +1,10 @@
-import Runge.RationalGeneration
-import Runge.PolesAtInfinity
-import Runge.RationalApproximation
+module
+
+public import Runge.RationalGeneration
+public import Runge.PolesAtInfinity
+public import Runge.RationalApproximation
+
+@[expose] public section
 
 open Polynomial Set Function Bornology
 

@@ -1,10 +1,14 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import Mathlib.Analysis.Complex.Basic
-import Mathlib.Topology.Bases
-import Mathlib.Dynamics.FixedPoints.Basic
+public import Mathlib.Analysis.Complex.Basic
+public import Mathlib.Topology.Bases
+public import Mathlib.Dynamics.FixedPoints.Basic
+
+@[expose] public section
 
 /-! # Finite models of a backward orbit
 

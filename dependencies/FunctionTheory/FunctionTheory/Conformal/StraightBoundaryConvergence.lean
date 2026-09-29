@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.UniformStraightBoundary
-import FunctionTheory.Conformal.StraightBoundaryContinuous
+module
+
+public import FunctionTheory.Conformal.UniformStraightBoundary
+public import FunctionTheory.Conformal.StraightBoundaryContinuous
+
+@[expose] public section
 
 open Set Metric Complex Filter Function
 open scoped Topology

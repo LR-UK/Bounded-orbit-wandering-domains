@@ -1,5 +1,9 @@
-import BoundedWanderingDomains.LocalIntegratedDeficit
-import BoundedWanderingDomains.ExceptionalSets
+module
+
+public import BoundedWanderingDomains.LocalIntegratedDeficit
+public import BoundedWanderingDomains.ExceptionalSets
+
+@[expose] public section
 
 open Set Metric MeasureTheory Filter Function
 open scoped Topology ENNReal

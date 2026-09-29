@@ -1,7 +1,11 @@
-import FunctionTheory.Smooth.ControlledExtension
-import FunctionTheory.Smooth.ComplexDerivativeBounds
-import FunctionTheory.Smooth.CompactCompositionBounds
-import Mathlib.Tactic
+module
+
+public import FunctionTheory.Smooth.ControlledExtension
+public import FunctionTheory.Smooth.ComplexDerivativeBounds
+public import FunctionTheory.Smooth.CompactCompositionBounds
+public import Mathlib.Tactic
+
+@[expose] public section
 
 open Set Function Filter
 open scoped Topology ContDiff

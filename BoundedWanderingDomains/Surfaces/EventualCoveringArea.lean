@@ -1,7 +1,11 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.FiniteModelDiscArea
-import BoundedWanderingDomains.Surfaces.CompactLocalAreaAdvance
-import BoundedWanderingDomains.Surfaces.WanderingDiscInjectivity
+public import BoundedWanderingDomains.Surfaces.FiniteModelDiscArea
+public import BoundedWanderingDomains.Surfaces.CompactLocalAreaAdvance
+public import BoundedWanderingDomains.Surfaces.WanderingDiscInjectivity
+
+@[expose] public section
 
 /-! # The area contradiction for eventually embedded wandering discs -/
 

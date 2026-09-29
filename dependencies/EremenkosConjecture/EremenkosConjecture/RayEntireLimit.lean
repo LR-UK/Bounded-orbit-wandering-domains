@@ -1,5 +1,9 @@
-import EremenkosConjecture.RaySuccessor
-import EremenkosConjecture.EntireLimit
+module
+
+public import EremenkosConjecture.RaySuccessor
+public import EremenkosConjecture.EntireLimit
+
+@[expose] public section
 
 /-! # The entire limit of the ray construction -/
 

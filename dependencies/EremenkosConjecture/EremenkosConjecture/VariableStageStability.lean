@@ -1,5 +1,9 @@
-import EremenkosConjecture.VariableReferenceDynamics
-import ComplexDynamics.FastEscape
+module
+
+public import EremenkosConjecture.VariableReferenceDynamics
+public import ComplexDynamics.FastEscape
+
+@[expose] public section
 
 /-! # Tolerances preserving a finite stage on its control disk -/
 

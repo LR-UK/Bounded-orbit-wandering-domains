@@ -1,5 +1,9 @@
-import FunctionTheory.Conformal.RotationalContinuation
-import FunctionTheory.Topology.CountableDisc
+module
+
+public import FunctionTheory.Conformal.RotationalContinuation
+public import FunctionTheory.Topology.CountableDisc
+
+@[expose] public section
 
 open Set Filter Function Metric
 open scoped Topology

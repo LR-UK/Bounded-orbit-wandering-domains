@@ -1,6 +1,10 @@
+module
+
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-import BoundedWanderingDomains.Surfaces.DenseFinitePunctures
-import BoundedWanderingDomains.Surfaces.LocalPunctures
+public import BoundedWanderingDomains.Surfaces.DenseFinitePunctures
+public import BoundedWanderingDomains.Surfaces.LocalPunctures
+
+@[expose] public section
 
 /-! # Backward-invariant finite-puncture barriers on analytic surfaces -/
 

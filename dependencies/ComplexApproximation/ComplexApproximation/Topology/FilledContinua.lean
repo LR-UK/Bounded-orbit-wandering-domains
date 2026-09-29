@@ -1,7 +1,11 @@
-import ComplexApproximation.Topology.Filling
-import ComplexApproximation.Topology.Nonseparation
-import TauCeti.Analysis.Normed.Module.FilledHull
-import Mathlib.Topology.Connected.Clopen
+module
+
+public import ComplexApproximation.Topology.Filling
+public import ComplexApproximation.Topology.Nonseparation
+public import TauCeti.Analysis.Normed.Module.FilledHull
+public import Mathlib.Topology.Connected.Clopen
+
+@[expose] public section
 
 /-! # Filling compact continua
 

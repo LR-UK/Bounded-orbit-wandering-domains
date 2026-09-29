@@ -1,7 +1,11 @@
-import Runge.MarkedPolynomialApproximation
-import FunctionTheory.Analytic.FiniteOrbitMarks
-import FunctionTheory.Topology.IterateApproximationDomains
-import Mathlib.Data.Finset.Lattice.Fold
+module
+
+public import Runge.MarkedPolynomialApproximation
+public import FunctionTheory.Analytic.FiniteOrbitMarks
+public import FunctionTheory.Topology.IterateApproximationDomains
+public import Mathlib.Data.Finset.Lattice.Fold
+
+@[expose] public section
 
 open Set Filter Polynomial FunctionTheory
 open scoped Topology

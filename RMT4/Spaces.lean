@@ -1,6 +1,10 @@
-import Mathlib.Analysis.Complex.LocallyUniformLimit
-import Mathlib.Analysis.Complex.OpenMapping
-import RMT4.defs
+module
+
+public import Mathlib.Analysis.Complex.LocallyUniformLimit
+public import Mathlib.Analysis.Complex.OpenMapping
+public import RMT4.defs
+
+@[expose] public section
 
 open Topology Filter Set Function UniformConvergence Metric
 

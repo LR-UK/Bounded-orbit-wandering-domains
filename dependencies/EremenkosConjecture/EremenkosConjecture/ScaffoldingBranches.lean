@@ -1,7 +1,11 @@
-import EremenkosConjecture.ScaffoldingStability
-import EremenkosConjecture.ConformalEmbedding
-import ComplexDynamics.Iteration
-import Mathlib.Topology.OpenPartialHomeomorph.Composition
+module
+
+public import EremenkosConjecture.ScaffoldingStability
+public import EremenkosConjecture.ConformalEmbedding
+public import ComplexDynamics.Iteration
+public import Mathlib.Topology.OpenPartialHomeomorph.Composition
+
+@[expose] public section
 
 /-! # The inverse branches through successive source strips -/
 

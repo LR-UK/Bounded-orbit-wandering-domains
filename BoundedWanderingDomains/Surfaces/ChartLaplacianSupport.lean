@@ -1,10 +1,14 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import Mathlib.Topology.NhdsSet
-import Mathlib.Analysis.InnerProductSpace.Laplacian
-import Mathlib.Geometry.Manifold.Complex
+public import Mathlib.Topology.NhdsSet
+public import Mathlib.Analysis.InnerProductSpace.Laplacian
+public import Mathlib.Geometry.Manifold.Complex
+
+@[expose] public section
 
 /-! # Localisation of the cutoff's second derivatives
 

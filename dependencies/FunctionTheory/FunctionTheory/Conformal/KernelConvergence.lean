@@ -1,7 +1,11 @@
-import FunctionTheory.Conformal.BoundedKernel
-import Mathlib.Order.Filter.AtTopBot.CompleteLattice
-import Mathlib.Order.Filter.AtTopBot.CountablyGenerated
-import Mathlib.Topology.UniformSpace.CompactConvergence
+module
+
+public import FunctionTheory.Conformal.BoundedKernel
+public import Mathlib.Order.Filter.AtTopBot.CompleteLattice
+public import Mathlib.Order.Filter.AtTopBot.CountablyGenerated
+public import Mathlib.Topology.UniformSpace.CompactConvergence
+
+@[expose] public section
 
 /-! # Convergence of normalized Riemann maps to a bounded kernel
 

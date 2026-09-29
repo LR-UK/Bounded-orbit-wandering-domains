@@ -1,9 +1,13 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.TrappedComponentCovering
-import Mathlib.Topology.MetricSpace.Bounded
+public import BoundedWanderingDomains.TrappedComponentCovering
+public import Mathlib.Topology.MetricSpace.Bounded
+
+@[expose] public section
 
 /-!
 # Singular values as the obstruction to covering

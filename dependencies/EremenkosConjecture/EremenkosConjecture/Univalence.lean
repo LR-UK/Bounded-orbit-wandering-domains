@@ -1,4 +1,8 @@
-import FunctionTheory.Conformal.UnivalenceStability
+module
+
+public import FunctionTheory.Conformal.UnivalenceStability
+
+@[expose] public section
 
 /-! Compatibility names for the classical estimates now in FunctionTheory. -/
 

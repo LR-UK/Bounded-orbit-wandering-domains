@@ -1,5 +1,9 @@
-import BoundedWanderingDomains.DiscCoveringMetric
-import BoundedWanderingDomains.SubmissionDefinitions
+module
+
+public import BoundedWanderingDomains.DiscCoveringMetric
+public import BoundedWanderingDomains.SubmissionDefinitions
+
+@[expose] public section
 
 open Set Metric MeasureTheory
 open scoped ENNReal

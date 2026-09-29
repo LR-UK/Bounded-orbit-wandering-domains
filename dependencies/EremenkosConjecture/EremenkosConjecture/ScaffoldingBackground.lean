@@ -1,5 +1,9 @@
-import EremenkosConjecture.ScaffoldingStability
-import ComplexApproximation.Topology.StripArakelian
+module
+
+public import EremenkosConjecture.ScaffoldingStability
+public import ComplexApproximation.Topology.StripArakelian
+
+@[expose] public section
 
 /-! # Expanding horizontal backgrounds used in Section 7 -/
 

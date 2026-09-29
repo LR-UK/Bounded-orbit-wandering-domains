@@ -1,5 +1,9 @@
-import EremenkosConjecture.FilledRayInsets
-import ComplexApproximation.Topology.ArakelianElementaryGeometry
+module
+
+public import EremenkosConjecture.FilledRayInsets
+public import ComplexApproximation.Topology.ArakelianElementaryGeometry
+
+@[expose] public section
 
 open Set Metric
 

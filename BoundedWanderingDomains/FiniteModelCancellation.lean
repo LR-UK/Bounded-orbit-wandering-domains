@@ -1,10 +1,14 @@
+module
+
 /-
 Copyright (c) 2026 Lasse Rempe. All rights reserved.
 Released under Apache 2.0 licence; see LICENSE.
 -/
-import BoundedWanderingDomains.FinitePunctureArea
-import BoundedWanderingDomains.CoveringDensityPullback
-import BoundedWanderingDomains.AreaCancellation
+public import BoundedWanderingDomains.FinitePunctureArea
+public import BoundedWanderingDomains.CoveringDensityPullback
+public import BoundedWanderingDomains.AreaCancellation
+
+@[expose] public section
 
 /-! # Cancellation for finite models and a covering obstacle
 
