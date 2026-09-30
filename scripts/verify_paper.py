@@ -31,19 +31,24 @@ report_path = OUT / 'paper-submission.json'
 if report_path.exists():
     report_path.unlink()  # A failed recheck must not leave a stale success report.
 
-def run(args, filename):
+def run(args, filename, *, append=False):
     print('Checking ' + filename, flush=True)
     started = time.perf_counter()
-    with (OUT / filename).open('w', encoding='utf-8') as log:
+    with (OUT / filename).open('a' if append else 'w', encoding='utf-8') as log:
         result = subprocess.run([LAKE, *args], cwd=ROOT, env=ENV, stdout=log, stderr=subprocess.STDOUT)
     if result.returncode:
         raise RuntimeError(f'{args} failed; see verification/{filename}')
     timings.append({'command': args, 'seconds': time.perf_counter() - started})
 
-targets = ['Solution', 'Challenge']
+# Check the configured constant kinds in Challenge before building the proof
+# library. In particular, Comparator's definition_names cannot name structures.
+run(['build', 'Challenge'], 'paper-build.log')
+run(['env', 'lean', 'verification/ExportPaperChallenge.lean'],
+    'paperchallenge-declarations.log')
+targets = ['Solution']
 if args.all:
     targets += ['BoundedWanderingDomains.All']
-run(['build', *targets], 'paper-build.log')
+run(['build', *targets], 'paper-build.log', append=True)
 
 # The independent Challenge deliberately contains statement placeholders.
 # Every other compiler/linter warning is a release failure.
@@ -55,8 +60,8 @@ placeholder_warning = re.compile(
 ordinary_warnings = [line for line in warning_lines if not placeholder_warning.fullmatch(line)]
 if ordinary_warnings:
     raise AssertionError('Unexpected build warnings: ' + repr(ordinary_warnings))
-for module in ['Challenge', 'Solution']:
-    run(['env', 'lean', f'verification/ExportPaper{module}.lean'], 'paper' + module.lower() + '-declarations.log')
+run(['env', 'lean', 'verification/ExportPaperSolution.lean'],
+    'papersolution-declarations.log')
 
 def declarations(module):
     answer = {}
@@ -77,8 +82,11 @@ claim_names = [
     'SurfaceDynamics.NoCompactPositiveAreaWanderingSetClaim',
     'SurfaceDynamics.WanderingDerivedSingularLimitClaim',
 ]
+# Structures are checked locally as supporting declarations and transitively
+# by the official Comparator. They are not Comparator definition holes.
+structure_names = ['SurfaceDynamics.LocalMap', 'SurfaceDynamics.EmbeddedDisc']
 expected_declarations = set(CONFIG['theorem_names'] + CONFIG['definition_names'] +
-                            claim_names + ['SurfaceDynamics.LocalMap'])
+                            claim_names + structure_names)
 assert set(challenge) == expected_declarations, 'Missing or unexpected declaration in comparison'
 mismatches = {name: [key for key in set(challenge[name]) | set(solution[name])
                      if challenge[name].get(key) != solution[name].get(key)]
