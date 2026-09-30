@@ -133,8 +133,8 @@ the compact-surface theorem; it does not require a polynomial-quotient encoding.
 The finite-type entire corollary explicitly assumes transcendence and finiteness
 of the finite singular-value set. The meromorphic corollary uses the genuine
 sphere-valued map, sending poles to infinity. Its singular set is the complement
-of values with a surjectively covered neighbourhood, so omitted values are
-included. Finiteness is equivalent to finiteness of the finite singular values.
+of values with a covering neighbourhood, allowing empty sheets. Values outside
+the closure of the image are regular; omitted asymptotic values remain singular. Finiteness is equivalent to finiteness of the finite singular values.
 Both plane corollaries transport actual Fatou components to the local sphere
 model before applying the general finite-type theorem.
 

@@ -51,8 +51,7 @@ theorem regularValues_of_image_obstructions
     exact hy.2.2 (hobs ⟨⟨hn, hy.1⟩, hy.2.1⟩)
   have hmem : closure (range f.map) ∩ A ⊆ range f.map := by
     intro y hy
-    obtain ⟨W, _, hyW, hW, _⟩ := hreg hy
-    exact hW hyW
+    exact f.mem_range_of_regular_of_mem_closure (hreg hy) hy.1
   let B : Set A := Subtype.val ⁻¹' range f.map
   have hBo : IsOpen B := by
     have hr : IsOpen (range f.map) := by simpa only [image_univ] using hopen univ isOpen_univ

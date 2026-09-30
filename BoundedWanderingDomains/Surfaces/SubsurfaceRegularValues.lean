@@ -82,15 +82,8 @@ theorem regularValues_restrictAmbient_restrictSource
     (f.isOpenHolomorphic_restrictSource hf V hVs) O hVO hm
   have hcov : IsCoveringMapOn g.map T :=
     IsCoveringMapOn.of_isCoveringMap_restrictPreimage T hT (hT.preimage hg.2.continuous) htransport
-  have hrange : T ⊆ range g.map := by
-    intro y hy
-    obtain ⟨A, hAo, hyA, hArange, hAcov⟩ := hYreg hy
-    obtain ⟨x, hx⟩ := hArange hyA
-    have hxY : f.map x ∈ Y := hx.symm ▸ hy
-    refine ⟨⟨⟨x, hVO (hpre x hxY)⟩, hpre x hxY⟩, ?_⟩
-    exact Subtype.ext hx
   intro y hy
-  exact ⟨T, hT, hy, hrange, hcov⟩
+  exact ⟨T, hT, hy, hcov⟩
 
 theorem singularValues_restrictAmbient_restrictSource_subset
     (f : LocalMap X) (hf : IsOpenHolomorphic f)

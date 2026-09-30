@@ -19,10 +19,25 @@ public import BoundedWanderingDomains.Surfaces.SurfacePositiveArea
 
 /-! # Proofs of the revised paper statements
 
-This file is the solution-side entry point for `Challenge.lean`.  Each
-declaration repeats its independent challenge type rather than importing the
-challenge file. The original entire-function bounded-orbit statement is
-exposed unchanged by the shared EntireBoundedOrbit module.
+This file is the solution-side entry point for all nineteen theorems in
+`Challenge.lean`. Seven theorem declarations appear below; twelve are already
+proved in the publicly imported library modules. Importing `Solution` exposes
+all nineteen. The proof library never imports the independent challenge.
+
+The twelve imported theorem declarations are located as follows:
+* `EntireBoundedOrbit`: the original entire-function bounded-orbit theorem,
+  with its statement unchanged.
+* `NoWanderingCorollaries`: the four no-wandering corollaries for class S entire
+  and meromorphic functions, compact-surface self-maps, and rational maps.
+* `Surfaces.FiniteType`: the finite-type no-wandering theorem.
+* `Surfaces.AlmostEverywhere.Results`: compact wandering-orbit accumulation,
+  almost-everywhere source escape, the positive-area exclusion away from the
+  derived set, and the almost-everywhere escape-or-derived-set alternative.
+* `Surfaces.SingularEncounters.Results`: the two combined singular-encounter
+  theorems for wandering domains and almost every point of a wandering set.
+
+The declaration and axiom audits check every selected theorem, including those
+imported from these modules, against the independent challenge statement.
 -/
 
 open Set Function Filter OnePoint

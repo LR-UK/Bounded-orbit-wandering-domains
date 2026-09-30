@@ -16,19 +16,17 @@ theorem regularValues_eq_of_source_homeomorph
     {X : Type*} [TopologicalSpace X] (f g : LocalMap X)
     (e : g.source ≃ₜ f.source) (hmap : g.map = f.map ∘ e) :
     g.regularValues = f.regularValues := by
-  have hrange : range g.map = range f.map := by
-    rw [hmap, range_comp, e.surjective.range_eq, image_univ]
   have hfmap : f.map = g.map ∘ e.symm := by
     funext x
     exact ((congrFun hmap (e.symm x)).trans (congrArg f.map (e.apply_symm_apply x))).symm
   ext y
   constructor
-  · rintro ⟨A, hA, hyA, hAr, hAc⟩
-    refine ⟨A, hA, hyA, hrange ▸ hAr, ?_⟩
+  · rintro ⟨A, hA, hyA, hAc⟩
+    refine ⟨A, hA, hyA, ?_⟩
     rw [hfmap]
     exact hAc.comp_homeomorph e.symm
-  · rintro ⟨A, hA, hyA, hAr, hAc⟩
-    refine ⟨A, hA, hyA, hrange.symm ▸ hAr, ?_⟩
+  · rintro ⟨A, hA, hyA, hAc⟩
+    refine ⟨A, hA, hyA, ?_⟩
     rw [hmap]
     exact hAc.comp_homeomorph e
 

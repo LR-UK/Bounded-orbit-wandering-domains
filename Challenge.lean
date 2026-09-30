@@ -117,6 +117,23 @@ end BoundedWanderingDomains
 -- Preserve the instance environment of the existing surface definitions.
 attribute [-instance] instCommCStarAlgebraComplex
 
+namespace SurfaceDynamics.Map
+
+variable {A B : Type*} [TopologicalSpace A] [TopologicalSpace B]
+
+/-- A regular value has a neighbourhood over which the map is a covering;
+the covering is allowed to have no sheets. For maps between Riemann surfaces,
+one can choose a disc neighbourhood such that each component of its preimage
+maps homeomorphically onto the disc. The disc need not lie in the image:
+an empty preimage satisfies the condition vacuously. -/
+def regularValues (g : A → B) : Set B :=
+  {y | ∃ V : Set B, IsOpen V ∧ y ∈ V ∧ IsCoveringMapOn g V}
+
+/-- Singular values are the obstruction to locally being a covering. -/
+def singularValues (g : A → B) : Set B := (regularValues g)ᶜ
+
+end SurfaceDynamics.Map
+
 namespace SurfaceDynamics
 
 variable {X : Type*} [TopologicalSpace X]
@@ -180,10 +197,9 @@ def IsWanderingComponent (f : LocalMap X) (U : Set X) : Prop :=
 
 end Normality
 
-/-- Regular values of the local map, with a surjective covering over a neighbourhood.
-The extra image condition makes the covering convention explicit. -/
+/-- Regular values allow covering neighbourhoods with no sheets. -/
 def regularValues (f : LocalMap X) : Set X :=
-  {y | ∃ W : Set X, IsOpen W ∧ y ∈ W ∧ W ⊆ range f.map ∧ IsCoveringMapOn f.map W}
+  Map.regularValues f.map
 
 def singularValues (f : LocalMap X) : Set X := (f.regularValues)ᶜ
 
@@ -218,7 +234,7 @@ section Targets
 variable [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X]
   [ConnectedSpace X] [IsManifold 𝓘(ℂ) 1 X]
 
-/-- Compact-orbit exclusion: no auxiliary working domain V and no simple connectivity. -/
+/-- Compact-orbit exclusion -/
 def NoCompactWanderingOrbitClaim : Prop :=
   ∀ f : LocalMap X, IsOpenHolomorphic f →
     ∀ U : Set X, f.IsWanderingComponent U → ∀ z ∈ U,
@@ -235,7 +251,7 @@ def NoCompactPositiveAreaWanderingSetClaim [MeasurableSpace X] [BorelSpace X] : 
 
 /-- Derived-singular accumulation: compact escape or accumulation at a derived singular value.
 The escape alternative has exactly its compact-avoidance meaning by
-`tendsto_infty_iff_leaves_compacts`. There is no simple-connectivity or orbit-injectivity hypothesis. -/
+`tendsto_infty_iff_leaves_compacts`. -/
 def WanderingDerivedSingularLimitClaim : Prop :=
   ∀ f : LocalMap X, IsOpenHolomorphic f →
     ∀ U : Set X, f.IsWanderingComponent U →
@@ -281,8 +297,7 @@ def IsFatouComponent (f : ℂ → ℂ) (U : Set ℂ) : Prop :=
 
 attribute [instance] instCommCStarAlgebraComplex
 
-/-- Meromorphic wandering-domain escape. No simple-connectivity
-or orbit-injectivity assumption. Convergence is locally uniform and spherical.
+/-- Meromorphic wandering-domain escape. Convergence is locally uniform and spherical.
 MeromorphicNFOn is a representation convention, not an exclusion of poles. -/
 def WanderingLocallyUniformInfinityClaim : Prop :=
   ∀ {f : ℂ → ℂ}, MeromorphicNFOn f univ → ¬ IsRationalMeromorphic f →
@@ -530,14 +545,12 @@ end FunctionTheory
 
 namespace MeromorphicDynamics
 
-/-- Values with a neighbourhood covered surjectively by the honest
-sphere-valued meromorphic map. -/
+/-- Values with a covering neighbourhood for the sphere-valued map;
+empty sheets are allowed. -/
 def regularValues (f : ℂ → ℂ) : Set (OnePoint ℂ) :=
-  {y | ∃ W : Set (OnePoint ℂ), IsOpen W ∧ y ∈ W ∧
-    W ⊆ range (FunctionTheory.meromorphicSphereValue f) ∧
-    IsCoveringMapOn (FunctionTheory.meromorphicSphereValue f) W}
+  SurfaceDynamics.Map.regularValues (FunctionTheory.meromorphicSphereValue f)
 
-/-- Singular values on the sphere, including any omitted values. -/
+/-- Singular values of the genuine sphere-valued map. -/
 def singularValues (f : ℂ → ℂ) : Set (OnePoint ℂ) := (regularValues f)ᶜ
 
 attribute [instance] instCommCStarAlgebraComplex
@@ -595,11 +608,6 @@ namespace SurfaceDynamics.LocalMap
 
 variable {X : Type*} [TopologicalSpace X]
 
-def restrictSource (f : LocalMap X) (V : TopologicalSpace.Opens X)
-    (hV : (V : Set X) ⊆ f.source) : LocalMap X where
-  source := V
-  map := fun x => f.map ⟨x, hV x.property⟩
-
 noncomputable def totalize (f : LocalMap X) (x : X) : X := by
   classical
   exact if hx : x ∈ f.source then f.map ⟨x, hx⟩ else x
@@ -619,30 +627,71 @@ theorem inverseComponentSource_subset (f : LocalMap X) (hf : Continuous f.map)
   rintro x ⟨w, _, rfl⟩
   exact w.2
 
-/-- The restriction to a full inverse component. Its target remains X. -/
-def inverseComponentMap (f : LocalMap X) (hf : Continuous f.map)
-    (D : TopologicalSpace.Opens X) (a : f.source) : LocalMap X :=
-  f.restrictSource (f.inverseComponentSource hf D a) (f.inverseComponentSource_subset hf D a)
+/-- A full nonempty connected component of the inverse image of D. -/
+structure PreimageComponent (f : LocalMap X) (hf : Continuous f.map)
+    (D : TopologicalSpace.Opens X) where
+  carrier : TopologicalSpace.Opens X
+  isComponent : ∃ a : f.source, f.map a ∈ D ∧ carrier = f.inverseComponentSource hf D a
 
-/-- Singular obstructions which are approached by image values of this
-component. Merely omitted open regions are excluded. -/
-def componentSingularValues (f : LocalMap X) (hf : Continuous f.map)
-    (D : TopologicalSpace.Opens X) (a : f.source) : Set X :=
-  (f.inverseComponentMap hf D a).singularValues ∩
-    closure (range (f.inverseComponentMap hf D a).map) ∩ (D : Set X)
+namespace PreimageComponent
 
-/-- Distinct singular values converge to x through shrinking analytic discs.
-The selected full inverse components capture every compact subset of W at
-common increasing times. The base points c merely name the components. -/
+variable {f : LocalMap X} {hf : Continuous f.map} {D : TopologicalSpace.Opens X}
+
+theorem subset_source (U : f.PreimageComponent hf D) : (U.carrier : Set X) ⊆ f.source := by
+  obtain ⟨a, _, he⟩ := U.isComponent
+  rw [he]
+  exact f.inverseComponentSource_subset hf D a
+
+theorem map_mem (U : f.PreimageComponent hf D) (z : U.carrier) :
+    f.map ⟨z, U.subset_source z.2⟩ ∈ D := by
+  obtain ⟨a, _, he⟩ := U.isComponent
+  have hz : (z : X) ∈ f.inverseComponentSource hf D a := he ▸ z.2
+  obtain ⟨b, hb, hbe⟩ := hz
+  have hba : b = ⟨z, U.subset_source z.2⟩ := Subtype.ext hbe
+  exact hba ▸ connectedComponentIn_subset (f.map ⁻¹' (D : Set X)) a hb
+
+/-- The restricted map has the component as source and D as target. -/
+def map (U : f.PreimageComponent hf D) : U.carrier → D :=
+  fun z => ⟨f.map ⟨z, U.subset_source z.2⟩, U.map_mem z⟩
+
+/-- The ordinary singular values of the restricted map U → D, viewed in X. -/
+def singularValues (U : f.PreimageComponent hf D) : Set X :=
+  Subtype.val '' SurfaceDynamics.Map.singularValues U.map
+
+end PreimageComponent
+
+/-- Key definition: singular encounter sequences.
+Here f is a continuous local map with open source O in X, W is a
+set of starting points, and x is the proposed limiting singular value.
+In the wandering-domain application, f is open and holomorphic and
+W is a wandering Fatou component.
+
+The claim is that there exist:
+* a sequence Q_n of embedded discs containing x and shrinking to x;
+* full preimage components U_n of Q_n;
+* distinct singular values s_n in Q_n converging to x, each a singular
+  value of the restriction f : U_n → Q_n.
+
+There is a strictly increasing sequence φ_n of times such that, for every
+compact subset K of W, f^{φ_n}(K) is contained in U_n for all sufficiently
+large n. The threshold may depend on K.
+
+In our applications all iterates on W are defined. The successor iterates
+f^{φ_n + 1} then converge to x uniformly on each compact subset of W.
+Under the open holomorphic hypotheses, the encounter points at times φ_n
+leave every compact subset of the source O. For O = ℂ this is convergence
+to infinity along these times; in general they may approach the boundary
+of O in X. -/
 def HasSingularEncounterSequence (f : LocalMap X) (hf : Continuous f.map)
     (W : Set X) (x : X) : Prop :=
-  ∃ (Q : ℕ → EmbeddedDisc X) (φ : ℕ → ℕ) (s : ℕ → X) (c : ℕ → f.source),
+  ∃ (Q : ℕ → EmbeddedDisc X) (U : ∀ n, f.PreimageComponent hf (Q n).carrier)
+    (φ : ℕ → ℕ) (s : ℕ → X),
     StrictMono φ ∧ Injective s ∧ Tendsto s atTop (𝓝 x) ∧
     (∀ n, s n ∈ f.singularValues) ∧ (∀ n, x ∈ (Q n).carrier) ∧
     (∀ O ∈ 𝓝 x, ∀ᶠ n in atTop, ((Q n).carrier : Set X) ⊆ O) ∧
-    (∀ n, s n ∈ f.componentSingularValues hf (Q n).carrier (c n)) ∧
-    ∀ L : Set X, IsCompact L → L ⊆ W → ∀ᶠ n in atTop,
-      MapsTo (f.totalize^[φ n]) L (f.inverseComponentSource hf (Q n).carrier (c n))
+    (∀ n, s n ∈ (U n).singularValues) ∧
+    ∀ K : Set X, IsCompact K → K ⊆ W → ∀ᶠ n in atTop,
+      MapsTo (f.totalize^[φ n]) K (U n).carrier
 
 /-- Ambient escape or a componentwise singular-encounter sequence for the point. -/
 def HasEscapingOrSingularEncounterSequence (f : LocalMap X) (hf : Continuous f.map)
@@ -702,4 +751,3 @@ theorem wandering_orbit_accumulates_on_derived_singular_values
   sorry
 
 end MeromorphicDynamics
-

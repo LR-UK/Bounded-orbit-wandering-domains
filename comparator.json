@@ -59,13 +59,14 @@
     "MeromorphicDynamics.singularValues",
     "AreaDeficit.Surfaces.unitDisc",
     "SurfaceDynamics.EmbeddedDisc.carrier",
-    "SurfaceDynamics.LocalMap.restrictSource",
     "SurfaceDynamics.LocalMap.totalize",
     "SurfaceDynamics.LocalMap.inverseComponentSource",
-    "SurfaceDynamics.LocalMap.inverseComponentMap",
-    "SurfaceDynamics.LocalMap.componentSingularValues",
     "SurfaceDynamics.LocalMap.HasSingularEncounterSequence",
-    "SurfaceDynamics.LocalMap.HasEscapingOrSingularEncounterSequence"
+    "SurfaceDynamics.LocalMap.HasEscapingOrSingularEncounterSequence",
+    "SurfaceDynamics.Map.regularValues",
+    "SurfaceDynamics.Map.singularValues",
+    "SurfaceDynamics.LocalMap.PreimageComponent.map",
+    "SurfaceDynamics.LocalMap.PreimageComponent.singularValues"
   ],
   "permitted_axioms": [
     "propext",

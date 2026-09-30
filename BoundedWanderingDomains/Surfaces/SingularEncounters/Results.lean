@@ -24,10 +24,16 @@ theorem LocalMap.HasSingularEncounterSequenceAt.to_sequence
     f.HasSingularEncounterSequence hf W x := by
   obtain ⟨Q, φ, s, hφ, hs, hx, hshrink, hsing, hcapture⟩ := h
   let c : ℕ → f.source := fun n => ⟨f.orbit (φ n) z, f.orbit_mem_source (φ n) z⟩
-  exact ⟨Q, φ, s, c, hφ, hs,
+  let U : ∀ n, f.PreimageComponent hf (Q n).carrier := fun n =>
+    f.preimageComponentAt hf (Q n).carrier (c n)
+      (f.base_map_mem_of_component_singular_value hf (Q n).carrier (c n) (hsing n))
+  refine ⟨Q, U, φ, s, hφ, hs,
     (f.derived_mem_of_shrinking_component_obstructions hf c (fun n => (Q n).carrier)
       s hs hshrink hsing).1,
-    fun n => f.componentSingularValues_subset hf _ _ (hsing n), hx, hshrink, hsing, hcapture⟩
+    fun n => f.componentSingularValues_subset hf _ _ (hsing n), hx, hshrink, ?_, hcapture⟩
+  intro n
+  rw [f.singularValues_preimageComponentAt]
+  exact hsing n
 
 variable [LocallyCompactSpace X] [SecondCountableTopology X] [ConnectedSpace X]
 
@@ -63,4 +69,3 @@ theorem almost_every_wandering_point_has_escaping_or_singular_encounter_sequence
       LocalMap.HasSingularEncounterSequenceAt.to_sequence f hf.2.continuous henc⟩
 
 end SurfaceDynamics
-

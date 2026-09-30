@@ -682,7 +682,7 @@ theorem added_image_mem_singularValues [T2Space X] [LocallyCompactSpace X]
   by_contra hs
   have hreg : f.denseCompletion.map x ∈ f.regularValues := by
     simpa only [singularValues, mem_compl_iff, not_not] using hs
-  obtain ⟨W, _, hxW, _, hcov⟩ := hreg
+  obtain ⟨W, _, hxW, hcov⟩ := hreg
   have hg := f.isOpenHolomorphic_denseCompletion hf
   have hdis : IsDiscrete
       (f.denseCompletion.map ⁻¹' {f.denseCompletion.map x}) :=
@@ -700,7 +700,7 @@ theorem regularValues_subset_denseCompletion [T2Space X] [LocallyCompactSpace X]
     f.regularValues ⊆ f.denseCompletion.regularValues := by
   classical
   intro y hy
-  obtain ⟨W, hWo, hyW, hWr, hcov⟩ := hy
+  obtain ⟨W, hWo, hyW, hcov⟩ := hy
   let g := f.denseCompletion
   have hgold : ∀ (x : g.source) (ho : (x : X) ∈ f.source),
       f.map ⟨x, ho⟩ = g.map x := fun x ho =>
@@ -708,7 +708,7 @@ theorem regularValues_subset_denseCompletion [T2Space X] [LocallyCompactSpace X]
   have hpre : ∀ x : g.source, g.map x ∈ W → (x : X) ∈ f.source := by
     intro x hxW
     by_contra hxo
-    exact f.added_image_mem_singularValues hf x hxo ⟨W, hWo, hxW, hWr, hcov⟩
+    exact f.added_image_mem_singularValues hf x hxo ⟨W, hWo, hxW, hcov⟩
   have hinc : ∀ a : f.source, g.map (f.denseCompletionInclusion hf.2 a) = f.map a :=
     fun a => congrFun (f.denseCompletion_map_inclusion hf.2) a
   let e : (g.map ⁻¹' W) ≃ₜ (f.map ⁻¹' W) :=
@@ -737,10 +737,7 @@ theorem regularValues_subset_denseCompletion [T2Space X] [LocallyCompactSpace X]
   have hgc : IsCoveringMapOn g.map W :=
     IsCoveringMapOn.of_isCoveringMap_restrictPreimage W hWo
       (hWo.preimage hg.2.continuous) hc
-  refine ⟨W, hWo, hyW, ?_, hgc⟩
-  intro z hz
-  obtain ⟨a, ha⟩ := hWr hz
-  exact ⟨f.denseCompletionInclusion hf.2 a, (hinc a).trans ha⟩
+  exact ⟨W, hWo, hyW, hgc⟩
 
 /-- Dense completion introduces no singular values. -/
 theorem singularValues_denseCompletion_subset [T2Space X] [LocallyCompactSpace X]

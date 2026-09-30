@@ -41,7 +41,7 @@ theorem no_wandering_domains_transcendental_entire_finite_singularValues
     exact htrans ⟨Polynomial.C c, fun z => by simpa using hc z⟩
   have hS : (MeromorphicDynamics.surfaceModel f).singularValues.Finite := by
     rw [MeromorphicDynamics.surfaceModel_singularValues]
-    exact MeromorphicDynamics.finite_singularValues_of_entire hf hnonconst hfinite
+    exact MeromorphicDynamics.finite_singularValues_of_entire hf hfinite
   exact SurfaceDynamics.no_wandering_domains_finite_type _
     (MeromorphicDynamics.surfaceModel_isOpenHolomorphic_of_entire hf hnonconst) hS _
     (MeromorphicDynamics.surfaceModel_isWanderingComponent_of_fatouComponents

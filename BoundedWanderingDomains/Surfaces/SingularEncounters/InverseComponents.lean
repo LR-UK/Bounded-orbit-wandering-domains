@@ -64,8 +64,8 @@ variable [T2Space X]
 theorem inverseComponent_regularValues_of_regular_neighborhood
     (f : LocalMap X) (hf : Continuous f.map) (D A : TopologicalSpace.Opens X)
     (hAD : (A : Set X) ⊆ D) [SimplyConnectedSpace A] [LocallyPathConnectedSpace A]
-    (hc : IsCoveringMapOn f.map A) (a : f.source) {y : X} (hyA : y ∈ A)
-    (hy : y ∈ closure (range (f.inverseComponentMap hf D a).map)) :
+    (hc : IsCoveringMapOn f.map A) (a : f.source) {y : X} (_hyA : y ∈ A)
+    (_hy : y ∈ closure (range (f.inverseComponentMap hf D a).map)) :
     (A : Set X) ⊆ (f.inverseComponentMap hf D a).regularValues := by
   let : LocallyConnectedSpace f.source := ChartedSpace.locallyConnectedSpace ℂ f.source
   let C := connectedComponentIn (f.map ⁻¹' (D : Set X)) a
@@ -78,27 +78,11 @@ theorem inverseComponent_regularValues_of_regular_neighborhood
     have hx := congrArg Subtype.val (e.apply_symm_apply x)
     change f.map ⟨(x : X), _⟩ = f.map (e.symm x : f.source)
     exact congrArg f.map (Subtype.ext hx.symm)
-  have hrange : range g.map = range p := by
-    ext z
-    constructor
-    · rintro ⟨v, rfl⟩
-      exact ⟨e.symm v, (congrFun heq v).symm⟩
-    · rintro ⟨v, rfl⟩
-      refine ⟨e v, ?_⟩
-      exact (congrFun heq (e v)).trans (congrArg p (e.symm_apply_apply v))
   have hp := coveringOn_inverse_component_over_simplyConnected hf D.isOpen A.isOpen hAD hc a
   have hgcov : IsCoveringMapOn g.map A := by
     rw [heq]
     exact hp.comp_homeomorph e.symm
-  have hy' : y ∈ closure (range p) := by
-    change y ∈ closure (range g.map) at hy
-    rwa [hrange] at hy
-  have hprange := range_inverse_component_contains_regular_neighborhood
-    hf D.isOpen A.isOpen hAD hc a hyA hy'
-  have hgrange : (A : Set X) ⊆ range g.map := by
-    rw [hrange]
-    exact hprange
-  exact fun z hz => ⟨A, A.isOpen, hz, hgrange, hgcov⟩
+  exact fun z hz => ⟨A, A.isOpen, hz, hgcov⟩
 
 variable [IsManifold 𝓘(ℂ) 1 X]
 
@@ -111,7 +95,7 @@ theorem componentSingularValues_subset (f : LocalMap X) (hf : Continuous f.map)
   intro y hy
   rcases hy with ⟨⟨hyS, hycl⟩, hyD⟩
   intro hyreg
-  obtain ⟨W, hWo, hyW, _, hcov⟩ := hyreg
+  obtain ⟨W, hWo, hyW, hcov⟩ := hyreg
   obtain ⟨Q, hQ, hQsub⟩ := exists_coordDisk_center_closedCarrier_subset
     (hWo.inter D.isOpen) ⟨hyW, hyD⟩
   let A : TopologicalSpace.Opens X := ⟨range Q.param, Q.isOpenEmbedding_param.isOpen_range⟩

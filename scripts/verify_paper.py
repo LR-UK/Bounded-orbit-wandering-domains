@@ -49,11 +49,14 @@ targets = ['Solution']
 if args.all:
     targets += ['BoundedWanderingDomains.All']
 run(['build', *targets], 'paper-build.log', append=True)
+run(['env', 'lean', 'verification/RegularValuesRegression.lean'],
+    'regular-values-regression.log')
 
 # The independent Challenge deliberately contains statement placeholders.
 # Every other compiler/linter warning is a release failure.
-warning_lines = [line for line in (OUT / 'paper-build.log').read_text(encoding='utf-8').splitlines()
-                 if re.match(r'^warning:', line)]
+warning_lines = [line for filename in ['paper-build.log', 'regular-values-regression.log']
+                 for line in (OUT / filename).read_text(encoding='utf-8').splitlines()
+                 if re.search(r'(?:^warning:|:\d+:\d+: warning:)', line)]
 placeholder_warning = re.compile(
     r'^warning: Challenge\.lean:'
     r'\d+:\d+: declaration uses `sorry`$')
@@ -84,7 +87,8 @@ claim_names = [
 ]
 # Structures are checked locally as supporting declarations and transitively
 # by the official Comparator. They are not Comparator definition holes.
-structure_names = ['SurfaceDynamics.LocalMap', 'SurfaceDynamics.EmbeddedDisc']
+structure_names = ['SurfaceDynamics.LocalMap', 'SurfaceDynamics.EmbeddedDisc',
+                   'SurfaceDynamics.LocalMap.PreimageComponent']
 expected_declarations = set(CONFIG['theorem_names'] + CONFIG['definition_names'] +
                             claim_names + structure_names)
 assert set(challenge) == expected_declarations, 'Missing or unexpected declaration in comparison'
