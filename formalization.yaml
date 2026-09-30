@@ -5,20 +5,29 @@ project:
   description: >-
     We formalise the proof of two major recent results on wandering domains of transcendental
     entire and meromorphic functions: every orbit in a wandering domain accumulates at infinity
-    and at a non-isolated (derived) point of the spherical set of singular values. In both cases
-    the target surface X is the compact Riemann sphere, so there is no ambient-escape alternative.
-    These results follow from a combined singular-encounter theorem for open holomorphic maps
-    from an open subset O of a Riemann surface X into X. Unless an orbit has a subsequence escaping
-    every compact subset of X, distinct singular values converge to a derived singular value
-    through shrinking target discs. The corresponding full inverse components each carry the
-    associated singular value and capture all wandering orbits at common increasing times,
-    uniformly on compact subsets of the initial component. The source-escape and local
-    derived-singular accumulation theorems follow from this combined result, without a
-    simple-connectivity assumption. We also prove positive-area wandering-set theorems and
-    the analogous almost-everywhere componentwise encounter statement: if A is measurable,
-    all iterates are defined and injective on A, its forward images are pairwise disjoint,
-    and A is disjoint from the normality locus, then almost every point satisfies the same
-    ambient-escape or singular-encounter alternative. Nullity is expressed in every chart.
+    and at a non-isolated (derived) point of the spherical set of singular values. 
+    
+    Both results
+    are obtained as a special case of a more general theorem, for locally defined functions on
+    Riemann surfaces. Let f be an open holomorphic function from an open subset O of a Riemann surface X into X.
+    Suppose that U is a wandering component of the set of normality of f, and that z is in U. If the
+    orbit of z is contained in a compact subset of X, then it accumulates at a non-isolated point s of the set 
+    of singular values. Moreover, this accumulation must occur close to singularities for infinitely many
+    singular values. That is, there exists a sequence (s_n) of distinct singular values converging to s,
+    a sequence of embedded discs D_n containing s and a sequence U_n of components of f^{-n}(D_n), with the following
+    properties. (We say that the orbit of z has "singular encounters"; see
+    HasSingularEncounterSequence in the formalisation.)
+    * the discs D_n shrink to s; that is, every neighbourhood of s contains D_n for sufficiently large n;
+    * each component U_n contains a point of the orbit of z;
+    * s_n is a singular value of the restriction f:U_n\to D_n.
+    In particular, the orbit of z is not contained in any compact subset of O. In the special case of a transcendental entire 
+    or meromorphic function, we can take X to be the Riemann sphere, and hence compact, so that the
+    hypotheses are satisfied for any wandering Fatou component.
+    
+    We also prove a corresponding theorem for measurable wandering subsets of the complement of the domain
+    of normality on which all iterates are defined and injective; here the conclusion is that almost every
+    point of the set (in any chart) behaves as above: ambient escape along a subsequence, or singular encounters. 
+
     As corollaries we recover Epstein's absence of wandering domains for finite-type maps
     on arbitrary open subsets of compact Riemann surfaces, and the classical no-wandering
     results for rational maps, compact-surface self-maps, and class S entire and meromorphic functions.

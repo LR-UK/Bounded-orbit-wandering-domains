@@ -218,7 +218,7 @@ section Targets
 variable [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X]
   [ConnectedSpace X] [IsManifold 𝓘(ℂ) 1 X]
 
-/-- Compact-orbit exclusion: no auxiliary working domain V and no simple connectivity. -/
+/-- Compact-orbit exclusion -/
 def NoCompactWanderingOrbitClaim : Prop :=
   ∀ f : LocalMap X, IsOpenHolomorphic f →
     ∀ U : Set X, f.IsWanderingComponent U → ∀ z ∈ U,
@@ -235,7 +235,7 @@ def NoCompactPositiveAreaWanderingSetClaim [MeasurableSpace X] [BorelSpace X] : 
 
 /-- Derived-singular accumulation: compact escape or accumulation at a derived singular value.
 The escape alternative has exactly its compact-avoidance meaning by
-`tendsto_infty_iff_leaves_compacts`. There is no simple-connectivity or orbit-injectivity hypothesis. -/
+`tendsto_infty_iff_leaves_compacts`. -/
 def WanderingDerivedSingularLimitClaim : Prop :=
   ∀ f : LocalMap X, IsOpenHolomorphic f →
     ∀ U : Set X, f.IsWanderingComponent U →
@@ -281,8 +281,7 @@ def IsFatouComponent (f : ℂ → ℂ) (U : Set ℂ) : Prop :=
 
 attribute [instance] instCommCStarAlgebraComplex
 
-/-- Meromorphic wandering-domain escape. No simple-connectivity
-or orbit-injectivity assumption. Convergence is locally uniform and spherical.
+/-- Meromorphic wandering-domain escape. Convergence is locally uniform and spherical.
 MeromorphicNFOn is a representation convention, not an exclusion of poles. -/
 def WanderingLocallyUniformInfinityClaim : Prop :=
   ∀ {f : ℂ → ℂ}, MeromorphicNFOn f univ → ¬ IsRationalMeromorphic f →
@@ -631,9 +630,21 @@ def componentSingularValues (f : LocalMap X) (hf : Continuous f.map)
   (f.inverseComponentMap hf D a).singularValues ∩
     closure (range (f.inverseComponentMap hf D a).map) ∩ (D : Set X)
 
-/-- Distinct singular values converge to x through shrinking analytic discs.
-The selected full inverse components capture every compact subset of W at
-common increasing times. The base points c merely name the components. -/
+/-- Key definition: singular encounter sequences.
+Here f is a continuous local map with open source O in X, W is a
+set of starting points, and x is the proposed limiting singular value.
+In the wandering-domain application, f is open and holomorphic and
+W is a wandering Fatou component.
+
+The claim is that there exist:
+* a sequence Q_n of embedded discs containing x and shrinking to x
+* preimage components U_n of Q_n
+* distinct singular values s_n in Q_n, each a singular value of the restriction of f to U_n
+with the following property.
+There is an increasing sequence φ_n of times such that, for every compact subset K of W, the set
+f^{φ_n}(K) is contained in U_n for large n. Note that, in our applications, points in K have orbits
+that accumulate on the limit point x of s_n, and also accumulate on infinity, since the components U_n
+necessarily leave every compact set.-/
 def HasSingularEncounterSequence (f : LocalMap X) (hf : Continuous f.map)
     (W : Set X) (x : X) : Prop :=
   ∃ (Q : ℕ → EmbeddedDisc X) (φ : ℕ → ℕ) (s : ℕ → X) (c : ℕ → f.source),
@@ -702,4 +713,3 @@ theorem wandering_orbit_accumulates_on_derived_singular_values
   sorry
 
 end MeromorphicDynamics
-
