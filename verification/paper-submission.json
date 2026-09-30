@@ -3,8 +3,8 @@
   "scope": "Local Lean build, independent declaration equality, source closure and transitive axioms",
   "official_comparator": "Not run by this script; use scripts/verify-comparator.sh comparator.json on Linux",
   "theorems_compared": 19,
-  "supporting_declarations_compared": 51,
-  "local_proof_modules_scanned": 778,
+  "supporting_declarations_compared": 53,
+  "local_proof_modules_scanned": 780,
   "axioms": {
     "BoundedWanderingDomains.wandering_domain_has_locally_uniform_escaping_subsequence": [
       "propext",
@@ -105,9 +105,9 @@
   "built_all_entry_points": true,
   "ordinary_linter_warnings": 0,
   "intentional_challenge_placeholder_warnings": 19,
-  "all_local_proof_modules_scanned": 779,
+  "all_local_proof_modules_scanned": 781,
   "source_hash_encoding": "UTF-8 with LF line endings",
-  "declarations_sha256": "610cdd656ed26ad8e398c93a8f7e7a132d6666cd9f6d795ce2ed987427b03661",
+  "declarations_sha256": "27505fa0074761c28d053d40a87b1cc32ad2fd832bff2cc0b628a41ca3ea0c68",
   "proof_imports": {
     "Solution": {
       "file": "Solution.lean",
@@ -123,7 +123,7 @@
         "BoundedWanderingDomains.Surfaces.SurfaceDerivedLimits",
         "BoundedWanderingDomains.Surfaces.SurfacePositiveArea"
       ],
-      "sha256": "791b2fd5832b41efffed073fab2527822e774c127e4093bafa351a424395b988"
+      "sha256": "13eeb4e7b24c0352c9d6fbc95914af797b7af7115808e3ee57098042a36d6d84"
     },
     "BoundedWanderingDomains.Surfaces.AlmostEverywhere.Results": {
       "file": "BoundedWanderingDomains/Surfaces/AlmostEverywhere/Results.lean",
@@ -212,7 +212,7 @@
         "BoundedWanderingDomains.Surfaces.CoordinateDiscParam",
         "BoundedWanderingDomains.Surfaces.LocalMapTotalization"
       ],
-      "sha256": "aa18186b5f645dd7a81a426c973444addd6ae4d2ad4c5e7c042b00294b2d215a"
+      "sha256": "c9f151bc6373645326fe78e3cd891f6d5613f03939a390c22960ac4b85e4452d"
     },
     "BoundedWanderingDomains.Surfaces.SingularEncounters.InverseComponentCovering": {
       "file": "BoundedWanderingDomains/Surfaces/SingularEncounters/InverseComponentCovering.lean",
@@ -255,9 +255,16 @@
         "Mathlib.Topology.UniformSpace.OfCompactT2",
         "Mathlib.Topology.UniformSpace.LocallyUniformConvergence",
         "Mathlib.Topology.Connected.LocallyConnected",
+        "BoundedWanderingDomains.Surfaces.MapSingularValues"
+      ],
+      "sha256": "777d9f36d9aaa29a606ac25cc14dff838c50efe7a168ec45f362b8f1b76acadd"
+    },
+    "BoundedWanderingDomains.Surfaces.MapSingularValues": {
+      "file": "BoundedWanderingDomains/Surfaces/MapSingularValues.lean",
+      "imports": [
         "Mathlib.Topology.Covering.Basic"
       ],
-      "sha256": "5c5810d495bfc071532ca8aa0a3b455fdade12a4b1b37bf9b89e69778ef008ef"
+      "sha256": "9008e02372989b3dbc58e26d39cb85ff01ecdb5fab0c868dfac528f1c584117d"
     },
     "BoundedWanderingDomains.Surfaces.PlaneReading": {
       "file": "BoundedWanderingDomains/Surfaces/PlaneReading.lean",
@@ -2047,7 +2054,7 @@
         "BoundedWanderingDomains.Surfaces.LocalMapSubsurface",
         "BoundedWanderingDomains.Surfaces.SurfaceSingularCovering"
       ],
-      "sha256": "6691116b20cb813ca2707b380964134e748158d4a426313928d5028fca13fd25"
+      "sha256": "c729cda87d47a462901c8d642b55ee693f8855009b0ffa480ffb57c8197ca8ef"
     },
     "BoundedWanderingDomains.Surfaces.LocalMapSubsurface": {
       "file": "BoundedWanderingDomains/Surfaces/LocalMapSubsurface.lean",
@@ -2153,7 +2160,7 @@
       "imports": [
         "BoundedWanderingDomains.Surfaces.LocalDynamics"
       ],
-      "sha256": "d186262203643415055f4ef32c1a992b17fb9bfaea99b4c93d6c7b793f76b1e6"
+      "sha256": "34518fa1e14bcd645df1e1ed005d909630192bff82d39bf2ed27573e434694b2"
     },
     "BoundedWanderingDomains.Surfaces.AnchorComplementModels": {
       "file": "BoundedWanderingDomains/Surfaces/AnchorComplementModels.lean",
@@ -3113,7 +3120,7 @@
         "BoundedWanderingDomains.Surfaces.SingularEncounters.InverseComponents",
         "Mathlib.Topology.Connected.Clopen"
       ],
-      "sha256": "7ce350d0db586dec53edeca51f385a6ab4183d331483ba7a2fd31f11a6d81101"
+      "sha256": "6bbe72ba3fa2880b1a7efa0b097ae2eebe810fca4a149ad91f96ba93e899a39d"
     },
     "BoundedWanderingDomains.Surfaces.BKL.ComponentRecovery": {
       "file": "BoundedWanderingDomains/Surfaces/BKL/ComponentRecovery.lean",
@@ -3147,7 +3154,7 @@
         "BoundedWanderingDomains.Surfaces.SurfaceFilling",
         "BoundedWanderingDomains.Surfaces.WanderingDiscShrink"
       ],
-      "sha256": "f7b16338da80ff7370b10df9ef593f4a4e21d59214ff7363b8bb4fe6437008e4"
+      "sha256": "5f8ada27893d621599aadc659519ed1109a021f09276b1c95ae73a4a352b0467"
     },
     "BoundedWanderingDomains.Surfaces.BKL.PuncturedCovers": {
       "file": "BoundedWanderingDomains/Surfaces/BKL/PuncturedCovers.lean",
@@ -6615,7 +6622,7 @@
         "BoundedWanderingDomains.Surfaces.SingularEncounters.InverseComponents",
         "BoundedWanderingDomains.Surfaces.SingularEncounters.ComponentEmbedding"
       ],
-      "sha256": "7a10d99403b833afbfe2244b29bd6bd875b81158cc3e04af8325e7af50249fb8"
+      "sha256": "ebb854dfd3d0e7ef94637fec386acbfabc610e12d90e97732a18b19825e5cf50"
     },
     "BoundedWanderingDomains.Surfaces.SingularEncounters.ComponentEmbedding": {
       "file": "BoundedWanderingDomains/Surfaces/SingularEncounters/ComponentEmbedding.lean",
@@ -7021,7 +7028,7 @@
       "imports": [
         "BoundedWanderingDomains.Surfaces.LocalDynamics"
       ],
-      "sha256": "1012fd9eb91f6980c5dc1ab5465d398a19230913ac0bc42e0f65044ec2551ea6"
+      "sha256": "07c18e70717cb8dfd9618a3cb0107f1042b81fac041cbc3cc0b2936b3750a7a7"
     },
     "BoundedWanderingDomains.Surfaces.SingularEncounters.RestrictionIteration": {
       "file": "BoundedWanderingDomains/Surfaces/SingularEncounters/RestrictionIteration.lean",
@@ -7065,7 +7072,7 @@
         "BoundedWanderingDomains.Surfaces.FiniteType",
         "BoundedWanderingDomains.Surfaces.CompactGlobalSingularValues"
       ],
-      "sha256": "396700abf115ec1055c2a6c53a6d6da2903bdeca05258e3c83464446456bc812"
+      "sha256": "c0371a8d49cf3390f299035b17de395d0749bf7c8fa4c2138455c49bfb1a0578"
     },
     "BoundedWanderingDomains.EntireSurfaceModel": {
       "file": "BoundedWanderingDomains/EntireSurfaceModel.lean",
@@ -7213,10 +7220,9 @@
       "file": "BoundedWanderingDomains/MeromorphicSingularValues.lean",
       "imports": [
         "BoundedWanderingDomains.MeromorphicSurfaceModel",
-        "BoundedWanderingDomains.SphericalSingularValues",
-        "FunctionTheory.Conformal.LittlePicardBloch"
+        "BoundedWanderingDomains.SphericalSingularValues"
       ],
-      "sha256": "909fbfe62feeb338189476dea9069cda71182c91816e5c5d2754af1237a3d44a"
+      "sha256": "7883fd77f3ef88397c31b0e0eb42b81ec3feb09efed1a1383e01dbfa5c491e21"
     },
     "BoundedWanderingDomains.SphericalSingularValues": {
       "file": "BoundedWanderingDomains/SphericalSingularValues.lean",
@@ -7250,7 +7256,7 @@
         "BoundedWanderingDomains.Surfaces.LocalDynamics",
         "BoundedWanderingDomains.Surfaces.Statements"
       ],
-      "sha256": "4556c1202d617d2e852dc18f9cda10dcb6dab346f06f9351ae1fd094fa3800e9"
+      "sha256": "06d1a086d6fa52b80b8edb463e161af505ee7ba67b755bf49019cbc2f1f30b8a"
     },
     "BoundedWanderingDomains.EntireBoundedOrbit": {
       "file": "BoundedWanderingDomains/EntireBoundedOrbit.lean",
@@ -7285,7 +7291,7 @@
         "BoundedWanderingDomains.MeromorphicSingularValues",
         "BoundedWanderingDomains.Surfaces.SurfaceDerivedLimits"
       ],
-      "sha256": "d99b6958b031a1dc688eadd9e3a8ff10f0a21b4b07096739f39e12fcf52d7666"
+      "sha256": "7cf094a5d24b57aa9d6d9385f6a6ca53e099c00cc089c6bbe5e6f7a567be8020"
     },
     "BoundedWanderingDomains.MeromorphicEscape": {
       "file": "BoundedWanderingDomains/MeromorphicEscape.lean",
@@ -7512,15 +7518,23 @@
         "BoundedWanderingDomains.Surfaces.SingularEncounters.SurfaceAlmostEverywhere",
         "BoundedWanderingDomains.Surfaces.AlmostEverywhere.OrbitShift"
       ],
-      "sha256": "0b2bf03998c5a5f77ea6a6301850ea68e4feb3b1bcb7d97a5614bfbfb684fa8e"
+      "sha256": "3501e7c5407d34eb9a13ff3ab687a3e5a5e1ebbb9641a8737e8fc9854b67c3c7"
     },
     "BoundedWanderingDomains.Surfaces.SingularEncounters.Statements": {
       "file": "BoundedWanderingDomains/Surfaces/SingularEncounters/Statements.lean",
       "imports": [
         "BoundedWanderingDomains.Surfaces.SingularEncounters.EncounterData",
+        "BoundedWanderingDomains.Surfaces.SingularEncounters.PreimageComponent",
         "BoundedWanderingDomains.Surfaces.AlmostEverywhere.Definitions"
       ],
-      "sha256": "6c29f05e559aece5eae3a806367fd6271783291fe8134d978d005e6ff3d158e8"
+      "sha256": "8c3c35985a96df25ad465f71665720661df021967e10726c22ac6f94b0e3a439"
+    },
+    "BoundedWanderingDomains.Surfaces.SingularEncounters.PreimageComponent": {
+      "file": "BoundedWanderingDomains/Surfaces/SingularEncounters/PreimageComponent.lean",
+      "imports": [
+        "BoundedWanderingDomains.Surfaces.SingularEncounters.InverseComponents"
+      ],
+      "sha256": "b7c718bf451c9a738bc7ef97eac6726fbba6aa60e6297be8dd4fef7dea695dce"
     },
     "BoundedWanderingDomains.Surfaces.SurfacePositiveArea": {
       "file": "BoundedWanderingDomains/Surfaces/SurfacePositiveArea.lean",

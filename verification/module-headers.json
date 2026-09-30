@@ -1,6 +1,6 @@
 {
   "result": "passed",
   "scope": "Module headers in all package Lean sources; visibility is checked by Lean builds",
-  "lean_sources_checked": 1336,
+  "lean_sources_checked": 1339,
   "missing_module_headers": []
 }

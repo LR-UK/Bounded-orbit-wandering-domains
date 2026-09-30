@@ -1,0 +1,24 @@
+{
+  "result": "passed",
+  "version": "1.8.1",
+  "base_commit": "4e55a285c98511a2081fdbc616643e3ac0f7c82f",
+  "regular_values_allow_empty_covering_neighborhoods": true,
+  "public_encounters_quantify_over_components": true,
+  "component_restriction_target": "The selected target disc",
+  "regression_checks": [
+    "Empty source has no singular values",
+    "Punctured-plane inclusion has singular value zero"
+  ],
+  "local_audit": {
+    "result": "passed",
+    "theorems_compared": 19,
+    "supporting_declarations_compared": 53,
+    "built_all_entry_points": true,
+    "ordinary_linter_warnings": 0,
+    "intentional_challenge_placeholder_warnings": 19,
+    "declarations_sha256": "27505fa0074761c28d053d40a87b1cc32ad2fd832bff2cc0b628a41ca3ea0c68"
+  },
+  "pinned_comparator_core": "passed on imported compiled environments",
+  "official_sandboxed_pipeline": "Not run locally; rerun GitHub Linux verification.",
+  "toolchain_and_dependency_pins_changed": false
+}

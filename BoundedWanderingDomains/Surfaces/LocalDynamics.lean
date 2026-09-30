@@ -11,7 +11,7 @@ public import Mathlib.Topology.UniformSpace.Uniformizable
 public import Mathlib.Topology.UniformSpace.OfCompactT2
 public import Mathlib.Topology.UniformSpace.LocallyUniformConvergence
 public import Mathlib.Topology.Connected.LocallyConnected
-public import Mathlib.Topology.Covering.Basic
+public import BoundedWanderingDomains.Surfaces.MapSingularValues
 
 @[expose] public section
 
@@ -171,20 +171,27 @@ def IsWanderingComponent (f : LocalMap X) (U : Set X) : Prop :=
 
 end Normality
 
-/-- Regular values of the local map, with a surjective covering over a neighbourhood.
-The extra image condition makes the covering convention explicit. -/
+/-- Regular values allow covering neighbourhoods with no sheets. -/
 def regularValues (f : LocalMap X) : Set X :=
-  {y | ∃ W : Set X, IsOpen W ∧ y ∈ W ∧ W ⊆ range f.map ∧ IsCoveringMapOn f.map W}
+  Map.regularValues f.map
 
 def singularValues (f : LocalMap X) : Set X := (f.regularValues)ᶜ
 
 theorem isOpen_regularValues (f : LocalMap X) : IsOpen f.regularValues := by
   rw [isOpen_iff_mem_nhds]
-  rintro y ⟨W, hW, hy, hsur, hcov⟩
-  exact mem_of_superset (hW.mem_nhds hy) (fun z hz => ⟨W,hW,hz,hsur,hcov⟩)
+  rintro y ⟨W, hW, hy, hcov⟩
+  exact mem_of_superset (hW.mem_nhds hy) (fun z hz => ⟨W,hW,hz,hcov⟩)
 
 theorem isClosed_singularValues (f : LocalMap X) : IsClosed f.singularValues :=
   f.isOpen_regularValues.isClosed_compl
+
+theorem singularValues_subset_closure_range (f : LocalMap X) :
+    f.singularValues ⊆ closure (range f.map) :=
+  Map.singularValues_subset_closure_range f.map
+
+theorem mem_range_of_regular_of_mem_closure (f : LocalMap X) {y : X}
+    (hr : y ∈ f.regularValues) (hc : y ∈ closure (range f.map)) : y ∈ range f.map :=
+  Map.mem_range_of_regular_of_mem_closure f.map hr hc
 
 end LocalMap
 

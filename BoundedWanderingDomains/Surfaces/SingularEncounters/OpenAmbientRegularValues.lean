@@ -26,19 +26,15 @@ theorem regularValues_into_open_ambient_of_source_homeomorph
       continuous_toFun := continuous_id.subtype_mk _
       continuous_invFun := continuous_subtype_val }
   intro y hy
-  obtain ⟨W, hW, hyW, hWr, hWc⟩ := hy
+  obtain ⟨W, hW, hyW, hWc⟩ := hy
   let B : Set O := Subtype.val ⁻¹' W
   have hp : IsCoveringMapOn p W := by
     rw [hpeq]
     exact hWc.comp_homeomorph e
-  refine ⟨B, hW.preimage continuous_subtype_val, hyW, ?_, ?_⟩
-  · intro b hb
-    obtain ⟨a, ha⟩ := hWr hb
-    refine ⟨e.symm a, Subtype.ext ?_⟩
-    exact (hcomm (e.symm a)).trans ((congrArg f.map (e.apply_symm_apply a)).trans ha)
-  · intro b hb
-    have hh := ((hp b hb).restrictPreimage (O : Set X) b.2).comp_homeomorph eAll
-    change IsEvenlyCovered g.map b _ at hh
-    exact hh.to_isEvenlyCovered_preimage
+  refine ⟨B, hW.preimage continuous_subtype_val, hyW, ?_⟩
+  intro b hb
+  have hh := ((hp b hb).restrictPreimage (O : Set X) b.2).comp_homeomorph eAll
+  change IsEvenlyCovered g.map b _ at hh
+  exact hh.to_isEvenlyCovered_preimage
 
 end SurfaceDynamics.LocalMap

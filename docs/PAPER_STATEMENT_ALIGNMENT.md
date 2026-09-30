@@ -37,8 +37,9 @@ statement. The current challenge imports only Mathlib; the proofs never import i
   rational maps in the intrinsic holomorphic-sphere formulation, and class S
   transcendental entire and meromorphic functions. All follow from the finite-type
   theorem. Polynomial maps are included among rational maps. Meromorphic singular
-  values are defined using the genuine sphere-valued map and surjective local
-  coverings, including omitted values. The pole-avoiding Fatou components agree
+  values are defined using the genuine sphere-valued map and local coverings
+  allowing empty sheets. Empty-preimage neighbourhoods are regular; omitted
+  asymptotic values are singular. The pole-avoiding Fatou components agree
   with the normality components of the local sphere model.
 
 The combined statement strengthens these conclusions. It supplies distinct
@@ -46,7 +47,10 @@ singular values s_n tending to s, analytic target discs D_n containing s and
 shrinking to {s}, and full inverse components U_n of f^{-1}(D_n). Each s_n is
 a genuine singular value of f restricted to U_n. At common strictly increasing
 times, the U_n capture each compact subset of the initial wandering domain.
-In particular every orbit enters every sufficiently late selected U_n.
+In particular every orbit enters every sufficiently late selected U_n. The
+public definition quantifies over the U_n themselves and uses the ordinary
+singular values of each restricted map U_n → D_n. Base points are confined
+to internal component-identification proofs.
 For measurable wandering sets the analogous pointwise assertion holds almost
 everywhere, with sequences allowed to depend on the point. No infinite-degree
 condition is imposed on the selected components.
@@ -66,3 +70,12 @@ poles and infinity; no polynomial-quotient equivalence theorem is asserted.
 The original entire theorem and all preceding result families are retained.
 The README preserves Lasse Rempe's supplied background, including Učakar's
 independent proof and the planned joint PRW/DPU paper.
+
+For maps between Riemann surfaces, a regular value has a disc neighbourhood
+such that every connected component of its preimage maps homeomorphically
+onto that disc. Lean uses the equivalent covering-neighbourhood formulation;
+the disc is not required to lie in the image. If the preimage is empty,
+the condition holds vacuously. This matters for locally defined maps: the
+singular set contains the obstruction to such inverse branches, rather than
+all omitted values. An omitted value approached by image points can still
+be singular, as for the punctured-plane inclusion at zero.

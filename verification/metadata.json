@@ -2,7 +2,7 @@
   "result": "passed",
   "validator_repository": "https://github.com/PalomarRegistry/PalomarSubmission",
   "validator_commit": "e48a86d0495356b5131a92c9406aa6e27cf99e56",
-  "metadata_sha256": "c719d10dee5085d918723c57a16c06445e9b47f57c3b8e65e449df3c359dd9c6",
+  "metadata_sha256": "4813e453053f1c3d84f4e96756743931ba4e2a32659526be390bbc92dcd84fb5",
   "metadata_hash_encoding": "UTF-8 with LF line endings",
   "provenance": {
     "result_origin": "source-based",

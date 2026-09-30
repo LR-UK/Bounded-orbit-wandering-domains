@@ -4,7 +4,7 @@
       "build",
       "Challenge"
     ],
-    "seconds": 78.26423619999696
+    "seconds": 35.12358070000482
   },
   {
     "command": [
@@ -12,7 +12,7 @@
       "lean",
       "verification/ExportPaperChallenge.lean"
     ],
-    "seconds": 43.625848299998324
+    "seconds": 72.7231036000012
   },
   {
     "command": [
@@ -20,7 +20,15 @@
       "Solution",
       "BoundedWanderingDomains.All"
     ],
-    "seconds": 1494.5313646000031
+    "seconds": 35.23097810000036
+  },
+  {
+    "command": [
+      "env",
+      "lean",
+      "verification/RegularValuesRegression.lean"
+    ],
+    "seconds": 64.37299549999443
   },
   {
     "command": [
@@ -28,6 +36,6 @@
       "lean",
       "verification/ExportPaperSolution.lean"
     ],
-    "seconds": 52.849915200000396
+    "seconds": 74.16584000000148
   }
 ]

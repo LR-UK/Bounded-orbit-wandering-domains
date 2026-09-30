@@ -20,7 +20,7 @@ theorem isCoveringMapOn_compl_singularValues (f : LocalMap X) :
   intro y hy
   have hy' : y ∈ f.regularValues := by
     simpa only [singularValues, compl_compl] using hy
-  obtain ⟨W, _hW, hyW, _hrange, hcov⟩ := hy'
+  obtain ⟨W, _hW, hyW, hcov⟩ := hy'
   exact hcov y hyW
 
 /-- Restricting the source to the preimage of any set of regular values

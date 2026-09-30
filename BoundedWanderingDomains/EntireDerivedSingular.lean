@@ -40,7 +40,7 @@ theorem entire_wandering_derived_singular_limit
       (fun n => (((f^[φ n]) z : ℂ) : OnePoint ℂ)) isCompact_univ (fun _ => mem_univ _)
     simpa only [surfaceModel_compactifiedIterate_coe_of_poleAvoiding f _ hzpole] using hescape
   · refine ⟨a, ?_, φ, hφ, ?_⟩
-    · apply derived_singularValues_subset_of_entire hf hnonconst
+    · apply derived_singularValues_subset_of_entire hf
       simpa only [surfaceModel_singularValues] using ha
     · apply OnePoint.isOpenEmbedding_coe.tendsto_nhds_iff.mpr
       change Tendsto (fun n =>

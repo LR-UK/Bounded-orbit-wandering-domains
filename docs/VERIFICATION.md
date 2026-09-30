@@ -1,57 +1,29 @@
-# Verification - version 1.8.0, 29 September 2026
+# Verification — version 1.8.1, 30 September 2026
 
-## Comparator configuration correction
+The configured Lean build passed for `Solution`, the independent `Challenge`,
+and `BoundedWanderingDomains.All`. All 19 selected theorem
+declarations and 53 supporting declarations
+match between Challenge and Solution. The build has zero ordinary compiler or
+linter warnings. The nineteen Challenge `sorry` warnings are intentional statement
+placeholders; the solution does not import Challenge.
 
-The first v1.8.0 CI run completed both Lean builds but rejected
-`SurfaceDynamics.EmbeddedDisc` in Comparator's `definition_names`: it is an
-inductive structure, not a definition hole. This entry has been removed.
-The structure remains checked transitively by Comparator and explicitly by
-the local supporting-declaration comparison; its carrier definition stays
-in `definition_names`. No mathematical statement or proof was changed.
+This version corrects the definition of regular values: covering neighbourhoods
+may have empty fibres, and need not be contained in the range. The general
+definition applies to maps between different spaces. Lean proves that singular
+values lie in the closure of the image. Regression checks verify that an empty
+source has no singular values and that the omitted point of the punctured-plane
+inclusion remains singular.
 
-Both declaration exporters now validate configured constant kinds against
-the Lean environment. The local audit runs the Challenge check before the
-Solution build, so this class of configuration error fails earlier.
-See `verification/comparator-kind-fix.json` for the correction's checks.
+The public singular-encounter statement quantifies over full preimage components
+U_n directly and uses the singular values of the actual restricted maps U_n → D_n.
+Internal base-point constructions are connected to this formulation by a proved
+equality. The author's explanatory comments and revised abstract are retained,
+with eventual visit times, one-step preimages, and source escape made precise.
+All dependent proofs were rebuilt with the corrected definition. In particular,
+the general surface conclusions use the corrected singular set throughout.
 
-## Mathematical verification
-
-The full configured Lean build passed (4,301 Lake jobs), including
-`Solution`, the sole independent `Challenge`, and `BoundedWanderingDomains.All`.
-All nineteen selected theorem declarations and 51 supporting declarations match
-between Challenge and Solution. All 57 declaration records exported by version
-1.7.1 are unchanged, including the exact original entire-function bounded-orbit
-statement. The three additions are the combined wandering-domain theorem, its
-almost-everywhere counterpart, and explicit meromorphic derived-singular accumulation.
-
-The main bounded-source, derived-singular and area statements now follow from
-the combined componentwise encounter proof. Finite-type and classical
-no-wandering corollaries follow through derived-singular accumulation. The
-meromorphic model has the compact sphere as its target, so ambient escape is
-impossible; its new selected theorem states derived-singular accumulation
-without that alternative. See [statement alignment](PAPER_STATEMENT_ALIGNMENT.md)
-and the [proof guide](PAPER_PROOF_GUIDE.md).
-
-The cleanup removed 118 obsolete first-party, legacy and research Lean files,
-including earlier independent main proofs. Attributed supporting libraries,
-their source snapshots and licence texts are retained. The selected solution
-closure contains 778 local modules; the current
-proof-library entry point adds one. These 779
-proof modules passed the scan for proof holes, custom axioms, `native_decide`
-and imports of independent challenges. All 1,336
-retained Lean sources pass the module-header check. This does not claim that
-unused vendored modules were compiled.
-
-Every selected proof uses only `propext`, `Classical.choice` and `Quot.sound`.
-The configured build has zero ordinary compiler or linter warnings. Its nineteen
-warnings are intentional statement placeholders in `Challenge.lean`, which the
-proofs never import. No linter was disabled.
-
-The pinned metadata contract, attribution and source-structure checks passed.
-The attribution audit covers 12 licence texts, 51 attribution files and 274
-vendored headers. The abstract explicitly includes the combined, positive-area,
-almost-everywhere and classical no-wandering results, and explains the compact
-sphere target for entire and meromorphic functions.
+The transitive proof audit permits only `propext`, `Classical.choice`, and
+`Quot.sound`. Metadata, attribution and source-structure checks passed.
 
 ## Reproduce the checks
 
@@ -62,25 +34,20 @@ python3 scripts/audit_structure.py
 python3 -X utf8 scripts/audit_attribution.py
 ```
 
-The metadata checker needs PyYAML. For a fresh checkout run
-`python3 scripts/fetch_cache.py` first. Preserve existing `.lake` directories
-when updating. The Lean and Mathlib pins are unchanged:
-`leanprover/lean4:v4.35.0-rc2` and
-`065356127b1dc0016f66b7283ce0ce2c4055aa55`.
-Changed project modules need rebuilding; unchanged dependencies remain cached.
-Recorded recheck timings use existing compiled artifacts and are not estimates
-for a fresh build or another computer.
+The metadata checker needs PyYAML. Preserve existing `.lake` directories when
+updating. Lean and Mathlib remain pinned to `leanprover/lean4:v4.35.0-rc2` and
+`065356127b1dc0016f66b7283ce0ce2c4055aa55`. Changed project modules rebuild;
+unchanged dependencies can retain their cached artifacts.
 
-Evidence is in `verification/combined-release.json`,
-`verification/paper-submission.json`, the paper build/declaration/axiom logs,
-`verification/paper-check-timings.json`, `verification/module-headers.json`,
-`verification/metadata.json`, `verification/attribution.json` and
-`verification/structure-audit.json`. The source manifest records the exact
-released files. Obsolete release reports, handoffs and diagnostic logs are removed.
+Evidence is recorded in `verification/paper-submission.json`, its build,
+declaration and axiom logs, `verification/regular-values-regression.log`,
+`verification/regular-values-update.json`, `verification/metadata.json`,
+`verification/attribution.json`, and `verification/structure-audit.json`.
 
 ## External verification
 
-The official sandboxed Palomar Comparator and NanoDa/con-ron replay were not run
-locally for this version. The included Linux workflow runs them after upload.
-Local declaration comparison, Lean kernel checks and axiom audits are distinct
-from those external checks and registry review or acceptance.
+The pinned Comparator declaration-comparison core passed on separately imported
+compiled Challenge and Solution environments, including transitive checks.
+The official sandboxed export and independent-kernel pipeline was not run locally
+on Windows. GitHub must confirm that pipeline after upload. Local verification
+does not claim registry acceptance or an independent human mathematical review.
