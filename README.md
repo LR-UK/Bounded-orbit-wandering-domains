@@ -14,27 +14,37 @@ statement unchanged and includes the following results.
 
 - **Entire and meromorphic escape:** a wandering Fatou component has a
   subsequence of iterates converging locally uniformly to infinity.
-- **Entire and meromorphic derived-singular accumulation:** every wandering point has an orbit
-  subsequence converging to the derived set of the spherical singular values.
+- **Entire and meromorphic derived-singular accumulation:** every point in 
+  a wandering Fatou component has an orbit
+  subsequence converging to a non-isolated point of the set of spherical singular values.
   For meromorphic maps the ambient target is the compact Riemann sphere, so
   there is no ambient-escape alternative. This proves the assertion announced
   without proof in [PRW]. Učakar has informed
   the authors that he independently obtained a proof of this theorem.
-- **Combined singular-encounter theorem:** unless a wandering orbit has an
-  ambient-escaping subsequence, there are distinct singular values tending to
+- **Combined singular-encounter theorem:** This result applies to general
+  open holomorphic function $f\colon O\to X$, where $O$ is an open subset of an arbitrary Riemann surface $X$. Let $z$ be a point in a wandering normality component. 
+  Unless the orbit of $z$ has an ambient-escaping subsequence, 
+  there are distinct singular values tending to
   a derived singular value, shrinking analytic target discs, and full inverse
-  components carrying those singular values. At common increasing times the
-  components capture every compact subset of the initial wandering domain.
+  components of the discs such that the given singular values are singular
+  for the restriction. At common increasing times, the
+  components eventually capture the orbit of $z$, and indeed of 
+  every compact subset of the initial wandering domain.
   The analogous pointwise alternative holds almost everywhere in measurable
-  wandering sets with injective iterates outside the normality locus.
+  wandering sets with injective iterates outside the normality locus. These
+  are the general results that imply the other main results in the formalisation.
+  Note that, when $X$ is compact, there is no ambient-escaping subsequence 
+  (i.e., a subsequence of the orbit that escapes every compact set). 
+  In particular, this is the setting for rational,
+  entire and meromorphic functions, where we can take $X$ to be the Riemann sphere.
 - **Local compact-orbit exclusion:** for an open holomorphic map on an open
   subset $O$ of a Riemann surface, no wandering normality component contains a
-  point whose whole orbit stays in a compact subset of $O$.
-- **Local derived-singular accumulation:** every wandering orbit has a
+  point whose whole orbit stays in a compact subset of $O$. This follows from the
+  combined singular-encounter theorem.
+- **Local derived-singular accumulation:** the orbit of every point in a wandering
+  normality component has a
   subsequence escaping ambient compact sets or converging to a derived singular
-  value. This includes multiply connected components, using the formalised
-  Baker–Kotus–Lü covering and filling argument. If the orbit stays in an ambient
-  compact set, a derived-singular subsequential limit lies in that set.
+  value. Again, this follows from the singular-encounter theorem.
 - **Positive-area and almost-everywhere results:** let $A$ be a measurable set
   in the infinite-iteration locus, outside the normality locus, with pairwise
   disjoint forward images and each iterate injective on $A$. Almost every point
@@ -44,7 +54,8 @@ statement unchanged and includes the following results.
   formulations are retained: a positive-area forward saturation cannot stay in
   a source compact set, or in an ambient compact set avoiding derived singular
   values. Almost everywhere means outside a Lebesgue-null set in every chart;
-  no global surface measure is chosen.
+  no global surface measure is chosen. Once again, these results follow from the
+  measurable injective wandering set version of the singular-encounter theorem.
 - **Finite-type no-wandering theorem:** an open holomorphic map from an open
   subset of a compact Riemann surface to that surface has no wandering normality
   components if its singular set is finite. This recovers a theorem of Adam Epstein. 
