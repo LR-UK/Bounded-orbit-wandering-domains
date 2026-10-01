@@ -32,6 +32,11 @@ project:
     As corollaries we recover Epstein's absence of wandering domains for finite-type maps
     on arbitrary open subsets of compact, possibly disconnected complex one-manifolds, and the classical no-wandering
     results for rational maps, compact-surface self-maps, and class S entire and meromorphic functions.
+
+    This is an update from the previous registered submission on Palomar, https://palomar-registry.org/entry.html?id=PALOMAR-2026-09-25-000001&version=3 .
+    The change in this update is to allow functions in the local result to take values in a possibly disconnected
+    complex 1-manifold, rather than a Riemann surface. This aligns the definition with Epstein's original discussion of finite-type analytic maps,
+    which likewise allow (compact) complex 1-manifolds.
   authors:
   - Nikolai Prochorov
   - Lasse Rempe

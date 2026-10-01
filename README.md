@@ -22,7 +22,8 @@ statement unchanged and includes the following results.
   without proof in [PRW]. Učakar has informed
   the authors that he independently obtained a proof of this theorem.
 - **Combined singular-encounter theorem:** This result applies to an
-  open holomorphic function $f\colon O\to X$, where $O$ is an open subset of a possibly disconnected complex one-manifold $X$. Let $z$ be a point in a wandering normality component.
+  open holomorphic function $f\colon O\to X$, where $O$ is an open subset of a possibly 
+  disconnected complex one-manifold $X$. Let $z$ be a point in a wandering normality component.
   Unless the orbit of $z$ has an ambient-escaping subsequence, 
   there are distinct singular values tending to
   a derived singular value, shrinking analytic target discs, and full inverse
