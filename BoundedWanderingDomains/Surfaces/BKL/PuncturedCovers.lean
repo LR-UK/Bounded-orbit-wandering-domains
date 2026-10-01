@@ -2,6 +2,7 @@ module
 
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
 public import BoundedWanderingDomains.Surfaces.CoordinateDiscParam
+public import BoundedWanderingDomains.Surfaces.DiscCovering
 public import EremenkoLyubichConstant.ExteriorCoverClassification
 public import Mathlib.Analysis.Calculus.Deriv.Inv
 public import BoundedWanderingDomains.Surfaces.BKL.ReturnLimits
@@ -22,6 +23,9 @@ public import Mathlib.Analysis.Complex.RemovableSingularity
 public import TauCeti.Analysis.Complex.Conformal.Inverse.Function
 public import TauCeti.Analysis.Complex.Conformal.ImageSimplyConnected
 public import Mathlib.Analysis.Convex.Contractible
+
+public import BoundedWanderingDomains.Surfaces.Disconnected.ComponentwiseDiscImages
+public import BoundedWanderingDomains.Surfaces.Disconnected.CoordDiskRestriction
 
 @[expose] public section
 
@@ -158,7 +162,7 @@ namespace SurfaceDynamics.BKL
 theorem disjoint_discs_eventually_in_regular_punctured_coordDisk
     {X : Type*} [TopologicalSpace X] [T2Space X] [ChartedSpace ℂ X]
     [IsManifold 𝓘(ℂ) 1 X]
-    (f : LocalMap X) (q : DiscCover X) {K : Set X} (hK : IsCompact K)
+    (f : LocalMap X) (q : ComponentwiseDiscCover X) {K : Set X} (hK : IsCompact K)
     (hKd : Disjoint K (derivedSet f.singularValues))
     (F : ℕ → unitDisc → X) (hF : ∀ n, MDifferentiable 𝓘(ℂ) 𝓘(ℂ) (F n))
     (hcentre : ∀ n, F n discZero ∈ K)
@@ -214,8 +218,8 @@ namespace SurfaceDynamics.BKL
 
 theorem disjoint_disc_fillings_eventually_in_simplyConnected_neighborhood
     {X : Type*} [TopologicalSpace X] [T2Space X] [ChartedSpace ℂ X]
-    [IsManifold 𝓘(ℂ) 1 X] [ConnectedSpace X] [NoncompactSpace X]
-    (q : DiscCover X) {K : Set X} (hK : IsCompact K)
+    [IsManifold 𝓘(ℂ) 1 X] [NoncompactComponents X]
+    (q : ComponentwiseDiscCover X) {K : Set X} (hK : IsCompact K)
     (F : ℕ → unitDisc → X) (hF : ∀ n, MDifferentiable 𝓘(ℂ) 𝓘(ℂ) (F n))
     (hcentre : ∀ n, F n discZero ∈ K)
     (hdis : Pairwise (fun n m => Disjoint (range (F n)) (range (F m))))
@@ -234,7 +238,7 @@ theorem disjoint_disc_fillings_eventually_in_simplyConnected_neighborhood
   filter_upwards [hh] with n hn
   obtain ⟨a, ha⟩ := hn
   refine ⟨V a, hV a, ?_⟩
-  apply (compactFill_subset_coordDisk (D a) ?_).trans (hDV a)
+  apply (compactFill_subset_coordDisk_of_noncompactComponents (D a) ?_).trans (hDV a)
   rintro _ ⟨z, hz, rfl⟩
   obtain ⟨w, hw⟩ := ha z hz
   exact hw ▸ (D a).param_mem_closedCarrier w
@@ -532,7 +536,7 @@ theorem exists_lifted_regular_cover
     {X : Type*} [TopologicalSpace X] [T2Space X] [ChartedSpace ℂ X]
     [IsManifold 𝓘(ℂ) 1 X]
     (f : LocalMap X) (hf : MDifferentiable 𝓘(ℂ) 𝓘(ℂ) f.map)
-    (q : DiscCover X) {t : unitDisc → X}
+    (q : DiscCovering X) {t : unitDisc → X}
     (ht : MDifferentiable 𝓘(ℂ) 𝓘(ℂ) t) (hte : IsOpenEmbedding t)
     (hreg : ∀ z : puncturedUnitDisc, t ⟨z, z.2.1⟩ ∈ f.regularValues) :
     ∃ (B : TopologicalSpace.Opens unitDisc) (F : B → puncturedUnitDisc),

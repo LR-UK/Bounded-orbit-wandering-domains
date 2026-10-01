@@ -17,7 +17,7 @@ namespace SurfaceDynamics
 
 variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X]
-  [ConnectedSpace X] [IsManifold 𝓘(ℂ) 1 X]
+  [IsManifold 𝓘(ℂ) 1 X]
 
 /-- A wandering orbit contained in an ambient compact set has a subsequence
 converging to a derived singular value in that compact set. -/

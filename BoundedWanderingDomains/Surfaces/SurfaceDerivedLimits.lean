@@ -3,6 +3,8 @@ module
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
 public import BoundedWanderingDomains.Surfaces.SingularEncounters.SurfaceWanderingEncounters
 
+public import BoundedWanderingDomains.Surfaces.DerivedLimitReduction
+
 @[expose] public section
 
 /-! # Derived singular accumulation as a corollary of singular encounters -/
@@ -14,7 +16,7 @@ namespace SurfaceDynamics
 
 variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [IsManifold 𝓘(ℂ) 1 X] [T2Space X] [LocallyCompactSpace X]
-  [SecondCountableTopology X] [ConnectedSpace X]
+  [SecondCountableTopology X]
 
 theorem nonEscapingWanderingOrbitClusterMeetsDerivedClaim :
     NonEscapingWanderingOrbitClusterMeetsDerivedClaim (X := X) := by

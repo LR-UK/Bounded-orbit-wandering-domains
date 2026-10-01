@@ -41,7 +41,7 @@ end LocalMap
 
 section Targets
 variable [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X]
-  [ConnectedSpace X] [IsManifold 𝓘(ℂ) 1 X]
+  [IsManifold 𝓘(ℂ) 1 X]
 
 /-- Compact-orbit exclusion: no auxiliary working domain V and no simple connectivity. -/
 def NoCompactWanderingOrbitClaim : Prop :=

@@ -19,7 +19,7 @@ namespace SurfaceDynamics.LocalMap
 
 variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [IsManifold 𝓘(ℂ) 1 X] [T2Space X] [LocallyCompactSpace X]
-  [SecondCountableTopology X] [ConnectedSpace X] [MeasurableSpace X] [BorelSpace X]
+  [SecondCountableTopology X] [MeasurableSpace X] [BorelSpace X]
 
 theorem ae_has_escaping_or_singular_encounters
     (f : LocalMap X) (hf : IsOpenHolomorphic f)

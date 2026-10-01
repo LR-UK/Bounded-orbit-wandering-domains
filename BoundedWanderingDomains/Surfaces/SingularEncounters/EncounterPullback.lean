@@ -35,4 +35,19 @@ theorem HasSingularEncounterSequenceAt.pullback_one_step
     intro y hy
     simpa only [Function.iterate_succ_apply, hshift] using hn ⟨y, hy, rfl⟩
 
+theorem HasSingularEncounterSequenceAt.pullback_along_components
+    {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
+    (f : LocalMap X) (hf : Continuous f.map) (W : ℕ → Set X)
+    (hWs : ∀ n, W n ⊆ f.source) (hforward : ∀ n, MapsTo f.totalize (W n) (W (n + 1)))
+    {z : f.trapped} {x : X} (N : ℕ)
+    (h : f.HasSingularEncounterSequenceAt hf (W N) (f.trappedMap^[N] z) x) :
+    f.HasSingularEncounterSequenceAt hf (W 0) z x := by
+  induction N with
+  | zero => exact h
+  | succ N ih =>
+    apply ih
+    apply HasSingularEncounterSequenceAt.pullback_one_step f hf
+      (z := f.trappedMap^[N] z) _ (hWs N) (hforward N)
+    simpa only [iterate_succ_apply'] using h
+
 end SurfaceDynamics.LocalMap

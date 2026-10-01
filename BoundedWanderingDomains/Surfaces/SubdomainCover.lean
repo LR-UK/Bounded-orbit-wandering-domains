@@ -21,22 +21,28 @@ namespace AreaDeficit.Surfaces.DiscCover
 variable {M : Type*} [TopologicalSpace M] [ChartedSpace ℂ M]
   [IsManifold 𝓘(ℂ) 1 M] [T2Space M] [SecondCountableTopology M]
 
-theorem nonempty_subdomain (p : DiscCover M)
-    (U : TopologicalSpace.Opens M) [ConnectedSpace U] : Nonempty (DiscCover U) := by
+omit [T2Space M] [SecondCountableTopology M] in
+/-- A connected surface locally biholomorphic to a hyperbolic surface is
+hyperbolic. The two surfaces need not occur in the same ambient component. -/
+theorem nonempty_of_holomorphic_localHomeomorph (p : DiscCover M)
+    {N : Type*} [TopologicalSpace N] [ChartedSpace ℂ N]
+    [IsManifold 𝓘(ℂ) 1 N] [T2Space N] [SecondCountableTopology N] [ConnectedSpace N]
+    (f : N → M) (hf : MDifferentiable 𝓘(ℂ) 𝓘(ℂ) f)
+    (hfloc : IsLocalHomeomorph f) : Nonempty (DiscCover N) := by
   classical
-  let : IsManifold 𝓘(ℂ) ω M := isManifold_analytic_of_complex
-  let : LocallyPathConnectedSpace U := ChartedSpace.locallyPathConnectedSpace ℂ U
-  let : PathConnectedSpace U := PathConnectedSpace.of_locallyPathConnectedSpace
-  let x : U := Classical.choice (inferInstance : Nonempty U)
+  let : IsManifold 𝓘(ℂ) ω N := isManifold_analytic_of_complex
+  let : LocallyPathConnectedSpace N := ChartedSpace.locallyPathConnectedSpace ℂ N
+  let : PathConnectedSpace N := PathConnectedSpace.of_locallyPathConnectedSpace
+  let x : N := Classical.choice (inferInstance : Nonempty N)
   let : T2Space (PathCover x) := t2space_pathCover x
   let : SimplyConnectedSpace (PathCover x) := simplyConnectedSpace_pathCover x
   let : SecondCountableTopology (PathCover x) := secondCountableTopology_pathCover x
   let : LocallyPathConnectedSpace (PathCover x) :=
     ChartedSpace.locallyPathConnectedSpace ℂ (PathCover x)
-  let G : PathCover x → M := (Subtype.val : U → M) ∘ pathCoverProj x
+  let G : PathCover x → M := f ∘ pathCoverProj x
   have hproj := (contMDiff_pathCoverProj x).mdifferentiable (by simp)
   have hG : MDifferentiable 𝓘(ℂ) 𝓘(ℂ) G :=
-    (mdifferentiable_subtype_val U).comp hproj
+    hf.comp hproj
   obtain ⟨w,hw⟩ := p.surjective (G (pathCoverBase x))
   obtain ⟨h,_,hfac,hh⟩ := exists_holomorphic_lift
     p.holomorphic p.covering hG (pathCoverBase x) w hw
@@ -44,7 +50,7 @@ theorem nonempty_subdomain (p : DiscCover M)
   have hF : MDifferentiable 𝓘(ℂ) 𝓘(ℂ) F :=
     (mdifferentiable_subtype_val unitDisc).comp hh
   have hGloc : IsLocalHomeomorph G :=
-    U.isOpen.isOpenEmbedding_subtypeVal.isLocalHomeomorph.comp
+    hfloc.comp
       (pathCoverProj_isCoveringMap x).isLocalHomeomorph
   have hhloc : IsLocalHomeomorph h := by
     apply IsLocalHomeomorph.of_comp (g := p.projection)
@@ -88,5 +94,10 @@ theorem nonempty_subdomain (p : DiscCover M)
   · obtain ⟨e⟩ := hsphere
     let : CompactSpace (PathCover x) := e.toHomeomorph.symm.compactSpace
     exact (hnonconstant hF.exists_eq_const_of_compactSpace).elim
+
+theorem nonempty_subdomain (p : DiscCover M)
+    (U : TopologicalSpace.Opens M) [ConnectedSpace U] : Nonempty (DiscCover U) :=
+  p.nonempty_of_holomorphic_localHomeomorph (Subtype.val : U → M)
+    (mdifferentiable_subtype_val U) U.isOpen.isOpenEmbedding_subtypeVal.isLocalHomeomorph
 
 end AreaDeficit.Surfaces.DiscCover

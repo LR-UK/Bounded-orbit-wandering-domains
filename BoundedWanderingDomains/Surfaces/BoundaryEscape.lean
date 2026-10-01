@@ -8,7 +8,7 @@ public import Mathlib.Topology.Compactness.Compact
 
 /-! # Escape toward a deleted point
 
-A curve in an open part of a compact surface which converges in the compact
+A curve in an open part of a Hausdorff surface which converges in the ambient
 surface to a deleted boundary point escapes every compact subset of the open
 surface.  This is the topological bridge needed to apply the old-end metric
 comparison to coordinate puncture charts. -/
@@ -19,7 +19,7 @@ open scoped Topology
 namespace AreaDeficit.Surfaces
 
 theorem tendsto_cocompact_openSubtype_of_tendsto_boundary
-    {X ι : Type*} [TopologicalSpace X] [T2Space X] [CompactSpace X]
+    {X ι : Type*} [TopologicalSpace X] [T2Space X]
     [TopologicalSpace ι] {l : Filter ι} (O : Opens X) {a : X}
     (ha : a ∉ O) (x : ι → O)
     (hx : Tendsto (fun i => (x i : X)) l (𝓝 a)) :

@@ -23,7 +23,7 @@ variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [FirstCountableTopology X]
 
 theorem exists_shrinking_encounters_of_not_locally_finite
-    (p : DiscCover X) (f : LocalMap X) (hf : Continuous f.map)
+    (p : ComponentwiseDiscCover X) (f : LocalMap X) (hf : Continuous f.map)
     (c : ℕ → f.source) (F : ℕ → unitDisc → X)
     (hF : ∀ n, MDifferentiable 𝓘(ℂ) 𝓘(ℂ) (F n))
     (hFs : ∀ n, range (F n) ⊆ f.source)

@@ -117,17 +117,16 @@ theorem exists_finite_source_anchor_models
     exact f.closure_source_backward_invariant hf.1
       (f.sourceExhaustiveBackwardTree_union_backward (OrderHomClass.mono K) K.iUnion_eq)
 
-variable [CompactSpace X]
-
-theorem bad_compact_source_points_subset_anchor_barrier
+theorem bad_compact_orbit_point_mem_anchor_barrier
     (f : LocalMap X) (hf : IsOpenHolomorphic f)
-    (E : Finset X) (p : DiscCover (anchorComplement E))
+    (E : Finset X) (p : ComponentwiseDiscCover (anchorComplement E))
     (P : ℕ → Finset X) (hEP : (E : Set X) ⊆ closure (⋃ n, (P n : Set X)))
     (hfront : frontier (f.source : Set X) ⊆ closure (⋃ n, (P n : Set X)))
     (hback : ∀ x : f.source, f.map x ∈ closure (⋃ n, (P n : Set X)) →
-      (x : X) ∈ closure (⋃ n, (P n : Set X))) :
-    f.trapped \ f.omega ⊆ closure (⋃ n, (P n : Set X)) := by
-  intro x hx
+      (x : X) ∈ closure (⋃ n, (P n : Set X)))
+    {x : X} (hx : x ∈ f.trapped \ f.omega)
+    {K : Set X} (hK : IsCompact K) (hxK : ∀ n, f.orbit n ⟨x, hx.1⟩ ∈ K) :
+    x ∈ closure (⋃ n, (P n : Set X)) := by
   by_contra hxP
   let : LocallyPathConnectedSpace X := ChartedSpace.locallyPathConnectedSpace ℂ X
   let C := closure (⋃ n, (P n : Set X))
@@ -147,7 +146,21 @@ theorem bad_compact_source_points_subset_anchor_barrier
           apply hback ⟨f.orbit k ⟨y, hWtr y.property⟩, f.orbit_mem_source k _⟩
           rwa [← f.orbit_succ k ⟨y, hWtr y.property⟩]
     exact fun he => hnot n (hEP he)
-  exact hx.2 (f.mem_omega_of_omits_finite_anchors hf E (anchorComplement E) (fun _ => Iff.rfl)
-    p W hWtr hWO ⟨x, hxW⟩)
+  exact hx.2 (f.mem_omega_of_omits_finite_anchors_compact_orbit hf E (anchorComplement E) (fun _ => Iff.rfl)
+    p W hWtr hWO ⟨x, hxW⟩ hK hxK)
+
+variable [CompactSpace X]
+
+theorem bad_compact_source_points_subset_anchor_barrier
+    (f : LocalMap X) (hf : IsOpenHolomorphic f)
+    (E : Finset X) (p : DiscCover (anchorComplement E))
+    (P : ℕ → Finset X) (hEP : (E : Set X) ⊆ closure (⋃ n, (P n : Set X)))
+    (hfront : frontier (f.source : Set X) ⊆ closure (⋃ n, (P n : Set X)))
+    (hback : ∀ x : f.source, f.map x ∈ closure (⋃ n, (P n : Set X)) →
+      (x : X) ∈ closure (⋃ n, (P n : Set X))) :
+    f.trapped \ f.omega ⊆ closure (⋃ n, (P n : Set X)) := by
+  intro x hx
+  exact f.bad_compact_orbit_point_mem_anchor_barrier hf E p P hEP hfront hback hx
+    isCompact_univ (fun _ => mem_univ _)
 
 end SurfaceDynamics.LocalMap

@@ -39,10 +39,10 @@ end SurfaceDynamics.LocalMap
 namespace SurfaceDynamics.BKL
 
 variable {X : Type*} [TopologicalSpace X] [T2Space X] [LocallyCompactSpace X]
-  [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ) 1 X] [ConnectedSpace X] [NoncompactSpace X]
+  [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ) 1 X] [NoncompactComponents X]
 
 theorem disjoint_disc_fillings_eventually_controlled_by_restrictions
-    (f : LocalMap X) (hf : IsOpenHolomorphic f) (q : DiscCover X)
+    (f : LocalMap X) (hf : IsOpenHolomorphic f) (q : ComponentwiseDiscCover X)
     {K : Set X} (hK : IsCompact K)
     (F : ℕ → unitDisc → X) (hF : ∀ n, MDifferentiable 𝓘(ℂ) 𝓘(ℂ) (F n))
     (hcentre : ∀ n, F n discZero ∈ K)
@@ -68,7 +68,7 @@ theorem disjoint_disc_fillings_eventually_controlled_by_restrictions
 variable [FirstCountableTopology X]
 
 theorem disjoint_disc_fillings_eventually_subset_component_of_restricted_covers
-    (f : LocalMap X) (hf : IsOpenHolomorphic f) (q : DiscCover X)
+    (f : LocalMap X) (hf : IsOpenHolomorphic f) (q : ComponentwiseDiscCover X)
     {K : Set X} (hK : IsCompact K)
     (F : ℕ → unitDisc → X) (hF : ∀ n, MDifferentiable 𝓘(ℂ) 𝓘(ℂ) (F n))
     (hFo : ∀ n, IsOpenMap (F n)) (hcentre : ∀ n, F n discZero ∈ K)
@@ -95,8 +95,8 @@ theorem disjoint_disc_fillings_eventually_subset_component_of_restricted_covers
 theorem eventually_injective_centered_covers_of_restricted_covers
     {X : Type*} [TopologicalSpace X] [T2Space X] [LocallyCompactSpace X]
     [FirstCountableTopology X] [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ) 1 X]
-    [ConnectedSpace X] [NoncompactSpace X]
-    (f : LocalMap X) (hf : IsOpenHolomorphic f) (p : DiscCover X)
+    [NoncompactComponents X]
+    (f : LocalMap X) (hf : IsOpenHolomorphic f) (p : ComponentwiseDiscCover X)
     (U : ℕ → TopologicalSpace.Opens X) (q : ∀ n, DiscCover (U n))
     (hU : ∀ n, f.IsComponent (U n))
     (hdis : Pairwise (fun n m => Disjoint (U n : Set X) (U m)))

@@ -20,7 +20,7 @@ variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [SecondCountableTopology X]
 
 theorem exists_finite_models_of_compact_normal_orbit
-    (f : LocalMap X) (hf : IsOpenHolomorphic f) (p : DiscCover X)
+    (f : LocalMap X) (hf : IsOpenHolomorphic f) (p : ComponentwiseDiscCover X)
     (z : f.trapped) (hz : (z : X) ∈ f.omega)
     {K : Set X} (hK : IsCompact K) (hzK : ∀ n, f.orbit n z ∈ K) :
     ∃ P : ℕ → Finset X, Monotone P ∧

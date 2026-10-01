@@ -34,7 +34,7 @@ theorem restrictAmbient_orbit_val (f : LocalMap X)
 trapped neighbourhood normal also in the ambient surface. -/
 theorem image_connected_trapped_open_subset_omega_of_compact_orbit
     (f : LocalMap X) (hf : IsOpenHolomorphic f)
-    (O : TopologicalSpace.Opens X) [LocallyCompactSpace O] (p : DiscCover O)
+    (O : TopologicalSpace.Opens X) [LocallyCompactSpace O] (p : ComponentwiseDiscCover O)
     (hs : (f.source : Set X) ⊆ O) (hm : ∀ x : f.source, f.map x ∈ O)
     (W : TopologicalSpace.Opens O) [ConnectedSpace W]
     (hW : (W : Set O) ⊆ (f.restrictAmbient O hs hm).trapped) (x : W)

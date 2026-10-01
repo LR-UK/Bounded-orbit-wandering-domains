@@ -21,8 +21,8 @@ statement unchanged and includes the following results.
   there is no ambient-escape alternative. This proves the assertion announced
   without proof in [PRW]. Učakar has informed
   the authors that he independently obtained a proof of this theorem.
-- **Combined singular-encounter theorem:** This result applies to general
-  open holomorphic function $f\colon O\to X$, where $O$ is an open subset of an arbitrary Riemann surface $X$. Let $z$ be a point in a wandering normality component. 
+- **Combined singular-encounter theorem:** This result applies to an
+  open holomorphic function $f\colon O\to X$, where $O$ is an open subset of a possibly disconnected complex one-manifold $X$. Let $z$ be a point in a wandering normality component.
   Unless the orbit of $z$ has an ambient-escaping subsequence, 
   there are distinct singular values tending to
   a derived singular value, shrinking analytic target discs, and full inverse
@@ -38,7 +38,7 @@ statement unchanged and includes the following results.
   In particular, this is the setting for rational,
   entire and meromorphic functions, where we can take $X$ to be the Riemann sphere.
 - **Local compact-orbit exclusion:** for an open holomorphic map on an open
-  subset $O$ of a Riemann surface, no wandering normality component contains a
+  subset $O$ of a possibly disconnected complex one-manifold, no wandering normality component contains a
   point whose whole orbit stays in a compact subset of $O$. This follows from the
   combined singular-encounter theorem.
 - **Local derived-singular accumulation:** the orbit of every point in a wandering
@@ -57,14 +57,22 @@ statement unchanged and includes the following results.
   no global surface measure is chosen. Once again, these results follow from the
   measurable injective wandering set version of the singular-encounter theorem.
 - **Finite-type no-wandering theorem:** an open holomorphic map from an open
-  subset of a compact Riemann surface to that surface has no wandering normality
+  subset of a compact complex one-manifold to that manifold has no wandering normality
   components if its singular set is finite. This recovers a theorem of Adam Epstein. 
   It follows directly from the local derived-singular theorem.
-- **Classical no-wandering corollaries:** rational maps, compact Riemann surface
+- **Classical no-wandering corollaries:** rational maps, compact complex one-manifold
   self-maps, and class S entire and meromorphic functions have no wandering
   domains. All are deduced from the finite-type theorem. The explicit plane
   corollaries treat transcendental functions; polynomials and rational functions
   are covered by the intrinsic rational-map statement.
+
+The local statements do not assume that the ambient manifold is connected.
+Different connected components of $O$, including components lying in the same
+component of $X$, may map into different components of $X$. No prescribed map
+or permutation of ambient components is assumed. The Lean statements retain
+the Hausdorff and second-countability hypotheses. Compact targets automatically
+have only finitely many components; no finiteness hypothesis is imposed on a
+general target.
 
 All escape conclusions above refer to subsequences where stated; they do not
 assert that the full orbit eventually leaves every compact set forever.
@@ -176,6 +184,7 @@ Challenge.lean            All nineteen current statements
 Solution.lean             Proved versions of those statements
 BoundedWanderingDomains/   Main proof library
   Surfaces/SingularEncounters/  Combined theorem and its area estimates
+  Surfaces/Disconnected/       Componentwise geometry and finite-component reductions
   Surfaces/BKL/                Covering and removable-completion lemmas
 RiemannDynamics/           Surface and uniformisation foundations
 RMT4/, Ray/, EremenkoLyubichConstant/   Attributed supporting libraries

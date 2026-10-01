@@ -9,7 +9,8 @@ project:
 
     Both results
     are obtained as a special case of a more general theorem, for locally defined functions on
-    Riemann surfaces. Let f be an open holomorphic function from an open subset O of a Riemann surface X into X.
+    possibly disconnected complex one-manifolds. Let f be an open holomorphic function from an open subset O of such a manifold X into X.
+    Different components of O may map to different components of X, even when those source components lie in the same ambient component.
     Suppose that U is a wandering component of the set of normality of f, and that z is in U. If the
     orbit of z is contained in a compact subset of X, then it accumulates at a non-isolated point s of the set
     of singular values. Moreover, this accumulation must occur close to singularities for infinitely many
@@ -29,7 +30,7 @@ project:
     point of the set (in any chart) behaves as above: ambient escape along a subsequence, or singular encounters.
 
     As corollaries we recover Epstein's absence of wandering domains for finite-type maps
-    on arbitrary open subsets of compact Riemann surfaces, and the classical no-wandering
+    on arbitrary open subsets of compact, possibly disconnected complex one-manifolds, and the classical no-wandering
     results for rational maps, compact-surface self-maps, and class S entire and meromorphic functions.
   authors:
   - Nikolai Prochorov
@@ -63,7 +64,7 @@ sources:
   location: https://arxiv.org/abs/2609.28279
   note: This paper [PRW] is the source of the original bounded-orbit results. The present extension proves
     the derived-singular-set assertion announced there without proof, removes unnecessary local hypotheses,
-    extends the local results to arbitrary Riemann surfaces, adds the positive-area result and classical
+    extends the local results to possibly disconnected complex one-manifolds, adds the positive-area result and classical
     no-wandering corollaries. Surface derived-set accumulation now applies without a simple-connectivity
     hypothesis, by an adaptation of the Baker–Kotus–Lü argument. The exact independent statements are
     in Challenge.lean, with proofs exposed by Solution.lean. The authors of [PRW] and [DPU] are preparing
@@ -127,10 +128,10 @@ sources:
   - Adam Epstein
   id: https://pcwww.liv.ac.uk/~lrempe/adam/thesis.pdf
   type: thesis
-  relationship: background
+  relationship: independently-proves
   note: CUNY PhD thesis (1993). The finite-type no-wandering conclusion is recovered here as a corollary
     of the derived-singular theorem, not by formalising Epstein's original deformation argument. The target
-    surface is compact; the source is an arbitrary open subset. Our statement permits removable source
+    complex one-manifold is compact and may be disconnected; the source is an arbitrary open subset. Our statement permits removable source
     punctures, so no maximality assumption is needed.
 related_formalizations:
 - title: First registered bounded-orbit wandering-domain formalisation
@@ -232,7 +233,7 @@ status:
     escape of the full orbit. Meromorphic normal form allows poles; admissible Fatou components avoid
     poles and prepoles. Classical no-wandering corollaries cover rational maps, compact-surface self-maps
     and class S transcendental entire and meromorphic functions. All follow from the general finite-type
-    theorem on an arbitrary open subset of a compact ambient Riemann surface. Independent Challenge placeholders
+    theorem on an arbitrary open subset of a compact, possibly disconnected ambient complex one-manifold. Independent Challenge placeholders
     are excluded from the proof dependencies. The combined componentwise encounter theorem is the common
     source of the main results. The meromorphic derived-singular conclusion is exported explicitly with
     the compact sphere as ambient target. Obsolete independent main proof branches have been removed.
@@ -457,7 +458,7 @@ alignment:
     module: Solution
     status: proved
     note: Proved from the local compact-orbit theorem through the meromorphic sphere model.
-  - source: the local compact-orbit theorem, compact avoidance on a Riemann surface
+  - source: the local compact-orbit theorem, compact avoidance on a complex one-manifold
     lean: SurfaceDynamics.wandering_component_orbit_not_compactly_contained
     module: Solution
     status: proved
@@ -493,7 +494,7 @@ alignment:
     lean: SurfaceDynamics.no_wandering_domains_compact
     module: Solution
     status: proved
-    note: A global open holomorphic map of a compact surface has finite singular set; apply the general
+    note: A global open holomorphic map of a compact complex one-manifold has finite singular set; apply the general
       finite-type theorem.
   - source: Rational no-wandering corollary
     lean: SurfaceDynamics.no_wandering_domains_rational

@@ -231,7 +231,7 @@ theorem omega_restrictAmbient_restrictSource_subset
     (f : LocalMap X) (hf : IsOpenHolomorphic f)
     (O V : TopologicalSpace.Opens X)
     [LocallyCompactSpace O]
-    (p : AreaDeficit.Surfaces.DiscCover O)
+    (p : AreaDeficit.Surfaces.ComponentwiseDiscCover O)
     (hVsource : (V : Set X) ⊆ f.source)
     (hVcompact : IsCompact (closure (V : Set X)))
     (hVO : closure (V : Set X) ⊆ O)

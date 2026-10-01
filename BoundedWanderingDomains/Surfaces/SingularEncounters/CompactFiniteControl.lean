@@ -18,7 +18,7 @@ variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [IsManifold 𝓘(ℂ) 1 X] [T2Space X] [LocallyCompactSpace X]
 
 theorem exists_finite_disc_control_of_locally_finite_encounters
-    (p : DiscCover X) (f : LocalMap X) (hf : IsOpenHolomorphic f)
+    (p : ComponentwiseDiscCover X) (f : LocalMap X) (hf : IsOpenHolomorphic f)
     (c : ℕ → f.source) (F : ℕ → unitDisc → X)
     (hF : ∀ n, MDifferentiable 𝓘(ℂ) 𝓘(ℂ) (F n))
     (hFs : ∀ n, range (F n) ⊆ f.source)

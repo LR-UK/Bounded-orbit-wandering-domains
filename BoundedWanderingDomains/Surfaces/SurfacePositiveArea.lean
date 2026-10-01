@@ -12,7 +12,7 @@ namespace SurfaceDynamics
 
 variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [IsManifold 𝓘(ℂ) 1 X] [T2Space X] [LocallyCompactSpace X]
-  [SecondCountableTopology X] [ConnectedSpace X]
+  [SecondCountableTopology X]
   [MeasurableSpace X] [BorelSpace X]
 
 /-- The exact positive-area theorem for every local open holomorphic map on

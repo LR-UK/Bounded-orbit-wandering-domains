@@ -21,7 +21,7 @@ namespace SurfaceDynamics.BKL
 theorem projected_fill_subset_denseCompletion_of_restricted_regular_puncturedDisc
     {X : Type*} [TopologicalSpace X] [T2Space X] [LocallyCompactSpace X]
     [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ) 1 X]
-    (f : LocalMap X) (hf : IsOpenHolomorphic f) (q : DiscCover X)
+    (f : LocalMap X) (hf : IsOpenHolomorphic f) (q : DiscCovering X)
     (V : TopologicalSpace.Opens X) (hV : (V : Set X) ⊆ f.source)
     {t : unitDisc → X} (ht : MDifferentiable 𝓘(ℂ) 𝓘(ℂ) t) (hte : IsOpenEmbedding t)
     (hreg : ∀ z : puncturedUnitDisc,
@@ -52,8 +52,8 @@ control needed when recovering the original wandering components. -/
 theorem compactFill_restricted_source_and_added_images
     {X : Type*} [TopologicalSpace X] [T2Space X] [LocallyCompactSpace X]
     [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ) 1 X]
-    [ConnectedSpace X] [NoncompactSpace X]
-    (f : LocalMap X) (hf : IsOpenHolomorphic f) (q : DiscCover X)
+    [NoncompactComponents X]
+    (f : LocalMap X) (hf : IsOpenHolomorphic f) (q : ComponentwiseDiscCover X)
     (V : TopologicalSpace.Opens X) (hV : (V : Set X) ⊆ f.source)
     (D : RiemannDynamics.CoordDisk X)
     (hreg : ∀ z : puncturedUnitDisc,
@@ -89,7 +89,7 @@ theorem compactFill_restricted_source_and_added_images
   refine ⟨hfill, fun x hx hxo => ?_⟩
   rw [f.denseCompletion.totalize_eq (hfill hx)]
   apply f.denseCompletionValue_mem_of_restricted_added hf V hV hS (hfillg hx) hxo
-  have hd := compactFill_subset_coordDisk D (Subset.refl D.closedCarrier) (hmapfill hx)
+  have hd := compactFill_subset_coordDisk_of_noncompactComponents D (Subset.refl D.closedCarrier) (hmapfill hx)
   rwa [f.denseCompletion.totalize_eq (hfill hx)] at hd
 
 end SurfaceDynamics.BKL

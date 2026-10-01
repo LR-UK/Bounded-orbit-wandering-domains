@@ -99,19 +99,17 @@ theorem DiscCover.exists_normal_lift_subsequence (p : DiscCover M)
   intro n
   exact hH₀fac (ψ n)
 
-/-- Descending the normal lifts through the universal covering gives the
-ordinary Montel theorem for surface-valued holomorphic discs whose centre
-values remain in a compact set. -/
-theorem DiscCover.exists_normal_disc_subsequence [T2Space M]
-    [LocallyCompactSpace M] (p : DiscCover M)
+/-- Descend the normal lifts through any continuous map into a uniform
+space. This also permits the covered surface to be one component of a larger
+ambient manifold. -/
+theorem DiscCover.exists_normal_disc_subsequence_comp (p : DiscCover M)
+    {Y : Type*} [UniformSpace Y] (j : M → Y) (hj : Continuous j)
     {K : Set M} (hK : IsCompact K) (F : ℕ → unitDisc → M)
     (hF : ∀ n, MDifferentiable 𝓘(ℂ) 𝓘(ℂ) (F n))
     (hcentre : ∀ n, F n discZero ∈ K) :
-    letI : UniformSpace (OnePoint M) := uniformSpaceOfCompactR1
-    ∃ (φ : ℕ → ℕ) (G : unitDisc → OnePoint M), StrictMono φ ∧
+    ∃ (φ : ℕ → ℕ) (G : unitDisc → Y), StrictMono φ ∧
       TendstoLocallyUniformly
-        (fun n z => ((F (φ n) z : M) : OnePoint M)) G atTop := by
-  let : UniformSpace (OnePoint M) := uniformSpaceOfCompactR1
+        (fun n z => j (F (φ n) z)) G atTop := by
   obtain ⟨φ, H, g, w, B, hφ, hB, hHcentre, hHdiff, hfac, hlim, hg0, hgmap⟩ :=
     p.exists_normal_lift_subsequence hK F hF hcentre
   let G₀ : unitDisc → unitDisc := fun z => ⟨g (z : ℂ), hgmap z.property⟩
@@ -127,8 +125,8 @@ theorem DiscCover.exists_normal_disc_subsequence [T2Space M]
     simpa only [G₀, planeExtension_coe] using hn (y : ℂ) hy
   have hlift : TendstoLocallyUniformly H G₀ atTop :=
     tendstoLocallyUniformly_subtype_of_val hliftVal
-  let q : unitDisc → OnePoint M := fun z => (p.projection z : OnePoint M)
-  have hqcont : Continuous q := OnePoint.continuous_coe.comp p.continuous
+  let q : unitDisc → Y := fun z => j (p.projection z)
+  have hqcont : Continuous q := hj.comp p.continuous
   have hdesc : TendstoLocallyUniformly (q ∘ H ·) (q ∘ G₀) atTop := by
     intro u hu x
     have hxnorm : ‖(x : ℂ)‖ < 1 := mem_ball_zero_iff.mp x.property
@@ -165,8 +163,22 @@ theorem DiscCover.exists_normal_disc_subsequence [T2Space M]
   refine ⟨φ, q ∘ G₀, hφ, ?_⟩
   convert hdesc using 1
   funext n z
-  change (F (φ n) z : OnePoint M) = (p.projection (H n z) : OnePoint M)
-  exact congrArg (fun y : M => (y : OnePoint M)) (congrFun (hfac n) z).symm
+  change j (F (φ n) z) = j (p.projection (H n z))
+  exact congrArg j (congrFun (hfac n) z).symm
+
+/-- Compact-centre normality in the one-point compactification. -/
+theorem DiscCover.exists_normal_disc_subsequence [T2Space M]
+    [LocallyCompactSpace M] (p : DiscCover M)
+    {K : Set M} (hK : IsCompact K) (F : ℕ → unitDisc → M)
+    (hF : ∀ n, MDifferentiable 𝓘(ℂ) 𝓘(ℂ) (F n))
+    (hcentre : ∀ n, F n discZero ∈ K) :
+    letI : UniformSpace (OnePoint M) := uniformSpaceOfCompactR1
+    ∃ (φ : ℕ → ℕ) (G : unitDisc → OnePoint M), StrictMono φ ∧
+      TendstoLocallyUniformly
+        (fun n z => ((F (φ n) z : M) : OnePoint M)) G atTop := by
+  let : UniformSpace (OnePoint M) := uniformSpaceOfCompactR1
+  exact p.exists_normal_disc_subsequence_comp (fun x => (x : OnePoint M))
+    OnePoint.continuous_coe hK F hF hcentre
 
 /-- Descend normalised lifts into the one-point compactification of an
 ambient surface.  This version applies to a disc cover of an open subsurface

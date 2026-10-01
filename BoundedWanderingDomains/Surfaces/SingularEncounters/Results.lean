@@ -35,7 +35,7 @@ theorem LocalMap.HasSingularEncounterSequenceAt.to_sequence
   rw [f.singularValues_preimageComponentAt]
   exact hsing n
 
-variable [LocallyCompactSpace X] [SecondCountableTopology X] [ConnectedSpace X]
+variable [LocallyCompactSpace X] [SecondCountableTopology X]
 
 /-- Unless there is ambient escape, all points of a wandering domain visit
 full inverse components carrying distinct singular values in shrinking discs.

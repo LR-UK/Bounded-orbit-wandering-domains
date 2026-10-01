@@ -232,7 +232,7 @@ end LocalMap
 
 section Targets
 variable [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X]
-  [ConnectedSpace X] [IsManifold 𝓘(ℂ) 1 X]
+  [IsManifold 𝓘(ℂ) 1 X]
 
 /-- Compact-orbit exclusion -/
 def NoCompactWanderingOrbitClaim : Prop :=
@@ -339,7 +339,7 @@ namespace SurfaceDynamics
 
 variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X]
-  [ConnectedSpace X] [IsManifold 𝓘(ℂ) 1 X]
+  [IsManifold 𝓘(ℂ) 1 X]
 
 theorem wandering_component_orbit_not_compactly_contained : NoCompactWanderingOrbitClaim (X := X) := by
   sorry
@@ -398,7 +398,7 @@ namespace SurfaceDynamics
 
 variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X]
-  [ConnectedSpace X] [IsManifold 𝓘(ℂ) 1 X]
+  [IsManifold 𝓘(ℂ) 1 X]
 
 /-- An open holomorphic self-map of a compact Riemann surface has no wandering
 normality components. In particular this applies to nonconstant rational maps. -/
@@ -467,7 +467,7 @@ namespace SurfaceDynamics
 
 variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X]
-  [ConnectedSpace X] [IsManifold 𝓘(ℂ) 1 X]
+  [IsManifold 𝓘(ℂ) 1 X]
 
 theorem compact_wandering_orbit_accumulates_on_derived_singular_values
     (f : LocalMap X) (hf : IsOpenHolomorphic f)
@@ -516,7 +516,7 @@ namespace SurfaceDynamics
 
 variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X]
-  [ConnectedSpace X] [IsManifold 𝓘(ℂ) 1 X] [CompactSpace X]
+  [IsManifold 𝓘(ℂ) 1 X] [CompactSpace X]
 
 /-- An open holomorphic map on an open subset of a compact Riemann surface
 with a finite singular set has no wandering normality components. -/
@@ -707,7 +707,7 @@ namespace SurfaceDynamics
 
 variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [T2Space X] [IsManifold 𝓘(ℂ) 1 X]
-  [LocallyCompactSpace X] [SecondCountableTopology X] [ConnectedSpace X]
+  [LocallyCompactSpace X] [SecondCountableTopology X]
 
 /-- Unless there is ambient escape, all points of a wandering domain visit
 full inverse components carrying distinct singular values in shrinking discs.

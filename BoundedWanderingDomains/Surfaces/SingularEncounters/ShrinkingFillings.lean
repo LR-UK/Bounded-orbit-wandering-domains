@@ -20,13 +20,13 @@ namespace SurfaceDynamics.BKL
 
 variable {X : Type*} [TopologicalSpace X] [T2Space X] [LocallyCompactSpace X]
   [FirstCountableTopology X] [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ) 1 X]
-  [ConnectedSpace X] [NoncompactSpace X]
+  [NoncompactComponents X]
 
 local instance singularFillingsUniformSpace : UniformSpace (OnePoint X) :=
   uniformSpaceOfCompactR1
 
 theorem disjoint_disc_fillings_eventually_subset_component_of_added_images
-    (f : LocalMap X) (hf : IsOpenHolomorphic f) (q : DiscCover X)
+    (f : LocalMap X) (hf : IsOpenHolomorphic f) (q : ComponentwiseDiscCover X)
     {K : Set X} (hK : IsCompact K)
     (F : ℕ → unitDisc → X) (hF : ∀ n, MDifferentiable 𝓘(ℂ) 𝓘(ℂ) (F n))
     (hFo : ∀ n, IsOpenMap (F n)) (hcentre : ∀ n, F n discZero ∈ K)

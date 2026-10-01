@@ -2,7 +2,7 @@
   "result": "passed",
   "validator_repository": "https://github.com/PalomarRegistry/PalomarSubmission",
   "validator_commit": "e48a86d0495356b5131a92c9406aa6e27cf99e56",
-  "metadata_sha256": "4813e453053f1c3d84f4e96756743931ba4e2a32659526be390bbc92dcd84fb5",
+  "metadata_sha256": "c2d1787bcf1e0b7dbe7aafd0cf9a253816b5b3b517e575422d94b4f87b4d828a",
   "metadata_hash_encoding": "UTF-8 with LF line endings",
   "provenance": {
     "result_origin": "source-based",
@@ -39,7 +39,7 @@
         ],
         "identifier": "https://arxiv.org/abs/2609.28279",
         "location": "https://arxiv.org/abs/2609.28279",
-        "note": "This paper [PRW] is the source of the original bounded-orbit results. The present extension proves the derived-singular-set assertion announced there without proof, removes unnecessary local hypotheses, extends the local results to arbitrary Riemann surfaces, adds the positive-area result and classical no-wandering corollaries. Surface derived-set accumulation now applies without a simple-connectivity hypothesis, by an adaptation of the Baker\u2013Kotus\u2013L\u00fc argument. The exact independent statements are in Challenge.lean, with proofs exposed by Solution.lean. The authors of [PRW] and [DPU] are preparing a joint preprint containing these results. No independent human review or acceptance of this updated package is claimed.",
+        "note": "This paper [PRW] is the source of the original bounded-orbit results. The present extension proves the derived-singular-set assertion announced there without proof, removes unnecessary local hypotheses, extends the local results to possibly disconnected complex one-manifolds, adds the positive-area result and classical no-wandering corollaries. Surface derived-set accumulation now applies without a simple-connectivity hypothesis, by an adaptation of the Baker\u2013Kotus\u2013L\u00fc argument. The exact independent statements are in Challenge.lean, with proofs exposed by Solution.lean. The authors of [PRW] and [DPU] are preparing a joint preprint containing these results. No independent human review or acceptance of this updated package is claimed.",
         "type": "paper"
       },
       {
@@ -136,9 +136,9 @@
             "name": "Adam Epstein"
           }
         ],
-        "relationship": "background",
+        "relationship": "independently-proves",
         "identifier": "https://pcwww.liv.ac.uk/~lrempe/adam/thesis.pdf",
-        "note": "CUNY PhD thesis (1993). The finite-type no-wandering conclusion is recovered here as a corollary of the derived-singular theorem, not by formalising Epstein's original deformation argument. The target surface is compact; the source is an arbitrary open subset. Our statement permits removable source punctures, so no maximality assumption is needed.",
+        "note": "CUNY PhD thesis (1993). The finite-type no-wandering conclusion is recovered here as a corollary of the derived-singular theorem, not by formalising Epstein's original deformation argument. The target complex one-manifold is compact and may be disconnected; the source is an arbitrary open subset. Our statement permits removable source punctures, so no maximality assumption is needed.",
         "type": "thesis"
       }
     ],

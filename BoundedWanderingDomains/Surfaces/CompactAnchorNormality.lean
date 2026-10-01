@@ -1,7 +1,7 @@
 module
 
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-public import BoundedWanderingDomains.Surfaces.CompactPunctureMontel
+public import BoundedWanderingDomains.Surfaces.Disconnected.ComponentwisePunctureMontel
 public import BoundedWanderingDomains.Surfaces.CompactOrbitNormal
 public import BoundedWanderingDomains.Surfaces.LocalMapPunctureBarrier
 public import BoundedWanderingDomains.Surfaces.SaturationDynamics
@@ -15,17 +15,19 @@ open scoped Manifold Topology
 namespace SurfaceDynamics.LocalMap
 
 variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
-  [IsManifold 𝓘(ℂ) 1 X] [T2Space X] [CompactSpace X]
+  [IsManifold 𝓘(ℂ) 1 X] [T2Space X] [LocallyCompactSpace X]
   [SecondCountableTopology X]
 
 /-- Omitting a fixed hyperbolising finite set makes the partial iterates
 normal in the compact ambient surface, including limits at the punctures. -/
-theorem mem_omega_of_omits_finite_anchors
+theorem mem_omega_of_omits_finite_anchors_compact_orbit
     (f : LocalMap X) (hf : IsOpenHolomorphic f)
     (E : Finset X) (O : TopologicalSpace.Opens X) (hO : ∀ x, x ∈ O ↔ x ∉ E)
-    (p : DiscCover O) (W : TopologicalSpace.Opens X)
+    (p : ComponentwiseDiscCover O) (W : TopologicalSpace.Opens X)
     (hW : (W : Set X) ⊆ f.trapped)
-    (horbitO : ∀ n y, f.orbitOn W hW n y ∈ O) (x : W) : (x : X) ∈ f.omega := by
+    (horbitO : ∀ n y, f.orbitOn W hW n y ∈ O) (x : W)
+    {K : Set X} (hK : IsCompact K) (hxK : ∀ n, f.orbitOn W hW n x ∈ K) :
+    (x : X) ∈ f.omega := by
   obtain ⟨D, hDcenter, hDsub⟩ := exists_coordDisk_center_closedCarrier_subset W.isOpen x.property
   let V : Set X := range D.param
   have hVopen : IsOpen V := D.isOpenEmbedding_param.isOpen_range
@@ -47,7 +49,10 @@ theorem mem_omega_of_omits_finite_anchors
     apply (mdifferentiable_subtypeVal_comp_iff O (F n)).mp
     exact (f.mdifferentiable_orbitOn hf W hW (s n)).comp hd
   let : UniformSpace (OnePoint X) := uniformSpaceOfCompactR1
-  obtain ⟨a, G, ha, hconv⟩ := p.exists_normal_disc_subsequence_finite_complement E O hO F hF
+  obtain ⟨a, G, ha, hconv⟩ := p.exists_normal_disc_subsequence_finite_complement_compact_centres E O hO F hF hK (by
+    intro n
+    have he : d discZero = x := Subtype.ext (D.param_zero.trans hDcenter)
+    simpa only [F, he] using hxK (s n))
   let e : unitDisc ≃ₜ V := D.isOpenEmbedding_param.toIsEmbedding.toHomeomorph
   let q : V → unitDisc := e.symm
   refine ⟨a, ha, G ∘ q, ?_⟩
@@ -60,6 +65,18 @@ theorem mem_omega_of_omits_finite_anchors
   simp only [F]
   congr 2
   exact Subtype.ext he
+
+variable [CompactSpace X]
+
+/-- Compact targets give the marked-orbit bound automatically. -/
+theorem mem_omega_of_omits_finite_anchors
+    (f : LocalMap X) (hf : IsOpenHolomorphic f)
+    (E : Finset X) (O : TopologicalSpace.Opens X) (hO : ∀ x, x ∈ O ↔ x ∉ E)
+    (p : DiscCover O) (W : TopologicalSpace.Opens X)
+    (hW : (W : Set X) ⊆ f.trapped)
+    (horbitO : ∀ n y, f.orbitOn W hW n y ∈ O) (x : W) : (x : X) ∈ f.omega :=
+  f.mem_omega_of_omits_finite_anchors_compact_orbit hf E O hO p W hW horbitO x
+    isCompact_univ (fun _ => mem_univ _)
 
 /-- Every non-normal point is accumulated by the backward orbit of any
 fixed finite set whose complement is disc-covered. -/

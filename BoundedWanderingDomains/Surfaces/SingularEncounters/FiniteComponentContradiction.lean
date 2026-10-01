@@ -20,10 +20,10 @@ namespace SurfaceDynamics.BKL
 variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [IsManifold 𝓘(ℂ) 1 X] [T2Space X] [LocallyCompactSpace X]
   [SecondCountableTopology X] [MeasurableSpace X] [BorelSpace X]
-  [ConnectedSpace X] [NoncompactSpace X]
+  [NoncompactComponents X]
 
 theorem false_of_compact_wandering_finite_component_control
-    (p : DiscCover X) (f : LocalMap X) (hf : IsOpenHolomorphic f)
+    (p : ComponentwiseDiscCover X) (f : LocalMap X) (hf : IsOpenHolomorphic f)
     (U : ℕ → TopologicalSpace.Opens X) (q : ∀ n, DiscCover (U n))
     (hR : ∀ n, f.IsComponent (U n))
     (hdisR : Pairwise (fun n m => Disjoint (U n : Set X) (U m)))

@@ -1,8 +1,7 @@
 module
 
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-public import BoundedWanderingDomains.Surfaces.OpenEmbeddingAreaTransport
-public import BoundedWanderingDomains.Surfaces.CompactFiniteRemoval
+public import BoundedWanderingDomains.Surfaces.Disconnected.ComponentwiseOpenEmbeddingArea
 
 @[expose] public section
 
@@ -19,7 +18,7 @@ variable {M N : Type*} [TopologicalSpace M] [T2Space M] [MeasurableSpace M] [Bor
   [MeasurableSpace N] [BorelSpace N] [SecondCountableTopology N] [T2Space N] [LocallyCompactSpace N]
 
 theorem exists_uniform_cross_ambient_gain_budget
-    (q : DiscCover N) (j : M → N) (hj : IsOpenEmbedding j)
+    (q : ComponentwiseDiscCover N) (j : M → N) (hj : IsOpenEmbedding j)
     (D : TopologicalSpace.Opens N) (E : Finset M)
     {L : Set N} (hL : IsCompact L) (hLD : L ⊆ D) :
     ∃ B : ℝ≥0∞, B ≠ ⊤ ∧ ∀ U : TopologicalSpace.Opens M,

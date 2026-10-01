@@ -2,7 +2,8 @@ module
 
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
 public import BoundedWanderingDomains.Surfaces.SingularEncounters.CountableRestrictedArea
-public import BoundedWanderingDomains.Surfaces.FiniteModelDiscArea
+public import BoundedWanderingDomains.Surfaces.Disconnected.ComponentwiseFiniteModelDiscArea
+public import BoundedWanderingDomains.Surfaces.Disconnected.ComponentwiseFiniteArea
 public import BoundedWanderingDomains.Surfaces.FiniteModelArea
 public import BoundedWanderingDomains.AreaCancellation
 public import BoundedWanderingDomains.TrappedComponentCovering
@@ -22,7 +23,7 @@ variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [SecondCountableTopology X] [MeasurableSpace X] [BorelSpace X]
 
 theorem false_of_eventual_componentwise_regular_discs
-    (f : LocalMap X) (hf : IsOpenHolomorphic f) (p : DiscCover X)
+    (f : LocalMap X) (hf : IsOpenHolomorphic f) (p : ComponentwiseDiscCover X)
     {ι : Type*} [Fintype ι] (target : ι → TopologicalSpace.Opens X) (E : Finset X)
     (inner : ι → Set X) (hinner : ∀ i, IsCompact (inner i))
     (hinnerTarget : ∀ i, inner i ⊆ target i)

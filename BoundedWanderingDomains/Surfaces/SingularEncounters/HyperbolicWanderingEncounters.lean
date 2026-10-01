@@ -2,7 +2,7 @@ module
 
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
 public import BoundedWanderingDomains.Surfaces.SingularEncounters.CompactWanderingEncounters
-public import BoundedWanderingDomains.Surfaces.SubdomainCover
+public import BoundedWanderingDomains.Surfaces.Disconnected.ComponentwiseLocalCover
 
 @[expose] public section
 
@@ -18,8 +18,8 @@ theorem compact_wandering_singular_encounters_of_components
     {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
     [IsManifold 𝓘(ℂ) 1 X] [T2Space X] [LocallyCompactSpace X]
     [SecondCountableTopology X] [MeasurableSpace X] [BorelSpace X]
-    [ConnectedSpace X] [NoncompactSpace X]
-    (p : DiscCover X) (f : LocalMap X) (hf : IsOpenHolomorphic f)
+    [NoncompactComponents X]
+    (p : ComponentwiseDiscCover X) (f : LocalMap X) (hf : IsOpenHolomorphic f)
     (R : ℕ → Set X) (hR : ∀ n, f.IsComponent (R n))
     (hdis : Pairwise (fun n m => Disjoint (R n) (R m)))
     (z : f.trapped) (hzR : ∀ n, f.orbit n z ∈ R n)

@@ -1,7 +1,7 @@
 module
 
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-public import BoundedWanderingDomains.Surfaces.CompactCentreNormal
+public import BoundedWanderingDomains.Surfaces.Disconnected.ComponentwiseNormality
 public import BoundedWanderingDomains.Surfaces.CoordinateDiscParam
 public import BoundedWanderingDomains.Surfaces.LocalIterateHolomorphic
 
@@ -23,7 +23,7 @@ variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
 set, ordinary Montel on the universal covering disc makes the iterates normal
 on a smaller neighbourhood of the marked point. -/
 theorem mem_omega_of_compact_orbit (f : LocalMap X) (hf : IsOpenHolomorphic f)
-    (p : DiscCover X) (W : TopologicalSpace.Opens X)
+    (p : ComponentwiseDiscCover X) (W : TopologicalSpace.Opens X)
     (hW : (W : Set X) ⊆ f.trapped) (x : W) {K : Set X} (hK : IsCompact K)
     (hcompact : ∀ n, f.orbitOn W hW n x ∈ K) :
     (x : X) ∈ f.omega := by
@@ -77,7 +77,7 @@ Montel argument.  All nearby orbits only have to remain in that subsurface;
 compactness is required solely for the marked orbit. -/
 theorem mem_omega_of_compact_orbit_in_subsurface
     (f : LocalMap X) (hf : IsOpenHolomorphic f)
-    (O : TopologicalSpace.Opens X) (p : DiscCover O)
+    (O : TopologicalSpace.Opens X) (p : ComponentwiseDiscCover O)
     (W : TopologicalSpace.Opens X) (hW : (W : Set X) ⊆ f.trapped)
     (horbitO : ∀ n y, f.orbitOn W hW n y ∈ O)
     (x : W) {C : Set O} (hC : IsCompact C)
@@ -138,7 +138,7 @@ subsurface, provided the whole family of local orbit values stays in a fixed
 compact subset of that subsurface. -/
 theorem mem_omega_of_compact_orbits_in_subsurface
     (f : LocalMap X) (hf : IsOpenHolomorphic f)
-    (O : TopologicalSpace.Opens X) (p : DiscCover O)
+    (O : TopologicalSpace.Opens X) (p : ComponentwiseDiscCover O)
     (W : TopologicalSpace.Opens X) (hW : (W : Set X) ⊆ f.trapped)
     (horbitO : ∀ n y, f.orbitOn W hW n y ∈ O)
     (x : W) {C : Set O} (hC : IsCompact C)

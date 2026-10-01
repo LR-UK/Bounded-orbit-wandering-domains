@@ -6,8 +6,13 @@ The main results share the combined componentwise encounter theorem in
 ## Wandering domains
 
 `SurfaceWanderingEncounters.lean` separates ambient escape from compact orbit
-range. In the latter case, deleting a coordinate disc in the first wandering
-component gives a hyperbolic subsurface containing the later components.
+range. A compact set meets finitely many ambient components. The lemmas in
+`Surfaces/Disconnected/CompactWanderingReduction.lean` first restrict to their
+clopen union without changing the retained inverse components or creating
+singular values. `WanderingAnchors.lean` then deletes a small coordinate disc
+in an early wandering component in each visited ambient component. After a
+finite initial segment, the orbit remains in a compact subset of the resulting
+componentwise hyperbolic manifold, whose components are all noncompact.
 `OmegaDynamics.lean` supplies forward containment of the full normality
 components. Compact-orbit normality identifies the restricted components.
 
@@ -46,13 +51,29 @@ measurable partition. There are only finitely many target-area budgets,
 even when countably many source components are visited. The ordinary
 single-ambient estimate is a specialization of this same proof.
 
-`NoncompactSurfaceFiniteControl.lean` removes three anchors outside the compact
-orbit range and all compact inner target sets. `CompactSurfaceFiniteControl.lean`
-uses separate finite anchor sets for the different inner targets, compares
-intrinsic areas in the overlapping punctured surfaces, and uses finite total
-area of compact-surface puncture models. `SurfaceAlmostEverywhere.lean` then
+`Disconnected/CompactPositiveAreaReduction.lean` restricts a compact measured
+saturation and the finitely many relevant target discs to a finite clopen union
+of ambient components. `FiniteComponentPositiveArea.lean` chooses three anchors
+in each component, separately for each compact inner target. The proof compares
+areas in overlapping anchor complements. `ComponentwiseFiniteComplementArea.lean`
+establishes finite area above compact ambient sets, including at the finitely
+many deleted points, and `ComponentwiseFiniteAreaPunctures.lean` preserves this
+finiteness through the finite models. This one proof handles mixtures of compact
+and noncompact ambient components. `SurfaceAlmostEverywhere.lean` then
 proves the chartwise almost-everywhere encounter alternative. The prior area
 and almost-everywhere results follow from it; their independent proofs are removed.
+
+## Disconnected geometry
+
+`ComponentwiseDiscCover` supplies a disc cover on each ambient component.
+`Disconnected/ComponentwiseArea.lean` sums their intrinsic area measures;
+compactly supported estimates involve only finitely many components.
+Covering-area transport uses the actual target of each connected source piece,
+with no permutation or periodicity assumption on ambient components.
+`ClopenNormality.lean` proves compatibility of normality under clopen ambient
+restriction. `ClopenSourceRestriction.lean` proves preservation of retained
+inverse components and the required inclusion of singular sets. The BKL filling
+steps apply in the relevant noncompact component.
 
 ## Entire, meromorphic and finite-type corollaries
 
@@ -66,7 +87,7 @@ sets. `EntireBoundedOrbit.lean` preserves the original statement while replacing
 its proof with the surface corollary. Normal-family extraction in
 `MeromorphicEscape.lean` promotes escape subsequences to locally uniform limits.
 
-`Surfaces/FiniteType.lean` excludes wandering domains on compact target surfaces
+`Surfaces/FiniteType.lean` excludes wandering domains on compact, possibly disconnected target manifolds
 with finite singular set. `NoWanderingCorollaries.lean` deduces the rational,
 compact-surface and class S entire/meromorphic cases from that theorem.
 

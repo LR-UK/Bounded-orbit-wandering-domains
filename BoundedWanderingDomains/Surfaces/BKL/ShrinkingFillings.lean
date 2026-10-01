@@ -218,9 +218,9 @@ theorem exists_coordDisk_uniformly_small
 
 theorem disjoint_disc_fillings_uniformly_shrink
     {X Y : Type*} [TopologicalSpace X] [T2Space X] [ChartedSpace ℂ X]
-    [IsManifold 𝓘(ℂ) 1 X] [ConnectedSpace X] [NoncompactSpace X]
+    [IsManifold 𝓘(ℂ) 1 X] [NoncompactComponents X]
     [UniformSpace Y] {j : X → Y} (hj : Continuous j)
-    (q : DiscCover X) {K : Set X} (hK : IsCompact K)
+    (q : ComponentwiseDiscCover X) {K : Set X} (hK : IsCompact K)
     (F : ℕ → unitDisc → X) (hF : ∀ n, MDifferentiable 𝓘(ℂ) 𝓘(ℂ) (F n))
     (hcentre : ∀ n, F n discZero ∈ K)
     (hdis : Pairwise (fun n m => Disjoint (range (F n)) (range (F m))))
@@ -247,7 +247,7 @@ theorem disjoint_disc_fillings_uniformly_shrink
     simpa only [norm_zero] using hr
   intro x hx
   exact hsmall a (F n discZero) (hC (mem_image_of_mem _ hzero)) x
-    (compactFill_subset_coordDisk (D a) hC hx)
+    (compactFill_subset_coordDisk_of_noncompactComponents (D a) hC hx)
 
 end SurfaceDynamics.BKL
 
@@ -264,7 +264,7 @@ namespace SurfaceDynamics.BKL
 
 theorem exists_connected_neighborhood_between_fillings
     {X : Type*} [TopologicalSpace X] [T2Space X] [LocallyConnectedSpace X]
-    [ConnectedSpace X] {C D O : Set X} (hC : IsClosed C) (hCc : IsConnected C)
+    [ChartedSpace ℂ X] [NoncompactComponents X] {C D O : Set X} (hC : IsClosed C) (hCc : IsConnected C)
     (hO : IsOpen O) (hCO : C ⊆ O) (hOD : O ⊆ D) :
     ∃ W : TopologicalSpace.Opens X, IsConnected (W : Set X) ∧
       compactFill C ⊆ W ∧ (W : Set X) ⊆ interior (compactFill D) := by
@@ -278,7 +278,7 @@ theorem exists_connected_neighborhood_between_fillings
     ⟨connectedComponentIn (interior (compactFill D)) a, isOpen_interior.connectedComponentIn⟩
   refine ⟨W, isConnected_connectedComponentIn_iff.mpr (hCI ha), ?_,
     connectedComponentIn_subset _ _⟩
-  exact (isConnected_compactFill hC hCc).isPreconnected.subset_connectedComponentIn
+  exact (isConnected_compactFill_of_noncompactComponents hC hCc).isPreconnected.subset_connectedComponentIn
     (subset_compactFill C ha) hfillI
 
 end SurfaceDynamics.BKL
@@ -297,12 +297,12 @@ namespace SurfaceDynamics.BKL
 
 variable {X : Type*} [TopologicalSpace X] [T2Space X] [LocallyCompactSpace X]
   [FirstCountableTopology X] [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ) 1 X]
-  [ConnectedSpace X] [NoncompactSpace X]
+  [NoncompactComponents X]
 
 local instance : UniformSpace (OnePoint X) := uniformSpaceOfCompactR1
 
 theorem disjoint_disc_fillings_eventually_subset_original_component
-    (f : LocalMap X) (hf : IsOpenHolomorphic f) (q : DiscCover X)
+    (f : LocalMap X) (hf : IsOpenHolomorphic f) (q : ComponentwiseDiscCover X)
     {K : Set X} (hK : IsCompact K) (hKd : Disjoint K (derivedSet f.singularValues))
     (F : ℕ → unitDisc → X) (hF : ∀ n, MDifferentiable 𝓘(ℂ) 𝓘(ℂ) (F n))
     (hFo : ∀ n, IsOpenMap (F n)) (hcentre : ∀ n, F n discZero ∈ K)
@@ -499,8 +499,8 @@ namespace SurfaceDynamics.BKL
 theorem eventually_injective_centered_covers_of_avoids_derived
     {X : Type*} [TopologicalSpace X] [T2Space X] [LocallyCompactSpace X]
     [FirstCountableTopology X] [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ) 1 X]
-    [ConnectedSpace X] [NoncompactSpace X]
-    (f : LocalMap X) (hf : IsOpenHolomorphic f) (p : DiscCover X)
+    [NoncompactComponents X]
+    (f : LocalMap X) (hf : IsOpenHolomorphic f) (p : ComponentwiseDiscCover X)
     (U : ℕ → TopologicalSpace.Opens X) (q : ∀ n, DiscCover (U n))
     (hU : ∀ n, f.IsComponent (U n))
     (hdis : Pairwise (fun n m => Disjoint (U n : Set X) (U m)))
@@ -603,8 +603,8 @@ namespace SurfaceDynamics.BKL
 theorem eventually_injective_centered_covers_of_cluster_avoids_derived
     {X : Type*} [TopologicalSpace X] [T2Space X] [LocallyCompactSpace X]
     [FirstCountableTopology X] [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ) 1 X]
-    [ConnectedSpace X] [NoncompactSpace X]
-    (f : LocalMap X) (hf : IsOpenHolomorphic f) (p : DiscCover X)
+    [NoncompactComponents X]
+    (f : LocalMap X) (hf : IsOpenHolomorphic f) (p : ComponentwiseDiscCover X)
     (U : ℕ → TopologicalSpace.Opens X) (q : ∀ n, DiscCover (U n))
     (hU : ∀ n, f.IsComponent (U n))
     (hdis : Pairwise (fun n m => Disjoint (U n : Set X) (U m)))

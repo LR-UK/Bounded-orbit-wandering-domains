@@ -25,8 +25,8 @@ variable {M : Type*} [TopologicalSpace M] [ChartedSpace ℂ M]
   [∀ i, SecondCountableTopology (N i)] [∀ i, T2Space (N i)] [∀ i, LocallyCompactSpace (N i)]
 
 theorem exists_uniform_countable_cross_ambient_area_advance
-    (f : LocalMap M) (hf : IsOpenHolomorphic f) (p : DiscCover M)
-    (q : ∀ i, DiscCover (N i)) (j : ∀ i, M → N i)
+    (f : LocalMap M) (hf : IsOpenHolomorphic f) (p : ComponentwiseDiscCover M)
+    (q : ∀ i, ComponentwiseDiscCover (N i)) (j : ∀ i, M → N i)
     (hj : ∀ i, IsOpenEmbedding (j i))
     (hjh : ∀ i, MDifferentiable 𝓘(ℂ) 𝓘(ℂ) (j i))
     (D : ∀ i, TopologicalSpace.Opens (N i)) (E : Finset M)
@@ -89,8 +89,8 @@ theorem exists_uniform_countable_cross_ambient_area_advance
   exact hsum.trans (add_le_add le_rfl (Finset.sum_le_sum fun i _ => hb i U))
 
 theorem exists_uniform_cross_ambient_area_advance_on_cover
-    (f : LocalMap M) (hf : IsOpenHolomorphic f) (p : DiscCover M)
-    (q : ∀ i, DiscCover (N i)) (j : ∀ i, M → N i)
+    (f : LocalMap M) (hf : IsOpenHolomorphic f) (p : ComponentwiseDiscCover M)
+    (q : ∀ i, ComponentwiseDiscCover (N i)) (j : ∀ i, M → N i)
     (hj : ∀ i, IsOpenEmbedding (j i))
     (hjh : ∀ i, MDifferentiable 𝓘(ℂ) 𝓘(ℂ) (j i))
     (D : ∀ i, TopologicalSpace.Opens (N i)) (E : Finset M)

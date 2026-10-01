@@ -53,9 +53,9 @@ namespace SurfaceDynamics
 
 variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X]
-  [ConnectedSpace X] [IsManifold 𝓘(ℂ) 1 X]
+  [IsManifold 𝓘(ℂ) 1 X]
 
-/-- An open holomorphic self-map of a compact Riemann surface has no wandering
+/-- An open holomorphic self-map of a compact complex one-manifold has no wandering
 normality components. In particular this applies to nonconstant rational maps. -/
 theorem no_wandering_domains_compact [CompactSpace X]
     (f : LocalMap X) (hf : IsOpenHolomorphic f)

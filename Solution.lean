@@ -101,7 +101,7 @@ namespace SurfaceDynamics
 
 variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X]
-  [ConnectedSpace X] [IsManifold 𝓘(ℂ) 1 X]
+  [IsManifold 𝓘(ℂ) 1 X]
 
 theorem wandering_component_orbit_not_compactly_contained : NoCompactWanderingOrbitClaim (X := X) :=
   noCompactWanderingOrbitClaim

@@ -18,7 +18,7 @@ variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [SecondCountableTopology X] [MeasurableSpace X] [BorelSpace X]
 
 theorem exists_uniform_countable_restricted_area_advance
-    (f : LocalMap X) (hf : IsOpenHolomorphic f) (p : DiscCover X)
+    (f : LocalMap X) (hf : IsOpenHolomorphic f) (p : ComponentwiseDiscCover X)
     {ι : Type*} [Fintype ι] (D : ι → TopologicalSpace.Opens X) (E : Finset X)
     (L : ι → Set X) (hL : ∀ i, IsCompact (L i)) (hLD : ∀ i, L i ⊆ D i) :
     ∃ C : ℝ≥0∞, C ≠ ⊤ ∧

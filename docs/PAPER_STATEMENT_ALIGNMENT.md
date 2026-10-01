@@ -5,6 +5,12 @@ theorems. All names are descriptive, without unpublished manuscript numbering.
 The original entire-function bounded-orbit theorem keeps its exact name and
 statement. The current challenge imports only Mathlib; the proofs never import it.
 
+All local results allow a possibly disconnected Hausdorff, second-countable
+complex one-manifold as the ambient target. Connected source pieces can have
+different target components even when they lie in the same ambient component.
+There is no global component-map or periodic-itinerary hypothesis. The compact
+finite-type and compact self-map corollaries also allow disconnected targets.
+
 - **Entire and meromorphic escape:** a strictly increasing subsequence of
   iterates converges locally uniformly to infinity on the initial wandering
   component. Meromorphic normal form permits poles; admissible Fatou
@@ -30,7 +36,7 @@ statement. The current challenge imports only Mathlib; the proofs never import i
   ambient-escaping or derived-singular subsequence. The exceptional set is
   Lebesgue-null in every chart. These conclusions do not require a global measure.
 - **Finite-type theorem:** an open holomorphic map from an arbitrary open
-  subset of a compact Riemann surface into that surface, with a finite singular
+  subset of a compact complex one-manifold into that manifold, with a finite singular
   set, has no wandering normality components. Neither simple connectivity nor
   maximality of the source is assumed; removable punctures are permitted.
 - **Classical corollaries:** no wandering domains for compact-surface self-maps,

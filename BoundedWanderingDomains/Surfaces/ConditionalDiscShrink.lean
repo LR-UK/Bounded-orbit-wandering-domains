@@ -1,14 +1,14 @@
 module
 
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-public import BoundedWanderingDomains.Surfaces.WanderingDiscShrink
+public import BoundedWanderingDomains.Surfaces.Disconnected.ComponentwiseDiscImages
 
 @[expose] public section
 
 open Set Function Filter Metric
 open scoped Manifold Topology
 
-namespace AreaDeficit.Surfaces.DiscCover
+namespace AreaDeficit.Surfaces.ComponentwiseDiscCover
 
 variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [IsManifold 𝓘(ℂ) 1 X] [T2Space X]
@@ -16,7 +16,7 @@ variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
 /-- Among disjoint discs with compact centres, those centred in one closed
 set eventually avoid every disjoint closed set on each fixed smaller disc. -/
 theorem eventually_avoids_closed_of_centre
-    (p : DiscCover X) {K L H : Set X} (hK : IsCompact K)
+    (p : ComponentwiseDiscCover X) {K L H : Set X} (hK : IsCompact K)
     (hL : IsClosed L) (hH : IsClosed H) (hLH : Disjoint L H)
     (F : ℕ → unitDisc → X)
     (hF : ∀ n, MDifferentiable 𝓘(ℂ) 𝓘(ℂ) (F n))
@@ -44,4 +44,4 @@ theorem eventually_avoids_closed_of_centre
   · exact False.elim (hb discZero (by change ‖(0 : ℂ)‖ ≤ r; simpa using hr) hnL)
   · exact hb z hz
 
-end AreaDeficit.Surfaces.DiscCover
+end AreaDeficit.Surfaces.ComponentwiseDiscCover

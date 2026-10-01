@@ -24,7 +24,7 @@ def LocalMap.FrequentlyLeavesSourceCompacts (f : LocalMap X) (x : X) : Prop :=
 namespace LocalMap
 
 variable [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X]
-  [ConnectedSpace X] [IsManifold 𝓘(ℂ) 1 X] [MeasurableSpace X] [BorelSpace X]
+  [IsManifold 𝓘(ℂ) 1 X] [MeasurableSpace X] [BorelSpace X]
 
 theorem ae_has_source_escaping_subsequence
     (f : LocalMap X) (hf : IsOpenHolomorphic f)

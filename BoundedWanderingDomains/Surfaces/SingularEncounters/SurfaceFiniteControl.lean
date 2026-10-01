@@ -1,8 +1,7 @@
 module
 
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-public import BoundedWanderingDomains.Surfaces.SingularEncounters.CompactSurfaceFiniteControl
-public import BoundedWanderingDomains.Surfaces.SingularEncounters.NoncompactSurfaceFiniteControl
+public import BoundedWanderingDomains.Surfaces.Disconnected.CompactPositiveAreaReduction
 
 @[expose] public section
 
@@ -16,7 +15,7 @@ namespace SurfaceDynamics
 
 variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [IsManifold 𝓘(ℂ) 1 X] [T2Space X] [LocallyCompactSpace X]
-  [SecondCountableTopology X] [ConnectedSpace X] [MeasurableSpace X] [BorelSpace X]
+  [SecondCountableTopology X] [MeasurableSpace X] [BorelSpace X]
 
 theorem no_compact_positive_area_saturation_of_finite_component_control
     (f : LocalMap X) (hf : IsOpenHolomorphic f)
@@ -27,12 +26,8 @@ theorem no_compact_positive_area_saturation_of_finite_component_control
     {ι : Type*} [Fintype ι] (D : ι → EmbeddedDisc X) (E : Finset X)
     (L : ι → Set X) (hL : ∀ i, IsCompact (L i)) (hLD : ∀ i, L i ⊆ (D i).carrier)
     (hcontrol : ∀ x ∈ f.saturation A, ∃ i, f.totalize x ∈ L i ∧
-      x ∈ f.finiteObstructionSource hf.2.continuous (D i).carrier (E : Set X)) : False := by
-  by_cases hc : IsCompact (univ : Set X)
-  · let compactSurface : CompactSpace X := ⟨hc⟩
-    exact no_compact_surface_positive_area_saturation_of_finite_component_control
-      f hf hA hAbad hdis hinj hpos D E L hL hLD hcontrol
-  · exact no_noncompact_surface_positive_area_saturation_of_finite_component_control hc
-      f hf hA hAbad hdis hinj hpos hK hsatK D E L hL hLD hcontrol
+      x ∈ f.finiteObstructionSource hf.2.continuous (D i).carrier (E : Set X)) : False :=
+  no_compact_positive_area_finite_control_disconnected f hf hA hAbad hdis hinj hpos
+    hK hsatK D E L hL hLD hcontrol
 
 end SurfaceDynamics

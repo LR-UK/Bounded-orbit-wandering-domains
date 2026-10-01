@@ -1,7 +1,7 @@
 module
 
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
-public import BoundedWanderingDomains.Surfaces.OpenEmbeddingAreaTransport
+public import BoundedWanderingDomains.Surfaces.Disconnected.ComponentwiseOpenEmbeddingArea
 public import BoundedWanderingDomains.Surfaces.RegularCoveringArea
 public import BoundedWanderingDomains.Surfaces.LocalMapRestriction
 
@@ -23,7 +23,7 @@ variable {M N : Type*} [TopologicalSpace M] [ChartedSpace ℂ M]
   [SecondCountableTopology N] [T2Space N] [LocallyCompactSpace N]
 
 theorem restricted_area_le_add_cross_ambient_gain
-    (f : LocalMap M) (hf : IsOpenHolomorphic f) (p : DiscCover M) (q : DiscCover N)
+    (f : LocalMap M) (hf : IsOpenHolomorphic f) (p : ComponentwiseDiscCover M) (q : ComponentwiseDiscCover N)
     (j : M → N) (hj : IsOpenEmbedding j) (hjh : MDifferentiable 𝓘(ℂ) 𝓘(ℂ) j)
     (D : TopologicalSpace.Opens N) (E : Finset M)
     (V : TopologicalSpace.Opens M) (hV : (V : Set M) ⊆ f.source)
@@ -78,8 +78,7 @@ theorem restricted_area_le_add_cross_ambient_gain
   calc
     p.domainArea U W ≤ p.domainArea T W := p.domainArea_mono_on hTU hW hWT
     _ = p.domainArea Y (f.totalize '' W) :=
-      p.domainArea_eq_image_of_openDomain_covering T Y F hF hcov hagrees
-        (f.measurable_totalize hf.2.continuous) hW hWT hinj
+      p.domainArea_eq_image_of_openDomain_covering_between p T Y F hF hcov hagrees hW hWT hinj
     _ ≤ _ := p.domainArea_le_add_comap_gain q j hj hjh U Y him
       (himY.trans (fun _ hx => hx.1.1)) himY
 

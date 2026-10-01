@@ -7,6 +7,7 @@ public import BoundedWanderingDomains.Surfaces.PlaneReading
 public import BoundedWanderingDomains.Surfaces.OpenMapping
 public import BoundedWanderingDomains.Surfaces.HolomorphicLifting
 public import BoundedWanderingDomains.Surfaces.BKL.PuncturedCovers
+public import BoundedWanderingDomains.Surfaces.Disconnected.ComponentwiseProjection
 public import BoundedWanderingDomains.SimplyConnectedFilling
 public import Mathlib.Topology.Covering.Basic
 public import Mathlib.Topology.Compactness.LocallyCompact
@@ -469,7 +470,7 @@ theorem projected_compactFill_of_lifted_cover
     {X : Type*} [TopologicalSpace X] [T2Space X] [ChartedSpace ℂ X]
     [IsManifold 𝓘(ℂ) 1 X]
     (f : LocalMap X) (hf : MDifferentiable 𝓘(ℂ) 𝓘(ℂ) f.map)
-    (q : DiscCover X) {t : unitDisc → X} (ht : MDifferentiable 𝓘(ℂ) 𝓘(ℂ) t)
+    (q : DiscCovering X) {t : unitDisc → X} (ht : MDifferentiable 𝓘(ℂ) 𝓘(ℂ) t)
     (B : TopologicalSpace.Opens unitDisc) (F : B → puncturedUnitDisc)
     (hF : IsCoveringMap F) (hFh : MDifferentiable 𝓘(ℂ) 𝓘(ℂ) F)
     (hsource : ∀ z : B, q.projection z ∈ f.denseCompletionSource)
@@ -798,7 +799,7 @@ namespace SurfaceDynamics.BKL
 theorem projected_fill_subset_denseCompletion_of_regular_puncturedDisc
     {X : Type*} [TopologicalSpace X] [T2Space X] [LocallyCompactSpace X]
     [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ) 1 X]
-    (f : LocalMap X) (hf : IsOpenHolomorphic f) (q : DiscCover X)
+    (f : LocalMap X) (hf : IsOpenHolomorphic f) (q : DiscCovering X)
     {t : unitDisc → X} (ht : MDifferentiable 𝓘(ℂ) 𝓘(ℂ) t) (hte : IsOpenEmbedding t)
     (hreg : ∀ z : puncturedUnitDisc, t ⟨z, z.2.1⟩ ∈ f.regularValues)
     {K : Set ℂ} (hK : IsCompact K) (hKc : IsConnected K) (hKD : K ⊆ ball 0 1)
@@ -848,14 +849,14 @@ namespace SurfaceDynamics.BKL
 
 theorem exists_cover_inverse_chart
     {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ) 1 X]
-    (q : DiscCover X) (W : TopologicalSpace.Opens X) [SimplyConnectedSpace W]
-    (x₀ : W) :
+    (q : DiscCovering X) (W : TopologicalSpace.Opens X) [SimplyConnectedSpace W]
+    (x₀ : W) (hx₀ : (x₀ : X) ∈ range q.projection) :
     ∃ e : OpenPartialHomeomorph X ℂ, e.source = W ∧
       e.target ⊆ unitDisc ∧ MDifferentiableOn 𝓘(ℂ) 𝓘(ℂ) e e.source ∧
       ∀ x (_hx : x ∈ e.source), ∀ heD : e x ∈ unitDisc,
         q.projection ⟨e x, heD⟩ = x := by
   let : LocallyPathConnectedSpace W := ChartedSpace.locallyPathConnectedSpace ℂ W
-  obtain ⟨z₀, hz₀⟩ := q.surjective x₀
+  obtain ⟨z₀, hz₀⟩ := hx₀
   obtain ⟨H, _, hH, hHh⟩ := exists_holomorphic_lift q.holomorphic q.covering
     (mdifferentiable_subtype_val W) x₀ z₀ hz₀
   have hHe : IsOpenEmbedding H := q.covering.isLocalHomeomorph.isOpenEmbedding_of_comp
@@ -914,7 +915,7 @@ namespace SurfaceDynamics.BKL
 theorem compactFill_subset_denseCompletion_of_regular_puncturedDisc
     {X : Type*} [TopologicalSpace X] [T2Space X] [LocallyCompactSpace X]
     [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ) 1 X]
-    (f : LocalMap X) (hf : IsOpenHolomorphic f) (q : DiscCover X)
+    (f : LocalMap X) (hf : IsOpenHolomorphic f) (q : DiscCovering X)
     {t : unitDisc → X} (ht : MDifferentiable 𝓘(ℂ) 𝓘(ℂ) t) (hte : IsOpenEmbedding t)
     (hreg : ∀ z : puncturedUnitDisc, t ⟨z, z.2.1⟩ ∈ f.regularValues)
     {K : Set X} (hK : IsCompact K) (hKc : IsConnected K) (hKs : K ⊆ f.source)
@@ -955,7 +956,7 @@ theorem compactFill_subset_denseCompletion_of_regular_puncturedDisc
 theorem compactFill_subset_denseCompletion_in_simplyConnected_neighborhood
     {X : Type*} [TopologicalSpace X] [T2Space X] [LocallyCompactSpace X]
     [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ) 1 X]
-    (f : LocalMap X) (hf : IsOpenHolomorphic f) (q : DiscCover X)
+    (f : LocalMap X) (hf : IsOpenHolomorphic f) (q : ComponentwiseDiscCover X)
     {t : unitDisc → X} (ht : MDifferentiable 𝓘(ℂ) 𝓘(ℂ) t) (hte : IsOpenEmbedding t)
     (hreg : ∀ z : puncturedUnitDisc, t ⟨z, z.2.1⟩ ∈ f.regularValues)
     {K : Set X} (hK : IsCompact K) (hKc : IsConnected K) (hKs : K ⊆ f.source)
@@ -965,9 +966,11 @@ theorem compactFill_subset_denseCompletion_in_simplyConnected_neighborhood
     compactFill K ⊆ f.denseCompletionSource := by
   obtain ⟨x, hx⟩ := hKc.nonempty
   let x₀ : W := ⟨x, hKW (subset_compactFill K hx)⟩
-  obtain ⟨e, hes, het, _, hproj⟩ := exists_cover_inverse_chart q W x₀
+  let q₀ := q.discCovering (ConnectedComponents.mk x)
+  obtain ⟨e, hes, het, _, hproj⟩ := exists_cover_inverse_chart q₀ W x₀
+    (q.mem_discCovering_range x)
   apply compactFill_subset_denseCompletion_of_regular_puncturedDisc
-    f hf q ht hte hreg hK hKc hKs himage e _ het hproj
+    f hf q₀ ht hte hreg hK hKc hKs himage e _ het hproj
   rwa [hes]
 
 end SurfaceDynamics.BKL
@@ -986,8 +989,8 @@ namespace SurfaceDynamics.BKL
 
 theorem disjoint_disc_fillings_eventually_subset_denseCompletion
     {X : Type*} [TopologicalSpace X] [T2Space X] [LocallyCompactSpace X]
-    [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ) 1 X] [ConnectedSpace X] [NoncompactSpace X]
-    (f : LocalMap X) (hf : IsOpenHolomorphic f) (q : DiscCover X)
+    [ChartedSpace ℂ X] [IsManifold 𝓘(ℂ) 1 X] [NoncompactComponents X]
+    (f : LocalMap X) (hf : IsOpenHolomorphic f) (q : ComponentwiseDiscCover X)
     {K : Set X} (hK : IsCompact K) (hKd : Disjoint K (derivedSet f.singularValues))
     (F : ℕ → unitDisc → X) (hF : ∀ n, MDifferentiable 𝓘(ℂ) 𝓘(ℂ) (F n))
     (hcentre : ∀ n, F n discZero ∈ K)
@@ -1029,8 +1032,8 @@ namespace SurfaceDynamics.BKL
 
 theorem disjoint_disc_fillings_eventually_finite_singular_intersection
     {X : Type*} [TopologicalSpace X] [T2Space X] [ChartedSpace ℂ X]
-    [IsManifold 𝓘(ℂ) 1 X] [ConnectedSpace X] [NoncompactSpace X]
-    (f : LocalMap X) (q : DiscCover X) {K : Set X} (hK : IsCompact K)
+    [IsManifold 𝓘(ℂ) 1 X] [NoncompactComponents X]
+    (f : LocalMap X) (q : ComponentwiseDiscCover X) {K : Set X} (hK : IsCompact K)
     (hKd : Disjoint K (derivedSet f.singularValues))
     (F : ℕ → unitDisc → X) (hF : ∀ n, MDifferentiable 𝓘(ℂ) 𝓘(ℂ) (F n))
     (hcentre : ∀ n, F n discZero ∈ K)
@@ -1067,7 +1070,7 @@ theorem disjoint_disc_fillings_eventually_finite_singular_intersection
     obtain ⟨w, hw⟩ := ha z hz
     exact hw ▸ (D a).param_mem_closedCarrier w
   intro x hx
-  exact ⟨a, (hsing a x (compactFill_subset_coordDisk (D a) hC hx.1) hx.2).symm⟩
+  exact ⟨a, (hsing a x (compactFill_subset_coordDisk_of_noncompactComponents (D a) hC hx.1) hx.2).symm⟩
 
 end SurfaceDynamics.BKL
 

@@ -1,29 +1,42 @@
-# Verification — version 1.8.1, 30 September 2026
+# Verification — version 1.9.0, 1 October 2026
 
-The configured Lean build passed for `Solution`, the independent `Challenge`,
-and `BoundedWanderingDomains.All`. All 19 selected theorem
-declarations and 53 supporting declarations
-match between Challenge and Solution. The build has zero ordinary compiler or
-linter warnings. The nineteen Challenge `sorry` warnings are intentional statement
-placeholders; the solution does not import Challenge.
+The configured Lean build passed for `Challenge`, `Solution` and
+`BoundedWanderingDomains.All`. All 19 selected theorem declarations and 53
+supporting declarations agree between the independent Challenge and Solution.
+The local surface statements now allow disconnected ambient complex
+one-manifolds. No finite-component or component-itinerary hypothesis is added
+to the public statements. The original entire-function theorem and all entire,
+meromorphic and rational specializations retain their previous declarations.
 
-This version corrects the definition of regular values: covering neighbourhoods
-may have empty fibres, and need not be contained in the range. The general
-definition applies to maps between different spaces. Lean proves that singular
-values lie in the closure of the image. Regression checks verify that an empty
-source has no singular values and that the omitted point of the punctured-plane
-inclusion remains singular.
+The pinned Comparator declaration-comparison core also passed, using the
+compiled Challenge and Solution environments. This local test does not run
+the Linux sandboxed export pipeline or the bundled independent kernels.
+Those checks must run in GitHub/Palomar after upload; local success is not a
+claim of registry acceptance.
 
-The public singular-encounter statement quantifies over full preimage components
-U_n directly and uses the singular values of the actual restricted maps U_n → D_n.
-Internal base-point constructions are connected to this formulation by a proved
-equality. The author's explanatory comments and revised abstract are retained,
-with eventual visit times, one-step preimages, and source escape made precise.
-All dependent proofs were rebuilt with the corrected definition. In particular,
-the general surface conclusions use the corrected singular set throughout.
+Every selected proof uses only `propext`, `Classical.choice` and `Quot.sound`.
+There are zero ordinary compiler or linter warnings. The 19 intentional
+`sorry` warnings belong exclusively to the independent Challenge specifications;
+the proof library never imports Challenge. No linter was disabled.
 
-The transitive proof audit permits only `propext`, `Classical.choice`, and
-`Quot.sound`. Metadata, attribution and source-structure checks passed.
+The solution closure contains 775 local proof modules. Including the optional
+proof-library entry point, 776 modules passed the source scan for proof holes,
+custom axioms, `native_decide` and imports of independent challenges. All
+1335 retained Lean sources pass the module-header check. Unused vendored
+modules are retained for attribution/source completeness and are not claimed
+to have been compiled by these checks.
+
+The disconnected proof replaces the separate compact and noncompact area
+branches. Relative to the author's previous checkout, 54 obsolete Lean files
+are removed and 50 componentwise geometry/reduction files are added.
+The proof guide explains the finite clopen reductions and componentwise
+covering, area and BKL arguments.
+
+Metadata contract, attribution and source-structure audits passed. Attribution
+checks cover 12 licence texts, 51 attribution files and
+274 vendored headers. Epstein's thesis is now recorded as
+`independently-proves`, retaining the note that its deformation argument is
+not formalised here.
 
 ## Reproduce the checks
 
@@ -34,20 +47,20 @@ python3 scripts/audit_structure.py
 python3 -X utf8 scripts/audit_attribution.py
 ```
 
-The metadata checker needs PyYAML. Preserve existing `.lake` directories when
-updating. Lean and Mathlib remain pinned to `leanprover/lean4:v4.35.0-rc2` and
+The metadata checker needs PyYAML. For a fresh checkout, first run
+`python3 scripts/fetch_cache.py`. Preserve all `.lake` directories when updating.
+Lean remains `leanprover/lean4:v4.35.0-rc2`; Mathlib remains
 `065356127b1dc0016f66b7283ce0ce2c4055aa55`. Changed project modules rebuild;
-unchanged dependencies can retain their cached artifacts.
+unchanged dependencies remain cached. The recorded recheck timings use existing
+compiled artifacts and do not estimate a fresh build or another computer.
 
-Evidence is recorded in `verification/paper-submission.json`, its build,
-declaration and axiom logs, `verification/regular-values-regression.log`,
-`verification/regular-values-update.json`, `verification/metadata.json`,
-`verification/attribution.json`, and `verification/structure-audit.json`.
+For the complete official comparison on Linux with working bubblewrap namespaces:
 
-## External verification
+```sh
+bash scripts/verify-comparator.sh comparator.json
+```
 
-The pinned Comparator declaration-comparison core passed on separately imported
-compiled Challenge and Solution environments, including transitive checks.
-The official sandboxed export and independent-kernel pipeline was not run locally
-on Windows. GitHub must confirm that pipeline after upload. Local verification
-does not claim registry acceptance or an independent human mathematical review.
+Evidence is recorded in `verification/disconnected-release.json`,
+`verification/paper-submission.json`, the declaration and axiom logs,
+`verification/disconnected-comparator-core.log`, and the metadata, structure,
+module-header and attribution reports.

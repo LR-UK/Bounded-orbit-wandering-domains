@@ -16,7 +16,7 @@ namespace SurfaceDynamics.LocalMap
 variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
 
 variable [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X]
-  [ConnectedSpace X] [IsManifold 𝓘(ℂ) 1 X] [MeasurableSpace X] [BorelSpace X]
+  [IsManifold 𝓘(ℂ) 1 X] [MeasurableSpace X] [BorelSpace X]
 
 theorem ae_has_escaping_or_derived_singular_subsequence
     (f : LocalMap X) (hf : IsOpenHolomorphic f)

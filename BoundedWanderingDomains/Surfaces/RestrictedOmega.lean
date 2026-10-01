@@ -22,7 +22,7 @@ variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
 subsurface, every interior trapped point is a normal point. -/
 theorem omega_restrictSource_eq_interior_trapped
     (f : LocalMap X) (hf : IsOpenHolomorphic f)
-    (O V : TopologicalSpace.Opens X) (p : DiscCover O)
+    (O V : TopologicalSpace.Opens X) (p : ComponentwiseDiscCover O)
     (hVsource : (V : Set X) ⊆ f.source)
     (hVcompact : IsCompact (closure (V : Set X)))
     (hVO : closure (V : Set X) ⊆ O) :

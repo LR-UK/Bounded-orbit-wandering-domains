@@ -8,9 +8,9 @@ public import BoundedWanderingDomains.Surfaces.SurfaceDerivedLimits
 
 /-! # No wandering domains for finite-type local maps
 
-The target surface is compact; the source can be any open subset. The
+The target complex one-manifold is compact and may be disconnected; the source can be any open subset. The
 derived-singular theorem rules out wandering because a finite singular set
-has no derived points and an orbit in a compact surface cannot escape.
+has no derived points and an orbit in a compact target cannot escape.
 This includes Epstein's finite-type maps and permits removable punctures.
 -/
 
@@ -21,10 +21,10 @@ namespace SurfaceDynamics
 
 variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
   [T2Space X] [LocallyCompactSpace X] [SecondCountableTopology X]
-  [ConnectedSpace X] [IsManifold 𝓘(ℂ) 1 X] [CompactSpace X]
+  [IsManifold 𝓘(ℂ) 1 X] [CompactSpace X]
 
 /-- An open holomorphic map from an arbitrary open subset of a compact
-Riemann surface, with finitely many singular values, has no wandering
+complex one-manifold, possibly disconnected, with finitely many singular values, has no wandering
 normality components. No maximality or simple-connectivity assumption on
 the source is needed. -/
 theorem no_wandering_domains_finite_type

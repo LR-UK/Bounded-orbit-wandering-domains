@@ -2,6 +2,7 @@ module
 
 /- Copyright (c) 2026 Lasse Rempe. Released under Apache 2.0 licence; see LICENSE. -/
 public import BoundedWanderingDomains.Surfaces.CompactOrbitNormal
+public import BoundedWanderingDomains.Surfaces.Disconnected.ComponentwiseDiscImages
 public import BoundedWanderingDomains.Surfaces.LocalCoveringDiscs
 public import BoundedWanderingDomains.Surfaces.SubdomainCover
 public import BoundedWanderingDomains.Surfaces.ComponentDomains
@@ -59,7 +60,7 @@ theorem trapped_barrier_component (f : LocalMap X) (hf : Continuous f.map)
 
 omit [LocallyCompactSpace X] in
 theorem compact_orbits_on_connected_trapped_open
-    (f : LocalMap X) (hf : IsOpenHolomorphic f) (p : DiscCover X)
+    (f : LocalMap X) (hf : IsOpenHolomorphic f) (p : ComponentwiseDiscCover X)
     (W : TopologicalSpace.Opens X) [ConnectedSpace W]
     (hW : (W : Set X) ⊆ f.trapped) (x : W)
     {K : Set X} (hK : IsCompact K)
@@ -85,7 +86,7 @@ theorem compact_orbits_on_connected_trapped_open
   exact ⟨L, hL, hyK⟩
 
 theorem connected_trapped_open_subset_omega_of_compact_orbit
-    (f : LocalMap X) (hf : IsOpenHolomorphic f) (p : DiscCover X)
+    (f : LocalMap X) (hf : IsOpenHolomorphic f) (p : ComponentwiseDiscCover X)
     (W : TopologicalSpace.Opens X) [ConnectedSpace W]
     (hW : (W : Set X) ⊆ f.trapped) (x : W)
     {K : Set X} (hK : IsCompact K)
@@ -97,7 +98,7 @@ theorem connected_trapped_open_subset_omega_of_compact_orbit
   exact f.mem_omega_of_compact_orbit hf p W hW ⟨y, hy⟩ hL hyL
 
 theorem barrier_component_subset_omega_of_compact_orbit
-    (f : LocalMap X) (hf : IsOpenHolomorphic f) (p : DiscCover X)
+    (f : LocalMap X) (hf : IsOpenHolomorphic f) (p : ComponentwiseDiscCover X)
     {A : Set X} (hA : IsClosed A)
     (hfront : frontier (f.source : Set X) ⊆ A)
     (hback : ∀ x : f.source, f.map x ∈ A → (x : X) ∈ A)

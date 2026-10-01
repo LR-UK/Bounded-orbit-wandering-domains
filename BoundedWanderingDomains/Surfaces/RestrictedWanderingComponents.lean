@@ -22,7 +22,7 @@ variable {X : Type*} [TopologicalSpace X] [ChartedSpace ℂ X]
 
 theorem components_restrictAmbient_restrictSource_of_compact_orbit_connected
     (f : LocalMap X) (hf : IsOpenHolomorphic f)
-    (O V : TopologicalSpace.Opens X) [LocallyCompactSpace O] (p : DiscCover O)
+    (O V : TopologicalSpace.Opens X) [LocallyCompactSpace O] (p : ComponentwiseDiscCover O)
     (hVs : (V : Set X) ⊆ f.source) (hVO : (V : Set X) ⊆ O)
     (hm : ∀ x : (f.restrictSource V hVs).source, (f.restrictSource V hVs).map x ∈ O)
     (S : ℕ → Set X) (hS : ∀ n, f.IsComponent (S n))
